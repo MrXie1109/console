@@ -4,6 +4,7 @@
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
+ * @warning 此头文件已被弃用。
  */
 
 /*

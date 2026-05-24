@@ -62,6 +62,7 @@ SOFTWARE.
 #include "syscmd.h"
 #include "config.h"
 #include "crypto.h"
+#include "gen.h"
 
 // #include "win/melody.h"
 

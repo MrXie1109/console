@@ -334,7 +334,7 @@ namespace console
                 bak.replace(pos, 2, uni_to_str(t));
                 return bak;
             }
-            throw bad_format("Bad Format");
+            throw BadFormat("Bad Format");
         }
     };
 

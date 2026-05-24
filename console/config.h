@@ -82,7 +82,7 @@ namespace console
         /**
          * @brief 将配置保存到文件。
          * @param filename 目标文件路径。
-         * @throw file_error 文件打开失败或写入流异常时抛出。
+         * @throw FileError 文件打开失败或写入流异常时抛出。
          */
         void save(const std::string &filename)
         {
@@ -92,16 +92,16 @@ namespace console
         /**
          * @brief 将配置保存到文件。
          * @param filename 目标文件路径。
-         * @throw file_error 文件打开失败或写入流异常时抛出。
+         * @throw FileError 文件打开失败或写入流异常时抛出。
          */
         void save(const Path &filename) const
         {
             std::ofstream fout(filename.str(), std::ios::trunc);
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + filename.str() + '"');
+                throw FileError("Cannot Open File \"" + filename.str() + '"');
             fout << *this;
             if (!fout.good())
-                throw file_error("The Stream of \"" + filename.str() + "\" is Not Good");
+                throw FileError("The Stream of \"" + filename.str() + "\" is Not Good");
         }
 
         /**
@@ -191,13 +191,13 @@ namespace console
                     return true;
                 if (lower == "false" || lower == "0" || lower == "no" || lower == "off")
                     return false;
-                throw type_error("Failed to Convert \"" + str_ + "\" to bool");
+                throw TypeError("Failed to Convert \"" + str_ + "\" to bool");
             }
 
             /**
              * @brief 隐式转换为目标类型 T。
              * @tparam T 目标类型（如 int、float、double 等）。
-             * @throw type_error 类型转换失败时抛出。
+             * @throw TypeError 类型转换失败时抛出。
              */
             template <class T>
             operator T() const
@@ -206,7 +206,7 @@ namespace console
                 T value;
                 iss >> value;
                 if (iss.fail())
-                    throw type_error("Failed to Convert \"" + str_ + "\" to Target Type");
+                    throw TypeError("Failed to Convert \"" + str_ + "\" to Target Type");
                 return value;
             }
         };
@@ -215,22 +215,22 @@ namespace console
          * @brief 获取配置项的值。
          * @param section_and_key 节和键，格式为 "节名.键名"。
          * @return Item 配置项代理对象，可隐式转换为目标类型。
-         * @throw index_error 格式错误、节不存在或键不存在时抛出。
+         * @throw IndexError 格式错误、节不存在或键不存在时抛出。
          */
         Item get(const std::string &section_and_key) const
         {
             auto pos = section_and_key.find('.');
             auto pr = partition(section_and_key, ".");
             if (pr.middle.empty())
-                throw index_error("Invalid Section and Key Format: \"" + section_and_key + '"');
+                throw IndexError("Invalid Section and Key Format: \"" + section_and_key + '"');
             auto section = pr.left;
             auto key = pr.right;
             auto sec_it = data_.find(section);
             if (sec_it == data_.end())
-                throw index_error("Section \"" + section + "\" Not Found");
+                throw IndexError("Section \"" + section + "\" Not Found");
             auto key_it = sec_it->second.find(key);
             if (key_it == sec_it->second.end())
-                throw index_error("Key \"" + key + "\" Not Found in Section \"" + section + '"');
+                throw IndexError("Key \"" + key + "\" Not Found in Section \"" + section + '"');
             return Item(key_it->second);
         }
 
@@ -263,7 +263,7 @@ namespace console
          * @brief 设置配置项的值。
          * @param section_and_key 节和键，格式为 "节名.键名"。
          * @param value 要设置的值（字符串形式）。
-         * @throw index_error 格式错误时抛出。
+         * @throw IndexError 格式错误时抛出。
          * @note 若节或键不存在，会自动创建。
          */
         void set(const std::string &section_and_key, const std::string &value)
@@ -271,7 +271,7 @@ namespace console
             auto pos = section_and_key.find('.');
             auto pr = partition(section_and_key, ".");
             if (pr.middle.empty())
-                throw index_error("Invalid Section and Key Format: \"" + section_and_key + '"');
+                throw IndexError("Invalid Section and Key Format: \"" + section_and_key + '"');
             auto section = pr.left;
             auto key = pr.right;
             data_[section][key] = value;

@@ -36,141 +36,156 @@ SOFTWARE.
 namespace console
 {
     /**
-     * @class console_error
+     * @class ConsoleError
      * @brief console 库所有异常的基类。
      * @details 派生自 std::runtime_error，用于捕获所有由 console 库抛出的异常。
      */
-    class console_error : public std::runtime_error
+    class ConsoleError : public std::runtime_error
     {
     public:
         /**
-         * @brief 构造 console_error。
+         * @brief 构造 ConsoleError。
          * @param msg 错误描述信息。
          */
-        console_error(const std::string &msg)
+        ConsoleError(const std::string &msg)
             : std::runtime_error(msg) {}
     };
 
     /**
-     * @class fatal_logging
+     * @class FatalLogging
      * @brief 表示致命日志错误，通常会导致程序终止。
      */
-    class fatal_logging : public console_error
+    class FatalLogging : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 fatal_logging。
+         * @brief 构造 FatalLogging。
          * @param msg 错误描述信息。
          */
-        fatal_logging(const std::string &msg)
-            : console_error(msg) {}
+        FatalLogging(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class bad_format
+     * @class BadFormat
      * @brief 表示格式化字符串错误，例如占位符与参数不匹配。
      */
-    class bad_format : public console_error
+    class BadFormat : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 bad_format。
+         * @brief 构造 BadFormat。
          * @param msg 错误描述信息。
          */
-        bad_format(const std::string &msg)
-            : console_error(msg) {}
+        BadFormat(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class file_error
+     * @class FileError
      * @brief 表示文件操作错误，如打开失败、读取失败等。
      */
-    class file_error : public console_error
+    class FileError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 file_error。
+         * @brief 构造 FileError。
          * @param msg 错误描述信息。
          */
-        file_error(const std::string &msg)
-            : console_error(msg) {}
+        FileError(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class type_error
+     * @class TypeError
      * @brief 表示类型错误，例如访问 Maybe 中不存在的值或 Box 中类型不匹配。
      * @see console::Maybe, console::Box
      * @note `空值` 也被视为一种类型错误，因为它表示没有类型可访问。
      */
-    class type_error : public console_error
+    class TypeError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 type_error。
+         * @brief 构造 TypeError。
          * @param msg 错误描述信息。
          */
-        type_error(const std::string &msg)
-            : console_error(msg) {}
+        TypeError(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class multiarray_error
+     * @class MultiArrayError
      * @brief 表示 MultiArray 多维数组操作中的错误，如维度不匹配。
      */
-    class multiarray_error : public console_error
+    class MultiArrayError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 multiarray_error。
+         * @brief 构造 MultiArrayError。
          * @param msg 错误描述信息。
          */
-        multiarray_error(const std::string &msg)
-            : console_error(msg) {}
+        MultiArrayError(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class container_error
+     * @class ContainerError
      * @brief 表示通用容器操作错误。
      */
-    class container_error : public console_error
+    class ContainerError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 container_error。
+         * @brief 构造 ContainerError。
          * @param msg 错误描述信息。
          */
-        container_error(const std::string &msg)
-            : console_error(msg) {}
+        ContainerError(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class index_error
+     * @class IndexError
      * @brief 表示索引越界错误。
      */
-    class index_error : public console_error
+    class IndexError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 index_error。
+         * @brief 构造 IndexError。
          * @param msg 错误描述信息。
          */
-        index_error(const std::string &msg)
-            : console_error(msg) {}
+        IndexError(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 
     /**
-     * @class domain_error
+     * @class DomainError
      * @brief 表示试图对无效的数学值域进行操作时抛出的异常。
-     * @see std::domain_error
+     * @see std::DomainError
      */
-    class domain_error : public console_error
+    class DomainError : public ConsoleError
     {
     public:
         /**
-         * @brief 构造 domain_error。
+         * @brief 构造 DomainError。
          * @param msg 错误描述信息。
          */
-        domain_error(const std::string &msg)
-            : console_error(msg) {}
+        DomainError(const std::string &msg)
+            : ConsoleError(msg) {}
+    };
+
+    /**
+     * @class StopIteration
+     * @brief 表示试图对已结束的生成器调用 next()。
+     */
+    class StopIteration : public ConsoleError
+    {
+    public:
+        /**
+         * @brief 构造 StopIteration。
+         * @param msg 错误描述信息。
+         */
+        StopIteration(const std::string &msg)
+            : ConsoleError(msg) {}
     };
 }

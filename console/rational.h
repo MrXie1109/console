@@ -77,13 +77,13 @@ namespace console
 
         /**
          * @brief 辅助函数，用于约分一个分数。
-         * @throw console::domain_error 若分母为 0。
+         * @throw console::DomainError 若分母为 0。
          */
         void reduce()
         {
             if (den == 0)
             {
-                throw domain_error("Denominator cannot be zero");
+                throw DomainError("Denominator cannot be zero");
             }
             if (den < 0)
             {
@@ -110,7 +110,7 @@ namespace console
          * @details 在内部应用 reduce() 进行约分。
          * @param n 分子。
          * @param d 分母。
-         * @throw console::domain_error 若 d 为 0。
+         * @throw console::DomainError 若 d 为 0。
          */
         BasicRational(T n, T d) : num(n), den(d) { reduce(); }
 
@@ -181,13 +181,13 @@ namespace console
          * @param rhs 除数。
          * @return BasicRational 商。
          * @warning 整数可能溢出。
-         * @throw console::domain_error 如果除以零。
+         * @throw console::DomainError 如果除以零。
          */
         friend BasicRational operator/(
             const BasicRational &lhs, const BasicRational &rhs)
         {
             if (rhs.num == 0)
-                throw domain_error("Division by zero");
+                throw DomainError("Division by zero");
             return BasicRational(lhs.num * rhs.den, lhs.den * rhs.num);
         }
 
@@ -228,7 +228,7 @@ namespace console
          * @brief 就地版本，等价于 a = a / b。
          * @param other 除数。
          * @return BasicRational & 即 *this。
-         * @throw console::domain_error 如果除以零。
+         * @throw console::DomainError 如果除以零。
          */
         BasicRational &operator/=(const BasicRational &other)
         {

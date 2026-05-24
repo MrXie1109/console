@@ -46,7 +46,7 @@ namespace console
      * @class Path
      * @brief 文件路径封装类，提供便捷的文件读写和路径操作。
      * @details 在 Windows 平台上自动将 '/' 转换为 '\\'，支持路径拼接运算符 /。
-     *          所有文件读写操作均会抛出 file_error 异常（若文件无法打开或流状态异常）。
+     *          所有文件读写操作均会抛出 FileError 异常（若文件无法打开或流状态异常）。
      */
     class Path
     {
@@ -87,43 +87,43 @@ namespace console
         /**
          * @brief 以文本模式读取文件全部内容。
          * @return std::string 文件内容。
-         * @throw file_error 若文件无法打开或读取过程中流状态出错。
+         * @throw FileError 若文件无法打开或读取过程中流状态出错。
          */
         std::string read_text() const
         {
             std::ifstream fin(path);
             if (!fin.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             std::string text{
                 std::istreambuf_iterator<char>(fin),
                 std::istreambuf_iterator<char>()};
             if (!fin.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
             return text;
         }
 
         /**
          * @brief 以二进制模式读取文件全部内容。
          * @return Bytes 无符号字节向量。
-         * @throw file_error 若文件无法打开或读取过程中流状态出错。
+         * @throw FileError 若文件无法打开或读取过程中流状态出错。
          */
         Bytes read_binary() const
         {
             std::ifstream fin(path, std::ios::binary);
             if (!fin.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             Bytes bytes{
                 std::istreambuf_iterator<char>(fin),
                 std::istreambuf_iterator<char>()};
             if (!fin.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
             return bytes;
         }
 
         /**
          * @brief 按行读取文本文件，返回每行字符串的 vector。
          * @return std::vector<std::string> 各行内容（不包含换行符）。
-         * @throw file_error 若文件无法打开或读取过程中出错。
+         * @throw FileError 若文件无法打开或读取过程中出错。
          */
         std::vector<std::string> read_lines() const
         {
@@ -134,7 +134,7 @@ namespace console
          * @brief 从二进制文件读取一个 POD 类型对象（类型安全版本）。
          * @tparam T 必须是平凡可复制（trivially copyable）的类型。
          * @return T 读取到的对象。
-         * @throw file_error 若文件无法打开或读取失败。
+         * @throw FileError 若文件无法打开或读取失败。
          * @note 编译期检查 T 是否为 POD 类型，否则触发 static_assert。
          */
         template <class T>
@@ -144,11 +144,11 @@ namespace console
                           "This Type is Not POD Type!");
             std::ifstream fin(path, std::ios::binary);
             if (!fin.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             T data;
             fin.read((char *)(&data), sizeof(data));
             if (!fin.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
             return data;
         }
 
@@ -156,7 +156,7 @@ namespace console
          * @brief 从二进制文件读取一个 POD 类型对象（不安全版本）。
          * @tparam T 任何类型（无编译期检查）。
          * @return T 读取到的对象。
-         * @throw file_error 若文件无法打开或读取失败。
+         * @throw FileError 若文件无法打开或读取失败。
          * @warning 不检查 T 是否为 POD 类型，可能因类型不匹配导致未定义行为。
          */
         template <class T>
@@ -164,48 +164,48 @@ namespace console
         {
             std::ifstream fin(path, std::ios::binary);
             if (!fin.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             T data;
             fin.read((char *)(&data), sizeof(data));
             if (!fin.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
             return data;
         }
 
         /**
          * @brief 以文本模式写入字符串到文件（覆盖模式）。
          * @param text 要写入的文本。
-         * @throw file_error 若文件无法打开或写入过程中流状态出错。
+         * @throw FileError 若文件无法打开或写入过程中流状态出错。
          */
         void write_text(const std::string &text) const
         {
             std::ofstream fout(path);
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             fout << text;
             if (!fout.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
         }
 
         /**
          * @brief 以二进制模式写入字节数据到文件（覆盖模式）。
          * @param bts 要写入的字节向量。
-         * @throw file_error 若文件无法打开或写入过程中流状态出错。
+         * @throw FileError 若文件无法打开或写入过程中流状态出错。
          */
         void write_binary(const Bytes &bts) const
         {
             std::ofstream fout(path, std::ios::binary);
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             fout.write((const char *)(bts.data()), bts.size());
             if (!fout.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
         }
 
         /**
          * @brief 将多行字符串写入文件，每行之间用换行符分隔。
          * @param lines 字符串向量。
-         * @throw file_error 若文件无法打开或写入过程中出错。
+         * @throw FileError 若文件无法打开或写入过程中出错。
          * @note 若 lines 为空，则不做任何操作（不创建文件）。
          */
         void write_lines(const std::vector<std::string> &lines) const
@@ -214,21 +214,21 @@ namespace console
             if (lines.empty())
                 return;
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             auto it = lines.begin();
             fout << *it;
             while (++it != lines.end())
                 fout << '\n'
                      << *it;
             if (!fout.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
         }
 
         /**
          * @brief 写入一个 POD 类型对象到二进制文件（类型安全版本）。
          * @tparam T 必须是平凡可复制类型。
          * @param data 要写入的对象。
-         * @throw file_error 若文件无法打开或写入过程中出错。
+         * @throw FileError 若文件无法打开或写入过程中出错。
          * @note 编译期检查 T 是否为 POD 类型。
          */
         template <class T>
@@ -238,17 +238,17 @@ namespace console
                           "This Type is Not POD Type!");
             std::ofstream fout(path, std::ios::binary);
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             fout.write((const char *)(&data), sizeof(data));
             if (!fout.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
         }
 
         /**
          * @brief 写入一个对象到二进制文件（不安全版本）。
          * @tparam T 任何类型。
          * @param data 要写入的对象。
-         * @throw file_error 若文件无法打开或写入过程中出错。
+         * @throw FileError 若文件无法打开或写入过程中出错。
          * @warning 不检查 T 是否为 POD 类型，直接以二进制写入内存表示，可能导致不可移植。
          */
         template <class T>
@@ -256,10 +256,10 @@ namespace console
         {
             std::ofstream fout(path, std::ios::binary);
             if (!fout.is_open())
-                throw file_error("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + path + '"');
             fout.write((const char *)(&data), sizeof(data));
             if (!fout.good())
-                throw file_error("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("The Stream of \"" + path + "\" is Not Good");
         }
 
         /**
@@ -296,7 +296,7 @@ namespace console
         void remove() const
         {
             if (std::remove(path.c_str()) != 0)
-                throw file_error("Cannot Remove File \"" + path + '"');
+                throw FileError("Cannot Remove File \"" + path + '"');
         }
 
         /**

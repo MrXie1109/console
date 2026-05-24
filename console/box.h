@@ -156,18 +156,18 @@ namespace console
          * @brief 类型安全地获取存储值的引用（非常量版本）。
          * @tparam T 期望的类型。
          * @return T& 存储值的引用。
-         * @throw console::type_error 若 Item 为空或实际类型与 T 不匹配。
+         * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
         template <typename T>
         T &get()
         {
             if (ptr == nullptr)
-                throw type_error("empty item");
+                throw TypeError("empty item");
             if (typeid(T) != ptr->type())
-                throw type_error(std::string("type mismatch: ") +
-                              tiname(typeid(T)) +
-                              " and " +
-                              tiname(ptr->type()));
+                throw TypeError(std::string("type mismatch: ") +
+                                tiname(typeid(T)) +
+                                " and " +
+                                tiname(ptr->type()));
             return ((Derived<T> *)ptr)->value;
         }
 
@@ -187,18 +187,18 @@ namespace console
          * @brief 类型安全地获取存储值的引用（常量版本）。
          * @tparam T 期望的类型。
          * @return const T& 存储值的常量引用。
-         * @throw console::type_error 若 Item 为空或实际类型与 T 不匹配。
+         * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
         template <typename T>
         const T &get() const
         {
             if (ptr == nullptr)
-                throw type_error("empty item");
+                throw TypeError("empty item");
             if (typeid(T) != ptr->type())
-                throw type_error(std::string("type mismatch: ") +
-                              typeid(T).name() +
-                              " and " +
-                              ptr->type().name());
+                throw TypeError(std::string("type mismatch: ") +
+                                typeid(T).name() +
+                                " and " +
+                                ptr->type().name());
             return ((Derived<T> *)ptr)->value;
         }
 
@@ -294,7 +294,7 @@ namespace console
          * @tparam T 期望的类型。
          * @param index 元素索引（从 0 开始）。
          * @return T& 元素的引用。
-         * @throw console::type_error 若索引越界或实际类型与 T 不匹配。
+         * @throw console::TypeError 若索引越界或实际类型与 T 不匹配。
          */
         template <class T>
         T &get(size_t index)
@@ -319,7 +319,7 @@ namespace console
          * @brief 将 Box 中的元素按顺序解包到多个变量中（类型安全）。
          * @tparam Args 变量包类型。
          * @param args 要赋值的变量（按引用传递）。
-         * @note 若元素数量或类型不匹配会抛出 type_error 异常。
+         * @note 若元素数量或类型不匹配会抛出 TypeError 异常。
          */
         template <class... Args>
         void unpack(Args &...args)

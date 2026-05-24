@@ -36,7 +36,7 @@ SOFTWARE.
 #include <initializer_list>
 #include <numeric>
 #include "sfinae.h" // for uniform_distribution_t
-#include "csexc.h"  // for container_error
+#include "csexc.h"  // for ContainerError
 
 namespace console
 {
@@ -104,13 +104,13 @@ namespace console
      * @param c 要从中选择的容器（左值）。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::reference 所选元素的引用。
-     * @throw container_error 如果容器为空。
+     * @throw ContainerError 如果容器为空。
      */
     template <class C>
     typename C::reference choice(C &c, std::mt19937 &gen = default_gen())
     {
         if (std::begin(c) == std::end(c))
-            throw container_error("Empty container");
+            throw ContainerError("Empty container");
         return *std::next(std::begin(c),
                           randint<size_t>(0, c.size() - 1, gen));
     }
@@ -121,14 +121,14 @@ namespace console
      * @param c 要从中选择的容器（左值）。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::const_reference 所选元素的引用。
-     * @throw container_error 如果容器为空。
+     * @throw ContainerError 如果容器为空。
      */
     template <class C>
     typename C::const_reference choice(
         const C &c, std::mt19937 &gen = default_gen())
     {
         if (std::begin(c) == std::end(c))
-            throw container_error("Empty container");
+            throw ContainerError("Empty container");
         return *std::next(std::begin(c),
                           randint<size_t>(0, c.size() - 1, gen));
     }
@@ -139,13 +139,13 @@ namespace console
      * @param c 要从中选择的容器（右值）。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::value_type 所选元素的副本。
-     * @throw container_error 如果容器为空。
+     * @throw ContainerError 如果容器为空。
      */
     template <class C>
     typename C::value_type choice(C &&c, std::mt19937 &gen = default_gen())
     {
         if (std::begin(c) == std::end(c))
-            throw container_error("Empty container");
+            throw ContainerError("Empty container");
         return *std::next(std::begin(c),
                           randint<size_t>(0, c.size() - 1, gen));
     }
@@ -156,7 +156,7 @@ namespace console
      * @param init 初始化列表。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return T 所选元素的引值。
-     * @throw container_error 如果初始化列表为空。
+     * @throw ContainerError 如果初始化列表为空。
      */
     template <class T>
     T choice(std::initializer_list<T> init,
@@ -434,7 +434,7 @@ namespace console
      * @param replace 是否允许重复抽取（有放回），默认为 false。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<typename C::value_type> 抽取结果的向量。
-     * @throw container_error 如果容器为空，或 size 超过容器大小且 replace==false。
+     * @throw ContainerError 如果容器为空，或 size 超过容器大小且 replace==false。
      * @note 对非随机访问容器效果不佳，这并非设计缺陷。
      */
     template <class C>
@@ -449,10 +449,10 @@ namespace console
         auto it_end = std::end(c);
         size_t n = std::distance(it_begin, it_end);
         if (n == 0)
-            throw container_error(
+            throw ContainerError(
                 "Cannot sample from empty container");
         if (!replace && size > n)
-            throw container_error(
+            throw ContainerError(
                 "Sample size exceeds container size when replace=false");
         if (replace)
             for (size_t i = 0; i < size; ++i)
@@ -480,7 +480,7 @@ namespace console
      * @param replace 是否允许重复抽取（有放回），默认为 false。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 抽取结果的向量。
-     * @throw container_error 如果容器为空，或 size 超过容器大小且 replace==false。
+     * @throw ContainerError 如果容器为空，或 size 超过容器大小且 replace==false。
      * @note 对非随机访问容器效果不佳，这并非设计缺陷。
      */
     template <class T>

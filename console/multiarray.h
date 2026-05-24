@@ -136,12 +136,12 @@ namespace console
          * @brief 带边界检查的下标访问（一维）。
          * @param i 索引。
          * @return T& 元素引用。
-         * @throw multiarray_error 若索引越界。
+         * @throw MultiArrayError 若索引越界。
          */
         reference operator()(size_t i)
         {
             if (i >= D)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(i) +
                     " out of range [0, " +
@@ -154,7 +154,7 @@ namespace console
         const_reference operator()(size_t i) const
         {
             if (i >= D)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(i) +
                     " out of range [0, " +
@@ -302,12 +302,12 @@ namespace console
          * @brief 单下标访问，返回子数组引用。
          * @param idx 第一维索引。
          * @return reference 子数组引用。
-         * @throw multiarray_error 若索引越界。
+         * @throw MultiArrayError 若索引越界。
          */
         reference operator()(size_t idx)
         {
             if (idx >= First)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(idx) +
                     " out of range [0, " +
@@ -320,7 +320,7 @@ namespace console
         const_reference operator()(size_t idx) const
         {
             if (idx >= First)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(idx) +
                     " out of range [0, " +
@@ -343,7 +343,7 @@ namespace console
             static_assert(sizeof...(Indices) < rank(),
                           "Too Many Arguments!");
             if (idx >= First)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(idx) +
                     " out of range [0, " +
@@ -360,7 +360,7 @@ namespace console
             static_assert(sizeof...(Indices) < rank(),
                           "Too Many Arguments!");
             if (idx >= First)
-                throw multiarray_error(
+                throw MultiArrayError(
                     "index " +
                     std::to_string(idx) +
                     " out of range [0, " +

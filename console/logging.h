@@ -46,7 +46,7 @@ namespace console
      * @class Logging
      * @brief 日志记录器，支持多级别、颜色输出和自动时间戳。
      * @details 使用 Output 类进行格式化输出，可设置最低日志级别或单独控制每个级别的开关。
-     *          FATAL 级别会抛出 fatal_logging 异常。
+     *          FATAL 级别会抛出 FatalLogging 异常。
      */
     class Logging
     {
@@ -193,10 +193,10 @@ namespace console
         }
 
         /**
-         * @brief 输出 FATAL 级别日志并抛出 fatal_logging 异常。
+         * @brief 输出 FATAL 级别日志并抛出 FatalLogging 异常。
          * @tparam Args 可变参数类型。
          * @param args 要输出的内容。
-         * @throw fatal_logging 异常，异常消息包含日志内容。
+         * @throw FatalLogging 异常，异常消息包含日志内容。
          */
         template <class... Args>
         void fatal(const Args &...args)
@@ -211,7 +211,7 @@ namespace console
                 else
                     output('[', datetime(), "] [FATAL] - ", error_info);
             }
-            throw fatal_logging("Fatal Error: " + error_info);
+            throw FatalLogging("Fatal Error: " + error_info);
         }
     } logger(std::clog, true, Logging::Level::INFO); ///< 全局默认 logger 实例，启用颜色，级别 INFO。
 }
