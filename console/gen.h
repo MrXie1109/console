@@ -35,6 +35,8 @@ SOFTWARE.
 #include <iterator>
 #include <cstdlib>
 #include <cmath>
+#include <type_traits>
+#include <vector>
 #include "csexc.h"
 
 namespace console
@@ -459,7 +461,7 @@ namespace console
         {
             Gen gen;
             Pred pred;
-            mutable bool started = false;
+            bool started = false;
 
             /**
              * @brief 跳过所有不满足谓词的元素。
@@ -1003,40 +1005,70 @@ namespace console
 
         /**
          * @brief 容器收集适配器。
-         * @tparam Container 目标容器类型。
+         * @tparam Container 目标容器类型，默认为void。
          * @details 将范围中的元素收集到指定容器中。
+         *          当Container为void时，自动使用std::vector作为目标容器。
          */
-        template <class Container>
+        template <class Container = void>
         class collect
         {
-        public:
+        private:
             /**
-             * @brief 管道操作符，将范围元素拷贝到容器中。
+             * @brief 非void版本的实现，将范围元素拷贝到指定容器。
+             * @tparam Range 范围类型。
+             * @tparam C 容器类型。
+             * @param r 输入范围。
+             * @return C 包含收集到的元素的容器。
+             */
+            template <class Range, class C>
+            static C impl(Range r, std::false_type)
+            {
+                return C(r.begin(), r.end());
+            }
+
+            /**
+             * @brief void版本的实现，将范围元素拷贝到std::vector。
              * @tparam Range 范围类型。
              * @param r 输入范围。
-             * @return Container 包含收集到的元素的容器。
+             * @return std::vector<typename Range::value_type> 包含收集到的元素的vector。
+             */
+            template <class Range, class>
+            static std::vector<typename Range::value_type> impl(Range r, std::true_type)
+            {
+                return {r.begin(), r.end()};
+            }
+
+        public:
+            /**
+             * @brief 管道操作符，将范围元素收集到容器中。
+             * @tparam Range 范围类型。
+             * @param r 输入范围。
+             * @return Container或std::vector 包含收集到的元素的容器。
              */
             template <class Range>
-            friend Container operator|(Range r, collect<Container>)
+            friend auto operator|(Range r, collect<Container>)
+                -> decltype(collect<Container>::template impl<Range, Container>(
+                    r, std::is_same<Container, void>{}))
             {
-                return Container(r.begin(), r.end());
+                return collect<Container>::template impl<Range, Container>(
+                    r, std::is_same<Container, void>{});
             }
         };
-    }
 
-    /**
-     * @brief 按位与操作符重载，用于压缩两个生成器。
-     * @tparam Gen1 第一个生成器类型。
-     * @tparam Gen2 第二个生成器类型。
-     * @param g1 第一个生成器。
-     * @param g2 第二个生成器。
-     * @return Zip<Gen1, Gen2> 压缩生成器。
-     */
-    template <class Gen1, class Gen2>
-    auto operator&(Gen1 &&g1, Gen2 &&g2)
-        -> decltype(gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2)))
-    {
-        return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
+        /**
+         * @brief 按位与操作符重载，用于压缩两个生成器。
+         * @tparam Gen1 第一个生成器类型。
+         * @tparam Gen2 第二个生成器类型。
+         * @param g1 第一个生成器。
+         * @param g2 第二个生成器。
+         * @return Zip<Gen1, Gen2> 压缩生成器。
+         */
+        template <class Gen1, class Gen2>
+        auto operator&(Gen1 &&g1, Gen2 &&g2)
+            -> decltype(gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2)))
+        {
+            return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
+        }
     }
 
     namespace ops
@@ -1688,7 +1720,7 @@ namespace console
         /**
          * @brief 恒等变换器。
          */
-        struct identity
+        struct identity_t
         {
             /**
              * @brief 返回输入值本身。
@@ -1700,7 +1732,7 @@ namespace console
             {
                 return x;
             }
-        };
+        } identity;
 
         /**
          * @brief 转型变化器。

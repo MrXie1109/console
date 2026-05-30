@@ -105,7 +105,7 @@ SOFTWARE.)";
      */
     inline std::string version()
     {
-        return "console version 5.1.0 (2026-05-29) -- \"gen::views(vec) | gen::filter(ops::even) | gen::map(ops::sqrt) | gen::take(10)\"";
+        return "console version 5.1.1 (2026-05-29) -- \"Better.\"";
     }
 
     /**
