@@ -99,6 +99,17 @@ namespace console
     }
 
     /**
+     * @brief 生成一个服从伯努利分布（Bernoulli Distribution）的随机布尔值。
+     * @param p 生成 true 的概率，默认为 0.5。
+     * @param gen 使用的随机数引擎，默认为 default_gen()。
+     * @return bool 服从伯努利分布的随机布尔值。
+     */
+    bool randbool(double p = 0.5, std::mt19937 &gen = default_gen())
+    {
+        return std::bernoulli_distribution(p)(gen);
+    }
+
+    /**
      * @brief 从容器中随机选择一个元素（左值版本，返回引用）。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器以及 size() 方法。
      * @param c 要从中选择的容器（左值）。
