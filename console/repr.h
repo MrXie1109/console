@@ -118,7 +118,7 @@ namespace console
         std::is_same<typename std::decay<T>::type, std::nullptr_t>::value>::type
     repr(T &&, std::ostream &os = std::cout)
     {
-        os << "nullptr";
+        os << "<nullptr>";
     }
 
     /**
@@ -134,7 +134,7 @@ namespace console
         if (f)
             os << "<function at " << (void *)f << '>';
         else
-            os << "nullptr";
+            os << "<nullptr>";
     }
 
     /**
@@ -146,6 +146,7 @@ namespace console
     template <class T>
     typename std::enable_if<
         !std::is_same<typename std::decay<T>::type, bool>::value &&
+        !std::is_same<typename std::decay<T>::type, std::nullptr_t>::value &&
         !is_string<typename std::decay<T>::type>::value &&
         !is_char<typename std::decay<T>::type>::value &&
         !std::is_function<typename std::decay<T>::type>::value &&
@@ -156,7 +157,7 @@ namespace console
     }
 
     /**
-     * @brief 输出不可打印类型的表示，格式为 "<类型名 object at 地址>"。
+     * @brief 输出不可打印类型的表示，格式为 "<'类型名' object at 地址>"。
      * @tparam T 类型条件：不是 nullptr，不是字符串，不是字符，且 is_printable<T>::value 为 false。
      * @param value 要输出的对象。
      * @param os 输出流。
@@ -169,12 +170,18 @@ namespace console
         !is_printable<typename std::decay<T>::type>::value>::type
     repr(T &&value, std::ostream &os = std::cout)
     {
-        os << '<'
-           << tiname(typeid(typename std::decay<T>::type))
-           << " object at "
+        os << "<'" << tiname(typeid(typename std::decay<T>::type))
+           << "' object at "
            << &value
            << '>';
     }
+
+    template <class T>
+    void repr(std::reference_wrapper<T> v, std::ostream &os = std::cout)
+    {
+        repr(v.get(), os);
+    }
+
 #else
     template <class T>
     void repr(T &&value, std::ostream &os = std::cout)

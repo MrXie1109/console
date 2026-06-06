@@ -54,7 +54,7 @@ namespace console
          */
         class iterator
         {
-            Derived &d;
+            Derived d;
 
         public:
             using value_type = T;
@@ -67,7 +67,7 @@ namespace console
              * @brief 构造函数，使用派生类引用初始化迭代器。
              * @param d 派生类对象的引用。
              */
-            iterator(Derived &d) : d(d) {}
+            iterator(const Derived &d) : d(d) {}
 
             /**
              * @brief 解引用操作符，获取当前值。

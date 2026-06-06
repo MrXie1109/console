@@ -1,7 +1,7 @@
 /**
- * @file all.h
- * @brief 一键式包含头文件。
- * @details 本文件包含了整个库的所有核心模块，方便用户快速引入。
+ * @file put.h
+ * @brief 提供在 output.h 中用于输出单个值的 put 函数。
+ * @details
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -30,48 +30,39 @@ SOFTWARE.
 */
 
 #pragma once
-#include "std.h"
-#include "output.h"
-#include "input.h"
-#include "time.h"
-#include "random.h"
-#include "strpp.h"
-#include "colorful.h"
-#include "logging.h"
-#include "progress.h"
-#include "csexc.h"
-#include "file.h"
-#include "box.h"
-#include "multiarray.h"
-#include "cursor_ptr.h"
-#include "literals.h"
-#include "view.h"
-#include "compre.h"
-#include "sfinae.h"
-#include "re.h"
-#include "info.h"
 #include "repr.h"
-#include "outfwd.h"
-#include "maybe.h"
-#include "matools.h"
-#include "iter.h"
-#include "rational.h"
-#include "screen.h"
-#include "kb.h" // windows.h
-#include "adapter.h"
-#include "syscmd.h"
-#include "config.h"
-#include "crypto.h"
-#include "gen.h"
-#include "put.h"
 
-// #include "win/melody.h"
-
-/**
- * @namespace console
- * @brief 本库所有组件所在的顶层命名空间。
- */
 namespace console
 {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-06-06-MRXIE1109";
+    /**
+     * @brief 如果是字符和串或字符，直接输出，不含引号。
+     * @tparam StrOrCharType
+     * @param os 输出流。
+     * @param value 要输出的值。
+     * @note 直接输出。
+     */
+    template <class StrOrCharType>
+    typename std::enable_if<
+        is_string<typename std::decay<StrOrCharType>::type>::value ||
+        is_char<typename std::decay<StrOrCharType>::type>::value>::type
+    put(std::ostream &os, StrOrCharType &&value)
+    {
+        os << value;
+    }
+
+    /**
+     * @brief 否则，调用 repr 格式化。
+     * @tparam OtherType
+     * @param os 输出流。
+     * @param value 要输出的值。
+     * @note 调用 repr(value, os)。
+     */
+    template <class OtherType>
+    typename std::enable_if<
+        !is_string<typename std::decay<OtherType>::type>::value &&
+        !is_char<typename std::decay<OtherType>::type>::value>::type
+    put(std::ostream &os, OtherType &&value)
+    {
+        repr(value, os);
+    }
 }

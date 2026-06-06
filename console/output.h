@@ -34,7 +34,7 @@ SOFTWARE.
 #pragma once
 #include <cstddef>
 #include <iterator>
-#include "repr.h"
+#include "put.h"
 
 namespace console
 {
@@ -58,11 +58,11 @@ namespace console
             return os << "[]";
         auto it = begin(cont);
         os << '[';
-        repr(*it, os);
+        put(os, *it);
         while (++it != end(cont))
         {
             os << ", ";
-            repr(*it, os);
+            put(os, *it);
         }
         return os << ']';
     }
@@ -81,11 +81,11 @@ namespace console
             return os << "{}";
         auto it = begin(cont);
         os << '{';
-        repr(*it, os);
+        put(os, *it);
         while (++it != end(cont))
         {
             os << ", ";
-            repr(*it, os);
+            put(os, *it);
         }
         return os << '}';
     }
@@ -104,15 +104,15 @@ namespace console
             return os << "{}";
         auto it = begin(cont);
         os << '{';
-        repr(it->first, os);
+        put(os, it->first);
         os << ": ";
-        repr(it->second, os);
+        put(os, it->second);
         while (++it != end(cont))
         {
             os << ", ";
-            repr(it->first, os);
+            put(os, it->first);
             os << ": ";
-            repr(it->second, os);
+            put(os, it->second);
         }
         return os << '}';
     }
@@ -143,7 +143,7 @@ namespace console
             TuplePrinter<Tuple, N - 1>::print(os, t);
             if (N > 1)
                 os << ", ";
-            repr(std::get<N - 1>(t), os);
+            put(os, std::get<N - 1>(t));
         }
     };
 
@@ -155,7 +155,7 @@ namespace console
     {
         static void print(std::ostream &os, const Tuple &t)
         {
-            repr(std::get<0>(t), os);
+            put(os, std::get<0>(t));
         }
     };
 
@@ -291,9 +291,9 @@ namespace console
     std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &p)
     {
         os << '(';
-        repr(p.first, os);
+        put(os, p.first);
         os << ", ";
-        repr(p.second, os);
+        put(os, p.second);
         return os << ')';
     }
 
@@ -411,7 +411,7 @@ namespace console
         template <class T>
         Output &operator()(const T &t)
         {
-            os << t;
+            put(os, t);
             return operator()();
         }
 
@@ -426,7 +426,8 @@ namespace console
         template <class T, class... Args>
         Output &operator()(const T &t, const Args &...args)
         {
-            os << t << sep;
+            put(os, t);
+            os << sep;
             return operator()(args...);
         }
     } print; ///< 全局输出对象，模仿 Python 的 print 函数。

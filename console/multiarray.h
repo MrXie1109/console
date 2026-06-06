@@ -193,7 +193,7 @@ namespace console
 
         /**
          * @brief 扁平化视图（可变）。
-         * @note 这并非不安全，可以自行思考。
+         * @note 其实就是它自己。
          */
         MultiArray &flatten()
         {
@@ -202,7 +202,7 @@ namespace console
 
         /**
          * @brief 扁平化视图（常量）。
-         * @note 这并非不安全，可以自行思考。
+         * @note 其实就是它自己。
          */
         const MultiArray &flatten() const
         {
@@ -401,7 +401,7 @@ namespace console
          */
         MultiArray<T, fsize()> &flatten()
         {
-            return *(MultiArray<T, fsize()> *)this;
+            return reinterpret_cast<MultiArray<T, fsize()> &>(*this);
         }
 
         /**
@@ -410,7 +410,8 @@ namespace console
          */
         const MultiArray<T, fsize()> &flatten() const
         {
-            return *(const MultiArray<T, fsize()> *)this;
+
+            return reinterpret_cast<const MultiArray<T, fsize()> &>(*this);
         }
 
         /**
@@ -1656,7 +1657,7 @@ namespace console
         static_assert(MultiArray<VarType, OutArrDims...>::fsize() ==
                           MultiArray<VarType, InArrDims...>::fsize(),
                       "Bad inplace_multiarray_cast: Mismatch Size");
-        auto p = (MultiArray<VarType, OutArrDims...> *)&inputArr;
+        auto p = reinterpret_cast<MultiArray<VarType, OutArrDims...> &>(inputArr);
         return *p;
     }
 
@@ -1676,7 +1677,7 @@ namespace console
         static_assert(MultiArray<VarType, OutArrDims...>::fsize() ==
                           MultiArray<VarType, InArrDims...>::fsize(),
                       "Bad inplace_multiarray_cast: Mismatch Size");
-        auto p = (const MultiArray<VarType, OutArrDims...> *)&inputArr;
+        auto p = reinterpret_cast<const MultiArray<VarType, OutArrDims...> &>(inputArr);
         return *p;
     }
 
