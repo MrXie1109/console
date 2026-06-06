@@ -64,6 +64,7 @@ SOFTWARE.
 #include "crypto.h"
 #include "gen.h"
 #include "put.h"
+#include "pool.h"
 
 // #include "win/melody.h"
 

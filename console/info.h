@@ -105,7 +105,7 @@ SOFTWARE.)";
      */
     inline std::string version()
     {
-        return "console version 5.2.0 (2026-06-06) -- \"I Love You.\"";
+        return "console version 5.3.0 (2026-06-06) -- \"Thread Together.\"";
     }
 
     /**
