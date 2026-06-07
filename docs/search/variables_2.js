@@ -22,5 +22,6 @@ var searchData=
   ['cs7_19',['Cs7',['../namespaceconsole_1_1pitches.html#a02ec26edec3ce53dbf5a245cec6c70ba',1,'console::pitches']]],
   ['cs8_20',['Cs8',['../namespaceconsole_1_1pitches.html#a6d04b51a13c36c9a0295b5318e63fc9c',1,'console::pitches']]],
   ['cs9_21',['Cs9',['../namespaceconsole_1_1pitches.html#a6e63a95b36bef33e9c63a6e030377c3e',1,'console::pitches']]],
-  ['cyan_22',['Cyan',['../namespaceconsole_1_1color.html#ab1dac334f0acb0e2d5351f00c7ec140e',1,'console::color']]]
+  ['cube_22',['cube',['../namespaceconsole_1_1ops.html#a581496f7ecd891c5f08700202b103657',1,'console::ops']]],
+  ['cyan_23',['Cyan',['../namespaceconsole_1_1color.html#ab1dac334f0acb0e2d5351f00c7ec140e',1,'console::color']]]
 ];

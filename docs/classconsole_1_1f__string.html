@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>格式化字符串类，支持使用 <code>%</code> 运算符进行占位符 <code>{}</code> 替换。 </p>
-<p>继承自 std::string，通过 <code>operator%</code> 将第一个 <code>{}</code> 替换为参数的字符串表示。 若字符串中不包含 <code>{}</code> 则抛出 <a class="el" href="classconsole_1_1bad__format.html" title="表示格式化字符串错误，例如占位符与参数不匹配。">bad_format</a> 异常。</p>
+<p>继承自 std::string，通过 <code>operator%</code> 将第一个 <code>{}</code> 替换为参数的字符串表示。 若字符串中不包含 <code>{}</code> 则抛出 bad_format 异常。</p>
 <p>使用示例： </p><div class="fragment"><div class="line"><a class="code hl_class" href="classconsole_1_1f__string.html">f_string</a> fmt = <span class="stringliteral">&quot;Hello, {}!&quot;</span>_f;</div>
 <div class="line">std::string result = fmt % <span class="stringliteral">&quot;world&quot;</span>;  <span class="comment">// &quot;Hello, world!&quot;</span></div>
 <div class="ttc" id="aclassconsole_1_1f__string_html"><div class="ttname"><a href="classconsole_1_1f__string.html">console::f_string</a></div><div class="ttdoc">格式化字符串类，支持使用 % 运算符进行占位符 {} 替换。</div><div class="ttdef"><b>Definition</b> strpp.h:316</div></div>
@@ -148,7 +148,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1f__string.html" title="格式化字符串类，支持使用 % 运算符进行占位符 {} 替换。">f_string</a> 替换后的新 <a class="el" href="classconsole_1_1f__string.html" title="格式化字符串类，支持使用 % 运算符进行占位符 {} 替换。">f_string</a> 对象。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1bad__format.html" title="表示格式化字符串错误，例如占位符与参数不匹配。">bad_format</a></td><td>若当前字符串中不包含 <code>{}</code>。 </td></tr>
+    <tr><td class="paramname">bad_format</td><td>若当前字符串中不包含 <code>{}</code>。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -161,7 +161,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

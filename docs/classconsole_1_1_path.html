@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -160,7 +160,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>文件路径封装类，提供便捷的文件读写和路径操作。 </p>
-<p>在 Windows 平台上自动将 '/' 转换为 '\'，支持路径拼接运算符 /。 所有文件读写操作均会抛出 <a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a> 异常（若文件无法打开或流状态异常）。 </p>
+<p>在 Windows 平台上自动将 '/' 转换为 '\'，支持路径拼接运算符 /。 所有文件读写操作均会抛出 <a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a> 异常（若文件无法打开或流状态异常）。 </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8f9b133243693c26250798c23c3ec9ca" name="a8f9b133243693c26250798c23c3ec9ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f9b133243693c26250798c23c3ec9ca">&#9670;&#160;</a></span>Bytes</h2>
@@ -298,7 +298,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Bytes 无符号字节向量。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或读取过程中流状态出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或读取过程中流状态出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -332,7 +332,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; 各行内容（不包含换行符）。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或读取过程中出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或读取过程中出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -374,7 +374,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>T 读取到的对象。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或读取失败。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或读取失败。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -409,7 +409,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>std::string 文件内容。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或读取过程中流状态出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或读取过程中流状态出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -565,7 +565,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>T 读取到的对象。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或读取失败。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或读取失败。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -614,7 +614,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -655,7 +655,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或写入过程中流状态出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或写入过程中流状态出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -695,7 +695,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -744,7 +744,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或写入过程中出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -785,7 +785,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1file__error.html" title="表示文件操作错误，如打开失败、读取失败等。">file_error</a></td><td>若文件无法打开或写入过程中流状态出错。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_file_error.html" title="表示文件操作错误，如打开失败、读取失败等。">FileError</a></td><td>若文件无法打开或写入过程中流状态出错。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -846,7 +846,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

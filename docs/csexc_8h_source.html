@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -112,127 +112,153 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classconsole_1_1console__error.html">   43</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a> : <span class="keyword">public</span> std::runtime_error</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classconsole_1_1_console_error.html">   43</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a> : <span class="keyword">public</span> std::runtime_error</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classconsole_1_1console__error.html#a2b5facfab2a8ee3ac6a6e3117117e448">   50</a></span>        <a class="code hl_function" href="classconsole_1_1console__error.html#a2b5facfab2a8ee3ac6a6e3117117e448">console_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classconsole_1_1_console_error.html#a8dfe63570956697c16e00f83251462ee">   50</a></span>        <a class="code hl_function" href="classconsole_1_1_console_error.html#a8dfe63570956697c16e00f83251462ee">ConsoleError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            : std::runtime_error(msg) {}</div>
 </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
 </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classconsole_1_1fatal__logging.html">   58</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1fatal__logging.html">fatal_logging</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classconsole_1_1_fatal_logging.html">   58</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_fatal_logging.html">FatalLogging</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classconsole_1_1fatal__logging.html#a6d6181fb610a44a0779092c095e310db">   65</a></span>        <a class="code hl_function" href="classconsole_1_1fatal__logging.html#a6d6181fb610a44a0779092c095e310db">fatal_logging</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classconsole_1_1_fatal_logging.html#a6d341406d814281a9632a9362c6540bc">   65</a></span>        <a class="code hl_function" href="classconsole_1_1_fatal_logging.html#a6d341406d814281a9632a9362c6540bc">FatalLogging</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    };</div>
 </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classconsole_1_1bad__format.html">   73</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1bad__format.html">bad_format</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classconsole_1_1_bad_format.html">   73</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_bad_format.html">BadFormat</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classconsole_1_1bad__format.html#a15cfdafd0e68054d2f6f7e160805e71d">   80</a></span>        <a class="code hl_function" href="classconsole_1_1bad__format.html#a15cfdafd0e68054d2f6f7e160805e71d">bad_format</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classconsole_1_1_bad_format.html#a87553a67b9f746d176ef16835a9984b8">   80</a></span>        <a class="code hl_function" href="classconsole_1_1_bad_format.html#a87553a67b9f746d176ef16835a9984b8">BadFormat</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    };</div>
 </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="foldopen" id="foldopen00088" data-start="{" data-end="};">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classconsole_1_1file__error.html">   88</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1file__error.html">file_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classconsole_1_1_file_error.html">   88</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_file_error.html">FileError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classconsole_1_1file__error.html#aa8f416a833e231b0a41542b139525261">   95</a></span>        <a class="code hl_function" href="classconsole_1_1file__error.html#aa8f416a833e231b0a41542b139525261">file_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classconsole_1_1_file_error.html#a5d3586bd774b22d6dffef0d10c25f93c">   95</a></span>        <a class="code hl_function" href="classconsole_1_1_file_error.html#a5d3586bd774b22d6dffef0d10c25f93c">FileError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    };</div>
 </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classconsole_1_1type__error.html">  105</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1type__error.html">type_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classconsole_1_1_type_error.html">  105</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_type_error.html">TypeError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classconsole_1_1type__error.html#a1b71667623fb8c35c6b4b43cca842d59">  112</a></span>        <a class="code hl_function" href="classconsole_1_1type__error.html#a1b71667623fb8c35c6b4b43cca842d59">type_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classconsole_1_1_type_error.html#ac3ebc81092b2961c6078db9c59c87bb4">  112</a></span>        <a class="code hl_function" href="classconsole_1_1_type_error.html#ac3ebc81092b2961c6078db9c59c87bb4">TypeError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    };</div>
 </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="foldopen" id="foldopen00120" data-start="{" data-end="};">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classconsole_1_1multiarray__error.html">  120</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1multiarray__error.html">multiarray_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classconsole_1_1_multi_array_error.html">  120</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_multi_array_error.html">MultiArrayError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classconsole_1_1multiarray__error.html#ae820ce5bd823b81edf83525bac4106d3">  127</a></span>        <a class="code hl_function" href="classconsole_1_1multiarray__error.html#ae820ce5bd823b81edf83525bac4106d3">multiarray_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classconsole_1_1_multi_array_error.html#a18dac292aa69178c7d3e95de54fe68cb">  127</a></span>        <a class="code hl_function" href="classconsole_1_1_multi_array_error.html#a18dac292aa69178c7d3e95de54fe68cb">MultiArrayError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    };</div>
 </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="foldopen" id="foldopen00135" data-start="{" data-end="};">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classconsole_1_1container__error.html">  135</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1container__error.html">container_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classconsole_1_1_container_error.html">  135</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_container_error.html">ContainerError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classconsole_1_1container__error.html#a2229cf7e0b51cb8dfb47a444118cd29c">  142</a></span>        <a class="code hl_function" href="classconsole_1_1container__error.html#a2229cf7e0b51cb8dfb47a444118cd29c">container_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classconsole_1_1_container_error.html#a4c230b53c1e3e27caf12cce01c295fcf">  142</a></span>        <a class="code hl_function" href="classconsole_1_1_container_error.html#a4c230b53c1e3e27caf12cce01c295fcf">ContainerError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    };</div>
 </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="foldopen" id="foldopen00150" data-start="{" data-end="};">
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classconsole_1_1index__error.html">  150</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1index__error.html">index_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classconsole_1_1_index_error.html">  150</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_index_error.html">IndexError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classconsole_1_1index__error.html#ad5146afa263e403fb9738b21f9449d9b">  157</a></span>        <a class="code hl_function" href="classconsole_1_1index__error.html#ad5146afa263e403fb9738b21f9449d9b">index_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classconsole_1_1_index_error.html#ad28503e7f02bcbbf74a81b0c5546c9a0">  157</a></span>        <a class="code hl_function" href="classconsole_1_1_index_error.html#ad28503e7f02bcbbf74a81b0c5546c9a0">IndexError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    };</div>
 </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="foldopen" id="foldopen00166" data-start="{" data-end="};">
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classconsole_1_1domain__error.html">  166</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1domain__error.html">domain_error</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classconsole_1_1_domain_error.html">  166</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_domain_error.html">DomainError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classconsole_1_1domain__error.html#a23c1fcbe5db6a0bb83c0158a70ad5eaa">  173</a></span>        <a class="code hl_function" href="classconsole_1_1domain__error.html#a23c1fcbe5db6a0bb83c0158a70ad5eaa">domain_error</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            : <a class="code hl_class" href="classconsole_1_1console__error.html">console_error</a>(msg) {}</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classconsole_1_1_domain_error.html#a0cac78d2de153133b2693f24eb13a2ab">  173</a></span>        <a class="code hl_function" href="classconsole_1_1_domain_error.html#a0cac78d2de153133b2693f24eb13a2ab">DomainError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
 </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    };</div>
 </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
-<div class="ttc" id="aclassconsole_1_1bad__format_html"><div class="ttname"><a href="classconsole_1_1bad__format.html">console::bad_format</a></div><div class="ttdoc">表示格式化字符串错误，例如占位符与参数不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:74</div></div>
-<div class="ttc" id="aclassconsole_1_1bad__format_html_a15cfdafd0e68054d2f6f7e160805e71d"><div class="ttname"><a href="classconsole_1_1bad__format.html#a15cfdafd0e68054d2f6f7e160805e71d">console::bad_format::bad_format</a></div><div class="ttdeci">bad_format(const std::string &amp;msg)</div><div class="ttdoc">构造 bad_format。</div><div class="ttdef"><b>Definition</b> csexc.h:80</div></div>
-<div class="ttc" id="aclassconsole_1_1console__error_html"><div class="ttname"><a href="classconsole_1_1console__error.html">console::console_error</a></div><div class="ttdoc">console 库所有异常的基类。</div><div class="ttdef"><b>Definition</b> csexc.h:44</div></div>
-<div class="ttc" id="aclassconsole_1_1console__error_html_a2b5facfab2a8ee3ac6a6e3117117e448"><div class="ttname"><a href="classconsole_1_1console__error.html#a2b5facfab2a8ee3ac6a6e3117117e448">console::console_error::console_error</a></div><div class="ttdeci">console_error(const std::string &amp;msg)</div><div class="ttdoc">构造 console_error。</div><div class="ttdef"><b>Definition</b> csexc.h:50</div></div>
-<div class="ttc" id="aclassconsole_1_1container__error_html"><div class="ttname"><a href="classconsole_1_1container__error.html">console::container_error</a></div><div class="ttdoc">表示通用容器操作错误。</div><div class="ttdef"><b>Definition</b> csexc.h:136</div></div>
-<div class="ttc" id="aclassconsole_1_1container__error_html_a2229cf7e0b51cb8dfb47a444118cd29c"><div class="ttname"><a href="classconsole_1_1container__error.html#a2229cf7e0b51cb8dfb47a444118cd29c">console::container_error::container_error</a></div><div class="ttdeci">container_error(const std::string &amp;msg)</div><div class="ttdoc">构造 container_error。</div><div class="ttdef"><b>Definition</b> csexc.h:142</div></div>
-<div class="ttc" id="aclassconsole_1_1domain__error_html"><div class="ttname"><a href="classconsole_1_1domain__error.html">console::domain_error</a></div><div class="ttdoc">表示试图对无效的数学值域进行操作时抛出的异常。</div><div class="ttdef"><b>Definition</b> csexc.h:167</div></div>
-<div class="ttc" id="aclassconsole_1_1domain__error_html_a23c1fcbe5db6a0bb83c0158a70ad5eaa"><div class="ttname"><a href="classconsole_1_1domain__error.html#a23c1fcbe5db6a0bb83c0158a70ad5eaa">console::domain_error::domain_error</a></div><div class="ttdeci">domain_error(const std::string &amp;msg)</div><div class="ttdoc">构造 domain_error。</div><div class="ttdef"><b>Definition</b> csexc.h:173</div></div>
-<div class="ttc" id="aclassconsole_1_1fatal__logging_html"><div class="ttname"><a href="classconsole_1_1fatal__logging.html">console::fatal_logging</a></div><div class="ttdoc">表示致命日志错误，通常会导致程序终止。</div><div class="ttdef"><b>Definition</b> csexc.h:59</div></div>
-<div class="ttc" id="aclassconsole_1_1fatal__logging_html_a6d6181fb610a44a0779092c095e310db"><div class="ttname"><a href="classconsole_1_1fatal__logging.html#a6d6181fb610a44a0779092c095e310db">console::fatal_logging::fatal_logging</a></div><div class="ttdeci">fatal_logging(const std::string &amp;msg)</div><div class="ttdoc">构造 fatal_logging。</div><div class="ttdef"><b>Definition</b> csexc.h:65</div></div>
-<div class="ttc" id="aclassconsole_1_1file__error_html"><div class="ttname"><a href="classconsole_1_1file__error.html">console::file_error</a></div><div class="ttdoc">表示文件操作错误，如打开失败、读取失败等。</div><div class="ttdef"><b>Definition</b> csexc.h:89</div></div>
-<div class="ttc" id="aclassconsole_1_1file__error_html_aa8f416a833e231b0a41542b139525261"><div class="ttname"><a href="classconsole_1_1file__error.html#aa8f416a833e231b0a41542b139525261">console::file_error::file_error</a></div><div class="ttdeci">file_error(const std::string &amp;msg)</div><div class="ttdoc">构造 file_error。</div><div class="ttdef"><b>Definition</b> csexc.h:95</div></div>
-<div class="ttc" id="aclassconsole_1_1index__error_html"><div class="ttname"><a href="classconsole_1_1index__error.html">console::index_error</a></div><div class="ttdoc">表示索引越界错误。</div><div class="ttdef"><b>Definition</b> csexc.h:151</div></div>
-<div class="ttc" id="aclassconsole_1_1index__error_html_ad5146afa263e403fb9738b21f9449d9b"><div class="ttname"><a href="classconsole_1_1index__error.html#ad5146afa263e403fb9738b21f9449d9b">console::index_error::index_error</a></div><div class="ttdeci">index_error(const std::string &amp;msg)</div><div class="ttdoc">构造 index_error。</div><div class="ttdef"><b>Definition</b> csexc.h:157</div></div>
-<div class="ttc" id="aclassconsole_1_1multiarray__error_html"><div class="ttname"><a href="classconsole_1_1multiarray__error.html">console::multiarray_error</a></div><div class="ttdoc">表示 MultiArray 多维数组操作中的错误，如维度不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:121</div></div>
-<div class="ttc" id="aclassconsole_1_1multiarray__error_html_ae820ce5bd823b81edf83525bac4106d3"><div class="ttname"><a href="classconsole_1_1multiarray__error.html#ae820ce5bd823b81edf83525bac4106d3">console::multiarray_error::multiarray_error</a></div><div class="ttdeci">multiarray_error(const std::string &amp;msg)</div><div class="ttdoc">构造 multiarray_error。</div><div class="ttdef"><b>Definition</b> csexc.h:127</div></div>
-<div class="ttc" id="aclassconsole_1_1type__error_html"><div class="ttname"><a href="classconsole_1_1type__error.html">console::type_error</a></div><div class="ttdoc">表示类型错误，例如访问 Maybe 中不存在的值或 Box 中类型不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:106</div></div>
-<div class="ttc" id="aclassconsole_1_1type__error_html_a1b71667623fb8c35c6b4b43cca842d59"><div class="ttname"><a href="classconsole_1_1type__error.html#a1b71667623fb8c35c6b4b43cca842d59">console::type_error::type_error</a></div><div class="ttdeci">type_error(const std::string &amp;msg)</div><div class="ttdoc">构造 type_error。</div><div class="ttdef"><b>Definition</b> csexc.h:112</div></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="};">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classconsole_1_1_stop_iteration.html">  181</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_stop_iteration.html">StopIteration</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classconsole_1_1_stop_iteration.html#a64666131ba11b15b59004f298f1b5558">  188</a></span>        <a class="code hl_function" href="classconsole_1_1_stop_iteration.html#a64666131ba11b15b59004f298f1b5558">StopIteration</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    };</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="};">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_error.html">  196</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_thread_pool_error.html">ThreadPoolError</a> : <span class="keyword">public</span> <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_error.html#a9c4ec14c43c0c21fe2834ef106195a08">  203</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool_error.html#a9c4ec14c43c0c21fe2834ef106195a08">ThreadPoolError</a>(<span class="keyword">const</span> std::string &amp;msg)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            : <a class="code hl_class" href="classconsole_1_1_console_error.html">ConsoleError</a>(msg) {}</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    };</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>}</div>
+<div class="ttc" id="aclassconsole_1_1_bad_format_html"><div class="ttname"><a href="classconsole_1_1_bad_format.html">console::BadFormat</a></div><div class="ttdoc">表示格式化字符串错误，例如占位符与参数不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:74</div></div>
+<div class="ttc" id="aclassconsole_1_1_bad_format_html_a87553a67b9f746d176ef16835a9984b8"><div class="ttname"><a href="classconsole_1_1_bad_format.html#a87553a67b9f746d176ef16835a9984b8">console::BadFormat::BadFormat</a></div><div class="ttdeci">BadFormat(const std::string &amp;msg)</div><div class="ttdoc">构造 BadFormat。</div><div class="ttdef"><b>Definition</b> csexc.h:80</div></div>
+<div class="ttc" id="aclassconsole_1_1_console_error_html"><div class="ttname"><a href="classconsole_1_1_console_error.html">console::ConsoleError</a></div><div class="ttdoc">console 库所有异常的基类。</div><div class="ttdef"><b>Definition</b> csexc.h:44</div></div>
+<div class="ttc" id="aclassconsole_1_1_console_error_html_a8dfe63570956697c16e00f83251462ee"><div class="ttname"><a href="classconsole_1_1_console_error.html#a8dfe63570956697c16e00f83251462ee">console::ConsoleError::ConsoleError</a></div><div class="ttdeci">ConsoleError(const std::string &amp;msg)</div><div class="ttdoc">构造 ConsoleError。</div><div class="ttdef"><b>Definition</b> csexc.h:50</div></div>
+<div class="ttc" id="aclassconsole_1_1_container_error_html"><div class="ttname"><a href="classconsole_1_1_container_error.html">console::ContainerError</a></div><div class="ttdoc">表示通用容器操作错误。</div><div class="ttdef"><b>Definition</b> csexc.h:136</div></div>
+<div class="ttc" id="aclassconsole_1_1_container_error_html_a4c230b53c1e3e27caf12cce01c295fcf"><div class="ttname"><a href="classconsole_1_1_container_error.html#a4c230b53c1e3e27caf12cce01c295fcf">console::ContainerError::ContainerError</a></div><div class="ttdeci">ContainerError(const std::string &amp;msg)</div><div class="ttdoc">构造 ContainerError。</div><div class="ttdef"><b>Definition</b> csexc.h:142</div></div>
+<div class="ttc" id="aclassconsole_1_1_domain_error_html"><div class="ttname"><a href="classconsole_1_1_domain_error.html">console::DomainError</a></div><div class="ttdoc">表示试图对无效的数学值域进行操作时抛出的异常。</div><div class="ttdef"><b>Definition</b> csexc.h:167</div></div>
+<div class="ttc" id="aclassconsole_1_1_domain_error_html_a0cac78d2de153133b2693f24eb13a2ab"><div class="ttname"><a href="classconsole_1_1_domain_error.html#a0cac78d2de153133b2693f24eb13a2ab">console::DomainError::DomainError</a></div><div class="ttdeci">DomainError(const std::string &amp;msg)</div><div class="ttdoc">构造 DomainError。</div><div class="ttdef"><b>Definition</b> csexc.h:173</div></div>
+<div class="ttc" id="aclassconsole_1_1_fatal_logging_html"><div class="ttname"><a href="classconsole_1_1_fatal_logging.html">console::FatalLogging</a></div><div class="ttdoc">表示致命日志错误，通常会导致程序终止。</div><div class="ttdef"><b>Definition</b> csexc.h:59</div></div>
+<div class="ttc" id="aclassconsole_1_1_fatal_logging_html_a6d341406d814281a9632a9362c6540bc"><div class="ttname"><a href="classconsole_1_1_fatal_logging.html#a6d341406d814281a9632a9362c6540bc">console::FatalLogging::FatalLogging</a></div><div class="ttdeci">FatalLogging(const std::string &amp;msg)</div><div class="ttdoc">构造 FatalLogging。</div><div class="ttdef"><b>Definition</b> csexc.h:65</div></div>
+<div class="ttc" id="aclassconsole_1_1_file_error_html"><div class="ttname"><a href="classconsole_1_1_file_error.html">console::FileError</a></div><div class="ttdoc">表示文件操作错误，如打开失败、读取失败等。</div><div class="ttdef"><b>Definition</b> csexc.h:89</div></div>
+<div class="ttc" id="aclassconsole_1_1_file_error_html_a5d3586bd774b22d6dffef0d10c25f93c"><div class="ttname"><a href="classconsole_1_1_file_error.html#a5d3586bd774b22d6dffef0d10c25f93c">console::FileError::FileError</a></div><div class="ttdeci">FileError(const std::string &amp;msg)</div><div class="ttdoc">构造 FileError。</div><div class="ttdef"><b>Definition</b> csexc.h:95</div></div>
+<div class="ttc" id="aclassconsole_1_1_index_error_html"><div class="ttname"><a href="classconsole_1_1_index_error.html">console::IndexError</a></div><div class="ttdoc">表示索引越界错误。</div><div class="ttdef"><b>Definition</b> csexc.h:151</div></div>
+<div class="ttc" id="aclassconsole_1_1_index_error_html_ad28503e7f02bcbbf74a81b0c5546c9a0"><div class="ttname"><a href="classconsole_1_1_index_error.html#ad28503e7f02bcbbf74a81b0c5546c9a0">console::IndexError::IndexError</a></div><div class="ttdeci">IndexError(const std::string &amp;msg)</div><div class="ttdoc">构造 IndexError。</div><div class="ttdef"><b>Definition</b> csexc.h:157</div></div>
+<div class="ttc" id="aclassconsole_1_1_multi_array_error_html"><div class="ttname"><a href="classconsole_1_1_multi_array_error.html">console::MultiArrayError</a></div><div class="ttdoc">表示 MultiArray 多维数组操作中的错误，如维度不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:121</div></div>
+<div class="ttc" id="aclassconsole_1_1_multi_array_error_html_a18dac292aa69178c7d3e95de54fe68cb"><div class="ttname"><a href="classconsole_1_1_multi_array_error.html#a18dac292aa69178c7d3e95de54fe68cb">console::MultiArrayError::MultiArrayError</a></div><div class="ttdeci">MultiArrayError(const std::string &amp;msg)</div><div class="ttdoc">构造 MultiArrayError。</div><div class="ttdef"><b>Definition</b> csexc.h:127</div></div>
+<div class="ttc" id="aclassconsole_1_1_stop_iteration_html"><div class="ttname"><a href="classconsole_1_1_stop_iteration.html">console::StopIteration</a></div><div class="ttdoc">表示试图对已结束的生成器调用 next()。</div><div class="ttdef"><b>Definition</b> csexc.h:182</div></div>
+<div class="ttc" id="aclassconsole_1_1_stop_iteration_html_a64666131ba11b15b59004f298f1b5558"><div class="ttname"><a href="classconsole_1_1_stop_iteration.html#a64666131ba11b15b59004f298f1b5558">console::StopIteration::StopIteration</a></div><div class="ttdeci">StopIteration(const std::string &amp;msg)</div><div class="ttdoc">构造 StopIteration。</div><div class="ttdef"><b>Definition</b> csexc.h:188</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_error_html"><div class="ttname"><a href="classconsole_1_1_thread_pool_error.html">console::ThreadPoolError</a></div><div class="ttdoc">表示线程池执行器相关的错误，例如提交任务失败或线程池已关闭时提交任务。</div><div class="ttdef"><b>Definition</b> csexc.h:197</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_error_html_a9c4ec14c43c0c21fe2834ef106195a08"><div class="ttname"><a href="classconsole_1_1_thread_pool_error.html#a9c4ec14c43c0c21fe2834ef106195a08">console::ThreadPoolError::ThreadPoolError</a></div><div class="ttdeci">ThreadPoolError(const std::string &amp;msg)</div><div class="ttdoc">构造 ThreadPoolError。</div><div class="ttdef"><b>Definition</b> csexc.h:203</div></div>
+<div class="ttc" id="aclassconsole_1_1_type_error_html"><div class="ttname"><a href="classconsole_1_1_type_error.html">console::TypeError</a></div><div class="ttdoc">表示类型错误，例如访问 Maybe 中不存在的值或 Box 中类型不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:106</div></div>
+<div class="ttc" id="aclassconsole_1_1_type_error_html_ac3ebc81092b2961c6078db9c59c87bb4"><div class="ttname"><a href="classconsole_1_1_type_error.html#ac3ebc81092b2961c6078db9c59c87bb4">console::TypeError::TypeError</a></div><div class="ttdeci">TypeError(const std::string &amp;msg)</div><div class="ttdoc">构造 TypeError。</div><div class="ttdef"><b>Definition</b> csexc.h:112</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

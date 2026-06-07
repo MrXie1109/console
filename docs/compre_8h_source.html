@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -83,206 +83,207 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="compre_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"></span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"></span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">copies or substantial portions of the Software.</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"></span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">SOFTWARE.</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html">   47</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">   50</a></span>        std::vector&lt;T&gt; <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>; </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">   54</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">Comprehension</a>() : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>() {}</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">   62</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">Comprehension</a>(<span class="keyword">const</span> Cont &amp;cont)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::begin(cont), std::end(cont)) {}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">SOFTWARE.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html">   48</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">   51</a></span>        std::vector&lt;T&gt; <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>; </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">   55</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">Comprehension</a>() : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>() {}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">   63</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">Comprehension</a>(<span class="keyword">const</span> Cont &amp;cont)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::begin(cont), std::end(cont)) {}</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">   71</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">Comprehension</a>(Cont &amp;&amp;cont)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                  std::make_move_iterator(std::begin(cont)),</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                  std::make_move_iterator(std::end(cont))) {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">   72</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">Comprehension</a>(Cont &amp;&amp;cont)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                  std::make_move_iterator(std::begin(cont)),</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                  std::make_move_iterator(std::end(cont))) {}</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">   85</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">Comprehension</a>(<span class="keyword">const</span> Cont &amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::next(std::begin(cont), start_pos),</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                  std::next(std::begin(cont), end_pos)) {}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">   86</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">Comprehension</a>(<span class="keyword">const</span> Cont &amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::<a class="code hl_function" href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">next</a>(std::begin(cont), start_pos),</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                  std::<a class="code hl_function" href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">next</a>(std::begin(cont), end_pos)) {}</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">   98</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">Comprehension</a>(Cont &amp;&amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::make_move_iterator(</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                      std::next(std::begin(cont), start_pos)),</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                  std::make_move_iterator(</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                      std::next(std::begin(cont), end_pos))) {}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">   99</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">Comprehension</a>(Cont &amp;&amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(std::make_move_iterator(</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                      std::<a class="code hl_function" href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">next</a>(std::begin(cont), start_pos)),</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                  std::make_move_iterator(</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                      std::<a class="code hl_function" href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">next</a>(std::begin(cont), end_pos))) {}</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter&gt;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">  111</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">Comprehension</a>(Iter beg, Iter end) : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(beg, end) {}</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">  117</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">Comprehension</a>(std::initializer_list&lt;T&gt; init) : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(init) {}</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">  123</a></span>        std::vector&lt;T&gt; &amp;<a class="code hl_function" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">get_vec</a>()</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter&gt;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">  112</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">Comprehension</a>(Iter beg, Iter end) : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(beg, end) {}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">  118</a></span>        <a class="code hl_function" href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">Comprehension</a>(std::initializer_list&lt;T&gt; init) : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>(init) {}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">  124</a></span>        std::vector&lt;T&gt; &amp;<a class="code hl_function" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">get_vec</a>()</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
 </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">  136</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">map</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) <span class="keyword">const</span> -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(f(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>[0]))&gt;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(f(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>[0]))&gt; tmp;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;item : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>)</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                tmp.<a class="code hl_function" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">get_vec</a>().push_back(f(item));</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">  137</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">map</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) <span class="keyword">const</span> -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(f(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>[0]))&gt;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(f(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>[0]))&gt; tmp;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;item : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                tmp.<a class="code hl_function" href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">get_vec</a>().push_back(f(item));</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
 </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">  151</a></span>        <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> <a class="code hl_function" href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">filter</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> tmp;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;item : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>)</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordflow">if</span> (f(item))</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    tmp.<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.push_back(item);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">  152</a></span>        <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> <a class="code hl_function" href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">filter</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> tmp;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;item : <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <span class="keywordflow">if</span> (f(item))</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    tmp.<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.push_back(item);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
 </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">  167</a></span>        Cont <a class="code hl_function" href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">to</a>()</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> Cont(</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                std::make_move_iterator(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.begin()),</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                std::make_move_iterator(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.end()));</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">  168</a></span>        Cont <a class="code hl_function" href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">to</a>()</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">return</span> Cont(</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                std::make_move_iterator(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.begin()),</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                std::make_move_iterator(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.end()));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
 </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">  181</a></span>        Cont <a class="code hl_function" href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">make</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">return</span> Cont(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.begin(), <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.end());</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">  182</a></span>        Cont <a class="code hl_function" href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">make</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">return</span> Cont(<a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.begin(), <a class="code hl_variable" href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">vec</a>.end());</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
 </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    };</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    };</div>
 </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">  194</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(<span class="keyword">const</span> Cont &amp;cont)</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    {</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(cont);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">  195</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(<span class="keyword">const</span> Cont &amp;cont)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(cont);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
 </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00207" data-start="{" data-end="}">
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a8548d3faad335262d639fc29a8ab4ee8">  207</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Cont &amp;&amp;cont)</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    {</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(std::move(cont));</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a8548d3faad335262d639fc29a8ab4ee8">  208</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Cont &amp;&amp;cont)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(std::move(cont));</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
 </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a6f374cba5094529d3114e102d4d6f739">  222</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(<span class="keyword">const</span> Cont &amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    {</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            cont, start_pos, end_pos);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a6f374cba5094529d3114e102d4d6f739">  223</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(<span class="keyword">const</span> Cont &amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            cont, start_pos, end_pos);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
 </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00238" data-start="{" data-end="}">
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ab9e1c5c639d3a5f6020eae0056531b5b">  238</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Cont &amp;&amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            std::move(cont), start_pos, end_pos);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ab9e1c5c639d3a5f6020eae0056531b5b">  239</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Cont &amp;&amp;cont, <span class="keywordtype">size_t</span> start_pos, <span class="keywordtype">size_t</span> end_pos)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;typename Cont::value_type&gt;</a>(</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            std::move(cont), start_pos, end_pos);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
 </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter&gt;</div>
-<div class="foldopen" id="foldopen00253" data-start="{" data-end="}">
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a63183adda83984e8fb4f74fbca7a49c8">  253</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Iter beg, Iter end) -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(*beg)&gt;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;decltype(*beg)&gt;</a>(beg, end);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter&gt;</div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a63183adda83984e8fb4f74fbca7a49c8">  254</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(Iter beg, Iter end) -&gt; <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;<span class="keyword">decltype</span>(*beg)&gt;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;decltype(*beg)&gt;</a>(beg, end);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
 </div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="namespaceconsole.html#afff8215015b42330ae2e018d28c96088">  265</a></span>    <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(std::initializer_list&lt;T&gt; init)</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a>(init);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="namespaceconsole.html#afff8215015b42330ae2e018d28c96088">  266</a></span>    <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a> <a class="code hl_function" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a>(std::initializer_list&lt;T&gt; init)</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_comprehension.html">Comprehension&lt;T&gt;</a>(init);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
 </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html"><div class="ttname"><a href="classconsole_1_1_comprehension.html">console::Comprehension</a></div><div class="ttdoc">函数式风格的数据流处理容器。</div><div class="ttdef"><b>Definition</b> compre.h:48</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a348a85823e8b15c0e3e1e4e4c5031f1a"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Cont &amp;&amp;cont)</div><div class="ttdoc">从容器（右值）构造，移动所有元素。</div><div class="ttdef"><b>Definition</b> compre.h:71</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a4c251631485b6c8d15315a2922ba4ff7"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(const Cont &amp;cont, size_t start_pos, size_t end_pos)</div><div class="ttdoc">从容器的子区间（左值）构造，拷贝指定范围的元素。</div><div class="ttdef"><b>Definition</b> compre.h:85</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a4ee2dee8065a9b3b6b8735fab0e702c7"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">console::Comprehension::filter</a></div><div class="ttdeci">Comprehension&lt; T &gt; filter(F &amp;&amp;f) const</div><div class="ttdoc">筛选满足谓词 f 的元素，返回新 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:151</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a57957920450661139c5b16d9a57be946"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension()</div><div class="ttdoc">默认构造函数，创建一个空 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:54</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a5a26ba3e069f5fcc79dccdc9dca46a87"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Cont &amp;&amp;cont, size_t start_pos, size_t end_pos)</div><div class="ttdoc">从容器的子区间（右值）构造，移动指定范围的元素。</div><div class="ttdef"><b>Definition</b> compre.h:98</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a79b2a8c99fb69ad77ff0745aa82befcf"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">console::Comprehension::make</a></div><div class="ttdeci">Cont make() const</div><div class="ttdoc">将内部元素拷贝构造到目标容器 Cont 中。</div><div class="ttdef"><b>Definition</b> compre.h:181</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a8f7b783c08c79a842e12fab7875c4330"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(std::initializer_list&lt; T &gt; init)</div><div class="ttdoc">从 std::initializer_list 构造。</div><div class="ttdef"><b>Definition</b> compre.h:117</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_a9ab0c68e1e6e4252b2630796c7757d22"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">console::Comprehension::map</a></div><div class="ttdeci">auto map(F &amp;&amp;f) const -&gt; Comprehension&lt; decltype(f(vec[0]))&gt;</div><div class="ttdoc">对每个元素应用函数 f，返回新 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:136</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_aa054e34c69b8246f2e86fcb916a8f8f1"><div class="ttname"><a href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">console::Comprehension::get_vec</a></div><div class="ttdeci">std::vector&lt; T &gt; &amp; get_vec()</div><div class="ttdoc">获取内部 vector 的引用。</div><div class="ttdef"><b>Definition</b> compre.h:123</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_aac68fdebfa003facdafb63c73acb5222"><div class="ttname"><a href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">console::Comprehension::to</a></div><div class="ttdeci">Cont to()</div><div class="ttdoc">将内部元素移动构造到目标容器 Cont 中。</div><div class="ttdef"><b>Definition</b> compre.h:167</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_acc6772884789eba0240f3297004d4653"><div class="ttname"><a href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Iter beg, Iter end)</div><div class="ttdoc">从迭代器对构造，拷贝 [beg, end) 范围内的元素。</div><div class="ttdef"><b>Definition</b> compre.h:111</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_ad947a98311860d2ab5bdd477a5fb103b"><div class="ttname"><a href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">console::Comprehension::vec</a></div><div class="ttdeci">std::vector&lt; T &gt; vec</div><div class="ttdoc">内部存储的 std::vector</div><div class="ttdef"><b>Definition</b> compre.h:50</div></div>
-<div class="ttc" id="aclassconsole_1_1_comprehension_html_af47a7e75254d30c85311ccdce079152b"><div class="ttname"><a href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(const Cont &amp;cont)</div><div class="ttdoc">从容器（左值）构造，拷贝所有元素。</div><div class="ttdef"><b>Definition</b> compre.h:62</div></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html"><div class="ttname"><a href="classconsole_1_1_comprehension.html">console::Comprehension</a></div><div class="ttdoc">函数式风格的数据流处理容器。</div><div class="ttdef"><b>Definition</b> compre.h:49</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a348a85823e8b15c0e3e1e4e4c5031f1a"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a348a85823e8b15c0e3e1e4e4c5031f1a">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Cont &amp;&amp;cont)</div><div class="ttdoc">从容器（右值）构造，移动所有元素。</div><div class="ttdef"><b>Definition</b> compre.h:72</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a4c251631485b6c8d15315a2922ba4ff7"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a4c251631485b6c8d15315a2922ba4ff7">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(const Cont &amp;cont, size_t start_pos, size_t end_pos)</div><div class="ttdoc">从容器的子区间（左值）构造，拷贝指定范围的元素。</div><div class="ttdef"><b>Definition</b> compre.h:86</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a4ee2dee8065a9b3b6b8735fab0e702c7"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a4ee2dee8065a9b3b6b8735fab0e702c7">console::Comprehension::filter</a></div><div class="ttdeci">Comprehension&lt; T &gt; filter(F &amp;&amp;f) const</div><div class="ttdoc">筛选满足谓词 f 的元素，返回新 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:152</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a57957920450661139c5b16d9a57be946"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a57957920450661139c5b16d9a57be946">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension()</div><div class="ttdoc">默认构造函数，创建一个空 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:55</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a5a26ba3e069f5fcc79dccdc9dca46a87"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a5a26ba3e069f5fcc79dccdc9dca46a87">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Cont &amp;&amp;cont, size_t start_pos, size_t end_pos)</div><div class="ttdoc">从容器的子区间（右值）构造，移动指定范围的元素。</div><div class="ttdef"><b>Definition</b> compre.h:99</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a79b2a8c99fb69ad77ff0745aa82befcf"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a79b2a8c99fb69ad77ff0745aa82befcf">console::Comprehension::make</a></div><div class="ttdeci">Cont make() const</div><div class="ttdoc">将内部元素拷贝构造到目标容器 Cont 中。</div><div class="ttdef"><b>Definition</b> compre.h:182</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a8f7b783c08c79a842e12fab7875c4330"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a8f7b783c08c79a842e12fab7875c4330">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(std::initializer_list&lt; T &gt; init)</div><div class="ttdoc">从 std::initializer_list 构造。</div><div class="ttdef"><b>Definition</b> compre.h:118</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_a9ab0c68e1e6e4252b2630796c7757d22"><div class="ttname"><a href="classconsole_1_1_comprehension.html#a9ab0c68e1e6e4252b2630796c7757d22">console::Comprehension::map</a></div><div class="ttdeci">auto map(F &amp;&amp;f) const -&gt; Comprehension&lt; decltype(f(vec[0]))&gt;</div><div class="ttdoc">对每个元素应用函数 f，返回新 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:137</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_aa054e34c69b8246f2e86fcb916a8f8f1"><div class="ttname"><a href="classconsole_1_1_comprehension.html#aa054e34c69b8246f2e86fcb916a8f8f1">console::Comprehension::get_vec</a></div><div class="ttdeci">std::vector&lt; T &gt; &amp; get_vec()</div><div class="ttdoc">获取内部 vector 的引用。</div><div class="ttdef"><b>Definition</b> compre.h:124</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_aac68fdebfa003facdafb63c73acb5222"><div class="ttname"><a href="classconsole_1_1_comprehension.html#aac68fdebfa003facdafb63c73acb5222">console::Comprehension::to</a></div><div class="ttdeci">Cont to()</div><div class="ttdoc">将内部元素移动构造到目标容器 Cont 中。</div><div class="ttdef"><b>Definition</b> compre.h:168</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_acc6772884789eba0240f3297004d4653"><div class="ttname"><a href="classconsole_1_1_comprehension.html#acc6772884789eba0240f3297004d4653">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(Iter beg, Iter end)</div><div class="ttdoc">从迭代器对构造，拷贝 [beg, end) 范围内的元素。</div><div class="ttdef"><b>Definition</b> compre.h:112</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_ad947a98311860d2ab5bdd477a5fb103b"><div class="ttname"><a href="classconsole_1_1_comprehension.html#ad947a98311860d2ab5bdd477a5fb103b">console::Comprehension::vec</a></div><div class="ttdeci">std::vector&lt; T &gt; vec</div><div class="ttdoc">内部存储的 std::vector</div><div class="ttdef"><b>Definition</b> compre.h:51</div></div>
+<div class="ttc" id="aclassconsole_1_1_comprehension_html_af47a7e75254d30c85311ccdce079152b"><div class="ttname"><a href="classconsole_1_1_comprehension.html#af47a7e75254d30c85311ccdce079152b">console::Comprehension::Comprehension</a></div><div class="ttdeci">Comprehension(const Cont &amp;cont)</div><div class="ttdoc">从容器（左值）构造，拷贝所有元素。</div><div class="ttdef"><b>Definition</b> compre.h:63</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">console::Key::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
-<div class="ttc" id="anamespaceconsole_html_a783b1141168975de7c5a74ddc622313b"><div class="ttname"><a href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">console::compre</a></div><div class="ttdeci">auto compre(const Cont &amp;cont) -&gt; Comprehension&lt; typename Cont::value_type &gt;</div><div class="ttdoc">从容器（左值）创建 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:194</div></div>
+<div class="ttc" id="anamespaceconsole_html_a783b1141168975de7c5a74ddc622313b"><div class="ttname"><a href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">console::compre</a></div><div class="ttdeci">auto compre(const Cont &amp;cont) -&gt; Comprehension&lt; typename Cont::value_type &gt;</div><div class="ttdoc">从容器（左值）创建 Comprehension。</div><div class="ttdef"><b>Definition</b> compre.h:195</div></div>
+<div class="ttc" id="anamespaceconsole_html_ac6f4b72bab500a681286f1d107060825"><div class="ttname"><a href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">console::next</a></div><div class="ttdeci">T next(typename Generator&lt; Derived, T &gt;::iterator &amp;it)</div><div class="ttdoc">从迭代器获取下一个值的辅助函数。</div><div class="ttdef"><b>Definition</b> gen.h:183</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

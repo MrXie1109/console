@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -251,7 +251,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    output(<span class="charliteral">&#39;[&#39;</span>, <a class="code hl_function" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">datetime</a>(), <span class="stringliteral">&quot;] [FATAL] - &quot;</span>, error_info);</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1fatal__logging.html">fatal_logging</a>(<span class="stringliteral">&quot;Fatal Error: &quot;</span> + error_info);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_fatal_logging.html">FatalLogging</a>(<span class="stringliteral">&quot;Fatal Error: &quot;</span> + error_info);</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        }</div>
 </div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    } <a class="code hl_function" href="namespaceconsole.html#aebb75438fb8382ebc7174554b3614f07">logger</a>(std::clog, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a551b723eafd6a31d444fcb2f5920fbd3">Logging::Level::INFO</a>); </div>
@@ -261,12 +261,13 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 </div>
+<div class="ttc" id="aclassconsole_1_1_fatal_logging_html"><div class="ttname"><a href="classconsole_1_1_fatal_logging.html">console::FatalLogging</a></div><div class="ttdoc">表示致命日志错误，通常会导致程序终止。</div><div class="ttdef"><b>Definition</b> csexc.h:59</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html"><div class="ttname"><a href="classconsole_1_1_logging.html">console::Logging</a></div><div class="ttdoc">日志记录器，支持多级别、颜色输出和自动时间戳。</div><div class="ttdef"><b>Definition</b> logging.h:52</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_a329ddff70248bb2ebad2490e5353408c"><div class="ttname"><a href="classconsole_1_1_logging.html#a329ddff70248bb2ebad2490e5353408c">console::Logging::warn</a></div><div class="ttdeci">void warn(const Args &amp;...args)</div><div class="ttdoc">输出 WARN 级别日志。</div><div class="ttdef"><b>Definition</b> logging.h:163</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_a383b147c7864aae5a778631f88972ad0"><div class="ttname"><a href="classconsole_1_1_logging.html#a383b147c7864aae5a778631f88972ad0">console::Logging::Logging</a></div><div class="ttdeci">Logging(std::ostream &amp;os=std::clog, bool cf=false, Level lvl=Level::INFO)</div><div class="ttdoc">构造 Logging 对象。</div><div class="ttdef"><b>Definition</b> logging.h:114</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_a45cce11639e8308a30eefe772fa48c42"><div class="ttname"><a href="classconsole_1_1_logging.html#a45cce11639e8308a30eefe772fa48c42">console::Logging::error</a></div><div class="ttdeci">void error(const Args &amp;...args)</div><div class="ttdoc">输出 ERROR 级别日志。</div><div class="ttdef"><b>Definition</b> logging.h:182</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_a5aafe9df897962153fde1be3f799d8ab"><div class="ttname"><a href="classconsole_1_1_logging.html#a5aafe9df897962153fde1be3f799d8ab">console::Logging::info</a></div><div class="ttdeci">void info(const Args &amp;...args)</div><div class="ttdoc">输出 INFO 级别日志。</div><div class="ttdef"><b>Definition</b> logging.h:144</div></div>
-<div class="ttc" id="aclassconsole_1_1_logging_html_a65b46a9b1efad4ff786ab42162ba71e3"><div class="ttname"><a href="classconsole_1_1_logging.html#a65b46a9b1efad4ff786ab42162ba71e3">console::Logging::fatal</a></div><div class="ttdeci">void fatal(const Args &amp;...args)</div><div class="ttdoc">输出 FATAL 级别日志并抛出 fatal_logging 异常。</div><div class="ttdef"><b>Definition</b> logging.h:202</div></div>
+<div class="ttc" id="aclassconsole_1_1_logging_html_a65b46a9b1efad4ff786ab42162ba71e3"><div class="ttname"><a href="classconsole_1_1_logging.html#a65b46a9b1efad4ff786ab42162ba71e3">console::Logging::fatal</a></div><div class="ttdeci">void fatal(const Args &amp;...args)</div><div class="ttdoc">输出 FATAL 级别日志并抛出 FatalLogging 异常。</div><div class="ttdef"><b>Definition</b> logging.h:202</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_a8c82e011912b9c12b82f6fad627f4130"><div class="ttname"><a href="classconsole_1_1_logging.html#a8c82e011912b9c12b82f6fad627f4130">console::Logging::debug</a></div><div class="ttdeci">void debug(const Args &amp;...args)</div><div class="ttdoc">输出 DEBUG 级别日志。</div><div class="ttdef"><b>Definition</b> logging.h:125</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_aa8fe4d6722a2356c4ea03583bf9da174"><div class="ttname"><a href="classconsole_1_1_logging.html#aa8fe4d6722a2356c4ea03583bf9da174">console::Logging::set</a></div><div class="ttdeci">void set(Level minLevel)</div><div class="ttdoc">设置最低日志级别（低于该级别的日志将被忽略）。</div><div class="ttdef"><b>Definition</b> logging.h:82</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_adbe10800d06e6c74c22849f7f210d5e8"><div class="ttname"><a href="classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8">console::Logging::Level</a></div><div class="ttdeci">Level</div><div class="ttdoc">日志级别枚举。</div><div class="ttdef"><b>Definition</b> logging.h:64</div></div>
@@ -276,7 +277,6 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassconsole_1_1_logging_html_adbe10800d06e6c74c22849f7f210d5e8abb1ca97ec761fc37101737ba0aa2e7c5"><div class="ttname"><a href="classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8abb1ca97ec761fc37101737ba0aa2e7c5">console::Logging::Level::ERROR</a></div><div class="ttdeci">@ ERROR</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_adbe10800d06e6c74c22849f7f210d5e8adc30ec20708ef7b0f641ef78b7880a15"><div class="ttname"><a href="classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8adc30ec20708ef7b0f641ef78b7880a15">console::Logging::Level::DEBUG</a></div><div class="ttdeci">@ DEBUG</div></div>
 <div class="ttc" id="aclassconsole_1_1_logging_html_aeb32eb3b9442698e125392691883de50"><div class="ttname"><a href="classconsole_1_1_logging.html#aeb32eb3b9442698e125392691883de50">console::Logging::set</a></div><div class="ttdeci">void set(bool a, bool b, bool c, bool d, bool e)</div><div class="ttdoc">单独设置每个级别的开关。</div><div class="ttdef"><b>Definition</b> logging.h:99</div></div>
-<div class="ttc" id="aclassconsole_1_1fatal__logging_html"><div class="ttname"><a href="classconsole_1_1fatal__logging.html">console::fatal_logging</a></div><div class="ttdoc">表示致命日志错误，通常会导致程序终止。</div><div class="ttdef"><b>Definition</b> csexc.h:59</div></div>
 <div class="ttc" id="acolorful_8h_html"><div class="ttname"><a href="colorful_8h.html">colorful.h</a></div><div class="ttdoc">提供控制台颜色和样式修饰的 ANSI 转义序列常量。</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="aliterals_8h_html"><div class="ttname"><a href="literals_8h.html">literals.h</a></div><div class="ttdoc">提供自定义字面量运算符，包括字符串字面量、时间字面量和格式化字符串字面量。</div></div>
@@ -295,7 +295,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

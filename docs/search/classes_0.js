@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['bad_5fformat_0',['bad_format',['../classconsole_1_1bad__format.html',1,'console']]],
-  ['basicrational_1',['BasicRational',['../classconsole_1_1_basic_rational.html',1,'console']]],
-  ['box_2',['Box',['../classconsole_1_1_box.html',1,'console']]]
+  ['abs_5ft_0',['abs_t',['../structconsole_1_1ops_1_1abs__t.html',1,'console::ops']]],
+  ['add_1',['Add',['../structconsole_1_1ops_1_1_add.html',1,'console::ops']]],
+  ['and_2',['And',['../structconsole_1_1ops_1_1_and.html',1,'console::ops']]],
+  ['as_3',['as',['../structconsole_1_1ops_1_1as.html',1,'console::ops']]]
 ];

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -95,6 +95,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga58f1316a460a953a3e8ce7cd2c05c875"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__random.html#ga58f1316a460a953a3e8ce7cd2c05c875">console::uniform</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">min</a>=0.0, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">max</a>=1.0, std::mt19937 &amp;gen=<a class="el" href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca">default_gen</a>())</td></tr>
 <tr class="memdesc:ga58f1316a460a953a3e8ce7cd2c05c875"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个指定范围内的随机浮点数（均匀分布）。  <br /></td></tr>
 <tr class="separator:ga58f1316a460a953a3e8ce7cd2c05c875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09b037e8609547ec4cb5357ae8bcb5e7" id="r_ga09b037e8609547ec4cb5357ae8bcb5e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__random.html#ga09b037e8609547ec4cb5357ae8bcb5e7">console::randbool</a> (double p=0.5, std::mt19937 &amp;gen=<a class="el" href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca">default_gen</a>())</td></tr>
+<tr class="memdesc:ga09b037e8609547ec4cb5357ae8bcb5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个服从伯努利分布（Bernoulli Distribution）的随机布尔值。  <br /></td></tr>
+<tr class="separator:ga09b037e8609547ec4cb5357ae8bcb5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf6cf5db4ed276a39dec214c94b54471e" id="r_gaf6cf5db4ed276a39dec214c94b54471e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; </td></tr>
 <tr class="memitem:gaf6cf5db4ed276a39dec214c94b54471e"><td class="memTemplItemLeft" align="right" valign="top">C::reference&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__random.html#gaf6cf5db4ed276a39dec214c94b54471e">console::choice</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a> &amp;c, std::mt19937 &amp;gen=<a class="el" href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca">default_gen</a>())</td></tr>
 <tr class="memdesc:gaf6cf5db4ed276a39dec214c94b54471e"><td class="mdescLeft">&#160;</td><td class="mdescRight">从容器中随机选择一个元素（左值版本，返回引用）。  <br /></td></tr>
@@ -220,7 +223,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>typename C::value_type 所选元素的副本。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果容器为空。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果容器为空。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,7 +275,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>typename C::reference 所选元素的引用。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果容器为空。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果容器为空。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,7 +327,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>typename C::const_reference 所选元素的引用。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果容器为空。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果容器为空。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,7 +379,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>T 所选元素的引值。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果初始化列表为空。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果初始化列表为空。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -408,6 +411,44 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 <p>获取一个全局的、以当前时间戳为种子的 Mersenne Twister 随机数引擎。 </p>
 <p>该函数返回一个静态的 std::mt19937 对象的引用，引擎使用高精度时钟的当前时间点进行初始化。 </p><dl class="section return"><dt>Returns</dt><dd>std::mt19937&amp; 随机数引擎的引用。 </dd></dl>
+
+</div>
+</div>
+<a id="ga09b037e8609547ec4cb5357ae8bcb5e7" name="ga09b037e8609547ec4cb5357ae8bcb5e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09b037e8609547ec4cb5357ae8bcb5e7">&#9670;&#160;</a></span>randbool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool console::randbool </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::mt19937 &amp;&#160;</td>
+          <td class="paramname"><em>gen</em> = <code><a class="el" href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca">default_gen</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>生成一个服从伯努利分布（Bernoulli Distribution）的随机布尔值。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>生成 true 的概率，默认为 0.5。 </td></tr>
+    <tr><td class="paramname">gen</td><td>使用的随机数引擎，默认为 <a class="el" href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca" title="获取一个全局的、以当前时间戳为种子的 Mersenne Twister 随机数引擎。">default_gen()</a>。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool 服从伯努利分布的随机布尔值。 </dd></dl>
 
 </div>
 </div>
@@ -1218,7 +1259,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;typename C::value_type&gt; 抽取结果的向量。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果容器为空，或 size 超过容器大小且 replace==false。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果容器为空，或 size 超过容器大小且 replace==false。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1285,7 +1326,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; 抽取结果的向量。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1container__error.html" title="表示通用容器操作错误。">container_error</a></td><td>如果容器为空，或 size 超过容器大小且 replace==false。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_container_error.html" title="表示通用容器操作错误。">ContainerError</a></td><td>如果容器为空，或 size 超过容器大小且 replace==false。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1428,7 +1469,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

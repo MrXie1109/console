@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -131,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45cce11639e8308a30eefe772fa48c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65b46a9b1efad4ff786ab42162ba71e3" id="r_a65b46a9b1efad4ff786ab42162ba71e3"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:a65b46a9b1efad4ff786ab42162ba71e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1_logging.html#a65b46a9b1efad4ff786ab42162ba71e3">fatal</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:a65b46a9b1efad4ff786ab42162ba71e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 FATAL 级别日志并抛出 <a class="el" href="classconsole_1_1fatal__logging.html" title="表示致命日志错误，通常会导致程序终止。">fatal_logging</a> 异常。  <br /></td></tr>
+<tr class="memdesc:a65b46a9b1efad4ff786ab42162ba71e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 FATAL 级别日志并抛出 <a class="el" href="classconsole_1_1_fatal_logging.html" title="表示致命日志错误，通常会导致程序终止。">FatalLogging</a> 异常。  <br /></td></tr>
 <tr class="separator:a65b46a9b1efad4ff786ab42162ba71e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -141,7 +141,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>日志记录器，支持多级别、颜色输出和自动时间戳。 </p>
-<p>使用 <a class="el" href="classconsole_1_1_output.html" title="灵活的输出控制类，支持链式调用和多种参数。">Output</a> 类进行格式化输出，可设置最低日志级别或单独控制每个级别的开关。 FATAL 级别会抛出 <a class="el" href="classconsole_1_1fatal__logging.html" title="表示致命日志错误，通常会导致程序终止。">fatal_logging</a> 异常。 </p>
+<p>使用 <a class="el" href="classconsole_1_1_output.html" title="灵活的输出控制类，支持链式调用和多种参数。">Output</a> 类进行格式化输出，可设置最低日志级别或单独控制每个级别的开关。 FATAL 级别会抛出 <a class="el" href="classconsole_1_1_fatal_logging.html" title="表示致命日志错误，通常会导致程序终止。">FatalLogging</a> 异常。 </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="adbe10800d06e6c74c22849f7f210d5e8" name="adbe10800d06e6c74c22849f7f210d5e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbe10800d06e6c74c22849f7f210d5e8">&#9670;&#160;</a></span>Level</h2>
@@ -338,7 +338,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>输出 FATAL 级别日志并抛出 <a class="el" href="classconsole_1_1fatal__logging.html" title="表示致命日志错误，通常会导致程序终止。">fatal_logging</a> 异常。 </p>
+<p>输出 FATAL 级别日志并抛出 <a class="el" href="classconsole_1_1_fatal_logging.html" title="表示致命日志错误，通常会导致程序终止。">FatalLogging</a> 异常。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
@@ -353,7 +353,7 @@ template&lt;class... Args&gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1fatal__logging.html" title="表示致命日志错误，通常会导致程序终止。">fatal_logging</a></td><td>异常，异常消息包含日志内容。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_fatal_logging.html" title="表示致命日志错误，通常会导致程序终止。">FatalLogging</a></td><td>异常，异常消息包含日志内容。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -565,7 +565,7 @@ template&lt;class... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

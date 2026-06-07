@@ -12,5 +12,6 @@ var searchData=
   ['print_5fstats_9',['print_stats',['../group__matools.html#ga077f0404e8337b752d49b3e562c5d16e',1,'console']]],
   ['product_10',['product',['../group__matools.html#ga774a7ae8a8ce1e7c73c68c5775374911',1,'console']]],
   ['progress_11',['progress',['../namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3',1,'console::progress()'],['../classconsole_1_1_progress.html#a378b40e4a6df08ed5573efc0cf8d97d0',1,'console::Progress::Progress(Cont &amp;cont, const ProgressConfig &amp;config={})'],['../classconsole_1_1_progress.html#a02c26038ed5f9e53d8ff7421080e8369',1,'console::Progress::Progress(const Cont &amp;cont, const ProgressConfig &amp;config={})']]],
-  ['progressconfig_12',['ProgressConfig',['../structconsole_1_1_progress_config.html#a89a38f545fab9b141107df99a48d6e07',1,'console::ProgressConfig']]]
+  ['progressconfig_12',['ProgressConfig',['../structconsole_1_1_progress_config.html#a89a38f545fab9b141107df99a48d6e07',1,'console::ProgressConfig']]],
+  ['put_13',['put',['../namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626',1,'console::put(std::ostream &amp;os, StrOrCharType &amp;&amp;value)'],['../namespaceconsole.html#af23e6235185590bb4d07651ee645ef16',1,'console::put(std::ostream &amp;os, OtherType &amp;&amp;value)']]]
 ];

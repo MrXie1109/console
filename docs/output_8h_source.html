@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -108,7 +108,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="repr_8h.html">repr.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="put_8h.html">put.h</a>&quot;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
@@ -120,11 +120,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;[]&quot;</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">auto</span> it = begin(cont);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        os &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(*it, os);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, *it);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">while</span> (++it != end(cont))</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(*it, os);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, *it);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> os &lt;&lt; <span class="charliteral">&#39;]&#39;</span>;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
@@ -138,11 +138,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;{}&quot;</span>;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">auto</span> it = begin(cont);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        os &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(*it, os);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, *it);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">while</span> (++it != end(cont))</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(*it, os);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, *it);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> os &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
@@ -156,15 +156,15 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;{}&quot;</span>;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">auto</span> it = begin(cont);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        os &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(it-&gt;first, os);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, it-&gt;first);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        os &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(it-&gt;second, os);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, it-&gt;second);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">while</span> (++it != end(cont))</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(it-&gt;first, os);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, it-&gt;first);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            os &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(it-&gt;second, os);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, it-&gt;second);</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> os &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
@@ -180,7 +180,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <a class="code hl_function" href="structconsole_1_1_tuple_printer.html#ada226e13dc70ef4641e1308e85756382">TuplePrinter&lt;Tuple, N - 1&gt;::print</a>(os, t);</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; 1)</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(std::get&lt;N - 1&gt;(t), os);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, std::get&lt;N - 1&gt;(t));</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
 </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    };</div>
@@ -193,7 +193,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#a9c4dbadaaf04317a47f6c90f27de256f">  156</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#a9c4dbadaaf04317a47f6c90f27de256f">print</a>(std::ostream &amp;os, <span class="keyword">const</span> Tuple &amp;t)</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(std::get&lt;0&gt;(t), os);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, std::get&lt;0&gt;(t));</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
 </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    };</div>
@@ -329,9 +329,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga3c28e3b9d37f972681501fbb558bbb34">  291</a></span>    std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::pair&lt;T, U&gt; &amp;p)</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    {</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        os &lt;&lt; <span class="charliteral">&#39;(&#39;</span>;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(p.first, os);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, p.first);</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(p.second, os);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, p.second);</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">return</span> os &lt;&lt; <span class="charliteral">&#39;)&#39;</span>;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
 </div>
@@ -396,7 +396,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00412" data-start="{" data-end="}">
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">  412</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t)</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        {</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            os &lt;&lt; t;</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>();</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        }</div>
 </div>
@@ -405,13 +405,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00427" data-start="{" data-end="}">
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">  427</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t, <span class="keyword">const</span> Args &amp;...args)</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        {</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            os &lt;&lt; t &lt;&lt; sep;</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>(args...);</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        }</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            os &lt;&lt; sep;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>(args...);</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        }</div>
 </div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">  432</a></span>    } <a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>; </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">  433</a></span>    } <a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>; </div>
 </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>}</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_output_html"><div class="ttname"><a href="classconsole_1_1_output.html">console::Output</a></div><div class="ttdoc">灵活的输出控制类，支持链式调用和多种参数。</div><div class="ttdef"><b>Definition</b> output.h:371</div></div>
 <div class="ttc" id="aclassconsole_1_1_output_html_a7d7ac8392f617927cae9b6df78295385"><div class="ttname"><a href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()(const T &amp;t)</div><div class="ttdoc">单参数调用：输出该参数后加结尾符。</div><div class="ttdef"><b>Definition</b> output.h:412</div></div>
 <div class="ttc" id="aclassconsole_1_1_output_html_ab01d390c5c87c7281558d63594ca1f2e"><div class="ttname"><a href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()()</div><div class="ttdoc">无参数调用：仅输出结尾符（如换行）。</div><div class="ttdef"><b>Definition</b> output.h:397</div></div>
@@ -423,14 +424,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="agroup__output__helpers_html_ga2475d5f2def579b180dfc68c5ce0e255"><div class="ttname"><a href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">console::cont_print_sequence</a></div><div class="ttdeci">std::ostream &amp; cont_print_sequence(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出序列容器（如 vector, list）的内容，格式为 [a, b, c]。</div><div class="ttdef"><b>Definition</b> output.h:55</div></div>
 <div class="ttc" id="agroup__output__helpers_html_gaafbd88f99bcc46830491979abb716877"><div class="ttname"><a href="group__output__helpers.html#gaafbd88f99bcc46830491979abb716877">console::cont_print_set</a></div><div class="ttdeci">std::ostream &amp; cont_print_set(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出集合容器（如 set, unordered_set）的内容，格式为 {a, b, c}。</div><div class="ttdef"><b>Definition</b> output.h:78</div></div>
 <div class="ttc" id="agroup__output__helpers_html_gab6bcfe5fe5236718b18cd2360463402b"><div class="ttname"><a href="group__output__helpers.html#gab6bcfe5fe5236718b18cd2360463402b">console::cont_print_map</a></div><div class="ttdeci">std::ostream &amp; cont_print_map(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出映射容器（如 map, unordered_map）的内容，格式为 {key: value, ...}。</div><div class="ttdef"><b>Definition</b> output.h:101</div></div>
-<div class="ttc" id="agroup__repr_html_gab16dfca7b068359547e9dbd3e9f8aca6"><div class="ttname"><a href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">console::repr</a></div><div class="ttdeci">enable_if_string&lt; T &gt; repr(T &amp;&amp;value, std::ostream &amp;os=std::cout)</div><div class="ttdoc">输出字符串类型（std::string, const char* 等）的表示，带双引号。</div><div class="ttdef"><b>Definition</b> repr.h:79</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
 <div class="ttc" id="anamespaceconsole_html_a1658ddfe71dc7f388938391c9a8db3fe"><div class="ttname"><a href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">console::print</a></div><div class="ttdeci">class console::Output print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa">console::Key::N</a></div><div class="ttdeci">@ N</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="anamespaceconsole_html_a715464dabbf1fb29e4e18cac8d788626"><div class="ttname"><a href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::ostream &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:48</div></div>
 <div class="ttc" id="anamespaceconsole_html_ab52cbf6e3e95c829e2756a3447695f6d"><div class="ttname"><a href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">console::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, Key k)</div><div class="ttdoc">让 Key 可以被打印。</div><div class="ttdef"><b>Definition</b> kb.h:152</div></div>
 <div class="ttc" id="anamespaceconsole_html_ae2f73bcafcb4987aedc6b8e514540969"><div class="ttname"><a href="namespaceconsole.html#ae2f73bcafcb4987aedc6b8e514540969">console::cout</a></div><div class="ttdeci">struct console::InputSettings cout</div></div>
-<div class="ttc" id="arepr_8h_html"><div class="ttname"><a href="repr_8h.html">repr.h</a></div><div class="ttdoc">提供类似 Python 的 repr() 函数，用于生成对象的可读字符串表示。</div></div>
+<div class="ttc" id="aput_8h_html"><div class="ttname"><a href="put_8h.html">put.h</a></div><div class="ttdoc">提供在 output.h 中用于输出单个值的 put 函数。</div></div>
 <div class="ttc" id="astructconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4_html_a2315a3b9e26b69d71e5c10b6576a7332"><div class="ttname"><a href="structconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4.html#a2315a3b9e26b69d71e5c10b6576a7332">console::TuplePrinter&lt; Tuple, 0 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;, const Tuple &amp;)</div><div class="ttdef"><b>Definition</b> output.h:168</div></div>
 <div class="ttc" id="astructconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4_html_a9c4dbadaaf04317a47f6c90f27de256f"><div class="ttname"><a href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#a9c4dbadaaf04317a47f6c90f27de256f">console::TuplePrinter&lt; Tuple, 1 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;os, const Tuple &amp;t)</div><div class="ttdef"><b>Definition</b> output.h:156</div></div>
 <div class="ttc" id="astructconsole_1_1_tuple_printer_html"><div class="ttname"><a href="structconsole_1_1_tuple_printer.html">console::TuplePrinter</a></div><div class="ttdoc">递归打印 tuple 的辅助模板（主模板）。</div><div class="ttdef"><b>Definition</b> output.h:135</div></div>
@@ -438,7 +439,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

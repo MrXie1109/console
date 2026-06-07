@@ -9,13 +9,14 @@ var searchData=
   ['a6_6',['A6',['../namespaceconsole_1_1pitches.html#a71ce3dad61b64f3a1c7c3c223c3fcc1c',1,'console::pitches']]],
   ['a7_7',['A7',['../namespaceconsole_1_1pitches.html#acf56096235828c0e10686fcf2d566486',1,'console::pitches']]],
   ['a8_8',['A8',['../namespaceconsole_1_1pitches.html#a48f353909a4315c0f329b38296a94e41',1,'console::pitches']]],
-  ['as0_9',['As0',['../namespaceconsole_1_1pitches.html#a5e04039e25fe325b6890ff78193f3669',1,'console::pitches']]],
-  ['as1_10',['As1',['../namespaceconsole_1_1pitches.html#a4192fa28245d558e3c429a87fa820428',1,'console::pitches']]],
-  ['as2_11',['As2',['../namespaceconsole_1_1pitches.html#a95eccdc34f1e88a102ce17e8a8ace00e',1,'console::pitches']]],
-  ['as3_12',['As3',['../namespaceconsole_1_1pitches.html#ac7cf0eafee82dfe95a6046cc599616e3',1,'console::pitches']]],
-  ['as4_13',['As4',['../namespaceconsole_1_1pitches.html#ac17f8a00944d45af0eb601a3ed024c74',1,'console::pitches']]],
-  ['as5_14',['As5',['../namespaceconsole_1_1pitches.html#ad2720691f8bbad689dfe0ac5a774a286',1,'console::pitches']]],
-  ['as6_15',['As6',['../namespaceconsole_1_1pitches.html#a2fbf80d6ff98ab758c0f025be480424b',1,'console::pitches']]],
-  ['as7_16',['As7',['../namespaceconsole_1_1pitches.html#a8027fb6136f541dd2da4c142ba0d7ca8',1,'console::pitches']]],
-  ['as8_17',['As8',['../namespaceconsole_1_1pitches.html#a05da6234ccf4c15a3d9a01f67eb09016',1,'console::pitches']]]
+  ['abs_9',['abs',['../namespaceconsole_1_1ops.html#ae471b74fa887ccec6b31081a3f17e183',1,'console::ops']]],
+  ['as0_10',['As0',['../namespaceconsole_1_1pitches.html#a5e04039e25fe325b6890ff78193f3669',1,'console::pitches']]],
+  ['as1_11',['As1',['../namespaceconsole_1_1pitches.html#a4192fa28245d558e3c429a87fa820428',1,'console::pitches']]],
+  ['as2_12',['As2',['../namespaceconsole_1_1pitches.html#a95eccdc34f1e88a102ce17e8a8ace00e',1,'console::pitches']]],
+  ['as3_13',['As3',['../namespaceconsole_1_1pitches.html#ac7cf0eafee82dfe95a6046cc599616e3',1,'console::pitches']]],
+  ['as4_14',['As4',['../namespaceconsole_1_1pitches.html#ac17f8a00944d45af0eb601a3ed024c74',1,'console::pitches']]],
+  ['as5_15',['As5',['../namespaceconsole_1_1pitches.html#ad2720691f8bbad689dfe0ac5a774a286',1,'console::pitches']]],
+  ['as6_16',['As6',['../namespaceconsole_1_1pitches.html#a2fbf80d6ff98ab758c0f025be480424b',1,'console::pitches']]],
+  ['as7_17',['As7',['../namespaceconsole_1_1pitches.html#a8027fb6136f541dd2da4c142ba0d7ca8',1,'console::pitches']]],
+  ['as8_18',['As8',['../namespaceconsole_1_1pitches.html#a05da6234ccf4c15a3d9a01f67eb09016',1,'console::pitches']]]
 ];

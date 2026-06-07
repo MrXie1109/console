@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -192,12 +192,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classconsole_1_1_item.html#a699b42c5b08068f1e5764573ed3e3cb8">  162</a></span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;<a class="code hl_function" href="classconsole_1_1_item.html#a699b42c5b08068f1e5764573ed3e3cb8">get</a>()</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span> (ptr == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1type__error.html">type_error</a>(<span class="stringliteral">&quot;empty item&quot;</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_type_error.html">TypeError</a>(<span class="stringliteral">&quot;empty item&quot;</span>);</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) != ptr-&gt;type())</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1type__error.html">type_error</a>(std::string(<span class="stringliteral">&quot;type mismatch: &quot;</span>) +</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                              <a class="code hl_function" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">tiname</a>(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>)) +</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                              <span class="stringliteral">&quot; and &quot;</span> +</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                              <a class="code hl_function" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">tiname</a>(ptr-&gt;type()));</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_type_error.html">TypeError</a>(std::string(<span class="stringliteral">&quot;type mismatch: &quot;</span>) +</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                                <a class="code hl_function" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">tiname</a>(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>)) +</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                                <span class="stringliteral">&quot; and &quot;</span> +</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                                <a class="code hl_function" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">tiname</a>(ptr-&gt;type()));</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">return</span> ((Derived&lt;T&gt; *)ptr)-&gt;value;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
 </div>
@@ -215,12 +215,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classconsole_1_1_item.html#a55c5a5100bd102d1323b0ed68ccbac03">  193</a></span>        <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;<a class="code hl_function" href="classconsole_1_1_item.html#a55c5a5100bd102d1323b0ed68ccbac03">get</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">        </span>{</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> (ptr == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1type__error.html">type_error</a>(<span class="stringliteral">&quot;empty item&quot;</span>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_type_error.html">TypeError</a>(<span class="stringliteral">&quot;empty item&quot;</span>);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) != ptr-&gt;type())</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1type__error.html">type_error</a>(std::string(<span class="stringliteral">&quot;type mismatch: &quot;</span>) +</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                              <span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>).name() +</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                              <span class="stringliteral">&quot; and &quot;</span> +</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                              ptr-&gt;type().name());</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_type_error.html">TypeError</a>(std::string(<span class="stringliteral">&quot;type mismatch: &quot;</span>) +</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                <span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>).name() +</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                                <span class="stringliteral">&quot; and &quot;</span> +</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                                ptr-&gt;type().name());</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> ((Derived&lt;T&gt; *)ptr)-&gt;value;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
 </div>
@@ -360,7 +360,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassconsole_1_1_item_html_ab65023aeb90a2404995d23c78bfb132a"><div class="ttname"><a href="classconsole_1_1_item.html#ab65023aeb90a2404995d23c78bfb132a">console::Item::operator=</a></div><div class="ttdeci">const Item &amp; operator=(Item &amp;&amp;other) noexcept</div><div class="ttdoc">移动赋值运算符。</div><div class="ttdef"><b>Definition</b> box.h:238</div></div>
 <div class="ttc" id="aclassconsole_1_1_item_html_acd429fe11e30c55003c5a2fdbd401e2b"><div class="ttname"><a href="classconsole_1_1_item.html#acd429fe11e30c55003c5a2fdbd401e2b">console::Item::unsafe_get</a></div><div class="ttdeci">const T &amp; unsafe_get() const</div><div class="ttdoc">不安全地获取存储值的引用（常量版本）。</div><div class="ttdef"><b>Definition</b> box.h:212</div></div>
 <div class="ttc" id="aclassconsole_1_1_item_html_adfe14fc67ea0d6c957f649cf56b3a80c"><div class="ttname"><a href="classconsole_1_1_item.html#adfe14fc67ea0d6c957f649cf56b3a80c">console::Item::Item</a></div><div class="ttdeci">Item(T &amp;&amp;value)</div><div class="ttdoc">从任意类型构造 Item（万能引用）。</div><div class="ttdef"><b>Definition</b> box.h:135</div></div>
-<div class="ttc" id="aclassconsole_1_1type__error_html"><div class="ttname"><a href="classconsole_1_1type__error.html">console::type_error</a></div><div class="ttdoc">表示类型错误，例如访问 Maybe 中不存在的值或 Box 中类型不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:106</div></div>
+<div class="ttc" id="aclassconsole_1_1_type_error_html"><div class="ttname"><a href="classconsole_1_1_type_error.html">console::TypeError</a></div><div class="ttdoc">表示类型错误，例如访问 Maybe 中不存在的值或 Box 中类型不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:106</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="agroup__repr_html_gab16dfca7b068359547e9dbd3e9f8aca6"><div class="ttname"><a href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">console::repr</a></div><div class="ttdeci">enable_if_string&lt; T &gt; repr(T &amp;&amp;value, std::ostream &amp;os=std::cout)</div><div class="ttdoc">输出字符串类型（std::string, const char* 等）的表示，带双引号。</div><div class="ttdef"><b>Definition</b> repr.h:79</div></div>
 <div class="ttc" id="agroup__repr_html_gac92082727845e0dceef09efcc1d8e953"><div class="ttname"><a href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">console::tiname</a></div><div class="ttdeci">std::string tiname(const std::type_info &amp;ti)</div><div class="ttdoc">获取类型信息的可读名称（跨平台 demangle）。</div><div class="ttdef"><b>Definition</b> repr.h:56</div></div>
@@ -372,7 +372,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

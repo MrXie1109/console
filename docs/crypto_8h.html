@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -92,6 +92,8 @@ $(function() {
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 </div>
 <p><a href="crypto_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -208,6 +210,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ace8d143095062507ae14ffecb2d10c6e" id="r_ace8d143095062507ae14ffecb2d10c6e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#ace8d143095062507ae14ffecb2d10c6e">console::crypto::aes_impl::pad_key</a> (const std::string &amp;key)</td></tr>
 <tr class="memdesc:ace8d143095062507ae14ffecb2d10c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将密钥填充到16字节（AES-128要求的密钥长度）。  <br /></td></tr>
 <tr class="separator:ace8d143095062507ae14ffecb2d10c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e09e394f8ef207274fa2b21d36c8be5" id="r_a4e09e394f8ef207274fa2b21d36c8be5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#a4e09e394f8ef207274fa2b21d36c8be5">console::crypto::aes_impl::random_bytes</a> ()</td></tr>
+<tr class="memdesc:a4e09e394f8ef207274fa2b21d36c8be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成随机字节序列。  <br /></td></tr>
+<tr class="separator:a4e09e394f8ef207274fa2b21d36c8be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2499b5c76c90681a7240bf8c2199431" id="r_af2499b5c76c90681a7240bf8c2199431"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto.html#af2499b5c76c90681a7240bf8c2199431">console::crypto::aes_encrypt</a> (const std::string &amp;plaintext, const std::string &amp;key)</td></tr>
 <tr class="memdesc:af2499b5c76c90681a7240bf8c2199431"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用AES-128-CTR模式加密明文。  <br /></td></tr>
 <tr class="separator:af2499b5c76c90681a7240bf8c2199431"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,7 +246,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

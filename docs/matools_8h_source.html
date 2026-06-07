@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;4.12.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -660,11 +660,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="agroup__matools_html_gadd13c1a86f6f78a979a6b05eca1f1807"><div class="ttname"><a href="group__matools.html#gadd13c1a86f6f78a979a6b05eca1f1807">console::cosine</a></div><div class="ttdeci">double cosine(const MultiArray&lt; T, N &gt; &amp;a, const MultiArray&lt; T, N &gt; &amp;b)</div><div class="ttdoc">计算两个向量的余弦相似度。</div><div class="ttdef"><b>Definition</b> matools.h:138</div></div>
 <div class="ttc" id="agroup__matools_html_gae88badc0104c05d50f0a8a3d2b75ec60"><div class="ttname"><a href="group__matools.html#gae88badc0104c05d50f0a8a3d2b75ec60">console::exp</a></div><div class="ttdeci">MultiArray&lt; T, Dims... &gt; exp(const MultiArray&lt; T, Dims... &gt; &amp;arr)</div><div class="ttdoc">对数组每个元素应用 std::exp。</div><div class="ttdef"><b>Definition</b> matools.h:609</div></div>
 <div class="ttc" id="agroup__matools_html_gafbbc5c8f3eb35b682e9e993008158eeb"><div class="ttname"><a href="group__matools.html#gafbbc5c8f3eb35b682e9e993008158eeb">console::randomize_normal</a></div><div class="ttdeci">void randomize_normal(MultiArray&lt; T, Dims... &gt; &amp;arr, T mean=0, T stddev=1)</div><div class="ttdoc">用正态分布随机数填充数组。</div><div class="ttdef"><b>Definition</b> matools.h:363</div></div>
-<div class="ttc" id="agroup__multiarray__stats_html_ga3c082110bc9f1bccd134f037cbc80d2b"><div class="ttname"><a href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">console::min</a></div><div class="ttdeci">T min(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最小值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1551</div></div>
-<div class="ttc" id="agroup__multiarray__stats_html_ga4d151dd74a5c86383bbc2526fefe2988"><div class="ttname"><a href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">console::max</a></div><div class="ttdeci">T max(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最大值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1561</div></div>
-<div class="ttc" id="agroup__multiarray__stats_html_gac77dd17c6c6aabf513856c4e41f2aa51"><div class="ttname"><a href="group__multiarray__stats.html#gac77dd17c6c6aabf513856c4e41f2aa51">console::sum</a></div><div class="ttdeci">T sum(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求和所有元素。</div><div class="ttdef"><b>Definition</b> multiarray.h:1538</div></div>
+<div class="ttc" id="agroup__multiarray__stats_html_ga3c082110bc9f1bccd134f037cbc80d2b"><div class="ttname"><a href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">console::min</a></div><div class="ttdeci">T min(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最小值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1552</div></div>
+<div class="ttc" id="agroup__multiarray__stats_html_ga4d151dd74a5c86383bbc2526fefe2988"><div class="ttname"><a href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">console::max</a></div><div class="ttdeci">T max(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最大值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1562</div></div>
+<div class="ttc" id="agroup__multiarray__stats_html_gac77dd17c6c6aabf513856c4e41f2aa51"><div class="ttname"><a href="group__multiarray__stats.html#gac77dd17c6c6aabf513856c4e41f2aa51">console::sum</a></div><div class="ttdeci">T sum(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求和所有元素。</div><div class="ttdef"><b>Definition</b> multiarray.h:1539</div></div>
 <div class="ttc" id="agroup__random_html_gaa96466336c14e8c6088c7d8ce4a4e6ca"><div class="ttname"><a href="group__random.html#gaa96466336c14e8c6088c7d8ce4a4e6ca">console::default_gen</a></div><div class="ttdeci">std::mt19937 &amp; default_gen()</div><div class="ttdoc">获取一个全局的、以当前时间戳为种子的 Mersenne Twister 随机数引擎。</div><div class="ttdef"><b>Definition</b> random.h:54</div></div>
-<div class="ttc" id="agroup__random_html_gacb660498d8104da35f7f0b41e487ca0f"><div class="ttname"><a href="group__random.html#gacb660498d8104da35f7f0b41e487ca0f">console::sample</a></div><div class="ttdeci">std::vector&lt; typename C::value_type &gt; sample(const C &amp;c, size_t size, bool replace=false, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">从容器中随机抽取指定数量的元素（有放回或无放回）。</div><div class="ttdef"><b>Definition</b> random.h:442</div></div>
+<div class="ttc" id="agroup__random_html_gacb660498d8104da35f7f0b41e487ca0f"><div class="ttname"><a href="group__random.html#gacb660498d8104da35f7f0b41e487ca0f">console::sample</a></div><div class="ttdeci">std::vector&lt; typename C::value_type &gt; sample(const C &amp;c, size_t size, bool replace=false, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">从容器中随机抽取指定数量的元素（有放回或无放回）。</div><div class="ttdef"><b>Definition</b> random.h:453</div></div>
 <div class="ttc" id="agroup__sfinae_html_gaed6f37f103efe5517b99ccd43161a5de"><div class="ttname"><a href="group__sfinae.html#gaed6f37f103efe5517b99ccd43161a5de">console::uniform_distribution_t</a></div><div class="ttdeci">typename uniform_distribution_impl&lt; T &gt;::type uniform_distribution_t</div><div class="ttdoc">取得对印类型所对应的均匀分布。</div><div class="ttdef"><b>Definition</b> sfinae.h:381</div></div>
 <div class="ttc" id="amultiarray_8h_html"><div class="ttname"><a href="multiarray_8h.html">multiarray.h</a></div><div class="ttdoc">提供编译期维度固定的多维数组容器 MultiArray，支持任意维度和元素级算术/逻辑/位运算。</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
@@ -680,7 +680,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2026 11:20:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

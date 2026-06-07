@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['s_0',['S',['../namespaceconsole_1_1crypto_1_1md5__impl.html#a0f1b5c1c8595123c308e916e468492be',1,'console::crypto::md5_impl']]],
-  ['sbox_1',['Sbox',['../namespaceconsole_1_1crypto_1_1aes__impl.html#aaa6a2da5fbb07213c6a3d40437620986',1,'console::crypto::aes_impl']]],
-  ['show_5fpercent_2',['show_percent',['../structconsole_1_1_progress_config.html#afacbd08910875eec7e6731513f4aab2f',1,'console::ProgressConfig']]],
-  ['strikethrough_3',['Strikethrough',['../namespaceconsole_1_1color.html#a9cc2f3a2d9b63617e9a646746338ba1e',1,'console::color']]],
-  ['suffix_4',['suffix',['../structconsole_1_1_progress_config.html#a4601e9b151a85497c4ce9d687d316a63',1,'console::ProgressConfig']]]
+  ['reciprocal_0',['reciprocal',['../namespaceconsole_1_1ops.html#a5a8a529b03b5d652c6cb16a5fb955f17',1,'console::ops']]],
+  ['red_1',['Red',['../namespaceconsole_1_1color.html#a384e1a17e4c2cc6c76dbb7b639ebfb1a',1,'console::color']]],
+  ['reset_2',['Reset',['../namespaceconsole_1_1color.html#aed61bfb193c5c64c0ac4aed09b033c33',1,'console::color']]],
+  ['rest_3',['REST',['../namespaceconsole_1_1pitches.html#afa2abe9bd29c485966d091e904a074a1',1,'console::pitches']]],
+  ['reverse_4',['Reverse',['../namespaceconsole_1_1color.html#a821982070c0ab61067e0d8621d2216ce',1,'console::color']]],
+  ['right_5',['right',['../structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f',1,'console::PartitionResult']]]
 ];

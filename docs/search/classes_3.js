@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['f_5fstring_0',['f_string',['../classconsole_1_1f__string.html',1,'console']]],
-  ['fatal_5flogging_1',['fatal_logging',['../classconsole_1_1fatal__logging.html',1,'console']]],
-  ['file_5ferror_2',['file_error',['../classconsole_1_1file__error.html',1,'console']]]
+  ['dec_5ft_0',['dec_t',['../structconsole_1_1ops_1_1dec__t.html',1,'console::ops']]],
+  ['div_1',['Div',['../structconsole_1_1ops_1_1_div.html',1,'console::ops']]],
+  ['domainerror_2',['DomainError',['../classconsole_1_1_domain_error.html',1,'console']]]
 ];
