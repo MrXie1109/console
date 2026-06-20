@@ -218,14 +218,13 @@ namespace console
          * @brief 计算文件的SHA256哈希值。
          * @param filename 要计算哈希的文件路径。
          * @return std::string 64位十六进制字符串格式的SHA256哈希值。
-         * @throws std::runtime_error 当文件无法打开时抛出异常。
          * @warning 对于大文件，该函数会逐块读取，内存占用较小，但处理时间较长。
          */
         inline std::string file_sha256(const std::string &filename)
         {
             std::ifstream file(filename, std::ios::binary);
             if (!file.is_open())
-                throw std::runtime_error("Cannot open file: " + filename);
+                return "Cannot open file: " + filename;
             using namespace sha256_impl;
             uint32_t state[8] = {
                 0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
