@@ -9,7 +9,7 @@ var searchData=
   ['a6_6',['A6',['../namespaceconsole_1_1pitches.html#a71ce3dad61b64f3a1c7c3c223c3fcc1c',1,'console::pitches']]],
   ['a7_7',['A7',['../namespaceconsole_1_1pitches.html#acf56096235828c0e10686fcf2d566486',1,'console::pitches']]],
   ['a8_8',['A8',['../namespaceconsole_1_1pitches.html#a48f353909a4315c0f329b38296a94e41',1,'console::pitches']]],
-  ['abs_9',['abs',['../namespaceconsole_1_1ops.html#ae471b74fa887ccec6b31081a3f17e183',1,'console::ops']]],
+  ['abs_9',['abs',['../namespaceconsole_1_1ops.html#a951e9adfd134beec431f9b1ddbdebd04',1,'console::ops']]],
   ['as0_10',['As0',['../namespaceconsole_1_1pitches.html#a5e04039e25fe325b6890ff78193f3669',1,'console::pitches']]],
   ['as1_11',['As1',['../namespaceconsole_1_1pitches.html#a4192fa28245d558e3c429a87fa820428',1,'console::pitches']]],
   ['as2_12',['As2',['../namespaceconsole_1_1pitches.html#a95eccdc34f1e88a102ce17e8a8ace00e',1,'console::pitches']]],

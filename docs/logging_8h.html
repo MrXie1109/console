@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,8 +77,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logging.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,401 +108,27 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a540aae996af47330f7fb73552763680f" id="r_a540aae996af47330f7fb73552763680f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a> : int8_t { <br />
-&#160;&#160;<a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fadc30ec20708ef7b0f641ef78b7880a15">DEBUG</a>
-, <a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fa551b723eafd6a31d444fcb2f5920fbd3">INFO</a>
-, <a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fa32bd8a1db2275458673903bdb84cb277">WARN</a>
-, <a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fabb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a>
-, <br />
-&#160;&#160;<a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fa19da7170bea36556dde582519795f3fc">FATAL</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a540aae996af47330f7fb73552763680f"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志级别枚举。  <a href="logging_8h.html#a540aae996af47330f7fb73552763680f">More...</a><br /></td></tr>
-<tr class="separator:a540aae996af47330f7fb73552763680f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aebb75438fb8382ebc7174554b3614f07" id="r_aebb75438fb8382ebc7174554b3614f07"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="classconsole_1_1_logging.html">console::Logging</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aebb75438fb8382ebc7174554b3614f07">console::logger</a> (std::clog, true, <a class="el" href="classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a551b723eafd6a31d444fcb2f5920fbd3">Logging::Level::INFO</a>)</td></tr>
-<tr class="memdesc:aebb75438fb8382ebc7174554b3614f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
-<tr class="separator:aebb75438fb8382ebc7174554b3614f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cd02249b1fd62dff7d5b07a3bca4371" id="r_a9cd02249b1fd62dff7d5b07a3bca4371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#a9cd02249b1fd62dff7d5b07a3bca4371">set</a> (<a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a> minLevel)</td></tr>
-<tr class="memdesc:a9cd02249b1fd62dff7d5b07a3bca4371"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最低日志级别（低于该级别的日志将被忽略）。  <br /></td></tr>
-<tr class="separator:a9cd02249b1fd62dff7d5b07a3bca4371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a498014e8e626590c276f5bd07ea45254" id="r_a498014e8e626590c276f5bd07ea45254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#a498014e8e626590c276f5bd07ea45254">set</a> (bool a, bool b, bool c, bool d, bool e)</td></tr>
-<tr class="memdesc:a498014e8e626590c276f5bd07ea45254"><td class="mdescLeft">&#160;</td><td class="mdescRight">单独设置每个级别的开关。  <br /></td></tr>
-<tr class="separator:a498014e8e626590c276f5bd07ea45254"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8258a4c54dc5e8eeef77cfa9405ac8a" id="r_af8258a4c54dc5e8eeef77cfa9405ac8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logging_8h.html#af8258a4c54dc5e8eeef77cfa9405ac8a">Logging</a> (std::ostream &amp;os=std::clog, bool cf=false, <a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a> lvl=<a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a>)</td></tr>
-<tr class="memdesc:af8258a4c54dc5e8eeef77cfa9405ac8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造 Logging 对象。  <br /></td></tr>
-<tr class="separator:af8258a4c54dc5e8eeef77cfa9405ac8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ed6344501277eb7cc4630bfdfd7eb7f" id="r_a8ed6344501277eb7cc4630bfdfd7eb7f"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a8ed6344501277eb7cc4630bfdfd7eb7f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="logging_8h.html#a8ed6344501277eb7cc4630bfdfd7eb7f">debug</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:a8ed6344501277eb7cc4630bfdfd7eb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 DEBUG 级别日志。  <br /></td></tr>
-<tr class="separator:a8ed6344501277eb7cc4630bfdfd7eb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb09349d642180ea5bb6497c6e357a5" id="r_a8eb09349d642180ea5bb6497c6e357a5"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a8eb09349d642180ea5bb6497c6e357a5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="logging_8h.html#a8eb09349d642180ea5bb6497c6e357a5">info</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:a8eb09349d642180ea5bb6497c6e357a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 INFO 级别日志。  <br /></td></tr>
-<tr class="separator:a8eb09349d642180ea5bb6497c6e357a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac11dfb3028df55ba569287e66c243ecf" id="r_ac11dfb3028df55ba569287e66c243ecf"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:ac11dfb3028df55ba569287e66c243ecf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="logging_8h.html#ac11dfb3028df55ba569287e66c243ecf">warn</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:ac11dfb3028df55ba569287e66c243ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 WARN 级别日志。  <br /></td></tr>
-<tr class="separator:ac11dfb3028df55ba569287e66c243ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d0fb185a06dab2b1bed05021de591e" id="r_ae4d0fb185a06dab2b1bed05021de591e"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:ae4d0fb185a06dab2b1bed05021de591e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="logging_8h.html#ae4d0fb185a06dab2b1bed05021de591e">error</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:ae4d0fb185a06dab2b1bed05021de591e"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 ERROR 级别日志。  <br /></td></tr>
-<tr class="separator:ae4d0fb185a06dab2b1bed05021de591e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae63b1dba15144247db1fdc4dc580e457" id="r_ae63b1dba15144247db1fdc4dc580e457"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:ae63b1dba15144247db1fdc4dc580e457"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="logging_8h.html#ae63b1dba15144247db1fdc4dc580e457">fatal</a> (const Args &amp;...args)</td></tr>
-<tr class="memdesc:ae63b1dba15144247db1fdc4dc580e457"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 FATAL 级别日志并抛出 FatalLogging 异常。  <br /></td></tr>
-<tr class="separator:ae63b1dba15144247db1fdc4dc580e457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee954f9f21c7f53ef7b9bbf7f5055da" id="r_aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">console::get_logger</a> ()</td></tr>
+<tr class="memdesc:aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部单例。  <br /></td></tr>
+<tr class="separator:aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">console::logger</a> = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td></tr>
+<tr class="memdesc:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
+<tr class="separator:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供带颜色和级别的日志记录功能。 </p>
 <p>包含 Logging 类，支持 DEBUG、INFO、WARN、ERROR、FATAL 五个级别， 可控制输出级别、颜色开关，并自动附加时间戳。全局默认 logger 实例可直接使用。 </p><dl class="section author"><dt>Author</dt><dd>MrXie1109 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT License </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a540aae996af47330f7fb73552763680f" name="a540aae996af47330f7fb73552763680f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a540aae996af47330f7fb73552763680f">&#9670;&#160;</a></span>Level</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a> : int8_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>日志级别枚举。 </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a540aae996af47330f7fb73552763680fadc30ec20708ef7b0f641ef78b7880a15" name="a540aae996af47330f7fb73552763680fadc30ec20708ef7b0f641ef78b7880a15"></a>DEBUG&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a540aae996af47330f7fb73552763680fa551b723eafd6a31d444fcb2f5920fbd3" name="a540aae996af47330f7fb73552763680fa551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a540aae996af47330f7fb73552763680fa32bd8a1db2275458673903bdb84cb277" name="a540aae996af47330f7fb73552763680fa32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a540aae996af47330f7fb73552763680fabb1ca97ec761fc37101737ba0aa2e7c5" name="a540aae996af47330f7fb73552763680fabb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a540aae996af47330f7fb73552763680fa19da7170bea36556dde582519795f3fc" name="a540aae996af47330f7fb73552763680fa19da7170bea36556dde582519795f3fc"></a>FATAL&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a8ed6344501277eb7cc4630bfdfd7eb7f" name="a8ed6344501277eb7cc4630bfdfd7eb7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ed6344501277eb7cc4630bfdfd7eb7f">&#9670;&#160;</a></span>debug()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::debug </td>
-          <td>(</td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>输出 DEBUG 级别日志。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>要输出的内容（可多个，自动转换为字符串）。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae4d0fb185a06dab2b1bed05021de591e" name="ae4d0fb185a06dab2b1bed05021de591e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4d0fb185a06dab2b1bed05021de591e">&#9670;&#160;</a></span>error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::error </td>
-          <td>(</td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>输出 ERROR 级别日志。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>要输出的内容。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae63b1dba15144247db1fdc4dc580e457" name="ae63b1dba15144247db1fdc4dc580e457"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae63b1dba15144247db1fdc4dc580e457">&#9670;&#160;</a></span>fatal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::fatal </td>
-          <td>(</td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>输出 FATAL 级别日志并抛出 FatalLogging 异常。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>要输出的内容。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">FatalLogging</td><td>异常，异常消息包含日志内容。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8eb09349d642180ea5bb6497c6e357a5" name="a8eb09349d642180ea5bb6497c6e357a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eb09349d642180ea5bb6497c6e357a5">&#9670;&#160;</a></span>info()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::info </td>
-          <td>(</td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>输出 INFO 级别日志。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>要输出的内容。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af8258a4c54dc5e8eeef77cfa9405ac8a" name="af8258a4c54dc5e8eeef77cfa9405ac8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8258a4c54dc5e8eeef77cfa9405ac8a">&#9670;&#160;</a></span>Logging()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">logger::Logging </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em> = <code>std::clog</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>cf</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a>&#160;</td>
-          <td class="paramname"><em>lvl</em> = <code><a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680fa551b723eafd6a31d444fcb2f5920fbd3">Level::INFO</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>构造 Logging 对象。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>输出流，默认为 std::cout。 </td></tr>
-    <tr><td class="paramname">cf</td><td>是否启用颜色，默认 false。 </td></tr>
-    <tr><td class="paramname">lvl</td><td>最低日志级别，默认 INFO。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a498014e8e626590c276f5bd07ea45254" name="a498014e8e626590c276f5bd07ea45254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a498014e8e626590c276f5bd07ea45254">&#9670;&#160;</a></span>set() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::set </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>e</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>单独设置每个级别的开关。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>DEBUG 开关 </td></tr>
-    <tr><td class="paramname">b</td><td>INFO 开关 </td></tr>
-    <tr><td class="paramname">c</td><td>WARN 开关 </td></tr>
-    <tr><td class="paramname">d</td><td>ERROR 开关 </td></tr>
-    <tr><td class="paramname">e</td><td>FATAL 开关 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9cd02249b1fd62dff7d5b07a3bca4371" name="a9cd02249b1fd62dff7d5b07a3bca4371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cd02249b1fd62dff7d5b07a3bca4371">&#9670;&#160;</a></span>set() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::set </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="logging_8h.html#a540aae996af47330f7fb73552763680f">Level</a>&#160;</td>
-          <td class="paramname"><em>minLevel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>设置最低日志级别（低于该级别的日志将被忽略）。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">minLevel</td><td>最低级别（包含）。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac11dfb3028df55ba569287e66c243ecf" name="ac11dfb3028df55ba569287e66c243ecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac11dfb3028df55ba569287e66c243ecf">&#9670;&#160;</a></span>warn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void logger::warn </td>
-          <td>(</td>
-          <td class="paramtype">const Args &amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>输出 WARN 级别日志。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>可变参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>要输出的内容。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

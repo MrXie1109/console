@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -109,12 +109,12 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>灵活的输出控制类，支持链式调用和多种参数。 </p>
 <p>该类允许用户指定分隔符、结尾符和是否立即刷新，并提供 <code>operator()</code> 重载 来接收任意数量的参数进行格式化输出。 默认全局实例 <code>print</code> 的行为类似于 Python 的 <code>print</code> 函数。</p>
-<p>使用示例： </p><div class="fragment"><div class="line"><a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>(<span class="stringliteral">&quot;Hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);     <span class="comment">// 输出 &quot;Hello world\n&quot; 并刷新</span></div>
-<div class="line"><a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>();                      <span class="comment">// 只输出换行</span></div>
+<p>使用示例： </p><div class="fragment"><div class="line"><a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a>(<span class="stringliteral">&quot;Hello&quot;</span>, <span class="stringliteral">&quot;world&quot;</span>);     <span class="comment">// 输出 &quot;Hello world\n&quot; 并刷新</span></div>
+<div class="line"><a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a>();                      <span class="comment">// 只输出换行</span></div>
 <div class="line"><a class="code hl_class" href="classconsole_1_1_output.html">Output</a> err(std::cerr, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;\n&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line">err(<span class="stringliteral">&quot;Error:&quot;</span>, code);          <span class="comment">// 输出到 stderr，无分隔符</span></div>
 <div class="ttc" id="aclassconsole_1_1_output_html"><div class="ttname"><a href="classconsole_1_1_output.html">console::Output</a></div><div class="ttdoc">灵活的输出控制类，支持链式调用和多种参数。</div><div class="ttdef"><b>Definition</b> output.h:371</div></div>
-<div class="ttc" id="anamespaceconsole_html_a1658ddfe71dc7f388938391c9a8db3fe"><div class="ttname"><a href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">console::print</a></div><div class="ttdeci">class console::Output print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div></div>
+<div class="ttc" id="anamespaceconsole_html_afc94bf1b5b2d118e6d8207ef587f5a89"><div class="ttname"><a href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">console::print</a></div><div class="ttdeci">static Output &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:444</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afb9589018dc1ac160ecca57a15a13924" name="afb9589018dc1ac160ecca57a15a13924"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb9589018dc1ac160ecca57a15a13924">&#9670;&#160;</a></span>Output() <span class="overload">[1/2]</span></h2>
@@ -335,7 +335,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

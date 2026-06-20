@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -128,301 +128,20 @@ Functions</h2></td></tr>
 <tr class="memitem:gaac7a5894d7d6708ea4912fea49a3d622"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">console::join</a> (const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;vec, const std::string &amp;sep=&quot;&quot;)</td></tr>
 <tr class="memdesc:gaac7a5894d7d6708ea4912fea49a3d622"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。  <br /></td></tr>
 <tr class="separator:gaac7a5894d7d6708ea4912fea49a3d622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga872b9ee5dd24eb93c21aefeca5f989b7" id="r_ga872b9ee5dd24eb93c21aefeca5f989b7"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:ga872b9ee5dd24eb93c21aefeca5f989b7"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga872b9ee5dd24eb93c21aefeca5f989b7">console::vals_to_str</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga872b9ee5dd24eb93c21aefeca5f989b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">将任意多个参数转换为字符串并拼接（无分隔符）。  <br /></td></tr>
-<tr class="separator:ga872b9ee5dd24eb93c21aefeca5f989b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab650e4da1b28c876cbfcb73e465b6f4d" id="r_gab650e4da1b28c876cbfcb73e465b6f4d"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:gab650e4da1b28c876cbfcb73e465b6f4d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab650e4da1b28c876cbfcb73e465b6f4d">console::str_to_vals</a> (std::string str, Args &amp;...args)</td></tr>
-<tr class="memdesc:gab650e4da1b28c876cbfcb73e465b6f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串中的值提取到多个参数中，参数类型由调用者指定。  <br /></td></tr>
-<tr class="separator:gab650e4da1b28c876cbfcb73e465b6f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8" id="r_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">将任意多个参数转换为字符串并拼接（无分隔符）。  <br /></td></tr>
+<tr class="separator:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga127963eae58c181d06c8efef328f029c" id="r_ga127963eae58c181d06c8efef328f029c"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:ga127963eae58c181d06c8efef328f029c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">console::from_string</a> (std::string str, Args &amp;...args)</td></tr>
+<tr class="memdesc:ga127963eae58c181d06c8efef328f029c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串中的值提取到多个参数中，参数类型由调用者指定。  <br /></td></tr>
+<tr class="separator:ga127963eae58c181d06c8efef328f029c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>字符串修剪、转换、分割、连接、格式化等工具。 </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gaac7a5894d7d6708ea4912fea49a3d622" name="gaac7a5894d7d6708ea4912fea49a3d622"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac7a5894d7d6708ea4912fea49a3d622">&#9670;&#160;</a></span>join()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::join </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>sep</em> = <code>&quot;&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>以分隔符连接容器中的字符串元素。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>元素类型（必须支持输出到 std::stringstream）。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vec</td><td>元素容器。 </td></tr>
-    <tr><td class="paramname">sep</td><td>分隔符，默认为空字符串。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 连接后的字符串。 </dd></dl>
-
-</div>
-</div>
-<a id="ga245794143f8fbcc1baec9b5d8309846f" name="ga245794143f8fbcc1baec9b5d8309846f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga245794143f8fbcc1baec9b5d8309846f">&#9670;&#160;</a></span>lower()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::lower </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>将字符串转换为小写。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>要转换的字符串。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 小写形式。 </dd></dl>
-
-</div>
-</div>
-<a id="ga808a28efa1932499e7912f519f1aa767" name="ga808a28efa1932499e7912f519f1aa767"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga808a28efa1932499e7912f519f1aa767">&#9670;&#160;</a></span>ltrim() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::ltrim </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>移除字符串左侧的空白字符（空格、制表符等）。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
-
-</div>
-</div>
-<a id="ga8095b8180454f96099dee7eb587158a6" name="ga8095b8180454f96099dee7eb587158a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8095b8180454f96099dee7eb587158a6">&#9670;&#160;</a></span>ltrim() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::ltrim </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>chars</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>移除字符串左侧指定的字符集合。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
-    <tr><td class="paramname">chars</td><td>要删除的字符集（只要字符出现在此集合中就被删除）。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
-
-</div>
-</div>
-<a id="ga32e13326520876f61cb8a33c74dc973f" name="ga32e13326520876f61cb8a33c74dc973f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga32e13326520876f61cb8a33c74dc973f">&#9670;&#160;</a></span>partition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structconsole_1_1_partition_result.html">PartitionResult</a> console::partition </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>sep</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>原始字符串。 </td></tr>
-    <tr><td class="paramname">sep</td><td>分隔符。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconsole_1_1_partition_result.html" title="字符串分区结果，包含左部分、分隔符、右部分。">PartitionResult</a> 分区结果。 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>若未找到分隔符，则 left 为原字符串，middle 和 right 为空。 </dd></dl>
-
-</div>
-</div>
-<a id="ga791084c0b457942320d99550c29600b7" name="ga791084c0b457942320d99550c29600b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga791084c0b457942320d99550c29600b7">&#9670;&#160;</a></span>rtrim() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::rtrim </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>移除字符串右侧的空白字符。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
-
-</div>
-</div>
-<a id="ga43f940389befb801afd08b04156f05ba" name="ga43f940389befb801afd08b04156f05ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga43f940389befb801afd08b04156f05ba">&#9670;&#160;</a></span>rtrim() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string console::rtrim </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>chars</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>移除字符串右侧指定的字符集合。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
-    <tr><td class="paramname">chars</td><td>要删除的字符集。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
-
-</div>
-</div>
-<a id="ga60b86273d02abf33f057e1e86325f455" name="ga60b86273d02abf33f057e1e86325f455"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga60b86273d02abf33f057e1e86325f455">&#9670;&#160;</a></span>split()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::string &gt; console::split </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>sep</em> = <code>&quot;&#160;&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>要分割的字符串。 </td></tr>
-    <tr><td class="paramname">sep</td><td>分隔符，默认为空格 " "。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; 分割后的子串列表。 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>连续的分隔符会产生空字符串子串。 </dd></dl>
-
-</div>
-</div>
-<a id="gab650e4da1b28c876cbfcb73e465b6f4d" name="gab650e4da1b28c876cbfcb73e465b6f4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab650e4da1b28c876cbfcb73e465b6f4d">&#9670;&#160;</a></span>str_to_vals()</h2>
+<a id="ga127963eae58c181d06c8efef328f029c" name="ga127963eae58c181d06c8efef328f029c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga127963eae58c181d06c8efef328f029c">&#9670;&#160;</a></span>from_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,7 +149,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 template&lt;class... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void console::str_to_vals </td>
+          <td class="memname">void console::from_string </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -466,53 +185,123 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
-<a id="ga7f55de957c5fa0975647a4530b75c61c" name="ga7f55de957c5fa0975647a4530b75c61c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7f55de957c5fa0975647a4530b75c61c">&#9670;&#160;</a></span>title()</h2>
+<a id="gaac7a5894d7d6708ea4912fea49a3d622" name="gaac7a5894d7d6708ea4912fea49a3d622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac7a5894d7d6708ea4912fea49a3d622">&#9670;&#160;</a></span>join()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string console::title </td>
+          <td class="memname">std::string console::join </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sep</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>以分隔符连接容器中的字符串元素。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型（必须支持输出到 std::stringstream）。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>元素容器。 </td></tr>
+    <tr><td class="paramname">sep</td><td>分隔符，默认为空字符串。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 连接后的字符串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga245794143f8fbcc1baec9b5d8309846f" name="ga245794143f8fbcc1baec9b5d8309846f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga245794143f8fbcc1baec9b5d8309846f">&#9670;&#160;</a></span>lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::lower </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>将字符串转换为标题格式（每个单词首字母大写，其余小写）。 </p>
+<p>将字符串转换为小写。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>要转换的字符串。 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 标题格式的字符串。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 小写形式。 </dd></dl>
 
 </div>
 </div>
-<a id="gab9c219f8107af63d17ec5616fe430891" name="gab9c219f8107af63d17ec5616fe430891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9c219f8107af63d17ec5616fe430891">&#9670;&#160;</a></span>trim() <span class="overload">[1/2]</span></h2>
+<a id="ga808a28efa1932499e7912f519f1aa767" name="ga808a28efa1932499e7912f519f1aa767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga808a28efa1932499e7912f519f1aa767">&#9670;&#160;</a></span>ltrim() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string console::trim </td>
+          <td class="memname">std::string console::ltrim </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>移除字符串两侧的空白字符。 </p>
+<p>移除字符串左侧的空白字符（空格、制表符等）。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -520,14 +309,17 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
-<a id="ga8e54b4147b33319e6bc08a8469ae06a9" name="ga8e54b4147b33319e6bc08a8469ae06a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8e54b4147b33319e6bc08a8469ae06a9">&#9670;&#160;</a></span>trim() <span class="overload">[2/2]</span></h2>
+<a id="ga8095b8180454f96099dee7eb587158a6" name="ga8095b8180454f96099dee7eb587158a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8095b8180454f96099dee7eb587158a6">&#9670;&#160;</a></span>ltrim() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string console::trim </td>
+          <td class="memname">std::string console::ltrim </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -544,9 +336,142 @@ template&lt;class... Args&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>移除字符串两侧指定的字符集合。 </p>
+<p>移除字符串左侧指定的字符集合。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
+    <tr><td class="paramname">chars</td><td>要删除的字符集（只要字符出现在此集合中就被删除）。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga32e13326520876f61cb8a33c74dc973f" name="ga32e13326520876f61cb8a33c74dc973f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga32e13326520876f61cb8a33c74dc973f">&#9670;&#160;</a></span>partition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconsole_1_1_partition_result.html">PartitionResult</a> console::partition </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>原始字符串。 </td></tr>
+    <tr><td class="paramname">sep</td><td>分隔符。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconsole_1_1_partition_result.html" title="字符串分区结果，包含左部分、分隔符、右部分。">PartitionResult</a> 分区结果。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>若未找到分隔符，则 left 为原字符串，middle 和 right 为空。 </dd></dl>
+
+</div>
+</div>
+<a id="ga791084c0b457942320d99550c29600b7" name="ga791084c0b457942320d99550c29600b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga791084c0b457942320d99550c29600b7">&#9670;&#160;</a></span>rtrim() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::rtrim </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移除字符串右侧的空白字符。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga43f940389befb801afd08b04156f05ba" name="ga43f940389befb801afd08b04156f05ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43f940389befb801afd08b04156f05ba">&#9670;&#160;</a></span>rtrim() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::rtrim </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>chars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移除字符串右侧指定的字符集合。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
@@ -558,35 +483,90 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
-<a id="ga9b8e55a0a5c1eafc84ec0b3b53c77170" name="ga9b8e55a0a5c1eafc84ec0b3b53c77170"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9b8e55a0a5c1eafc84ec0b3b53c77170">&#9670;&#160;</a></span>upper()</h2>
+<a id="ga60b86273d02abf33f057e1e86325f455" name="ga60b86273d02abf33f057e1e86325f455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60b86273d02abf33f057e1e86325f455">&#9670;&#160;</a></span>split()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string console::upper </td>
+          <td class="memname">std::vector&lt; std::string &gt; console::split </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sep</em> = <code>&quot;&#160;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要分割的字符串。 </td></tr>
+    <tr><td class="paramname">sep</td><td>分隔符，默认为空格 " "。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; 分割后的子串列表。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>连续的分隔符会产生空字符串子串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga7f55de957c5fa0975647a4530b75c61c" name="ga7f55de957c5fa0975647a4530b75c61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f55de957c5fa0975647a4530b75c61c">&#9670;&#160;</a></span>title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::title </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>将字符串转换为大写。 </p>
+<p>将字符串转换为标题格式（每个单词首字母大写，其余小写）。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>要转换的字符串。 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 大写形式。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 标题格式的字符串。 </dd></dl>
 
 </div>
 </div>
-<a id="ga872b9ee5dd24eb93c21aefeca5f989b7" name="ga872b9ee5dd24eb93c21aefeca5f989b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga872b9ee5dd24eb93c21aefeca5f989b7">&#9670;&#160;</a></span>vals_to_str()</h2>
+<a id="gaa6b1a779bfc2be5e95c2a9db90e5bea8" name="gaa6b1a779bfc2be5e95c2a9db90e5bea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6b1a779bfc2be5e95c2a9db90e5bea8">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -594,7 +574,7 @@ template&lt;class... Args&gt; </div>
 template&lt;class... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::string console::vals_to_str </td>
+          <td class="memname">std::string console::to_string </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -620,10 +600,126 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
+<a id="gab9c219f8107af63d17ec5616fe430891" name="gab9c219f8107af63d17ec5616fe430891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9c219f8107af63d17ec5616fe430891">&#9670;&#160;</a></span>trim() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::trim </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移除字符串两侧的空白字符。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga8e54b4147b33319e6bc08a8469ae06a9" name="ga8e54b4147b33319e6bc08a8469ae06a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e54b4147b33319e6bc08a8469ae06a9">&#9670;&#160;</a></span>trim() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::trim </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>chars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移除字符串两侧指定的字符集合。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要处理的字符串。 </td></tr>
+    <tr><td class="paramname">chars</td><td>要删除的字符集。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 处理后的新字符串。 </dd></dl>
+
+</div>
+</div>
+<a id="ga9b8e55a0a5c1eafc84ec0b3b53c77170" name="ga9b8e55a0a5c1eafc84ec0b3b53c77170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b8e55a0a5c1eafc84ec0b3b53c77170">&#9670;&#160;</a></span>upper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::upper </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将字符串转换为大写。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要转换的字符串。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 大写形式。 </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

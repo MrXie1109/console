@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -142,12 +142,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &quot;<a class="code" href="put_8h.html">put.h</a>&quot;</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &quot;<a class="code" href="pool_8h.html">pool.h</a>&quot;</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// #include &quot;win/melody.h&quot;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// #include &quot;win/melody.h&quot; //需要链接，所以不自动包含</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">   77</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a>[] = <span class="stringliteral">&quot;CONSOLE-LIB-2026-06-07-MRXIE1109&quot;</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#ifdef __linux__</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &quot;<a class="code" href="process_8h.html">linux/process.h</a>&quot;</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">   81</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a>[] = <span class="stringliteral">&quot;CONSOLE-LIB-2026-06-20-MRXIE1109&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
 <div class="ttc" id="aadapter_8h_html"><div class="ttname"><a href="adapter_8h.html">adapter.h</a></div><div class="ttdoc">提供带有值返回 pop 操作的容器适配器包装类和 range 函数。</div></div>
 <div class="ttc" id="abox_8h_html"><div class="ttname"><a href="box_8h.html">box.h</a></div><div class="ttdoc">提供可存储任意类型的异构容器（Box）和类型擦除包装器（Item）。</div></div>
 <div class="ttc" id="acolorful_8h_html"><div class="ttname"><a href="colorful_8h.html">colorful.h</a></div><div class="ttdoc">提供控制台颜色和样式修饰的 ANSI 转义序列常量。</div></div>
@@ -168,10 +172,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="amaybe_8h_html"><div class="ttname"><a href="maybe_8h.html">maybe.h</a></div><div class="ttdoc">提供类似 std::optional 的可选值容器 Maybe，支持空状态（nothing）。</div></div>
 <div class="ttc" id="amultiarray_8h_html"><div class="ttname"><a href="multiarray_8h.html">multiarray.h</a></div><div class="ttdoc">提供编译期维度固定的多维数组容器 MultiArray，支持任意维度和元素级算术/逻辑/位运算。</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
-<div class="ttc" id="anamespaceconsole_html_a961f78601d0d038fd5c3ffba6bfd6e37"><div class="ttname"><a href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">console::meta</a></div><div class="ttdeci">static constexpr char meta[]</div><div class="ttdef"><b>Definition</b> all.h:77</div></div>
+<div class="ttc" id="anamespaceconsole_html_a961f78601d0d038fd5c3ffba6bfd6e37"><div class="ttname"><a href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">console::meta</a></div><div class="ttdeci">static constexpr char meta[]</div><div class="ttdef"><b>Definition</b> all.h:81</div></div>
 <div class="ttc" id="aoutfwd_8h_html"><div class="ttname"><a href="outfwd_8h.html">outfwd.h</a></div><div class="ttdoc">为 STL 容器提供输出流运算符的前向声明。</div></div>
 <div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">提供 STL 容器的格式化输出和灵活的输出控制工具。</div></div>
 <div class="ttc" id="apool_8h_html"><div class="ttname"><a href="pool_8h.html">pool.h</a></div><div class="ttdoc">简单的线程池实现，模仿了 Python 的 concurrent.futures.ThreadPoolExecutor 接口。</div></div>
+<div class="ttc" id="aprocess_8h_html"><div class="ttname"><a href="process_8h.html">process.h</a></div><div class="ttdoc">Linux 平台进程管理库，支持进程创建、控制、等待和信息查询。</div></div>
 <div class="ttc" id="aprogress_8h_html"><div class="ttname"><a href="progress_8h.html">progress.h</a></div><div class="ttdoc">提供非侵入式的容器遍历进度条显示。</div></div>
 <div class="ttc" id="aput_8h_html"><div class="ttname"><a href="put_8h.html">put.h</a></div><div class="ttdoc">提供在 output.h 中用于输出单个值的 put 函数。</div></div>
 <div class="ttc" id="arandom_8h_html"><div class="ttname"><a href="random_8h.html">random.h</a></div><div class="ttdoc">提供随机数生成、随机选择、随机打乱等实用工具。</div></div>
@@ -188,7 +193,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

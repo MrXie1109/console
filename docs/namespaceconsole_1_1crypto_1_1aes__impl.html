@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -128,12 +128,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aaa6a2da5fbb07213c6a3d40437620986" id="r_aaa6a2da5fbb07213c6a3d40437620986"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#aaa6a2da5fbb07213c6a3d40437620986">Sbox</a> [256]</td></tr>
-<tr class="memdesc:aaa6a2da5fbb07213c6a3d40437620986"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES算法的S盒，用于字节替换。  <br /></td></tr>
-<tr class="separator:aaa6a2da5fbb07213c6a3d40437620986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ba972269808747f532e6ed9936461c" id="r_a69ba972269808747f532e6ed9936461c"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#a69ba972269808747f532e6ed9936461c">InvSbox</a> [256]</td></tr>
-<tr class="memdesc:a69ba972269808747f532e6ed9936461c"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES算法的逆S盒，用于解密时的字节替换。  <br /></td></tr>
-<tr class="separator:a69ba972269808747f532e6ed9936461c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4178c78f165d54250155ff8c9bd805" id="r_a6f4178c78f165d54250155ff8c9bd805"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#a6f4178c78f165d54250155ff8c9bd805">Sbox</a> [256]</td></tr>
+<tr class="memdesc:a6f4178c78f165d54250155ff8c9bd805"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES算法的S盒，用于字节替换。  <br /></td></tr>
+<tr class="separator:a6f4178c78f165d54250155ff8c9bd805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b13013d6d696824209c57374ba7f126" id="r_a2b13013d6d696824209c57374ba7f126"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1aes__impl.html#a2b13013d6d696824209c57374ba7f126">InvSbox</a> [256]</td></tr>
+<tr class="memdesc:a2b13013d6d696824209c57374ba7f126"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES算法的逆S盒，用于解密时的字节替换。  <br /></td></tr>
+<tr class="separator:a2b13013d6d696824209c57374ba7f126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>AES加密算法的内部实现细节。 </p>
@@ -144,6 +144,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::add_round_key </td>
@@ -163,6 +166,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>轮密钥加操作，将状态矩阵与轮密钥进行异或。 </p>
@@ -181,6 +189,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::aes_decrypt_block </td>
@@ -206,6 +217,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>AES解密单个块（128位）。 </p>
@@ -225,6 +241,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::aes_encrypt_block </td>
@@ -250,6 +269,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>AES加密单个块（128位）。 </p>
@@ -269,6 +293,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t console::crypto::aes_impl::gmul </td>
@@ -288,6 +315,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>在GF(2^8)有限域中执行乘法运算。 </p>
@@ -307,6 +339,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::inv_mix_columns </td>
@@ -316,6 +351,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>逆列混合操作，对状态矩阵的每一列进行逆线性变换。 </p>
@@ -333,6 +373,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::inv_shift_rows </td>
@@ -342,6 +385,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>逆行移位操作，将状态矩阵的各行循环右移不同偏移量。 </p>
@@ -359,6 +407,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::inv_sub_bytes </td>
@@ -368,6 +419,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>逆字节替换操作，使用逆S盒替换状态矩阵中的每个字节。 </p>
@@ -385,6 +441,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::key_expansion </td>
@@ -404,6 +463,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>AES密钥扩展算法，将原始密钥扩展为11轮使用的轮密钥。 </p>
@@ -422,6 +486,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::mix_columns </td>
@@ -431,6 +498,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>列混合操作，对状态矩阵的每一列进行线性变换。 </p>
@@ -448,6 +520,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string console::crypto::aes_impl::pad_key </td>
@@ -457,6 +532,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>将密钥填充到16字节（AES-128要求的密钥长度）。 </p>
@@ -476,6 +556,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string console::crypto::aes_impl::random_bytes </td>
@@ -484,6 +567,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>生成随机字节序列。 </p>
@@ -497,6 +585,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::shift_rows </td>
@@ -506,6 +597,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>行移位操作，将状态矩阵的各行循环左移不同偏移量。 </p>
@@ -523,6 +619,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::aes_impl::sub_bytes </td>
@@ -532,6 +631,11 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>字节替换操作，使用S盒替换状态矩阵中的每个字节。 </p>
@@ -545,16 +649,24 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a69ba972269808747f532e6ed9936461c" name="a69ba972269808747f532e6ed9936461c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69ba972269808747f532e6ed9936461c">&#9670;&#160;</a></span>InvSbox</h2>
+<a id="a2b13013d6d696824209c57374ba7f126" name="a2b13013d6d696824209c57374ba7f126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b13013d6d696824209c57374ba7f126">&#9670;&#160;</a></span>InvSbox</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t console::crypto::aes_impl::InvSbox[256]</td>
+          <td class="memname">constexpr uint8_t console::crypto::aes_impl::InvSbox[256]</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">                0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb,</div>
@@ -578,16 +690,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aaa6a2da5fbb07213c6a3d40437620986" name="aaa6a2da5fbb07213c6a3d40437620986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa6a2da5fbb07213c6a3d40437620986">&#9670;&#160;</a></span>Sbox</h2>
+<a id="a6f4178c78f165d54250155ff8c9bd805" name="a6f4178c78f165d54250155ff8c9bd805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4178c78f165d54250155ff8c9bd805">&#9670;&#160;</a></span>Sbox</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t console::crypto::aes_impl::Sbox[256]</td>
+          <td class="memname">constexpr uint8_t console::crypto::aes_impl::Sbox[256]</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">                0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,</div>
@@ -614,7 +734,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['s_0',['S',['../namespaceconsole_1_1crypto_1_1md5__impl.html#a0f1b5c1c8595123c308e916e468492be',1,'console::crypto::md5_impl']]],
-  ['sbox_1',['Sbox',['../namespaceconsole_1_1crypto_1_1aes__impl.html#aaa6a2da5fbb07213c6a3d40437620986',1,'console::crypto::aes_impl']]],
-  ['second_2',['second',['../namespaceconsole_1_1ops.html#a5101118e6039ffcbeb3888a227154127',1,'console::ops']]],
+  ['s_0',['S',['../namespaceconsole_1_1crypto_1_1md5__impl.html#a8dbfa23f4f82a125a6213a6346dd9dec',1,'console::crypto::md5_impl']]],
+  ['sbox_1',['Sbox',['../namespaceconsole_1_1crypto_1_1aes__impl.html#a6f4178c78f165d54250155ff8c9bd805',1,'console::crypto::aes_impl']]],
+  ['second_2',['second',['../namespaceconsole_1_1ops.html#a45b17f3677c9f5a49557acf74b5de77a',1,'console::ops']]],
   ['show_5fpercent_3',['show_percent',['../structconsole_1_1_progress_config.html#afacbd08910875eec7e6731513f4aab2f',1,'console::ProgressConfig']]],
-  ['sqrt_4',['sqrt',['../namespaceconsole_1_1ops.html#ad551b851d7c7c72fc26160cd9b0d1271',1,'console::ops']]],
-  ['square_5',['square',['../namespaceconsole_1_1ops.html#a1d93aa5182363e1f3016b3333c75b3e9',1,'console::ops']]],
-  ['strikethrough_6',['Strikethrough',['../namespaceconsole_1_1color.html#a9cc2f3a2d9b63617e9a646746338ba1e',1,'console::color']]],
-  ['suffix_7',['suffix',['../structconsole_1_1_progress_config.html#a4601e9b151a85497c4ce9d687d316a63',1,'console::ProgressConfig']]]
+  ['signal_4',['signal',['../structconsole_1_1_exit_status.html#af56d16f6d23b646b29e5dddf54b77804',1,'console::ExitStatus']]],
+  ['signaled_5',['signaled',['../structconsole_1_1_exit_status.html#aee4939d2448426c0277758c9166b693b',1,'console::ExitStatus']]],
+  ['sqrt_6',['sqrt',['../namespaceconsole_1_1ops.html#a24666124f1c8c8de49f08cf89f2eeaf4',1,'console::ops']]],
+  ['square_7',['square',['../namespaceconsole_1_1ops.html#a36eaa5993e69f8604d14a80741ad88b3',1,'console::ops']]],
+  ['strikethrough_8',['Strikethrough',['../namespaceconsole_1_1color.html#acc3ed5a35ee1759eafcf3f666e4440a4',1,'console::color']]],
+  ['suffix_9',['suffix',['../structconsole_1_1_progress_config.html#a4601e9b151a85497c4ce9d687d316a63',1,'console::ProgressConfig']]]
 ];

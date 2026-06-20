@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">colorful.h File Reference</div></div>
 </div><!--header-->
@@ -83,7 +84,8 @@ $(function() {
 
 <p>提供控制台颜色和样式修饰的 ANSI 转义序列常量。  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+</div>
 <p><a href="colorful_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -95,131 +97,137 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceconsole_1_1color"><td class="mdescLeft">&#160;</td><td class="mdescRight">包含控制台颜色、背景色和文本样式的 ANSI 转义序列常量。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a94d5279e2ad3f3f204754b6820d8e115" id="r_a94d5279e2ad3f3f204754b6820d8e115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a94d5279e2ad3f3f204754b6820d8e115">console::color::change</a> (const char *clr=<a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a>, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memdesc:a94d5279e2ad3f3f204754b6820d8e115"><td class="mdescLeft">&#160;</td><td class="mdescRight">修改颜色。  <br /></td></tr>
+<tr class="separator:a94d5279e2ad3f3f204754b6820d8e115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa2b5db17260521f4a0541afc70696d59" id="r_aa2b5db17260521f4a0541afc70696d59"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aa2b5db17260521f4a0541afc70696d59">console::color::Black</a> = &quot;\033[30m&quot;</td></tr>
-<tr class="memdesc:aa2b5db17260521f4a0541afc70696d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色前景  <br /></td></tr>
-<tr class="separator:aa2b5db17260521f4a0541afc70696d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a384e1a17e4c2cc6c76dbb7b639ebfb1a" id="r_a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a384e1a17e4c2cc6c76dbb7b639ebfb1a">console::color::Red</a> = &quot;\033[31m&quot;</td></tr>
-<tr class="memdesc:a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色前景  <br /></td></tr>
-<tr class="separator:a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5c393b040948fadaf9e8e20fbe1b86" id="r_a2b5c393b040948fadaf9e8e20fbe1b86"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2b5c393b040948fadaf9e8e20fbe1b86">console::color::Green</a> = &quot;\033[32m&quot;</td></tr>
-<tr class="memdesc:a2b5c393b040948fadaf9e8e20fbe1b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色前景  <br /></td></tr>
-<tr class="separator:a2b5c393b040948fadaf9e8e20fbe1b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c24ae11d31fa9c6e9c95d8871c91d70" id="r_a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8c24ae11d31fa9c6e9c95d8871c91d70">console::color::Yellow</a> = &quot;\033[33m&quot;</td></tr>
-<tr class="memdesc:a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色前景  <br /></td></tr>
-<tr class="separator:a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0edce01b0636394afa3d0c17cde5ec5" id="r_af0edce01b0636394afa3d0c17cde5ec5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af0edce01b0636394afa3d0c17cde5ec5">console::color::Blue</a> = &quot;\033[34m&quot;</td></tr>
-<tr class="memdesc:af0edce01b0636394afa3d0c17cde5ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色前景  <br /></td></tr>
-<tr class="separator:af0edce01b0636394afa3d0c17cde5ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5232da7036369752ecbcf876373b30af" id="r_a5232da7036369752ecbcf876373b30af"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a5232da7036369752ecbcf876373b30af">console::color::Magenta</a> = &quot;\033[35m&quot;</td></tr>
-<tr class="memdesc:a5232da7036369752ecbcf876373b30af"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红前景  <br /></td></tr>
-<tr class="separator:a5232da7036369752ecbcf876373b30af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1dac334f0acb0e2d5351f00c7ec140e" id="r_ab1dac334f0acb0e2d5351f00c7ec140e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ab1dac334f0acb0e2d5351f00c7ec140e">console::color::Cyan</a> = &quot;\033[36m&quot;</td></tr>
-<tr class="memdesc:ab1dac334f0acb0e2d5351f00c7ec140e"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色前景  <br /></td></tr>
-<tr class="separator:ab1dac334f0acb0e2d5351f00c7ec140e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80940048f2649764f34f506cd33156f6" id="r_a80940048f2649764f34f506cd33156f6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a80940048f2649764f34f506cd33156f6">console::color::White</a> = &quot;\033[37m&quot;</td></tr>
-<tr class="memdesc:a80940048f2649764f34f506cd33156f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色前景  <br /></td></tr>
-<tr class="separator:a80940048f2649764f34f506cd33156f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71f24d6a2e6db858189cec651aef52cb" id="r_a71f24d6a2e6db858189cec651aef52cb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a71f24d6a2e6db858189cec651aef52cb">console::color::BrightBlack</a> = &quot;\033[90m&quot;</td></tr>
-<tr class="memdesc:a71f24d6a2e6db858189cec651aef52cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色（灰）前景  <br /></td></tr>
-<tr class="separator:a71f24d6a2e6db858189cec651aef52cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47952d071e2e7b9de8d95e8c31d3192a" id="r_a47952d071e2e7b9de8d95e8c31d3192a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a47952d071e2e7b9de8d95e8c31d3192a">console::color::BrightRed</a> = &quot;\033[91m&quot;</td></tr>
-<tr class="memdesc:a47952d071e2e7b9de8d95e8c31d3192a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色前景  <br /></td></tr>
-<tr class="separator:a47952d071e2e7b9de8d95e8c31d3192a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa36bfd7055c59f2f9811e6784a9d7474" id="r_aa36bfd7055c59f2f9811e6784a9d7474"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aa36bfd7055c59f2f9811e6784a9d7474">console::color::BrightGreen</a> = &quot;\033[92m&quot;</td></tr>
-<tr class="memdesc:aa36bfd7055c59f2f9811e6784a9d7474"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色前景  <br /></td></tr>
-<tr class="separator:aa36bfd7055c59f2f9811e6784a9d7474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824901caf455f0f8937ad51ae2525551" id="r_a824901caf455f0f8937ad51ae2525551"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a824901caf455f0f8937ad51ae2525551">console::color::BrightYellow</a> = &quot;\033[93m&quot;</td></tr>
-<tr class="memdesc:a824901caf455f0f8937ad51ae2525551"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色前景  <br /></td></tr>
-<tr class="separator:a824901caf455f0f8937ad51ae2525551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80ae9e935dbf1886aa2a22946a1f7bcf" id="r_a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a80ae9e935dbf1886aa2a22946a1f7bcf">console::color::BrightBlue</a> = &quot;\033[94m&quot;</td></tr>
-<tr class="memdesc:a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色前景  <br /></td></tr>
-<tr class="separator:a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c394ff9bd3980e5af678c00aa3bfba" id="r_ad7c394ff9bd3980e5af678c00aa3bfba"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad7c394ff9bd3980e5af678c00aa3bfba">console::color::BrightMagenta</a> = &quot;\033[95m&quot;</td></tr>
-<tr class="memdesc:ad7c394ff9bd3980e5af678c00aa3bfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红前景  <br /></td></tr>
-<tr class="separator:ad7c394ff9bd3980e5af678c00aa3bfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc90f88f3b8842a430e6c230fb24ff06" id="r_acc90f88f3b8842a430e6c230fb24ff06"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#acc90f88f3b8842a430e6c230fb24ff06">console::color::BrightCyan</a> = &quot;\033[96m&quot;</td></tr>
-<tr class="memdesc:acc90f88f3b8842a430e6c230fb24ff06"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色前景  <br /></td></tr>
-<tr class="separator:acc90f88f3b8842a430e6c230fb24ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad851d58441686c943746d3a9c7e076e3" id="r_ad851d58441686c943746d3a9c7e076e3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad851d58441686c943746d3a9c7e076e3">console::color::BrightWhite</a> = &quot;\033[97m&quot;</td></tr>
-<tr class="memdesc:ad851d58441686c943746d3a9c7e076e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色前景  <br /></td></tr>
-<tr class="separator:ad851d58441686c943746d3a9c7e076e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed61bfb193c5c64c0ac4aed09b033c33" id="r_aed61bfb193c5c64c0ac4aed09b033c33"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aed61bfb193c5c64c0ac4aed09b033c33">console::color::Reset</a> = &quot;\033[0m&quot;</td></tr>
-<tr class="memdesc:aed61bfb193c5c64c0ac4aed09b033c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置所有颜色/样式  <br /></td></tr>
-<tr class="separator:aed61bfb193c5c64c0ac4aed09b033c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac965d70898a21f9376ce35137daec99e" id="r_ac965d70898a21f9376ce35137daec99e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ac965d70898a21f9376ce35137daec99e">console::color::BgBlack</a> = &quot;\033[40m&quot;</td></tr>
-<tr class="memdesc:ac965d70898a21f9376ce35137daec99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色背景  <br /></td></tr>
-<tr class="separator:ac965d70898a21f9376ce35137daec99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a379ed3c04eed188ecd035499e8bd7edd" id="r_a379ed3c04eed188ecd035499e8bd7edd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a379ed3c04eed188ecd035499e8bd7edd">console::color::BgRed</a> = &quot;\033[41m&quot;</td></tr>
-<tr class="memdesc:a379ed3c04eed188ecd035499e8bd7edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色背景  <br /></td></tr>
-<tr class="separator:a379ed3c04eed188ecd035499e8bd7edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767a7d8159b29de740031e4c3877aee7" id="r_a767a7d8159b29de740031e4c3877aee7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a767a7d8159b29de740031e4c3877aee7">console::color::BgGreen</a> = &quot;\033[42m&quot;</td></tr>
-<tr class="memdesc:a767a7d8159b29de740031e4c3877aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色背景  <br /></td></tr>
-<tr class="separator:a767a7d8159b29de740031e4c3877aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8603ae713988a8c5c9e61c12ca840a58" id="r_a8603ae713988a8c5c9e61c12ca840a58"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8603ae713988a8c5c9e61c12ca840a58">console::color::BgYellow</a> = &quot;\033[43m&quot;</td></tr>
-<tr class="memdesc:a8603ae713988a8c5c9e61c12ca840a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色背景  <br /></td></tr>
-<tr class="separator:a8603ae713988a8c5c9e61c12ca840a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de8cf875ecb19bca9d315a20f152230" id="r_a7de8cf875ecb19bca9d315a20f152230"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7de8cf875ecb19bca9d315a20f152230">console::color::BgBlue</a> = &quot;\033[44m&quot;</td></tr>
-<tr class="memdesc:a7de8cf875ecb19bca9d315a20f152230"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色背景  <br /></td></tr>
-<tr class="separator:a7de8cf875ecb19bca9d315a20f152230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed5997b03dfec3eb8e16b8e5664d6038" id="r_aed5997b03dfec3eb8e16b8e5664d6038"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aed5997b03dfec3eb8e16b8e5664d6038">console::color::BgMagenta</a> = &quot;\033[45m&quot;</td></tr>
-<tr class="memdesc:aed5997b03dfec3eb8e16b8e5664d6038"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红背景  <br /></td></tr>
-<tr class="separator:aed5997b03dfec3eb8e16b8e5664d6038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11da907d8e8a7e86076e0bf4f041cdcc" id="r_a11da907d8e8a7e86076e0bf4f041cdcc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a11da907d8e8a7e86076e0bf4f041cdcc">console::color::BgCyan</a> = &quot;\033[46m&quot;</td></tr>
-<tr class="memdesc:a11da907d8e8a7e86076e0bf4f041cdcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色背景  <br /></td></tr>
-<tr class="separator:a11da907d8e8a7e86076e0bf4f041cdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea161a5e865cc672218062b22d85468" id="r_adea161a5e865cc672218062b22d85468"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#adea161a5e865cc672218062b22d85468">console::color::BgWhite</a> = &quot;\033[47m&quot;</td></tr>
-<tr class="memdesc:adea161a5e865cc672218062b22d85468"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色背景  <br /></td></tr>
-<tr class="separator:adea161a5e865cc672218062b22d85468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58be8978952ba7b88bc65fcf84948ecb" id="r_a58be8978952ba7b88bc65fcf84948ecb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a58be8978952ba7b88bc65fcf84948ecb">console::color::BgBrightBlack</a> = &quot;\033[100m&quot;</td></tr>
-<tr class="memdesc:a58be8978952ba7b88bc65fcf84948ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色背景  <br /></td></tr>
-<tr class="separator:a58be8978952ba7b88bc65fcf84948ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c949453b7988c53fd05c0f2afc570c3" id="r_a9c949453b7988c53fd05c0f2afc570c3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9c949453b7988c53fd05c0f2afc570c3">console::color::BgBrightRed</a> = &quot;\033[101m&quot;</td></tr>
-<tr class="memdesc:a9c949453b7988c53fd05c0f2afc570c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色背景  <br /></td></tr>
-<tr class="separator:a9c949453b7988c53fd05c0f2afc570c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a651d18a496b1308567180ffab4d2dd9f" id="r_a651d18a496b1308567180ffab4d2dd9f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a651d18a496b1308567180ffab4d2dd9f">console::color::BgBrightGreen</a> = &quot;\033[102m&quot;</td></tr>
-<tr class="memdesc:a651d18a496b1308567180ffab4d2dd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色背景  <br /></td></tr>
-<tr class="separator:a651d18a496b1308567180ffab4d2dd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030542c9b76328cee0ff0ae0b70946b2" id="r_a030542c9b76328cee0ff0ae0b70946b2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a030542c9b76328cee0ff0ae0b70946b2">console::color::BgBrightYellow</a> = &quot;\033[103m&quot;</td></tr>
-<tr class="memdesc:a030542c9b76328cee0ff0ae0b70946b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色背景  <br /></td></tr>
-<tr class="separator:a030542c9b76328cee0ff0ae0b70946b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7187373a5da68b1e57671dfb17a05354" id="r_a7187373a5da68b1e57671dfb17a05354"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7187373a5da68b1e57671dfb17a05354">console::color::BgBrightBlue</a> = &quot;\033[104m&quot;</td></tr>
-<tr class="memdesc:a7187373a5da68b1e57671dfb17a05354"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色背景  <br /></td></tr>
-<tr class="separator:a7187373a5da68b1e57671dfb17a05354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9655d396821f64ec699d54752f4e96e6" id="r_a9655d396821f64ec699d54752f4e96e6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9655d396821f64ec699d54752f4e96e6">console::color::BgBrightMagenta</a> = &quot;\033[105m&quot;</td></tr>
-<tr class="memdesc:a9655d396821f64ec699d54752f4e96e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红背景  <br /></td></tr>
-<tr class="separator:a9655d396821f64ec699d54752f4e96e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648bc16534400f6894b1cec609f6aec7" id="r_a648bc16534400f6894b1cec609f6aec7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a648bc16534400f6894b1cec609f6aec7">console::color::BgBrightCyan</a> = &quot;\033[106m&quot;</td></tr>
-<tr class="memdesc:a648bc16534400f6894b1cec609f6aec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色背景  <br /></td></tr>
-<tr class="separator:a648bc16534400f6894b1cec609f6aec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2216f63938f268e7302070e5ea1a5694" id="r_a2216f63938f268e7302070e5ea1a5694"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2216f63938f268e7302070e5ea1a5694">console::color::BgBrightWhite</a> = &quot;\033[107m&quot;</td></tr>
-<tr class="memdesc:a2216f63938f268e7302070e5ea1a5694"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色背景  <br /></td></tr>
-<tr class="separator:a2216f63938f268e7302070e5ea1a5694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dfb10aea5647c1c039da43f79871f43" id="r_a1dfb10aea5647c1c039da43f79871f43"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a1dfb10aea5647c1c039da43f79871f43">console::color::Bold</a> = &quot;\033[1m&quot;</td></tr>
-<tr class="memdesc:a1dfb10aea5647c1c039da43f79871f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">粗体  <br /></td></tr>
-<tr class="separator:a1dfb10aea5647c1c039da43f79871f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad802e1d313c59f4596944cfbd50f7203" id="r_ad802e1d313c59f4596944cfbd50f7203"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad802e1d313c59f4596944cfbd50f7203">console::color::Dim</a> = &quot;\033[2m&quot;</td></tr>
-<tr class="memdesc:ad802e1d313c59f4596944cfbd50f7203"><td class="mdescLeft">&#160;</td><td class="mdescRight">暗淡（降低亮度）  <br /></td></tr>
-<tr class="separator:ad802e1d313c59f4596944cfbd50f7203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f5e8946ee12cde77ac0f1e7eaf3d86" id="r_ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae7f5e8946ee12cde77ac0f1e7eaf3d86">console::color::Italic</a> = &quot;\033[3m&quot;</td></tr>
-<tr class="memdesc:ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">斜体  <br /></td></tr>
-<tr class="separator:ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34c3d5fdd053b51a3f99a89abd94174" id="r_af34c3d5fdd053b51a3f99a89abd94174"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af34c3d5fdd053b51a3f99a89abd94174">console::color::Underline</a> = &quot;\033[4m&quot;</td></tr>
-<tr class="memdesc:af34c3d5fdd053b51a3f99a89abd94174"><td class="mdescLeft">&#160;</td><td class="mdescRight">下划线  <br /></td></tr>
-<tr class="separator:af34c3d5fdd053b51a3f99a89abd94174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b9886ec2322c623ade25f49e7b80cfe" id="r_a0b9886ec2322c623ade25f49e7b80cfe"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0b9886ec2322c623ade25f49e7b80cfe">console::color::Blink</a> = &quot;\033[5m&quot;</td></tr>
-<tr class="memdesc:a0b9886ec2322c623ade25f49e7b80cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁  <br /></td></tr>
-<tr class="separator:a0b9886ec2322c623ade25f49e7b80cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a821982070c0ab61067e0d8621d2216ce" id="r_a821982070c0ab61067e0d8621d2216ce"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a821982070c0ab61067e0d8621d2216ce">console::color::Reverse</a> = &quot;\033[7m&quot;</td></tr>
-<tr class="memdesc:a821982070c0ab61067e0d8621d2216ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">反转（交换前景和背景）  <br /></td></tr>
-<tr class="separator:a821982070c0ab61067e0d8621d2216ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7142232d199627310d170a11ffab289" id="r_ae7142232d199627310d170a11ffab289"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae7142232d199627310d170a11ffab289">console::color::Hidden</a> = &quot;\033[8m&quot;</td></tr>
-<tr class="memdesc:ae7142232d199627310d170a11ffab289"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏（不可见）  <br /></td></tr>
-<tr class="separator:ae7142232d199627310d170a11ffab289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc2f3a2d9b63617e9a646746338ba1e" id="r_a9cc2f3a2d9b63617e9a646746338ba1e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9cc2f3a2d9b63617e9a646746338ba1e">console::color::Strikethrough</a> = &quot;\033[9m&quot;</td></tr>
-<tr class="memdesc:a9cc2f3a2d9b63617e9a646746338ba1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除线  <br /></td></tr>
-<tr class="separator:a9cc2f3a2d9b63617e9a646746338ba1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bc3a40ac0a60732c3dc8c30483c3c2" id="r_ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ab6bc3a40ac0a60732c3dc8c30483c3c2">console::color::Black</a> [] = &quot;\033[30m&quot;</td></tr>
+<tr class="memdesc:ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色前景  <br /></td></tr>
+<tr class="separator:ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7daabaa72046c5003d120c49b733101b" id="r_a7daabaa72046c5003d120c49b733101b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7daabaa72046c5003d120c49b733101b">console::color::Red</a> [] = &quot;\033[31m&quot;</td></tr>
+<tr class="memdesc:a7daabaa72046c5003d120c49b733101b"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色前景  <br /></td></tr>
+<tr class="separator:a7daabaa72046c5003d120c49b733101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570a39951df9c9bfc55d4156dd255a3b" id="r_a570a39951df9c9bfc55d4156dd255a3b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a570a39951df9c9bfc55d4156dd255a3b">console::color::Green</a> [] = &quot;\033[32m&quot;</td></tr>
+<tr class="memdesc:a570a39951df9c9bfc55d4156dd255a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色前景  <br /></td></tr>
+<tr class="separator:a570a39951df9c9bfc55d4156dd255a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504e29f5f93ebe272b73fa3bfdfecff0" id="r_a504e29f5f93ebe272b73fa3bfdfecff0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a504e29f5f93ebe272b73fa3bfdfecff0">console::color::Yellow</a> [] = &quot;\033[33m&quot;</td></tr>
+<tr class="memdesc:a504e29f5f93ebe272b73fa3bfdfecff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色前景  <br /></td></tr>
+<tr class="separator:a504e29f5f93ebe272b73fa3bfdfecff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1875b318369902da2eeda12a65ff27" id="r_a6c1875b318369902da2eeda12a65ff27"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a6c1875b318369902da2eeda12a65ff27">console::color::Blue</a> [] = &quot;\033[34m&quot;</td></tr>
+<tr class="memdesc:a6c1875b318369902da2eeda12a65ff27"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色前景  <br /></td></tr>
+<tr class="separator:a6c1875b318369902da2eeda12a65ff27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b613c39490b97b757965866e085a14" id="r_ad6b613c39490b97b757965866e085a14"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad6b613c39490b97b757965866e085a14">console::color::Magenta</a> [] = &quot;\033[35m&quot;</td></tr>
+<tr class="memdesc:ad6b613c39490b97b757965866e085a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红前景  <br /></td></tr>
+<tr class="separator:ad6b613c39490b97b757965866e085a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b11f33a9c90056089136caf1d0681a0" id="r_a2b11f33a9c90056089136caf1d0681a0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2b11f33a9c90056089136caf1d0681a0">console::color::Cyan</a> [] = &quot;\033[36m&quot;</td></tr>
+<tr class="memdesc:a2b11f33a9c90056089136caf1d0681a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色前景  <br /></td></tr>
+<tr class="separator:a2b11f33a9c90056089136caf1d0681a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac881c728c47295b7e2d6bdae8ea7962a" id="r_ac881c728c47295b7e2d6bdae8ea7962a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ac881c728c47295b7e2d6bdae8ea7962a">console::color::White</a> [] = &quot;\033[37m&quot;</td></tr>
+<tr class="memdesc:ac881c728c47295b7e2d6bdae8ea7962a"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色前景  <br /></td></tr>
+<tr class="separator:ac881c728c47295b7e2d6bdae8ea7962a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5ab49b2970657df0b8785de67aa9a0" id="r_a2c5ab49b2970657df0b8785de67aa9a0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2c5ab49b2970657df0b8785de67aa9a0">console::color::BrightBlack</a> [] = &quot;\033[90m&quot;</td></tr>
+<tr class="memdesc:a2c5ab49b2970657df0b8785de67aa9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色（灰）前景  <br /></td></tr>
+<tr class="separator:a2c5ab49b2970657df0b8785de67aa9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64bd4800ca30a89d23dfb8013ace3563" id="r_a64bd4800ca30a89d23dfb8013ace3563"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a64bd4800ca30a89d23dfb8013ace3563">console::color::BrightRed</a> [] = &quot;\033[91m&quot;</td></tr>
+<tr class="memdesc:a64bd4800ca30a89d23dfb8013ace3563"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色前景  <br /></td></tr>
+<tr class="separator:a64bd4800ca30a89d23dfb8013ace3563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a679518bad9809cd4d2f6f35777bb0" id="r_ad6a679518bad9809cd4d2f6f35777bb0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad6a679518bad9809cd4d2f6f35777bb0">console::color::BrightGreen</a> [] = &quot;\033[92m&quot;</td></tr>
+<tr class="memdesc:ad6a679518bad9809cd4d2f6f35777bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色前景  <br /></td></tr>
+<tr class="separator:ad6a679518bad9809cd4d2f6f35777bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368522b9caa25abb157355ac16699c01" id="r_a368522b9caa25abb157355ac16699c01"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a368522b9caa25abb157355ac16699c01">console::color::BrightYellow</a> [] = &quot;\033[93m&quot;</td></tr>
+<tr class="memdesc:a368522b9caa25abb157355ac16699c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色前景  <br /></td></tr>
+<tr class="separator:a368522b9caa25abb157355ac16699c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af475362d001f9b7d5500ac09225caa29" id="r_af475362d001f9b7d5500ac09225caa29"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af475362d001f9b7d5500ac09225caa29">console::color::BrightBlue</a> [] = &quot;\033[94m&quot;</td></tr>
+<tr class="memdesc:af475362d001f9b7d5500ac09225caa29"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色前景  <br /></td></tr>
+<tr class="separator:af475362d001f9b7d5500ac09225caa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9856cccee07aa6cb6841026eca349f60" id="r_a9856cccee07aa6cb6841026eca349f60"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9856cccee07aa6cb6841026eca349f60">console::color::BrightMagenta</a> [] = &quot;\033[95m&quot;</td></tr>
+<tr class="memdesc:a9856cccee07aa6cb6841026eca349f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红前景  <br /></td></tr>
+<tr class="separator:a9856cccee07aa6cb6841026eca349f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2497602c275f5ca53c5e8c931ba7bdd1" id="r_a2497602c275f5ca53c5e8c931ba7bdd1"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2497602c275f5ca53c5e8c931ba7bdd1">console::color::BrightCyan</a> [] = &quot;\033[96m&quot;</td></tr>
+<tr class="memdesc:a2497602c275f5ca53c5e8c931ba7bdd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色前景  <br /></td></tr>
+<tr class="separator:a2497602c275f5ca53c5e8c931ba7bdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbaf1749e06e03bd3f40388a89450ea0" id="r_adbaf1749e06e03bd3f40388a89450ea0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#adbaf1749e06e03bd3f40388a89450ea0">console::color::BrightWhite</a> [] = &quot;\033[97m&quot;</td></tr>
+<tr class="memdesc:adbaf1749e06e03bd3f40388a89450ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色前景  <br /></td></tr>
+<tr class="separator:adbaf1749e06e03bd3f40388a89450ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de0a8431459f4ed50cdb25d1d30ef83" id="r_a0de0a8431459f4ed50cdb25d1d30ef83"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">console::color::Reset</a> [] = &quot;\033[0m&quot;</td></tr>
+<tr class="memdesc:a0de0a8431459f4ed50cdb25d1d30ef83"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置所有颜色/样式  <br /></td></tr>
+<tr class="separator:a0de0a8431459f4ed50cdb25d1d30ef83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaae0b96f5dc51cc05a33f9b91bdcd96" id="r_aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aaaae0b96f5dc51cc05a33f9b91bdcd96">console::color::BgBlack</a> [] = &quot;\033[40m&quot;</td></tr>
+<tr class="memdesc:aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色背景  <br /></td></tr>
+<tr class="separator:aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ad04a1690e69dc69c02b0500e6be9c" id="r_a24ad04a1690e69dc69c02b0500e6be9c"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a24ad04a1690e69dc69c02b0500e6be9c">console::color::BgRed</a> [] = &quot;\033[41m&quot;</td></tr>
+<tr class="memdesc:a24ad04a1690e69dc69c02b0500e6be9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色背景  <br /></td></tr>
+<tr class="separator:a24ad04a1690e69dc69c02b0500e6be9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ead4b0ef8cbbe04e8f8c3ef7cd23542" id="r_a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7ead4b0ef8cbbe04e8f8c3ef7cd23542">console::color::BgGreen</a> [] = &quot;\033[42m&quot;</td></tr>
+<tr class="memdesc:a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色背景  <br /></td></tr>
+<tr class="separator:a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30affe3d7a837c11f7e6cd7ac40a700d" id="r_a30affe3d7a837c11f7e6cd7ac40a700d"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a30affe3d7a837c11f7e6cd7ac40a700d">console::color::BgYellow</a> [] = &quot;\033[43m&quot;</td></tr>
+<tr class="memdesc:a30affe3d7a837c11f7e6cd7ac40a700d"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色背景  <br /></td></tr>
+<tr class="separator:a30affe3d7a837c11f7e6cd7ac40a700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77a16795cac42c2dec389d9b5e7009e" id="r_af77a16795cac42c2dec389d9b5e7009e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af77a16795cac42c2dec389d9b5e7009e">console::color::BgBlue</a> [] = &quot;\033[44m&quot;</td></tr>
+<tr class="memdesc:af77a16795cac42c2dec389d9b5e7009e"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色背景  <br /></td></tr>
+<tr class="separator:af77a16795cac42c2dec389d9b5e7009e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6f89dccd585d9bb22312ce3ae0f578" id="r_a0f6f89dccd585d9bb22312ce3ae0f578"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0f6f89dccd585d9bb22312ce3ae0f578">console::color::BgMagenta</a> [] = &quot;\033[45m&quot;</td></tr>
+<tr class="memdesc:a0f6f89dccd585d9bb22312ce3ae0f578"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红背景  <br /></td></tr>
+<tr class="separator:a0f6f89dccd585d9bb22312ce3ae0f578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99daf7fcaa6ddb280ffab4b07e53a71d" id="r_a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a99daf7fcaa6ddb280ffab4b07e53a71d">console::color::BgCyan</a> [] = &quot;\033[46m&quot;</td></tr>
+<tr class="memdesc:a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色背景  <br /></td></tr>
+<tr class="separator:a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982e09712e465a748976366abb86eea6" id="r_a982e09712e465a748976366abb86eea6"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a982e09712e465a748976366abb86eea6">console::color::BgWhite</a> [] = &quot;\033[47m&quot;</td></tr>
+<tr class="memdesc:a982e09712e465a748976366abb86eea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色背景  <br /></td></tr>
+<tr class="separator:a982e09712e465a748976366abb86eea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a966e5858bf230ef533e53194257207" id="r_a2a966e5858bf230ef533e53194257207"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2a966e5858bf230ef533e53194257207">console::color::BgBrightBlack</a> [] = &quot;\033[100m&quot;</td></tr>
+<tr class="memdesc:a2a966e5858bf230ef533e53194257207"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色背景  <br /></td></tr>
+<tr class="separator:a2a966e5858bf230ef533e53194257207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7e7d47e9f359e82f08ecd9742ab94a" id="r_a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a4b7e7d47e9f359e82f08ecd9742ab94a">console::color::BgBrightRed</a> [] = &quot;\033[101m&quot;</td></tr>
+<tr class="memdesc:a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色背景  <br /></td></tr>
+<tr class="separator:a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c106b90b0bc42601e26f4650aef00f" id="r_ae9c106b90b0bc42601e26f4650aef00f"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae9c106b90b0bc42601e26f4650aef00f">console::color::BgBrightGreen</a> [] = &quot;\033[102m&quot;</td></tr>
+<tr class="memdesc:ae9c106b90b0bc42601e26f4650aef00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色背景  <br /></td></tr>
+<tr class="separator:ae9c106b90b0bc42601e26f4650aef00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326b269c73fae66c8095b21dda7fa857" id="r_a326b269c73fae66c8095b21dda7fa857"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a326b269c73fae66c8095b21dda7fa857">console::color::BgBrightYellow</a> [] = &quot;\033[103m&quot;</td></tr>
+<tr class="memdesc:a326b269c73fae66c8095b21dda7fa857"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色背景  <br /></td></tr>
+<tr class="separator:a326b269c73fae66c8095b21dda7fa857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa006e86b4b33d98a471b0bd31cd33b" id="r_a0aa006e86b4b33d98a471b0bd31cd33b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0aa006e86b4b33d98a471b0bd31cd33b">console::color::BgBrightBlue</a> [] = &quot;\033[104m&quot;</td></tr>
+<tr class="memdesc:a0aa006e86b4b33d98a471b0bd31cd33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色背景  <br /></td></tr>
+<tr class="separator:a0aa006e86b4b33d98a471b0bd31cd33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3650e02ccdfca5f4a67354f7f39cbe" id="r_afc3650e02ccdfca5f4a67354f7f39cbe"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#afc3650e02ccdfca5f4a67354f7f39cbe">console::color::BgBrightMagenta</a> [] = &quot;\033[105m&quot;</td></tr>
+<tr class="memdesc:afc3650e02ccdfca5f4a67354f7f39cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红背景  <br /></td></tr>
+<tr class="separator:afc3650e02ccdfca5f4a67354f7f39cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fa80d3d7c7a797e9c7a79eafad342a" id="r_a31fa80d3d7c7a797e9c7a79eafad342a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a31fa80d3d7c7a797e9c7a79eafad342a">console::color::BgBrightCyan</a> [] = &quot;\033[106m&quot;</td></tr>
+<tr class="memdesc:a31fa80d3d7c7a797e9c7a79eafad342a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色背景  <br /></td></tr>
+<tr class="separator:a31fa80d3d7c7a797e9c7a79eafad342a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8efd419b494f735cc12c507a3e0a7e" id="r_a8f8efd419b494f735cc12c507a3e0a7e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8f8efd419b494f735cc12c507a3e0a7e">console::color::BgBrightWhite</a> [] = &quot;\033[107m&quot;</td></tr>
+<tr class="memdesc:a8f8efd419b494f735cc12c507a3e0a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色背景  <br /></td></tr>
+<tr class="separator:a8f8efd419b494f735cc12c507a3e0a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc447ff95d61f8bf1eedb828c5cc59b" id="r_a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a1dc447ff95d61f8bf1eedb828c5cc59b">console::color::Bold</a> [] = &quot;\033[1m&quot;</td></tr>
+<tr class="memdesc:a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">粗体  <br /></td></tr>
+<tr class="separator:a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903cccda08faa5f1a0a6e65c16f5096e" id="r_a903cccda08faa5f1a0a6e65c16f5096e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a903cccda08faa5f1a0a6e65c16f5096e">console::color::Dim</a> [] = &quot;\033[2m&quot;</td></tr>
+<tr class="memdesc:a903cccda08faa5f1a0a6e65c16f5096e"><td class="mdescLeft">&#160;</td><td class="mdescRight">暗淡（降低亮度）  <br /></td></tr>
+<tr class="separator:a903cccda08faa5f1a0a6e65c16f5096e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8687febc05c4ca85ecf6fb9cbdf2048f" id="r_a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8687febc05c4ca85ecf6fb9cbdf2048f">console::color::Italic</a> [] = &quot;\033[3m&quot;</td></tr>
+<tr class="memdesc:a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="mdescLeft">&#160;</td><td class="mdescRight">斜体  <br /></td></tr>
+<tr class="separator:a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2936de81e29dd6928a19a612ae3b3094" id="r_a2936de81e29dd6928a19a612ae3b3094"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2936de81e29dd6928a19a612ae3b3094">console::color::Underline</a> [] = &quot;\033[4m&quot;</td></tr>
+<tr class="memdesc:a2936de81e29dd6928a19a612ae3b3094"><td class="mdescLeft">&#160;</td><td class="mdescRight">下划线  <br /></td></tr>
+<tr class="separator:a2936de81e29dd6928a19a612ae3b3094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df318e069488b5905926446be702360" id="r_a3df318e069488b5905926446be702360"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a3df318e069488b5905926446be702360">console::color::Blink</a> [] = &quot;\033[5m&quot;</td></tr>
+<tr class="memdesc:a3df318e069488b5905926446be702360"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁  <br /></td></tr>
+<tr class="separator:a3df318e069488b5905926446be702360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23075bb565e45cd3e6fcdd126f9cb740" id="r_a23075bb565e45cd3e6fcdd126f9cb740"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a23075bb565e45cd3e6fcdd126f9cb740">console::color::Reverse</a> [] = &quot;\033[7m&quot;</td></tr>
+<tr class="memdesc:a23075bb565e45cd3e6fcdd126f9cb740"><td class="mdescLeft">&#160;</td><td class="mdescRight">反转（交换前景和背景）  <br /></td></tr>
+<tr class="separator:a23075bb565e45cd3e6fcdd126f9cb740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c420baa706cecda1628806f80ef505" id="r_a05c420baa706cecda1628806f80ef505"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a05c420baa706cecda1628806f80ef505">console::color::Hidden</a> [] = &quot;\033[8m&quot;</td></tr>
+<tr class="memdesc:a05c420baa706cecda1628806f80ef505"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏（不可见）  <br /></td></tr>
+<tr class="separator:a05c420baa706cecda1628806f80ef505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc3ed5a35ee1759eafcf3f666e4440a4" id="r_acc3ed5a35ee1759eafcf3f666e4440a4"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#acc3ed5a35ee1759eafcf3f666e4440a4">console::color::Strikethrough</a> [] = &quot;\033[9m&quot;</td></tr>
+<tr class="memdesc:acc3ed5a35ee1759eafcf3f666e4440a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除线  <br /></td></tr>
+<tr class="separator:acc3ed5a35ee1759eafcf3f666e4440a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供控制台颜色和样式修饰的 ANSI 转义序列常量。 </p>
@@ -229,7 +237,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

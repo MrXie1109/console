@@ -8,9 +8,8 @@ var searchData=
   ['load_5',['load',['../classconsole_1_1_i_n_i_config.html#a5ad4924c87b288f014f2c58251e8df14',1,'console::INIConfig']]],
   ['log_6',['log',['../group__matools.html#ga61b4ab1cc5e246b05a141baa953fe19f',1,'console']]],
   ['log10_7',['log10',['../group__matools.html#gab8499187443ce03bc5ee2b821b90e087',1,'console']]],
-  ['logger_8',['logger',['../namespaceconsole.html#aebb75438fb8382ebc7174554b3614f07',1,'console']]],
-  ['logging_9',['logging',['../classconsole_1_1_logging.html#a383b147c7864aae5a778631f88972ad0',1,'console::Logging::Logging()'],['../logging_8h.html#af8258a4c54dc5e8eeef77cfa9405ac8a',1,'Logging():&#160;logging.h']]],
-  ['lower_10',['lower',['../group__strpp.html#ga245794143f8fbcc1baec9b5d8309846f',1,'console']]],
-  ['lt_11',['lt',['../namespaceconsole_1_1ops.html#a9b1147dcf13a6e166af7561572b15288',1,'console::ops']]],
-  ['ltrim_12',['ltrim',['../group__strpp.html#ga808a28efa1932499e7912f519f1aa767',1,'console::ltrim(std::string str)'],['../group__strpp.html#ga8095b8180454f96099dee7eb587158a6',1,'console::ltrim(std::string str, const std::string &amp;chars)']]]
+  ['logging_8',['Logging',['../classconsole_1_1_logging.html#a383b147c7864aae5a778631f88972ad0',1,'console::Logging']]],
+  ['lower_9',['lower',['../group__strpp.html#ga245794143f8fbcc1baec9b5d8309846f',1,'console']]],
+  ['lt_10',['lt',['../namespaceconsole_1_1ops.html#a9b1147dcf13a6e166af7561572b15288',1,'console::ops']]],
+  ['ltrim_11',['ltrim',['../group__strpp.html#ga808a28efa1932499e7912f519f1aa767',1,'console::ltrim(std::string str)'],['../group__strpp.html#ga8095b8180454f96099dee7eb587158a6',1,'console::ltrim(std::string str, const std::string &amp;chars)']]]
 ];

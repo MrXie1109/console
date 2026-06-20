@@ -36,15 +36,17 @@ var searchData=
   ['englishhorn_33',['EnglishHorn',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592a3c7a0046df6301dc164ba31b7b4223c9',1,'console']]],
   ['ensure_34',['ensure',['../classconsole_1_1_path.html#a60a2a6c02ff3786d6a6f30e7648e9e23',1,'console::Path']]],
   ['enter_35',['Enter',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af1851d5600eae616ee802a31ac74701b',1,'console']]],
-  ['enumerate_36',['enumerate',['../classconsole_1_1gen_1_1_enumerate.html#aa4e1f8a4f3d5cb946042a5a8b2ed0fff',1,'console::gen::Enumerate::Enumerate()'],['../namespaceconsole_1_1gen.html#a272073e1b9f586e2f78e38a8d0612b13',1,'console::gen::enumerate'],['../classconsole_1_1gen_1_1_enumerate.html',1,'console::gen::Enumerate&lt; Gen &gt;']]],
-  ['enumerate_5ft_37',['enumerate_t',['../classconsole_1_1gen_1_1enumerate__t.html',1,'console::gen::enumerate_t'],['../classconsole_1_1gen_1_1enumerate__t.html#ac623006064a05e66107cfd35a8796d72',1,'console::gen::enumerate_t::enumerate_t()']]],
+  ['enumerate_36',['enumerate',['../classconsole_1_1gen_1_1_enumerate.html#aa4e1f8a4f3d5cb946042a5a8b2ed0fff',1,'console::gen::Enumerate::Enumerate()'],['../namespaceconsole_1_1gen.html#ad3b96aa84a429ea74a23e81206fe7151',1,'console::gen::enumerate'],['../classconsole_1_1gen_1_1_enumerate.html',1,'console::gen::Enumerate&lt; Gen &gt;']]],
+  ['enumerate_5ft_37',['enumerate_t',['../classconsole_1_1gen_1_1enumerate__t.html',1,'console::gen::enumerate_t'],['../classconsole_1_1gen_1_1enumerate__t.html#a9b454c9ed90126ac3ad771a8add8e9f4',1,'console::gen::enumerate_t::enumerate_t()']]],
   ['eq_38',['eq',['../structconsole_1_1ops_1_1_eq.html',1,'console::ops::Eq&lt; T &gt;'],['../namespaceconsole_1_1ops.html#ac332bb1a11741d6b808acfc7a12a54ce',1,'console::ops::eq(T v)']]],
-  ['error_39',['error',['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8abb1ca97ec761fc37101737ba0aa2e7c5',1,'console::Logging::ERROR'],['../classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0',1,'console::CmdResult::error()'],['../classconsole_1_1_logging.html#a45cce11639e8308a30eefe772fa48c42',1,'console::Logging::error()'],['../logging_8h.html#a540aae996af47330f7fb73552763680fabb1ca97ec761fc37101737ba0aa2e7c5',1,'ERROR:&#160;logging.h'],['../logging_8h.html#ae4d0fb185a06dab2b1bed05021de591e',1,'error(const Args &amp;...args):&#160;logging.h']]],
+  ['error_39',['error',['../classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0',1,'console::CmdResult::error()'],['../classconsole_1_1_logging.html#a45cce11639e8308a30eefe772fa48c42',1,'console::Logging::error(const Args &amp;...args)'],['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8abb1ca97ec761fc37101737ba0aa2e7c5',1,'console::Logging::ERROR']]],
   ['esc_40',['Esc',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d',1,'console']]],
   ['escape_41',['escape',['../namespaceconsole_1_1re.html#a169c8f4ac3ff604bb1b35b13fb4518a1',1,'console::re']]],
   ['euclidean_42',['euclidean',['../group__matools.html#ga962ff11f2c653772ca6649f91e6e1f5e',1,'console']]],
-  ['even_43',['even',['../namespaceconsole_1_1ops.html#a112c8c31a06c5f47e928842c4be38a37',1,'console::ops']]],
+  ['even_43',['even',['../namespaceconsole_1_1ops.html#abaac8a64d9f5643760134c8756b52ca8',1,'console::ops']]],
   ['even_5ft_44',['even_t',['../structconsole_1_1ops_1_1even__t.html',1,'console::ops']]],
   ['exists_45',['exists',['../classconsole_1_1_path.html#a0c3033afd34bc2671b049f8895c4af95',1,'console::Path']]],
-  ['exp_46',['exp',['../group__matools.html#gae88badc0104c05d50f0a8a3d2b75ec60',1,'console']]]
+  ['exit_5fcode_46',['exit_code',['../structconsole_1_1_exit_status.html#a7e9d73946d3a9b5c20a92f026b27a997',1,'console::ExitStatus']]],
+  ['exitstatus_47',['exitstatus',['../structconsole_1_1_exit_status.html#ab2a1eb268a6223e17df276f2ad9ccbda',1,'console::ExitStatus::ExitStatus()'],['../structconsole_1_1_exit_status.html',1,'console::ExitStatus']]],
+  ['exp_48',['exp',['../group__matools.html#gae88badc0104c05d50f0a8a3d2b75ec60',1,'console']]]
 ];

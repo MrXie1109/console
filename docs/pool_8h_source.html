@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -122,46 +122,48 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html">   56</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html">   56</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#if __cplusplus &lt; 201703L</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">using </span>result_type = <span class="keyword">typename</span> std::result_of&lt;F&gt;::type;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">using </span>result_type_args = <span class="keyword">typename</span> std::result_of&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>(Args...)&gt;::type;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">using </span>result_type = <span class="keyword">typename</span> std::invoke_result&lt;F&gt;::type;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">using </span>result_type_args = <span class="keyword">typename</span> std::invoke_result&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, Args...&gt;::type;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">struct </span>TaskBase</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keyword">virtual</span> ~TaskBase() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> execute() = 0;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        };</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keyword">struct </span>Task : <span class="keyword">public</span> TaskBase</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            std::packaged_task&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>()&gt; task;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            Task(std::packaged_task&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>()&gt; &amp;&amp;t) : task(std::move(t)) {}</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordtype">void</span> execute()<span class="keyword"> override </span>{ task(); }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        };</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        std::vector&lt;std::thread&gt; workers;            </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        std::queue&lt;std::unique_ptr&lt;TaskBase&gt;&gt; tasks; </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">mutable</span> std::mutex mutex;                    </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        std::condition_variable cv;                  </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        std::atomic&lt;bool&gt; shutdown;                  </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        std::atomic&lt;size_t&gt; active_tasks;            </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a893fecaf939195d2b7eca98ccec1cd6a">  109</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a893fecaf939195d2b7eca98ccec1cd6a">ThreadPoolExecutor</a>(<span class="keywordtype">size_t</span> num_threads)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            : shutdown(false), active_tasks(0)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">   59</a></span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> : <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a99618ffac6aa6764fef17fdaad6aa46e">abort</a>, </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a8e9624059df4e5b59b9c419dce4b866c">close</a>  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        };</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">struct </span>TaskBase</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">virtual</span> ~TaskBase() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> execute() = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        };</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">struct </span>Task : <span class="keyword">public</span> TaskBase</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            std::packaged_task&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>()&gt; task;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            Task(std::packaged_task&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>()&gt; &amp;&amp;t) : task(std::move(t)) {}</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordtype">void</span> execute()<span class="keyword"> override </span>{ task(); }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        };</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        std::vector&lt;std::thread&gt; workers;            </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::queue&lt;std::unique_ptr&lt;TaskBase&gt;&gt; tasks; </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">mutable</span> std::mutex mutex;                    </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        std::condition_variable cv;                  </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        std::atomic&lt;bool&gt; shutdown;                  </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        std::atomic&lt;size_t&gt; active_tasks;            </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_enumeration" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> exit_launch_;                         </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#acc69a3f2b61dfe506d9286a37ae62d90">  106</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool.html#acc69a3f2b61dfe506d9286a37ae62d90">ThreadPool</a>(<a class="code hl_enumeration" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> exit_launch = <a class="code hl_enumvalue" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a716f6b30598ba30945d84485e61c1027">launch::close</a>,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                   <span class="keywordtype">size_t</span> num_threads = std::thread::hardware_concurrency())</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            : shutdown(false), active_tasks(0), exit_launch_(exit_launch)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">if</span> (num_threads == 0)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                num_threads = 2;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_threads; ++i)</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            {</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                workers.emplace_back([<span class="keyword">this</span>]</div>
@@ -179,121 +181,223 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                        tasks.pop();</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    }</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    active_tasks.fetch_add(1, std::memory_order_release);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    task-&gt;execute();</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    active_tasks.fetch_sub(1, std::memory_order_release);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                    <span class="keywordflow">if</span> (active_tasks.load(std::memory_order_acquire) == 0 &amp;&amp; tasks.empty()) {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                        cv.notify_all();</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                } });</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
-</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#ab6bb917d4c2b7410ee7fcde9ccaad1b5">  142</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#ab6bb917d4c2b7410ee7fcde9ccaad1b5">~ThreadPoolExecutor</a>()</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a962fc8510d343c7623903e632e775265">close</a>();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                        task-&gt;execute();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                        active_tasks.fetch_sub(1, std::memory_order_release);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                        <span class="keywordflow">if</span> (active_tasks.load(std::memory_order_acquire) == 0 &amp;&amp; tasks.empty())</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                            cv.notify_all();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                    <span class="keywordflow">catch</span>(...)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                        active_tasks.fetch_sub(1, std::memory_order_release);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        <span class="keywordflow">if</span> (active_tasks.load(std::memory_order_acquire) == 0 &amp;&amp; tasks.empty())</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                            cv.notify_all();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        <span class="keywordflow">throw</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                } });</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
 </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#abc230322a173a5e27e1eac17dcc7aea8">  159</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#abc230322a173a5e27e1eac17dcc7aea8">submit</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt;<span class="keyword">decltype</span>(f(args...))&gt;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keyword">using </span>return_type = <span class="keyword">decltype</span>(f(args...));</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keyword">auto</span> bound_task = std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            std::packaged_task&lt;return_type()&gt; task(bound_task);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            std::future&lt;return_type&gt; result = task.get_future();</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                std::lock_guard&lt;std::mutex&gt; lock(mutex);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keywordflow">if</span> (shutdown.load(std::memory_order_acquire))</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_thread_pool_error.html">ThreadPoolError</a>(<span class="stringliteral">&quot;ThreadPoolExecutor is shutting down&quot;</span>);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                tasks.emplace(std::unique_ptr&lt;TaskBase&gt;(<span class="keyword">new</span> Task&lt;return_type&gt;(std::move(task))));</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            }</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            cv.notify_one();</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a98bd08fa81196e38dee7a1f29a542d9a">  153</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a98bd08fa81196e38dee7a1f29a542d9a">ThreadPool</a>(<span class="keywordtype">size_t</span> num_threads = std::thread::hardware_concurrency(),</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                   <a class="code hl_enumeration" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> exit_launch = <a class="code hl_enumvalue" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a716f6b30598ba30945d84485e61c1027">launch::close</a>)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            : <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a>(exit_launch, num_threads) {}</div>
 </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> Container&gt;</div>
-<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#aa995f41d653a2bc9880d40d3f03f7ee7">  187</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#aa995f41d653a2bc9880d40d3f03f7ee7">map</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;func, <span class="keyword">const</span> Container &amp;items)</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            -&gt; std::vector&lt;std::future&lt;result_type_args&lt;F, typename Container::value_type&gt;&gt;&gt;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="keyword">using </span>return_type = result_type_args&lt;F, typename Container::value_type&gt;;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            std::vector&lt;std::future&lt;return_type&gt;&gt; futures;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            futures.reserve(items.size());</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;item : items)</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                futures.push_back(<a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#abc230322a173a5e27e1eac17dcc7aea8">submit</a>(func, item));</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">return</span> futures;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a500518216087f940a03120d58ab19bf5">  162</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a500518216087f940a03120d58ab19bf5">~ThreadPool</a>()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span> (exit_launch_ == <a class="code hl_enumvalue" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a716f6b30598ba30945d84485e61c1027">launch::close</a>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a8e9624059df4e5b59b9c419dce4b866c">close</a>();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a99618ffac6aa6764fef17fdaad6aa46e">abort</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        }</div>
 </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#aead1860a1778a95e9ec56023a312a5b9">  203</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#aead1860a1778a95e9ec56023a312a5b9">wait</a>()</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            std::unique_lock&lt;std::mutex&gt; lock(mutex);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            cv.wait(lock, [<span class="keyword">this</span>]</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    { <span class="keywordflow">return</span> tasks.empty() &amp;&amp; active_tasks.load(std::memory_order_acquire) == 0; });</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a0662a05b607ae04ff778b54ab2d313ec">  183</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a0662a05b607ae04ff778b54ab2d313ec">submit</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            -&gt; std::future&lt;decltype(std::forward&lt;F&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keyword">using </span>return_type = <span class="keyword">decltype</span>(std::forward&lt;F&gt;(f)(std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keyword">auto</span> bound_task = std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            std::packaged_task&lt;return_type()&gt; task(bound_task);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            std::future&lt;return_type&gt; result = task.get_future();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                std::lock_guard&lt;std::mutex&gt; lock(mutex);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">if</span> (shutdown.load(std::memory_order_acquire))</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_thread_pool_error.html">ThreadPoolError</a>(<span class="stringliteral">&quot;ThreadPool is shutting down&quot;</span>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                tasks.emplace(std::unique_ptr&lt;TaskBase&gt;(<span class="keyword">new</span> Task&lt;return_type&gt;(std::move(task))));</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            cv.notify_one();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
 </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#ae5fd070829f8a601b4e34fc379525b52">  215</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#ae5fd070829f8a601b4e34fc379525b52">size</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            std::lock_guard&lt;std::mutex&gt; lock(mutex);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">return</span> tasks.size();</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> Container&gt;</div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a8b7dc5e0a71757e8347242750ae04905">  213</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a8b7dc5e0a71757e8347242750ae04905">map</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;func, <span class="keyword">const</span> Container &amp;items)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            -&gt; std::vector&lt;std::future&lt;decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keyword">using </span>return_type = <span class="keyword">decltype</span>(func(std::declval&lt;typename Container::value_type&gt;()));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            std::vector&lt;std::future&lt;return_type&gt;&gt; futures;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            futures.reserve(items.size());</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;item : items)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                futures.push_back(<a class="code hl_function" href="classconsole_1_1_thread_pool.html#a0662a05b607ae04ff778b54ab2d313ec">submit</a>(func, item));</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">return</span> futures;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        }</div>
 </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a5e30c1b265753a87084b4f791568e115">  226</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a5e30c1b265753a87084b4f791568e115">count</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keywordflow">return</span> active_tasks.load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="foldopen" id="foldopen00229" data-start="{" data-end="}">
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">  229</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">wait</a>()</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            std::unique_lock&lt;std::mutex&gt; lock(mutex);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            cv.wait(lock, [<span class="keyword">this</span>]</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    { <span class="keywordflow">return</span> tasks.empty() &amp;&amp; active_tasks.load(std::memory_order_acquire) == 0; });</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
 </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a962fc8510d343c7623903e632e775265">  236</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a962fc8510d343c7623903e632e775265">close</a>()</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        {</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            shutdown.store(<span class="keyword">true</span>, std::memory_order_release);</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            cv.notify_all();</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#aead1860a1778a95e9ec56023a312a5b9">wait</a>();</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;worker : workers)</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                <span class="keywordflow">if</span> (worker.joinable())</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                    worker.join();</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a24f71b260a782f6e2eb39ae02ae71145">  241</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a24f71b260a782f6e2eb39ae02ae71145">size</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            std::lock_guard&lt;std::mutex&gt; lock(mutex);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keywordflow">return</span> tasks.size();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        }</div>
 </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#abf921f4e1f30ef843757b27960042b53">  247</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#abf921f4e1f30ef843757b27960042b53">ThreadPoolExecutor</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a8c31fc7c3d177c900f9d6cb3f4b1e1fd">  249</a></span>        <a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;<a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a8c31fc7c3d177c900f9d6cb3f4b1e1fd">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a1863567fc9d807fbf18487eba4925cf5">  251</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a1863567fc9d807fbf18487eba4925cf5">ThreadPoolExecutor</a>(<a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool_executor.html#a146634c2f9124347d2126777dbdf0698">  253</a></span>        <a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;<a class="code hl_function" href="classconsole_1_1_thread_pool_executor.html#a146634c2f9124347d2126777dbdf0698">operator=</a>(<a class="code hl_class" href="classconsole_1_1_thread_pool_executor.html">ThreadPoolExecutor</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    };</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#ae71d138f750d84890f9a0d05ff00cb8f">  252</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#ae71d138f750d84890f9a0d05ff00cb8f">count</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            <span class="keywordflow">return</span> active_tasks.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        }</div>
 </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a8e9624059df4e5b59b9c419dce4b866c">  262</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a8e9624059df4e5b59b9c419dce4b866c">close</a>()</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            shutdown.store(<span class="keyword">true</span>, std::memory_order_release);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            cv.notify_all();</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <a class="code hl_function" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">wait</a>();</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;worker : workers)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                <span class="keywordflow">if</span> (worker.joinable())</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                    worker.join();</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        }</div>
+</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#a99618ffac6aa6764fef17fdaad6aa46e">  277</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_thread_pool.html#a99618ffac6aa6764fef17fdaad6aa46e">abort</a>()</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            shutdown.store(<span class="keyword">true</span>, std::memory_order_release);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                std::lock_guard&lt;std::mutex&gt; lock(mutex);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                std::queue&lt;std::unique_ptr&lt;TaskBase&gt;&gt;().swap(tasks);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            cv.notify_all();</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;worker : workers)</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                <span class="keywordflow">if</span> (worker.joinable())</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                    worker.detach();</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        }</div>
+</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#abe5b850e9b1ba760fa163dd03ac3284a">  291</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool.html#abe5b850e9b1ba760fa163dd03ac3284a">ThreadPool</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#aeb8be0aa2a3cb1273d63ab93accd65ed">  293</a></span>        <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;<a class="code hl_function" href="classconsole_1_1_thread_pool.html#aeb8be0aa2a3cb1273d63ab93accd65ed">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#ae4c321124ea15fb20e886a521fd6d596">  295</a></span>        <a class="code hl_function" href="classconsole_1_1_thread_pool.html#ae4c321124ea15fb20e886a521fd6d596">ThreadPool</a>(<a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="classconsole_1_1_thread_pool.html#ae51068e4017a6e723e632b4e4ee91d68">  297</a></span>        <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;<a class="code hl_function" href="classconsole_1_1_thread_pool.html#ae51068e4017a6e723e632b4e4ee91d68">operator=</a>(<a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    };</div>
+</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="foldopen" id="foldopen00304" data-start="{" data-end="}">
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">  304</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;<a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>()</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    {</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="keyword">static</span> <a class="code hl_class" href="classconsole_1_1_thread_pool.html">ThreadPool</a> exe(<a class="code hl_enumvalue" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a5bb94a1c12413a2e5d14deabab29f2aa">ThreadPool::launch::abort</a>);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">return</span> exe;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
+</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00321" data-start="{" data-end="}">
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a717d83be65272a7e3282152d007f3a97">  321</a></span>    <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a717d83be65272a7e3282152d007f3a97">gtp_submit</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        -&gt; std::future&lt;decltype(std::forward&lt;F&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>().<a class="code hl_function" href="classconsole_1_1_thread_pool.html#a0662a05b607ae04ff778b54ab2d313ec">submit</a>(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
+</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">class</span> Container&gt;</div>
+<div class="foldopen" id="foldopen00340" data-start="{" data-end="}">
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="namespaceconsole.html#adc27ccd0f8a53516f38f7daf744c7e98">  340</a></span>    <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#adc27ccd0f8a53516f38f7daf744c7e98">gtp_map</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;func, <span class="keyword">const</span> Container &amp;items)</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        -&gt; std::vector&lt;std::future&lt;decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>().<a class="code hl_function" href="classconsole_1_1_thread_pool.html#a8b7dc5e0a71757e8347242750ae04905">map</a>(func, items);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    }</div>
+</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aa1cc4ec56c6407c31576605d85887eaa">  351</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceconsole.html#aa1cc4ec56c6407c31576605d85887eaa">gtp_wait</a>()</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>().<a class="code hl_function" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">wait</a>();</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="foldopen" id="foldopen00361" data-start="{" data-end="}">
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a4beb04d0e45abe1ea5de1afcac160379">  361</a></span>    <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespaceconsole.html#a4beb04d0e45abe1ea5de1afcac160379">gtp_size</a>()</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>().<a class="code hl_function" href="classconsole_1_1_thread_pool.html#a24f71b260a782f6e2eb39ae02ae71145">size</a>();</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    }</div>
+</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a12098ca66a7c94d7cb6cb22a01fdfece">  371</a></span>    <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespaceconsole.html#a12098ca66a7c94d7cb6cb22a01fdfece">gtp_count</a>()</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    {</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">global_thread_pool</a>().<a class="code hl_function" href="classconsole_1_1_thread_pool.html#ae71d138f750d84890f9a0d05ff00cb8f">count</a>();</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    }</div>
+</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00389" data-start="{" data-end="}">
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a0db615c5a556ed47bb371e6535c07596">  389</a></span>    <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a0db615c5a556ed47bb371e6535c07596">async</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        -&gt; std::future&lt;decltype(std::forward&lt;F&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    {</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#a717d83be65272a7e3282152d007f3a97">gtp_submit</a>(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    }</div>
+</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_thread_pool_error_html"><div class="ttname"><a href="classconsole_1_1_thread_pool_error.html">console::ThreadPoolError</a></div><div class="ttdoc">表示线程池执行器相关的错误，例如提交任务失败或线程池已关闭时提交任务。</div><div class="ttdef"><b>Definition</b> csexc.h:197</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html">console::ThreadPoolExecutor</a></div><div class="ttdoc">线程池执行器类，用于管理和执行并发任务。</div><div class="ttdef"><b>Definition</b> pool.h:57</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a146634c2f9124347d2126777dbdf0698"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a146634c2f9124347d2126777dbdf0698">console::ThreadPoolExecutor::operator=</a></div><div class="ttdeci">ThreadPoolExecutor &amp; operator=(ThreadPoolExecutor &amp;&amp;)=delete</div><div class="ttdoc">禁止移动赋值。</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a1863567fc9d807fbf18487eba4925cf5"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a1863567fc9d807fbf18487eba4925cf5">console::ThreadPoolExecutor::ThreadPoolExecutor</a></div><div class="ttdeci">ThreadPoolExecutor(ThreadPoolExecutor &amp;&amp;)=delete</div><div class="ttdoc">禁止移动构造。</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a5e30c1b265753a87084b4f791568e115"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a5e30c1b265753a87084b4f791568e115">console::ThreadPoolExecutor::count</a></div><div class="ttdeci">size_t count() const</div><div class="ttdoc">获取当前正在执行的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:226</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a893fecaf939195d2b7eca98ccec1cd6a"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a893fecaf939195d2b7eca98ccec1cd6a">console::ThreadPoolExecutor::ThreadPoolExecutor</a></div><div class="ttdeci">ThreadPoolExecutor(size_t num_threads)</div><div class="ttdoc">构造函数，创建指定数量的工作线程。</div><div class="ttdef"><b>Definition</b> pool.h:109</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a8c31fc7c3d177c900f9d6cb3f4b1e1fd"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a8c31fc7c3d177c900f9d6cb3f4b1e1fd">console::ThreadPoolExecutor::operator=</a></div><div class="ttdeci">ThreadPoolExecutor &amp; operator=(const ThreadPoolExecutor &amp;)=delete</div><div class="ttdoc">禁止拷贝赋值。</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_a962fc8510d343c7623903e632e775265"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#a962fc8510d343c7623903e632e775265">console::ThreadPoolExecutor::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">优雅关闭线程池，等待所有任务完成。</div><div class="ttdef"><b>Definition</b> pool.h:236</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_aa995f41d653a2bc9880d40d3f03f7ee7"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#aa995f41d653a2bc9880d40d3f03f7ee7">console::ThreadPoolExecutor::map</a></div><div class="ttdeci">auto map(F &amp;&amp;func, const Container &amp;items) -&gt; std::vector&lt; std::future&lt; result_type_args&lt; F, typename Container::value_type &gt; &gt; &gt;</div><div class="ttdoc">批量提交任务，对容器中的每个元素应用函数。</div><div class="ttdef"><b>Definition</b> pool.h:187</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_ab6bb917d4c2b7410ee7fcde9ccaad1b5"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#ab6bb917d4c2b7410ee7fcde9ccaad1b5">console::ThreadPoolExecutor::~ThreadPoolExecutor</a></div><div class="ttdeci">~ThreadPoolExecutor()</div><div class="ttdoc">析构函数，关闭线程池并等待所有线程结束。</div><div class="ttdef"><b>Definition</b> pool.h:142</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_abc230322a173a5e27e1eac17dcc7aea8"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#abc230322a173a5e27e1eac17dcc7aea8">console::ThreadPoolExecutor::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(f(args...))&gt;</div><div class="ttdoc">提交一个可调用对象到线程池执行。</div><div class="ttdef"><b>Definition</b> pool.h:159</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_abf921f4e1f30ef843757b27960042b53"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#abf921f4e1f30ef843757b27960042b53">console::ThreadPoolExecutor::ThreadPoolExecutor</a></div><div class="ttdeci">ThreadPoolExecutor(const ThreadPoolExecutor &amp;)=delete</div><div class="ttdoc">禁止拷贝构造。</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_ae5fd070829f8a601b4e34fc379525b52"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#ae5fd070829f8a601b4e34fc379525b52">console::ThreadPoolExecutor::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">获取当前任务队列中的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:215</div></div>
-<div class="ttc" id="aclassconsole_1_1_thread_pool_executor_html_aead1860a1778a95e9ec56023a312a5b9"><div class="ttname"><a href="classconsole_1_1_thread_pool_executor.html#aead1860a1778a95e9ec56023a312a5b9">console::ThreadPoolExecutor::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">等待所有已提交的任务完成。</div><div class="ttdef"><b>Definition</b> pool.h:203</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html"><div class="ttname"><a href="classconsole_1_1_thread_pool.html">console::ThreadPool</a></div><div class="ttdoc">线程池执行器类，用于管理和执行并发任务。</div><div class="ttdef"><b>Definition</b> pool.h:57</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a0662a05b607ae04ff778b54ab2d313ec"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a0662a05b607ae04ff778b54ab2d313ec">console::ThreadPool::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(std::forward&lt; F &gt;(f)(std::forward&lt; Args &gt;(args)...))&gt;</div><div class="ttdoc">提交一个可调用对象到线程池执行。</div><div class="ttdef"><b>Definition</b> pool.h:183</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a24f71b260a782f6e2eb39ae02ae71145"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a24f71b260a782f6e2eb39ae02ae71145">console::ThreadPool::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">获取当前任务队列中的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:241</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a500518216087f940a03120d58ab19bf5"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a500518216087f940a03120d58ab19bf5">console::ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdoc">析构函数，根据退出策略决定关闭方式。</div><div class="ttdef"><b>Definition</b> pool.h:162</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a73d8d7d66ebfcadd7c72872d9b4211f0"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">console::ThreadPool::launch</a></div><div class="ttdeci">launch</div><div class="ttdef"><b>Definition</b> pool.h:60</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a73d8d7d66ebfcadd7c72872d9b4211f0a5bb94a1c12413a2e5d14deabab29f2aa"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a5bb94a1c12413a2e5d14deabab29f2aa">console::ThreadPool::launch::abort</a></div><div class="ttdeci">@ abort</div><div class="ttdoc">退出时调用 abort</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a73d8d7d66ebfcadd7c72872d9b4211f0a716f6b30598ba30945d84485e61c1027"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a716f6b30598ba30945d84485e61c1027">console::ThreadPool::launch::close</a></div><div class="ttdeci">@ close</div><div class="ttdoc">退出时调用 close</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a8b7dc5e0a71757e8347242750ae04905"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a8b7dc5e0a71757e8347242750ae04905">console::ThreadPool::map</a></div><div class="ttdeci">auto map(F &amp;&amp;func, const Container &amp;items) -&gt; std::vector&lt; std::future&lt; decltype(func(std::declval&lt; typename Container::value_type &gt;()))&gt; &gt;</div><div class="ttdoc">批量提交任务，对容器中的每个元素应用函数。</div><div class="ttdef"><b>Definition</b> pool.h:213</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a8e9624059df4e5b59b9c419dce4b866c"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a8e9624059df4e5b59b9c419dce4b866c">console::ThreadPool::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">优雅关闭线程池，等待所有任务完成。</div><div class="ttdef"><b>Definition</b> pool.h:262</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a98bd08fa81196e38dee7a1f29a542d9a"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a98bd08fa81196e38dee7a1f29a542d9a">console::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(size_t num_threads=std::thread::hardware_concurrency(), launch exit_launch=launch::close)</div><div class="ttdoc">构造函数，创建指定数量的工作线程。</div><div class="ttdef"><b>Definition</b> pool.h:153</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_a99618ffac6aa6764fef17fdaad6aa46e"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#a99618ffac6aa6764fef17fdaad6aa46e">console::ThreadPool::abort</a></div><div class="ttdeci">void abort()</div><div class="ttdoc">粗暴地关闭线程池，用于需要立刻结束一切。</div><div class="ttdef"><b>Definition</b> pool.h:277</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_abe5b850e9b1ba760fa163dd03ac3284a"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#abe5b850e9b1ba760fa163dd03ac3284a">console::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(const ThreadPool &amp;)=delete</div><div class="ttdoc">禁止拷贝构造。</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_acc69a3f2b61dfe506d9286a37ae62d90"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#acc69a3f2b61dfe506d9286a37ae62d90">console::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(launch exit_launch=launch::close, size_t num_threads=std::thread::hardware_concurrency())</div><div class="ttdoc">构造函数，创建指定数量的工作线程。</div><div class="ttdef"><b>Definition</b> pool.h:106</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_ae4c321124ea15fb20e886a521fd6d596"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#ae4c321124ea15fb20e886a521fd6d596">console::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(ThreadPool &amp;&amp;)=delete</div><div class="ttdoc">禁止移动构造。</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_ae51068e4017a6e723e632b4e4ee91d68"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#ae51068e4017a6e723e632b4e4ee91d68">console::ThreadPool::operator=</a></div><div class="ttdeci">ThreadPool &amp; operator=(ThreadPool &amp;&amp;)=delete</div><div class="ttdoc">禁止移动赋值。</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_ae71d138f750d84890f9a0d05ff00cb8f"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#ae71d138f750d84890f9a0d05ff00cb8f">console::ThreadPool::count</a></div><div class="ttdeci">size_t count() const</div><div class="ttdoc">获取当前正在执行的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:252</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_aeb8be0aa2a3cb1273d63ab93accd65ed"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#aeb8be0aa2a3cb1273d63ab93accd65ed">console::ThreadPool::operator=</a></div><div class="ttdeci">ThreadPool &amp; operator=(const ThreadPool &amp;)=delete</div><div class="ttdoc">禁止拷贝赋值。</div></div>
+<div class="ttc" id="aclassconsole_1_1_thread_pool_html_af914af0aaa51499897635491f7963350"><div class="ttname"><a href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">console::ThreadPool::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">等待所有已提交的任务完成。</div><div class="ttdef"><b>Definition</b> pool.h:229</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
+<div class="ttc" id="anamespaceconsole_html_a0db615c5a556ed47bb371e6535c07596"><div class="ttname"><a href="namespaceconsole.html#a0db615c5a556ed47bb371e6535c07596">console::async</a></div><div class="ttdeci">auto async(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(std::forward&lt; F &gt;(f)(std::forward&lt; Args &gt;(args)...))&gt;</div><div class="ttdoc">提交一个可调用对象到全局线程池执行。</div><div class="ttdef"><b>Definition</b> pool.h:389</div></div>
+<div class="ttc" id="anamespaceconsole_html_a12098ca66a7c94d7cb6cb22a01fdfece"><div class="ttname"><a href="namespaceconsole.html#a12098ca66a7c94d7cb6cb22a01fdfece">console::gtp_count</a></div><div class="ttdeci">size_t gtp_count()</div><div class="ttdoc">获取全局对象池当前正在执行的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:371</div></div>
+<div class="ttc" id="anamespaceconsole_html_a4beb04d0e45abe1ea5de1afcac160379"><div class="ttname"><a href="namespaceconsole.html#a4beb04d0e45abe1ea5de1afcac160379">console::gtp_size</a></div><div class="ttdeci">size_t gtp_size()</div><div class="ttdoc">获取全局对象池当前任务队列中的任务数量。</div><div class="ttdef"><b>Definition</b> pool.h:361</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">console::Key::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="anamespaceconsole_html_a717d83be65272a7e3282152d007f3a97"><div class="ttname"><a href="namespaceconsole.html#a717d83be65272a7e3282152d007f3a97">console::gtp_submit</a></div><div class="ttdeci">auto gtp_submit(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(std::forward&lt; F &gt;(f)(std::forward&lt; Args &gt;(args)...))&gt;</div><div class="ttdoc">提交一个可调用对象到全局线程池执行。</div><div class="ttdef"><b>Definition</b> pool.h:321</div></div>
+<div class="ttc" id="anamespaceconsole_html_aa1cc4ec56c6407c31576605d85887eaa"><div class="ttname"><a href="namespaceconsole.html#aa1cc4ec56c6407c31576605d85887eaa">console::gtp_wait</a></div><div class="ttdeci">void gtp_wait()</div><div class="ttdoc">等待全局进程池所有已提交的任务完成。</div><div class="ttdef"><b>Definition</b> pool.h:351</div></div>
+<div class="ttc" id="anamespaceconsole_html_adc27ccd0f8a53516f38f7daf744c7e98"><div class="ttname"><a href="namespaceconsole.html#adc27ccd0f8a53516f38f7daf744c7e98">console::gtp_map</a></div><div class="ttdeci">auto gtp_map(F &amp;&amp;func, const Container &amp;items) -&gt; std::vector&lt; std::future&lt; decltype(func(std::declval&lt; typename Container::value_type &gt;()))&gt; &gt;</div><div class="ttdoc">批量提交任务到全局线程池，对容器中的每个元素应用函数。</div><div class="ttdef"><b>Definition</b> pool.h:340</div></div>
+<div class="ttc" id="anamespaceconsole_html_af1dbeb84afc82ab5cffffd77d66d8d13"><div class="ttname"><a href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">console::global_thread_pool</a></div><div class="ttdeci">ThreadPool &amp; global_thread_pool()</div><div class="ttdoc">全局线程池。</div><div class="ttdef"><b>Definition</b> pool.h:304</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -75,6 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">console::color Namespace Reference</div></div>
 </div><!--header-->
@@ -83,786 +84,1167 @@ $(function() {
 <p>包含控制台颜色、背景色和文本样式的 ANSI 转义序列常量。  
 <a href="namespaceconsole_1_1color.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a94d5279e2ad3f3f204754b6820d8e115" id="r_a94d5279e2ad3f3f204754b6820d8e115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a94d5279e2ad3f3f204754b6820d8e115">change</a> (const char *clr=<a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a>, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memdesc:a94d5279e2ad3f3f204754b6820d8e115"><td class="mdescLeft">&#160;</td><td class="mdescRight">修改颜色。  <br /></td></tr>
+<tr class="separator:a94d5279e2ad3f3f204754b6820d8e115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa2b5db17260521f4a0541afc70696d59" id="r_aa2b5db17260521f4a0541afc70696d59"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aa2b5db17260521f4a0541afc70696d59">Black</a> = &quot;\033[30m&quot;</td></tr>
-<tr class="memdesc:aa2b5db17260521f4a0541afc70696d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色前景  <br /></td></tr>
-<tr class="separator:aa2b5db17260521f4a0541afc70696d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a384e1a17e4c2cc6c76dbb7b639ebfb1a" id="r_a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a384e1a17e4c2cc6c76dbb7b639ebfb1a">Red</a> = &quot;\033[31m&quot;</td></tr>
-<tr class="memdesc:a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色前景  <br /></td></tr>
-<tr class="separator:a384e1a17e4c2cc6c76dbb7b639ebfb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5c393b040948fadaf9e8e20fbe1b86" id="r_a2b5c393b040948fadaf9e8e20fbe1b86"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2b5c393b040948fadaf9e8e20fbe1b86">Green</a> = &quot;\033[32m&quot;</td></tr>
-<tr class="memdesc:a2b5c393b040948fadaf9e8e20fbe1b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色前景  <br /></td></tr>
-<tr class="separator:a2b5c393b040948fadaf9e8e20fbe1b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c24ae11d31fa9c6e9c95d8871c91d70" id="r_a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8c24ae11d31fa9c6e9c95d8871c91d70">Yellow</a> = &quot;\033[33m&quot;</td></tr>
-<tr class="memdesc:a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色前景  <br /></td></tr>
-<tr class="separator:a8c24ae11d31fa9c6e9c95d8871c91d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0edce01b0636394afa3d0c17cde5ec5" id="r_af0edce01b0636394afa3d0c17cde5ec5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af0edce01b0636394afa3d0c17cde5ec5">Blue</a> = &quot;\033[34m&quot;</td></tr>
-<tr class="memdesc:af0edce01b0636394afa3d0c17cde5ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色前景  <br /></td></tr>
-<tr class="separator:af0edce01b0636394afa3d0c17cde5ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5232da7036369752ecbcf876373b30af" id="r_a5232da7036369752ecbcf876373b30af"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a5232da7036369752ecbcf876373b30af">Magenta</a> = &quot;\033[35m&quot;</td></tr>
-<tr class="memdesc:a5232da7036369752ecbcf876373b30af"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红前景  <br /></td></tr>
-<tr class="separator:a5232da7036369752ecbcf876373b30af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1dac334f0acb0e2d5351f00c7ec140e" id="r_ab1dac334f0acb0e2d5351f00c7ec140e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ab1dac334f0acb0e2d5351f00c7ec140e">Cyan</a> = &quot;\033[36m&quot;</td></tr>
-<tr class="memdesc:ab1dac334f0acb0e2d5351f00c7ec140e"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色前景  <br /></td></tr>
-<tr class="separator:ab1dac334f0acb0e2d5351f00c7ec140e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80940048f2649764f34f506cd33156f6" id="r_a80940048f2649764f34f506cd33156f6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a80940048f2649764f34f506cd33156f6">White</a> = &quot;\033[37m&quot;</td></tr>
-<tr class="memdesc:a80940048f2649764f34f506cd33156f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色前景  <br /></td></tr>
-<tr class="separator:a80940048f2649764f34f506cd33156f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71f24d6a2e6db858189cec651aef52cb" id="r_a71f24d6a2e6db858189cec651aef52cb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a71f24d6a2e6db858189cec651aef52cb">BrightBlack</a> = &quot;\033[90m&quot;</td></tr>
-<tr class="memdesc:a71f24d6a2e6db858189cec651aef52cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色（灰）前景  <br /></td></tr>
-<tr class="separator:a71f24d6a2e6db858189cec651aef52cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47952d071e2e7b9de8d95e8c31d3192a" id="r_a47952d071e2e7b9de8d95e8c31d3192a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a47952d071e2e7b9de8d95e8c31d3192a">BrightRed</a> = &quot;\033[91m&quot;</td></tr>
-<tr class="memdesc:a47952d071e2e7b9de8d95e8c31d3192a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色前景  <br /></td></tr>
-<tr class="separator:a47952d071e2e7b9de8d95e8c31d3192a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa36bfd7055c59f2f9811e6784a9d7474" id="r_aa36bfd7055c59f2f9811e6784a9d7474"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aa36bfd7055c59f2f9811e6784a9d7474">BrightGreen</a> = &quot;\033[92m&quot;</td></tr>
-<tr class="memdesc:aa36bfd7055c59f2f9811e6784a9d7474"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色前景  <br /></td></tr>
-<tr class="separator:aa36bfd7055c59f2f9811e6784a9d7474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824901caf455f0f8937ad51ae2525551" id="r_a824901caf455f0f8937ad51ae2525551"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a824901caf455f0f8937ad51ae2525551">BrightYellow</a> = &quot;\033[93m&quot;</td></tr>
-<tr class="memdesc:a824901caf455f0f8937ad51ae2525551"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色前景  <br /></td></tr>
-<tr class="separator:a824901caf455f0f8937ad51ae2525551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80ae9e935dbf1886aa2a22946a1f7bcf" id="r_a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a80ae9e935dbf1886aa2a22946a1f7bcf">BrightBlue</a> = &quot;\033[94m&quot;</td></tr>
-<tr class="memdesc:a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色前景  <br /></td></tr>
-<tr class="separator:a80ae9e935dbf1886aa2a22946a1f7bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c394ff9bd3980e5af678c00aa3bfba" id="r_ad7c394ff9bd3980e5af678c00aa3bfba"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad7c394ff9bd3980e5af678c00aa3bfba">BrightMagenta</a> = &quot;\033[95m&quot;</td></tr>
-<tr class="memdesc:ad7c394ff9bd3980e5af678c00aa3bfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红前景  <br /></td></tr>
-<tr class="separator:ad7c394ff9bd3980e5af678c00aa3bfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc90f88f3b8842a430e6c230fb24ff06" id="r_acc90f88f3b8842a430e6c230fb24ff06"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#acc90f88f3b8842a430e6c230fb24ff06">BrightCyan</a> = &quot;\033[96m&quot;</td></tr>
-<tr class="memdesc:acc90f88f3b8842a430e6c230fb24ff06"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色前景  <br /></td></tr>
-<tr class="separator:acc90f88f3b8842a430e6c230fb24ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad851d58441686c943746d3a9c7e076e3" id="r_ad851d58441686c943746d3a9c7e076e3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad851d58441686c943746d3a9c7e076e3">BrightWhite</a> = &quot;\033[97m&quot;</td></tr>
-<tr class="memdesc:ad851d58441686c943746d3a9c7e076e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色前景  <br /></td></tr>
-<tr class="separator:ad851d58441686c943746d3a9c7e076e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed61bfb193c5c64c0ac4aed09b033c33" id="r_aed61bfb193c5c64c0ac4aed09b033c33"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aed61bfb193c5c64c0ac4aed09b033c33">Reset</a> = &quot;\033[0m&quot;</td></tr>
-<tr class="memdesc:aed61bfb193c5c64c0ac4aed09b033c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置所有颜色/样式  <br /></td></tr>
-<tr class="separator:aed61bfb193c5c64c0ac4aed09b033c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac965d70898a21f9376ce35137daec99e" id="r_ac965d70898a21f9376ce35137daec99e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ac965d70898a21f9376ce35137daec99e">BgBlack</a> = &quot;\033[40m&quot;</td></tr>
-<tr class="memdesc:ac965d70898a21f9376ce35137daec99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色背景  <br /></td></tr>
-<tr class="separator:ac965d70898a21f9376ce35137daec99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a379ed3c04eed188ecd035499e8bd7edd" id="r_a379ed3c04eed188ecd035499e8bd7edd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a379ed3c04eed188ecd035499e8bd7edd">BgRed</a> = &quot;\033[41m&quot;</td></tr>
-<tr class="memdesc:a379ed3c04eed188ecd035499e8bd7edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色背景  <br /></td></tr>
-<tr class="separator:a379ed3c04eed188ecd035499e8bd7edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767a7d8159b29de740031e4c3877aee7" id="r_a767a7d8159b29de740031e4c3877aee7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a767a7d8159b29de740031e4c3877aee7">BgGreen</a> = &quot;\033[42m&quot;</td></tr>
-<tr class="memdesc:a767a7d8159b29de740031e4c3877aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色背景  <br /></td></tr>
-<tr class="separator:a767a7d8159b29de740031e4c3877aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8603ae713988a8c5c9e61c12ca840a58" id="r_a8603ae713988a8c5c9e61c12ca840a58"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8603ae713988a8c5c9e61c12ca840a58">BgYellow</a> = &quot;\033[43m&quot;</td></tr>
-<tr class="memdesc:a8603ae713988a8c5c9e61c12ca840a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色背景  <br /></td></tr>
-<tr class="separator:a8603ae713988a8c5c9e61c12ca840a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de8cf875ecb19bca9d315a20f152230" id="r_a7de8cf875ecb19bca9d315a20f152230"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7de8cf875ecb19bca9d315a20f152230">BgBlue</a> = &quot;\033[44m&quot;</td></tr>
-<tr class="memdesc:a7de8cf875ecb19bca9d315a20f152230"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色背景  <br /></td></tr>
-<tr class="separator:a7de8cf875ecb19bca9d315a20f152230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed5997b03dfec3eb8e16b8e5664d6038" id="r_aed5997b03dfec3eb8e16b8e5664d6038"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aed5997b03dfec3eb8e16b8e5664d6038">BgMagenta</a> = &quot;\033[45m&quot;</td></tr>
-<tr class="memdesc:aed5997b03dfec3eb8e16b8e5664d6038"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红背景  <br /></td></tr>
-<tr class="separator:aed5997b03dfec3eb8e16b8e5664d6038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11da907d8e8a7e86076e0bf4f041cdcc" id="r_a11da907d8e8a7e86076e0bf4f041cdcc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a11da907d8e8a7e86076e0bf4f041cdcc">BgCyan</a> = &quot;\033[46m&quot;</td></tr>
-<tr class="memdesc:a11da907d8e8a7e86076e0bf4f041cdcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色背景  <br /></td></tr>
-<tr class="separator:a11da907d8e8a7e86076e0bf4f041cdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea161a5e865cc672218062b22d85468" id="r_adea161a5e865cc672218062b22d85468"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#adea161a5e865cc672218062b22d85468">BgWhite</a> = &quot;\033[47m&quot;</td></tr>
-<tr class="memdesc:adea161a5e865cc672218062b22d85468"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色背景  <br /></td></tr>
-<tr class="separator:adea161a5e865cc672218062b22d85468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58be8978952ba7b88bc65fcf84948ecb" id="r_a58be8978952ba7b88bc65fcf84948ecb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a58be8978952ba7b88bc65fcf84948ecb">BgBrightBlack</a> = &quot;\033[100m&quot;</td></tr>
-<tr class="memdesc:a58be8978952ba7b88bc65fcf84948ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色背景  <br /></td></tr>
-<tr class="separator:a58be8978952ba7b88bc65fcf84948ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c949453b7988c53fd05c0f2afc570c3" id="r_a9c949453b7988c53fd05c0f2afc570c3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9c949453b7988c53fd05c0f2afc570c3">BgBrightRed</a> = &quot;\033[101m&quot;</td></tr>
-<tr class="memdesc:a9c949453b7988c53fd05c0f2afc570c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色背景  <br /></td></tr>
-<tr class="separator:a9c949453b7988c53fd05c0f2afc570c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a651d18a496b1308567180ffab4d2dd9f" id="r_a651d18a496b1308567180ffab4d2dd9f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a651d18a496b1308567180ffab4d2dd9f">BgBrightGreen</a> = &quot;\033[102m&quot;</td></tr>
-<tr class="memdesc:a651d18a496b1308567180ffab4d2dd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色背景  <br /></td></tr>
-<tr class="separator:a651d18a496b1308567180ffab4d2dd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030542c9b76328cee0ff0ae0b70946b2" id="r_a030542c9b76328cee0ff0ae0b70946b2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a030542c9b76328cee0ff0ae0b70946b2">BgBrightYellow</a> = &quot;\033[103m&quot;</td></tr>
-<tr class="memdesc:a030542c9b76328cee0ff0ae0b70946b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色背景  <br /></td></tr>
-<tr class="separator:a030542c9b76328cee0ff0ae0b70946b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7187373a5da68b1e57671dfb17a05354" id="r_a7187373a5da68b1e57671dfb17a05354"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7187373a5da68b1e57671dfb17a05354">BgBrightBlue</a> = &quot;\033[104m&quot;</td></tr>
-<tr class="memdesc:a7187373a5da68b1e57671dfb17a05354"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色背景  <br /></td></tr>
-<tr class="separator:a7187373a5da68b1e57671dfb17a05354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9655d396821f64ec699d54752f4e96e6" id="r_a9655d396821f64ec699d54752f4e96e6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9655d396821f64ec699d54752f4e96e6">BgBrightMagenta</a> = &quot;\033[105m&quot;</td></tr>
-<tr class="memdesc:a9655d396821f64ec699d54752f4e96e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红背景  <br /></td></tr>
-<tr class="separator:a9655d396821f64ec699d54752f4e96e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648bc16534400f6894b1cec609f6aec7" id="r_a648bc16534400f6894b1cec609f6aec7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a648bc16534400f6894b1cec609f6aec7">BgBrightCyan</a> = &quot;\033[106m&quot;</td></tr>
-<tr class="memdesc:a648bc16534400f6894b1cec609f6aec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色背景  <br /></td></tr>
-<tr class="separator:a648bc16534400f6894b1cec609f6aec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2216f63938f268e7302070e5ea1a5694" id="r_a2216f63938f268e7302070e5ea1a5694"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2216f63938f268e7302070e5ea1a5694">BgBrightWhite</a> = &quot;\033[107m&quot;</td></tr>
-<tr class="memdesc:a2216f63938f268e7302070e5ea1a5694"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色背景  <br /></td></tr>
-<tr class="separator:a2216f63938f268e7302070e5ea1a5694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dfb10aea5647c1c039da43f79871f43" id="r_a1dfb10aea5647c1c039da43f79871f43"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a1dfb10aea5647c1c039da43f79871f43">Bold</a> = &quot;\033[1m&quot;</td></tr>
-<tr class="memdesc:a1dfb10aea5647c1c039da43f79871f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">粗体  <br /></td></tr>
-<tr class="separator:a1dfb10aea5647c1c039da43f79871f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad802e1d313c59f4596944cfbd50f7203" id="r_ad802e1d313c59f4596944cfbd50f7203"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad802e1d313c59f4596944cfbd50f7203">Dim</a> = &quot;\033[2m&quot;</td></tr>
-<tr class="memdesc:ad802e1d313c59f4596944cfbd50f7203"><td class="mdescLeft">&#160;</td><td class="mdescRight">暗淡（降低亮度）  <br /></td></tr>
-<tr class="separator:ad802e1d313c59f4596944cfbd50f7203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f5e8946ee12cde77ac0f1e7eaf3d86" id="r_ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae7f5e8946ee12cde77ac0f1e7eaf3d86">Italic</a> = &quot;\033[3m&quot;</td></tr>
-<tr class="memdesc:ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">斜体  <br /></td></tr>
-<tr class="separator:ae7f5e8946ee12cde77ac0f1e7eaf3d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34c3d5fdd053b51a3f99a89abd94174" id="r_af34c3d5fdd053b51a3f99a89abd94174"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af34c3d5fdd053b51a3f99a89abd94174">Underline</a> = &quot;\033[4m&quot;</td></tr>
-<tr class="memdesc:af34c3d5fdd053b51a3f99a89abd94174"><td class="mdescLeft">&#160;</td><td class="mdescRight">下划线  <br /></td></tr>
-<tr class="separator:af34c3d5fdd053b51a3f99a89abd94174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b9886ec2322c623ade25f49e7b80cfe" id="r_a0b9886ec2322c623ade25f49e7b80cfe"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0b9886ec2322c623ade25f49e7b80cfe">Blink</a> = &quot;\033[5m&quot;</td></tr>
-<tr class="memdesc:a0b9886ec2322c623ade25f49e7b80cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁  <br /></td></tr>
-<tr class="separator:a0b9886ec2322c623ade25f49e7b80cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a821982070c0ab61067e0d8621d2216ce" id="r_a821982070c0ab61067e0d8621d2216ce"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a821982070c0ab61067e0d8621d2216ce">Reverse</a> = &quot;\033[7m&quot;</td></tr>
-<tr class="memdesc:a821982070c0ab61067e0d8621d2216ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">反转（交换前景和背景）  <br /></td></tr>
-<tr class="separator:a821982070c0ab61067e0d8621d2216ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7142232d199627310d170a11ffab289" id="r_ae7142232d199627310d170a11ffab289"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae7142232d199627310d170a11ffab289">Hidden</a> = &quot;\033[8m&quot;</td></tr>
-<tr class="memdesc:ae7142232d199627310d170a11ffab289"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏（不可见）  <br /></td></tr>
-<tr class="separator:ae7142232d199627310d170a11ffab289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc2f3a2d9b63617e9a646746338ba1e" id="r_a9cc2f3a2d9b63617e9a646746338ba1e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9cc2f3a2d9b63617e9a646746338ba1e">Strikethrough</a> = &quot;\033[9m&quot;</td></tr>
-<tr class="memdesc:a9cc2f3a2d9b63617e9a646746338ba1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除线  <br /></td></tr>
-<tr class="separator:a9cc2f3a2d9b63617e9a646746338ba1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bc3a40ac0a60732c3dc8c30483c3c2" id="r_ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ab6bc3a40ac0a60732c3dc8c30483c3c2">Black</a> [] = &quot;\033[30m&quot;</td></tr>
+<tr class="memdesc:ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色前景  <br /></td></tr>
+<tr class="separator:ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7daabaa72046c5003d120c49b733101b" id="r_a7daabaa72046c5003d120c49b733101b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7daabaa72046c5003d120c49b733101b">Red</a> [] = &quot;\033[31m&quot;</td></tr>
+<tr class="memdesc:a7daabaa72046c5003d120c49b733101b"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色前景  <br /></td></tr>
+<tr class="separator:a7daabaa72046c5003d120c49b733101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570a39951df9c9bfc55d4156dd255a3b" id="r_a570a39951df9c9bfc55d4156dd255a3b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a570a39951df9c9bfc55d4156dd255a3b">Green</a> [] = &quot;\033[32m&quot;</td></tr>
+<tr class="memdesc:a570a39951df9c9bfc55d4156dd255a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色前景  <br /></td></tr>
+<tr class="separator:a570a39951df9c9bfc55d4156dd255a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504e29f5f93ebe272b73fa3bfdfecff0" id="r_a504e29f5f93ebe272b73fa3bfdfecff0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a504e29f5f93ebe272b73fa3bfdfecff0">Yellow</a> [] = &quot;\033[33m&quot;</td></tr>
+<tr class="memdesc:a504e29f5f93ebe272b73fa3bfdfecff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色前景  <br /></td></tr>
+<tr class="separator:a504e29f5f93ebe272b73fa3bfdfecff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1875b318369902da2eeda12a65ff27" id="r_a6c1875b318369902da2eeda12a65ff27"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a6c1875b318369902da2eeda12a65ff27">Blue</a> [] = &quot;\033[34m&quot;</td></tr>
+<tr class="memdesc:a6c1875b318369902da2eeda12a65ff27"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色前景  <br /></td></tr>
+<tr class="separator:a6c1875b318369902da2eeda12a65ff27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b613c39490b97b757965866e085a14" id="r_ad6b613c39490b97b757965866e085a14"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad6b613c39490b97b757965866e085a14">Magenta</a> [] = &quot;\033[35m&quot;</td></tr>
+<tr class="memdesc:ad6b613c39490b97b757965866e085a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红前景  <br /></td></tr>
+<tr class="separator:ad6b613c39490b97b757965866e085a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b11f33a9c90056089136caf1d0681a0" id="r_a2b11f33a9c90056089136caf1d0681a0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2b11f33a9c90056089136caf1d0681a0">Cyan</a> [] = &quot;\033[36m&quot;</td></tr>
+<tr class="memdesc:a2b11f33a9c90056089136caf1d0681a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色前景  <br /></td></tr>
+<tr class="separator:a2b11f33a9c90056089136caf1d0681a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac881c728c47295b7e2d6bdae8ea7962a" id="r_ac881c728c47295b7e2d6bdae8ea7962a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ac881c728c47295b7e2d6bdae8ea7962a">White</a> [] = &quot;\033[37m&quot;</td></tr>
+<tr class="memdesc:ac881c728c47295b7e2d6bdae8ea7962a"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色前景  <br /></td></tr>
+<tr class="separator:ac881c728c47295b7e2d6bdae8ea7962a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5ab49b2970657df0b8785de67aa9a0" id="r_a2c5ab49b2970657df0b8785de67aa9a0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2c5ab49b2970657df0b8785de67aa9a0">BrightBlack</a> [] = &quot;\033[90m&quot;</td></tr>
+<tr class="memdesc:a2c5ab49b2970657df0b8785de67aa9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色（灰）前景  <br /></td></tr>
+<tr class="separator:a2c5ab49b2970657df0b8785de67aa9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64bd4800ca30a89d23dfb8013ace3563" id="r_a64bd4800ca30a89d23dfb8013ace3563"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a64bd4800ca30a89d23dfb8013ace3563">BrightRed</a> [] = &quot;\033[91m&quot;</td></tr>
+<tr class="memdesc:a64bd4800ca30a89d23dfb8013ace3563"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色前景  <br /></td></tr>
+<tr class="separator:a64bd4800ca30a89d23dfb8013ace3563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a679518bad9809cd4d2f6f35777bb0" id="r_ad6a679518bad9809cd4d2f6f35777bb0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ad6a679518bad9809cd4d2f6f35777bb0">BrightGreen</a> [] = &quot;\033[92m&quot;</td></tr>
+<tr class="memdesc:ad6a679518bad9809cd4d2f6f35777bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色前景  <br /></td></tr>
+<tr class="separator:ad6a679518bad9809cd4d2f6f35777bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368522b9caa25abb157355ac16699c01" id="r_a368522b9caa25abb157355ac16699c01"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a368522b9caa25abb157355ac16699c01">BrightYellow</a> [] = &quot;\033[93m&quot;</td></tr>
+<tr class="memdesc:a368522b9caa25abb157355ac16699c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色前景  <br /></td></tr>
+<tr class="separator:a368522b9caa25abb157355ac16699c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af475362d001f9b7d5500ac09225caa29" id="r_af475362d001f9b7d5500ac09225caa29"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af475362d001f9b7d5500ac09225caa29">BrightBlue</a> [] = &quot;\033[94m&quot;</td></tr>
+<tr class="memdesc:af475362d001f9b7d5500ac09225caa29"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色前景  <br /></td></tr>
+<tr class="separator:af475362d001f9b7d5500ac09225caa29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9856cccee07aa6cb6841026eca349f60" id="r_a9856cccee07aa6cb6841026eca349f60"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a9856cccee07aa6cb6841026eca349f60">BrightMagenta</a> [] = &quot;\033[95m&quot;</td></tr>
+<tr class="memdesc:a9856cccee07aa6cb6841026eca349f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红前景  <br /></td></tr>
+<tr class="separator:a9856cccee07aa6cb6841026eca349f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2497602c275f5ca53c5e8c931ba7bdd1" id="r_a2497602c275f5ca53c5e8c931ba7bdd1"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2497602c275f5ca53c5e8c931ba7bdd1">BrightCyan</a> [] = &quot;\033[96m&quot;</td></tr>
+<tr class="memdesc:a2497602c275f5ca53c5e8c931ba7bdd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色前景  <br /></td></tr>
+<tr class="separator:a2497602c275f5ca53c5e8c931ba7bdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbaf1749e06e03bd3f40388a89450ea0" id="r_adbaf1749e06e03bd3f40388a89450ea0"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#adbaf1749e06e03bd3f40388a89450ea0">BrightWhite</a> [] = &quot;\033[97m&quot;</td></tr>
+<tr class="memdesc:adbaf1749e06e03bd3f40388a89450ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色前景  <br /></td></tr>
+<tr class="separator:adbaf1749e06e03bd3f40388a89450ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de0a8431459f4ed50cdb25d1d30ef83" id="r_a0de0a8431459f4ed50cdb25d1d30ef83"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a> [] = &quot;\033[0m&quot;</td></tr>
+<tr class="memdesc:a0de0a8431459f4ed50cdb25d1d30ef83"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置所有颜色/样式  <br /></td></tr>
+<tr class="separator:a0de0a8431459f4ed50cdb25d1d30ef83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaae0b96f5dc51cc05a33f9b91bdcd96" id="r_aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#aaaae0b96f5dc51cc05a33f9b91bdcd96">BgBlack</a> [] = &quot;\033[40m&quot;</td></tr>
+<tr class="memdesc:aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">黑色背景  <br /></td></tr>
+<tr class="separator:aaaae0b96f5dc51cc05a33f9b91bdcd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ad04a1690e69dc69c02b0500e6be9c" id="r_a24ad04a1690e69dc69c02b0500e6be9c"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a24ad04a1690e69dc69c02b0500e6be9c">BgRed</a> [] = &quot;\033[41m&quot;</td></tr>
+<tr class="memdesc:a24ad04a1690e69dc69c02b0500e6be9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">红色背景  <br /></td></tr>
+<tr class="separator:a24ad04a1690e69dc69c02b0500e6be9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ead4b0ef8cbbe04e8f8c3ef7cd23542" id="r_a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a7ead4b0ef8cbbe04e8f8c3ef7cd23542">BgGreen</a> [] = &quot;\033[42m&quot;</td></tr>
+<tr class="memdesc:a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="mdescLeft">&#160;</td><td class="mdescRight">绿色背景  <br /></td></tr>
+<tr class="separator:a7ead4b0ef8cbbe04e8f8c3ef7cd23542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30affe3d7a837c11f7e6cd7ac40a700d" id="r_a30affe3d7a837c11f7e6cd7ac40a700d"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a30affe3d7a837c11f7e6cd7ac40a700d">BgYellow</a> [] = &quot;\033[43m&quot;</td></tr>
+<tr class="memdesc:a30affe3d7a837c11f7e6cd7ac40a700d"><td class="mdescLeft">&#160;</td><td class="mdescRight">黄色背景  <br /></td></tr>
+<tr class="separator:a30affe3d7a837c11f7e6cd7ac40a700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77a16795cac42c2dec389d9b5e7009e" id="r_af77a16795cac42c2dec389d9b5e7009e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#af77a16795cac42c2dec389d9b5e7009e">BgBlue</a> [] = &quot;\033[44m&quot;</td></tr>
+<tr class="memdesc:af77a16795cac42c2dec389d9b5e7009e"><td class="mdescLeft">&#160;</td><td class="mdescRight">蓝色背景  <br /></td></tr>
+<tr class="separator:af77a16795cac42c2dec389d9b5e7009e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6f89dccd585d9bb22312ce3ae0f578" id="r_a0f6f89dccd585d9bb22312ce3ae0f578"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0f6f89dccd585d9bb22312ce3ae0f578">BgMagenta</a> [] = &quot;\033[45m&quot;</td></tr>
+<tr class="memdesc:a0f6f89dccd585d9bb22312ce3ae0f578"><td class="mdescLeft">&#160;</td><td class="mdescRight">品红背景  <br /></td></tr>
+<tr class="separator:a0f6f89dccd585d9bb22312ce3ae0f578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99daf7fcaa6ddb280ffab4b07e53a71d" id="r_a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a99daf7fcaa6ddb280ffab4b07e53a71d">BgCyan</a> [] = &quot;\033[46m&quot;</td></tr>
+<tr class="memdesc:a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">青色背景  <br /></td></tr>
+<tr class="separator:a99daf7fcaa6ddb280ffab4b07e53a71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982e09712e465a748976366abb86eea6" id="r_a982e09712e465a748976366abb86eea6"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a982e09712e465a748976366abb86eea6">BgWhite</a> [] = &quot;\033[47m&quot;</td></tr>
+<tr class="memdesc:a982e09712e465a748976366abb86eea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">白色背景  <br /></td></tr>
+<tr class="separator:a982e09712e465a748976366abb86eea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a966e5858bf230ef533e53194257207" id="r_a2a966e5858bf230ef533e53194257207"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2a966e5858bf230ef533e53194257207">BgBrightBlack</a> [] = &quot;\033[100m&quot;</td></tr>
+<tr class="memdesc:a2a966e5858bf230ef533e53194257207"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黑色背景  <br /></td></tr>
+<tr class="separator:a2a966e5858bf230ef533e53194257207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7e7d47e9f359e82f08ecd9742ab94a" id="r_a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a4b7e7d47e9f359e82f08ecd9742ab94a">BgBrightRed</a> [] = &quot;\033[101m&quot;</td></tr>
+<tr class="memdesc:a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮红色背景  <br /></td></tr>
+<tr class="separator:a4b7e7d47e9f359e82f08ecd9742ab94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c106b90b0bc42601e26f4650aef00f" id="r_ae9c106b90b0bc42601e26f4650aef00f"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ae9c106b90b0bc42601e26f4650aef00f">BgBrightGreen</a> [] = &quot;\033[102m&quot;</td></tr>
+<tr class="memdesc:ae9c106b90b0bc42601e26f4650aef00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮绿色背景  <br /></td></tr>
+<tr class="separator:ae9c106b90b0bc42601e26f4650aef00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326b269c73fae66c8095b21dda7fa857" id="r_a326b269c73fae66c8095b21dda7fa857"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a326b269c73fae66c8095b21dda7fa857">BgBrightYellow</a> [] = &quot;\033[103m&quot;</td></tr>
+<tr class="memdesc:a326b269c73fae66c8095b21dda7fa857"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮黄色背景  <br /></td></tr>
+<tr class="separator:a326b269c73fae66c8095b21dda7fa857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa006e86b4b33d98a471b0bd31cd33b" id="r_a0aa006e86b4b33d98a471b0bd31cd33b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a0aa006e86b4b33d98a471b0bd31cd33b">BgBrightBlue</a> [] = &quot;\033[104m&quot;</td></tr>
+<tr class="memdesc:a0aa006e86b4b33d98a471b0bd31cd33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮蓝色背景  <br /></td></tr>
+<tr class="separator:a0aa006e86b4b33d98a471b0bd31cd33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3650e02ccdfca5f4a67354f7f39cbe" id="r_afc3650e02ccdfca5f4a67354f7f39cbe"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#afc3650e02ccdfca5f4a67354f7f39cbe">BgBrightMagenta</a> [] = &quot;\033[105m&quot;</td></tr>
+<tr class="memdesc:afc3650e02ccdfca5f4a67354f7f39cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮品红背景  <br /></td></tr>
+<tr class="separator:afc3650e02ccdfca5f4a67354f7f39cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fa80d3d7c7a797e9c7a79eafad342a" id="r_a31fa80d3d7c7a797e9c7a79eafad342a"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a31fa80d3d7c7a797e9c7a79eafad342a">BgBrightCyan</a> [] = &quot;\033[106m&quot;</td></tr>
+<tr class="memdesc:a31fa80d3d7c7a797e9c7a79eafad342a"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮青色背景  <br /></td></tr>
+<tr class="separator:a31fa80d3d7c7a797e9c7a79eafad342a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8efd419b494f735cc12c507a3e0a7e" id="r_a8f8efd419b494f735cc12c507a3e0a7e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8f8efd419b494f735cc12c507a3e0a7e">BgBrightWhite</a> [] = &quot;\033[107m&quot;</td></tr>
+<tr class="memdesc:a8f8efd419b494f735cc12c507a3e0a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">亮白色背景  <br /></td></tr>
+<tr class="separator:a8f8efd419b494f735cc12c507a3e0a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc447ff95d61f8bf1eedb828c5cc59b" id="r_a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a1dc447ff95d61f8bf1eedb828c5cc59b">Bold</a> [] = &quot;\033[1m&quot;</td></tr>
+<tr class="memdesc:a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">粗体  <br /></td></tr>
+<tr class="separator:a1dc447ff95d61f8bf1eedb828c5cc59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903cccda08faa5f1a0a6e65c16f5096e" id="r_a903cccda08faa5f1a0a6e65c16f5096e"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a903cccda08faa5f1a0a6e65c16f5096e">Dim</a> [] = &quot;\033[2m&quot;</td></tr>
+<tr class="memdesc:a903cccda08faa5f1a0a6e65c16f5096e"><td class="mdescLeft">&#160;</td><td class="mdescRight">暗淡（降低亮度）  <br /></td></tr>
+<tr class="separator:a903cccda08faa5f1a0a6e65c16f5096e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8687febc05c4ca85ecf6fb9cbdf2048f" id="r_a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a8687febc05c4ca85ecf6fb9cbdf2048f">Italic</a> [] = &quot;\033[3m&quot;</td></tr>
+<tr class="memdesc:a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="mdescLeft">&#160;</td><td class="mdescRight">斜体  <br /></td></tr>
+<tr class="separator:a8687febc05c4ca85ecf6fb9cbdf2048f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2936de81e29dd6928a19a612ae3b3094" id="r_a2936de81e29dd6928a19a612ae3b3094"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a2936de81e29dd6928a19a612ae3b3094">Underline</a> [] = &quot;\033[4m&quot;</td></tr>
+<tr class="memdesc:a2936de81e29dd6928a19a612ae3b3094"><td class="mdescLeft">&#160;</td><td class="mdescRight">下划线  <br /></td></tr>
+<tr class="separator:a2936de81e29dd6928a19a612ae3b3094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df318e069488b5905926446be702360" id="r_a3df318e069488b5905926446be702360"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a3df318e069488b5905926446be702360">Blink</a> [] = &quot;\033[5m&quot;</td></tr>
+<tr class="memdesc:a3df318e069488b5905926446be702360"><td class="mdescLeft">&#160;</td><td class="mdescRight">闪烁  <br /></td></tr>
+<tr class="separator:a3df318e069488b5905926446be702360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23075bb565e45cd3e6fcdd126f9cb740" id="r_a23075bb565e45cd3e6fcdd126f9cb740"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a23075bb565e45cd3e6fcdd126f9cb740">Reverse</a> [] = &quot;\033[7m&quot;</td></tr>
+<tr class="memdesc:a23075bb565e45cd3e6fcdd126f9cb740"><td class="mdescLeft">&#160;</td><td class="mdescRight">反转（交换前景和背景）  <br /></td></tr>
+<tr class="separator:a23075bb565e45cd3e6fcdd126f9cb740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c420baa706cecda1628806f80ef505" id="r_a05c420baa706cecda1628806f80ef505"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a05c420baa706cecda1628806f80ef505">Hidden</a> [] = &quot;\033[8m&quot;</td></tr>
+<tr class="memdesc:a05c420baa706cecda1628806f80ef505"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏（不可见）  <br /></td></tr>
+<tr class="separator:a05c420baa706cecda1628806f80ef505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc3ed5a35ee1759eafcf3f666e4440a4" id="r_acc3ed5a35ee1759eafcf3f666e4440a4"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#acc3ed5a35ee1759eafcf3f666e4440a4">Strikethrough</a> [] = &quot;\033[9m&quot;</td></tr>
+<tr class="memdesc:acc3ed5a35ee1759eafcf3f666e4440a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除线  <br /></td></tr>
+<tr class="separator:acc3ed5a35ee1759eafcf3f666e4440a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>包含控制台颜色、背景色和文本样式的 ANSI 转义序列常量。 </p>
-<p>使用方式：<code>std::cout &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#a384e1a17e4c2cc6c76dbb7b639ebfb1a" title="红色前景">color::Red</a> &lt;&lt; "Hello" &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#aed61bfb193c5c64c0ac4aed09b033c33" title="重置所有颜色/样式">color::Reset</a>;</code> </p>
-</div><h2 class="groupheader">Variable Documentation</h2>
-<a id="ac965d70898a21f9376ce35137daec99e" name="ac965d70898a21f9376ce35137daec99e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac965d70898a21f9376ce35137daec99e">&#9670;&#160;</a></span>BgBlack</h2>
+<p>使用方式：<code>std::cout &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#a7daabaa72046c5003d120c49b733101b" title="红色前景">color::Red</a> &lt;&lt; "Hello" &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83" title="重置所有颜色/样式">color::Reset</a>;</code> </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a94d5279e2ad3f3f204754b6820d8e115" name="a94d5279e2ad3f3f204754b6820d8e115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d5279e2ad3f3f204754b6820d8e115">&#9670;&#160;</a></span>change()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBlack = &quot;\033[40m&quot;</td>
+          <td class="memname">void console::color::change </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>clr</em> = <code><a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>修改颜色。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clr</td><td>颜色，默认 Reset。 </td></tr>
+    <tr><td class="paramname">os</td><td>输出流，默认 std::cout。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>通过 ADL 实现自动查找命名空间，可以直接写。 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aaaae0b96f5dc51cc05a33f9b91bdcd96" name="aaaae0b96f5dc51cc05a33f9b91bdcd96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaae0b96f5dc51cc05a33f9b91bdcd96">&#9670;&#160;</a></span>BgBlack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char console::color::BgBlack[] = &quot;\033[40m&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>黑色背景 </p>
 
 </div>
 </div>
-<a id="a7de8cf875ecb19bca9d315a20f152230" name="a7de8cf875ecb19bca9d315a20f152230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7de8cf875ecb19bca9d315a20f152230">&#9670;&#160;</a></span>BgBlue</h2>
+<a id="af77a16795cac42c2dec389d9b5e7009e" name="af77a16795cac42c2dec389d9b5e7009e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77a16795cac42c2dec389d9b5e7009e">&#9670;&#160;</a></span>BgBlue</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBlue = &quot;\033[44m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBlue[] = &quot;\033[44m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>蓝色背景 </p>
 
 </div>
 </div>
-<a id="a58be8978952ba7b88bc65fcf84948ecb" name="a58be8978952ba7b88bc65fcf84948ecb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58be8978952ba7b88bc65fcf84948ecb">&#9670;&#160;</a></span>BgBrightBlack</h2>
+<a id="a2a966e5858bf230ef533e53194257207" name="a2a966e5858bf230ef533e53194257207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a966e5858bf230ef533e53194257207">&#9670;&#160;</a></span>BgBrightBlack</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightBlack = &quot;\033[100m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightBlack[] = &quot;\033[100m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮黑色背景 </p>
 
 </div>
 </div>
-<a id="a7187373a5da68b1e57671dfb17a05354" name="a7187373a5da68b1e57671dfb17a05354"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7187373a5da68b1e57671dfb17a05354">&#9670;&#160;</a></span>BgBrightBlue</h2>
+<a id="a0aa006e86b4b33d98a471b0bd31cd33b" name="a0aa006e86b4b33d98a471b0bd31cd33b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa006e86b4b33d98a471b0bd31cd33b">&#9670;&#160;</a></span>BgBrightBlue</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightBlue = &quot;\033[104m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightBlue[] = &quot;\033[104m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮蓝色背景 </p>
 
 </div>
 </div>
-<a id="a648bc16534400f6894b1cec609f6aec7" name="a648bc16534400f6894b1cec609f6aec7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a648bc16534400f6894b1cec609f6aec7">&#9670;&#160;</a></span>BgBrightCyan</h2>
+<a id="a31fa80d3d7c7a797e9c7a79eafad342a" name="a31fa80d3d7c7a797e9c7a79eafad342a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fa80d3d7c7a797e9c7a79eafad342a">&#9670;&#160;</a></span>BgBrightCyan</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightCyan = &quot;\033[106m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightCyan[] = &quot;\033[106m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮青色背景 </p>
 
 </div>
 </div>
-<a id="a651d18a496b1308567180ffab4d2dd9f" name="a651d18a496b1308567180ffab4d2dd9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a651d18a496b1308567180ffab4d2dd9f">&#9670;&#160;</a></span>BgBrightGreen</h2>
+<a id="ae9c106b90b0bc42601e26f4650aef00f" name="ae9c106b90b0bc42601e26f4650aef00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c106b90b0bc42601e26f4650aef00f">&#9670;&#160;</a></span>BgBrightGreen</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightGreen = &quot;\033[102m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightGreen[] = &quot;\033[102m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮绿色背景 </p>
 
 </div>
 </div>
-<a id="a9655d396821f64ec699d54752f4e96e6" name="a9655d396821f64ec699d54752f4e96e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9655d396821f64ec699d54752f4e96e6">&#9670;&#160;</a></span>BgBrightMagenta</h2>
+<a id="afc3650e02ccdfca5f4a67354f7f39cbe" name="afc3650e02ccdfca5f4a67354f7f39cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3650e02ccdfca5f4a67354f7f39cbe">&#9670;&#160;</a></span>BgBrightMagenta</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightMagenta = &quot;\033[105m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightMagenta[] = &quot;\033[105m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮品红背景 </p>
 
 </div>
 </div>
-<a id="a9c949453b7988c53fd05c0f2afc570c3" name="a9c949453b7988c53fd05c0f2afc570c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c949453b7988c53fd05c0f2afc570c3">&#9670;&#160;</a></span>BgBrightRed</h2>
+<a id="a4b7e7d47e9f359e82f08ecd9742ab94a" name="a4b7e7d47e9f359e82f08ecd9742ab94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7e7d47e9f359e82f08ecd9742ab94a">&#9670;&#160;</a></span>BgBrightRed</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightRed = &quot;\033[101m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightRed[] = &quot;\033[101m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮红色背景 </p>
 
 </div>
 </div>
-<a id="a2216f63938f268e7302070e5ea1a5694" name="a2216f63938f268e7302070e5ea1a5694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2216f63938f268e7302070e5ea1a5694">&#9670;&#160;</a></span>BgBrightWhite</h2>
+<a id="a8f8efd419b494f735cc12c507a3e0a7e" name="a8f8efd419b494f735cc12c507a3e0a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8efd419b494f735cc12c507a3e0a7e">&#9670;&#160;</a></span>BgBrightWhite</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightWhite = &quot;\033[107m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightWhite[] = &quot;\033[107m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮白色背景 </p>
 
 </div>
 </div>
-<a id="a030542c9b76328cee0ff0ae0b70946b2" name="a030542c9b76328cee0ff0ae0b70946b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a030542c9b76328cee0ff0ae0b70946b2">&#9670;&#160;</a></span>BgBrightYellow</h2>
+<a id="a326b269c73fae66c8095b21dda7fa857" name="a326b269c73fae66c8095b21dda7fa857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326b269c73fae66c8095b21dda7fa857">&#9670;&#160;</a></span>BgBrightYellow</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgBrightYellow = &quot;\033[103m&quot;</td>
+          <td class="memname">constexpr char console::color::BgBrightYellow[] = &quot;\033[103m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮黄色背景 </p>
 
 </div>
 </div>
-<a id="a11da907d8e8a7e86076e0bf4f041cdcc" name="a11da907d8e8a7e86076e0bf4f041cdcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11da907d8e8a7e86076e0bf4f041cdcc">&#9670;&#160;</a></span>BgCyan</h2>
+<a id="a99daf7fcaa6ddb280ffab4b07e53a71d" name="a99daf7fcaa6ddb280ffab4b07e53a71d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99daf7fcaa6ddb280ffab4b07e53a71d">&#9670;&#160;</a></span>BgCyan</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgCyan = &quot;\033[46m&quot;</td>
+          <td class="memname">constexpr char console::color::BgCyan[] = &quot;\033[46m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>青色背景 </p>
 
 </div>
 </div>
-<a id="a767a7d8159b29de740031e4c3877aee7" name="a767a7d8159b29de740031e4c3877aee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a767a7d8159b29de740031e4c3877aee7">&#9670;&#160;</a></span>BgGreen</h2>
+<a id="a7ead4b0ef8cbbe04e8f8c3ef7cd23542" name="a7ead4b0ef8cbbe04e8f8c3ef7cd23542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ead4b0ef8cbbe04e8f8c3ef7cd23542">&#9670;&#160;</a></span>BgGreen</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgGreen = &quot;\033[42m&quot;</td>
+          <td class="memname">constexpr char console::color::BgGreen[] = &quot;\033[42m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>绿色背景 </p>
 
 </div>
 </div>
-<a id="aed5997b03dfec3eb8e16b8e5664d6038" name="aed5997b03dfec3eb8e16b8e5664d6038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed5997b03dfec3eb8e16b8e5664d6038">&#9670;&#160;</a></span>BgMagenta</h2>
+<a id="a0f6f89dccd585d9bb22312ce3ae0f578" name="a0f6f89dccd585d9bb22312ce3ae0f578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6f89dccd585d9bb22312ce3ae0f578">&#9670;&#160;</a></span>BgMagenta</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgMagenta = &quot;\033[45m&quot;</td>
+          <td class="memname">constexpr char console::color::BgMagenta[] = &quot;\033[45m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>品红背景 </p>
 
 </div>
 </div>
-<a id="a379ed3c04eed188ecd035499e8bd7edd" name="a379ed3c04eed188ecd035499e8bd7edd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a379ed3c04eed188ecd035499e8bd7edd">&#9670;&#160;</a></span>BgRed</h2>
+<a id="a24ad04a1690e69dc69c02b0500e6be9c" name="a24ad04a1690e69dc69c02b0500e6be9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24ad04a1690e69dc69c02b0500e6be9c">&#9670;&#160;</a></span>BgRed</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgRed = &quot;\033[41m&quot;</td>
+          <td class="memname">constexpr char console::color::BgRed[] = &quot;\033[41m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>红色背景 </p>
 
 </div>
 </div>
-<a id="adea161a5e865cc672218062b22d85468" name="adea161a5e865cc672218062b22d85468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adea161a5e865cc672218062b22d85468">&#9670;&#160;</a></span>BgWhite</h2>
+<a id="a982e09712e465a748976366abb86eea6" name="a982e09712e465a748976366abb86eea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982e09712e465a748976366abb86eea6">&#9670;&#160;</a></span>BgWhite</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgWhite = &quot;\033[47m&quot;</td>
+          <td class="memname">constexpr char console::color::BgWhite[] = &quot;\033[47m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>白色背景 </p>
 
 </div>
 </div>
-<a id="a8603ae713988a8c5c9e61c12ca840a58" name="a8603ae713988a8c5c9e61c12ca840a58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8603ae713988a8c5c9e61c12ca840a58">&#9670;&#160;</a></span>BgYellow</h2>
+<a id="a30affe3d7a837c11f7e6cd7ac40a700d" name="a30affe3d7a837c11f7e6cd7ac40a700d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30affe3d7a837c11f7e6cd7ac40a700d">&#9670;&#160;</a></span>BgYellow</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BgYellow = &quot;\033[43m&quot;</td>
+          <td class="memname">constexpr char console::color::BgYellow[] = &quot;\033[43m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>黄色背景 </p>
 
 </div>
 </div>
-<a id="aa2b5db17260521f4a0541afc70696d59" name="aa2b5db17260521f4a0541afc70696d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2b5db17260521f4a0541afc70696d59">&#9670;&#160;</a></span>Black</h2>
+<a id="ab6bc3a40ac0a60732c3dc8c30483c3c2" name="ab6bc3a40ac0a60732c3dc8c30483c3c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6bc3a40ac0a60732c3dc8c30483c3c2">&#9670;&#160;</a></span>Black</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Black = &quot;\033[30m&quot;</td>
+          <td class="memname">constexpr char console::color::Black[] = &quot;\033[30m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>黑色前景 </p>
 
 </div>
 </div>
-<a id="a0b9886ec2322c623ade25f49e7b80cfe" name="a0b9886ec2322c623ade25f49e7b80cfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b9886ec2322c623ade25f49e7b80cfe">&#9670;&#160;</a></span>Blink</h2>
+<a id="a3df318e069488b5905926446be702360" name="a3df318e069488b5905926446be702360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df318e069488b5905926446be702360">&#9670;&#160;</a></span>Blink</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Blink = &quot;\033[5m&quot;</td>
+          <td class="memname">constexpr char console::color::Blink[] = &quot;\033[5m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>闪烁 </p>
 
 </div>
 </div>
-<a id="af0edce01b0636394afa3d0c17cde5ec5" name="af0edce01b0636394afa3d0c17cde5ec5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0edce01b0636394afa3d0c17cde5ec5">&#9670;&#160;</a></span>Blue</h2>
+<a id="a6c1875b318369902da2eeda12a65ff27" name="a6c1875b318369902da2eeda12a65ff27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1875b318369902da2eeda12a65ff27">&#9670;&#160;</a></span>Blue</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Blue = &quot;\033[34m&quot;</td>
+          <td class="memname">constexpr char console::color::Blue[] = &quot;\033[34m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>蓝色前景 </p>
 
 </div>
 </div>
-<a id="a1dfb10aea5647c1c039da43f79871f43" name="a1dfb10aea5647c1c039da43f79871f43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dfb10aea5647c1c039da43f79871f43">&#9670;&#160;</a></span>Bold</h2>
+<a id="a1dc447ff95d61f8bf1eedb828c5cc59b" name="a1dc447ff95d61f8bf1eedb828c5cc59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc447ff95d61f8bf1eedb828c5cc59b">&#9670;&#160;</a></span>Bold</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Bold = &quot;\033[1m&quot;</td>
+          <td class="memname">constexpr char console::color::Bold[] = &quot;\033[1m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>粗体 </p>
 
 </div>
 </div>
-<a id="a71f24d6a2e6db858189cec651aef52cb" name="a71f24d6a2e6db858189cec651aef52cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71f24d6a2e6db858189cec651aef52cb">&#9670;&#160;</a></span>BrightBlack</h2>
+<a id="a2c5ab49b2970657df0b8785de67aa9a0" name="a2c5ab49b2970657df0b8785de67aa9a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5ab49b2970657df0b8785de67aa9a0">&#9670;&#160;</a></span>BrightBlack</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightBlack = &quot;\033[90m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightBlack[] = &quot;\033[90m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮黑色（灰）前景 </p>
 
 </div>
 </div>
-<a id="a80ae9e935dbf1886aa2a22946a1f7bcf" name="a80ae9e935dbf1886aa2a22946a1f7bcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80ae9e935dbf1886aa2a22946a1f7bcf">&#9670;&#160;</a></span>BrightBlue</h2>
+<a id="af475362d001f9b7d5500ac09225caa29" name="af475362d001f9b7d5500ac09225caa29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af475362d001f9b7d5500ac09225caa29">&#9670;&#160;</a></span>BrightBlue</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightBlue = &quot;\033[94m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightBlue[] = &quot;\033[94m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮蓝色前景 </p>
 
 </div>
 </div>
-<a id="acc90f88f3b8842a430e6c230fb24ff06" name="acc90f88f3b8842a430e6c230fb24ff06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc90f88f3b8842a430e6c230fb24ff06">&#9670;&#160;</a></span>BrightCyan</h2>
+<a id="a2497602c275f5ca53c5e8c931ba7bdd1" name="a2497602c275f5ca53c5e8c931ba7bdd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2497602c275f5ca53c5e8c931ba7bdd1">&#9670;&#160;</a></span>BrightCyan</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightCyan = &quot;\033[96m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightCyan[] = &quot;\033[96m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮青色前景 </p>
 
 </div>
 </div>
-<a id="aa36bfd7055c59f2f9811e6784a9d7474" name="aa36bfd7055c59f2f9811e6784a9d7474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa36bfd7055c59f2f9811e6784a9d7474">&#9670;&#160;</a></span>BrightGreen</h2>
+<a id="ad6a679518bad9809cd4d2f6f35777bb0" name="ad6a679518bad9809cd4d2f6f35777bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a679518bad9809cd4d2f6f35777bb0">&#9670;&#160;</a></span>BrightGreen</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightGreen = &quot;\033[92m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightGreen[] = &quot;\033[92m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮绿色前景 </p>
 
 </div>
 </div>
-<a id="ad7c394ff9bd3980e5af678c00aa3bfba" name="ad7c394ff9bd3980e5af678c00aa3bfba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7c394ff9bd3980e5af678c00aa3bfba">&#9670;&#160;</a></span>BrightMagenta</h2>
+<a id="a9856cccee07aa6cb6841026eca349f60" name="a9856cccee07aa6cb6841026eca349f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9856cccee07aa6cb6841026eca349f60">&#9670;&#160;</a></span>BrightMagenta</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightMagenta = &quot;\033[95m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightMagenta[] = &quot;\033[95m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮品红前景 </p>
 
 </div>
 </div>
-<a id="a47952d071e2e7b9de8d95e8c31d3192a" name="a47952d071e2e7b9de8d95e8c31d3192a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47952d071e2e7b9de8d95e8c31d3192a">&#9670;&#160;</a></span>BrightRed</h2>
+<a id="a64bd4800ca30a89d23dfb8013ace3563" name="a64bd4800ca30a89d23dfb8013ace3563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64bd4800ca30a89d23dfb8013ace3563">&#9670;&#160;</a></span>BrightRed</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightRed = &quot;\033[91m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightRed[] = &quot;\033[91m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮红色前景 </p>
 
 </div>
 </div>
-<a id="ad851d58441686c943746d3a9c7e076e3" name="ad851d58441686c943746d3a9c7e076e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad851d58441686c943746d3a9c7e076e3">&#9670;&#160;</a></span>BrightWhite</h2>
+<a id="adbaf1749e06e03bd3f40388a89450ea0" name="adbaf1749e06e03bd3f40388a89450ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbaf1749e06e03bd3f40388a89450ea0">&#9670;&#160;</a></span>BrightWhite</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightWhite = &quot;\033[97m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightWhite[] = &quot;\033[97m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮白色前景 </p>
 
 </div>
 </div>
-<a id="a824901caf455f0f8937ad51ae2525551" name="a824901caf455f0f8937ad51ae2525551"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a824901caf455f0f8937ad51ae2525551">&#9670;&#160;</a></span>BrightYellow</h2>
+<a id="a368522b9caa25abb157355ac16699c01" name="a368522b9caa25abb157355ac16699c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a368522b9caa25abb157355ac16699c01">&#9670;&#160;</a></span>BrightYellow</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::BrightYellow = &quot;\033[93m&quot;</td>
+          <td class="memname">constexpr char console::color::BrightYellow[] = &quot;\033[93m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>亮黄色前景 </p>
 
 </div>
 </div>
-<a id="ab1dac334f0acb0e2d5351f00c7ec140e" name="ab1dac334f0acb0e2d5351f00c7ec140e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1dac334f0acb0e2d5351f00c7ec140e">&#9670;&#160;</a></span>Cyan</h2>
+<a id="a2b11f33a9c90056089136caf1d0681a0" name="a2b11f33a9c90056089136caf1d0681a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b11f33a9c90056089136caf1d0681a0">&#9670;&#160;</a></span>Cyan</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Cyan = &quot;\033[36m&quot;</td>
+          <td class="memname">constexpr char console::color::Cyan[] = &quot;\033[36m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>青色前景 </p>
 
 </div>
 </div>
-<a id="ad802e1d313c59f4596944cfbd50f7203" name="ad802e1d313c59f4596944cfbd50f7203"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad802e1d313c59f4596944cfbd50f7203">&#9670;&#160;</a></span>Dim</h2>
+<a id="a903cccda08faa5f1a0a6e65c16f5096e" name="a903cccda08faa5f1a0a6e65c16f5096e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903cccda08faa5f1a0a6e65c16f5096e">&#9670;&#160;</a></span>Dim</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Dim = &quot;\033[2m&quot;</td>
+          <td class="memname">constexpr char console::color::Dim[] = &quot;\033[2m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>暗淡（降低亮度） </p>
 
 </div>
 </div>
-<a id="a2b5c393b040948fadaf9e8e20fbe1b86" name="a2b5c393b040948fadaf9e8e20fbe1b86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b5c393b040948fadaf9e8e20fbe1b86">&#9670;&#160;</a></span>Green</h2>
+<a id="a570a39951df9c9bfc55d4156dd255a3b" name="a570a39951df9c9bfc55d4156dd255a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570a39951df9c9bfc55d4156dd255a3b">&#9670;&#160;</a></span>Green</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Green = &quot;\033[32m&quot;</td>
+          <td class="memname">constexpr char console::color::Green[] = &quot;\033[32m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>绿色前景 </p>
 
 </div>
 </div>
-<a id="ae7142232d199627310d170a11ffab289" name="ae7142232d199627310d170a11ffab289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7142232d199627310d170a11ffab289">&#9670;&#160;</a></span>Hidden</h2>
+<a id="a05c420baa706cecda1628806f80ef505" name="a05c420baa706cecda1628806f80ef505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c420baa706cecda1628806f80ef505">&#9670;&#160;</a></span>Hidden</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Hidden = &quot;\033[8m&quot;</td>
+          <td class="memname">constexpr char console::color::Hidden[] = &quot;\033[8m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>隐藏（不可见） </p>
 
 </div>
 </div>
-<a id="ae7f5e8946ee12cde77ac0f1e7eaf3d86" name="ae7f5e8946ee12cde77ac0f1e7eaf3d86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7f5e8946ee12cde77ac0f1e7eaf3d86">&#9670;&#160;</a></span>Italic</h2>
+<a id="a8687febc05c4ca85ecf6fb9cbdf2048f" name="a8687febc05c4ca85ecf6fb9cbdf2048f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8687febc05c4ca85ecf6fb9cbdf2048f">&#9670;&#160;</a></span>Italic</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Italic = &quot;\033[3m&quot;</td>
+          <td class="memname">constexpr char console::color::Italic[] = &quot;\033[3m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>斜体 </p>
 
 </div>
 </div>
-<a id="a5232da7036369752ecbcf876373b30af" name="a5232da7036369752ecbcf876373b30af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5232da7036369752ecbcf876373b30af">&#9670;&#160;</a></span>Magenta</h2>
+<a id="ad6b613c39490b97b757965866e085a14" name="ad6b613c39490b97b757965866e085a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b613c39490b97b757965866e085a14">&#9670;&#160;</a></span>Magenta</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Magenta = &quot;\033[35m&quot;</td>
+          <td class="memname">constexpr char console::color::Magenta[] = &quot;\033[35m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>品红前景 </p>
 
 </div>
 </div>
-<a id="a384e1a17e4c2cc6c76dbb7b639ebfb1a" name="a384e1a17e4c2cc6c76dbb7b639ebfb1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a384e1a17e4c2cc6c76dbb7b639ebfb1a">&#9670;&#160;</a></span>Red</h2>
+<a id="a7daabaa72046c5003d120c49b733101b" name="a7daabaa72046c5003d120c49b733101b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7daabaa72046c5003d120c49b733101b">&#9670;&#160;</a></span>Red</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Red = &quot;\033[31m&quot;</td>
+          <td class="memname">constexpr char console::color::Red[] = &quot;\033[31m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>红色前景 </p>
 
 </div>
 </div>
-<a id="aed61bfb193c5c64c0ac4aed09b033c33" name="aed61bfb193c5c64c0ac4aed09b033c33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed61bfb193c5c64c0ac4aed09b033c33">&#9670;&#160;</a></span>Reset</h2>
+<a id="a0de0a8431459f4ed50cdb25d1d30ef83" name="a0de0a8431459f4ed50cdb25d1d30ef83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de0a8431459f4ed50cdb25d1d30ef83">&#9670;&#160;</a></span>Reset</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Reset = &quot;\033[0m&quot;</td>
+          <td class="memname">constexpr char console::color::Reset[] = &quot;\033[0m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>重置所有颜色/样式 </p>
 
 </div>
 </div>
-<a id="a821982070c0ab61067e0d8621d2216ce" name="a821982070c0ab61067e0d8621d2216ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a821982070c0ab61067e0d8621d2216ce">&#9670;&#160;</a></span>Reverse</h2>
+<a id="a23075bb565e45cd3e6fcdd126f9cb740" name="a23075bb565e45cd3e6fcdd126f9cb740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23075bb565e45cd3e6fcdd126f9cb740">&#9670;&#160;</a></span>Reverse</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Reverse = &quot;\033[7m&quot;</td>
+          <td class="memname">constexpr char console::color::Reverse[] = &quot;\033[7m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>反转（交换前景和背景） </p>
 
 </div>
 </div>
-<a id="a9cc2f3a2d9b63617e9a646746338ba1e" name="a9cc2f3a2d9b63617e9a646746338ba1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cc2f3a2d9b63617e9a646746338ba1e">&#9670;&#160;</a></span>Strikethrough</h2>
+<a id="acc3ed5a35ee1759eafcf3f666e4440a4" name="acc3ed5a35ee1759eafcf3f666e4440a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc3ed5a35ee1759eafcf3f666e4440a4">&#9670;&#160;</a></span>Strikethrough</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Strikethrough = &quot;\033[9m&quot;</td>
+          <td class="memname">constexpr char console::color::Strikethrough[] = &quot;\033[9m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>删除线 </p>
 
 </div>
 </div>
-<a id="af34c3d5fdd053b51a3f99a89abd94174" name="af34c3d5fdd053b51a3f99a89abd94174"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34c3d5fdd053b51a3f99a89abd94174">&#9670;&#160;</a></span>Underline</h2>
+<a id="a2936de81e29dd6928a19a612ae3b3094" name="a2936de81e29dd6928a19a612ae3b3094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2936de81e29dd6928a19a612ae3b3094">&#9670;&#160;</a></span>Underline</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Underline = &quot;\033[4m&quot;</td>
+          <td class="memname">constexpr char console::color::Underline[] = &quot;\033[4m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>下划线 </p>
 
 </div>
 </div>
-<a id="a80940048f2649764f34f506cd33156f6" name="a80940048f2649764f34f506cd33156f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80940048f2649764f34f506cd33156f6">&#9670;&#160;</a></span>White</h2>
+<a id="ac881c728c47295b7e2d6bdae8ea7962a" name="ac881c728c47295b7e2d6bdae8ea7962a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac881c728c47295b7e2d6bdae8ea7962a">&#9670;&#160;</a></span>White</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::White = &quot;\033[37m&quot;</td>
+          <td class="memname">constexpr char console::color::White[] = &quot;\033[37m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>白色前景 </p>
 
 </div>
 </div>
-<a id="a8c24ae11d31fa9c6e9c95d8871c91d70" name="a8c24ae11d31fa9c6e9c95d8871c91d70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c24ae11d31fa9c6e9c95d8871c91d70">&#9670;&#160;</a></span>Yellow</h2>
+<a id="a504e29f5f93ebe272b73fa3bfdfecff0" name="a504e29f5f93ebe272b73fa3bfdfecff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504e29f5f93ebe272b73fa3bfdfecff0">&#9670;&#160;</a></span>Yellow</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* console::color::Yellow = &quot;\033[33m&quot;</td>
+          <td class="memname">constexpr char console::color::Yellow[] = &quot;\033[33m&quot;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>黄色前景 </p>
@@ -872,7 +1254,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

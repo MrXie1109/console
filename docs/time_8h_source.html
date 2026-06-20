@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -213,7 +213,7 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
 <div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">  185</a></span>    <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>()</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">  185</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>()</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    {</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a>((<span class="keywordtype">long</span> <span class="keywordtype">double</span>)(std::chrono::</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                                      duration_cast&lt;std::chrono::nanoseconds&gt;(</div>
@@ -226,7 +226,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
 <div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">  204</a></span>    <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">timer</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">  204</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">timer</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args)</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    {</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> start = <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>();</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        f(args...);</div>
@@ -235,14 +235,14 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
 <div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">  215</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">sleep</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> &amp;tr)</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">  215</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">sleep</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> &amp;tr)</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    {</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        std::this_thread::sleep_for(std::chrono::duration&lt;long double&gt;(tr.<a class="code hl_function" href="classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703">s</a>()));</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
 </div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
 <div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">  226</a></span>    std::string <a class="code hl_function" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">datetime</a>(<span class="keyword">const</span> std::string &amp;fmt = <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">  226</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">datetime</a>(<span class="keyword">const</span> std::string &amp;fmt = <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    {</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        std::stringstream ss;</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keyword">auto</span> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a> = std::chrono::system_clock::now();</div>
@@ -259,7 +259,7 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
 <div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">  246</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">fps</a>(<span class="keywordtype">double</span> target)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">  246</a></span>    <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">fps</a>(<span class="keywordtype">double</span> target)</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    {</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keyword">thread_local</span> <span class="keyword">auto</span> last = steady_clock::now();</div>
@@ -305,7 +305,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

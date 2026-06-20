@@ -10,7 +10,7 @@ var searchData=
   ['g7_7',['G7',['../namespaceconsole_1_1pitches.html#a4c015e33a9a9ddab57eec349bddd86a6',1,'console::pitches']]],
   ['g8_8',['G8',['../namespaceconsole_1_1pitches.html#a19febc8047db5b8a169d178092ac3322',1,'console::pitches']]],
   ['g9_9',['G9',['../namespaceconsole_1_1pitches.html#a9b4fa8c13da33c749286c2af1c4cddbc',1,'console::pitches']]],
-  ['green_10',['Green',['../namespaceconsole_1_1color.html#a2b5c393b040948fadaf9e8e20fbe1b86',1,'console::color']]],
+  ['green_10',['Green',['../namespaceconsole_1_1color.html#a570a39951df9c9bfc55d4156dd255a3b',1,'console::color']]],
   ['gs0_11',['Gs0',['../namespaceconsole_1_1pitches.html#a239a87956d1708a36f3d54f09bf0e3d5',1,'console::pitches']]],
   ['gs1_12',['Gs1',['../namespaceconsole_1_1pitches.html#a6b373c634b7e3b2aa61bd71f27dc9eed',1,'console::pitches']]],
   ['gs2_13',['Gs2',['../namespaceconsole_1_1pitches.html#a3a1ed759725d05749165b341c44327e7',1,'console::pitches']]],

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,7 +76,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">pool.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -100,8 +101,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool_executor.html">console::ThreadPoolExecutor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程池执行器类，用于管理和执行并发任务。  <a href="classconsole_1_1_thread_pool_executor.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html">console::ThreadPool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程池执行器类，用于管理和执行并发任务。  <a href="classconsole_1_1_thread_pool.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -109,6 +110,33 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceconsole" id="r_namespaceconsole"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html">console</a></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af1dbeb84afc82ab5cffffd77d66d8d13" id="r_af1dbeb84afc82ab5cffffd77d66d8d13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#af1dbeb84afc82ab5cffffd77d66d8d13">console::global_thread_pool</a> ()</td></tr>
+<tr class="memdesc:af1dbeb84afc82ab5cffffd77d66d8d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局线程池。  <br /></td></tr>
+<tr class="separator:af1dbeb84afc82ab5cffffd77d66d8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717d83be65272a7e3282152d007f3a97" id="r_a717d83be65272a7e3282152d007f3a97"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class... Args&gt; </td></tr>
+<tr class="memitem:a717d83be65272a7e3282152d007f3a97"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a717d83be65272a7e3282152d007f3a97">console::gtp_submit</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(std::forward&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &gt;(f)(std::forward&lt; Args &gt;(args)...))&gt;</td></tr>
+<tr class="memdesc:a717d83be65272a7e3282152d007f3a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">提交一个可调用对象到全局线程池执行。  <br /></td></tr>
+<tr class="separator:a717d83be65272a7e3282152d007f3a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc27ccd0f8a53516f38f7daf744c7e98" id="r_adc27ccd0f8a53516f38f7daf744c7e98"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class Container &gt; </td></tr>
+<tr class="memitem:adc27ccd0f8a53516f38f7daf744c7e98"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#adc27ccd0f8a53516f38f7daf744c7e98">console::gtp_map</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;func, const Container &amp;items) -&gt; std::vector&lt; std::future&lt; decltype(func(std::declval&lt; typename Container::value_type &gt;()))&gt; &gt;</td></tr>
+<tr class="memdesc:adc27ccd0f8a53516f38f7daf744c7e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">批量提交任务到全局线程池，对容器中的每个元素应用函数。  <br /></td></tr>
+<tr class="separator:adc27ccd0f8a53516f38f7daf744c7e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cc4ec56c6407c31576605d85887eaa" id="r_aa1cc4ec56c6407c31576605d85887eaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aa1cc4ec56c6407c31576605d85887eaa">console::gtp_wait</a> ()</td></tr>
+<tr class="memdesc:aa1cc4ec56c6407c31576605d85887eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待全局进程池所有已提交的任务完成。  <br /></td></tr>
+<tr class="separator:aa1cc4ec56c6407c31576605d85887eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4beb04d0e45abe1ea5de1afcac160379" id="r_a4beb04d0e45abe1ea5de1afcac160379"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4beb04d0e45abe1ea5de1afcac160379">console::gtp_size</a> ()</td></tr>
+<tr class="memdesc:a4beb04d0e45abe1ea5de1afcac160379"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取全局对象池当前任务队列中的任务数量。  <br /></td></tr>
+<tr class="separator:a4beb04d0e45abe1ea5de1afcac160379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12098ca66a7c94d7cb6cb22a01fdfece" id="r_a12098ca66a7c94d7cb6cb22a01fdfece"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a12098ca66a7c94d7cb6cb22a01fdfece">console::gtp_count</a> ()</td></tr>
+<tr class="memdesc:a12098ca66a7c94d7cb6cb22a01fdfece"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取全局对象池当前正在执行的任务数量。  <br /></td></tr>
+<tr class="separator:a12098ca66a7c94d7cb6cb22a01fdfece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db615c5a556ed47bb371e6535c07596" id="r_a0db615c5a556ed47bb371e6535c07596"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class... Args&gt; </td></tr>
+<tr class="memitem:a0db615c5a556ed47bb371e6535c07596"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0db615c5a556ed47bb371e6535c07596">console::async</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; decltype(std::forward&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &gt;(f)(std::forward&lt; Args &gt;(args)...))&gt;</td></tr>
+<tr class="memdesc:a0db615c5a556ed47bb371e6535c07596"><td class="mdescLeft">&#160;</td><td class="mdescRight">提交一个可调用对象到全局线程池执行。  <br /></td></tr>
+<tr class="separator:a0db615c5a556ed47bb371e6535c07596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>简单的线程池实现，模仿了 Python 的 concurrent.futures.ThreadPoolExecutor 接口。 </p>
@@ -118,7 +146,7 @@ Namespaces</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

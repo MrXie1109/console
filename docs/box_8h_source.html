@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -126,7 +126,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">virtual</span> ~Base() {}</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">virtual</span> Base *clone() <span class="keyword">const</span> = 0;                </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>(std::ostream &amp;) <span class="keyword">const</span> = 0;   </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a>(std::ostream &amp;) <span class="keyword">const</span> = 0;   </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keyword">virtual</span> std::string str() <span class="keyword">const</span> = 0;            </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keyword">virtual</span> <span class="keyword">const</span> std::type_info &amp;type() <span class="keyword">const</span> = 0; </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        };</div>
@@ -145,7 +145,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> Derived(value);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordtype">void</span> <a class="code hl_variable" href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">print</a>(std::ostream &amp;os)<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordtype">void</span> <a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a>(std::ostream &amp;os)<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">            </span>{</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(value, os);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
@@ -366,13 +366,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="agroup__repr_html_gac92082727845e0dceef09efcc1d8e953"><div class="ttname"><a href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">console::tiname</a></div><div class="ttdeci">std::string tiname(const std::type_info &amp;ti)</div><div class="ttdoc">获取类型信息的可读名称（跨平台 demangle）。</div><div class="ttdef"><b>Definition</b> repr.h:56</div></div>
 <div class="ttc" id="aliterals_8h_html"><div class="ttname"><a href="literals_8h.html">literals.h</a></div><div class="ttdoc">提供自定义字面量运算符，包括字符串字面量、时间字面量和格式化字符串字面量。</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
-<div class="ttc" id="anamespaceconsole_html_a1658ddfe71dc7f388938391c9a8db3fe"><div class="ttname"><a href="namespaceconsole.html#a1658ddfe71dc7f388938391c9a8db3fe">console::print</a></div><div class="ttdeci">class console::Output print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="anamespaceconsole_html_afc94bf1b5b2d118e6d8207ef587f5a89"><div class="ttname"><a href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">console::print</a></div><div class="ttdeci">static Output &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:444</div></div>
 <div class="ttc" id="astrpp_8h_html"><div class="ttname"><a href="strpp_8h.html">strpp.h</a></div><div class="ttdoc">提供字符串处理工具函数和格式化类。</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

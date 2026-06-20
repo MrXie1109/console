@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.3.2</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -107,12 +107,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a0f1b5c1c8595123c308e916e468492be" id="r_a0f1b5c1c8595123c308e916e468492be"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1md5__impl.html#a0f1b5c1c8595123c308e916e468492be">S</a> [64]</td></tr>
-<tr class="memdesc:a0f1b5c1c8595123c308e916e468492be"><td class="mdescLeft">&#160;</td><td class="mdescRight">MD5算法中每轮循环使用的左移位数数组。  <br /></td></tr>
-<tr class="separator:a0f1b5c1c8595123c308e916e468492be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86cc51023e9d2b34a9be505811e9e720" id="r_a86cc51023e9d2b34a9be505811e9e720"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1md5__impl.html#a86cc51023e9d2b34a9be505811e9e720">K</a> [64]</td></tr>
-<tr class="memdesc:a86cc51023e9d2b34a9be505811e9e720"><td class="mdescLeft">&#160;</td><td class="mdescRight">MD5算法中使用的常量K数组。  <br /></td></tr>
-<tr class="separator:a86cc51023e9d2b34a9be505811e9e720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbfa23f4f82a125a6213a6346dd9dec" id="r_a8dbfa23f4f82a125a6213a6346dd9dec"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1md5__impl.html#a8dbfa23f4f82a125a6213a6346dd9dec">S</a> [64]</td></tr>
+<tr class="memdesc:a8dbfa23f4f82a125a6213a6346dd9dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">MD5算法中每轮循环使用的左移位数数组。  <br /></td></tr>
+<tr class="separator:a8dbfa23f4f82a125a6213a6346dd9dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1bb72a27271877b94c174b0f99e5497" id="r_ac1bb72a27271877b94c174b0f99e5497"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1crypto_1_1md5__impl.html#ac1bb72a27271877b94c174b0f99e5497">K</a> [64]</td></tr>
+<tr class="memdesc:ac1bb72a27271877b94c174b0f99e5497"><td class="mdescLeft">&#160;</td><td class="mdescRight">MD5算法中使用的常量K数组。  <br /></td></tr>
+<tr class="separator:ac1bb72a27271877b94c174b0f99e5497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MD5哈希算法的内部实现细节。 </p>
@@ -381,6 +381,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void console::crypto::md5_impl::transform </td>
@@ -400,6 +403,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>对64字节的数据块执行MD5变换。 </p>
@@ -414,16 +422,24 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a86cc51023e9d2b34a9be505811e9e720" name="a86cc51023e9d2b34a9be505811e9e720"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86cc51023e9d2b34a9be505811e9e720">&#9670;&#160;</a></span>K</h2>
+<a id="ac1bb72a27271877b94c174b0f99e5497" name="ac1bb72a27271877b94c174b0f99e5497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bb72a27271877b94c174b0f99e5497">&#9670;&#160;</a></span>K</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t console::crypto::md5_impl::K[64]</td>
+          <td class="memname">constexpr uint32_t console::crypto::md5_impl::K[64]</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">                0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee, 0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501,</div>
@@ -439,16 +455,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0f1b5c1c8595123c308e916e468492be" name="a0f1b5c1c8595123c308e916e468492be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f1b5c1c8595123c308e916e468492be">&#9670;&#160;</a></span>S</h2>
+<a id="a8dbfa23f4f82a125a6213a6346dd9dec" name="a8dbfa23f4f82a125a6213a6346dd9dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbfa23f4f82a125a6213a6346dd9dec">&#9670;&#160;</a></span>S</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t console::crypto::md5_impl::S[64]</td>
+          <td class="memname">constexpr uint32_t console::crypto::md5_impl::S[64]</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">                7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,</div>
@@ -463,7 +487,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2026 13:47:44 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

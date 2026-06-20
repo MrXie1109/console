@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['vals_5fto_5fstr_0',['vals_to_str',['../group__strpp.html#ga872b9ee5dd24eb93c21aefeca5f989b7',1,'console']]],
+  ['valid_0',['valid',['../classconsole_1_1_process.html#aa9b335ff61e01d23617beefb196f13f7',1,'console::Process']]],
   ['value_1',['value',['../classconsole_1_1_maybe.html#a86b3b9ed4c8adf6679483e2a591bc721',1,'console::Maybe::value()'],['../classconsole_1_1_maybe.html#a7483b3dd5c0fb4ab024a1b45191efd8d',1,'console::Maybe::value() const']]],
   ['value_5for_2',['value_or',['../classconsole_1_1_maybe.html#a5bee084fa0c10c5101c9196688ec6bbc',1,'console::Maybe']]],
   ['variance_3',['variance',['../group__matools.html#gad0e28e6cfd9c4981c7454d5df90652a4',1,'console']]],

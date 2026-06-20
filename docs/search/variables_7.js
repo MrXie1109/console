@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hidden_0',['Hidden',['../namespaceconsole_1_1color.html#ae7142232d199627310d170a11ffab289',1,'console::color']]]
+  ['hidden_0',['Hidden',['../namespaceconsole_1_1color.html#a05c420baa706cecda1628806f80ef505',1,'console::color']]]
 ];

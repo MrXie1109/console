@@ -13,7 +13,7 @@ var searchData=
   ['f7_10',['F7',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a47489eb597b7db34caa24b1fc78fc839',1,'console']]],
   ['f8_11',['F8',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4787509ad9f9d747a81a30e9dde3d4a7',1,'console']]],
   ['f9_12',['F9',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a892a245e287c163080b23db737d3c4c9',1,'console']]],
-  ['fatal_13',['fatal',['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a19da7170bea36556dde582519795f3fc',1,'console::Logging::FATAL'],['../logging_8h.html#a540aae996af47330f7fb73552763680fa19da7170bea36556dde582519795f3fc',1,'FATAL:&#160;logging.h']]],
+  ['fatal_13',['FATAL',['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a19da7170bea36556dde582519795f3fc',1,'console::Logging']]],
   ['fiddle_14',['Fiddle',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592a91825c15ae76618acb86c1c9ff69def5',1,'console']]],
   ['flute_15',['Flute',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592a14df6ecbe5be68ab6a94fe8910a16e66',1,'console']]],
   ['frenchhorn_16',['FrenchHorn',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592afcaad1cf4a757e0789d400112bb9d6b2',1,'console']]],
