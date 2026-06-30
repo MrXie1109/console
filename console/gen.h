@@ -1112,6 +1112,31 @@ namespace console {
         };
 
         /**
+         * @brief 创建目标迭代器适配器。
+         * @tparam Iterator 目标迭代器类型。
+         */
+        template <class Iterator> class to_t {
+            Iterator it;
+
+        public:
+            explicit to_t(Iterator i) : it(i) {}
+
+            template <class Range> friend void operator|(Range r, to_t m) {
+                std::copy(r.begin(), r.end(), m.it);
+            }
+        };
+
+        /**
+         * @brief 创建目标迭代器适配器。
+         * @tparam Iterator 目标迭代器类型。
+         * @param it 目标迭代器。
+         * @return to_t<Iterator> 目标迭代器适配器。
+         */
+        template <class Iterator> to_t<Iterator> to(Iterator it) {
+            return to_t<Iterator>(it);
+        }
+
+        /**
          * @brief 按位与操作符重载，用于压缩两个生成器。
          * @tparam Gen1 第一个生成器类型。
          * @tparam Gen2 第二个生成器类型。
