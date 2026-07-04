@@ -53,8 +53,8 @@ namespace console {
          * @param pat 正则表达式字符串。
          * @param flags 语法标志，默认为 ECMAScript。
          */
-        Regex(const std::string    &pat,
-              std::regex::flag_type flags = std::regex::ECMAScript) :
+        Regex(const std::string  &pat,
+            std::regex::flag_type flags = std::regex::ECMAScript) :
             pattern(pat, flags) {}
 
         /**
@@ -65,7 +65,7 @@ namespace console {
          */
         class Match {
         private:
-            std::smatch match;   ///< 底层 std::smatch 对象
+            std::smatch match; ///< 底层 std::smatch 对象
             bool        success; ///< 是否匹配成功
 
         public:
@@ -182,8 +182,8 @@ namespace console {
          */
         std::vector<std::string> findall(const std::string &text) const {
             std::vector<std::string> result;
-            auto                     begin =
-                std::sregex_iterator(text.begin(), text.end(), pattern);
+            auto                     begin
+                = std::sregex_iterator(text.begin(), text.end(), pattern);
             auto end = std::sregex_iterator();
 
             for (auto it = begin; it != end; ++it) {
@@ -221,7 +221,7 @@ namespace console {
         IteratorPair<std::sregex_iterator>
         finditer(const std::string &text) const {
             return {{std::sregex_iterator(text.begin(), text.end(), pattern)},
-                    {std::sregex_iterator()}};
+                {std::sregex_iterator()}};
         }
 
         /**
@@ -230,11 +230,11 @@ namespace console {
          * @param maxsplit 最大分割次数，0 表示不限。
          * @return std::vector<std::string> 分割后的子串列表。
          */
-        std::vector<std::string> split(const std::string &text,
-                                       int                maxsplit = 0) const {
+        std::vector<std::string>
+        split(const std::string &text, int maxsplit = 0) const {
             std::vector<std::string>   result;
-            std::sregex_token_iterator it(text.begin(), text.end(), pattern,
-                                          -1);
+            std::sregex_token_iterator it(
+                text.begin(), text.end(), pattern, -1);
             std::sregex_token_iterator end;
 
             int count = 0;
@@ -264,15 +264,16 @@ namespace console {
          * @param count 最大替换次数，0 表示替换所有。
          * @return std::string 替换后的字符串。
          */
-        std::string sub(const std::string &repl, const std::string &text,
-                        int count = 0) const {
+        std::string sub(const std::string &repl,
+            const std::string             &text,
+            int                            count = 0) const {
             if (count <= 0) {
                 return std::regex_replace(text, pattern, repl);
             }
 
             std::string result;
-            auto        begin =
-                std::sregex_iterator(text.begin(), text.end(), pattern);
+            auto        begin
+                = std::sregex_iterator(text.begin(), text.end(), pattern);
             auto end      = std::sregex_iterator();
             auto last     = text.begin();
             int  replaced = 0;
@@ -296,20 +297,20 @@ namespace console {
          * @return std::pair<std::string, int> (新字符串, 替换次数)。
          */
         std::pair<std::string, int> subn(const std::string &repl,
-                                         const std::string &text,
-                                         int                count = 0) const {
+            const std::string                              &text,
+            int                                             count = 0) const {
             if (count <= 0) {
                 auto result = std::regex_replace(text, pattern, repl);
-                auto begin =
-                    std::sregex_iterator(text.begin(), text.end(), pattern);
+                auto begin
+                    = std::sregex_iterator(text.begin(), text.end(), pattern);
                 auto end = std::sregex_iterator();
                 int  cnt = std::distance(begin, end);
                 return {result, cnt};
             }
 
             std::string result;
-            auto        begin =
-                std::sregex_iterator(text.begin(), text.end(), pattern);
+            auto        begin
+                = std::sregex_iterator(text.begin(), text.end(), pattern);
             auto end      = std::sregex_iterator();
             auto last     = text.begin();
             int  replaced = 0;
@@ -337,9 +338,8 @@ namespace console {
          * @param flags 语法标志。
          * @return Regex 编译后的对象。
          */
-        inline Regex
-        compile(const std::string    &pattern,
-                std::regex::flag_type flags = std::regex::ECMAScript) {
+        inline Regex compile(const std::string &pattern,
+            std::regex::flag_type flags = std::regex::ECMAScript) {
             return Regex(pattern, flags);
         }
 
@@ -349,8 +349,8 @@ namespace console {
          * @param text 目标文本。
          * @return Regex::Match 匹配结果。
          */
-        inline Regex::Match search(const std::string &pattern,
-                                   const std::string &text) {
+        inline Regex::Match
+        search(const std::string &pattern, const std::string &text) {
             return Regex(pattern).search(text);
         }
 
@@ -360,8 +360,8 @@ namespace console {
          * @param text 目标文本。
          * @return Regex::Match 匹配结果。
          */
-        inline Regex::Match match(const std::string &pattern,
-                                  const std::string &text) {
+        inline Regex::Match
+        match(const std::string &pattern, const std::string &text) {
             return Regex(pattern).match(text);
         }
 
@@ -371,8 +371,8 @@ namespace console {
          * @param text 目标文本。
          * @return std::vector<std::string> 匹配列表。
          */
-        inline std::vector<std::string> findall(const std::string &pattern,
-                                                const std::string &text) {
+        inline std::vector<std::string>
+        findall(const std::string &pattern, const std::string &text) {
             return Regex(pattern).findall(text);
         }
 
@@ -396,8 +396,8 @@ namespace console {
          * @return std::vector<std::string> 分割后的子串列表。
          */
         inline std::vector<std::string> split(const std::string &pattern,
-                                              const std::string &text,
-                                              int                maxsplit = 0) {
+            const std::string                                   &text,
+            int                                                  maxsplit = 0) {
             return Regex(pattern).split(text, maxsplit);
         }
 
@@ -410,8 +410,9 @@ namespace console {
          * @return std::string 替换后的字符串。
          */
         inline std::string sub(const std::string &pattern,
-                               const std::string &repl, const std::string &text,
-                               int count = 0) {
+            const std::string                    &repl,
+            const std::string                    &text,
+            int                                   count = 0) {
             return Regex(pattern).sub(repl, text, count);
         }
 

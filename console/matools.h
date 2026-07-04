@@ -205,8 +205,8 @@ namespace console {
      * @return MultiArray<T, M, K> 乘积矩阵。
      */
     template <class T, size_t M, size_t N, size_t K>
-    MultiArray<T, M, K> matmul(const MultiArray<T, M, N> &A,
-                               const MultiArray<T, N, K> &B) {
+    MultiArray<T, M, K>
+    matmul(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
         MultiArray<T, M, K> C{};
         for (size_t i = 0; i < M; ++i)
             for (size_t j = 0; j < N; ++j)
@@ -263,11 +263,11 @@ namespace console {
      * @return MultiArray<T, 3> 叉积结果。
      */
     template <class T>
-    MultiArray<T, 3> cross(const MultiArray<T, 3> &a,
-                           const MultiArray<T, 3> &b) {
+    MultiArray<T, 3>
+    cross(const MultiArray<T, 3> &a, const MultiArray<T, 3> &b) {
         return MultiArray<T, 3>{a[1] * b[2] - a[2] * b[1],
-                                a[2] * b[0] - a[0] * b[2],
-                                a[0] * b[1] - a[1] * b[0]};
+            a[2] * b[0] - a[0] * b[2],
+            a[0] * b[1] - a[1] * b[0]};
     }
 
     // ---------------------------- 元素级运算 ----------------------------
@@ -281,8 +281,8 @@ namespace console {
      * @return MultiArray<T, Dims...> 裁剪后的新数组。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> clamp(const MultiArray<T, Dims...> &arr, T low,
-                                 T high) {
+    MultiArray<T, Dims...>
+    clamp(const MultiArray<T, Dims...> &arr, T low, T high) {
         MultiArray<T, Dims...> result;
         auto                   ri = result.fbegin();
         auto                   ai = arr.fbegin();
@@ -334,8 +334,8 @@ namespace console {
      * @param stddev 标准差。
      */
     template <class T, size_t... Dims>
-    void randomize_normal(MultiArray<T, Dims...> &arr, T mean = 0,
-                          T stddev = 1) {
+    void
+    randomize_normal(MultiArray<T, Dims...> &arr, T mean = 0, T stddev = 1) {
         std::normal_distribution<T> dis(mean, stddev);
         arr.for_each([&](T &x) { x = dis(default_gen()); });
     }
@@ -365,8 +365,8 @@ namespace console {
      */
     template <class T, size_t... Dims>
     T product(const MultiArray<T, Dims...> &arr) {
-        return std::accumulate(arr.fbegin(), arr.fend(), T{1},
-                               std::multiplies<T>());
+        return std::accumulate(
+            arr.fbegin(), arr.fend(), T{1}, std::multiplies<T>());
     }
 
     /**
@@ -394,8 +394,8 @@ namespace console {
      * @return MultiArray<T, N + K - 1> 卷积结果（full 模式）。
      */
     template <class T, size_t N, size_t K>
-    MultiArray<T, N + K - 1> convolve1d(const MultiArray<T, N> &signal,
-                                        const MultiArray<T, K> &kernel) {
+    MultiArray<T, N + K - 1>
+    convolve1d(const MultiArray<T, N> &signal, const MultiArray<T, K> &kernel) {
         MultiArray<T, N + K - 1> result{};
         for (size_t i = 0; i < N; i++)
             for (size_t j = 0; j < K; j++)
@@ -623,8 +623,8 @@ namespace console {
      * @return MultiArray<T, Dims...> 结果数组。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> pow(const MultiArray<T, Dims...> &base,
-                               const MultiArray<T, Dims...> &exp) {
+    MultiArray<T, Dims...>
+    pow(const MultiArray<T, Dims...> &base, const MultiArray<T, Dims...> &exp) {
         MultiArray<T, Dims...> result;
         auto                   bi = base.fbegin();
         auto                   ei = exp.fbegin();
@@ -691,8 +691,9 @@ namespace console {
      * @param name 数组名称（可选），若提供则打印标题。
      */
     template <class T, size_t... Dims>
-    void print_stats(std::ostream &os, const MultiArray<T, Dims...> &arr,
-                     const char *name = "") {
+    void print_stats(std::ostream    &os,
+        const MultiArray<T, Dims...> &arr,
+        const char                   *name = "") {
         if (name && *name) os << "=== " << name << " ===" << '\n';
         os << "  sum   : " << sum(arr) << '\n';
         os << "  mean  : " << mean(arr) << '\n';

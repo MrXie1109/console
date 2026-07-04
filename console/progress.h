@@ -47,12 +47,12 @@ namespace console {
      * 该结构体控制进度条的外观和行为，包括输出流、宽度、填充字符、前后缀以及是否显示百分比。
      */
     struct ProgressConfig {
-        std::ostream &os;      ///< 输出目标流，默认为 std::cout。
-        int           width;   ///< 进度条的宽度（字符数）。
+        std::ostream &os; ///< 输出目标流，默认为 std::cout。
+        int           width; ///< 进度条的宽度（字符数）。
         std::string fill_char; ///< 已填充部分使用的字符（如 "#"）。
         std::string empty_char; ///< 未填充部分使用的字符（如 "."）。
-        std::string prefix;     ///< 进度条前缀字符串（如 "["）。
-        std::string suffix;     ///< 进度条后缀字符串（如 "]"]。
+        std::string prefix; ///< 进度条前缀字符串（如 "["）。
+        std::string suffix; ///< 进度条后缀字符串（如 "]"]。
         bool show_percent; ///< 是否在进度条后显示百分比数字。
 
         /**
@@ -65,10 +65,13 @@ namespace console {
          * @param suf 后缀字符串，默认为 "]".
          * @param sp  是否显示百分比，默认为 true。
          */
-        ProgressConfig(std::ostream &o = std::cout, int w = 50,
-                       std::string fc = "#", std::string ec = ".",
-                       std::string pre = "[", std::string suf = "]",
-                       bool sp = true) :
+        ProgressConfig(std::ostream &o   = std::cout,
+            int                      w   = 50,
+            std::string              fc  = "#",
+            std::string              ec  = ".",
+            std::string              pre = "[",
+            std::string              suf = "]",
+            bool                     sp  = true) :
             os(o), width(w), fill_char(std::move(fc)),
             empty_char(std::move(ec)), prefix(std::move(pre)),
             suffix(std::move(suf)), show_percent(sp) {}
@@ -93,9 +96,9 @@ namespace console {
          */
         class iterator {
             const ProgressConfig *config_; ///< 进度条配置（不能为空）
-            size_t current_;               ///< 当前已处理元素个数
-            size_t total_;                 ///< 总元素个数
-            Iter   it_;                    ///< 底层迭代器
+            size_t current_; ///< 当前已处理元素个数
+            size_t total_; ///< 总元素个数
+            Iter   it_; ///< 底层迭代器
             std::chrono::steady_clock::time_point
                 last_draw_; ///< 上次绘制时间点
 
@@ -108,8 +111,8 @@ namespace console {
             void draw() {
                 if (!config_) return;
                 auto now = std::chrono::steady_clock::now();
-                if (current_ < total_ &&
-                    (now - last_draw_) < std::chrono::milliseconds{50}) {
+                if (current_ < total_
+                    && (now - last_draw_) < std::chrono::milliseconds{50}) {
                     return;
                 }
                 int percent = current_ * 100 / total_;
@@ -136,8 +139,10 @@ namespace console {
              * @param total 总元素个数。
              * @param it 底层迭代器。
              */
-            iterator(const ProgressConfig *config, size_t current, size_t total,
-                     Iter it) :
+            iterator(const ProgressConfig *config,
+                size_t                     current,
+                size_t                     total,
+                Iter                       it) :
                 config_(config), current_(current), total_(total), it_(it),
                 last_draw_(std::chrono::steady_clock::now()) {}
 
@@ -210,8 +215,8 @@ namespace console {
 
     private:
         ProgressConfig config_; ///< 进度条配置（副本）
-        size_t         total_;  ///< 总元素个数
-        Iter           begin_;  ///< 起始迭代器
+        size_t         total_; ///< 总元素个数
+        Iter           begin_; ///< 起始迭代器
         Iter end_; ///< 结束迭代器（当前未使用，但保留以备扩展）
     };
 
@@ -248,8 +253,8 @@ namespace console {
          * @note 需要终端支持 UTF-8 编码。
          */
         inline const ProgressConfig &beautiful() {
-            static ProgressConfig cfg{std::cout, 50,       "\u2588", "\u2591",
-                                      "\u2595",  "\u258F", true};
+            static ProgressConfig cfg{
+                std::cout, 50, "\u2588", "\u2591", "\u2595", "\u258F", true};
             return cfg;
         }
     }
@@ -269,8 +274,8 @@ namespace console {
      * @endcode
      */
     template <class Cont>
-    inline auto progress(Cont &&cont, const ProgressConfig &pc = {})
-        -> Progress<decltype(std::begin(cont))> {
+    inline auto progress(Cont &&cont,
+        const ProgressConfig &pc = {}) -> Progress<decltype(std::begin(cont))> {
         return {std::forward<Cont>(cont), pc};
     }
 }

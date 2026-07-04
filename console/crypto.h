@@ -55,20 +55,70 @@ namespace console {
             /**
              * @brief SHA256算法使用的常量K数组。
              */
-            static constexpr uint32_t K[64] = {
-                0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b,
-                0x59f111f1, 0x923f82a4, 0xab1c5ed5, 0xd807aa98, 0x12835b01,
-                0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7,
-                0xc19bf174, 0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,
-                0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da, 0x983e5152,
-                0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147,
-                0x06ca6351, 0x14292967, 0x27b70a85, 0x2e1b2138, 0x4d2c6dfc,
-                0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
-                0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819,
-                0xd6990624, 0xf40e3585, 0x106aa070, 0x19a4c116, 0x1e376c08,
-                0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f,
-                0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
-                0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2};
+            static constexpr uint32_t K[64] = {0x428a2f98,
+                0x71374491,
+                0xb5c0fbcf,
+                0xe9b5dba5,
+                0x3956c25b,
+                0x59f111f1,
+                0x923f82a4,
+                0xab1c5ed5,
+                0xd807aa98,
+                0x12835b01,
+                0x243185be,
+                0x550c7dc3,
+                0x72be5d74,
+                0x80deb1fe,
+                0x9bdc06a7,
+                0xc19bf174,
+                0xe49b69c1,
+                0xefbe4786,
+                0x0fc19dc6,
+                0x240ca1cc,
+                0x2de92c6f,
+                0x4a7484aa,
+                0x5cb0a9dc,
+                0x76f988da,
+                0x983e5152,
+                0xa831c66d,
+                0xb00327c8,
+                0xbf597fc7,
+                0xc6e00bf3,
+                0xd5a79147,
+                0x06ca6351,
+                0x14292967,
+                0x27b70a85,
+                0x2e1b2138,
+                0x4d2c6dfc,
+                0x53380d13,
+                0x650a7354,
+                0x766a0abb,
+                0x81c2c92e,
+                0x92722c85,
+                0xa2bfe8a1,
+                0xa81a664b,
+                0xc24b8b70,
+                0xc76c51a3,
+                0xd192e819,
+                0xd6990624,
+                0xf40e3585,
+                0x106aa070,
+                0x19a4c116,
+                0x1e376c08,
+                0x2748774c,
+                0x34b0bcb5,
+                0x391c0cb3,
+                0x4ed8aa4a,
+                0x5b9cca4f,
+                0x682e6ff3,
+                0x748f82ee,
+                0x78a5636f,
+                0x84c87814,
+                0x8cc70208,
+                0x90befffa,
+                0xa4506ceb,
+                0xbef9a3f7,
+                0xc67178f2};
 
             /**
              * @brief 对32位无符号整数进行循环右移。
@@ -147,11 +197,11 @@ namespace console {
                 uint32_t W[64];
                 uint32_t A, B, C, D, E, F, G, H, T1, T2;
                 for (int i = 0; i < 16; i++)
-                    W[i] = (data[i * 4] << 24) | (data[i * 4 + 1] << 16) |
-                           (data[i * 4 + 2] << 8) | data[i * 4 + 3];
+                    W[i] = (data[i * 4] << 24) | (data[i * 4 + 1] << 16)
+                           | (data[i * 4 + 2] << 8) | data[i * 4 + 3];
                 for (int i = 16; i < 64; i++)
-                    W[i] = gamma1(W[i - 2]) + W[i - 7] + gamma0(W[i - 15]) +
-                           W[i - 16];
+                    W[i] = gamma1(W[i - 2]) + W[i - 7] + gamma0(W[i - 15])
+                           + W[i - 16];
                 A = state[0];
                 B = state[1];
                 C = state[2];
@@ -190,9 +240,14 @@ namespace console {
          */
         inline std::string sha256(const std::string &input) {
             using namespace sha256_impl;
-            uint32_t             state[8] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372,
-                                             0xa54ff53a, 0x510e527f, 0x9b05688c,
-                                             0x1f83d9ab, 0x5be0cd19};
+            uint32_t             state[8] = {0x6a09e667,
+                            0xbb67ae85,
+                            0x3c6ef372,
+                            0xa54ff53a,
+                            0x510e527f,
+                            0x9b05688c,
+                            0x1f83d9ab,
+                            0x5be0cd19};
             std::vector<uint8_t> data(input.begin(), input.end());
             uint64_t             bit_len = data.size() * 8;
             data.push_back(0x80);
@@ -217,9 +272,14 @@ namespace console {
             std::ifstream file(filename, std::ios::binary);
             if (!file.is_open()) return "Cannot open file: " + filename;
             using namespace sha256_impl;
-            uint32_t             state[8] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372,
-                                             0xa54ff53a, 0x510e527f, 0x9b05688c,
-                                             0x1f83d9ab, 0x5be0cd19};
+            uint32_t             state[8] = {0x6a09e667,
+                            0xbb67ae85,
+                            0x3c6ef372,
+                            0xa54ff53a,
+                            0x510e527f,
+                            0x9b05688c,
+                            0x1f83d9ab,
+                            0x5be0cd19};
             std::vector<uint8_t> buffer(64);
             uint64_t             total_bits = 0;
             while (file.read(reinterpret_cast<char *>(buffer.data()), 64)) {
@@ -228,8 +288,8 @@ namespace console {
             }
             std::streamsize last_size = file.gcount();
             total_bits += last_size * 8;
-            std::vector<uint8_t> last_block(buffer.begin(),
-                                            buffer.begin() + last_size);
+            std::vector<uint8_t> last_block(
+                buffer.begin(), buffer.begin() + last_size);
             last_block.push_back(0x80);
             while ((last_block.size() % 64) != 56) last_block.push_back(0x00);
             for (int i = 7; i >= 0; i--)
@@ -251,29 +311,138 @@ namespace console {
             /**
              * @brief MD5算法中每轮循环使用的左移位数数组。
              */
-            static constexpr uint32_t S[64] = {
-                7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
-                5, 9,  14, 20, 5, 9,  14, 20, 5, 9,  14, 20, 5, 9,  14, 20,
-                4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
-                6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21};
+            static constexpr uint32_t S[64] = {7,
+                12,
+                17,
+                22,
+                7,
+                12,
+                17,
+                22,
+                7,
+                12,
+                17,
+                22,
+                7,
+                12,
+                17,
+                22,
+                5,
+                9,
+                14,
+                20,
+                5,
+                9,
+                14,
+                20,
+                5,
+                9,
+                14,
+                20,
+                5,
+                9,
+                14,
+                20,
+                4,
+                11,
+                16,
+                23,
+                4,
+                11,
+                16,
+                23,
+                4,
+                11,
+                16,
+                23,
+                4,
+                11,
+                16,
+                23,
+                6,
+                10,
+                15,
+                21,
+                6,
+                10,
+                15,
+                21,
+                6,
+                10,
+                15,
+                21,
+                6,
+                10,
+                15,
+                21};
 
             /**
              * @brief MD5算法中使用的常量K数组。
              */
-            static constexpr uint32_t K[64] = {
-                0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee, 0xf57c0faf,
-                0x4787c62a, 0xa8304613, 0xfd469501, 0x698098d8, 0x8b44f7af,
-                0xffff5bb1, 0x895cd7be, 0x6b901122, 0xfd987193, 0xa679438e,
-                0x49b40821, 0xf61e2562, 0xc040b340, 0x265e5a51, 0xe9b6c7aa,
-                0xd62f105d, 0x02441453, 0xd8a1e681, 0xe7d3fbc8, 0x21e1cde6,
-                0xc33707d6, 0xf4d50d87, 0x455a14ed, 0xa9e3e905, 0xfcefa3f8,
-                0x676f02d9, 0x8d2a4c8a, 0xfffa3942, 0x8771f681, 0x6d9d6122,
-                0xfde5380c, 0xa4beea44, 0x4bdecfa9, 0xf6bb4b60, 0xbebfbc70,
-                0x289b7ec6, 0xeaa127fa, 0xd4ef3085, 0x04881d05, 0xd9d4d039,
-                0xe6db99e5, 0x1fa27cf8, 0xc4ac5665, 0xf4292244, 0x432aff97,
-                0xab9423a7, 0xfc93a039, 0x655b59c3, 0x8f0ccc92, 0xffeff47d,
-                0x85845dd1, 0x6fa87e4f, 0xfe2ce6e0, 0xa3014314, 0x4e0811a1,
-                0xf7537e82, 0xbd3af235, 0x2ad7d2bb, 0xeb86d391};
+            static constexpr uint32_t K[64] = {0xd76aa478,
+                0xe8c7b756,
+                0x242070db,
+                0xc1bdceee,
+                0xf57c0faf,
+                0x4787c62a,
+                0xa8304613,
+                0xfd469501,
+                0x698098d8,
+                0x8b44f7af,
+                0xffff5bb1,
+                0x895cd7be,
+                0x6b901122,
+                0xfd987193,
+                0xa679438e,
+                0x49b40821,
+                0xf61e2562,
+                0xc040b340,
+                0x265e5a51,
+                0xe9b6c7aa,
+                0xd62f105d,
+                0x02441453,
+                0xd8a1e681,
+                0xe7d3fbc8,
+                0x21e1cde6,
+                0xc33707d6,
+                0xf4d50d87,
+                0x455a14ed,
+                0xa9e3e905,
+                0xfcefa3f8,
+                0x676f02d9,
+                0x8d2a4c8a,
+                0xfffa3942,
+                0x8771f681,
+                0x6d9d6122,
+                0xfde5380c,
+                0xa4beea44,
+                0x4bdecfa9,
+                0xf6bb4b60,
+                0xbebfbc70,
+                0x289b7ec6,
+                0xeaa127fa,
+                0xd4ef3085,
+                0x04881d05,
+                0xd9d4d039,
+                0xe6db99e5,
+                0x1fa27cf8,
+                0xc4ac5665,
+                0xf4292244,
+                0x432aff97,
+                0xab9423a7,
+                0xfc93a039,
+                0x655b59c3,
+                0x8f0ccc92,
+                0xffeff47d,
+                0x85845dd1,
+                0x6fa87e4f,
+                0xfe2ce6e0,
+                0xa3014314,
+                0x4e0811a1,
+                0xf7537e82,
+                0xbd3af235,
+                0x2ad7d2bb,
+                0xeb86d391};
 
             /**
              * @brief MD5第一轮逻辑函数F。
@@ -338,8 +507,9 @@ namespace console {
                 uint32_t a = state[0], b = state[1], c = state[2], d = state[3];
                 uint32_t M[16];
                 for (int i = 0; i < 16; i++) {
-                    M[i] = block[i * 4] | (block[i * 4 + 1] << 8) |
-                           (block[i * 4 + 2] << 16) | (block[i * 4 + 3] << 24);
+                    M[i] = block[i * 4] | (block[i * 4 + 1] << 8)
+                           | (block[i * 4 + 2] << 16)
+                           | (block[i * 4 + 3] << 24);
                 }
                 for (int i = 0; i < 64; i++) {
                     uint32_t f, g;
@@ -378,8 +548,8 @@ namespace console {
          */
         inline std::string md5(const std::string &input) {
             using namespace md5_impl;
-            uint32_t             state[4] = {0x67452301, 0xefcdab89, 0x98badcfe,
-                                             0x10325476};
+            uint32_t state[4]
+                = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
             std::vector<uint8_t> data(input.begin(), input.end());
             uint64_t             bit_len = data.size() * 8;
             data.push_back(0x80);
@@ -433,9 +603,10 @@ namespace console {
          * @note 解码时遇到'='字符会停止处理，非Base64字符会被忽略。
          */
         inline std::string base64_decode(const std::string &input) {
-            static const std::string base64_chars =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-                "+/";
+            static const std::string base64_chars
+                = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567"
+                  "89"
+                  "+/";
             std::string result;
             result.reserve(input.size() / 4 * 3);
             uint32_t buffer         = 0;
@@ -463,64 +634,522 @@ namespace console {
             /**
              * @brief AES算法的S盒，用于字节替换。
              */
-            static constexpr uint8_t Sbox[256] = {
-                0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01,
-                0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d,
-                0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4,
-                0x72, 0xc0, 0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc,
-                0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15, 0x04, 0xc7,
-                0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2,
-                0xeb, 0x27, 0xb2, 0x75, 0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e,
-                0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,
-                0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb,
-                0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf, 0xd0, 0xef, 0xaa, 0xfb,
-                0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f, 0x50, 0x3c,
-                0x9f, 0xa8, 0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5,
-                0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2, 0xcd, 0x0c,
-                0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d,
-                0x64, 0x5d, 0x19, 0x73, 0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a,
-                0x90, 0x88, 0x46, 0xee, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,
-                0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd3,
-                0xac, 0x62, 0x91, 0x95, 0xe4, 0x79, 0xe7, 0xc8, 0x37, 0x6d,
-                0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a,
-                0xae, 0x08, 0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6,
-                0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a, 0x70, 0x3e,
-                0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x35, 0x57, 0xb9,
-                0x86, 0xc1, 0x1d, 0x9e, 0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9,
-                0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
-                0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99,
-                0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16};
+            static constexpr uint8_t Sbox[256] = {0x63,
+                0x7c,
+                0x77,
+                0x7b,
+                0xf2,
+                0x6b,
+                0x6f,
+                0xc5,
+                0x30,
+                0x01,
+                0x67,
+                0x2b,
+                0xfe,
+                0xd7,
+                0xab,
+                0x76,
+                0xca,
+                0x82,
+                0xc9,
+                0x7d,
+                0xfa,
+                0x59,
+                0x47,
+                0xf0,
+                0xad,
+                0xd4,
+                0xa2,
+                0xaf,
+                0x9c,
+                0xa4,
+                0x72,
+                0xc0,
+                0xb7,
+                0xfd,
+                0x93,
+                0x26,
+                0x36,
+                0x3f,
+                0xf7,
+                0xcc,
+                0x34,
+                0xa5,
+                0xe5,
+                0xf1,
+                0x71,
+                0xd8,
+                0x31,
+                0x15,
+                0x04,
+                0xc7,
+                0x23,
+                0xc3,
+                0x18,
+                0x96,
+                0x05,
+                0x9a,
+                0x07,
+                0x12,
+                0x80,
+                0xe2,
+                0xeb,
+                0x27,
+                0xb2,
+                0x75,
+                0x09,
+                0x83,
+                0x2c,
+                0x1a,
+                0x1b,
+                0x6e,
+                0x5a,
+                0xa0,
+                0x52,
+                0x3b,
+                0xd6,
+                0xb3,
+                0x29,
+                0xe3,
+                0x2f,
+                0x84,
+                0x53,
+                0xd1,
+                0x00,
+                0xed,
+                0x20,
+                0xfc,
+                0xb1,
+                0x5b,
+                0x6a,
+                0xcb,
+                0xbe,
+                0x39,
+                0x4a,
+                0x4c,
+                0x58,
+                0xcf,
+                0xd0,
+                0xef,
+                0xaa,
+                0xfb,
+                0x43,
+                0x4d,
+                0x33,
+                0x85,
+                0x45,
+                0xf9,
+                0x02,
+                0x7f,
+                0x50,
+                0x3c,
+                0x9f,
+                0xa8,
+                0x51,
+                0xa3,
+                0x40,
+                0x8f,
+                0x92,
+                0x9d,
+                0x38,
+                0xf5,
+                0xbc,
+                0xb6,
+                0xda,
+                0x21,
+                0x10,
+                0xff,
+                0xf3,
+                0xd2,
+                0xcd,
+                0x0c,
+                0x13,
+                0xec,
+                0x5f,
+                0x97,
+                0x44,
+                0x17,
+                0xc4,
+                0xa7,
+                0x7e,
+                0x3d,
+                0x64,
+                0x5d,
+                0x19,
+                0x73,
+                0x60,
+                0x81,
+                0x4f,
+                0xdc,
+                0x22,
+                0x2a,
+                0x90,
+                0x88,
+                0x46,
+                0xee,
+                0xb8,
+                0x14,
+                0xde,
+                0x5e,
+                0x0b,
+                0xdb,
+                0xe0,
+                0x32,
+                0x3a,
+                0x0a,
+                0x49,
+                0x06,
+                0x24,
+                0x5c,
+                0xc2,
+                0xd3,
+                0xac,
+                0x62,
+                0x91,
+                0x95,
+                0xe4,
+                0x79,
+                0xe7,
+                0xc8,
+                0x37,
+                0x6d,
+                0x8d,
+                0xd5,
+                0x4e,
+                0xa9,
+                0x6c,
+                0x56,
+                0xf4,
+                0xea,
+                0x65,
+                0x7a,
+                0xae,
+                0x08,
+                0xba,
+                0x78,
+                0x25,
+                0x2e,
+                0x1c,
+                0xa6,
+                0xb4,
+                0xc6,
+                0xe8,
+                0xdd,
+                0x74,
+                0x1f,
+                0x4b,
+                0xbd,
+                0x8b,
+                0x8a,
+                0x70,
+                0x3e,
+                0xb5,
+                0x66,
+                0x48,
+                0x03,
+                0xf6,
+                0x0e,
+                0x61,
+                0x35,
+                0x57,
+                0xb9,
+                0x86,
+                0xc1,
+                0x1d,
+                0x9e,
+                0xe1,
+                0xf8,
+                0x98,
+                0x11,
+                0x69,
+                0xd9,
+                0x8e,
+                0x94,
+                0x9b,
+                0x1e,
+                0x87,
+                0xe9,
+                0xce,
+                0x55,
+                0x28,
+                0xdf,
+                0x8c,
+                0xa1,
+                0x89,
+                0x0d,
+                0xbf,
+                0xe6,
+                0x42,
+                0x68,
+                0x41,
+                0x99,
+                0x2d,
+                0x0f,
+                0xb0,
+                0x54,
+                0xbb,
+                0x16};
 
             /**
              * @brief AES算法的逆S盒，用于解密时的字节替换。
              */
-            static constexpr uint8_t InvSbox[256] = {
-                0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40,
-                0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb, 0x7c, 0xe3, 0x39, 0x82,
-                0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde,
-                0xe9, 0xcb, 0x54, 0x7b, 0x94, 0x32, 0xa6, 0xc2, 0x23, 0x3d,
-                0xee, 0x4c, 0x95, 0x0b, 0x42, 0xfa, 0xc3, 0x4e, 0x08, 0x2e,
-                0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2, 0x49,
-                0x6d, 0x8b, 0xd1, 0x25, 0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68,
-                0x98, 0x16, 0xd4, 0xa4, 0x5c, 0xcc, 0x5d, 0x65, 0xb6, 0x92,
-                0x6c, 0x70, 0x48, 0x50, 0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15,
-                0x46, 0x57, 0xa7, 0x8d, 0x9d, 0x84, 0x90, 0xd8, 0xab, 0x00,
-                0x8c, 0xbc, 0xd3, 0x0a, 0xf7, 0xe4, 0x58, 0x05, 0xb8, 0xb3,
-                0x45, 0x06, 0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0x0f, 0x02,
-                0xc1, 0xaf, 0xbd, 0x03, 0x01, 0x13, 0x8a, 0x6b, 0x3a, 0x91,
-                0x11, 0x41, 0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf, 0xce,
-                0xf0, 0xb4, 0xe6, 0x73, 0x96, 0xac, 0x74, 0x22, 0xe7, 0xad,
-                0x35, 0x85, 0xe2, 0xf9, 0x37, 0xe8, 0x1c, 0x75, 0xdf, 0x6e,
-                0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89, 0x6f, 0xb7,
-                0x62, 0x0e, 0xaa, 0x18, 0xbe, 0x1b, 0xfc, 0x56, 0x3e, 0x4b,
-                0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0, 0xfe, 0x78, 0xcd,
-                0x5a, 0xf4, 0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x07, 0xc7, 0x31,
-                0xb1, 0x12, 0x10, 0x59, 0x27, 0x80, 0xec, 0x5f, 0x60, 0x51,
-                0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d, 0x2d, 0xe5, 0x7a, 0x9f,
-                0x93, 0xc9, 0x9c, 0xef, 0xa0, 0xe0, 0x3b, 0x4d, 0xae, 0x2a,
-                0xf5, 0xb0, 0xc8, 0xeb, 0xbb, 0x3c, 0x83, 0x53, 0x99, 0x61,
-                0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69,
-                0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d};
+            static constexpr uint8_t InvSbox[256] = {0x52,
+                0x09,
+                0x6a,
+                0xd5,
+                0x30,
+                0x36,
+                0xa5,
+                0x38,
+                0xbf,
+                0x40,
+                0xa3,
+                0x9e,
+                0x81,
+                0xf3,
+                0xd7,
+                0xfb,
+                0x7c,
+                0xe3,
+                0x39,
+                0x82,
+                0x9b,
+                0x2f,
+                0xff,
+                0x87,
+                0x34,
+                0x8e,
+                0x43,
+                0x44,
+                0xc4,
+                0xde,
+                0xe9,
+                0xcb,
+                0x54,
+                0x7b,
+                0x94,
+                0x32,
+                0xa6,
+                0xc2,
+                0x23,
+                0x3d,
+                0xee,
+                0x4c,
+                0x95,
+                0x0b,
+                0x42,
+                0xfa,
+                0xc3,
+                0x4e,
+                0x08,
+                0x2e,
+                0xa1,
+                0x66,
+                0x28,
+                0xd9,
+                0x24,
+                0xb2,
+                0x76,
+                0x5b,
+                0xa2,
+                0x49,
+                0x6d,
+                0x8b,
+                0xd1,
+                0x25,
+                0x72,
+                0xf8,
+                0xf6,
+                0x64,
+                0x86,
+                0x68,
+                0x98,
+                0x16,
+                0xd4,
+                0xa4,
+                0x5c,
+                0xcc,
+                0x5d,
+                0x65,
+                0xb6,
+                0x92,
+                0x6c,
+                0x70,
+                0x48,
+                0x50,
+                0xfd,
+                0xed,
+                0xb9,
+                0xda,
+                0x5e,
+                0x15,
+                0x46,
+                0x57,
+                0xa7,
+                0x8d,
+                0x9d,
+                0x84,
+                0x90,
+                0xd8,
+                0xab,
+                0x00,
+                0x8c,
+                0xbc,
+                0xd3,
+                0x0a,
+                0xf7,
+                0xe4,
+                0x58,
+                0x05,
+                0xb8,
+                0xb3,
+                0x45,
+                0x06,
+                0xd0,
+                0x2c,
+                0x1e,
+                0x8f,
+                0xca,
+                0x3f,
+                0x0f,
+                0x02,
+                0xc1,
+                0xaf,
+                0xbd,
+                0x03,
+                0x01,
+                0x13,
+                0x8a,
+                0x6b,
+                0x3a,
+                0x91,
+                0x11,
+                0x41,
+                0x4f,
+                0x67,
+                0xdc,
+                0xea,
+                0x97,
+                0xf2,
+                0xcf,
+                0xce,
+                0xf0,
+                0xb4,
+                0xe6,
+                0x73,
+                0x96,
+                0xac,
+                0x74,
+                0x22,
+                0xe7,
+                0xad,
+                0x35,
+                0x85,
+                0xe2,
+                0xf9,
+                0x37,
+                0xe8,
+                0x1c,
+                0x75,
+                0xdf,
+                0x6e,
+                0x47,
+                0xf1,
+                0x1a,
+                0x71,
+                0x1d,
+                0x29,
+                0xc5,
+                0x89,
+                0x6f,
+                0xb7,
+                0x62,
+                0x0e,
+                0xaa,
+                0x18,
+                0xbe,
+                0x1b,
+                0xfc,
+                0x56,
+                0x3e,
+                0x4b,
+                0xc6,
+                0xd2,
+                0x79,
+                0x20,
+                0x9a,
+                0xdb,
+                0xc0,
+                0xfe,
+                0x78,
+                0xcd,
+                0x5a,
+                0xf4,
+                0x1f,
+                0xdd,
+                0xa8,
+                0x33,
+                0x88,
+                0x07,
+                0xc7,
+                0x31,
+                0xb1,
+                0x12,
+                0x10,
+                0x59,
+                0x27,
+                0x80,
+                0xec,
+                0x5f,
+                0x60,
+                0x51,
+                0x7f,
+                0xa9,
+                0x19,
+                0xb5,
+                0x4a,
+                0x0d,
+                0x2d,
+                0xe5,
+                0x7a,
+                0x9f,
+                0x93,
+                0xc9,
+                0x9c,
+                0xef,
+                0xa0,
+                0xe0,
+                0x3b,
+                0x4d,
+                0xae,
+                0x2a,
+                0xf5,
+                0xb0,
+                0xc8,
+                0xeb,
+                0xbb,
+                0x3c,
+                0x83,
+                0x53,
+                0x99,
+                0x61,
+                0x17,
+                0x2b,
+                0x04,
+                0x7e,
+                0xba,
+                0x77,
+                0xd6,
+                0x26,
+                0xe1,
+                0x69,
+                0x14,
+                0x63,
+                0x55,
+                0x21,
+                0x0c,
+                0x7d};
 
             /**
              * @brief 字节替换操作，使用S盒替换状态矩阵中的每个字节。
@@ -612,14 +1241,15 @@ namespace console {
                 uint8_t temp[4];
                 for (int i = 0; i < 4; i++) {
                     int idx = i * 4;
-                    temp[0] = gmul(state[idx], 2) ^ gmul(state[idx + 1], 3) ^
-                              state[idx + 2] ^ state[idx + 3];
-                    temp[1] = state[idx] ^ gmul(state[idx + 1], 2) ^
-                              gmul(state[idx + 2], 3) ^ state[idx + 3];
-                    temp[2] = state[idx] ^ state[idx + 1] ^
-                              gmul(state[idx + 2], 2) ^ gmul(state[idx + 3], 3);
-                    temp[3] = gmul(state[idx], 3) ^ state[idx + 1] ^
-                              state[idx + 2] ^ gmul(state[idx + 3], 2);
+                    temp[0] = gmul(state[idx], 2) ^ gmul(state[idx + 1], 3)
+                              ^ state[idx + 2] ^ state[idx + 3];
+                    temp[1] = state[idx] ^ gmul(state[idx + 1], 2)
+                              ^ gmul(state[idx + 2], 3) ^ state[idx + 3];
+                    temp[2] = state[idx] ^ state[idx + 1]
+                              ^ gmul(state[idx + 2], 2)
+                              ^ gmul(state[idx + 3], 3);
+                    temp[3] = gmul(state[idx], 3) ^ state[idx + 1]
+                              ^ state[idx + 2] ^ gmul(state[idx + 3], 2);
                     std::memcpy(&state[idx], temp, 4);
                 }
             }
@@ -632,18 +1262,22 @@ namespace console {
                 uint8_t temp[4];
                 for (int i = 0; i < 4; i++) {
                     int idx = i * 4;
-                    temp[0] =
-                        gmul(state[idx], 0x0e) ^ gmul(state[idx + 1], 0x0b) ^
-                        gmul(state[idx + 2], 0x0d) ^ gmul(state[idx + 3], 0x09);
-                    temp[1] =
-                        gmul(state[idx], 0x09) ^ gmul(state[idx + 1], 0x0e) ^
-                        gmul(state[idx + 2], 0x0b) ^ gmul(state[idx + 3], 0x0d);
-                    temp[2] =
-                        gmul(state[idx], 0x0d) ^ gmul(state[idx + 1], 0x09) ^
-                        gmul(state[idx + 2], 0x0e) ^ gmul(state[idx + 3], 0x0b);
-                    temp[3] =
-                        gmul(state[idx], 0x0b) ^ gmul(state[idx + 1], 0x0d) ^
-                        gmul(state[idx + 2], 0x09) ^ gmul(state[idx + 3], 0x0e);
+                    temp[0] = gmul(state[idx], 0x0e)
+                              ^ gmul(state[idx + 1], 0x0b)
+                              ^ gmul(state[idx + 2], 0x0d)
+                              ^ gmul(state[idx + 3], 0x09);
+                    temp[1] = gmul(state[idx], 0x09)
+                              ^ gmul(state[idx + 1], 0x0e)
+                              ^ gmul(state[idx + 2], 0x0b)
+                              ^ gmul(state[idx + 3], 0x0d);
+                    temp[2] = gmul(state[idx], 0x0d)
+                              ^ gmul(state[idx + 1], 0x09)
+                              ^ gmul(state[idx + 2], 0x0e)
+                              ^ gmul(state[idx + 3], 0x0b);
+                    temp[3] = gmul(state[idx], 0x0b)
+                              ^ gmul(state[idx + 1], 0x0d)
+                              ^ gmul(state[idx + 2], 0x09)
+                              ^ gmul(state[idx + 3], 0x0e);
                     std::memcpy(&state[idx], temp, 4);
                 }
             }
@@ -681,8 +1315,8 @@ namespace console {
                         for (int j = 0; j < 4; j++) temp[j] ^= rcon[j];
                     }
                     for (int j = 0; j < 4; j++) {
-                        round_keys[i * 4 + j] =
-                            round_keys[(i - 4) * 4 + j] ^ temp[j];
+                        round_keys[i * 4 + j]
+                            = round_keys[(i - 4) * 4 + j] ^ temp[j];
                     }
                 }
             }
@@ -693,8 +1327,9 @@ namespace console {
              * @param output 输出的16字节密文块。
              * @param round_keys 扩展后的轮密钥。
              */
-            inline void aes_encrypt_block(const uint8_t *input, uint8_t *output,
-                                          const uint8_t *round_keys) {
+            inline void aes_encrypt_block(const uint8_t *input,
+                uint8_t                                 *output,
+                const uint8_t                           *round_keys) {
                 uint8_t state[16];
                 std::memcpy(state, input, 16);
                 add_round_key(state, round_keys);
@@ -716,8 +1351,9 @@ namespace console {
              * @param output 输出的16字节明文块。
              * @param round_keys 扩展后的轮密钥。
              */
-            inline void aes_decrypt_block(const uint8_t *input, uint8_t *output,
-                                          const uint8_t *round_keys) {
+            inline void aes_decrypt_block(const uint8_t *input,
+                uint8_t                                 *output,
+                const uint8_t                           *round_keys) {
                 uint8_t state[16];
                 std::memcpy(state, input, 16);
                 add_round_key(state, round_keys + 10 * 16);
@@ -752,10 +1388,9 @@ namespace console {
              */
             inline std::string random_bytes() {
                 static std::random_device rd;
-                static std::mt19937       gen(std::chrono::steady_clock::now()
-                                                  .time_since_epoch()
-                                                  .count() +
-                                              rd());
+                static std::mt19937       gen(
+                    std::chrono::steady_clock::now().time_since_epoch().count()
+                    + rd());
                 static std::uniform_int_distribution<> dis(0, 255);
                 std::string                            bytes;
                 bytes.reserve(16);
@@ -776,8 +1411,8 @@ namespace console {
          * @note 返回的密文格式为：初始化向量（16字节）+
          * 密文数据，整体经过Base64编码。
          */
-        inline std::string aes_encrypt(const std::string &plaintext,
-                                       const std::string &key) {
+        inline std::string
+        aes_encrypt(const std::string &plaintext, const std::string &key) {
             std::string padded_key = aes_impl::pad_key(key);
             uint8_t     round_keys[44 * 4];
             aes_impl::key_expansion(
@@ -809,8 +1444,8 @@ namespace console {
          * ciphertext"。
          * @note 密文格式必须与aes_encrypt函数生成的格式一致。
          */
-        inline std::string aes_decrypt(const std::string &ciphertext,
-                                       const std::string &key) {
+        inline std::string
+        aes_decrypt(const std::string &ciphertext, const std::string &key) {
             std::string decoded = base64_decode(ciphertext);
             if (decoded.size() < 16) return "Invalid ciphertext";
             std::string padded_key = aes_impl::pad_key(key);

@@ -46,7 +46,7 @@ namespace console {
      */
     template <class T> class cursor_ptr {
         T *original_ptr; ///< 持有内存所有权，析构时释放
-        T *current_ptr;  ///< 当前游标位置，支持算术运算
+        T *current_ptr; ///< 当前游标位置，支持算术运算
 
     public:
         /// @brief 默认构造，两个指针均为 nullptr。

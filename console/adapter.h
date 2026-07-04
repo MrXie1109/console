@@ -132,8 +132,9 @@ namespace console {
      *          int value = pq.pop();  // 返回 4（最大值）并弹出
      *          @endcode
      */
-    template <class T, class Container = std::vector<T>,
-              class Compare = std::less<T>>
+    template <class T,
+        class Container = std::vector<T>,
+        class Compare   = std::less<T>>
     class PriorityQueue : public std::priority_queue<T, Container, Compare> {
         using base_type = std::priority_queue<T, Container, Compare>;
 
@@ -170,12 +171,12 @@ namespace console {
 
     public:
         typedef T    value_type; ///< 类型别名
-        typedef void pointer;    ///< 类型别名（不实际使用）
+        typedef void pointer; ///< 类型别名（不实际使用）
         typedef T
             reference; ///< 类型别名（由于解引用产出值，所以引用类型实际上不是引用）
 
         typedef std::forward_iterator_tag iterator_category; ///< 类型别名
-        typedef std::ptrdiff_t            difference_type;   ///< 类型别名
+        typedef std::ptrdiff_t            difference_type; ///< 类型别名
 
         /**
          * @brief 构造函数。
@@ -183,8 +184,8 @@ namespace console {
          * @param end 范围的结束值，默认为 T 的默认构造
          * @param step 范围的步长，默认为 T 的默认构造值。
          */
-        RangeIterator(const T &cur = T{}, const T &bounds = T{},
-                      const T &step = T{}) :
+        RangeIterator(
+            const T &cur = T{}, const T &bounds = T{}, const T &step = T{}) :
             cur_(cur), bounds_(bounds), step_(step) {}
 
         /**
@@ -273,8 +274,8 @@ namespace console {
      * @return IteratorPair<RangeIterator<T>> 可迭代对象。
      */
     template <class T>
-    inline IteratorPair<RangeIterator<T>> range(const T &start, const T &end,
-                                                const T &step) {
+    inline IteratorPair<RangeIterator<T>>
+    range(const T &start, const T &end, const T &step) {
         return {{start, end, step}, {start, end, step}};
     }
 }

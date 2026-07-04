@@ -29,6 +29,7 @@ SOFTWARE.
 */
 
 #pragma once
+#include <chrono>
 #include <cmath>
 #include <cstdint>
 #include <fstream>
@@ -56,8 +57,9 @@ namespace console {
              * @param max 随机数最大值（包含）。
              * @param seed 随机数种子，默认为随机设备生成。
              */
-            Random(T min, T max,
-                   std::mt19937::result_type seed = std::random_device{}()) :
+            Random(T                      min,
+                T                         max,
+                std::mt19937::result_type seed = std::random_device{}()) :
                 gen_(seed), dist_(min, max), curr_(dist_(gen_)) {}
 
             /**
@@ -131,9 +133,9 @@ namespace console {
              * @param mode 文件打开模式，默认为std::ios::in。
              * @throws FileError 如果文件无法打开。
              */
-            explicit FileChunks(const std::string      &filename,
-                                size_t                  chunk_size = 1024,
-                                std::ios_base::openmode mode = std::ios::in) :
+            explicit FileChunks(const std::string &filename,
+                size_t                             chunk_size = 1024,
+                std::ios_base::openmode            mode       = std::ios::in) :
                 file_(filename, mode), chunk_size_(chunk_size) {
                 if (!file_.is_open())
                     throw FileError("Cannot Open File \"" + filename + '"');
@@ -168,7 +170,7 @@ namespace console {
          */
         template <class Gen>
         class Window : public Generator<Window<Gen>,
-                                        std::vector<typename Gen::value_type>> {
+                           std::vector<typename Gen::value_type>> {
             Gen                                   gen_;
             size_t                                window_size_;
             std::vector<typename Gen::value_type> window_;
@@ -235,7 +237,7 @@ namespace console {
          */
         template <class Gen>
         class Chunk : public Generator<Chunk<Gen>,
-                                       std::vector<typename Gen::value_type>> {
+                          std::vector<typename Gen::value_type>> {
             Gen                                   gen_;
             size_t                                chunk_size_;
             std::vector<typename Gen::value_type> chunk_;
@@ -305,13 +307,12 @@ namespace console {
          */
         template <class Gen1, class Gen2>
         class Chain
-            : public Generator<
-                  Chain<Gen1, Gen2>,
+            : public Generator<Chain<Gen1, Gen2>,
                   decltype(true ? std::declval<typename Gen1::value_type>()
                                 : std::declval<typename Gen2::value_type>())> {
-            using T =
-                decltype(true ? std::declval<typename Gen1::value_type>()
-                              : std::declval<typename Gen2::value_type>());
+            using T
+                = decltype(true ? std::declval<typename Gen1::value_type>()
+                                : std::declval<typename Gen2::value_type>());
 
             Gen1 gen1;
             Gen2 gen2;
@@ -410,9 +411,9 @@ namespace console {
              * @param msg 调试消息前缀，默认为"Current Value: "。
              * @param os 输出流，默认为std::cout。
              */
-            explicit Debug(Gen g, std::string msg = "Current Value: ",
-                           std::ostream &os = std::cout) :
-                gen(g), message(msg), out(os) {}
+            explicit Debug(Gen g,
+                std::string    msg = "Current Value: ",
+                std::ostream &os = std::cout) : gen(g), message(msg), out(os) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -570,8 +571,8 @@ namespace console {
             pipeline_t(Ops... ops) : pipeline(ops...) {}
 
             template <class Gen>
-            friend auto operator|(Gen gen, pipeline_t pl)
-                -> decltype(pl.pipeline(gen)) {
+            friend auto
+            operator|(Gen gen, pipeline_t pl) -> decltype(pl.pipeline(gen)) {
                 return pl.pipeline(gen);
             }
         };
@@ -596,9 +597,9 @@ namespace console {
          * @return Random<T> 随机数生成器。
          */
         template <class T>
-        Random<T>
-        random(T min, T max,
-               std::mt19937::result_type seed = std::random_device{}()) {
+        Random<T> random(T            min,
+            T                         max,
+            std::mt19937::result_type seed = std::random_device{}()) {
             return Random<T>(min, max, seed);
         }
 
@@ -618,9 +619,9 @@ namespace console {
          * @param mode 文件打开模式，默认为std::ios::in。
          * @return FileChunks 文件块生成器。
          */
-        FileChunks file_chunks(const std::string      &filename,
-                               size_t                  chunk_size = 1024,
-                               std::ios_base::openmode mode = std::ios::in) {
+        FileChunks file_chunks(const std::string &filename,
+            size_t                                chunk_size = 1024,
+            std::ios_base::openmode               mode       = std::ios::in) {
             return FileChunks(filename, chunk_size, mode);
         }
 
@@ -707,6 +708,20 @@ namespace console {
         }
 
         /**
+         * @brief 创建链式生成器，将多个生成器首尾连接。
+         * @tparam Gen 第一个生成器类型。
+         * @tparam ...Rest 其余生成器类型。
+         * @param g 第一个生成器。
+         * @param rest 其余生成器。
+         * @return Chain<Gen, decltype(chain(rest...))> 链式生成器。
+         */
+        template <class Gen, class... Rest>
+        auto
+        chain(Gen g, Rest... rest) -> Chain<Gen, decltype(chain(rest...))> {
+            return {g, chain(rest...)};
+        }
+
+        /**
          * @brief 加号操作符重载，用于连接两个生成器。
          * @tparam Gen1 第一个生成器类型。
          * @tparam Gen2 第二个生成器类型。
@@ -767,9 +782,8 @@ namespace console {
              * @param msg 调试消息前缀，默认为"DEBUG: "。
              * @param os 输出流，默认为std::cout。
              */
-            explicit debug_t(std::string   msg = "DEBUG: ",
-                             std::ostream &os  = std::cout) :
-                message(msg), out(os) {}
+            explicit debug_t(std::string msg = "DEBUG: ",
+                std::ostream &os = std::cout) : message(msg), out(os) {}
 
             /**
              * @brief 管道操作符，创建调试生成器。
@@ -789,8 +803,8 @@ namespace console {
          * @param os 输出流，默认为std::cout。
          * @return debug_t 调试适配器。
          */
-        debug_t debug(std::string   msg = "DEBUG: ",
-                      std::ostream &os  = std::cout) {
+        debug_t
+        debug(std::string msg = "DEBUG: ", std::ostream &os = std::cout) {
             return debug_t{msg, os};
         }
 
@@ -866,6 +880,49 @@ namespace console {
          */
         template <class Pred> drop_until_t<Pred> drop_until(Pred p) {
             return drop_until_t<Pred>(p);
+        }
+
+        /**
+         * @brief 归约适配器，将生成器所有元素归约为单个值。
+         * @tparam T 初始值和结果类型。
+         * @tparam BinaryOp 二元操作符类型。
+         */
+        template <class T, class BinaryOp> class reduce_t {
+            T        init_;
+            BinaryOp op_;
+
+        public:
+            /**
+             * @brief 构造函数。
+             * @param init 初始值。
+             * @param op 二元操作符。
+             */
+            reduce_t(T init, BinaryOp op) : init_(init), op_(op) {}
+
+            /**
+             * @brief 管道操作符，执行归约。
+             * @param gen 源生成器。
+             * @param r 归约适配器。
+             * @return T 归约结果。
+             */
+            template <class Gen> friend T operator|(Gen gen, reduce_t r) {
+                T result = r.init_;
+                for (auto &&item : gen) result = r.op_(result, item);
+                return result;
+            }
+        };
+
+        /**
+         * @brief 创建归约适配器。
+         * @tparam T 初始值类型。
+         * @tparam BinaryOp 二元操作符类型。
+         * @param init 初始值。
+         * @param op 二元操作符。
+         * @return reduce_t<T, BinaryOp> 归约适配器。
+         */
+        template <class T, class BinaryOp>
+        reduce_t<T, BinaryOp> reduce(const T &init, BinaryOp bo) {
+            return reduce_t<T, BinaryOp>(init, bo);
         }
     }
 
@@ -1267,9 +1324,8 @@ namespace console {
              * @return 元素总和。
              */
             template <class Range>
-            auto operator()(Range r) const
-                -> decltype(std::accumulate(r.begin(), r.end(),
-                                            decltype(*r.begin()){})) {
+            auto operator()(Range r) const -> decltype(std::accumulate(
+                r.begin(), r.end(), decltype(*r.begin()){})) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{});
             }
@@ -1288,9 +1344,9 @@ namespace console {
              */
             template <class Range>
             auto operator()(Range r) const
-                -> decltype(std::accumulate(r.begin(), r.end(),
-                                            decltype(*r.begin()){}) /
-                            r.size()) {
+                -> decltype(std::accumulate(
+                                r.begin(), r.end(), decltype(*r.begin()){})
+                            / r.size()) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{}) / r.size();
             }
@@ -1480,11 +1536,123 @@ namespace console {
              */
             long long operator()() const {
                 return std::chrono::duration_cast<std::chrono::seconds>(
-                           std::chrono::system_clock::now().time_since_epoch())
+                    std::chrono::system_clock::now().time_since_epoch())
                     .count();
             }
         };
 
         static constexpr timestamp_t timestamp;
+
+        /**
+         * @brief 加法函数子。
+         * @details 等价于 operator+，支持任意类型（只要定义了 operator+）。
+         *          用于 reduce 等需要二元操作的场景。
+         */
+        struct plus_t {
+            /**
+             * @brief 对两个值执行加法。
+             * @tparam T 左操作数类型。
+             * @tparam U 右操作数类型。
+             * @param a 左操作数。
+             * @param b 右操作数。
+             * @return decltype(a + b) 两数之和。
+             */
+            template <class T, class U>
+            auto operator()(T a, U b) const -> decltype(a + b) {
+                return a + b;
+            }
+        };
+
+        static constexpr plus_t plus;
+
+        /**
+         * @brief 减法函数子。
+         * @details 等价于 operator-，支持任意类型（只要定义了 operator-）。
+         *          用于 reduce 等需要二元操作的场景。
+         */
+        struct minus_t {
+            /**
+             * @brief 对两个值执行减法。
+             * @tparam T 左操作数类型。
+             * @tparam U 右操作数类型。
+             * @param a 左操作数。
+             * @param b 右操作数。
+             * @return decltype(a - b) 两数之差。
+             */
+            template <class T, class U>
+            auto operator()(T a, U b) const -> decltype(a - b) {
+                return a - b;
+            }
+        };
+
+        static constexpr minus_t minus;
+
+        /**
+         * @brief 乘法函数子。
+         * @details 等价于 operator*，支持任意类型（只要定义了 operator*）。
+         *          用于 reduce 等需要二元操作的场景。
+         */
+        struct multiplies_t {
+            /**
+             * @brief 对两个值执行乘法。
+             * @tparam T 左操作数类型。
+             * @tparam U 右操作数类型。
+             * @param a 左操作数。
+             * @param b 右操作数。
+             * @return decltype(a * b) 两数之积。
+             */
+            template <class T, class U>
+            auto operator()(T a, U b) const -> decltype(a * b) {
+                return a * b;
+            }
+        };
+
+        static constexpr multiplies_t multiplies;
+
+        /**
+         * @brief 除法函数子。
+         * @details 等价于 operator/，支持任意类型（只要定义了 operator/）。
+         *          用于 reduce 等需要二元操作的场景。
+         * @note 若是算术除法语义，调用者需确保除数不为零，否则行为由 operator/ 决定。
+         */
+        struct divides_t {
+            /**
+             * @brief 对两个值执行除法。
+             * @tparam T 左操作数类型。
+             * @tparam U 右操作数类型。
+             * @param a 左操作数。
+             * @param b 右操作数。
+             * @return decltype(a / b) 两数之商。
+             */
+            template <class T, class U>
+            auto operator()(T a, U b) const -> decltype(a / b) {
+                return a / b;
+            }
+        };
+
+        static constexpr divides_t divides;
+
+        /**
+         * @brief 取模函数子。
+         * @details 等价于 operator%，支持任意类型（只要定义了 operator%）。
+         *          用于 reduce 等需要二元操作的场景。
+         * @note 若是算术取模语义，调用者需确保除数不为零，否则行为由 operator% 决定。
+         */
+        struct modulus_t {
+            /**
+             * @brief 对两个值执行取模。
+             * @tparam T 左操作数类型。
+             * @tparam U 右操作数类型。
+             * @param a 左操作数。
+             * @param b 右操作数。
+             * @return decltype(a % b) 两数之模。
+             */
+            template <class T, class U>
+            auto operator()(T a, U b) const -> decltype(a % b) {
+                return a % b;
+            }
+        };
+
+        static constexpr modulus_t modulus;
     }
 }

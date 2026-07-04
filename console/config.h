@@ -88,8 +88,8 @@ namespace console {
                 throw FileError("Cannot Open File \"" + filename.str() + '"');
             fout << *this;
             if (!fout.good())
-                throw FileError("The Stream of \"" + filename.str() +
-                                "\" is Not Good");
+                throw FileError(
+                    "The Stream of \"" + filename.str() + "\" is Not Good");
         }
 
         /**
@@ -98,8 +98,8 @@ namespace console {
          * @param config 配置对象。
          * @return std::ostream& 输出流引用。
          */
-        friend std::ostream &operator<<(std::ostream    &os,
-                                        const INIConfig &config) {
+        friend std::ostream &
+        operator<<(std::ostream &os, const INIConfig &config) {
             for (const auto &p : config.data_) {
                 if (!p.first.empty()) os << '[' << p.first << ']' << '\n';
                 for (const auto &kv : p.second)
@@ -120,12 +120,12 @@ namespace console {
             std::string current_section;
             while (std::getline(is, line)) {
                 std::string trimmed_line = trim(line);
-                if (trimmed_line.empty() || trimmed_line[0] == ';' ||
-                    trimmed_line[0] == '#')
+                if (trimmed_line.empty() || trimmed_line[0] == ';'
+                    || trimmed_line[0] == '#')
                     continue;
                 if (trimmed_line.front() == '[' && trimmed_line.back() == ']')
-                    current_section =
-                        trim(trimmed_line.substr(1, trimmed_line.size() - 2));
+                    current_section
+                        = trim(trimmed_line.substr(1, trimmed_line.size() - 2));
                 else {
                     auto pos = trimmed_line.find('=');
                     if (pos != std::string::npos) {
@@ -163,11 +163,11 @@ namespace console {
             operator bool() const {
                 std::string lower = str_;
                 for (auto &c : lower) c = std::tolower(c);
-                if (lower == "true" || lower == "1" || lower == "yes" ||
-                    lower == "on")
+                if (lower == "true" || lower == "1" || lower == "yes"
+                    || lower == "on")
                     return true;
-                if (lower == "false" || lower == "0" || lower == "no" ||
-                    lower == "off")
+                if (lower == "false" || lower == "0" || lower == "no"
+                    || lower == "off")
                     return false;
                 throw TypeError("Failed to Convert \"" + str_ + "\" to bool");
             }
@@ -182,8 +182,8 @@ namespace console {
                 T                  value;
                 iss >> value;
                 if (iss.fail())
-                    throw TypeError("Failed to Convert \"" + str_ +
-                                    "\" to Target Type");
+                    throw TypeError(
+                        "Failed to Convert \"" + str_ + "\" to Target Type");
                 return value;
             }
         };
@@ -197,8 +197,8 @@ namespace console {
         Item get(const std::string &section_and_key) const {
             auto pr = partition(section_and_key, ".");
             if (pr.middle.empty())
-                throw IndexError("Invalid Section and Key Format: \"" +
-                                 section_and_key + '"');
+                throw IndexError("Invalid Section and Key Format: \""
+                                 + section_and_key + '"');
             auto section = pr.left;
             auto key     = pr.right;
             auto sec_it  = data_.find(section);
@@ -206,8 +206,8 @@ namespace console {
                 throw IndexError("Section \"" + section + "\" Not Found");
             auto key_it = sec_it->second.find(key);
             if (key_it == sec_it->second.end())
-                throw IndexError("Key \"" + key + "\" Not Found in Section \"" +
-                                 section + '"');
+                throw IndexError("Key \"" + key + "\" Not Found in Section \""
+                                 + section + '"');
             return Item(key_it->second);
         }
 
@@ -219,8 +219,8 @@ namespace console {
          * @return T 配置值或默认值。
          */
         template <class T>
-        T get(const std::string &section_and_key,
-              const T           &default_value) const {
+        T
+        get(const std::string &section_and_key, const T &default_value) const {
             auto pos = section_and_key.find('.');
             auto pr  = partition(section_and_key, ".");
             if (pr.middle.empty()) return default_value;
@@ -243,8 +243,8 @@ namespace console {
         void set(const std::string &section_and_key, const std::string &value) {
             auto pr = partition(section_and_key, ".");
             if (pr.middle.empty())
-                throw IndexError("Invalid Section and Key Format: \"" +
-                                 section_and_key + '"');
+                throw IndexError("Invalid Section and Key Format: \""
+                                 + section_and_key + '"');
             auto section        = pr.left;
             auto key            = pr.right;
             data_[section][key] = value;

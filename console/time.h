@@ -159,8 +159,7 @@ namespace console {
     inline Time now() {
         return Time(
             (long double)(std::chrono::duration_cast<std::chrono::nanoseconds>(
-                              std::chrono::high_resolution_clock::now()
-                                  .time_since_epoch())
+                std::chrono::high_resolution_clock::now().time_since_epoch())
                               .count()));
     }
 
@@ -215,8 +214,8 @@ namespace console {
         using namespace std::chrono;
         thread_local auto last = steady_clock::now();
         std::this_thread::sleep_until(last + duration<double>(1.0 / target));
-        double actual =
-            1.0 / duration<double>(steady_clock::now() - last).count();
+        double actual
+            = 1.0 / duration<double>(steady_clock::now() - last).count();
         last = steady_clock::now();
         return actual;
     }

@@ -66,13 +66,13 @@ namespace console {
          */
         void point(unsigned x, unsigned y, bool on = true) {
             if (x >= COLS || y >= ROWS) return; ///< 静默忽略，就当画在外边了
-            unsigned                   braille_col   = x / 2;
-            unsigned                   braille_row   = y / 4;
-            unsigned                   sub_x         = x % 2;
-            unsigned                   sub_y         = y % 4;
-            static const unsigned char mapping[2][4] = {{0, 1, 2, 6},
-                                                        {3, 4, 5, 7}};
-            unsigned char              bit = 1 << mapping[sub_x][sub_y];
+            unsigned                   braille_col = x / 2;
+            unsigned                   braille_row = y / 4;
+            unsigned                   sub_x       = x % 2;
+            unsigned                   sub_y       = y % 4;
+            static const unsigned char mapping[2][4]
+                = {{0, 1, 2, 6}, {3, 4, 5, 7}};
+            unsigned char bit = 1 << mapping[sub_x][sub_y];
             if (on)
                 masks[braille_row][braille_col] |= bit;
             else

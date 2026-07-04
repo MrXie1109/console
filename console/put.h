@@ -42,8 +42,8 @@ namespace console {
      */
     template <class StrOrCharType>
     typename std::enable_if<
-        is_string<typename std::decay<StrOrCharType>::type>::value ||
-        is_char<typename std::decay<StrOrCharType>::type>::value>::type
+        is_string<typename std::decay<StrOrCharType>::type>::value
+        || is_char<typename std::decay<StrOrCharType>::type>::value>::type
     put(std::ostream &os, StrOrCharType &&value) {
         os << value;
     }
@@ -57,8 +57,8 @@ namespace console {
      */
     template <class OtherType>
     typename std::enable_if<
-        !is_string<typename std::decay<OtherType>::type>::value &&
-        !is_char<typename std::decay<OtherType>::type>::value>::type
+        !is_string<typename std::decay<OtherType>::type>::value
+        && !is_char<typename std::decay<OtherType>::type>::value>::type
     put(std::ostream &os, OtherType &&value) {
         repr(value, os);
     }

@@ -92,7 +92,7 @@ namespace console {
             if (!fin.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');
             std::string text{std::istreambuf_iterator<char>(fin),
-                             std::istreambuf_iterator<char>()};
+                std::istreambuf_iterator<char>()};
             if (!fin.good())
                 throw FileError("The Stream of \"" + path + "\" is Not Good");
             return text;
@@ -108,7 +108,7 @@ namespace console {
             if (!fin.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');
             Bytes bytes{std::istreambuf_iterator<char>(fin),
-                        std::istreambuf_iterator<char>()};
+                std::istreambuf_iterator<char>()};
             if (!fin.good())
                 throw FileError("The Stream of \"" + path + "\" is Not Good");
             return bytes;
@@ -132,7 +132,7 @@ namespace console {
          */
         template <class T> T read_POD() const {
             static_assert(std::is_trivially_copyable<T>::value,
-                          "This Type is Not POD Type!");
+                "This Type is Not POD Type!");
             std::ifstream fin(path, std::ios::binary);
             if (!fin.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');
@@ -216,7 +216,7 @@ namespace console {
          */
         template <class T> void write_POD(const T &data) const {
             static_assert(std::is_trivially_copyable<T>::value,
-                          "This Type is Not POD Type!");
+                "This Type is Not POD Type!");
             std::ofstream fout(path, std::ios::binary);
             if (!fout.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');
@@ -282,8 +282,8 @@ namespace console {
          * @note 文件流关闭前其它操作可能会导致流状态异常，
          *       使用前请确保正确管理流的生命周期和状态。
          */
-        std::fstream stream(std::ios_base::openmode mode =
-                                std::ios_base::in | std::ios_base::out) const {
+        std::fstream stream(std::ios_base::openmode mode
+                            = std::ios_base::in | std::ios_base::out) const {
             return std::fstream(path, mode);
         }
     };

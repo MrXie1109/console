@@ -48,7 +48,7 @@ namespace console {
      */
     template <class T> class BasicRational {
         static_assert(std::is_integral<T>::value && std::is_signed<T>::value,
-                      "T must be signed integral type"); ///< T 必须是有符号整数
+            "T must be signed integral type"); ///< T 必须是有符号整数
 
         T num; ///< 分子
         T den; ///< 分母
@@ -132,10 +132,10 @@ namespace console {
          * @return BasicRational 和。
          * @warning 整数可能溢出。
          */
-        friend BasicRational operator+(const BasicRational &lhs,
-                                       const BasicRational &rhs) {
-            return BasicRational(lhs.num * rhs.den + rhs.num * lhs.den,
-                                 lhs.den * rhs.den);
+        friend BasicRational
+        operator+(const BasicRational &lhs, const BasicRational &rhs) {
+            return BasicRational(
+                lhs.num * rhs.den + rhs.num * lhs.den, lhs.den * rhs.den);
         }
 
         /**
@@ -145,10 +145,10 @@ namespace console {
          * @return BasicRational 差。
          * @warning 整数可能溢出。
          */
-        friend BasicRational operator-(const BasicRational &lhs,
-                                       const BasicRational &rhs) {
-            return BasicRational(lhs.num * rhs.den - rhs.num * lhs.den,
-                                 lhs.den * rhs.den);
+        friend BasicRational
+        operator-(const BasicRational &lhs, const BasicRational &rhs) {
+            return BasicRational(
+                lhs.num * rhs.den - rhs.num * lhs.den, lhs.den * rhs.den);
         }
 
         /**
@@ -158,8 +158,8 @@ namespace console {
          * @return BasicRational 积。
          * @warning 整数可能溢出。
          */
-        friend BasicRational operator*(const BasicRational &lhs,
-                                       const BasicRational &rhs) {
+        friend BasicRational
+        operator*(const BasicRational &lhs, const BasicRational &rhs) {
             return BasicRational(lhs.num * rhs.num, lhs.den * rhs.den);
         }
 
@@ -171,8 +171,8 @@ namespace console {
          * @warning 整数可能溢出。
          * @throw console::DomainError 如果除以零。
          */
-        friend BasicRational operator/(const BasicRational &lhs,
-                                       const BasicRational &rhs) {
+        friend BasicRational
+        operator/(const BasicRational &lhs, const BasicRational &rhs) {
             if (rhs.num == 0) throw DomainError("Division by zero");
             return BasicRational(lhs.num * rhs.den, lhs.den * rhs.num);
         }
@@ -236,8 +236,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果相等 true 否则 false。
          */
-        friend bool operator==(const BasicRational &lhs,
-                               const BasicRational &rhs) {
+        friend bool
+        operator==(const BasicRational &lhs, const BasicRational &rhs) {
             return lhs.num == rhs.num && lhs.den == rhs.den;
         }
 
@@ -247,8 +247,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果不等 true 否则 false。
          */
-        friend bool operator!=(const BasicRational &lhs,
-                               const BasicRational &rhs) {
+        friend bool
+        operator!=(const BasicRational &lhs, const BasicRational &rhs) {
             return !(lhs == rhs);
         }
 
@@ -258,8 +258,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果左 < 右 true 否则 false。
          */
-        friend bool operator<(const BasicRational &lhs,
-                              const BasicRational &rhs) {
+        friend bool
+        operator<(const BasicRational &lhs, const BasicRational &rhs) {
             return lhs.num * rhs.den < rhs.num * lhs.den;
         }
 
@@ -269,8 +269,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果左 > 右 true 否则 false。
          */
-        friend bool operator>(const BasicRational &lhs,
-                              const BasicRational &rhs) {
+        friend bool
+        operator>(const BasicRational &lhs, const BasicRational &rhs) {
             return rhs < lhs;
         }
 
@@ -280,8 +280,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果左 <= 右 true 否则 false。
          */
-        friend bool operator<=(const BasicRational &lhs,
-                               const BasicRational &rhs) {
+        friend bool
+        operator<=(const BasicRational &lhs, const BasicRational &rhs) {
             return !(lhs > rhs);
         }
 
@@ -291,8 +291,8 @@ namespace console {
          * @param rhs 右操作数。
          * @return bool 如果左 >= 右 true 否则 false。
          */
-        friend bool operator>=(const BasicRational &lhs,
-                               const BasicRational &rhs) {
+        friend bool
+        operator>=(const BasicRational &lhs, const BasicRational &rhs) {
             return !(lhs < rhs);
         }
 
@@ -302,8 +302,8 @@ namespace console {
          * @param r 分数。
          * @return std::ostream & 原输出流 os 的引用。
          */
-        friend std::ostream &operator<<(std::ostream        &os,
-                                        const BasicRational &r) {
+        friend std::ostream &
+        operator<<(std::ostream &os, const BasicRational &r) {
             os << intmax_t(r.num);
             if (r.den != 1) os << '/' << intmax_t(r.den);
             return os;

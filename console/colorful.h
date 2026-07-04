@@ -134,8 +134,8 @@ namespace console {
      * @param os 输出流，默认 std::cout。
      * @note cc = change color
      */
-    inline void cc(const char   *clr = color::Reset,
-                   std::ostream &os  = std::cout) {
+    inline void
+    cc(const char *clr = color::Reset, std::ostream &os = std::cout) {
         os << clr;
     }
 

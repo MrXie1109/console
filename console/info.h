@@ -82,8 +82,8 @@ SOFTWARE.)";
      */
     inline std::string compiler() {
 #ifdef __GNUC__
-        return "GCC " + std::to_string(__GNUC__) + "." +
-               std::to_string(__GNUC_MINOR__);
+        return "GCC " + std::to_string(__GNUC__) + "."
+               + std::to_string(__GNUC_MINOR__);
 #elif defined(_MSC_VER)
         return "MSVC " + std::to_string(_MSC_VER);
 #elif defined(__clang__)
@@ -99,8 +99,7 @@ SOFTWARE.)";
      * -- "Commit Message"。
      */
     inline std::string version() {
-        return "console version 5.8.0 (2026-07-04) -- \"Happy Summer "
-               "Vacation!\"";
+        return "console version 5.8.1 (2026-07-04) -- \"Enjoy Myself\"";
     }
 
     /**

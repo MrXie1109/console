@@ -52,10 +52,10 @@ namespace console {
 
     /// @cond INTERNAL
     template <class T>
-    struct is_container<
-        T, typename std::enable_if<
-               sizeof(decltype(std::begin(std::declval<T>()))) &&
-               sizeof(decltype(std::end(std::declval<T>())))>::type>
+    struct is_container<T,
+        typename std::enable_if<sizeof(decltype(std::begin(std::declval<T>())))
+                                && sizeof(decltype(std::end(
+                                    std::declval<T>())))>::type>
         : std::true_type {};
     /// @endcond
 
@@ -72,10 +72,10 @@ namespace console {
     /// @cond INTERNAL
     template <class F, class... Args>
     struct is_callable<F,
-                       typename std::enable_if<std::is_convertible<
-                           decltype(std::declval<F>()(std::declval<Args>()...)),
-                           void>::value>::type,
-                       Args...> : std::true_type {};
+        typename std::enable_if<std::is_convertible<
+            decltype(std::declval<F>()(std::declval<Args>()...)),
+            void>::value>::type,
+        Args...> : std::true_type {};
     /// @endcond
 
     /**
@@ -87,9 +87,9 @@ namespace console {
 
     /// @cond INTERNAL
     template <class T>
-    struct is_iterator<
-        T, typename std::enable_if<sizeof(
-               typename std::iterator_traits<T>::iterator_category)>::type>
+    struct is_iterator<T,
+        typename std::enable_if<sizeof(
+            typename std::iterator_traits<T>::iterator_category)>::type>
         : std::true_type {};
     /// @endcond
 
@@ -104,8 +104,8 @@ namespace console {
 
     /// @cond INTERNAL
     template <class T, class Idx>
-    struct has_subscript<
-        T, Idx,
+    struct has_subscript<T,
+        Idx,
         typename std::enable_if<sizeof(
             decltype(std::declval<T>()[std::declval<Idx>()]))>::type>
         : std::true_type {};
@@ -153,9 +153,9 @@ namespace console {
 
     /// @cond INTERNAL
     template <class T>
-    struct is_printable<T, typename std::enable_if<sizeof(
-                               decltype(std::declval<std::ostream &>()
-                                        << std::declval<T>()))>::type>
+    struct is_printable<T,
+        typename std::enable_if<sizeof(decltype(std::declval<std::ostream &>()
+                                                << std::declval<T>()))>::type>
         : std::true_type {};
     /// @endcond
 
@@ -186,15 +186,15 @@ namespace console {
     /// @cond INTERNAL
     /// @brief 特化：整数类型 → uniform_int_distribution
     template <typename T>
-    struct uniform_distribution_impl<
-        T, typename std::enable_if<std::is_integral<T>::value>::type> {
+    struct uniform_distribution_impl<T,
+        typename std::enable_if<std::is_integral<T>::value>::type> {
         using type = std::uniform_int_distribution<T>;
     };
 
     /// @brief 特化：浮点类型 → uniform_real_distribution
     template <typename T>
-    struct uniform_distribution_impl<
-        T, typename std::enable_if<std::is_floating_point<T>::value>::type> {
+    struct uniform_distribution_impl<T,
+        typename std::enable_if<std::is_floating_point<T>::value>::type> {
         using type = std::uniform_real_distribution<T>;
     };
     /// @endcond

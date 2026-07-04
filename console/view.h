@@ -113,8 +113,8 @@ namespace console {
          */
         auto at(size_t pos) const -> decltype(*begin_) {
             if (pos >= size())
-                throw index_error(std::to_string(pos) + " out of 0 ~ " +
-                                  std::to_string(size() - 1));
+                throw index_error(std::to_string(pos) + " out of 0 ~ "
+                                  + std::to_string(size() - 1));
             return (*this)[pos];
         }
 
@@ -175,8 +175,8 @@ namespace console {
 
         auto at(size_t pos) const -> decltype(*begin_) {
             if (pos >= size())
-                throw index_error(std::to_string(pos) + " out of 0 ~ " +
-                                  std::to_string(size() - 1));
+                throw index_error(std::to_string(pos) + " out of 0 ~ "
+                                  + std::to_string(size() - 1));
             return (*this)[pos];
         }
 
@@ -193,8 +193,8 @@ namespace console {
      * @param sv 字符串视图。
      * @return std::ostream& 流引用。
      */
-    inline std::ostream &operator<<(std::ostream            &os,
-                                    const View<std::string> &sv) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const View<std::string> &sv) {
         for (auto it = sv.begin(); it != sv.end(); ++it) {
             os << *it;
         }
@@ -265,8 +265,8 @@ namespace console {
      * @return View<const Container> 视图对象。
      */
     template <class Container>
-    View<const Container> make_view(const Container &cont, size_t start,
-                                    size_t end) {
+    View<const Container>
+    make_view(const Container &cont, size_t start, size_t end) {
         return {cont, start, end};
     }
 
@@ -278,8 +278,8 @@ namespace console {
      * @return View<Container> 视图对象。
      */
     template <class Container>
-    View<Container> make_view(typename Container::iterator begin,
-                              typename Container::iterator end) {
+    View<Container> make_view(
+        typename Container::iterator begin, typename Container::iterator end) {
         return {begin, end};
     }
 
@@ -292,7 +292,7 @@ namespace console {
      */
     template <class Container>
     View<const Container> make_view(typename Container::const_iterator begin,
-                                    typename Container::const_iterator end) {
+        typename Container::const_iterator                             end) {
         return {begin, end};
     }
 

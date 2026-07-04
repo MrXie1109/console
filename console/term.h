@@ -34,71 +34,71 @@ SOFTWARE.
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN // 排除不常用的 Windows API
-#define VC_EXTRALEAN        // 排除某些 MFC 扩展
-#define NOCOMM              // 不包含 comm 相关
-#define NOCRYPT             // 不包含加密 API
-#define NOMCX               // 不包含 Modem 扩展
-#define NOSERVICE           // 不包含服务相关
-#define NOATOM              // 不包含原子操作
-#define NOGDICAPMASKS       // 不包含 GDI 掩码
-#define NOMETAFILE          // 不包含 MetaFile
-#define NOMINMAX 1          // 不定义 min/max 宏
-#define NOMSG               // 不包含消息结构
-#define NOOPENFILE          // 不包含 OpenFile
-#define NORPC               // 不包含 RPC
-#define NOSOUND             // 不包含声音
-#define NOSYSCOMMANDS       // 不包含系统命令
-#define NOTEXTMETRIC        // 不包含 TEXTMETRIC
-#define NOWH                // 不包含 WH_* 钩子
-#define NOKANJI             // 不包含日文支持
-#define NOHELP              // 不包含帮助
-#define NODRAWTEXT          // 不包含 DrawText
-#define NOGDI               // 不包含 GDI
-#define NOUSER              // 不包含 USER
-#define NOKERNEL            // 不包含 KERNEL
-#define NOMB                // 不包含 MB_* 宏
-#define NOMEMMGR            // 不包含内存管理
-#define NOMETAFILE          // 不包含 MetaFile
-#define NOMSG               // 不包含消息
-#define NOOPENFILE          // 不包含 OpenFile
-#define NOSCROLL            // 不包含滚动条
-#define NOSHOW              // 不包含 ShowWindow
-#define NOSIZE              // 不包含 SIZE
-#define NOSOUND             // 不包含声音
-#define NOSTRING            // 不包含字符串
-#define NOSYSMETRICS        // 不包含系统指标
-#define NOTEXTMETRIC        // 不包含 TEXTMETRIC
-#define NOWINMESSAGES       // 不包含窗口消息
-#define NOWINSTYLES         // 不包含窗口样式
-#define NOWINOFFSETS        // 不包含窗口偏移
-#define NOSYSCOMMANDS       // 不包含系统命令
-#define NOCLIPBOARD         // 不包含剪贴板
-#define NOCOLOR             // 不包含颜色
-#define NODEFERWINDOWPOS    // 不包含 DeferWindowPos
-#define NODRAWTEXT          // 不包含 DrawText
-#define NOGDI               // 不包含 GDI
-#define NOGDICAPMASKS       // 不包含 GDI 掩码
-#define NOHELP              // 不包含帮助
-#define NOICONS             // 不包含图标
-#define NOMENUS             // 不包含菜单
-#define NOMETAFILE          // 不包含 MetaFile
-#define NOMSG               // 不包含消息
-#define NOOPENFILE          // 不包含 OpenFile
-#define NOPROFILER          // 不包含性能分析
-#define NORASTEROPS         // 不包含光栅操作
-#define NOSCROLL            // 不包含滚动条
-#define NOSOUND             // 不包含声音
-#define NOSYSCOMMANDS       // 不包含系统命令
-#define NOTEXTMETRIC        // 不包含文本度量
-#define NOWH                // 不包含 WH_* 钩子
-#define NOWINOFFSETS        // 不包含窗口偏移
-#define NOMB                // 不包含 MB_* 宏
+#define VC_EXTRALEAN // 排除某些 MFC 扩展
+#define NOCOMM // 不包含 comm 相关
+#define NOCRYPT // 不包含加密 API
+#define NOMCX // 不包含 Modem 扩展
+#define NOSERVICE // 不包含服务相关
+#define NOATOM // 不包含原子操作
+#define NOGDICAPMASKS // 不包含 GDI 掩码
+#define NOMETAFILE // 不包含 MetaFile
+#define NOMINMAX 1 // 不定义 min/max 宏
+#define NOMSG // 不包含消息结构
+#define NOOPENFILE // 不包含 OpenFile
+#define NORPC // 不包含 RPC
+#define NOSOUND // 不包含声音
+#define NOSYSCOMMANDS // 不包含系统命令
+#define NOTEXTMETRIC // 不包含 TEXTMETRIC
+#define NOWH // 不包含 WH_* 钩子
+#define NOKANJI // 不包含日文支持
+#define NOHELP // 不包含帮助
+#define NODRAWTEXT // 不包含 DrawText
+#define NOGDI // 不包含 GDI
+#define NOUSER // 不包含 USER
+#define NOKERNEL // 不包含 KERNEL
+#define NOMB // 不包含 MB_* 宏
+#define NOMEMMGR // 不包含内存管理
+#define NOMETAFILE // 不包含 MetaFile
+#define NOMSG // 不包含消息
+#define NOOPENFILE // 不包含 OpenFile
+#define NOSCROLL // 不包含滚动条
+#define NOSHOW // 不包含 ShowWindow
+#define NOSIZE // 不包含 SIZE
+#define NOSOUND // 不包含声音
+#define NOSTRING // 不包含字符串
+#define NOSYSMETRICS // 不包含系统指标
+#define NOTEXTMETRIC // 不包含 TEXTMETRIC
+#define NOWINMESSAGES // 不包含窗口消息
+#define NOWINSTYLES // 不包含窗口样式
+#define NOWINOFFSETS // 不包含窗口偏移
+#define NOSYSCOMMANDS // 不包含系统命令
+#define NOCLIPBOARD // 不包含剪贴板
+#define NOCOLOR // 不包含颜色
+#define NODEFERWINDOWPOS // 不包含 DeferWindowPos
+#define NODRAWTEXT // 不包含 DrawText
+#define NOGDI // 不包含 GDI
+#define NOGDICAPMASKS // 不包含 GDI 掩码
+#define NOHELP // 不包含帮助
+#define NOICONS // 不包含图标
+#define NOMENUS // 不包含菜单
+#define NOMETAFILE // 不包含 MetaFile
+#define NOMSG // 不包含消息
+#define NOOPENFILE // 不包含 OpenFile
+#define NOPROFILER // 不包含性能分析
+#define NORASTEROPS // 不包含光栅操作
+#define NOSCROLL // 不包含滚动条
+#define NOSOUND // 不包含声音
+#define NOSYSCOMMANDS // 不包含系统命令
+#define NOTEXTMETRIC // 不包含文本度量
+#define NOWH // 不包含 WH_* 钩子
+#define NOWINOFFSETS // 不包含窗口偏移
+#define NOMB // 不包含 MB_* 宏
 #include <windows.h>
 #endif
 
 #ifdef __unix__
 #include <sys/ioctl.h> // ioctl, TIOCGWINSZ
-#include <unistd.h>    // STDOUT_FILENO
+#include <unistd.h> // STDOUT_FILENO
 #endif
 
 namespace console {

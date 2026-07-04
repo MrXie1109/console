@@ -56,9 +56,9 @@ namespace console {
      * @return std::string 处理后的新字符串。
      */
     inline std::string ltrim(std::string str) {
-        auto it =
-            std::find_if(str.begin(), str.end(),
-                         [](unsigned char uc) -> bool { return !isspace(uc); });
+        auto it = std::find_if(str.begin(),
+            str.end(),
+            [](unsigned char uc) -> bool { return !isspace(uc); });
         str.erase(str.begin(), it);
         return str;
     }
@@ -69,9 +69,9 @@ namespace console {
      * @return std::string 处理后的新字符串。
      */
     inline std::string rtrim(std::string str) {
-        auto it =
-            std::find_if(str.rbegin(), str.rend(),
-                         [](unsigned char uc) -> bool { return !isspace(uc); });
+        auto it = std::find_if(str.rbegin(),
+            str.rend(),
+            [](unsigned char uc) -> bool { return !isspace(uc); });
         str.erase(it.base(), str.end());
         return str;
     }
@@ -92,10 +92,10 @@ namespace console {
      * @return std::string 处理后的新字符串。
      */
     inline std::string ltrim(std::string str, const std::string &chars) {
-        auto it =
-            std::find_if(str.begin(), str.end(), [&chars](unsigned char ch) {
-                return chars.find(ch) == std::string::npos;
-            });
+        auto it
+            = std::find_if(str.begin(), str.end(), [&chars](unsigned char ch) {
+                  return chars.find(ch) == std::string::npos;
+              });
         str.erase(str.begin(), it);
         return str;
     }
@@ -107,8 +107,8 @@ namespace console {
      * @return std::string 处理后的新字符串。
      */
     inline std::string rtrim(std::string str, const std::string &chars) {
-        auto it =
-            std::find_if(str.rbegin(), str.rend(), [&chars](unsigned char ch) {
+        auto it = std::find_if(
+            str.rbegin(), str.rend(), [&chars](unsigned char ch) {
                 return chars.find(ch) == std::string::npos;
             });
         str.erase(it.base(), str.end());
@@ -158,8 +158,8 @@ namespace console {
         if (str.empty()) return "";
         if (str[0] >= 'a' && str[0] <= 'z') str[0] += 'A' - 'a';
         for (size_t i = 1; i < str.size(); ++i) {
-            if (isspace((unsigned char)str[i - 1]) && str[i] >= 'a' &&
-                str[i] <= 'z')
+            if (isspace((unsigned char)str[i - 1]) && str[i] >= 'a'
+                && str[i] <= 'z')
                 str[i] += 'A' - 'a';
             else if (str[i] >= 'A' && str[i] <= 'Z')
                 str[i] -= 'A' - 'a';
@@ -172,9 +172,9 @@ namespace console {
      * @brief 字符串分区结果，包含左部分、分隔符、右部分。
      */
     struct PartitionResult {
-        std::string left;   ///< 分隔符前的子串
+        std::string left; ///< 分隔符前的子串
         std::string middle; ///< 分隔符本身
-        std::string right;  ///< 分隔符后的子串
+        std::string right; ///< 分隔符后的子串
 
         /**
          * @brief 输出分区结果到流，格式为 ("left", "middle", "right")。
@@ -182,8 +182,8 @@ namespace console {
          * @param pr 分区结果对象。
          * @return std::ostream& 流引用。
          */
-        friend std::ostream &operator<<(std::ostream          &os,
-                                        const PartitionResult &pr) {
+        friend std::ostream &
+        operator<<(std::ostream &os, const PartitionResult &pr) {
             return os << "(\"" << pr.left << "\", \"" << pr.middle << "\", \""
                       << pr.right << "\")";
         }
@@ -197,12 +197,12 @@ namespace console {
      * @return PartitionResult 分区结果。
      * @note 若未找到分隔符，则 left 为原字符串，middle 和 right 为空。
      */
-    inline PartitionResult partition(const std::string &text,
-                                     const std::string &sep) {
+    inline PartitionResult
+    partition(const std::string &text, const std::string &sep) {
         size_t pos = text.find(sep);
         if (pos == std::string::npos) return PartitionResult{text, "", ""};
-        return PartitionResult{text.substr(0, pos), sep,
-                               text.substr(pos + sep.size())};
+        return PartitionResult{
+            text.substr(0, pos), sep, text.substr(pos + sep.size())};
     }
 
     /**
@@ -212,8 +212,8 @@ namespace console {
      * @return std::vector<std::string> 分割后的子串列表。
      * @note 连续的分隔符会产生空字符串子串。
      */
-    inline std::vector<std::string> split(std::string        text,
-                                          const std::string &sep = " ") {
+    inline std::vector<std::string>
+    split(std::string text, const std::string &sep = " ") {
         std::vector<std::string> vec;
         size_t                   start = 0;
         size_t                   end;
@@ -234,8 +234,8 @@ namespace console {
      * @return std::string 连接后的字符串。
      */
     template <class T>
-    inline std::string join(const std::vector<T> &vec,
-                            const std::string    &sep = "") {
+    inline std::string
+    join(const std::vector<T> &vec, const std::string &sep = "") {
         if (vec.empty()) return "";
         std::stringstream ss;
         auto              it = vec.begin();

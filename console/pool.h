@@ -59,7 +59,7 @@ namespace console {
     public:
         enum class launch : bool {
             abort, ///< 退出时调用 abort
-            close  ///< 退出时调用 close
+            close ///< 退出时调用 close
         };
 
     private:
@@ -90,7 +90,7 @@ namespace console {
         std::queue<std::unique_ptr<TaskBase>> tasks; ///< 待执行任务队列
         mutable std::mutex mutex; ///< 保护任务队列的互斥锁
         std::condition_variable cv; ///< 用于线程等待和唤醒的条件变量
-        std::atomic<bool>   shutdown;     ///< 线程池关闭标志
+        std::atomic<bool>   shutdown; ///< 线程池关闭标志
         std::atomic<size_t> active_tasks; ///< 当前正在执行的任务数
         launch              exit_launch_; ///< 退出策略
 
@@ -103,7 +103,7 @@ namespace console {
          *          当线程池关闭且任务队列为空时，线程会退出。
          */
         ThreadPool(launch exit_launch = launch::close,
-                   size_t num_threads = std::thread::hardware_concurrency()) :
+            size_t        num_threads = std::thread::hardware_concurrency()) :
             shutdown(false), active_tasks(0), exit_launch_(exit_launch) {
             if (num_threads == 0) num_threads = 2;
             for (size_t i = 0; i < num_threads; ++i) {
@@ -113,12 +113,11 @@ namespace console {
                         {
                             std::unique_lock<std::mutex> lock(mutex);
                             cv.wait(lock, [this] {
-                                return shutdown.load(
-                                           std::memory_order_acquire) ||
-                                       !tasks.empty();
+                                return shutdown.load(std::memory_order_acquire)
+                                       || !tasks.empty();
                             });
-                            if (shutdown.load(std::memory_order_acquire) &&
-                                tasks.empty())
+                            if (shutdown.load(std::memory_order_acquire)
+                                && tasks.empty())
                                 return;
                             task = std::move(tasks.front());
                             tasks.pop();
@@ -126,18 +125,18 @@ namespace console {
                         active_tasks.fetch_add(1, std::memory_order_release);
                         try {
                             task->execute();
-                            active_tasks.fetch_sub(1,
-                                                   std::memory_order_release);
-                            if (active_tasks.load(std::memory_order_acquire) ==
-                                    0 &&
-                                tasks.empty())
+                            active_tasks.fetch_sub(
+                                1, std::memory_order_release);
+                            if (active_tasks.load(std::memory_order_acquire)
+                                    == 0
+                                && tasks.empty())
                                 cv.notify_all();
                         } catch (...) {
-                            active_tasks.fetch_sub(1,
-                                                   std::memory_order_release);
-                            if (active_tasks.load(std::memory_order_acquire) ==
-                                    0 &&
-                                tasks.empty())
+                            active_tasks.fetch_sub(
+                                1, std::memory_order_release);
+                            if (active_tasks.load(std::memory_order_acquire)
+                                    == 0
+                                && tasks.empty())
                                 cv.notify_all();
                             throw;
                         }
@@ -154,7 +153,7 @@ namespace console {
          *          当线程池关闭且任务队列为空时，线程会退出。
          */
         ThreadPool(size_t num_threads = std::thread::hardware_concurrency(),
-                   launch exit_launch = launch::close) :
+            launch        exit_launch = launch::close) :
             ThreadPool(exit_launch, num_threads) {}
 
         /**
@@ -183,13 +182,13 @@ namespace console {
          *          返回的 future 对象可用于等待任务完成并获取返回值。
          */
         template <class F, class... Args>
-        auto submit(F &&f, Args &&...args)
-            -> std::future<
-                decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
-            using return_type =
-                decltype(std::forward<F>(f)(std::forward<Args>(args)...));
-            auto bound_task =
-                std::bind(std::forward<F>(f), std::forward<Args>(args)...);
+        auto
+        submit(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(
+                                          f)(std::forward<Args>(args)...))> {
+            using return_type
+                = decltype(std::forward<F>(f)(std::forward<Args>(args)...));
+            auto bound_task
+                = std::bind(std::forward<F>(f), std::forward<Args>(args)...);
             std::packaged_task<return_type()> task(bound_task);
             std::future<return_type>          result = task.get_future();
             {
@@ -220,8 +219,8 @@ namespace console {
         auto map(F &&func, const Container &items)
             -> std::vector<std::future<decltype(func(
                 std::declval<typename Container::value_type>()))>> {
-            using return_type =
-                decltype(func(std::declval<typename Container::value_type>()));
+            using return_type = decltype(func(
+                std::declval<typename Container::value_type>()));
             std::vector<std::future<return_type>> futures;
             futures.reserve(items.size());
             for (const auto &item : items)
@@ -237,8 +236,8 @@ namespace console {
         void wait() {
             std::unique_lock<std::mutex> lock(mutex);
             cv.wait(lock, [this] {
-                return tasks.empty() &&
-                       active_tasks.load(std::memory_order_acquire) == 0;
+                return tasks.empty()
+                       && active_tasks.load(std::memory_order_acquire) == 0;
             });
         }
 
@@ -324,11 +323,11 @@ namespace console {
      * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
      */
     template <class F, class... Args>
-    inline auto gtp_submit(F &&f, Args &&...args)
-        -> std::future<
-            decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
-        return global_thread_pool().submit(std::forward<F>(f),
-                                           std::forward<Args>(args)...);
+    inline auto
+    gtp_submit(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(
+                                          f)(std::forward<Args>(args)...))> {
+        return global_thread_pool().submit(
+            std::forward<F>(f), std::forward<Args>(args)...);
     }
 
     /**
@@ -346,8 +345,8 @@ namespace console {
      */
     template <class F, class Container>
     inline auto gtp_map(F &&func, const Container &items)
-        -> std::vector<std::future<
-            decltype(func(std::declval<typename Container::value_type>()))>> {
+        -> std::vector<std::future<decltype(func(
+            std::declval<typename Container::value_type>()))>> {
         return global_thread_pool().map(func, items);
     }
 
@@ -393,9 +392,9 @@ namespace console {
      * @see std::async
      */
     template <class F, class... Args>
-    inline auto async(F &&f, Args &&...args)
-        -> std::future<
-            decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
+    inline auto
+    async(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(f)(
+                                     std::forward<Args>(args)...))> {
         return gtp_submit(std::forward<F>(f), std::forward<Args>(args)...);
     }
 }

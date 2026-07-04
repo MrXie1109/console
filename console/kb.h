@@ -34,32 +34,32 @@ SOFTWARE.
 #pragma once
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN // 排除不常用的 Windows 组件
-#define NOMINMAX 1          // 避免 min/max 宏污染
-#define NOGDI               // 不需要图形设备接口
-#define NOUSER              // 不需要窗口管理
-#define NOSERVICE           // 不需要服务
-#define NOMCX               // 不需要媒体中心扩展
-#define NOHELP              // 不需要 WinHelp
-#define NOSOUND             // 不需要声音
-#define NOCOMM              // 不需要串口
-#define NOKANJI             // 不需要日文
-#define NOCLIPBOARD         // 不需要剪贴板
-#define NOCOLOR             // 不需要颜色表
-#define NODRAWTEXT          // 不需要 DrawText
-#define NOMENUS             // 不需要菜单
-#define NOICONS             // 不需要图标
-#define NOSYSCOMMANDS       // 不需要系统命令
-#define NORASTEROPS         // 不需要光栅操作
-#define NOSHOWWINDOW        // 不需要 ShowWindow
-#define NOATOM              // 不需要原子表
-#define NOCTLMGR            // 不需要控件管理器
-#define NOMETAFILE          // 不需要元文件
-#define NOOPENFILE          // 不需要 OpenFile
-#define NOSCROLL            // 不需要滚动条
-#define NOTEXTMETRIC        // 不需要文本度量
-#define NOWH                // 不需要 Windows 挂钩
-#define NOPROFILER          // 不需要性能分析器
-#define NODEFERWINDOWPOS    // 不需要窗口位置调整
+#define NOMINMAX 1 // 避免 min/max 宏污染
+#define NOGDI // 不需要图形设备接口
+#define NOUSER // 不需要窗口管理
+#define NOSERVICE // 不需要服务
+#define NOMCX // 不需要媒体中心扩展
+#define NOHELP // 不需要 WinHelp
+#define NOSOUND // 不需要声音
+#define NOCOMM // 不需要串口
+#define NOKANJI // 不需要日文
+#define NOCLIPBOARD // 不需要剪贴板
+#define NOCOLOR // 不需要颜色表
+#define NODRAWTEXT // 不需要 DrawText
+#define NOMENUS // 不需要菜单
+#define NOICONS // 不需要图标
+#define NOSYSCOMMANDS // 不需要系统命令
+#define NORASTEROPS // 不需要光栅操作
+#define NOSHOWWINDOW // 不需要 ShowWindow
+#define NOATOM // 不需要原子表
+#define NOCTLMGR // 不需要控件管理器
+#define NOMETAFILE // 不需要元文件
+#define NOOPENFILE // 不需要 OpenFile
+#define NOSCROLL // 不需要滚动条
+#define NOTEXTMETRIC // 不需要文本度量
+#define NOWH // 不需要 Windows 挂钩
+#define NOPROFILER // 不需要性能分析器
+#define NODEFERWINDOWPOS // 不需要窗口位置调整
 #include <conio.h>
 #include <windows.h>
 #else
@@ -207,8 +207,8 @@ namespace console {
 #ifdef _WIN32
             hStdin = GetStdHandle(STD_INPUT_HANDLE);
             GetConsoleMode(hStdin, &oldMode);
-            SetConsoleMode(hStdin,
-                           oldMode & ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT));
+            SetConsoleMode(
+                hStdin, oldMode & ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT));
 #else
             tcgetattr(STDIN_FILENO, &oldTio);
             struct termios newTio = oldTio;
@@ -277,9 +277,8 @@ namespace console {
         HANDLE hStdin; ///< Windows: 标准输入设备句柄（STD_INPUT_HANDLE）
         DWORD oldMode; ///< Windows: 原始控制台输入模式（用于析构时恢复）
 #else
-        struct termios
-            oldTio; ///< Linux/Unix:
-                    ///< 原始终端I/O属性（用于析构时恢复规范模式与回显）
+        struct termios oldTio; ///< Linux/Unix:
+            ///< 原始终端I/O属性（用于析构时恢复规范模式与回显）
 #endif
 
         /**

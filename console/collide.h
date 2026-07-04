@@ -121,8 +121,9 @@ namespace console {
          * @param func  当遇到 (type1, type2) 组合时调用的函数。
          * @note 如果 type1 和 type2 顺序调换，需要另外注册。
          */
-        void add(const std::type_index &type1, const std::type_index &type2,
-                 FunctionType func) {
+        void add(const std::type_index &type1,
+            const std::type_index      &type2,
+            FunctionType                func) {
             table[{type1, type2}] = func;
         }
 
@@ -137,7 +138,8 @@ namespace console {
          *          且两个方向使用同一个处理函数。适用于碰撞检测等对称操作。
          */
         void add_symmetric(const std::type_info &type1,
-                           const std::type_info &type2, FunctionType func) {
+            const std::type_info                &type2,
+            FunctionType                         func) {
             add(type1, type2, func);
             add(type2, type1, func);
         }
@@ -149,31 +151,31 @@ namespace console {
          * @return FunctionType 对应的处理函数。
          * @throw TypeError 如果没有为给定的类型对注册函数。
          */
-        FunctionType operator()(const std::type_index &type1,
-                                const std::type_index &type2) const {
+        FunctionType operator()(
+            const std::type_index &type1, const std::type_index &type2) const {
             auto it = table.find({type1, type2});
             if (it != table.end())
                 return it->second;
             else if (default_handler)
                 return default_handler;
             else {
-                static auto get_name =
-                    [](const std::type_index &ti) -> std::string {
+                static auto get_name
+                    = [](const std::type_index &ti) -> std::string {
 #ifdef _MSC_VER
                     return ti.name();
 #elif defined(__GNUG__)
                     int                                     status = 0;
                     std::unique_ptr<char, void (*)(void *)> result(
-                        abi::__cxa_demangle(ti.name(), nullptr, nullptr,
-                                            &status),
+                        abi::__cxa_demangle(
+                            ti.name(), nullptr, nullptr, &status),
                         std::free);
                     return (status == 0) ? result.get() : ti.name();
 #else
                     return ti.name();
 #endif
                 };
-                throw TypeError("Bad Collide Type: <" + get_name(type1) +
-                                "> & <" + get_name(type2) + ">");
+                throw TypeError("Bad Collide Type: <" + get_name(type1)
+                                + "> & <" + get_name(type2) + ">");
             }
         }
 
@@ -192,8 +194,8 @@ namespace console {
          * @param type2 第二个类型的类型信息。
          * @return bool 如果已注册则返回 true，否则返回 false。
          */
-        bool has(const std::type_index &type1,
-                 const std::type_index &type2) const {
+        bool
+        has(const std::type_index &type1, const std::type_index &type2) const {
             return table.find({type1, type2}) != table.end();
         }
 
@@ -210,8 +212,8 @@ namespace console {
          * @param type2 第二个类型的类型信息。
          * @return bool 如果已注册或有默认处理函数则返回 true，否则返回 false
          */
-        bool callable(const std::type_index &type1,
-                      const std::type_index &type2) const {
+        bool callable(
+            const std::type_index &type1, const std::type_index &type2) const {
             return has(type1, type2) || default_handler;
         }
 
@@ -226,8 +228,8 @@ namespace console {
          * @param type1 第一个类型的类型信息。
          * @param type2 第二个类型的类型信息。
          */
-        void remove(const std::type_index &type1,
-                    const std::type_index &type2) {
+        void
+        remove(const std::type_index &type1, const std::type_index &type2) {
             table.erase({type1, type2});
         }
 

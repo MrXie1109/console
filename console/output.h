@@ -53,8 +53,8 @@ namespace console {
      * @return std::ostream& 输出流引用。
      */
     template <class Cont>
-    inline std::ostream &cont_print_sequence(std::ostream &os,
-                                             const Cont   &cont) {
+    inline std::ostream &
+    cont_print_sequence(std::ostream &os, const Cont &cont) {
         if (begin(cont) == end(cont)) return os << "[]";
         auto it = begin(cont);
         os << '[';
@@ -167,15 +167,15 @@ namespace console {
 
     /// @brief 输出 std::vector。
     template <class T>
-    inline std::ostream &operator<<(std::ostream         &os,
-                                    const std::vector<T> &vec) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::vector<T> &vec) {
         return cont_print_sequence(os, vec);
     }
 
     /// @brief 输出 std::deque。
     template <class T>
-    inline std::ostream &operator<<(std::ostream        &os,
-                                    const std::deque<T> &deq) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::deque<T> &deq) {
         return cont_print_sequence(os, deq);
     }
 
@@ -187,15 +187,15 @@ namespace console {
 
     /// @brief 输出 std::forward_list。
     template <class T>
-    inline std::ostream &operator<<(std::ostream               &os,
-                                    const std::forward_list<T> &flst) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::forward_list<T> &flst) {
         return cont_print_sequence(os, flst);
     }
 
     /// @brief 输出 std::array。
     template <class T, size_t n>
-    inline std::ostream &operator<<(std::ostream           &os,
-                                    const std::array<T, n> &arr) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::array<T, n> &arr) {
         return cont_print_sequence(os, arr);
     }
 
@@ -213,50 +213,50 @@ namespace console {
 
     /// @brief 输出 std::multiset。
     template <class T>
-    inline std::ostream &operator<<(std::ostream           &os,
-                                    const std::multiset<T> &ms) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::multiset<T> &ms) {
         return cont_print_set(os, ms);
     }
 
     /// @brief 输出 std::multimap。
     template <class K, class V>
-    inline std::ostream &operator<<(std::ostream              &os,
-                                    const std::multimap<K, V> &mm) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::multimap<K, V> &mm) {
         return cont_print_map(os, mm);
     }
 
     /// @brief 输出 std::unordered_set。
     template <class T>
-    inline std::ostream &operator<<(std::ostream                &os,
-                                    const std::unordered_set<T> &us) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::unordered_set<T> &us) {
         return cont_print_set(os, us);
     }
 
     /// @brief 输出 std::unordered_map。
     template <class K, class V>
-    inline std::ostream &operator<<(std::ostream                   &os,
-                                    const std::unordered_map<K, V> &um) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::unordered_map<K, V> &um) {
         return cont_print_map(os, um);
     }
 
     /// @brief 输出 std::unordered_multiset。
     template <class T>
-    inline std::ostream &operator<<(std::ostream                     &os,
-                                    const std::unordered_multiset<T> &ums) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::unordered_multiset<T> &ums) {
         return cont_print_set(os, ums);
     }
 
     /// @brief 输出 std::unordered_multimap。
     template <class K, class V>
-    inline std::ostream &operator<<(std::ostream                        &os,
-                                    const std::unordered_multimap<K, V> &ump) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::unordered_multimap<K, V> &ump) {
         return cont_print_map(os, ump);
     }
 
     /// @brief 输出 std::valarray。
     template <class T>
-    inline std::ostream &operator<<(std::ostream           &os,
-                                    const std::valarray<T> &va) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::valarray<T> &va) {
         return cont_print_sequence(os, va);
     }
 
@@ -269,8 +269,8 @@ namespace console {
      * @return std::ostream& 输出流引用。
      */
     template <class T, class U>
-    inline std::ostream &operator<<(std::ostream          &os,
-                                    const std::pair<T, U> &p) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::pair<T, U> &p) {
         os << '(';
         put(os, p.first);
         os << ", ";
@@ -286,8 +286,8 @@ namespace console {
      * @return std::ostream& 输出流引用。
      */
     template <class... Args>
-    inline std::ostream &operator<<(std::ostream              &os,
-                                    const std::tuple<Args...> &t) {
+    inline std::ostream &
+    operator<<(std::ostream &os, const std::tuple<Args...> &t) {
         os << "(";
         TuplePrinter<std::tuple<Args...>>::print(os, t);
         return os << ")";
@@ -347,9 +347,9 @@ namespace console {
      * @endcode
      */
     class Output {
-        std::ostream &os;      ///< 输出目标流
-        std::string   sep;     ///< 多个参数之间的分隔符
-        std::string   end;     ///< 结尾符（通常是换行符）
+        std::ostream &os; ///< 输出目标流
+        std::string   sep; ///< 多个参数之间的分隔符
+        std::string   end; ///< 结尾符（通常是换行符）
         bool          isFlush; ///< 输出后是否立即刷新
 
     public:
@@ -365,8 +365,10 @@ namespace console {
          * @param e   结尾符。
          * @param isF 输出后是否刷新。
          */
-        Output(std::ostream &o, const std::string &s, const std::string &e,
-               bool isF) : os(o), sep(s), end(e), isFlush(isF) {}
+        Output(std::ostream   &o,
+            const std::string &s,
+            const std::string &e,
+            bool               isF) : os(o), sep(s), end(e), isFlush(isF) {}
 
         /**
          * @brief 无参数调用：仅输出结尾符（如换行）。
@@ -414,6 +416,6 @@ namespace console {
         return instance;
     }
 
-    static Output &print =
-        get_print(); ///< 全局输出对象，模仿 Python 的 print 函数。
+    static Output &print
+        = get_print(); ///< 全局输出对象，模仿 Python 的 print 函数。
 }

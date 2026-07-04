@@ -97,13 +97,13 @@ namespace console {
 
     /// @brief std::unordered_multiset 输出声明。
     template <class T>
-    std::ostream &operator<<(std::ostream &,
-                             const std::unordered_multiset<T> &);
+    std::ostream &
+    operator<<(std::ostream &, const std::unordered_multiset<T> &);
 
     /// @brief std::unordered_multimap 输出声明。
     template <class K, class V>
-    std::ostream &operator<<(std::ostream &,
-                             const std::unordered_multimap<K, V> &);
+    std::ostream &
+    operator<<(std::ostream &, const std::unordered_multimap<K, V> &);
 
     /// @brief std::pair 输出声明。
     template <class T, class U>

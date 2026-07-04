@@ -55,8 +55,8 @@ namespace console {
             virtual Base *clone() const = 0; ///< 克隆当前对象
             virtual void  print(std::ostream &) const = 0; ///< 输出到流
             virtual std::string str() const = 0; ///< 返回字符串表示
-            virtual const std::type_info &
-            type() const = 0; ///< 返回存储对象的类型信息
+            virtual const std::type_info &type() const
+                = 0; ///< 返回存储对象的类型信息
         };
 
         /**
@@ -145,9 +145,9 @@ namespace console {
         template <typename T> T &get() {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
-                throw TypeError(std::string("type mismatch: ") +
-                                tiname(typeid(T)) + " and " +
-                                tiname(ptr->type()));
+                throw TypeError(std::string("type mismatch: ")
+                                + tiname(typeid(T)) + " and "
+                                + tiname(ptr->type()));
             return ((Derived<T> *)ptr)->value;
         }
 
@@ -170,9 +170,9 @@ namespace console {
         template <typename T> const T &get() const {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
-                throw TypeError(std::string("type mismatch: ") +
-                                typeid(T).name() + " and " +
-                                ptr->type().name());
+                throw TypeError(std::string("type mismatch: ")
+                                + typeid(T).name() + " and "
+                                + ptr->type().name());
             return ((Derived<T> *)ptr)->value;
         }
 

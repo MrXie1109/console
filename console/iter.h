@@ -93,14 +93,14 @@ namespace console {
 
     public:
         typedef std::pair<typename It1::value_type,
-                          typename It2::value_type>
+            typename It2::value_type>
                      value_type; ///< 类型别名
-        typedef void pointer;    ///< 类型别名（不实际使用）
+        typedef void pointer; ///< 类型别名（不实际使用）
         typedef std::pair<typename It1::reference,
-                          typename It2::reference>
-                                          reference;         ///< 类型别名
+            typename It2::reference>
+                                          reference; ///< 类型别名
         typedef std::forward_iterator_tag iterator_category; ///< 类型别名
-        typedef std::ptrdiff_t            difference_type;   ///< 类型别名
+        typedef std::ptrdiff_t            difference_type; ///< 类型别名
 
         /**
          * @brief 接受迭代器组的构造函数。

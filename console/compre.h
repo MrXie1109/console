@@ -155,7 +155,7 @@ namespace console {
          */
         template <class Cont> Cont to() {
             return Cont(std::make_move_iterator(vec.begin()),
-                        std::make_move_iterator(vec.end()));
+                std::make_move_iterator(vec.end()));
         }
 
         /**
@@ -202,10 +202,11 @@ namespace console {
      * @return Comprehension<typename Cont::value_type> 新构造的 Comprehension。
      */
     template <class Cont>
-    inline auto compre(const Cont &cont, size_t start_pos, size_t end_pos)
-        -> Comprehension<typename Cont::value_type> {
-        return Comprehension<typename Cont::value_type>(cont, start_pos,
-                                                        end_pos);
+    inline auto compre(const Cont &cont,
+        size_t                     start_pos,
+        size_t end_pos) -> Comprehension<typename Cont::value_type> {
+        return Comprehension<typename Cont::value_type>(
+            cont, start_pos, end_pos);
     }
 
     /**
@@ -217,10 +218,11 @@ namespace console {
      * @return Comprehension<typename Cont::value_type> 新构造的 Comprehension。
      */
     template <class Cont>
-    inline auto compre(Cont &&cont, size_t start_pos, size_t end_pos)
-        -> Comprehension<typename Cont::value_type> {
-        return Comprehension<typename Cont::value_type>(std::move(cont),
-                                                        start_pos, end_pos);
+    inline auto compre(Cont &&cont,
+        size_t                start_pos,
+        size_t end_pos) -> Comprehension<typename Cont::value_type> {
+        return Comprehension<typename Cont::value_type>(
+            std::move(cont), start_pos, end_pos);
     }
 
     /**

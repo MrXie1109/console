@@ -64,7 +64,7 @@ namespace console {
         enum class Level : int8_t { DEBUG, INFO, WARN, ERROR, FATAL };
 
     private:
-        Output output;   ///< 输出器
+        Output output; ///< 输出器
         bool   colorful; ///< 是否启用颜色
         bool settings[5]; ///< 每个级别的开关，索引对应 Level 枚举值
 
@@ -101,8 +101,9 @@ namespace console {
          * @param cf 是否启用颜色，默认 false。
          * @param lvl 最低日志级别，默认 INFO。
          */
-        Logging(std::ostream &os = std::clog, bool cf = false,
-                Level lvl = Level::INFO) :
+        Logging(std::ostream &os  = std::clog,
+            bool              cf  = false,
+            Level             lvl = Level::INFO) :
             output(os, "", "\n", true), colorful(cf) {
             set(lvl);
         }
@@ -115,8 +116,12 @@ namespace console {
         template <class... Args> void debug(const Args &...args) {
             if (settings[0]) {
                 if (colorful)
-                    output(color::BrightBlack, '[', datetime(), "] [DEBUG] - ",
-                           args..., color::Reset);
+                    output(color::BrightBlack,
+                        '[',
+                        datetime(),
+                        "] [DEBUG] - ",
+                        args...,
+                        color::Reset);
                 else
                     output('[', datetime(), "] [DEBUG] - ", args...);
             }
@@ -130,8 +135,12 @@ namespace console {
         template <class... Args> void info(const Args &...args) {
             if (settings[1]) {
                 if (colorful)
-                    output(color::BrightCyan, '[', datetime(), "] [.INFO] - ",
-                           args..., color::Reset);
+                    output(color::BrightCyan,
+                        '[',
+                        datetime(),
+                        "] [.INFO] - ",
+                        args...,
+                        color::Reset);
                 else
                     output('[', datetime(), "] [.INFO] - ", args...);
             }
@@ -145,8 +154,12 @@ namespace console {
         template <class... Args> void warn(const Args &...args) {
             if (settings[2]) {
                 if (colorful)
-                    output(color::BrightYellow, '[', datetime(), "] [.WARN] - ",
-                           args..., color::Reset);
+                    output(color::BrightYellow,
+                        '[',
+                        datetime(),
+                        "] [.WARN] - ",
+                        args...,
+                        color::Reset);
                 else
                     output('[', datetime(), "] [.WARN] - ", args...);
             }
@@ -160,8 +173,12 @@ namespace console {
         template <class... Args> void error(const Args &...args) {
             if (settings[3]) {
                 if (colorful)
-                    output(color::BrightRed, '[', datetime(), "] [ERROR] - ",
-                           args..., color::Reset);
+                    output(color::BrightRed,
+                        '[',
+                        datetime(),
+                        "] [ERROR] - ",
+                        args...,
+                        color::Reset);
                 else
                     output('[', datetime(), "] [ERROR] - ", args...);
             }
@@ -177,8 +194,12 @@ namespace console {
             std::string error_info(to_string(args...));
             if (settings[4]) {
                 if (colorful)
-                    output(color::BrightMagenta, '[', datetime(),
-                           "] [FATAL] - ", error_info, color::Reset);
+                    output(color::BrightMagenta,
+                        '[',
+                        datetime(),
+                        "] [FATAL] - ",
+                        error_info,
+                        color::Reset);
                 else
                     output('[', datetime(), "] [FATAL] - ", error_info);
             }
@@ -194,6 +215,6 @@ namespace console {
         return instance;
     }
 
-    static Logging &logger =
-        get_logger(); ///< 全局默认 logger 实例，启用颜色，级别 INFO。
+    static Logging &logger
+        = get_logger(); ///< 全局默认 logger 实例，启用颜色，级别 INFO。
 }

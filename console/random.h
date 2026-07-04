@@ -36,7 +36,7 @@ SOFTWARE.
 #include <random>
 #include <utility>
 
-#include "csexc.h"  // for ContainerError
+#include "csexc.h" // for ContainerError
 #include "sfinae.h" // for uniform_distribution_t
 
 namespace console {
@@ -129,8 +129,8 @@ namespace console {
      * @throw ContainerError 如果容器为空。
      */
     template <class C>
-    typename C::const_reference choice(const C      &c,
-                                       std::mt19937 &gen = default_gen()) {
+    typename C::const_reference
+    choice(const C &c, std::mt19937 &gen = default_gen()) {
         if (std::begin(c) == std::end(c))
             throw ContainerError("Empty container");
         return *std::next(std::begin(c), randint<size_t>(0, c.size() - 1, gen));
@@ -176,8 +176,8 @@ namespace console {
         if (std::begin(c) == std::end(c)) return;
         for (size_t i = c.size() - 1; i > 0; i--) {
             auto j = randint<size_t>(0, i, gen);
-            std::swap(*std::next(std::begin(c), i),
-                      *std::next(std::begin(c), j));
+            std::swap(
+                *std::next(std::begin(c), i), *std::next(std::begin(c), j));
         }
     }
 
@@ -191,8 +191,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rnorm(size_t n, T mean = 0.0, T sd = 1.0,
-                         std::mt19937 &gen = default_gen()) {
+    std::vector<T> rnorm(
+        size_t n, T mean = 0.0, T sd = 1.0, std::mt19937 &gen = default_gen()) {
         std::vector<T>              vec(n);
         std::normal_distribution<T> dist(mean, sd);
         for (T &t : vec) t = dist(gen);
@@ -209,8 +209,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> runif(size_t n, T min = 0.0, T max = 1.0,
-                         std::mt19937 &gen = default_gen()) {
+    std::vector<T> runif(
+        size_t n, T min = 0.0, T max = 1.0, std::mt19937 &gen = default_gen()) {
         std::vector<T>            vec(n);
         uniform_distribution_t<T> dist(min, max);
         for (T &t : vec) t = dist(gen);
@@ -227,8 +227,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = int>
-    std::vector<T> rbinom(size_t n, T size, double prob,
-                          std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rbinom(size_t n, T size, double prob, std::mt19937 &gen = default_gen()) {
         std::vector<T>                vec(n);
         std::binomial_distribution<T> dist(size, prob);
         for (T &t : vec) t = dist(gen);
@@ -244,8 +244,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = int>
-    std::vector<T> rpois(size_t n, double lambda,
-                         std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rpois(size_t n, double lambda, std::mt19937 &gen = default_gen()) {
         std::vector<T>               vec(n);
         std::poisson_distribution<T> dist(lambda);
         for (T &t : vec) t = dist(gen);
@@ -261,8 +261,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rexp(size_t n, T rate = 1.0,
-                        std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rexp(size_t n, T rate = 1.0, std::mt19937 &gen = default_gen()) {
         std::vector<T>                   vec(n);
         std::exponential_distribution<T> dist(rate);
         for (T &t : vec) t = dist(gen);
@@ -280,8 +280,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rgamma(size_t n, T shape, T rate = 1.0,
-                          std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rgamma(size_t n, T shape, T rate = 1.0, std::mt19937 &gen = default_gen()) {
         std::vector<T>             vec(n);
         std::gamma_distribution<T> dist(shape, 1.0 / rate);
         for (T &t : vec) t = dist(gen);
@@ -301,8 +301,8 @@ namespace console {
      */
 
     template <class T = double>
-    std::vector<T> rbeta(size_t n, T shape1, T shape2,
-                         std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rbeta(size_t n, T shape1, T shape2, std::mt19937 &gen = default_gen()) {
         std::vector<T>             vec(n);
         std::gamma_distribution<T> dist_a(shape1, 1.0);
         std::gamma_distribution<T> dist_b(shape2, 1.0);
@@ -354,8 +354,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rf(size_t n, T df1, T df2,
-                      std::mt19937 &gen = default_gen()) {
+    std::vector<T>
+    rf(size_t n, T df1, T df2, std::mt19937 &gen = default_gen()) {
         std::vector<T>                vec(n);
         std::fisher_f_distribution<T> dist(df1, df2);
         for (T &t : vec) t = dist(gen);
@@ -372,8 +372,10 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rlnorm(size_t n, T meanlog = 0.0, T sdlog = 1.0,
-                          std::mt19937 &gen = default_gen()) {
+    std::vector<T> rlnorm(size_t n,
+        T                        meanlog = 0.0,
+        T                        sdlog   = 1.0,
+        std::mt19937            &gen     = default_gen()) {
         std::vector<T>                 vec(n);
         std::lognormal_distribution<T> dist(meanlog, sdlog);
         for (T &t : vec) t = dist(gen);
@@ -390,8 +392,8 @@ namespace console {
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
-    std::vector<T> rweibull(size_t n, T shape, T scale = 1.0,
-                            std::mt19937 &gen = default_gen()) {
+    std::vector<T> rweibull(
+        size_t n, T shape, T scale = 1.0, std::mt19937 &gen = default_gen()) {
         std::vector<T>               vec(n);
         std::weibull_distribution<T> dist(shape, scale);
         for (T &t : vec) t = dist(gen);
@@ -411,9 +413,10 @@ namespace console {
      * @note 对非随机访问容器效果不佳，这并非设计缺陷。
      */
     template <class C>
-    std::vector<typename C::value_type>
-    sample(const C &c, size_t size, bool replace = false,
-           std::mt19937 &gen = default_gen()) {
+    std::vector<typename C::value_type> sample(const C &c,
+        size_t                                          size,
+        bool                                            replace = false,
+        std::mt19937                                   &gen = default_gen()) {
         using value_type = typename C::value_type;
         std::vector<value_type> result;
         result.reserve(size);
@@ -426,8 +429,7 @@ namespace console {
                 "Sample size exceeds container size when replace=false");
         if (replace)
             for (size_t i = 0; i < size; ++i) {
-                result.push_back(*std::next(
-                    it_begin,
+                result.push_back(*std::next(it_begin,
                     std::uniform_int_distribution<size_t>(0, n - 1)(gen)));
             }
         else {
@@ -453,9 +455,10 @@ namespace console {
      * @note 对非随机访问容器效果不佳，这并非设计缺陷。
      */
     template <class T>
-    std::vector<T> sample(std::initializer_list<T> init, size_t size,
-                          bool          replace = false,
-                          std::mt19937 &gen     = default_gen()) {
+    std::vector<T> sample(std::initializer_list<T> init,
+        size_t                                     size,
+        bool                                       replace = false,
+        std::mt19937                              &gen     = default_gen()) {
         return sample<std::initializer_list<T>>(init, size, replace, gen);
     }
 

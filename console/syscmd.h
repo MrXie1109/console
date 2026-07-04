@@ -65,8 +65,8 @@ namespace console {
          * @brief 友元声明，仅允许 syscmd 创建实例。
          */
         friend CmdResult syscmd(const std::string &,
-                                const std::vector<std::string> &,
-                                const std::map<std::string, std::string> &);
+            const std::vector<std::string> &,
+            const std::map<std::string, std::string> &);
 
     public:
         /**
@@ -120,9 +120,9 @@ namespace console {
      * @endcode
      * @warning 函数阻塞直到命令执行完毕。
      */
-    inline CmdResult
-    syscmd(const std::string &exe, const std::vector<std::string> &args = {},
-           const std::map<std::string, std::string> &kwargs = {}) {
+    inline CmdResult syscmd(const std::string    &exe,
+        const std::vector<std::string>           &args   = {},
+        const std::map<std::string, std::string> &kwargs = {}) {
         std::string cmd = exe;
         for (const std::string &arg : args) cmd += " " + arg;
         for (const auto &kwarg : kwargs)

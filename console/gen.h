@@ -175,9 +175,8 @@ namespace console {
          * @tparam Iter 迭代器类型。
          */
         template <class Iter>
-        class Views
-            : public Generator<Views<Iter>, typename std::iterator_traits<
-                                                Iter>::value_type> {
+        class Views : public Generator<Views<Iter>,
+                          typename std::iterator_traits<Iter>::value_type> {
             Iter curr;
             Iter end_;
 
@@ -411,8 +410,7 @@ namespace console {
          */
         template <class Gen, class Func>
         class Map
-            : public Generator<
-                  Map<Gen, Func>,
+            : public Generator<Map<Gen, Func>,
                   decltype(std::declval<Func>()(
                       std::declval<typename Gen::iterator::value_type>()))> {
             Gen  gen;
@@ -452,7 +450,7 @@ namespace console {
          */
         template <class Gen, class Pred>
         class Filter : public Generator<Filter<Gen, Pred>,
-                                        typename Gen::iterator::value_type> {
+                           typename Gen::iterator::value_type> {
             Gen  gen;
             Pred pred;
             bool started = false;
@@ -592,8 +590,7 @@ namespace console {
          */
         template <class Gen>
         class Enumerate
-            : public Generator<
-                  Enumerate<Gen>,
+            : public Generator<Enumerate<Gen>,
                   std::pair<int, typename Gen::iterator::value_type>> {
             Gen gen;
             int index = 0;
@@ -634,7 +631,7 @@ namespace console {
          */
         template <class Func>
         class Generate : public Generator<Generate<Func>,
-                                          decltype(std::declval<Func>()())> {
+                             decltype(std::declval<Func>()())> {
             Func             func;
             decltype(func()) curr;
 
@@ -670,8 +667,8 @@ namespace console {
          */
         template <class Gen1, class Gen2>
         class Zip : public Generator<Zip<Gen1, Gen2>,
-                                     std::pair<typename Gen1::value_type,
-                                               typename Gen2::value_type>> {
+                        std::pair<typename Gen1::value_type,
+                            typename Gen2::value_type>> {
             Gen1 gen1;
             Gen2 gen2;
 
@@ -1025,8 +1022,8 @@ namespace console {
         Zip<typename std::decay<Gen1>::type, typename std::decay<Gen2>::type>
         zip(Gen1 &&g1, Gen2 &&g2) {
             return Zip<typename std::decay<Gen1>::type,
-                       typename std::decay<Gen2>::type>(std::forward<Gen1>(g1),
-                                                        std::forward<Gen2>(g2));
+                typename std::decay<Gen2>::type>(
+                std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
 
         /**
@@ -1160,9 +1157,8 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(Gen1 &&g1, Gen2 &&g2)
-            -> decltype(gen::zip(std::forward<Gen1>(g1),
-                                 std::forward<Gen2>(g2))) {
+        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
+            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }
@@ -1268,8 +1264,8 @@ namespace console {
              * @return ++x。
              */
             template <class T>
-            auto operator()(T x) const ->
-                typename std::decay<decltype(++x)>::type {
+            auto
+            operator()(T x) const -> typename std::decay<decltype(++x)>::type {
                 return ++x;
             }
         };
@@ -1286,8 +1282,8 @@ namespace console {
              * @return --x。
              */
             template <class T>
-            auto operator()(T x) const ->
-                typename std::decay<decltype(--x)>::type {
+            auto
+            operator()(T x) const -> typename std::decay<decltype(--x)>::type {
                 return --x;
             }
         };
@@ -1897,6 +1893,64 @@ namespace console {
          */
         template <class P> Not<P> operator!(P p) {
             return {p};
+        }
+
+        /**
+         * @brief 函数组合器，将两个函数组合为一个函数。
+         * @tparam F 第一个函数类型。
+         * @tparam G 第二个函数类型。
+         */
+        template <class F, class G> struct Compose {
+            F f;
+            G g;
+
+            /**
+             * @brief 对输入值应用两个函数的组合。
+             * @tparam T 输入值类型。
+             * @param x 输入值。
+             * @return g(f(x))。
+             */
+            template <class T> auto operator()(T x) const -> decltype(g(f(x))) {
+                return g(f(x));
+            }
+        };
+
+        /**
+         * @brief 将两个函数组合为一个函数。
+         * @tparam F 第一个函数类型。
+         * @tparam G 第二个函数类型。
+         * @param f 第一个函数。
+         * @param g 第二个函数。
+         * @return Compose<F, G> 组合后的函数。
+         */
+        template <class F, class G> Compose<F, G> compose(F f, G g) {
+            return {f, g};
+        }
+
+        /**
+         * @brief 将多个函数组合为一个函数。
+         * @tparam F 第一个函数类型。
+         * @tparam ...Rest 其余函数类型。
+         * @param f 第一个函数。
+         * @param rest 其余函数。
+         * @return Compose<F, Compose<Rest...>> 组合后的函数。
+         */
+        template <class F, class... Rest>
+        auto
+        compose(F f, Rest... rest) -> Compose<F, decltype(compose(rest...))> {
+            return {f, compose(rest...)};
+        }
+
+        /**
+         * @brief 函数组合运算符，将两个函数组合为一个函数。
+         * @tparam F 第一个函数类型。
+         * @tparam G 第二个函数类型。
+         * @param f 第一个函数。
+         * @param g 第二个函数。
+         * @return Compose<F, G> 组合后的函数。
+         */
+        template <class F, class G> Compose<F, G> operator>>(F f, G g) {
+            return {f, g};
         }
     }
 }

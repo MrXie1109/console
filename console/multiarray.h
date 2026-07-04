@@ -129,24 +129,24 @@ namespace console {
          */
         reference operator()(size_t i) {
             if (i >= D)
-                throw MultiArrayError("index " + std::to_string(i) +
-                                      " out of range [0, " + std::to_string(D) +
-                                      ')');
+                throw MultiArrayError("index " + std::to_string(i)
+                                      + " out of range [0, " + std::to_string(D)
+                                      + ')');
             return (*this)[i];
         }
 
         /// @brief 常量版本。
         const_reference operator()(size_t i) const {
             if (i >= D)
-                throw MultiArrayError("index " + std::to_string(i) +
-                                      " out of range [0, " + std::to_string(D) +
-                                      ')');
+                throw MultiArrayError("index " + std::to_string(i)
+                                      + " out of range [0, " + std::to_string(D)
+                                      + ')');
             return (*this)[i];
         }
 
         /// @brief 输出 MultiArray 到流，格式为嵌套的方括号。
-        friend std::ostream &operator<<(std::ostream     &os,
-                                        const MultiArray &ma) {
+        friend std::ostream &
+        operator<<(std::ostream &os, const MultiArray &ma) {
             if (ma.begin() == ma.end()) return os << "[]";
             auto it = ma.begin();
             os << '[';
@@ -262,18 +262,18 @@ namespace console {
          */
         reference operator()(size_t idx) {
             if (idx >= First)
-                throw MultiArrayError("index " + std::to_string(idx) +
-                                      " out of range [0, " +
-                                      std::to_string(First) + ')');
+                throw MultiArrayError("index " + std::to_string(idx)
+                                      + " out of range [0, "
+                                      + std::to_string(First) + ')');
             return base_type::operator[](idx);
         }
 
         /// @brief 常量版本。
         const_reference operator()(size_t idx) const {
             if (idx >= First)
-                throw MultiArrayError("index " + std::to_string(idx) +
-                                      " out of range [0, " +
-                                      std::to_string(First) + ')');
+                throw MultiArrayError("index " + std::to_string(idx)
+                                      + " out of range [0, "
+                                      + std::to_string(First) + ')');
             return base_type::operator[](idx);
         }
 
@@ -285,13 +285,13 @@ namespace console {
          * @return 最终元素的引用（若索引数量等于维数）或子数组引用（若不足）。
          */
         template <class... Indices>
-        auto operator()(size_t idx, Indices... rest)
-            -> decltype(base_type::operator[](idx)(rest...)) {
+        auto operator()(size_t idx,
+            Indices... rest) -> decltype(base_type::operator[](idx)(rest...)) {
             static_assert(sizeof...(Indices) < rank(), "Too Many Arguments!");
             if (idx >= First)
-                throw MultiArrayError("index " + std::to_string(idx) +
-                                      " out of range [0, " +
-                                      std::to_string(First) + ')');
+                throw MultiArrayError("index " + std::to_string(idx)
+                                      + " out of range [0, "
+                                      + std::to_string(First) + ')');
             return base_type::operator[](idx)(rest...);
         }
 
@@ -301,15 +301,15 @@ namespace console {
             -> decltype(base_type::operator[](idx)(rest...)) {
             static_assert(sizeof...(Indices) < rank(), "Too Many Arguments!");
             if (idx >= First)
-                throw MultiArrayError("index " + std::to_string(idx) +
-                                      " out of range [0, " +
-                                      std::to_string(First) + ')');
+                throw MultiArrayError("index " + std::to_string(idx)
+                                      + " out of range [0, "
+                                      + std::to_string(First) + ')');
             return base_type::operator[](idx)(rest...);
         }
 
         /// @brief 输出 MultiArray 到流，递归输出嵌套方括号。
-        friend std::ostream &operator<<(std::ostream     &os,
-                                        const MultiArray &ma) {
+        friend std::ostream &
+        operator<<(std::ostream &os, const MultiArray &ma) {
             if (ma.begin() == ma.end()) return os << "[]";
             auto it = ma.begin();
             os << '[' << *it;
@@ -375,8 +375,8 @@ namespace console {
      * @return MultiArray<T, Dims...> 逐元素和。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator+(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator+(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -389,8 +389,8 @@ namespace console {
      * @brief 元素减法（数组 - 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator-(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator-(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -403,8 +403,8 @@ namespace console {
      * @brief 元素乘法（数组 * 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator*(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator*(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -417,8 +417,8 @@ namespace console {
      * @brief 元素除法（数组 / 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator/(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator/(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -431,8 +431,8 @@ namespace console {
      * @brief 元素取模（数组 % 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator%(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator%(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -445,8 +445,8 @@ namespace console {
      * @brief 元素加法赋值（数组 += 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator+=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator+=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ += *bi++;
@@ -457,8 +457,8 @@ namespace console {
      * @brief 元素减法赋值（数组 -= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator-=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator-=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ -= *bi++;
@@ -469,8 +469,8 @@ namespace console {
      * @brief 元素乘法赋值（数组 *= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator*=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator*=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ *= *bi++;
@@ -481,8 +481,8 @@ namespace console {
      * @brief 元素除法赋值（数组 /= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator/=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator/=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ /= *bi++;
@@ -493,8 +493,8 @@ namespace console {
      * @brief 元素取模赋值（数组 %= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator%=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator%=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ %= *bi++;
@@ -505,8 +505,8 @@ namespace console {
      * @brief 元素相等比较（数组 == 数组），返回 bool 数组。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator==(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator==(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -519,8 +519,8 @@ namespace console {
      * @brief 元素不等比较（数组 != 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator!=(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator!=(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -533,8 +533,8 @@ namespace console {
      * @brief 元素小于比较（数组 < 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator<(const MultiArray<T, Dims...> &a,
-                                        const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator<(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -547,8 +547,8 @@ namespace console {
      * @brief 元素大于比较（数组 > 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator>(const MultiArray<T, Dims...> &a,
-                                        const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator>(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -561,8 +561,8 @@ namespace console {
      * @brief 元素小于等于比较（数组 <= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator<=(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator<=(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -575,8 +575,8 @@ namespace console {
      * @brief 元素大于等于比较（数组 >= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator>=(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator>=(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -590,8 +590,8 @@ namespace console {
      * @brief 数组 + 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator+(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator+(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -603,8 +603,8 @@ namespace console {
      * @brief 数组 - 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator-(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator-(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -616,8 +616,8 @@ namespace console {
      * @brief 数组 * 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator*(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator*(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -629,8 +629,8 @@ namespace console {
      * @brief 数组 / 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator/(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator/(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -642,8 +642,8 @@ namespace console {
      * @brief 数组 % 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator%(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator%(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -655,8 +655,8 @@ namespace console {
      * @brief 数组 += 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator+=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator+=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref += value; });
         return a;
     }
@@ -665,8 +665,8 @@ namespace console {
      * @brief 数组 -= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator-=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator-=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref -= value; });
         return a;
     }
@@ -675,8 +675,8 @@ namespace console {
      * @brief 数组 *= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator*=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator*=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref *= value; });
         return a;
     }
@@ -685,8 +685,8 @@ namespace console {
      * @brief 数组 /= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator/=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator/=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref /= value; });
         return a;
     }
@@ -695,8 +695,8 @@ namespace console {
      * @brief 数组 %= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator%=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator%=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref %= value; });
         return a;
     }
@@ -706,8 +706,8 @@ namespace console {
      * @brief 标量 + 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator+(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator+(const U &value, const MultiArray<T, Dims...> &a) {
         return a + value;
     }
 
@@ -715,8 +715,8 @@ namespace console {
      * @brief 标量 - 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator-(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator-(const U &value, const MultiArray<T, Dims...> &a) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -728,8 +728,8 @@ namespace console {
      * @brief 标量 * 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator*(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator*(const U &value, const MultiArray<T, Dims...> &a) {
         return a * value;
     }
 
@@ -737,8 +737,8 @@ namespace console {
      * @brief 标量 / 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator/(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator/(const U &value, const MultiArray<T, Dims...> &a) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -750,8 +750,8 @@ namespace console {
      * @brief 标量 % 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator%(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator%(const U &value, const MultiArray<T, Dims...> &a) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -809,8 +809,8 @@ namespace console {
      * @brief 数组 == 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator==(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator==(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -822,8 +822,8 @@ namespace console {
      * @brief 数组 != 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator!=(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator!=(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -835,8 +835,8 @@ namespace console {
      * @brief 数组 < 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator<(const MultiArray<T, Dims...> &a,
-                                        const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator<(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -848,8 +848,8 @@ namespace console {
      * @brief 数组 > 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator>(const MultiArray<T, Dims...> &a,
-                                        const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator>(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -861,8 +861,8 @@ namespace console {
      * @brief 数组 <= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator<=(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator<=(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -874,8 +874,8 @@ namespace console {
      * @brief 数组 >= 标量。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator>=(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator>=(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -888,8 +888,8 @@ namespace console {
      * @brief 标量 == 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator==(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator==(const U &value, const MultiArray<T, Dims...> &a) {
         return a == value;
     }
 
@@ -897,8 +897,8 @@ namespace console {
      * @brief 标量 != 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator!=(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator!=(const U &value, const MultiArray<T, Dims...> &a) {
         return a != value;
     }
 
@@ -906,8 +906,8 @@ namespace console {
      * @brief 标量 < 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator<(const U                      &value,
-                                        const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator<(const U &value, const MultiArray<T, Dims...> &a) {
         return a > value;
     }
 
@@ -915,8 +915,8 @@ namespace console {
      * @brief 标量 > 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator>(const U                      &value,
-                                        const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator>(const U &value, const MultiArray<T, Dims...> &a) {
         return a < value;
     }
 
@@ -924,8 +924,8 @@ namespace console {
      * @brief 标量 <= 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator<=(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator<=(const U &value, const MultiArray<T, Dims...> &a) {
         return a >= value;
     }
 
@@ -933,8 +933,8 @@ namespace console {
      * @brief 标量 >= 数组。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator>=(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator>=(const U &value, const MultiArray<T, Dims...> &a) {
         return a <= value;
     }
 
@@ -943,8 +943,8 @@ namespace console {
      * @brief 逻辑与（数组 && 数组），返回 bool 数组。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator&&(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator&&(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -957,8 +957,8 @@ namespace console {
      * @brief 逻辑或（数组 || 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<bool, Dims...> operator||(const MultiArray<T, Dims...> &a,
-                                         const MultiArray<T, Dims...> &b) {
+    MultiArray<bool, Dims...> operator||(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<bool, Dims...> c;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -972,8 +972,8 @@ namespace console {
      * @brief 逻辑与（数组 && 标量）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator&&(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator&&(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -985,8 +985,8 @@ namespace console {
      * @brief 逻辑或（数组 || 标量）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator||(const MultiArray<T, Dims...> &a,
-                                         const U                      &value) {
+    MultiArray<bool, Dims...>
+    operator||(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<bool, Dims...> b;
         auto                      ai = a.fbegin();
         auto                      bi = b.fbegin();
@@ -998,8 +998,8 @@ namespace console {
      * @brief 逻辑与（标量 && 数组）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator&&(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator&&(const U &value, const MultiArray<T, Dims...> &a) {
         return a && value;
     }
 
@@ -1007,8 +1007,8 @@ namespace console {
      * @brief 逻辑或（标量 || 数组）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<bool, Dims...> operator||(const U                      &value,
-                                         const MultiArray<T, Dims...> &a) {
+    MultiArray<bool, Dims...>
+    operator||(const U &value, const MultiArray<T, Dims...> &a) {
         return a || value;
     }
 
@@ -1017,8 +1017,8 @@ namespace console {
      * @brief 按位与（数组 & 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator&(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator&(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1031,8 +1031,8 @@ namespace console {
      * @brief 按位或（数组 | 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator|(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator|(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1045,8 +1045,8 @@ namespace console {
      * @brief 按位异或（数组 ^ 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator^(const MultiArray<T, Dims...> &a,
-                                     const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator^(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1059,8 +1059,8 @@ namespace console {
      * @brief 左移（数组 << 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator<<(const MultiArray<T, Dims...> &a,
-                                      const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator<<(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1073,8 +1073,8 @@ namespace console {
      * @brief 右移（数组 >> 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> operator>>(const MultiArray<T, Dims...> &a,
-                                      const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> operator>>(
+        const MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         MultiArray<T, Dims...> c;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1087,8 +1087,8 @@ namespace console {
      * @brief 按位与赋值（数组 &= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator&=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator&=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ &= *bi++;
@@ -1099,8 +1099,8 @@ namespace console {
      * @brief 按位或赋值（数组 |= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator|=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator|=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ |= *bi++;
@@ -1111,8 +1111,8 @@ namespace console {
      * @brief 按位异或赋值（数组 ^= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator^=(MultiArray<T, Dims...>       &a,
-                                       const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator^=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ ^= *bi++;
@@ -1123,8 +1123,8 @@ namespace console {
      * @brief 左移赋值（数组 <<= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator<<=(MultiArray<T, Dims...>       &a,
-                                        const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator<<=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ <<= *bi++;
@@ -1135,8 +1135,8 @@ namespace console {
      * @brief 右移赋值（数组 >>= 数组）。
      */
     template <class T, size_t... Dims>
-    MultiArray<T, Dims...> &operator>>=(MultiArray<T, Dims...>       &a,
-                                        const MultiArray<T, Dims...> &b) {
+    MultiArray<T, Dims...> &
+    operator>>=(MultiArray<T, Dims...> &a, const MultiArray<T, Dims...> &b) {
         auto ai = a.fbegin();
         auto bi = b.fbegin();
         while (ai != a.fend()) *ai++ >>= *bi++;
@@ -1148,8 +1148,8 @@ namespace console {
      * @brief 数组 & 标量（按位与）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator&(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator&(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1161,8 +1161,8 @@ namespace console {
      * @brief 数组 | 标量（按位或）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator|(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator|(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1174,8 +1174,8 @@ namespace console {
      * @brief 数组 ^ 标量（按位异或）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator^(const MultiArray<T, Dims...> &a,
-                                     const U                      &value) {
+    MultiArray<T, Dims...>
+    operator^(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1187,8 +1187,8 @@ namespace console {
      * @brief 数组 << 标量（左移）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator<<(const MultiArray<T, Dims...> &a,
-                                      const U                      &value) {
+    MultiArray<T, Dims...>
+    operator<<(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1200,8 +1200,8 @@ namespace console {
      * @brief 数组 >> 标量（右移）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator>>(const MultiArray<T, Dims...> &a,
-                                      const U                      &value) {
+    MultiArray<T, Dims...>
+    operator>>(const MultiArray<T, Dims...> &a, const U &value) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1213,8 +1213,8 @@ namespace console {
      * @brief 标量 & 数组（按位与，对称调用）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator&(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator&(const U &value, const MultiArray<T, Dims...> &a) {
         return a & value;
     }
 
@@ -1222,8 +1222,8 @@ namespace console {
      * @brief 标量 | 数组（按位或，对称调用）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator|(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator|(const U &value, const MultiArray<T, Dims...> &a) {
         return a | value;
     }
 
@@ -1231,8 +1231,8 @@ namespace console {
      * @brief 标量 ^ 数组（按位异或，对称调用）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator^(const U                      &value,
-                                     const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator^(const U &value, const MultiArray<T, Dims...> &a) {
         return a ^ value;
     }
 
@@ -1240,8 +1240,8 @@ namespace console {
      * @brief 标量 << 数组（左移，标量左移数组每位）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator<<(const U                      &value,
-                                      const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator<<(const U &value, const MultiArray<T, Dims...> &a) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1253,8 +1253,8 @@ namespace console {
      * @brief 标量 >> 数组（右移，标量右移数组每位）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> operator>>(const U                      &value,
-                                      const MultiArray<T, Dims...> &a) {
+    MultiArray<T, Dims...>
+    operator>>(const U &value, const MultiArray<T, Dims...> &a) {
         MultiArray<T, Dims...> b;
         auto                   ai = a.fbegin();
         auto                   bi = b.fbegin();
@@ -1266,8 +1266,8 @@ namespace console {
      * @brief 数组 &= 标量（按位与赋值）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator&=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator&=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref &= value; });
         return a;
     }
@@ -1276,8 +1276,8 @@ namespace console {
      * @brief 数组 |= 标量（按位或赋值）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator|=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator|=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref |= value; });
         return a;
     }
@@ -1286,8 +1286,8 @@ namespace console {
      * @brief 数组 ^= 标量（按位异或赋值）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator^=(MultiArray<T, Dims...> &a,
-                                       const U                &value) {
+    MultiArray<T, Dims...> &
+    operator^=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref ^= value; });
         return a;
     }
@@ -1296,8 +1296,8 @@ namespace console {
      * @brief 数组 <<= 标量（左移赋值）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator<<=(MultiArray<T, Dims...> &a,
-                                        const U                &value) {
+    MultiArray<T, Dims...> &
+    operator<<=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref <<= value; });
         return a;
     }
@@ -1306,8 +1306,8 @@ namespace console {
      * @brief 数组 >>= 标量（右移赋值）。
      */
     template <class T, size_t... Dims, class U>
-    MultiArray<T, Dims...> &operator>>=(MultiArray<T, Dims...> &a,
-                                        const U                &value) {
+    MultiArray<T, Dims...> &
+    operator>>=(MultiArray<T, Dims...> &a, const U &value) {
         a.for_each([&](T &ref) { ref >>= value; });
         return a;
     }
@@ -1393,9 +1393,9 @@ namespace console {
     template <size_t... OutArrDims, class VarType, size_t... InArrDims>
     MultiArray<VarType, OutArrDims...>
     multiarray_cast(const MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize() ==
-                          MultiArray<VarType, InArrDims...>::fsize(),
-                      "Bad multiarray_cast: Mismatch Size");
+        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
+                          == MultiArray<VarType, InArrDims...>::fsize(),
+            "Bad multiarray_cast: Mismatch Size");
         MultiArray<VarType, OutArrDims...> outputArr;
         std::copy(inputArr.fbegin(), inputArr.fend(), outputArr.fbegin());
         return outputArr;
@@ -1413,8 +1413,10 @@ namespace console {
      * 直接复制内存，要求源和目标总字节数相同，且类型是平凡可复制的。
      *          不进行任何类型检查，可能导致未定义行为。
      */
-    template <class OutType, size_t... OutArrDims, class InType,
-              size_t... InArrDims>
+    template <class OutType,
+        size_t... OutArrDims,
+        class InType,
+        size_t... InArrDims>
     MultiArray<OutType, OutArrDims...>
     unsafe_multiarray_cast(const MultiArray<InType, InArrDims...> &inputArr) {
         MultiArray<OutType, OutArrDims...> outputArr;
@@ -1434,11 +1436,11 @@ namespace console {
     template <size_t... OutArrDims, class VarType, size_t... InArrDims>
     MultiArray<VarType, OutArrDims...> &
     inplace_multiarray_cast(MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize() ==
-                          MultiArray<VarType, InArrDims...>::fsize(),
-                      "Bad inplace_multiarray_cast: Mismatch Size");
-        auto p =
-            reinterpret_cast<MultiArray<VarType, OutArrDims...> &>(inputArr);
+        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
+                          == MultiArray<VarType, InArrDims...>::fsize(),
+            "Bad inplace_multiarray_cast: Mismatch Size");
+        auto p
+            = reinterpret_cast<MultiArray<VarType, OutArrDims...> &>(inputArr);
         return *p;
     }
 
@@ -1454,9 +1456,9 @@ namespace console {
     template <size_t... OutArrDims, class VarType, size_t... InArrDims>
     const MultiArray<VarType, OutArrDims...> &
     inplace_multiarray_cast(const MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize() ==
-                          MultiArray<VarType, InArrDims...>::fsize(),
-                      "Bad inplace_multiarray_cast: Mismatch Size");
+        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
+                          == MultiArray<VarType, InArrDims...>::fsize(),
+            "Bad inplace_multiarray_cast: Mismatch Size");
         auto p = reinterpret_cast<const MultiArray<VarType, OutArrDims...> &>(
             inputArr);
         return *p;
