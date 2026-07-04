@@ -99,7 +99,8 @@ SOFTWARE.)";
      * -- "Commit Message"。
      */
     inline std::string version() {
-        return "console version 5.7.2 (2026-06-28) -- \"To Someplace.\"";
+        return "console version 5.8.0 (2026-07-04) -- \"Happy Summer "
+               "Vacation!\"";
     }
 
     /**

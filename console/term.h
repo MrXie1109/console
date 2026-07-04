@@ -42,7 +42,7 @@ SOFTWARE.
 #define NOATOM              // 不包含原子操作
 #define NOGDICAPMASKS       // 不包含 GDI 掩码
 #define NOMETAFILE          // 不包含 MetaFile
-#define NOMINMAX            // 不定义 min/max 宏
+#define NOMINMAX 1          // 不定义 min/max 宏
 #define NOMSG               // 不包含消息结构
 #define NOOPENFILE          // 不包含 OpenFile
 #define NORPC               // 不包含 RPC
@@ -59,7 +59,6 @@ SOFTWARE.
 #define NOMB                // 不包含 MB_* 宏
 #define NOMEMMGR            // 不包含内存管理
 #define NOMETAFILE          // 不包含 MetaFile
-#define NOMINMAX            // 不定义 min/max
 #define NOMSG               // 不包含消息
 #define NOOPENFILE          // 不包含 OpenFile
 #define NOSCROLL            // 不包含滚动条

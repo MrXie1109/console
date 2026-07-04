@@ -357,11 +357,11 @@ namespace console {
         /**
          * @brief 计数器生成器，生成递增或递减的整数序列。
          */
-        class Counter : public Generator<Counter, int> {
-            int curr;
-            int step;
-            int max_count;
-            int count;
+        template <class T> class Counter : public Generator<Counter<T>, T> {
+            T curr;
+            T step;
+            T max_count;
+            T count;
 
         public:
             /**
@@ -369,7 +369,7 @@ namespace console {
              * @param start 起始值，默认为0。
              * @param step 步长，默认为1。
              */
-            Counter(int start = 0, int step = 1) :
+            Counter(T start = 0, T step = 1) :
                 curr(start), step(step), max_count(-1), count(0) {}
 
             /**
@@ -378,7 +378,7 @@ namespace console {
              * @param times 输出次数。
              * @param step 步长，默认为1。
              */
-            Counter(int start, int times, int step) :
+            Counter(T start, T times, T step) :
                 curr(start), step(step), max_count(times), count(0) {}
 
             /**
@@ -392,7 +392,7 @@ namespace console {
              * @brief 获取当前值。
              * @return 当前计数值。
              */
-            int current() { return curr; }
+            T current() { return curr; }
 
             /**
              * @brief 向前移动一步。
@@ -635,14 +635,15 @@ namespace console {
         template <class Func>
         class Generate : public Generator<Generate<Func>,
                                           decltype(std::declval<Func>()())> {
-            Func func;
+            Func             func;
+            decltype(func()) curr;
 
         public:
             /**
              * @brief 构造函数。
              * @param f 生成函数，每次调用返回一个值。
              */
-            Generate(Func f) : func(f) {}
+            Generate(Func f) : func(f), curr(func()) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -654,12 +655,12 @@ namespace console {
              * @brief 获取当前值。
              * @return 调用生成函数返回的值。
              */
-            auto current() -> decltype(func()) { return func(); }
+            decltype(curr) current() { return curr; }
 
             /**
-             * @brief 向前移动一步（无操作）。
+             * @brief 向前移动一步。
              */
-            void advance() {}
+            void advance() { curr = func(); }
         };
 
         /**
@@ -716,6 +717,14 @@ namespace console {
             : public Generator<TakeWhile<Gen, Pred>, typename Gen::value_type> {
             Gen  gen;
             Pred pred;
+            bool stopped = false;
+
+            void try_advance() {
+                if (stopped || gen.done()) return;
+                if (!pred(gen.current())) {
+                    stopped = true;
+                }
+            }
 
         public:
             /**
@@ -727,19 +736,23 @@ namespace console {
 
             /**
              * @brief 检查生成器是否已完成。
-             * @return 如果源生成器已完成或不满足谓词则返回true。
+             * @return 如果源生成器已完成或已停止则返回true。
              */
-            bool done() { return gen.done() || !pred(gen.current()); }
+            bool done() { return gen.done() || stopped; }
 
             /**
              * @brief 获取当前值。
+             * @return 当前值。
              */
             auto current() -> decltype(gen.current()) { return gen.current(); }
 
             /**
              * @brief 向前移动一步。
              */
-            void advance() { gen.advance(); }
+            void advance() {
+                gen.advance();
+                try_advance();
+            }
         };
 
         /**
@@ -852,23 +865,25 @@ namespace console {
 
         /**
          * @brief 创建计数器生成器。
+         * @tparam T 值类型。
          * @param start 起始值，默认为0。
          * @param step 步长，默认为1。
-         * @return Counter 无限计数器。
+         * @return Counter<T> 无限计数器。
          */
-        inline Counter counter(int start = 0, int step = 1) {
-            return Counter(start, step);
+        template <class T> inline Counter<T> counter(T start = 0, T step = 1) {
+            return Counter<T>(start, step);
         }
 
         /**
          * @brief 创建有限计数器生成器。
+         * @tparam T 值类型。
          * @param start 起始值。
          * @param times 输出次数。
          * @param step 步长，默认为1。
-         * @return Counter 有限计数器。
+         * @return Counter<T> 有限计数器。
          */
-        inline Counter counter(int start, int times, int step) {
-            return Counter(start, times, step);
+        template <class T> inline Counter<T> counter(T start, T times, T step) {
+            return Counter<T>(start, times, step);
         }
 
         /**
@@ -1017,14 +1032,14 @@ namespace console {
         /**
          * @brief 取前若干个元素适配器（用于管道操作符）。
          */
-        template <class Pred> class takewhile_t {
+        template <class Pred> class take_while_t {
             Pred pred;
 
         public:
-            explicit takewhile_t(Pred p) : pred(p) {}
+            explicit take_while_t(Pred p) : pred(p) {}
 
             template <class Gen>
-            friend TakeWhile<Gen, Pred> operator|(Gen g, takewhile_t tw) {
+            friend TakeWhile<Gen, Pred> operator|(Gen g, take_while_t tw) {
                 return TakeWhile<Gen, Pred>(g, tw.pred);
             }
         };
@@ -1032,23 +1047,23 @@ namespace console {
         /**
          * @brief 创建取前若干个元素适配器。
          * @param p 谓词。
-         * @return takewhile_t 取元素适配器。
+         * @return take_while_t 取元素适配器。
          */
-        template <class Pred> inline takewhile_t<Pred> takewhile(Pred pred) {
-            return takewhile_t<Pred>(pred);
+        template <class Pred> inline take_while_t<Pred> take_while(Pred pred) {
+            return take_while_t<Pred>(pred);
         }
 
         /**
          * @brief 跳过前若干个元素适配器（用于管道操作符）。
          */
-        template <class Pred> class dropwhile_t {
+        template <class Pred> class drop_while_t {
             Pred pred;
 
         public:
-            explicit dropwhile_t(Pred p) : pred(p) {}
+            explicit drop_while_t(Pred p) : pred(p) {}
 
             template <class Gen>
-            friend DropWhile<Gen, Pred> operator|(Gen g, dropwhile_t dw) {
+            friend DropWhile<Gen, Pred> operator|(Gen g, drop_while_t dw) {
                 return DropWhile<Gen, Pred>(g, dw.pred);
             }
         };
@@ -1056,10 +1071,10 @@ namespace console {
         /**
          * @brief 创建跳过前若干个元素适配器。
          * @param p 谓词。
-         * @return dropwhile_t 取元素适配器。
+         * @return drop_while_t 取元素适配器。
          */
-        template <class Pred> inline dropwhile_t<Pred> dropwhile(Pred pred) {
-            return dropwhile_t<Pred>(pred);
+        template <class Pred> inline drop_while_t<Pred> drop_while(Pred pred) {
+            return drop_while_t<Pred>(pred);
         }
 
         /**

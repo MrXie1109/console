@@ -104,6 +104,18 @@ namespace console {
     };
 
     /**
+     * @class ValueError
+     * @brief 表示值错误，例如传入的参数值不在预期范围内。
+     */
+    class ValueError : public ConsoleError {
+    public:
+        /**
+         * @brief 构造 ValueError。
+         * @param msg 错误描述信息。
+         */
+        ValueError(const std::string &msg) : ConsoleError(msg) {}
+    };
+    /**
      * @class MultiArrayError
      * @brief 表示 MultiArray 多维数组操作中的错误，如维度不匹配。
      */

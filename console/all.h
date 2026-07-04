@@ -40,6 +40,7 @@ SOFTWARE.
 #include "cursor_ptr.h"
 #include "file.h"
 #include "gen.h"
+#include "gextra.h"
 #include "info.h"
 #include "input.h"
 #include "iter.h"
@@ -78,5 +79,5 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-06-30-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-07-04-MRXIE1109";
 }
