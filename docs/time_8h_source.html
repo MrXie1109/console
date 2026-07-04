@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -173,54 +173,53 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">  159</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>() {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a>(</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            (<span class="keywordtype">long</span> <span class="keywordtype">double</span>)(std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                              std::chrono::high_resolution_clock::now()</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                                  .time_since_epoch())</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                              .count()));</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                std::chrono::high_resolution_clock::now().time_since_epoch())</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                              .count()));</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
 </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">  175</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">timer</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args) {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> start = <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>();</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        f(args...);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>() - start;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">  174</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt; <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> <a class="code hl_function" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">timer</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, Args &amp;&amp;...args) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> start = <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        f(args...);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>() - start;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
 </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">  185</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">sleep</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> &amp;tr) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        std::this_thread::sleep_for(std::chrono::duration&lt;long double&gt;(tr.<a class="code hl_function" href="classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703">s</a>()));</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">  184</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">sleep</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_time.html">Time</a> &amp;tr) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        std::this_thread::sleep_for(std::chrono::duration&lt;long double&gt;(tr.<a class="code hl_function" href="classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703">s</a>()));</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
 </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">  195</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">datetime</a>(<span class="keyword">const</span> std::string &amp;fmt = <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        std::stringstream ss;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keyword">auto</span>              <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>  = std::chrono::system_clock::now();</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keyword">auto</span>              time = std::chrono::system_clock::to_time_t(<a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        std::tm           tm_buffer;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        localtime_s(&amp;tm_buffer, &amp;time);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        localtime_r(&amp;time, &amp;tm_buffer);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        ss &lt;&lt; std::put_time(&amp;tm_buffer, fmt.c_str());</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">return</span> ss.str();</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">  194</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">datetime</a>(<span class="keyword">const</span> std::string &amp;fmt = <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        std::stringstream ss;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keyword">auto</span>              <a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>  = std::chrono::system_clock::now();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keyword">auto</span>              time = std::chrono::system_clock::to_time_t(<a class="code hl_function" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        std::tm           tm_buffer;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        localtime_s(&amp;tm_buffer, &amp;time);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        localtime_r(&amp;time, &amp;tm_buffer);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        ss &lt;&lt; std::put_time(&amp;tm_buffer, fmt.c_str());</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
 </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="foldopen" id="foldopen00214" data-start="{" data-end="}">
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">  214</a></span>    <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">fps</a>(<span class="keywordtype">double</span> target) {</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keyword">thread_local</span> <span class="keyword">auto</span> last = steady_clock::now();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        std::this_thread::sleep_until(last + duration&lt;double&gt;(1.0 / target));</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordtype">double</span> actual =</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            1.0 / duration&lt;double&gt;(steady_clock::now() - last).count();</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        last = steady_clock::now();</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">return</span> actual;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">  213</a></span>    <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">fps</a>(<span class="keywordtype">double</span> target) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keyword">thread_local</span> <span class="keyword">auto</span> last = steady_clock::now();</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        std::this_thread::sleep_until(last + duration&lt;double&gt;(1.0 / target));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordtype">double</span> actual</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            = 1.0 / duration&lt;double&gt;(steady_clock::now() - last).count();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        last = steady_clock::now();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">return</span> actual;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
 </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>}</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_time_html"><div class="ttname"><a href="classconsole_1_1_time.html">console::Time</a></div><div class="ttdoc">表示以纳秒为单位的时间量，支持单位转换、算术运算和自动选择合适的输出单位。</div><div class="ttdef"><b>Definition</b> time.h:53</div></div>
 <div class="ttc" id="aclassconsole_1_1_time_html_a02f59b0029dbdd92f290cff6e05b8703"><div class="ttname"><a href="classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703">console::Time::s</a></div><div class="ttdeci">long double s() const</div><div class="ttdoc">返回秒数。</div><div class="ttdef"><b>Definition</b> time.h:73</div></div>
 <div class="ttc" id="aclassconsole_1_1_time_html_a1e214f45070e80c3064bd4d7b98e84c7"><div class="ttname"><a href="classconsole_1_1_time.html#a1e214f45070e80c3064bd4d7b98e84c7">console::Time::millisecond</a></div><div class="ttdeci">static Time millisecond(double n)</div><div class="ttdoc">静态函数，构造毫秒。</div><div class="ttdef"><b>Definition</b> time.h:131</div></div>
@@ -247,16 +246,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassconsole_1_1_time_html_aeca5a4c35faa7a87fdb09776d22daa84"><div class="ttname"><a href="classconsole_1_1_time.html#aeca5a4c35faa7a87fdb09776d22daa84">console::Time::operator-</a></div><div class="ttdeci">friend Time operator-(Time t1, Time t2)</div><div class="ttdef"><b>Definition</b> time.h:97</div></div>
 <div class="ttc" id="aclassconsole_1_1_time_html_aeebbc550c5a1732331cd2bdebb35707d"><div class="ttname"><a href="classconsole_1_1_time.html#aeebbc550c5a1732331cd2bdebb35707d">console::Time::operator*</a></div><div class="ttdeci">Time operator*(long double d) const</div><div class="ttdef"><b>Definition</b> time.h:98</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a051357a08d9c4700e4b6a4eafa3f4958"><div class="ttname"><a href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">console::sleep</a></div><div class="ttdeci">void sleep(const Time &amp;tr)</div><div class="ttdoc">休眠指定时间。</div><div class="ttdef"><b>Definition</b> time.h:185</div></div>
+<div class="ttc" id="anamespaceconsole_html_a051357a08d9c4700e4b6a4eafa3f4958"><div class="ttname"><a href="namespaceconsole.html#a051357a08d9c4700e4b6a4eafa3f4958">console::sleep</a></div><div class="ttdeci">void sleep(const Time &amp;tr)</div><div class="ttdoc">休眠指定时间。</div><div class="ttdef"><b>Definition</b> time.h:184</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">console::Key::F</a></div><div class="ttdeci">@ F</div></div>
-<div class="ttc" id="anamespaceconsole_html_a79c8a9f9c5c22d66e53a598a3090f679"><div class="ttname"><a href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">console::datetime</a></div><div class="ttdeci">std::string datetime(const std::string &amp;fmt=&quot;%Y-%m-%d %H:%M:%S&quot;)</div><div class="ttdoc">获取当前日期时间字符串。</div><div class="ttdef"><b>Definition</b> time.h:195</div></div>
-<div class="ttc" id="anamespaceconsole_html_a7a7013e6ffcb7a903210303ca185f71e"><div class="ttname"><a href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">console::timer</a></div><div class="ttdeci">Time timer(F &amp;&amp;f, Args &amp;&amp;...args)</div><div class="ttdoc">测量函数调用的执行时间。</div><div class="ttdef"><b>Definition</b> time.h:175</div></div>
+<div class="ttc" id="anamespaceconsole_html_a79c8a9f9c5c22d66e53a598a3090f679"><div class="ttname"><a href="namespaceconsole.html#a79c8a9f9c5c22d66e53a598a3090f679">console::datetime</a></div><div class="ttdeci">std::string datetime(const std::string &amp;fmt=&quot;%Y-%m-%d %H:%M:%S&quot;)</div><div class="ttdoc">获取当前日期时间字符串。</div><div class="ttdef"><b>Definition</b> time.h:194</div></div>
+<div class="ttc" id="anamespaceconsole_html_a7a7013e6ffcb7a903210303ca185f71e"><div class="ttname"><a href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">console::timer</a></div><div class="ttdeci">Time timer(F &amp;&amp;f, Args &amp;&amp;...args)</div><div class="ttdoc">测量函数调用的执行时间。</div><div class="ttdef"><b>Definition</b> time.h:174</div></div>
 <div class="ttc" id="anamespaceconsole_html_a8929153db641cb041bea419d109b08a1"><div class="ttname"><a href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">console::now</a></div><div class="ttdeci">Time now()</div><div class="ttdoc">获取当前时间点（自纪元以来的纳秒数）。</div><div class="ttdef"><b>Definition</b> time.h:159</div></div>
-<div class="ttc" id="anamespaceconsole_html_aed028175b47f9e2fa4b21b5cfd036471"><div class="ttname"><a href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">console::fps</a></div><div class="ttdeci">double fps(double target)</div><div class="ttdoc">控制循环的帧率。</div><div class="ttdef"><b>Definition</b> time.h:214</div></div>
+<div class="ttc" id="anamespaceconsole_html_aed028175b47f9e2fa4b21b5cfd036471"><div class="ttname"><a href="namespaceconsole.html#aed028175b47f9e2fa4b21b5cfd036471">console::fps</a></div><div class="ttdeci">double fps(double target)</div><div class="ttdoc">控制循环的帧率。</div><div class="ttdef"><b>Definition</b> time.h:213</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

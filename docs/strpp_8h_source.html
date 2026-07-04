@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -121,9 +121,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">   58</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">ltrim</a>(std::string str) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">auto</span> it =</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            std::find_if(str.begin(), str.end(),</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                         [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> uc) -&gt; <span class="keywordtype">bool</span> { return !isspace(uc); });</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">auto</span> it = std::find_if(str.begin(),</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            str.end(),</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> uc) -&gt; <span class="keywordtype">bool</span> { return !isspace(uc); });</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        str.erase(str.begin(), it);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span> str;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
@@ -131,9 +131,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__strpp.html#ga791084c0b457942320d99550c29600b7">   71</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__strpp.html#ga791084c0b457942320d99550c29600b7">rtrim</a>(std::string str) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">auto</span> it =</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            std::find_if(str.rbegin(), str.rend(),</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                         [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> uc) -&gt; <span class="keywordtype">bool</span> { return !isspace(uc); });</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">auto</span> it = std::find_if(str.rbegin(),</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            str.rend(),</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> uc) -&gt; <span class="keywordtype">bool</span> { return !isspace(uc); });</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        str.erase(it.base(), str.end());</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> str;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
@@ -147,10 +147,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group__strpp.html#ga8095b8180454f96099dee7eb587158a6">   94</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">ltrim</a>(std::string str, <span class="keyword">const</span> std::string &amp;chars) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">auto</span> it =</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            std::find_if(str.begin(), str.end(), [&amp;chars](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ch) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                return chars.find(ch) == std::string::npos;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            });</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">auto</span> it</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            = std::find_if(str.begin(), str.end(), [&amp;chars](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ch) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                  return chars.find(ch) == std::string::npos;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>              });</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        str.erase(str.begin(), it);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> str;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
@@ -158,8 +158,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="group__strpp.html#ga43f940389befb801afd08b04156f05ba">  109</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__strpp.html#ga791084c0b457942320d99550c29600b7">rtrim</a>(std::string str, <span class="keyword">const</span> std::string &amp;chars) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">auto</span> it =</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            std::find_if(str.rbegin(), str.rend(), [&amp;chars](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ch) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">auto</span> it = std::find_if(</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            str.rbegin(), str.rend(), [&amp;chars](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ch) {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                return chars.find(ch) == std::string::npos;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            });</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        str.erase(it.base(), str.end());</div>
@@ -196,8 +196,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (str.empty()) <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">if</span> (str[0] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; str[0] &lt;= <span class="charliteral">&#39;z&#39;</span>) str[0] += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;a&#39;</span>;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; str.size(); ++i) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> (isspace((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)str[i - 1]) &amp;&amp; str[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                str[i] &lt;= <span class="charliteral">&#39;z&#39;</span>)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> (isspace((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)str[i - 1]) &amp;&amp; str[i] &gt;= <span class="charliteral">&#39;a&#39;</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                &amp;&amp; str[i] &lt;= <span class="charliteral">&#39;z&#39;</span>)</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                str[i] += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;a&#39;</span>;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (str[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; str[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>)</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                str[i] -= <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;a&#39;</span>;</div>
@@ -208,13 +208,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="foldopen" id="foldopen00174" data-start="{" data-end="};">
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html">  174</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a> {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">  175</a></span>        std::string <a class="code hl_variable" href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">left</a>;   </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">  175</a></span>        std::string <a class="code hl_variable" href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">left</a>; </div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a36494fa9d7d286cd77f3434d18c96585">  176</a></span>        std::string <a class="code hl_variable" href="structconsole_1_1_partition_result.html#a36494fa9d7d286cd77f3434d18c96585">middle</a>; </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">  177</a></span>        std::string <a class="code hl_variable" href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">right</a>;  </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">  177</a></span>        std::string <a class="code hl_variable" href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">right</a>; </div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="foldopen" id="foldopen00185" data-start="{" data-end="};">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">  185</a></span>        <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">operator&lt;&lt;</a>(std::ostream          &amp;os,</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                                        <span class="keyword">const</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a> &amp;pr) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">  185</a></span>        <span class="keyword">friend</span> std::ostream &amp;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <a class="code hl_friend" href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a> &amp;pr) {</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(\&quot;&quot;</span> &lt;&lt; pr.<a class="code hl_variable" href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">left</a> &lt;&lt; <span class="stringliteral">&quot;\&quot;, \&quot;&quot;</span> &lt;&lt; pr.<a class="code hl_variable" href="structconsole_1_1_partition_result.html#a36494fa9d7d286cd77f3434d18c96585">middle</a> &lt;&lt; <span class="stringliteral">&quot;\&quot;, \&quot;&quot;</span></div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                      &lt;&lt; pr.<a class="code hl_variable" href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">right</a> &lt;&lt; <span class="stringliteral">&quot;\&quot;)&quot;</span>;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
@@ -222,19 +222,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    };</div>
 </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">  200</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a> <a class="code hl_function" href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">partition</a>(<span class="keyword">const</span> std::string &amp;text,</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                                     <span class="keyword">const</span> std::string &amp;sep) {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keyword">inline</span> PartitionResult</div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">  201</a></span>    <a class="code hl_function" href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">partition</a>(<span class="keyword">const</span> std::string &amp;text, <span class="keyword">const</span> std::string &amp;sep) {</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordtype">size_t</span> pos = text.find(sep);</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">if</span> (pos == std::string::npos) <span class="keywordflow">return</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a>{text, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a>{text.substr(0, pos), sep,</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                               text.substr(pos + sep.size())};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structconsole_1_1_partition_result.html">PartitionResult</a>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            text.substr(0, pos), sep, text.substr(pos + sep.size())};</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
 </div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">  215</a></span>    <span class="keyword">inline</span> std::vector&lt;std::string&gt; <a class="code hl_function" href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">split</a>(std::string        text,</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                                          <span class="keyword">const</span> std::string &amp;sep = <span class="stringliteral">&quot; &quot;</span>) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">inline</span> std::vector&lt;std::string&gt;</div>
+<div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">  216</a></span>    <a class="code hl_function" href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">split</a>(std::string text, <span class="keyword">const</span> std::string &amp;sep = <span class="stringliteral">&quot; &quot;</span>) {</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        std::vector&lt;std::string&gt; vec;</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordtype">size_t</span>                   start = 0;</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordtype">size_t</span>                   end;</div>
@@ -249,9 +249,9 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00237" data-start="{" data-end="}">
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">  237</a></span>    <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">join</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec,</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                            <span class="keyword">const</span> std::string    &amp;sep = <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">inline</span> std::string</div>
+<div class="foldopen" id="foldopen00238" data-start="{" data-end="}">
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">  238</a></span>    <a class="code hl_function" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">join</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec, <span class="keyword">const</span> std::string &amp;sep = <span class="stringliteral">&quot;&quot;</span>) {</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">if</span> (vec.empty()) <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        std::stringstream ss;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keyword">auto</span>              it = vec.begin();</div>
@@ -304,27 +304,27 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="agroup__strpp_html_ga127963eae58c181d06c8efef328f029c"><div class="ttname"><a href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">console::from_string</a></div><div class="ttdeci">void from_string(std::string str, Args &amp;...args)</div><div class="ttdoc">将字符串中的值提取到多个参数中，参数类型由调用者指定。</div><div class="ttdef"><b>Definition</b> strpp.h:266</div></div>
 <div class="ttc" id="agroup__strpp_html_ga245794143f8fbcc1baec9b5d8309846f"><div class="ttname"><a href="group__strpp.html#ga245794143f8fbcc1baec9b5d8309846f">console::lower</a></div><div class="ttdeci">std::string lower(std::string str)</div><div class="ttdoc">将字符串转换为小写。</div><div class="ttdef"><b>Definition</b> strpp.h:145</div></div>
-<div class="ttc" id="agroup__strpp_html_ga32e13326520876f61cb8a33c74dc973f"><div class="ttname"><a href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">console::partition</a></div><div class="ttdeci">PartitionResult partition(const std::string &amp;text, const std::string &amp;sep)</div><div class="ttdoc">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。</div><div class="ttdef"><b>Definition</b> strpp.h:200</div></div>
-<div class="ttc" id="agroup__strpp_html_ga60b86273d02abf33f057e1e86325f455"><div class="ttname"><a href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">console::split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(std::string text, const std::string &amp;sep=&quot; &quot;)</div><div class="ttdoc">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。</div><div class="ttdef"><b>Definition</b> strpp.h:215</div></div>
+<div class="ttc" id="agroup__strpp_html_ga32e13326520876f61cb8a33c74dc973f"><div class="ttname"><a href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">console::partition</a></div><div class="ttdeci">PartitionResult partition(const std::string &amp;text, const std::string &amp;sep)</div><div class="ttdoc">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。</div><div class="ttdef"><b>Definition</b> strpp.h:201</div></div>
+<div class="ttc" id="agroup__strpp_html_ga60b86273d02abf33f057e1e86325f455"><div class="ttname"><a href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">console::split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(std::string text, const std::string &amp;sep=&quot; &quot;)</div><div class="ttdoc">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。</div><div class="ttdef"><b>Definition</b> strpp.h:216</div></div>
 <div class="ttc" id="agroup__strpp_html_ga791084c0b457942320d99550c29600b7"><div class="ttname"><a href="group__strpp.html#ga791084c0b457942320d99550c29600b7">console::rtrim</a></div><div class="ttdeci">std::string rtrim(std::string str)</div><div class="ttdoc">移除字符串右侧的空白字符。</div><div class="ttdef"><b>Definition</b> strpp.h:71</div></div>
 <div class="ttc" id="agroup__strpp_html_ga7f55de957c5fa0975647a4530b75c61c"><div class="ttname"><a href="group__strpp.html#ga7f55de957c5fa0975647a4530b75c61c">console::title</a></div><div class="ttdeci">std::string title(std::string str)</div><div class="ttdoc">将字符串转换为标题格式（每个单词首字母大写，其余小写）。</div><div class="ttdef"><b>Definition</b> strpp.h:157</div></div>
 <div class="ttc" id="agroup__strpp_html_ga808a28efa1932499e7912f519f1aa767"><div class="ttname"><a href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">console::ltrim</a></div><div class="ttdeci">std::string ltrim(std::string str)</div><div class="ttdoc">移除字符串左侧的空白字符（空格、制表符等）。</div><div class="ttdef"><b>Definition</b> strpp.h:58</div></div>
 <div class="ttc" id="agroup__strpp_html_ga9b8e55a0a5c1eafc84ec0b3b53c77170"><div class="ttname"><a href="group__strpp.html#ga9b8e55a0a5c1eafc84ec0b3b53c77170">console::upper</a></div><div class="ttdeci">std::string upper(std::string str)</div><div class="ttdoc">将字符串转换为大写。</div><div class="ttdef"><b>Definition</b> strpp.h:133</div></div>
 <div class="ttc" id="agroup__strpp_html_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><div class="ttname"><a href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a></div><div class="ttdeci">std::string to_string(Args &amp;&amp;...args)</div><div class="ttdoc">将任意多个参数转换为字符串并拼接（无分隔符）。</div><div class="ttdef"><b>Definition</b> strpp.h:253</div></div>
-<div class="ttc" id="agroup__strpp_html_gaac7a5894d7d6708ea4912fea49a3d622"><div class="ttname"><a href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">console::join</a></div><div class="ttdeci">std::string join(const std::vector&lt; T &gt; &amp;vec, const std::string &amp;sep=&quot;&quot;)</div><div class="ttdoc">以分隔符连接容器中的字符串元素。</div><div class="ttdef"><b>Definition</b> strpp.h:237</div></div>
+<div class="ttc" id="agroup__strpp_html_gaac7a5894d7d6708ea4912fea49a3d622"><div class="ttname"><a href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">console::join</a></div><div class="ttdeci">std::string join(const std::vector&lt; T &gt; &amp;vec, const std::string &amp;sep=&quot;&quot;)</div><div class="ttdoc">以分隔符连接容器中的字符串元素。</div><div class="ttdef"><b>Definition</b> strpp.h:238</div></div>
 <div class="ttc" id="agroup__strpp_html_gab9c219f8107af63d17ec5616fe430891"><div class="ttname"><a href="group__strpp.html#gab9c219f8107af63d17ec5616fe430891">console::trim</a></div><div class="ttdeci">std::string trim(std::string str)</div><div class="ttdoc">移除字符串两侧的空白字符。</div><div class="ttdef"><b>Definition</b> strpp.h:84</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">提供 STL 容器的格式化输出和灵活的输出控制工具。</div></div>
 <div class="ttc" id="astructconsole_1_1_partition_result_html"><div class="ttname"><a href="structconsole_1_1_partition_result.html">console::PartitionResult</a></div><div class="ttdoc">字符串分区结果，包含左部分、分隔符、右部分。</div><div class="ttdef"><b>Definition</b> strpp.h:174</div></div>
-<div class="ttc" id="astructconsole_1_1_partition_result_html_a02a3ba14574e8a2533d43f03639027fd"><div class="ttname"><a href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">console::PartitionResult::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const PartitionResult &amp;pr)</div><div class="ttdoc">输出分区结果到流，格式为 (&quot;left&quot;, &quot;middle&quot;, &quot;right&quot;)。</div><div class="ttdef"><b>Definition</b> strpp.h:185</div></div>
+<div class="ttc" id="astructconsole_1_1_partition_result_html_a02a3ba14574e8a2533d43f03639027fd"><div class="ttname"><a href="structconsole_1_1_partition_result.html#a02a3ba14574e8a2533d43f03639027fd">console::PartitionResult::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const PartitionResult &amp;pr)</div><div class="ttdoc">输出分区结果到流，格式为 (&quot;left&quot;, &quot;middle&quot;, &quot;right&quot;)。</div><div class="ttdef"><b>Definition</b> strpp.h:186</div></div>
 <div class="ttc" id="astructconsole_1_1_partition_result_html_a36494fa9d7d286cd77f3434d18c96585"><div class="ttname"><a href="structconsole_1_1_partition_result.html#a36494fa9d7d286cd77f3434d18c96585">console::PartitionResult::middle</a></div><div class="ttdeci">std::string middle</div><div class="ttdoc">分隔符本身</div><div class="ttdef"><b>Definition</b> strpp.h:176</div></div>
 <div class="ttc" id="astructconsole_1_1_partition_result_html_a635f3a1a6141d044f5191a66908a2a82"><div class="ttname"><a href="structconsole_1_1_partition_result.html#a635f3a1a6141d044f5191a66908a2a82">console::PartitionResult::left</a></div><div class="ttdeci">std::string left</div><div class="ttdoc">分隔符前的子串</div><div class="ttdef"><b>Definition</b> strpp.h:175</div></div>
 <div class="ttc" id="astructconsole_1_1_partition_result_html_a78d7805fe0448d056d0a1a965abe210f"><div class="ttname"><a href="structconsole_1_1_partition_result.html#a78d7805fe0448d056d0a1a965abe210f">console::PartitionResult::right</a></div><div class="ttdeci">std::string right</div><div class="ttdoc">分隔符后的子串</div><div class="ttdef"><b>Definition</b> strpp.h:177</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

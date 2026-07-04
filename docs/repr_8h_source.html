@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -178,12 +178,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        !std::is_same&lt;typename std::decay&lt;T&gt;::type, <span class="keywordtype">bool</span>&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        !std::is_same&lt;typename std::decay&lt;T&gt;::type, std::nullptr_t&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        !is_string&lt;typename std::decay&lt;T&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        !is_char&lt;typename std::decay&lt;T&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        !std::is_function&lt;typename std::decay&lt;T&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        is_printable&lt;typename std::decay&lt;T&gt;::type&gt;::value&gt;::type</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        !std::is_same&lt;typename std::decay&lt;T&gt;::type, <span class="keywordtype">bool</span>&gt;::value</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        &amp;&amp; !std::is_same&lt;typename std::decay&lt;T&gt;::type, std::nullptr_t&gt;::value</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        &amp;&amp; !is_string&lt;typename std::decay&lt;T&gt;::type&gt;::value</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        &amp;&amp; !is_char&lt;typename std::decay&lt;T&gt;::type&gt;::value</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        &amp;&amp; !std::is_function&lt;typename std::decay&lt;T&gt;::type&gt;::value</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        &amp;&amp; is_printable&lt;typename std::decay&lt;T&gt;::type&gt;::value&gt;::type</div>
 <div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="namespaceconsole.html#gab16dfca7b068359547e9dbd3e9f8aca6">  150</a></span>    <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os = std::cout) {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        os &lt;&lt; value;</div>
@@ -192,10 +192,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        !std::is_same&lt;typename std::decay&lt;T&gt;::type, std::nullptr_t&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        !is_string&lt;typename std::decay&lt;T&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        !is_char&lt;typename std::decay&lt;T&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        !is_printable&lt;typename std::decay&lt;T&gt;::type&gt;::value&gt;::type</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        !std::is_same&lt;typename std::decay&lt;T&gt;::type, std::nullptr_t&gt;::value</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        &amp;&amp; !is_string&lt;typename std::decay&lt;T&gt;::type&gt;::value</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        &amp;&amp; !is_char&lt;typename std::decay&lt;T&gt;::type&gt;::value</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        &amp;&amp; !is_printable&lt;typename std::decay&lt;T&gt;::type&gt;::value&gt;::type</div>
 <div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="namespaceconsole.html#gab16dfca7b068359547e9dbd3e9f8aca6">  167</a></span>    <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os = std::cout) {</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        os &lt;&lt; <span class="stringliteral">&quot;&lt;&#39;&quot;</span> &lt;&lt; <a class="code hl_function" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">tiname</a>(<span class="keyword">typeid</span>(<span class="keyword">typename</span> std::decay&lt;T&gt;::type))</div>
@@ -227,7 +227,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

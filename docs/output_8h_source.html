@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -113,9 +113,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Cont&gt;</div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">   56</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(std::ostream &amp;os,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                             <span class="keyword">const</span> Cont   &amp;cont) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">   57</a></span>    <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(std::ostream &amp;os, <span class="keyword">const</span> Cont &amp;cont) {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (begin(cont) == end(cont)) <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;[]&quot;</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">auto</span> it = begin(cont);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        os &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;</div>
@@ -195,16 +195,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga5c8f4323154aa9d05567a00b36719eaf">  170</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream         &amp;os,</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                                    <span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga5c8f4323154aa9d05567a00b36719eaf">  170</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::vector&lt;T&gt; &amp;vec) {</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(os, vec);</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
 </div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaeca1eb074a90d36afd52c7cce8d006c3">  177</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream        &amp;os,</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                                    <span class="keyword">const</span> std::deque&lt;T&gt; &amp;deq) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaeca1eb074a90d36afd52c7cce8d006c3">  177</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::deque&lt;T&gt; &amp;deq) {</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(os, deq);</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
 </div>
@@ -218,16 +218,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gad221ecab7f27a22d9d0e17bdaa4d1a24">  190</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream               &amp;os,</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                                    <span class="keyword">const</span> std::forward_list&lt;T&gt; &amp;flst) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gad221ecab7f27a22d9d0e17bdaa4d1a24">  190</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::forward_list&lt;T&gt; &amp;flst) {</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(os, flst);</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
 </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keywordtype">size_t</span> n&gt;</div>
 <div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga8d9247a73784308d3ce3f08c0cd24869">  197</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream           &amp;os,</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                                    <span class="keyword">const</span> std::array&lt;T, n&gt; &amp;arr) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga8d9247a73784308d3ce3f08c0cd24869">  197</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::array&lt;T, n&gt; &amp;arr) {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(os, arr);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    }</div>
 </div>
@@ -248,64 +248,64 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaae2b7f445bf00c1c1b370f2949460869">  216</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream           &amp;os,</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                                    <span class="keyword">const</span> std::multiset&lt;T&gt; &amp;ms) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaae2b7f445bf00c1c1b370f2949460869">  216</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::multiset&lt;T&gt; &amp;ms) {</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gaafbd88f99bcc46830491979abb716877">cont_print_set</a>(os, ms);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
 </div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> V&gt;</div>
 <div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gac9f9015f474cadf64f976c2ccb95b28e">  223</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream              &amp;os,</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                                    <span class="keyword">const</span> std::multimap&lt;K, V&gt; &amp;mm) {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gac9f9015f474cadf64f976c2ccb95b28e">  223</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::multimap&lt;K, V&gt; &amp;mm) {</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gab6bcfe5fe5236718b18cd2360463402b">cont_print_map</a>(os, mm);</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
 </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00230" data-start="{" data-end="}">
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaecef678f1f19ef1267943ca0275d1cda">  230</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream                &amp;os,</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                                    <span class="keyword">const</span> std::unordered_set&lt;T&gt; &amp;us) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gaecef678f1f19ef1267943ca0275d1cda">  230</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::unordered_set&lt;T&gt; &amp;us) {</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gaafbd88f99bcc46830491979abb716877">cont_print_set</a>(os, us);</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
 </div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> V&gt;</div>
 <div class="foldopen" id="foldopen00237" data-start="{" data-end="}">
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gacc362f59a2448045402cd178c6e218d7">  237</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream                   &amp;os,</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                                    <span class="keyword">const</span> std::unordered_map&lt;K, V&gt; &amp;um) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gacc362f59a2448045402cd178c6e218d7">  237</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::unordered_map&lt;K, V&gt; &amp;um) {</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gab6bcfe5fe5236718b18cd2360463402b">cont_print_map</a>(os, um);</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    }</div>
 </div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga9b604a7073f209728406bb8affe874af">  244</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream                     &amp;os,</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                                    <span class="keyword">const</span> std::unordered_multiset&lt;T&gt; &amp;ums) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga9b604a7073f209728406bb8affe874af">  244</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::unordered_multiset&lt;T&gt; &amp;ums) {</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gaafbd88f99bcc46830491979abb716877">cont_print_set</a>(os, ums);</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
 </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> V&gt;</div>
 <div class="foldopen" id="foldopen00251" data-start="{" data-end="}">
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga566a242a47e0cd0386bd725c9a73e0ff">  251</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream                        &amp;os,</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                                    <span class="keyword">const</span> std::unordered_multimap&lt;K, V&gt; &amp;ump) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga566a242a47e0cd0386bd725c9a73e0ff">  251</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::unordered_multimap&lt;K, V&gt; &amp;ump) {</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#gab6bcfe5fe5236718b18cd2360463402b">cont_print_map</a>(os, ump);</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
 </div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gae109f60171b34b04db5bc1b6dd575902">  258</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream           &amp;os,</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                                    <span class="keyword">const</span> std::valarray&lt;T&gt; &amp;va) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#gae109f60171b34b04db5bc1b6dd575902">  258</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::valarray&lt;T&gt; &amp;va) {</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">cont_print_sequence</a>(os, va);</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
 </div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
 <div class="foldopen" id="foldopen00272" data-start="{" data-end="}">
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga3c28e3b9d37f972681501fbb558bbb34">  272</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream          &amp;os,</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                    <span class="keyword">const</span> std::pair&lt;T, U&gt; &amp;p) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga3c28e3b9d37f972681501fbb558bbb34">  272</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::pair&lt;T, U&gt; &amp;p) {</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        os &lt;&lt; <span class="charliteral">&#39;(&#39;</span>;</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, p.first);</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
@@ -316,8 +316,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
 <div class="foldopen" id="foldopen00289" data-start="{" data-end="}">
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga8d054d579f73f43b91c744abb0c98b14">  289</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream              &amp;os,</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                    <span class="keyword">const</span> std::tuple&lt;Args...&gt; &amp;t) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="group__output__forward__decl.html#ga8d054d579f73f43b91c744abb0c98b14">  289</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> std::tuple&lt;Args...&gt; &amp;t) {</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <a class="code hl_struct" href="structconsole_1_1_tuple_printer.html">TuplePrinter</a>&lt;std::tuple&lt;Args...&gt;&gt;<a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">::print</a>(os, t);</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
@@ -344,64 +344,66 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
 <div class="foldopen" id="foldopen00349" data-start="{" data-end="};">
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html">  349</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_output.html">Output</a> {</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        std::ostream &amp;os;      </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        std::string   sep;     </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        std::string   end;     </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        std::ostream &amp;os; </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        std::string   sep; </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        std::string   end; </div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="keywordtype">bool</span>          isFlush; </div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#afb9589018dc1ac160ecca57a15a13924">  359</a></span>        <a class="code hl_function" href="classconsole_1_1_output.html#afb9589018dc1ac160ecca57a15a13924">Output</a>() : os(std::cout), sep(<span class="stringliteral">&quot; &quot;</span>), end(<span class="stringliteral">&quot;\n&quot;</span>), isFlush(true) {}</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
 <div class="foldopen" id="foldopen00368" data-start="{" data-end="}">
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#aec72aabe23f6b71fa847d6d4fe746afb">  368</a></span>        <a class="code hl_function" href="classconsole_1_1_output.html#aec72aabe23f6b71fa847d6d4fe746afb">Output</a>(std::ostream &amp;o, <span class="keyword">const</span> std::string &amp;s, <span class="keyword">const</span> std::string &amp;e,</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>               <span class="keywordtype">bool</span> isF) : os(o), sep(s), end(e), isFlush(isF) {}</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#aec72aabe23f6b71fa847d6d4fe746afb">  368</a></span>        <a class="code hl_function" href="classconsole_1_1_output.html#aec72aabe23f6b71fa847d6d4fe746afb">Output</a>(std::ostream   &amp;o,</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            <span class="keyword">const</span> std::string &amp;s,</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            <span class="keyword">const</span> std::string &amp;e,</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            <span class="keywordtype">bool</span>               isF) : os(o), sep(s), end(e), isFlush(isF) {}</div>
 </div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
-<div class="foldopen" id="foldopen00375" data-start="{" data-end="}">
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">  375</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>() {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            os &lt;&lt; end;</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            <span class="keywordflow">if</span> (isFlush) os &lt;&lt; std::flush;</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        }</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
+<div class="foldopen" id="foldopen00377" data-start="{" data-end="}">
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">  377</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>() {</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            os &lt;&lt; end;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            <span class="keywordflow">if</span> (isFlush) os &lt;&lt; std::flush;</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        }</div>
 </div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
-<div class="foldopen" id="foldopen00387" data-start="{" data-end="}">
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">  387</a></span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t) {</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>();</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="foldopen" id="foldopen00389" data-start="{" data-end="}">
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">  389</a></span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t) {</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>();</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        }</div>
 </div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, <span class="keyword">class</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00402" data-start="{" data-end="}">
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">  402</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t, <span class="keyword">const</span> Args &amp;...args) {</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            os &lt;&lt; sep;</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>(args...);</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        }</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, <span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00404" data-start="{" data-end="}">
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">  404</a></span>        <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">operator()</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t, <span class="keyword">const</span> Args &amp;...args) {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(os, t);</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            os &lt;&lt; sep;</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">operator()</a>(args...);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        }</div>
 </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    };</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    };</div>
 </div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="foldopen" id="foldopen00412" data-start="{" data-end="}">
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno"><a class="line" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">  412</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>() {</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        <span class="keyword">static</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> instance;</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        <span class="keywordflow">return</span> instance;</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    }</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="foldopen" id="foldopen00414" data-start="{" data-end="}">
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno"><a class="line" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">  414</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>() {</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        <span class="keyword">static</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> instance;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    }</div>
 </div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">  417</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a> =</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        <a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>(); </div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>}</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">  419</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classconsole_1_1_output.html">Output</a> &amp;<a class="code hl_variable" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        = <a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>(); </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_output_html"><div class="ttname"><a href="classconsole_1_1_output.html">console::Output</a></div><div class="ttdoc">灵活的输出控制类，支持链式调用和多种参数。</div><div class="ttdef"><b>Definition</b> output.h:349</div></div>
-<div class="ttc" id="aclassconsole_1_1_output_html_a7d7ac8392f617927cae9b6df78295385"><div class="ttname"><a href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()(const T &amp;t)</div><div class="ttdoc">单参数调用：输出该参数后加结尾符。</div><div class="ttdef"><b>Definition</b> output.h:387</div></div>
-<div class="ttc" id="aclassconsole_1_1_output_html_ab01d390c5c87c7281558d63594ca1f2e"><div class="ttname"><a href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()()</div><div class="ttdoc">无参数调用：仅输出结尾符（如换行）。</div><div class="ttdef"><b>Definition</b> output.h:375</div></div>
+<div class="ttc" id="aclassconsole_1_1_output_html_a7d7ac8392f617927cae9b6df78295385"><div class="ttname"><a href="classconsole_1_1_output.html#a7d7ac8392f617927cae9b6df78295385">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()(const T &amp;t)</div><div class="ttdoc">单参数调用：输出该参数后加结尾符。</div><div class="ttdef"><b>Definition</b> output.h:389</div></div>
+<div class="ttc" id="aclassconsole_1_1_output_html_ab01d390c5c87c7281558d63594ca1f2e"><div class="ttname"><a href="classconsole_1_1_output.html#ab01d390c5c87c7281558d63594ca1f2e">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()()</div><div class="ttdoc">无参数调用：仅输出结尾符（如换行）。</div><div class="ttdef"><b>Definition</b> output.h:377</div></div>
 <div class="ttc" id="aclassconsole_1_1_output_html_aec72aabe23f6b71fa847d6d4fe746afb"><div class="ttname"><a href="classconsole_1_1_output.html#aec72aabe23f6b71fa847d6d4fe746afb">console::Output::Output</a></div><div class="ttdeci">Output(std::ostream &amp;o, const std::string &amp;s, const std::string &amp;e, bool isF)</div><div class="ttdoc">自定义构造。</div><div class="ttdef"><b>Definition</b> output.h:368</div></div>
-<div class="ttc" id="aclassconsole_1_1_output_html_af9557ca2d1cceedf769b5cac2bd0fe70"><div class="ttname"><a href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()(const T &amp;t, const Args &amp;...args)</div><div class="ttdoc">多参数调用：依次输出每个参数，参数之间插入分隔符，最后加结尾符。</div><div class="ttdef"><b>Definition</b> output.h:402</div></div>
+<div class="ttc" id="aclassconsole_1_1_output_html_af9557ca2d1cceedf769b5cac2bd0fe70"><div class="ttname"><a href="classconsole_1_1_output.html#af9557ca2d1cceedf769b5cac2bd0fe70">console::Output::operator()</a></div><div class="ttdeci">Output &amp; operator()(const T &amp;t, const Args &amp;...args)</div><div class="ttdoc">多参数调用：依次输出每个参数，参数之间插入分隔符，最后加结尾符。</div><div class="ttdef"><b>Definition</b> output.h:404</div></div>
 <div class="ttc" id="aclassconsole_1_1_output_html_afb9589018dc1ac160ecca57a15a13924"><div class="ttname"><a href="classconsole_1_1_output.html#afb9589018dc1ac160ecca57a15a13924">console::Output::Output</a></div><div class="ttdeci">Output()</div><div class="ttdoc">默认构造，输出到 std::cout，分隔符为空格，结尾为换行，并刷新。</div><div class="ttdef"><b>Definition</b> output.h:359</div></div>
 <div class="ttc" id="agroup__array__conversion_html_ga06143e5b1305ddc6184ff5539b7dd9fc"><div class="ttname"><a href="group__array__conversion.html#ga06143e5b1305ddc6184ff5539b7dd9fc">console::to_array</a></div><div class="ttdeci">std::array&lt; T, N &gt; to_array(const T(&amp;ar)[N])</div><div class="ttdoc">将 C 风格数组转换为 std::array。</div><div class="ttdef"><b>Definition</b> output.h:312</div></div>
 <div class="ttc" id="agroup__array__conversion_html_ga37f2589e9a16b5646e8b2faeaa053dbe"><div class="ttname"><a href="group__array__conversion.html#ga37f2589e9a16b5646e8b2faeaa053dbe">console::to_vector</a></div><div class="ttdeci">std::vector&lt; T &gt; to_vector(const T(&amp;ar)[N])</div><div class="ttdoc">将 C 风格数组转换为 std::vector。</div><div class="ttdef"><b>Definition</b> output.h:326</div></div>
-<div class="ttc" id="agroup__output__helpers_html_ga2475d5f2def579b180dfc68c5ce0e255"><div class="ttname"><a href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">console::cont_print_sequence</a></div><div class="ttdeci">std::ostream &amp; cont_print_sequence(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出序列容器（如 vector, list）的内容，格式为 [a, b, c]。</div><div class="ttdef"><b>Definition</b> output.h:56</div></div>
+<div class="ttc" id="agroup__output__helpers_html_ga2475d5f2def579b180dfc68c5ce0e255"><div class="ttname"><a href="group__output__helpers.html#ga2475d5f2def579b180dfc68c5ce0e255">console::cont_print_sequence</a></div><div class="ttdeci">std::ostream &amp; cont_print_sequence(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出序列容器（如 vector, list）的内容，格式为 [a, b, c]。</div><div class="ttdef"><b>Definition</b> output.h:57</div></div>
 <div class="ttc" id="agroup__output__helpers_html_gaafbd88f99bcc46830491979abb716877"><div class="ttname"><a href="group__output__helpers.html#gaafbd88f99bcc46830491979abb716877">console::cont_print_set</a></div><div class="ttdeci">std::ostream &amp; cont_print_set(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出集合容器（如 set, unordered_set）的内容，格式为 {a, b, c}。</div><div class="ttdef"><b>Definition</b> output.h:77</div></div>
 <div class="ttc" id="agroup__output__helpers_html_gab6bcfe5fe5236718b18cd2360463402b"><div class="ttname"><a href="group__output__helpers.html#gab6bcfe5fe5236718b18cd2360463402b">console::cont_print_map</a></div><div class="ttdeci">std::ostream &amp; cont_print_map(std::ostream &amp;os, const Cont &amp;cont)</div><div class="ttdoc">输出映射容器（如 map, unordered_map）的内容，格式为 {key: value, ...}。</div><div class="ttdef"><b>Definition</b> output.h:99</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
@@ -409,8 +411,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="anamespaceconsole_html_a715464dabbf1fb29e4e18cac8d788626"><div class="ttname"><a href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::ostream &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:47</div></div>
 <div class="ttc" id="anamespaceconsole_html_ab52cbf6e3e95c829e2756a3447695f6d"><div class="ttname"><a href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">console::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, Key k)</div><div class="ttdoc">让 Key 可以被打印。</div><div class="ttdef"><b>Definition</b> kb.h:151</div></div>
-<div class="ttc" id="anamespaceconsole_html_af775492d227128b6187ce642884d16b8"><div class="ttname"><a href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">console::get_print</a></div><div class="ttdeci">Output &amp; get_print()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> output.h:412</div></div>
-<div class="ttc" id="anamespaceconsole_html_afc94bf1b5b2d118e6d8207ef587f5a89"><div class="ttname"><a href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">console::print</a></div><div class="ttdeci">static Output &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:417</div></div>
+<div class="ttc" id="anamespaceconsole_html_af775492d227128b6187ce642884d16b8"><div class="ttname"><a href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">console::get_print</a></div><div class="ttdeci">Output &amp; get_print()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> output.h:414</div></div>
+<div class="ttc" id="anamespaceconsole_html_afc94bf1b5b2d118e6d8207ef587f5a89"><div class="ttname"><a href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">console::print</a></div><div class="ttdeci">static Output &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:420</div></div>
 <div class="ttc" id="aput_8h_html"><div class="ttname"><a href="put_8h.html">put.h</a></div><div class="ttdoc">提供在 output.h 中用于输出单个值的 put 函数。</div></div>
 <div class="ttc" id="astructconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4_html_a2315a3b9e26b69d71e5c10b6576a7332"><div class="ttname"><a href="structconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4.html#a2315a3b9e26b69d71e5c10b6576a7332">console::TuplePrinter&lt; Tuple, 0 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;, const Tuple &amp;)</div><div class="ttdef"><b>Definition</b> output.h:155</div></div>
 <div class="ttc" id="astructconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4_html_a9c4dbadaaf04317a47f6c90f27de256f"><div class="ttname"><a href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#a9c4dbadaaf04317a47f6c90f27de256f">console::TuplePrinter&lt; Tuple, 1 &gt;::print</a></div><div class="ttdeci">static void print(std::ostream &amp;os, const Tuple &amp;t)</div><div class="ttdef"><b>Definition</b> output.h:146</div></div>
@@ -419,7 +421,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -280,6 +280,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1as.html">console::ops::as&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">转型变化器。  <a href="structconsole_1_1ops_1_1as.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_compose.html">console::ops::Compose&lt; F, G &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数组合器，将两个函数组合为一个函数。  <a href="structconsole_1_1ops_1_1_compose.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -443,6 +446,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a3fbe5de7b20eb5eff28678d1ffccbe40"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_not.html">Not</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a44c29edb103a2872f519ad0c9a0fdaaa">P</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a3fbe5de7b20eb5eff28678d1ffccbe40">console::ops::operator!</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a44c29edb103a2872f519ad0c9a0fdaaa">P</a> p)</td></tr>
 <tr class="memdesc:a3fbe5de7b20eb5eff28678d1ffccbe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">逻辑非运算符，等价于 not_(p)。  <br /></td></tr>
 <tr class="separator:a3fbe5de7b20eb5eff28678d1ffccbe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c37e3ec1585ac3ecbf0164e6526e76" id="r_a09c37e3ec1585ac3ecbf0164e6526e76"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> &gt; </td></tr>
+<tr class="memitem:a09c37e3ec1585ac3ecbf0164e6526e76"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_compose.html">Compose</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a09c37e3ec1585ac3ecbf0164e6526e76">console::ops::compose</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> f, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> g)</td></tr>
+<tr class="memdesc:a09c37e3ec1585ac3ecbf0164e6526e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">将两个函数组合为一个函数。  <br /></td></tr>
+<tr class="separator:a09c37e3ec1585ac3ecbf0164e6526e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b6bad488f3f07739dfd7b32e2f7974" id="r_a07b6bad488f3f07739dfd7b32e2f7974"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class... Rest&gt; </td></tr>
+<tr class="memitem:a07b6bad488f3f07739dfd7b32e2f7974"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a07b6bad488f3f07739dfd7b32e2f7974">console::ops::compose</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> f, Rest... rest) -&gt; <a class="el" href="structconsole_1_1ops_1_1_compose.html">Compose</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, decltype(compose(rest...))&gt;</td></tr>
+<tr class="memdesc:a07b6bad488f3f07739dfd7b32e2f7974"><td class="mdescLeft">&#160;</td><td class="mdescRight">将多个函数组合为一个函数。  <br /></td></tr>
+<tr class="separator:a07b6bad488f3f07739dfd7b32e2f7974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7f3274b699c344fdb7ebea495c55cc" id="r_a3a7f3274b699c344fdb7ebea495c55cc"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> &gt; </td></tr>
+<tr class="memitem:a3a7f3274b699c344fdb7ebea495c55cc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_compose.html">Compose</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a3a7f3274b699c344fdb7ebea495c55cc">console::ops::operator&gt;&gt;</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> f, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29adfcf28d0734569a6a693bc8194de62bf">G</a> g)</td></tr>
+<tr class="memdesc:a3a7f3274b699c344fdb7ebea495c55cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数组合运算符，将两个函数组合为一个函数。  <br /></td></tr>
+<tr class="separator:a3a7f3274b699c344fdb7ebea495c55cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -493,7 +508,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

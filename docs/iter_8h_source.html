@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -141,14 +141,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">typedef</span> std::pair&lt;<span class="keyword">typename</span> It1::value_type,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                          <span class="keyword">typename</span> It2::value_type&gt;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keyword">typename</span> It2::value_type&gt;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#a85838e525dac0d377dd04e7c1a848ccc">   97</a></span>                     <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#a85838e525dac0d377dd04e7c1a848ccc">value_type</a>; </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#a2659a97702980b3907fad1cb89c52164">   98</a></span>        <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#a2659a97702980b3907fad1cb89c52164">pointer</a>;    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#a2659a97702980b3907fad1cb89c52164">   98</a></span>        <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#a2659a97702980b3907fad1cb89c52164">pointer</a>; </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">typedef</span> std::pair&lt;<span class="keyword">typename</span> It1::reference,</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                          <span class="keyword">typename</span> It2::reference&gt;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#af2c289b873ae8080de885ff9bf9ed638">  101</a></span>                                          <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#af2c289b873ae8080de885ff9bf9ed638">reference</a>;         </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keyword">typename</span> It2::reference&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#af2c289b873ae8080de885ff9bf9ed638">  101</a></span>                                          <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#af2c289b873ae8080de885ff9bf9ed638">reference</a>; </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#a2fe1a150d2b3f209136e1664d9830ee4">  102</a></span>        <span class="keyword">typedef</span> std::forward_iterator_tag <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#a2fe1a150d2b3f209136e1664d9830ee4">iterator_category</a>; </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#ade401a0347e4f56527469c394523abdf">  103</a></span>        <span class="keyword">typedef</span> std::ptrdiff_t            <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#ade401a0347e4f56527469c394523abdf">difference_type</a>;   </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#ade401a0347e4f56527469c394523abdf">  103</a></span>        <span class="keyword">typedef</span> std::ptrdiff_t            <a class="code hl_typedef" href="classconsole_1_1_tied_iterators.html#ade401a0347e4f56527469c394523abdf">difference_type</a>; </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classconsole_1_1_tied_iterators.html#ae298a9eebae1b856c103e96fe3ade65f">  110</a></span>        <a class="code hl_function" href="classconsole_1_1_tied_iterators.html#ae298a9eebae1b856c103e96fe3ade65f">TiedIterators</a>(It1 i1, It2 i2) : it1(i1), it2(i2) {}</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
@@ -235,7 +235,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

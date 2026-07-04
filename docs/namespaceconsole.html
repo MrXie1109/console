@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -1666,7 +1666,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a4a3d6bfc1b36f7a231fffcdb55a0402c" id="r_a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a></td></tr>
 <tr class="memdesc:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认输入设置  <br /></td></tr>
 <tr class="separator:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">logger</a></td></tr>
+<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">logger</a> = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td></tr>
 <tr class="memdesc:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
 <tr class="separator:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389ee8f66941b84f2aab8734d3197a63" id="r_a389ee8f66941b84f2aab8734d3197a63"><td class="memItemLeft" >struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
@@ -1674,7 +1674,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a389ee8f66941b84f2aab8734d3197a63" id="r_a389ee8f66941b84f2aab8734d3197a63"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a389ee8f66941b84f2aab8734d3197a63">nothing</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:a389ee8f66941b84f2aab8734d3197a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">空状态标记对象，用于显式构造空的 Maybe。  <br /></td></tr>
 <tr class="separator:a389ee8f66941b84f2aab8734d3197a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc94bf1b5b2d118e6d8207ef587f5a89" id="r_afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_output.html">Output</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a></td></tr>
+<tr class="memitem:afc94bf1b5b2d118e6d8207ef587f5a89" id="r_afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_output.html">Output</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a> = <a class="el" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</td></tr>
 <tr class="memdesc:afc94bf1b5b2d118e6d8207ef587f5a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局输出对象，模仿 Python 的 print 函数。  <br /></td></tr>
 <tr class="separator:afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a560f2ab0066609b49d9f85abcefbacd3" id="r_a560f2ab0066609b49d9f85abcefbacd3"><td class="memItemLeft" align="right" valign="top">static const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a560f2ab0066609b49d9f85abcefbacd3">supports_ansi</a> = false</td></tr>
@@ -2202,8 +2202,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;
-            decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt; </td>
+          <td></td><td> -&gt; std::future&lt;decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(
+                                     std::forward&lt;Args&gt;(args)...))&gt; </td>
         </tr>
       </table>
   </td>
@@ -3037,8 +3037,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::vector&lt;std::future&lt;
-            decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt; </td>
+          <td></td><td> -&gt; std::vector&lt;std::future&lt;decltype(func(
+            std::declval&lt;typename Container::value_type&gt;()))&gt;&gt; </td>
         </tr>
       </table>
   </td>
@@ -3130,8 +3130,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;
-            decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt; </td>
+          <td></td><td> -&gt; std::future&lt;decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(
+                                          f)(std::forward&lt;Args&gt;(args)...))&gt; </td>
         </tr>
       </table>
   </td>
@@ -4079,7 +4079,7 @@ template&lt;class Cont &gt; </div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; x : <a class="code hl_function" href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">progress</a>(v)) {</div>
 <div class="line">    <span class="comment">// 处理 x</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceconsole_html_a01ca524918c855ebc0295b3d956e1df3"><div class="ttname"><a href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">console::progress</a></div><div class="ttdeci">auto progress(Cont &amp;&amp;cont, const ProgressConfig &amp;pc={}) -&gt; Progress&lt; decltype(std::begin(cont))&gt;</div><div class="ttdoc">创建进度条对象的辅助函数（自动推导容器类型）。</div><div class="ttdef"><b>Definition</b> progress.h:272</div></div>
+<div class="ttc" id="anamespaceconsole_html_a01ca524918c855ebc0295b3d956e1df3"><div class="ttname"><a href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">console::progress</a></div><div class="ttdeci">auto progress(Cont &amp;&amp;cont, const ProgressConfig &amp;pc={}) -&gt; Progress&lt; decltype(std::begin(cont))&gt;</div><div class="ttdoc">创建进度条对象的辅助函数（自动推导容器类型）。</div><div class="ttdef"><b>Definition</b> progress.h:277</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -4810,7 +4810,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <div class="line">    std::cout &lt;&lt; result.<a class="code hl_function" href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">output</a>();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassconsole_1_1_cmd_result_html_a089bb5ea1e2b5abca93bf6217f323fd6"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">console::CmdResult::output</a></div><div class="ttdeci">const std::string &amp; output() const</div><div class="ttdoc">获取命令的标准输出内容。</div><div class="ttdef"><b>Definition</b> syscmd.h:105</div></div>
-<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:124</div></div>
+<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:123</div></div>
 </div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd>函数阻塞直到命令执行完毕。 </dd></dl>
 
 </div>
@@ -5084,8 +5084,8 @@ template&lt;class C1 , class C2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{std::cout,</div>
-<div class="line">                                       std::cin}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">        std::cout, std::cin}</div>
 </div><!-- fragment -->
 <p>全局默认输入设置 </p>
 
@@ -5101,7 +5101,7 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1_logging.html">Logging</a>&amp; console::logger</td>
+          <td class="memname"><a class="el" href="classconsole_1_1_logging.html">Logging</a>&amp; console::logger = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td>
         </tr>
       </table>
   </td>
@@ -5110,10 +5110,7 @@ template&lt;class C1 , class C2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">        <a class="code hl_function" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</div>
-<div class="ttc" id="anamespaceconsole_html_aeee954f9f21c7f53ef7b9bbf7f5055da"><div class="ttname"><a href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">console::get_logger</a></div><div class="ttdeci">Logging &amp; get_logger()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> logging.h:192</div></div>
-</div><!-- fragment -->
+
 <p>全局默认 logger 实例，启用颜色，级别 INFO。 </p>
 
 </div>
@@ -5167,7 +5164,7 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1_output.html">Output</a>&amp; console::print</td>
+          <td class="memname"><a class="el" href="classconsole_1_1_output.html">Output</a>&amp; console::print = <a class="el" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</td>
         </tr>
       </table>
   </td>
@@ -5176,10 +5173,7 @@ template&lt;class C1 , class C2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">        <a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</div>
-<div class="ttc" id="anamespaceconsole_html_af775492d227128b6187ce642884d16b8"><div class="ttname"><a href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">console::get_print</a></div><div class="ttdeci">Output &amp; get_print()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> output.h:412</div></div>
-</div><!-- fragment -->
+
 <p>全局输出对象，模仿 Python 的 print 函数。 </p>
 
 </div>
@@ -5211,7 +5205,7 @@ template&lt;class C1 , class C2 &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

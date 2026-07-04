@@ -3,7 +3,7 @@ var searchData=
   ['w_0',['W',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a61e9c06ea9a85a5088a499df6458d276',1,'console']]],
   ['wait_1',['wait',['../classconsole_1_1_keyboard.html#a442c6ffddedddef1d9b52005884404f6',1,'console::Keyboard::wait()'],['../classconsole_1_1_process.html#a5e8c471f923aa5be505f8f6da5c433b1',1,'console::Process::wait()'],['../classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350',1,'console::ThreadPool::wait()']]],
   ['wait_5fany_2',['wait_any',['../classconsole_1_1_process.html#a93040d3152752843225375d1d0dcdc91',1,'console::Process']]],
-  ['warn_3',['warn',['../classconsole_1_1_logging.html#a329ddff70248bb2ebad2490e5353408c',1,'console::Logging::warn(const Args &amp;...args)'],['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a32bd8a1db2275458673903bdb84cb277',1,'console::Logging::WARN']]],
+  ['warn_3',['warn',['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8a32bd8a1db2275458673903bdb84cb277',1,'console::Logging::WARN'],['../classconsole_1_1_logging.html#a329ddff70248bb2ebad2490e5353408c',1,'console::Logging::warn(const Args &amp;...args)']]],
   ['whistle_4',['Whistle',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592ad62f8789d640fc4bf972663ddd10b77a',1,'console']]],
   ['white_5',['White',['../namespaceconsole_1_1color.html#ac881c728c47295b7e2d6bdae8ea7962a',1,'console::color']]],
   ['width_6',['width',['../structconsole_1_1_progress_config.html#af8fe2774e5484ef8714055700aec87d4',1,'console::ProgressConfig']]],

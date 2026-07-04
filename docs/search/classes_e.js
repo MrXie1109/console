@@ -10,13 +10,14 @@ var searchData=
   ['pipeline_3c_20ops_2e_2e_2e_20_3e_7',['Pipeline&lt; Ops... &gt;',['../classconsole_1_1gen_1_1_pipeline.html',1,'console::gen']]],
   ['pipeline_3c_20rest_2e_2e_2e_20_3e_8',['Pipeline&lt; Rest... &gt;',['../classconsole_1_1gen_1_1_pipeline.html',1,'console::gen']]],
   ['pipeline_5ft_9',['pipeline_t',['../classconsole_1_1gen_1_1pipeline__t.html',1,'console::gen']]],
-  ['positive_5ft_10',['positive_t',['../structconsole_1_1ops_1_1positive__t.html',1,'console::ops']]],
-  ['pow_11',['Pow',['../structconsole_1_1ops_1_1_pow.html',1,'console::ops']]],
-  ['power_5fof_5ftwo_5ft_12',['power_of_two_t',['../structconsole_1_1ops_1_1power__of__two__t.html',1,'console::ops']]],
-  ['prime_5ft_13',['prime_t',['../structconsole_1_1ops_1_1prime__t.html',1,'console::ops']]],
-  ['priorityqueue_14',['PriorityQueue',['../classconsole_1_1_priority_queue.html',1,'console']]],
-  ['process_15',['Process',['../classconsole_1_1_process.html',1,'console']]],
-  ['processinfo_16',['ProcessInfo',['../structconsole_1_1_process_info.html',1,'console']]],
-  ['progress_17',['Progress',['../classconsole_1_1_progress.html',1,'console']]],
-  ['progressconfig_18',['ProgressConfig',['../structconsole_1_1_progress_config.html',1,'console']]]
+  ['plus_5ft_10',['plus_t',['../structconsole_1_1ops_1_1plus__t.html',1,'console::ops']]],
+  ['positive_5ft_11',['positive_t',['../structconsole_1_1ops_1_1positive__t.html',1,'console::ops']]],
+  ['pow_12',['Pow',['../structconsole_1_1ops_1_1_pow.html',1,'console::ops']]],
+  ['power_5fof_5ftwo_5ft_13',['power_of_two_t',['../structconsole_1_1ops_1_1power__of__two__t.html',1,'console::ops']]],
+  ['prime_5ft_14',['prime_t',['../structconsole_1_1ops_1_1prime__t.html',1,'console::ops']]],
+  ['priorityqueue_15',['PriorityQueue',['../classconsole_1_1_priority_queue.html',1,'console']]],
+  ['process_16',['Process',['../classconsole_1_1_process.html',1,'console']]],
+  ['processinfo_17',['ProcessInfo',['../structconsole_1_1_process_info.html',1,'console']]],
+  ['progress_18',['Progress',['../classconsole_1_1_progress.html',1,'console']]],
+  ['progressconfig_19',['ProgressConfig',['../structconsole_1_1_progress_config.html',1,'console']]]
 ];

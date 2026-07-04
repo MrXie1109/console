@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -116,10 +116,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structconsole_1_1is__container.html">   51</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__container.html">is_container</a> : std::false_type {};</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__container.html">is_container</a>&lt;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, typename std::enable_if&lt;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>               sizeof(decltype(std::begin(std::declval&lt;T&gt;()))) &amp;&amp;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>               sizeof(decltype(std::end(std::declval&lt;T&gt;())))&gt;::type&gt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__container.html">is_container</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        typename std::enable_if&lt;sizeof(decltype(std::begin(std::declval&lt;T&gt;())))</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                &amp;&amp; sizeof(decltype(std::end(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                    std::declval&lt;T&gt;())))&gt;::type&gt;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        : std::true_type {};</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class </span>= void, <span class="keyword">class</span>... Args&gt;</div>
@@ -127,25 +127,25 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, <span class="keyword">class</span>... Args&gt;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__callable.html">is_callable</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                       typename std::enable_if&lt;std::is_convertible&lt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                           decltype(std::declval&lt;F&gt;()(std::declval&lt;Args&gt;()...)),</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                           void&gt;::value&gt;::type,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                       Args...&gt; : std::true_type {};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        typename std::enable_if&lt;std::is_convertible&lt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            decltype(std::declval&lt;F&gt;()(std::declval&lt;Args&gt;()...)),</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            void&gt;::value&gt;::type,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        Args...&gt; : std::true_type {};</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structconsole_1_1is__iterator.html">   86</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__iterator.html">is_iterator</a> : std::false_type {};</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__iterator.html">is_iterator</a>&lt;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, typename std::enable_if&lt;sizeof(</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>               typename std::iterator_traits&lt;T&gt;::iterator_category)&gt;::type&gt;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__iterator.html">is_iterator</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        typename std::enable_if&lt;sizeof(</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            typename std::iterator_traits&lt;T&gt;::iterator_category)&gt;::type&gt;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        : std::true_type {};</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Idx, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structconsole_1_1has__subscript.html">  103</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1has__subscript.html">has_subscript</a> : std::false_type {};</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Idx&gt;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1has__subscript.html">has_subscript</a>&lt;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, Idx,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1has__subscript.html">has_subscript</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        Idx,</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        typename std::enable_if&lt;sizeof(</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            decltype(std::declval&lt;T&gt;()[std::declval&lt;Idx&gt;()]))&gt;::type&gt;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        : std::true_type {};</div>
@@ -178,9 +178,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="structconsole_1_1is__printable.html">  152</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__printable.html">is_printable</a> : std::false_type {};</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__printable.html">is_printable</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, typename std::enable_if&lt;sizeof(</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                               decltype(std::declval&lt;std::ostream &amp;&gt;()</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                                        &lt;&lt; std::declval&lt;T&gt;()))&gt;::type&gt;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1is__printable.html">is_printable</a>&lt;<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        typename std::enable_if&lt;sizeof(decltype(std::declval&lt;std::ostream &amp;&gt;()</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                                                &lt;&lt; std::declval&lt;T&gt;()))&gt;::type&gt;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        : std::true_type {};</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="structconsole_1_1is__char.html">  167</a></span>    template &lt;class T, class = void&gt; struct is_char : std::false_type {};</div>
@@ -196,14 +196,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="structconsole_1_1uniform__distribution__impl.html">  184</a></span>    template &lt;typename T, typename = void&gt; struct uniform_distribution_impl;</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    template &lt;typename T&gt;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    struct uniform_distribution_impl&lt;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        T, typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    struct uniform_distribution_impl&lt;T,</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; {</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        using type = std::uniform_int_distribution&lt;T&gt;;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    };</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    template &lt;typename T&gt;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    struct uniform_distribution_impl&lt;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        T, typename std::enable_if&lt;std::is_floating_point&lt;T&gt;::value&gt;::type&gt; {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    struct uniform_distribution_impl&lt;T,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        typename std::enable_if&lt;std::is_floating_point&lt;T&gt;::value&gt;::type&gt; {</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        using type = std::uniform_real_distribution&lt;T&gt;;</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    };</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
@@ -273,7 +273,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

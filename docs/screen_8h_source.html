@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -128,13 +128,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classconsole_1_1_screen.html#a15183e8015ade0e9aa28ed45a3b2185a">   67</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classconsole_1_1_screen.html#a15183e8015ade0e9aa28ed45a3b2185a">point</a>(<span class="keywordtype">unsigned</span> x, <span class="keywordtype">unsigned</span> y, <span class="keywordtype">bool</span> on = <span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">if</span> (x &gt;= COLS || y &gt;= ROWS) <span class="keywordflow">return</span>; </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">unsigned</span>                   braille_col   = x / 2;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordtype">unsigned</span>                   braille_row   = y / 4;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordtype">unsigned</span>                   sub_x         = x % 2;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordtype">unsigned</span>                   sub_y         = y % 4;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> mapping[2][4] = {{0, 1, 2, 6},</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                                        {3, 4, 5, 7}};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>              bit = 1 &lt;&lt; mapping[sub_x][sub_y];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">unsigned</span>                   braille_col = x / 2;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordtype">unsigned</span>                   braille_row = y / 4;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordtype">unsigned</span>                   sub_x       = x % 2;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordtype">unsigned</span>                   sub_y       = y % 4;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> mapping[2][4]</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                = {{0, 1, 2, 6}, {3, 4, 5, 7}};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> bit = 1 &lt;&lt; mapping[sub_x][sub_y];</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (on)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                masks[braille_row][braille_col] |= bit;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">else</span></div>
@@ -267,7 +267,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

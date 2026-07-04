@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -170,6 +170,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">范围生成器，生成从start到end的等差数列。  <a href="classconsole_1_1gen_1_1_range.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">reduce_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">归约适配器，将生成器所有元素归约为单个值。  <a href="classconsole_1_1gen_1_1reduce__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_repeat.html">Repeat</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">重复生成器，重复生成同一个值指定次数。  <a href="classconsole_1_1gen_1_1_repeat.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,6 +314,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a42ce7d118c0dc83a23a9be24114e2bf1">chain</a> (Gen1 g1, Gen2 g2)</td></tr>
 <tr class="memdesc:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建链式生成器，将两个生成器首尾连接。  <br /></td></tr>
 <tr class="separator:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ce907f6d8d62246c91fcbe724144df" id="r_aa7ce907f6d8d62246c91fcbe724144df"><td class="memTemplParams" colspan="2">template&lt;class Gen , class... Rest&gt; </td></tr>
+<tr class="memitem:aa7ce907f6d8d62246c91fcbe724144df"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aa7ce907f6d8d62246c91fcbe724144df">chain</a> (Gen g, Rest... rest) -&gt; <a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen, decltype(chain(rest...))&gt;</td></tr>
+<tr class="memdesc:aa7ce907f6d8d62246c91fcbe724144df"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建链式生成器，将多个生成器首尾连接。  <br /></td></tr>
+<tr class="separator:aa7ce907f6d8d62246c91fcbe724144df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc" id="r_ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplParams" colspan="2">template&lt;class Gen1 , class Gen2 &gt; </td></tr>
 <tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad4b8089157722ede38c9d5fe9a3dc3bc">operator+</a> (Gen1 g1, Gen2 g2)</td></tr>
 <tr class="memdesc:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">加号操作符重载，用于连接两个生成器。  <br /></td></tr>
@@ -329,6 +336,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">drop_until_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ab13fe09a22d3b40bce402a6b711f4ae0">drop_until</a> (Pred p)</td></tr>
 <tr class="memdesc:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过元素直到谓词成立适配器。  <br /></td></tr>
 <tr class="separator:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554e1d2a6d552b30db8cb1f232c23a86" id="r_a554e1d2a6d552b30db8cb1f232c23a86"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </td></tr>
+<tr class="memitem:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">reduce_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a554e1d2a6d552b30db8cb1f232c23a86">reduce</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;init, BinaryOp bo)</td></tr>
+<tr class="memdesc:a554e1d2a6d552b30db8cb1f232c23a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建归约适配器。  <br /></td></tr>
+<tr class="separator:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -336,8 +347,55 @@ Variables</h2></td></tr>
 <tr class="separator:ad3b96aa84a429ea74a23e81206fe7151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa7ce907f6d8d62246c91fcbe724144df" name="aa7ce907f6d8d62246c91fcbe724144df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ce907f6d8d62246c91fcbe724144df">&#9670;&#160;</a></span>chain() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen , class... Rest&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto console::gen::chain </td>
+          <td>(</td>
+          <td class="paramtype">Gen&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rest...&#160;</td>
+          <td class="paramname"><em>rest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt;Gen, decltype(chain(rest...))&gt; </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建链式生成器，将多个生成器首尾连接。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen</td><td>第一个生成器类型。 </td></tr>
+    <tr><td class="paramname">...Rest</td><td>其余生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>第一个生成器。 </td></tr>
+    <tr><td class="paramname">rest</td><td>其余生成器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chain&lt;Gen, decltype(chain(rest...))&gt; 链式生成器。 </dd></dl>
+
+</div>
+</div>
 <a id="a42ce7d118c0dc83a23a9be24114e2bf1" name="a42ce7d118c0dc83a23a9be24114e2bf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42ce7d118c0dc83a23a9be24114e2bf1">&#9670;&#160;</a></span>chain()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ce7d118c0dc83a23a9be24114e2bf1">&#9670;&#160;</a></span>chain() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -940,8 +998,8 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(std::forward&lt;Gen1&gt;(g1),
-                                 std::forward&lt;Gen2&gt;(g2))) </td>
+          <td></td><td> -&gt; decltype(<a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(
+            std::forward&lt;Gen1&gt;(g1), std::forward&lt;Gen2&gt;(g2))) </td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1165,6 +1223,53 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Range&lt;T&gt; 范围生成器。 </dd></dl>
+
+</div>
+</div>
+<a id="a554e1d2a6d552b30db8cb1f232c23a86" name="a554e1d2a6d552b30db8cb1f232c23a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554e1d2a6d552b30db8cb1f232c23a86">&#9670;&#160;</a></span>reduce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">reduce_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt; console::gen::reduce </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BinaryOp&#160;</td>
+          <td class="paramname"><em>bo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建归约适配器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>初始值类型。 </td></tr>
+    <tr><td class="paramname">BinaryOp</td><td>二元操作符类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>初始值。 </td></tr>
+    <tr><td class="paramname">op</td><td>二元操作符。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>reduce_t&lt;T, BinaryOp&gt; 归约适配器。 </dd></dl>
 
 </div>
 </div>
@@ -1564,7 +1669,7 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

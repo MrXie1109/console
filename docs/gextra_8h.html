@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -85,7 +85,8 @@ $(function() {
 
 <p>生成器库扩展功能。  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -150,6 +151,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">console::gen::drop_until_t&lt; Pred &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1drop__until__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">console::gen::reduce_t&lt; T, BinaryOp &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">归约适配器，将生成器所有元素归约为单个值。  <a href="classconsole_1_1gen_1_1reduce__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_pow.html">console::ops::Pow&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">幂运算变换器。  <a href="structconsole_1_1ops_1_1_pow.html#details">More...</a><br /></td></tr>
@@ -250,6 +254,21 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1timestamp__t.html">console::ops::timestamp_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">时间戳生成器。  <a href="structconsole_1_1ops_1_1timestamp__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1plus__t.html">console::ops::plus_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">加法函数子。  <a href="structconsole_1_1ops_1_1plus__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1minus__t.html">console::ops::minus_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">减法函数子。  <a href="structconsole_1_1ops_1_1minus__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1multiplies__t.html">console::ops::multiplies_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">乘法函数子。  <a href="structconsole_1_1ops_1_1multiplies__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1divides__t.html">console::ops::divides_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">除法函数子。  <a href="structconsole_1_1ops_1_1divides__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1modulus__t.html">console::ops::modulus_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取模函数子。  <a href="structconsole_1_1ops_1_1modulus__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -289,6 +308,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a42ce7d118c0dc83a23a9be24114e2bf1">console::gen::chain</a> (Gen1 g1, Gen2 g2)</td></tr>
 <tr class="memdesc:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建链式生成器，将两个生成器首尾连接。  <br /></td></tr>
 <tr class="separator:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ce907f6d8d62246c91fcbe724144df" id="r_aa7ce907f6d8d62246c91fcbe724144df"><td class="memTemplParams" colspan="2">template&lt;class Gen , class... Rest&gt; </td></tr>
+<tr class="memitem:aa7ce907f6d8d62246c91fcbe724144df"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aa7ce907f6d8d62246c91fcbe724144df">console::gen::chain</a> (Gen g, Rest... rest) -&gt; <a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen, decltype(chain(rest...))&gt;</td></tr>
+<tr class="memdesc:aa7ce907f6d8d62246c91fcbe724144df"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建链式生成器，将多个生成器首尾连接。  <br /></td></tr>
+<tr class="separator:aa7ce907f6d8d62246c91fcbe724144df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc" id="r_ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplParams" colspan="2">template&lt;class Gen1 , class Gen2 &gt; </td></tr>
 <tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad4b8089157722ede38c9d5fe9a3dc3bc">console::gen::operator+</a> (Gen1 g1, Gen2 g2)</td></tr>
 <tr class="memdesc:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">加号操作符重载，用于连接两个生成器。  <br /></td></tr>
@@ -307,6 +330,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">drop_until_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ab13fe09a22d3b40bce402a6b711f4ae0">console::gen::drop_until</a> (Pred p)</td></tr>
 <tr class="memdesc:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过元素直到谓词成立适配器。  <br /></td></tr>
 <tr class="separator:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554e1d2a6d552b30db8cb1f232c23a86" id="r_a554e1d2a6d552b30db8cb1f232c23a86"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </td></tr>
+<tr class="memitem:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">reduce_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a554e1d2a6d552b30db8cb1f232c23a86">console::gen::reduce</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;init, BinaryOp bo)</td></tr>
+<tr class="memdesc:a554e1d2a6d552b30db8cb1f232c23a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建归约适配器。  <br /></td></tr>
+<tr class="separator:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6" id="r_a7c857359f52b8826f147c0362430bea6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_pow.html">Pow</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a7c857359f52b8826f147c0362430bea6">console::ops::pow</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="namespaceconsole_1_1ops.html#af71c083953ee9d1b39f2ffa12bd04817">exp</a>)</td></tr>
 <tr class="memdesc:a7c857359f52b8826f147c0362430bea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建幂运算变换器。  <br /></td></tr>
@@ -386,6 +413,16 @@ Variables</h2></td></tr>
 <tr class="separator:a01b643d982712f75a50dc79ad4026623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c2b52276e558a8420d26d59de35b0ea" id="r_a5c2b52276e558a8420d26d59de35b0ea"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1timestamp__t.html">timestamp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a5c2b52276e558a8420d26d59de35b0ea">console::ops::timestamp</a></td></tr>
 <tr class="separator:a5c2b52276e558a8420d26d59de35b0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d0d2b161377df429896258383793a4" id="r_a84d0d2b161377df429896258383793a4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1plus__t.html">plus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a84d0d2b161377df429896258383793a4">console::ops::plus</a></td></tr>
+<tr class="separator:a84d0d2b161377df429896258383793a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0a2334f7ba7b7c588fafa9fbd42bc7" id="r_a7c0a2334f7ba7b7c588fafa9fbd42bc7"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1minus__t.html">minus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a7c0a2334f7ba7b7c588fafa9fbd42bc7">console::ops::minus</a></td></tr>
+<tr class="separator:a7c0a2334f7ba7b7c588fafa9fbd42bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589df40a4a78af21477c456a730023b2" id="r_a589df40a4a78af21477c456a730023b2"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1multiplies__t.html">multiplies_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a589df40a4a78af21477c456a730023b2">console::ops::multiplies</a></td></tr>
+<tr class="separator:a589df40a4a78af21477c456a730023b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a1ef1270a4bd8f0bda1f8e38a31cb9" id="r_a41a1ef1270a4bd8f0bda1f8e38a31cb9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1divides__t.html">divides_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a41a1ef1270a4bd8f0bda1f8e38a31cb9">console::ops::divides</a></td></tr>
+<tr class="separator:a41a1ef1270a4bd8f0bda1f8e38a31cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c56890ba0eab3261ba7fdd0c7e55091" id="r_a2c56890ba0eab3261ba7fdd0c7e55091"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1modulus__t.html">modulus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a2c56890ba0eab3261ba7fdd0c7e55091">console::ops::modulus</a></td></tr>
+<tr class="separator:a2c56890ba0eab3261ba7fdd0c7e55091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>生成器库扩展功能。 </p>
@@ -394,7 +431,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

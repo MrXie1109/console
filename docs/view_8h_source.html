@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -154,8 +154,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classconsole_1_1_view.html#a5dd79e2aa7cd54a1e0739ee27b4198d0">  114</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_view.html#a5dd79e2aa7cd54a1e0739ee27b4198d0">at</a>(<span class="keywordtype">size_t</span> pos) <span class="keyword">const</span> -&gt; <span class="keyword">decltype</span>(*begin_) {</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordflow">if</span> (pos &gt;= <a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>())</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">throw</span> index_error(std::to_string(pos) + <span class="stringliteral">&quot; out of 0 ~ &quot;</span> +</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                  std::to_string(<a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>() - 1));</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">throw</span> index_error(std::to_string(pos) + <span class="stringliteral">&quot; out of 0 ~ &quot;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                  + std::to_string(<a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>() - 1));</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[pos];</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
 </div>
@@ -202,8 +202,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classconsole_1_1_view_3_01const_01_container_01_4.html#ab85e52fd1e720f6b1412ff9de61fe9a8">  176</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classconsole_1_1_view_3_01const_01_container_01_4.html#ab85e52fd1e720f6b1412ff9de61fe9a8">at</a>(<span class="keywordtype">size_t</span> pos) <span class="keyword">const</span> -&gt; <span class="keyword">decltype</span>(*begin_) {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">if</span> (pos &gt;= <a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>())</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">throw</span> index_error(std::to_string(pos) + <span class="stringliteral">&quot; out of 0 ~ &quot;</span> +</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                  std::to_string(<a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>() - 1));</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">throw</span> index_error(std::to_string(pos) + <span class="stringliteral">&quot; out of 0 ~ &quot;</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                  + std::to_string(<a class="code hl_function" href="classconsole_1_1_view.html#ab47e45983a7058a78a100f0aaef8fb1a">size</a>() - 1));</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[pos];</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
 </div>
@@ -213,8 +213,8 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
 <div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ac202c83668858c78f9e639529b6e842a">  196</a></span>    <span class="keyword">inline</span> std::ostream &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream            &amp;os,</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                                    <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;std::string&gt;</a> &amp;sv) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ac202c83668858c78f9e639529b6e842a">  196</a></span>    <span class="keyword">inline</span> std::ostream &amp;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;std::string&gt;</a> &amp;sv) {</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = sv.<a class="code hl_function" href="classconsole_1_1_view.html#a0354b44e53a9ffca1b03171dae74df48">begin</a>(); it != sv.<a class="code hl_function" href="classconsole_1_1_view.html#ab5c1a4c02823207585cd23025832453c">end</a>(); ++it) {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            os &lt;&lt; *it;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        }</div>
@@ -252,17 +252,17 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="group__view__factories.html#ga92c9d567b60a681f49cc35a134310b66">  268</a></span>    <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;const Container&gt;</a> <a class="code hl_function" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">make_view</a>(<span class="keyword">const</span> Container &amp;cont, <span class="keywordtype">size_t</span> start,</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                                    <span class="keywordtype">size_t</span> end) {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    View&lt;const Container&gt;</div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="group__view__factories.html#ga92c9d567b60a681f49cc35a134310b66">  269</a></span>    <a class="code hl_function" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">make_view</a>(<span class="keyword">const</span> Container &amp;cont, <span class="keywordtype">size_t</span> start, <span class="keywordtype">size_t</span> end) {</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordflow">return</span> {cont, start, end};</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
 </div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
 <div class="foldopen" id="foldopen00281" data-start="{" data-end="}">
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="group__view__factories.html#ga65c52ea86b4f2903803aa973589049a7">  281</a></span>    <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;Container&gt;</a> <a class="code hl_function" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">make_view</a>(<span class="keyword">typename</span> Container::iterator begin,</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                              <span class="keyword">typename</span> Container::iterator end) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="group__view__factories.html#ga65c52ea86b4f2903803aa973589049a7">  281</a></span>    <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;Container&gt;</a> <a class="code hl_function" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">make_view</a>(</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">typename</span> Container::iterator begin, <span class="keyword">typename</span> Container::iterator end) {</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">return</span> {begin, end};</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
 </div>
@@ -270,7 +270,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
 <div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="group__view__factories.html#ga54759507fe414b6e3e926b8da722ccc6">  294</a></span>    <a class="code hl_class" href="classconsole_1_1_view.html">View&lt;const Container&gt;</a> <a class="code hl_function" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">make_view</a>(<span class="keyword">typename</span> Container::const_iterator begin,</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                                    <span class="keyword">typename</span> Container::const_iterator end) {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keyword">typename</span> Container::const_iterator                             end) {</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">return</span> {begin, end};</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
 </div>
@@ -325,7 +325,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

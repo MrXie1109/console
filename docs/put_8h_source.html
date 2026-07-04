@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -111,8 +111,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> StrOrCharType&gt;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        is_string&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value ||</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        is_char&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value&gt;::type</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        is_string&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        || is_char&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value&gt;::type</div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">   47</a></span>    <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(std::ostream &amp;os, StrOrCharType &amp;&amp;value) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        os &lt;&lt; value;</div>
@@ -121,8 +121,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> OtherType&gt;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        !is_string&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value &amp;&amp;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        !is_char&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value&gt;::type</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        !is_string&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        &amp;&amp; !is_char&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value&gt;::type</div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespaceconsole.html#af23e6235185590bb4d07651ee645ef16">   62</a></span>    <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(std::ostream &amp;os, OtherType &amp;&amp;value) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(value, os);</div>
@@ -136,7 +136,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

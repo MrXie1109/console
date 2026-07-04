@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -108,32 +108,32 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define WIN32_LEAN_AND_MEAN </span><span class="comment">// 排除不常用的 Windows 组件</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define NOMINMAX 1          </span><span class="comment">// 避免 min/max 宏污染</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define NOGDI               </span><span class="comment">// 不需要图形设备接口</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define NOUSER              </span><span class="comment">// 不需要窗口管理</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define NOSERVICE           </span><span class="comment">// 不需要服务</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define NOMCX               </span><span class="comment">// 不需要媒体中心扩展</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define NOHELP              </span><span class="comment">// 不需要 WinHelp</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define NOSOUND             </span><span class="comment">// 不需要声音</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define NOCOMM              </span><span class="comment">// 不需要串口</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define NOKANJI             </span><span class="comment">// 不需要日文</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define NOCLIPBOARD         </span><span class="comment">// 不需要剪贴板</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define NOCOLOR             </span><span class="comment">// 不需要颜色表</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define NODRAWTEXT          </span><span class="comment">// 不需要 DrawText</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define NOMENUS             </span><span class="comment">// 不需要菜单</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define NOICONS             </span><span class="comment">// 不需要图标</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define NOSYSCOMMANDS       </span><span class="comment">// 不需要系统命令</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define NORASTEROPS         </span><span class="comment">// 不需要光栅操作</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define NOSHOWWINDOW        </span><span class="comment">// 不需要 ShowWindow</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define NOATOM              </span><span class="comment">// 不需要原子表</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define NOCTLMGR            </span><span class="comment">// 不需要控件管理器</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define NOMETAFILE          </span><span class="comment">// 不需要元文件</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define NOOPENFILE          </span><span class="comment">// 不需要 OpenFile</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define NOSCROLL            </span><span class="comment">// 不需要滚动条</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#define NOTEXTMETRIC        </span><span class="comment">// 不需要文本度量</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#define NOWH                </span><span class="comment">// 不需要 Windows 挂钩</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define NOPROFILER          </span><span class="comment">// 不需要性能分析器</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#define NODEFERWINDOWPOS    </span><span class="comment">// 不需要窗口位置调整</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define NOMINMAX 1 </span><span class="comment">// 避免 min/max 宏污染</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define NOGDI </span><span class="comment">// 不需要图形设备接口</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define NOUSER </span><span class="comment">// 不需要窗口管理</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define NOSERVICE </span><span class="comment">// 不需要服务</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define NOMCX </span><span class="comment">// 不需要媒体中心扩展</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define NOHELP </span><span class="comment">// 不需要 WinHelp</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define NOSOUND </span><span class="comment">// 不需要声音</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define NOCOMM </span><span class="comment">// 不需要串口</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define NOKANJI </span><span class="comment">// 不需要日文</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define NOCLIPBOARD </span><span class="comment">// 不需要剪贴板</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define NOCOLOR </span><span class="comment">// 不需要颜色表</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define NODRAWTEXT </span><span class="comment">// 不需要 DrawText</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define NOMENUS </span><span class="comment">// 不需要菜单</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define NOICONS </span><span class="comment">// 不需要图标</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define NOSYSCOMMANDS </span><span class="comment">// 不需要系统命令</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define NORASTEROPS </span><span class="comment">// 不需要光栅操作</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define NOSHOWWINDOW </span><span class="comment">// 不需要 ShowWindow</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define NOATOM </span><span class="comment">// 不需要原子表</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define NOCTLMGR </span><span class="comment">// 不需要控件管理器</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define NOMETAFILE </span><span class="comment">// 不需要元文件</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define NOOPENFILE </span><span class="comment">// 不需要 OpenFile</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define NOSCROLL </span><span class="comment">// 不需要滚动条</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#define NOTEXTMETRIC </span><span class="comment">// 不需要文本度量</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#define NOWH </span><span class="comment">// 不需要 Windows 挂钩</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define NOPROFILER </span><span class="comment">// 不需要性能分析器</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#define NODEFERWINDOWPOS </span><span class="comment">// 不需要窗口位置调整</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &lt;conio.h&gt;</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#else</span></div>
@@ -269,8 +269,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            hStdin = GetStdHandle(STD_INPUT_HANDLE);</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            GetConsoleMode(hStdin, &amp;oldMode);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            SetConsoleMode(hStdin,</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                           oldMode &amp; ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT));</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            SetConsoleMode(</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                hStdin, oldMode &amp; ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT));</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            tcgetattr(STDIN_FILENO, &amp;oldTio);</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keyword">struct </span>termios newTio = oldTio;</div>
@@ -328,123 +328,122 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        HANDLE hStdin; </div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        DWORD oldMode; </div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keyword">struct </span>termios</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            oldTio; </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordtype">int</span> readRaw() {</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            <span class="keywordflow">if</span> (_kbhit()) <span class="keywordflow">return</span> _getch();</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordflow">if</span> (poll(&amp;pfd, 1, 0) &lt;= 0) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keywordflow">if</span> (read(STDIN_FILENO, &amp;c, 1) != 1) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keywordflow">return</span> c;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        }</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keywordtype">int</span> readRawBlock() {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <span class="keywordflow">return</span> _getch();</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                <span class="keywordflow">if</span> (poll(&amp;pfd, 1, -1) &gt; 0) {</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                    <span class="keywordflow">if</span> (read(STDIN_FILENO, &amp;c, 1) == 1) <span class="keywordflow">return</span> c;</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                }</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            }</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> parse(<span class="keywordtype">int</span> raw) {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            <span class="keywordflow">if</span> ((raw &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;Z&#39;</span>) || (raw &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;9&#39;</span>)) {</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a><span class="keyword">&gt;</span>(raw);</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            }</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            <span class="keywordflow">if</span> (raw &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;z&#39;</span>) {</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a><span class="keyword">&gt;</span>(raw - 32);</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            }</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            <span class="keywordflow">switch</span> (raw) {</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39; &#39;</span>:</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ad511f8439ecde36647437fbba67a4394">Key::Space</a>;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="keywordflow">case</span> 13:</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af1851d5600eae616ee802a31ac74701b">Key::Enter</a>;</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>            <span class="keywordflow">case</span> 27:</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                <span class="keywordflow">return</span> handleEscape();</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            <span class="keywordflow">case</span> 8:</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            <span class="keywordflow">case</span> 127:</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29acd7d13ceea728b08555f7c818cfb13ef">Key::Backspace</a>;</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            <span class="keywordflow">case</span> 9:</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a5c6ba25104401c9ee0650230fc6ba413">Key::Tab</a>;</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            }</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            <span class="keywordflow">if</span> (raw == 0xE0 || raw == 0x00) {</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                <span class="keywordtype">int</span> ext = _getch();</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                <span class="keywordflow">switch</span> (ext) {</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                <span class="keywordflow">case</span> 0x48:</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a258f49887ef8d14ac268c92b02503aaa">Key::Up</a>;</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                <span class="keywordflow">case</span> 0x50:</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a08a38277b0309070706f6652eeae9a53">Key::Down</a>;</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                <span class="keywordflow">case</span> 0x4B:</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a945d5e233cf7d6240f6b783b36a374ff">Key::Left</a>;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                <span class="keywordflow">case</span> 0x4D:</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a92b09c7c48c520c3c55e497875da437c">Key::Right</a>;</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                <span class="keywordflow">case</span> 0x3B:</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae1dffc8709f31a4987c8a88334107e89">Key::F1</a>;</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                <span class="keywordflow">case</span> 0x3C:</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29afe5c3684dce76cdd9f7f42430868aa74">Key::F2</a>;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                <span class="keywordflow">case</span> 0x3D:</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4b6bf4b531770872d4328ce69bef5627">Key::F3</a>;</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                <span class="keywordflow">case</span> 0x3E:</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae7e0e72401a9f2718ed0f39f2861d702">Key::F4</a>;</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                <span class="keywordflow">case</span> 0x3F:</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a37f438df6a6d5ba4c17ef8ca58562f00">Key::F5</a>;</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                <span class="keywordflow">case</span> 0x40:</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a1faf42f2823f184eb2c9f0dffe5d73f2">Key::F6</a>;</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                <span class="keywordflow">case</span> 0x41:</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a47489eb597b7db34caa24b1fc78fc839">Key::F7</a>;</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                <span class="keywordflow">case</span> 0x42:</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4787509ad9f9d747a81a30e9dde3d4a7">Key::F8</a>;</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                <span class="keywordflow">case</span> 0x43:</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a892a245e287c163080b23db737d3c4c9">Key::F9</a>;</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                <span class="keywordflow">case</span> 0x44:</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab213ce22ca6ad4eda8db82966b9b6e5a">Key::F10</a>;</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                <span class="keywordflow">case</span> 0x85:</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a643b0662422d1d0dffa3fca2e2bf28a8">Key::F11</a>;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                <span class="keywordflow">case</span> 0x86:</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae902674982fc99aa343cdd94da7476c3">Key::F12</a>;</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                }</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            }</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a88183b946cc5f0e8c96b2e66e1c74a7e">Key::Unknown</a>;</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        }</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        <a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> handleEscape() {</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            <span class="keywordflow">if</span> (poll(&amp;pfd, 1, 5) &lt;= 0) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d">Key::Esc</a>;</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            <span class="keywordtype">char</span> seq[3];</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>            <span class="keywordtype">int</span>  n = read(STDIN_FILENO, seq, 3);</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>            <span class="keywordflow">if</span> (n &gt;= 2 &amp;&amp; seq[0] == <span class="charliteral">&#39;[&#39;</span>) {</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>                <span class="keywordflow">switch</span> (seq[1]) {</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a258f49887ef8d14ac268c92b02503aaa">Key::Up</a>;</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a08a38277b0309070706f6652eeae9a53">Key::Down</a>;</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a92b09c7c48c520c3c55e497875da437c">Key::Right</a>;</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a945d5e233cf7d6240f6b783b36a374ff">Key::Left</a>;</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>                }</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>            }</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d">Key::Esc</a>;</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        }</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    };</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keyword">struct </span>termios oldTio; </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordtype">int</span> readRaw() {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">if</span> (_kbhit()) <span class="keywordflow">return</span> _getch();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="keywordflow">if</span> (poll(&amp;pfd, 1, 0) &lt;= 0) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">if</span> (read(STDIN_FILENO, &amp;c, 1) != 1) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keywordflow">return</span> c;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keywordtype">int</span> readRawBlock() {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            <span class="keywordflow">return</span> _getch();</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                <span class="keywordflow">if</span> (poll(&amp;pfd, 1, -1) &gt; 0) {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                    <span class="keywordflow">if</span> (read(STDIN_FILENO, &amp;c, 1) == 1) <span class="keywordflow">return</span> c;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                }</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> parse(<span class="keywordtype">int</span> raw) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            <span class="keywordflow">if</span> ((raw &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;Z&#39;</span>) || (raw &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;9&#39;</span>)) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a><span class="keyword">&gt;</span>(raw);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            <span class="keywordflow">if</span> (raw &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; raw &lt;= <span class="charliteral">&#39;z&#39;</span>) {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a><span class="keyword">&gt;</span>(raw - 32);</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            }</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            <span class="keywordflow">switch</span> (raw) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39; &#39;</span>:</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ad511f8439ecde36647437fbba67a4394">Key::Space</a>;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>            <span class="keywordflow">case</span> 13:</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af1851d5600eae616ee802a31ac74701b">Key::Enter</a>;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            <span class="keywordflow">case</span> 27:</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                <span class="keywordflow">return</span> handleEscape();</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            <span class="keywordflow">case</span> 8:</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            <span class="keywordflow">case</span> 127:</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29acd7d13ceea728b08555f7c818cfb13ef">Key::Backspace</a>;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            <span class="keywordflow">case</span> 9:</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a5c6ba25104401c9ee0650230fc6ba413">Key::Tab</a>;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            <span class="keywordflow">if</span> (raw == 0xE0 || raw == 0x00) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                <span class="keywordtype">int</span> ext = _getch();</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                <span class="keywordflow">switch</span> (ext) {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                <span class="keywordflow">case</span> 0x48:</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a258f49887ef8d14ac268c92b02503aaa">Key::Up</a>;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                <span class="keywordflow">case</span> 0x50:</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a08a38277b0309070706f6652eeae9a53">Key::Down</a>;</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                <span class="keywordflow">case</span> 0x4B:</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a945d5e233cf7d6240f6b783b36a374ff">Key::Left</a>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                <span class="keywordflow">case</span> 0x4D:</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a92b09c7c48c520c3c55e497875da437c">Key::Right</a>;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                <span class="keywordflow">case</span> 0x3B:</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae1dffc8709f31a4987c8a88334107e89">Key::F1</a>;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                <span class="keywordflow">case</span> 0x3C:</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29afe5c3684dce76cdd9f7f42430868aa74">Key::F2</a>;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                <span class="keywordflow">case</span> 0x3D:</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4b6bf4b531770872d4328ce69bef5627">Key::F3</a>;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                <span class="keywordflow">case</span> 0x3E:</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae7e0e72401a9f2718ed0f39f2861d702">Key::F4</a>;</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                <span class="keywordflow">case</span> 0x3F:</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a37f438df6a6d5ba4c17ef8ca58562f00">Key::F5</a>;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                <span class="keywordflow">case</span> 0x40:</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a1faf42f2823f184eb2c9f0dffe5d73f2">Key::F6</a>;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                <span class="keywordflow">case</span> 0x41:</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a47489eb597b7db34caa24b1fc78fc839">Key::F7</a>;</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                <span class="keywordflow">case</span> 0x42:</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4787509ad9f9d747a81a30e9dde3d4a7">Key::F8</a>;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                <span class="keywordflow">case</span> 0x43:</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a892a245e287c163080b23db737d3c4c9">Key::F9</a>;</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                <span class="keywordflow">case</span> 0x44:</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab213ce22ca6ad4eda8db82966b9b6e5a">Key::F10</a>;</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                <span class="keywordflow">case</span> 0x85:</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a643b0662422d1d0dffa3fca2e2bf28a8">Key::F11</a>;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                <span class="keywordflow">case</span> 0x86:</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ae902674982fc99aa343cdd94da7476c3">Key::F12</a>;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                }</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            }</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a88183b946cc5f0e8c96b2e66e1c74a7e">Key::Unknown</a>;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        }</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        <a class="code hl_enumeration" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> handleEscape() {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            <span class="keyword">struct </span>pollfd pfd = {STDIN_FILENO, POLLIN, 0};</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            <span class="keywordflow">if</span> (poll(&amp;pfd, 1, 5) &lt;= 0) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d">Key::Esc</a>;</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            <span class="keywordtype">char</span> seq[3];</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            <span class="keywordtype">int</span>  n = read(STDIN_FILENO, seq, 3);</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>            <span class="keywordflow">if</span> (n &gt;= 2 &amp;&amp; seq[0] == <span class="charliteral">&#39;[&#39;</span>) {</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>                <span class="keywordflow">switch</span> (seq[1]) {</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a258f49887ef8d14ac268c92b02503aaa">Key::Up</a>;</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a08a38277b0309070706f6652eeae9a53">Key::Down</a>;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a92b09c7c48c520c3c55e497875da437c">Key::Right</a>;</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>:</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a945d5e233cf7d6240f6b783b36a374ff">Key::Left</a>;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>                }</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            }</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d">Key::Esc</a>;</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        }</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    };</div>
 </div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>}</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_keyboard_html"><div class="ttname"><a href="classconsole_1_1_keyboard.html">console::Keyboard</a></div><div class="ttdoc">用于监视键盘键击情况的类。</div><div class="ttdef"><b>Definition</b> kb.h:200</div></div>
 <div class="ttc" id="aclassconsole_1_1_keyboard_html_a2b7c6f872e5ef1cd7cba35d7b36de2c9"><div class="ttname"><a href="classconsole_1_1_keyboard.html#a2b7c6f872e5ef1cd7cba35d7b36de2c9">console::Keyboard::operator=</a></div><div class="ttdeci">Keyboard &amp; operator=(Keyboard &amp;&amp;)=delete</div><div class="ttdoc">被删除的移动赋值</div></div>
 <div class="ttc" id="aclassconsole_1_1_keyboard_html_a34a4f8e67346f779b74e9f544343a4dc"><div class="ttname"><a href="classconsole_1_1_keyboard.html#a34a4f8e67346f779b74e9f544343a4dc">console::Keyboard::Keyboard</a></div><div class="ttdeci">Keyboard()</div><div class="ttdoc">构造函数，开始监视键盘键击。</div><div class="ttdef"><b>Definition</b> kb.h:206</div></div>
@@ -520,7 +519,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
