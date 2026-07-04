@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -75,7 +75,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">console::color Namespace Reference</div></div>
 </div><!--header-->
@@ -84,12 +83,6 @@ $(function() {
 <p>包含控制台颜色、背景色和文本样式的 ANSI 转义序列常量。  
 <a href="namespaceconsole_1_1color.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a94d5279e2ad3f3f204754b6820d8e115" id="r_a94d5279e2ad3f3f204754b6820d8e115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#a94d5279e2ad3f3f204754b6820d8e115">change</a> (const char *clr=<a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a>, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="memdesc:a94d5279e2ad3f3f204754b6820d8e115"><td class="mdescLeft">&#160;</td><td class="mdescRight">修改颜色。  <br /></td></tr>
-<tr class="separator:a94d5279e2ad3f3f204754b6820d8e115"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ab6bc3a40ac0a60732c3dc8c30483c3c2" id="r_ab6bc3a40ac0a60732c3dc8c30483c3c2"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1color.html#ab6bc3a40ac0a60732c3dc8c30483c3c2">Black</a> [] = &quot;\033[30m&quot;</td></tr>
@@ -219,54 +212,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>包含控制台颜色、背景色和文本样式的 ANSI 转义序列常量。 </p>
 <p>使用方式：<code>std::cout &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#a7daabaa72046c5003d120c49b733101b" title="红色前景">color::Red</a> &lt;&lt; "Hello" &lt;&lt; <a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83" title="重置所有颜色/样式">color::Reset</a>;</code> </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a94d5279e2ad3f3f204754b6820d8e115" name="a94d5279e2ad3f3f204754b6820d8e115"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94d5279e2ad3f3f204754b6820d8e115">&#9670;&#160;</a></span>change()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void console::color::change </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>clr</em> = <code><a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">Reset</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>修改颜色。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clr</td><td>颜色，默认 Reset。 </td></tr>
-    <tr><td class="paramname">os</td><td>输出流，默认 std::cout。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>通过 ADL 实现自动查找命名空间，可以直接写。 </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
+</div><h2 class="groupheader">Variable Documentation</h2>
 <a id="aaaae0b96f5dc51cc05a33f9b91bdcd96" name="aaaae0b96f5dc51cc05a33f9b91bdcd96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaaae0b96f5dc51cc05a33f9b91bdcd96">&#9670;&#160;</a></span>BgBlack</h2>
 
@@ -1254,7 +1200,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

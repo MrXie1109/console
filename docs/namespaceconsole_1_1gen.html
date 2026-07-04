@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -84,6 +84,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式生成器，将两个生成器首尾连接。  <a href="classconsole_1_1gen_1_1_chain.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chunk.html">Chunk</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">分块生成器，将元素按块分组。  <a href="classconsole_1_1gen_1_1_chunk.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1chunk__t.html">chunk_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">分块适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1chunk__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">容器收集适配器。  <a href="classconsole_1_1gen_1_1collect.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,23 +102,41 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">Cycle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">循环生成器，无限循环遍历给定列表。  <a href="classconsole_1_1gen_1_1_cycle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_debug.html">Debug</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">调试生成器，打印每个元素的值。  <a href="classconsole_1_1gen_1_1_debug.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1debug__t.html">debug_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">调试适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1debug__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_drop.html">Drop</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过前n个元素的生成器适配器。  <a href="classconsole_1_1gen_1_1_drop.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1drop__t.html">drop_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过前n个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1drop__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">drop_until_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1drop__until__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1drop__while__t.html">drop_while_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过前若干个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1drop__while__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_drop_until.html">DropUntil</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立（跳过第一个满足条件的元素）。  <a href="classconsole_1_1gen_1_1_drop_until.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_drop_while.html">DropWhile</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过前若干个元素直到谓词不成立。  <a href="classconsole_1_1gen_1_1_drop_while.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1dropwhile__t.html">dropwhile_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过前若干个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1dropwhile__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_enumerate.html">Enumerate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">枚举生成器，为每个元素附加索引。  <a href="classconsole_1_1gen_1_1_enumerate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1enumerate__t.html">enumerate_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">枚举生成器，为每个元素附加索引。  <a href="classconsole_1_1gen_1_1enumerate__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_file_chunks.html">FileChunks</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件块生成器，按固定大小读取文件块。  <a href="classconsole_1_1gen_1_1_file_chunks.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_file_lines.html">FileLines</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件行生成器，逐行读取文本文件。  <a href="classconsole_1_1gen_1_1_file_lines.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_filter.html">Filter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">过滤生成器，只保留满足谓词的元素。  <a href="classconsole_1_1gen_1_1_filter.html#details">More...</a><br /></td></tr>
@@ -129,11 +156,28 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1map__t.html">map_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">映射适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1map__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline.html">Pipeline</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html">Pipeline&lt; Op &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html">Pipeline&lt; Op, Rest... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机数生成器，生成指定范围内的随机数。  <a href="classconsole_1_1gen_1_1_random.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">范围生成器，生成从start到end的等差数列。  <a href="classconsole_1_1gen_1_1_range.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_repeat.html">Repeat</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">重复生成器，重复生成同一个值指定次数。  <a href="classconsole_1_1gen_1_1_repeat.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1step__by__t.html">step_by_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">步进适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1step__by__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_step_by.html">StepBy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">步进生成器，按指定步长跳过元素。  <a href="classconsole_1_1gen_1_1_step_by.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_take.html">Take</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取前n个元素的生成器适配器。  <a href="classconsole_1_1gen_1_1_take.html#details">More...</a><br /></td></tr>
@@ -141,14 +185,29 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1take__t.html">take_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取前n个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1take__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1take__until__t.html">take_until_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1take__until__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1take__while__t.html">take_while_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取前若干个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1take__while__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_take_until.html">TakeUntil</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立（包含第一个满足条件的元素）。  <a href="classconsole_1_1gen_1_1_take_until.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_take_while.html">TakeWhile</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得前若干个元素直到谓词不成立。  <a href="classconsole_1_1gen_1_1_take_while.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1takewhile__t.html">takewhile_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取前若干个元素适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1takewhile__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1to__t.html">to_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建目标迭代器适配器。  <a href="classconsole_1_1gen_1_1to__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_views.html">Views</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器范围生成器，生成从begin到end的值。  <a href="classconsole_1_1gen_1_1_views.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_window.html">Window</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动窗口生成器，生成固定大小的滑动窗口。  <a href="classconsole_1_1gen_1_1_window.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1window__t.html">window_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1window__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_zip.html">Zip</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">压缩生成器，将两个生成器的元素配对输出。  <a href="classconsole_1_1gen_1_1_zip.html#details">More...</a><br /></td></tr>
@@ -180,12 +239,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ab46b07a5bd274a2d106509553b97556c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">Cycle</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ab46b07a5bd274a2d106509553b97556c">cycle</a> (std::initializer_list&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; <a class="el" href="namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec">list</a>)</td></tr>
 <tr class="memdesc:ab46b07a5bd274a2d106509553b97556c"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建循环生成器。  <br /></td></tr>
 <tr class="separator:ab46b07a5bd274a2d106509553b97556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d4d08696624585e5ac21499742816d9" id="r_a2d4d08696624585e5ac21499742816d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a2d4d08696624585e5ac21499742816d9">counter</a> (int start=0, int step=1)</td></tr>
-<tr class="memdesc:a2d4d08696624585e5ac21499742816d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建计数器生成器。  <br /></td></tr>
-<tr class="separator:a2d4d08696624585e5ac21499742816d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417a137b7bc5c21551a7634ba0df6c61" id="r_a417a137b7bc5c21551a7634ba0df6c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a417a137b7bc5c21551a7634ba0df6c61">counter</a> (int start, int times, int step)</td></tr>
-<tr class="memdesc:a417a137b7bc5c21551a7634ba0df6c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建有限计数器生成器。  <br /></td></tr>
-<tr class="separator:a417a137b7bc5c21551a7634ba0df6c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af319287039df0ddf57bf5071ddfb10a8" id="r_af319287039df0ddf57bf5071ddfb10a8"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:af319287039df0ddf57bf5071ddfb10a8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#af319287039df0ddf57bf5071ddfb10a8">counter</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> start=0, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step=1)</td></tr>
+<tr class="memdesc:af319287039df0ddf57bf5071ddfb10a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建计数器生成器。  <br /></td></tr>
+<tr class="separator:af319287039df0ddf57bf5071ddfb10a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa503189b575f25116aec53a6b06899f5" id="r_aa503189b575f25116aec53a6b06899f5"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa503189b575f25116aec53a6b06899f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aa503189b575f25116aec53a6b06899f5">counter</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> start, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> times, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step)</td></tr>
+<tr class="memdesc:aa503189b575f25116aec53a6b06899f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建有限计数器生成器。  <br /></td></tr>
+<tr class="separator:aa503189b575f25116aec53a6b06899f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ae173ae5929287adc299a973e1dfda" id="r_a34ae173ae5929287adc299a973e1dfda"><td class="memTemplParams" colspan="2">template&lt;class Func &gt; </td></tr>
 <tr class="memitem:a34ae173ae5929287adc299a973e1dfda"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1map__t.html">map_t</a>&lt; Func &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a34ae173ae5929287adc299a973e1dfda">map</a> (Func f)</td></tr>
 <tr class="memdesc:a34ae173ae5929287adc299a973e1dfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建映射适配器。  <br /></td></tr>
@@ -208,18 +269,66 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e595da9c0599f35884daf53e1f22c12"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_zip.html">Zip</a>&lt; typename std::decay&lt; Gen1 &gt;::type, typename std::decay&lt; Gen2 &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">zip</a> (Gen1 &amp;&amp;g1, Gen2 &amp;&amp;g2)</td></tr>
 <tr class="memdesc:a4e595da9c0599f35884daf53e1f22c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">压缩两个生成器。  <br /></td></tr>
 <tr class="separator:a4e595da9c0599f35884daf53e1f22c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a822582040f1b140964b3759f9247297c" id="r_a822582040f1b140964b3759f9247297c"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
-<tr class="memitem:a822582040f1b140964b3759f9247297c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1takewhile__t.html">takewhile_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a822582040f1b140964b3759f9247297c">takewhile</a> (Pred pred)</td></tr>
-<tr class="memdesc:a822582040f1b140964b3759f9247297c"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建取前若干个元素适配器。  <br /></td></tr>
-<tr class="separator:a822582040f1b140964b3759f9247297c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d5931981875bdb52eac282eaa9daa0" id="r_ad0d5931981875bdb52eac282eaa9daa0"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
-<tr class="memitem:ad0d5931981875bdb52eac282eaa9daa0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1dropwhile__t.html">dropwhile_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad0d5931981875bdb52eac282eaa9daa0">dropwhile</a> (Pred pred)</td></tr>
-<tr class="memdesc:ad0d5931981875bdb52eac282eaa9daa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过前若干个元素适配器。  <br /></td></tr>
-<tr class="separator:ad0d5931981875bdb52eac282eaa9daa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd6601deba78048e216f93d1eaa4d20" id="r_a6cd6601deba78048e216f93d1eaa4d20"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:a6cd6601deba78048e216f93d1eaa4d20"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1take__while__t.html">take_while_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a6cd6601deba78048e216f93d1eaa4d20">take_while</a> (Pred pred)</td></tr>
+<tr class="memdesc:a6cd6601deba78048e216f93d1eaa4d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建取前若干个元素适配器。  <br /></td></tr>
+<tr class="separator:a6cd6601deba78048e216f93d1eaa4d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e819813a9dae521699ecec0c900124" id="r_a45e819813a9dae521699ecec0c900124"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:a45e819813a9dae521699ecec0c900124"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__while__t.html">drop_while_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a45e819813a9dae521699ecec0c900124">drop_while</a> (Pred pred)</td></tr>
+<tr class="memdesc:a45e819813a9dae521699ecec0c900124"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过前若干个元素适配器。  <br /></td></tr>
+<tr class="separator:a45e819813a9dae521699ecec0c900124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73af2dfca908620215163a17f00a0183" id="r_a73af2dfca908620215163a17f00a0183"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
+<tr class="memitem:a73af2dfca908620215163a17f00a0183"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1to__t.html">to_t</a>&lt; Iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a73af2dfca908620215163a17f00a0183">to</a> (Iterator it)</td></tr>
+<tr class="memdesc:a73af2dfca908620215163a17f00a0183"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建目标迭代器适配器。  <br /></td></tr>
+<tr class="separator:a73af2dfca908620215163a17f00a0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18aeb602a24db90e1a7e34bce447fa56" id="r_a18aeb602a24db90e1a7e34bce447fa56"><td class="memTemplParams" colspan="2">template&lt;class Gen1 , class Gen2 &gt; </td></tr>
 <tr class="memitem:a18aeb602a24db90e1a7e34bce447fa56"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a18aeb602a24db90e1a7e34bce447fa56">operator&amp;</a> (Gen1 &amp;&amp;g1, Gen2 &amp;&amp;g2) -&gt; decltype(<a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(std::forward&lt; Gen1 &gt;(g1), std::forward&lt; Gen2 &gt;(g2)))</td></tr>
 <tr class="memdesc:a18aeb602a24db90e1a7e34bce447fa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">按位与操作符重载，用于压缩两个生成器。  <br /></td></tr>
 <tr class="separator:a18aeb602a24db90e1a7e34bce447fa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c356a899875997b54163e3ac165b801" id="r_a8c356a899875997b54163e3ac165b801"><td class="memTemplParams" colspan="2">template&lt;class... Ops&gt; </td></tr>
+<tr class="memitem:a8c356a899875997b54163e3ac165b801"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a8c356a899875997b54163e3ac165b801">pipeline</a> (Ops... ops)</td></tr>
+<tr class="separator:a8c356a899875997b54163e3ac165b801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad556d60f746eb502784e2dea302fb5ff" id="r_ad556d60f746eb502784e2dea302fb5ff"><td class="memTemplParams" colspan="2">template&lt;class Op1 , class Op2 &gt; </td></tr>
+<tr class="memitem:ad556d60f746eb502784e2dea302fb5ff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad556d60f746eb502784e2dea302fb5ff">operator&gt;&gt;</a> (Op1 op1, Op2 op2)</td></tr>
+<tr class="separator:ad556d60f746eb502784e2dea302fb5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf" id="r_aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aeb356cb21aca72bce4dad353dc760cbf">random</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">min</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">max</a>, std::mt19937::result_type <a class="el" href="group__random.html#ga71ad035c75b9d2bfa5f02d45874ec65c">seed</a>=std::random_device{}())</td></tr>
+<tr class="memdesc:aeb356cb21aca72bce4dad353dc760cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建随机数生成器。  <br /></td></tr>
+<tr class="separator:aeb356cb21aca72bce4dad353dc760cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b467e08986ffabde0c0520402fe8b0e" id="r_a1b467e08986ffabde0c0520402fe8b0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_file_lines.html">FileLines</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a1b467e08986ffabde0c0520402fe8b0e">file_lines</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a1b467e08986ffabde0c0520402fe8b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建文件行生成器。  <br /></td></tr>
+<tr class="separator:a1b467e08986ffabde0c0520402fe8b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f5b86265217fb1d448fa6fe7da68d9" id="r_ac2f5b86265217fb1d448fa6fe7da68d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_file_chunks.html">FileChunks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ac2f5b86265217fb1d448fa6fe7da68d9">file_chunks</a> (const std::string &amp;filename, size_t chunk_size=1024, std::ios_base::openmode mode=std::ios::in)</td></tr>
+<tr class="memdesc:ac2f5b86265217fb1d448fa6fe7da68d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建文件块生成器。  <br /></td></tr>
+<tr class="separator:ac2f5b86265217fb1d448fa6fe7da68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676cc6a09cca799ade2730861d16a136" id="r_a676cc6a09cca799ade2730861d16a136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1window__t.html">window_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a676cc6a09cca799ade2730861d16a136">window</a> (size_t size=16)</td></tr>
+<tr class="memdesc:a676cc6a09cca799ade2730861d16a136"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建窗口适配器。  <br /></td></tr>
+<tr class="separator:a676cc6a09cca799ade2730861d16a136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c7c283a67364736dde56bda169857b" id="r_a00c7c283a67364736dde56bda169857b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1chunk__t.html">chunk_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a00c7c283a67364736dde56bda169857b">chunk</a> (size_t size=16)</td></tr>
+<tr class="memdesc:a00c7c283a67364736dde56bda169857b"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建分块适配器。  <br /></td></tr>
+<tr class="separator:a00c7c283a67364736dde56bda169857b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ce7d118c0dc83a23a9be24114e2bf1" id="r_a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memTemplParams" colspan="2">template&lt;class Gen1 , class Gen2 &gt; </td></tr>
+<tr class="memitem:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a42ce7d118c0dc83a23a9be24114e2bf1">chain</a> (Gen1 g1, Gen2 g2)</td></tr>
+<tr class="memdesc:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建链式生成器，将两个生成器首尾连接。  <br /></td></tr>
+<tr class="separator:a42ce7d118c0dc83a23a9be24114e2bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc" id="r_ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplParams" colspan="2">template&lt;class Gen1 , class Gen2 &gt; </td></tr>
+<tr class="memitem:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad4b8089157722ede38c9d5fe9a3dc3bc">operator+</a> (Gen1 g1, Gen2 g2)</td></tr>
+<tr class="memdesc:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">加号操作符重载，用于连接两个生成器。  <br /></td></tr>
+<tr class="separator:ad4b8089157722ede38c9d5fe9a3dc3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b11ec98aca3d5f75f83baa2dc5dab7" id="r_a54b11ec98aca3d5f75f83baa2dc5dab7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1step__by__t.html">step_by_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a54b11ec98aca3d5f75f83baa2dc5dab7">step_by</a> (size_t size=1)</td></tr>
+<tr class="memdesc:a54b11ec98aca3d5f75f83baa2dc5dab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建步进适配器。  <br /></td></tr>
+<tr class="separator:a54b11ec98aca3d5f75f83baa2dc5dab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e11e0c42d0bb7a90368b66373e7018" id="r_a54e11e0c42d0bb7a90368b66373e7018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1debug__t.html">debug_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a54e11e0c42d0bb7a90368b66373e7018">debug</a> (std::string msg=&quot;DEBUG: &quot;, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memdesc:a54e11e0c42d0bb7a90368b66373e7018"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建调试适配器。  <br /></td></tr>
+<tr class="separator:a54e11e0c42d0bb7a90368b66373e7018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777804dd0eb252dfccfee35fe512ccd5" id="r_a777804dd0eb252dfccfee35fe512ccd5"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:a777804dd0eb252dfccfee35fe512ccd5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1take__until__t.html">take_until_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a777804dd0eb252dfccfee35fe512ccd5">take_until</a> (Pred p)</td></tr>
+<tr class="memdesc:a777804dd0eb252dfccfee35fe512ccd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建取元素直到谓词成立适配器。  <br /></td></tr>
+<tr class="separator:a777804dd0eb252dfccfee35fe512ccd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13fe09a22d3b40bce402a6b711f4ae0" id="r_ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memTemplParams" colspan="2">template&lt;class Pred &gt; </td></tr>
+<tr class="memitem:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">drop_until_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ab13fe09a22d3b40bce402a6b711f4ae0">drop_until</a> (Pred p)</td></tr>
+<tr class="memdesc:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过元素直到谓词成立适配器。  <br /></td></tr>
+<tr class="separator:ab13fe09a22d3b40bce402a6b711f4ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -227,31 +336,107 @@ Variables</h2></td></tr>
 <tr class="separator:ad3b96aa84a429ea74a23e81206fe7151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a417a137b7bc5c21551a7634ba0df6c61" name="a417a137b7bc5c21551a7634ba0df6c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a417a137b7bc5c21551a7634ba0df6c61">&#9670;&#160;</a></span>counter() <span class="overload">[1/2]</span></h2>
+<a id="a42ce7d118c0dc83a23a9be24114e2bf1" name="a42ce7d118c0dc83a23a9be24114e2bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ce7d118c0dc83a23a9be24114e2bf1">&#9670;&#160;</a></span>chain()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen1 , class Gen2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt; console::gen::chain </td>
+          <td>(</td>
+          <td class="paramtype">Gen1&#160;</td>
+          <td class="paramname"><em>g1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Gen2&#160;</td>
+          <td class="paramname"><em>g2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建链式生成器，将两个生成器首尾连接。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen1</td><td>第一个生成器类型。 </td></tr>
+    <tr><td class="paramname">Gen2</td><td>第二个生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>第一个生成器。 </td></tr>
+    <tr><td class="paramname">g2</td><td>第二个生成器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chain&lt;Gen1, Gen2&gt; 链式生成器。 </dd></dl>
+
+</div>
+</div>
+<a id="a00c7c283a67364736dde56bda169857b" name="a00c7c283a67364736dde56bda169857b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c7c283a67364736dde56bda169857b">&#9670;&#160;</a></span>chunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1chunk__t.html">chunk_t</a> console::gen::chunk </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em> = <code>16</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建分块适配器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>块大小，默认为16。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1chunk__t.html" title="分块适配器（用于管道操作符）。">chunk_t</a> 分块适配器。 </dd></dl>
+
+</div>
+</div>
+<a id="aa503189b575f25116aec53a6b06899f5" name="aa503189b575f25116aec53a6b06899f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa503189b575f25116aec53a6b06899f5">&#9670;&#160;</a></span>counter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a> console::gen::counter </td>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::gen::counter </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
           <td class="paramname"><em>times</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
           <td class="paramname"><em>step</em>&#160;</td>
         </tr>
         <tr>
@@ -268,6 +453,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>创建有限计数器生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>值类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>起始值。 </td></tr>
@@ -276,29 +467,31 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1_counter.html" title="计数器生成器，生成递增或递减的整数序列。">Counter</a> 有限计数器。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Counter&lt;T&gt; 有限计数器。 </dd></dl>
 
 </div>
 </div>
-<a id="a2d4d08696624585e5ac21499742816d9" name="a2d4d08696624585e5ac21499742816d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d4d08696624585e5ac21499742816d9">&#9670;&#160;</a></span>counter() <span class="overload">[2/2]</span></h2>
+<a id="af319287039df0ddf57bf5071ddfb10a8" name="af319287039df0ddf57bf5071ddfb10a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af319287039df0ddf57bf5071ddfb10a8">&#9670;&#160;</a></span>counter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a> console::gen::counter </td>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::gen::counter </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
           <td class="paramname"><em>start</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
           <td class="paramname"><em>step</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
@@ -315,6 +508,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>创建计数器生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>值类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>起始值，默认为0。 </td></tr>
@@ -322,7 +521,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1_counter.html" title="计数器生成器，生成递增或递减的整数序列。">Counter</a> 无限计数器。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Counter&lt;T&gt; 无限计数器。 </dd></dl>
 
 </div>
 </div>
@@ -361,6 +560,44 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="a54e11e0c42d0bb7a90368b66373e7018" name="a54e11e0c42d0bb7a90368b66373e7018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e11e0c42d0bb7a90368b66373e7018">&#9670;&#160;</a></span>debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1debug__t.html">debug_t</a> console::gen::debug </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>msg</em> = <code>&quot;DEBUG:&#160;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建调试适配器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>调试消息前缀，默认为"DEBUG: "。 </td></tr>
+    <tr><td class="paramname">os</td><td>输出流，默认为std::cout。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1debug__t.html" title="调试适配器（用于管道操作符）。">debug_t</a> 调试适配器。 </dd></dl>
+
+</div>
+</div>
 <a id="a1e6d402406afa83cc2e925d76d4469d9" name="a1e6d402406afa83cc2e925d76d4469d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e6d402406afa83cc2e925d76d4469d9">&#9670;&#160;</a></span>drop()</h2>
 
@@ -396,8 +633,43 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
-<a id="ad0d5931981875bdb52eac282eaa9daa0" name="ad0d5931981875bdb52eac282eaa9daa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0d5931981875bdb52eac282eaa9daa0">&#9670;&#160;</a></span>dropwhile()</h2>
+<a id="ab13fe09a22d3b40bce402a6b711f4ae0" name="ab13fe09a22d3b40bce402a6b711f4ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13fe09a22d3b40bce402a6b711f4ae0">&#9670;&#160;</a></span>drop_until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">drop_until_t</a>&lt; Pred &gt; console::gen::drop_until </td>
+          <td>(</td>
+          <td class="paramtype">Pred&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建跳过元素直到谓词成立适配器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Pred</td><td>谓词类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>谓词函数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>drop_until_t&lt;Pred&gt; 跳过元素适配器。 </dd></dl>
+
+</div>
+</div>
+<a id="a45e819813a9dae521699ecec0c900124" name="a45e819813a9dae521699ecec0c900124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e819813a9dae521699ecec0c900124">&#9670;&#160;</a></span>drop_while()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +680,7 @@ template&lt;class Pred &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1dropwhile__t.html">dropwhile_t</a>&lt; Pred &gt; console::gen::dropwhile </td>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1drop__while__t.html">drop_while_t</a>&lt; Pred &gt; console::gen::drop_while </td>
           <td>(</td>
           <td class="paramtype">Pred&#160;</td>
           <td class="paramname"><em>pred</em></td><td>)</td>
@@ -429,7 +701,79 @@ template&lt;class Pred &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1dropwhile__t.html" title="跳过前若干个元素适配器（用于管道操作符）。">dropwhile_t</a> 取元素适配器。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1drop__while__t.html" title="跳过前若干个元素适配器（用于管道操作符）。">drop_while_t</a> 取元素适配器。 </dd></dl>
+
+</div>
+</div>
+<a id="ac2f5b86265217fb1d448fa6fe7da68d9" name="ac2f5b86265217fb1d448fa6fe7da68d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f5b86265217fb1d448fa6fe7da68d9">&#9670;&#160;</a></span>file_chunks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_file_chunks.html">FileChunks</a> console::gen::file_chunks </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>chunk_size</em> = <code>1024</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ios_base::openmode&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>std::ios::in</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建文件块生成器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>文件名。 </td></tr>
+    <tr><td class="paramname">chunk_size</td><td>每个数据块的大小，默认为1024字节。 </td></tr>
+    <tr><td class="paramname">mode</td><td>文件打开模式，默认为std::ios::in。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1_file_chunks.html" title="文件块生成器，按固定大小读取文件块。">FileChunks</a> 文件块生成器。 </dd></dl>
+
+</div>
+</div>
+<a id="a1b467e08986ffabde0c0520402fe8b0e" name="a1b467e08986ffabde0c0520402fe8b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b467e08986ffabde0c0520402fe8b0e">&#9670;&#160;</a></span>file_lines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_file_lines.html">FileLines</a> console::gen::file_lines </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建文件行生成器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>文件名。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1_file_lines.html" title="文件行生成器，逐行读取文本文件。">FileLines</a> 文件行生成器。 </dd></dl>
 
 </div>
 </div>
@@ -596,8 +940,8 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(std::forward&lt;Gen1&gt;(g1), std::forward&lt;Gen2&gt;(g2)))
-        </td>
+          <td></td><td> -&gt; decltype(<a class="el" href="namespaceconsole_1_1gen.html#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(std::forward&lt;Gen1&gt;(g1),
+                                 std::forward&lt;Gen2&gt;(g2))) </td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -618,6 +962,156 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Zip&lt;Gen1, Gen2&gt; 压缩生成器。 </dd></dl>
+
+</div>
+</div>
+<a id="ad4b8089157722ede38c9d5fe9a3dc3bc" name="ad4b8089157722ede38c9d5fe9a3dc3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b8089157722ede38c9d5fe9a3dc3bc">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen1 , class Gen2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_chain.html">Chain</a>&lt; Gen1, Gen2 &gt; console::gen::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">Gen1&#160;</td>
+          <td class="paramname"><em>g1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Gen2&#160;</td>
+          <td class="paramname"><em>g2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>加号操作符重载，用于连接两个生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen1</td><td>第一个生成器类型。 </td></tr>
+    <tr><td class="paramname">Gen2</td><td>第二个生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>第一个生成器。 </td></tr>
+    <tr><td class="paramname">g2</td><td>第二个生成器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chain&lt;Gen1, Gen2&gt; 链式生成器。 </dd></dl>
+
+</div>
+</div>
+<a id="ad556d60f746eb502784e2dea302fb5ff" name="ad556d60f746eb502784e2dea302fb5ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad556d60f746eb502784e2dea302fb5ff">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Op1 , class Op2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt; console::gen::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">Op1&#160;</td>
+          <td class="paramname"><em>op1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Op2&#160;</td>
+          <td class="paramname"><em>op2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c356a899875997b54163e3ac165b801" name="a8c356a899875997b54163e3ac165b801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c356a899875997b54163e3ac165b801">&#9670;&#160;</a></span>pipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Ops&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt; console::gen::pipeline </td>
+          <td>(</td>
+          <td class="paramtype">Ops...&#160;</td>
+          <td class="paramname"><em>ops</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb356cb21aca72bce4dad353dc760cbf" name="aeb356cb21aca72bce4dad353dc760cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb356cb21aca72bce4dad353dc760cbf">&#9670;&#160;</a></span>random()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::gen::random </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::mt19937::result_type&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>std::random_device{}()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建随机数生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数值类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>随机数最小值（包含）。 </td></tr>
+    <tr><td class="paramname">max</td><td>随机数最大值（包含）。 </td></tr>
+    <tr><td class="paramname">seed</td><td>随机数种子，默认为随机设备生成。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Random&lt;T&gt; 随机数生成器。 </dd></dl>
 
 </div>
 </div>
@@ -720,6 +1214,33 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="a54b11ec98aca3d5f75f83baa2dc5dab7" name="a54b11ec98aca3d5f75f83baa2dc5dab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b11ec98aca3d5f75f83baa2dc5dab7">&#9670;&#160;</a></span>step_by()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1step__by__t.html">step_by_t</a> console::gen::step_by </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建步进适配器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>步长，默认为1。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1step__by__t.html" title="步进适配器（用于管道操作符）。">step_by_t</a> 步进适配器。 </dd></dl>
+
+</div>
+</div>
 <a id="a1aa2ae0632703c638782156b80b6c0f8" name="a1aa2ae0632703c638782156b80b6c0f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa2ae0632703c638782156b80b6c0f8">&#9670;&#160;</a></span>take()</h2>
 
@@ -755,8 +1276,43 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
-<a id="a822582040f1b140964b3759f9247297c" name="a822582040f1b140964b3759f9247297c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a822582040f1b140964b3759f9247297c">&#9670;&#160;</a></span>takewhile()</h2>
+<a id="a777804dd0eb252dfccfee35fe512ccd5" name="a777804dd0eb252dfccfee35fe512ccd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777804dd0eb252dfccfee35fe512ccd5">&#9670;&#160;</a></span>take_until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1take__until__t.html">take_until_t</a>&lt; Pred &gt; console::gen::take_until </td>
+          <td>(</td>
+          <td class="paramtype">Pred&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建取元素直到谓词成立适配器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Pred</td><td>谓词类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>谓词函数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>take_until_t&lt;Pred&gt; 取元素适配器。 </dd></dl>
+
+</div>
+</div>
+<a id="a6cd6601deba78048e216f93d1eaa4d20" name="a6cd6601deba78048e216f93d1eaa4d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd6601deba78048e216f93d1eaa4d20">&#9670;&#160;</a></span>take_while()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -767,7 +1323,7 @@ template&lt;class Pred &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1takewhile__t.html">takewhile_t</a>&lt; Pred &gt; console::gen::takewhile </td>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1take__while__t.html">take_while_t</a>&lt; Pred &gt; console::gen::take_while </td>
           <td>(</td>
           <td class="paramtype">Pred&#160;</td>
           <td class="paramname"><em>pred</em></td><td>)</td>
@@ -788,7 +1344,42 @@ template&lt;class Pred &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1takewhile__t.html" title="取前若干个元素适配器（用于管道操作符）。">takewhile_t</a> 取元素适配器。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1take__while__t.html" title="取前若干个元素适配器（用于管道操作符）。">take_while_t</a> 取元素适配器。 </dd></dl>
+
+</div>
+</div>
+<a id="a73af2dfca908620215163a17f00a0183" name="a73af2dfca908620215163a17f00a0183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73af2dfca908620215163a17f00a0183">&#9670;&#160;</a></span>to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1to__t.html">to_t</a>&lt; Iterator &gt; console::gen::to </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建目标迭代器适配器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>目标迭代器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>目标迭代器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>to_t&lt;Iterator&gt; 目标迭代器适配器。 </dd></dl>
 
 </div>
 </div>
@@ -873,6 +1464,33 @@ template&lt;class Iter &gt; </div>
 
 </div>
 </div>
+<a id="a676cc6a09cca799ade2730861d16a136" name="a676cc6a09cca799ade2730861d16a136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676cc6a09cca799ade2730861d16a136">&#9670;&#160;</a></span>window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1window__t.html">window_t</a> console::gen::window </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em> = <code>16</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建窗口适配器。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>窗口大小，默认为16。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1window__t.html" title="窗口适配器（用于管道操作符）。">window_t</a> 窗口适配器。 </dd></dl>
+
+</div>
+</div>
 <a id="a4e595da9c0599f35884daf53e1f22c12" name="a4e595da9c0599f35884daf53e1f22c12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e595da9c0599f35884daf53e1f22c12">&#9670;&#160;</a></span>zip()</h2>
 
@@ -946,7 +1564,7 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

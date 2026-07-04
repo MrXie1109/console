@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -119,6 +119,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html">CmdResult</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令执行结果封装类。  <a href="classconsole_1_1_cmd_result.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_color_guard.html">ColorGuard</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII颜色守卫，构造时设置颜色，析构时自动恢复。  <a href="classconsole_1_1_color_guard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数式风格的数据流处理容器。  <a href="classconsole_1_1_comprehension.html#details">More...</a><br /></td></tr>
@@ -291,6 +294,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1uniform__distribution__impl.html">uniform_distribution_impl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得适配分布的主模板。  <a href="structconsole_1_1uniform__distribution__impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_value_error.html">ValueError</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示值错误，例如传入的参数值不在预期范围内。  <a href="classconsole_1_1_value_error.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_view.html">View</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">容器的非拥有视图（可变版本）。  <a href="classconsole_1_1_view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,14 +345,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga123a41900e7ba0daa0160cfdf977c23d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga123a41900e7ba0daa0160cfdf977c23d">enable_if_not_iterator</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__iterator.html">is_iterator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
 <tr class="memdesc:ga123a41900e7ba0daa0160cfdf977c23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 不是迭代器。  <br /></td></tr>
 <tr class="separator:ga123a41900e7ba0daa0160cfdf977c23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga46fb097106e24caf1b32d89d912bb0ce" id="r_ga46fb097106e24caf1b32d89d912bb0ce"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga46fb097106e24caf1b32d89d912bb0ce"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga46fb097106e24caf1b32d89d912bb0ce">enable_if_string</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:ga46fb097106e24caf1b32d89d912bb0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）是字符串类型。  <br /></td></tr>
-<tr class="separator:ga46fb097106e24caf1b32d89d912bb0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga02377c048bc074e94404546e2cf54fd8" id="r_ga02377c048bc074e94404546e2cf54fd8"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga02377c048bc074e94404546e2cf54fd8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga02377c048bc074e94404546e2cf54fd8">enable_if_not_string</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:ga02377c048bc074e94404546e2cf54fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）不是字符串类型。  <br /></td></tr>
-<tr class="separator:ga02377c048bc074e94404546e2cf54fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga087845fe3cc622168b486a851de2451a" id="r_ga087845fe3cc622168b486a851de2451a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga087845fe3cc622168b486a851de2451a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga087845fe3cc622168b486a851de2451a">enable_if_string</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:ga087845fe3cc622168b486a851de2451a"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）是字符串类型。  <br /></td></tr>
+<tr class="separator:ga087845fe3cc622168b486a851de2451a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51a47a7458af444e26c2e4c129e6a96e" id="r_ga51a47a7458af444e26c2e4c129e6a96e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga51a47a7458af444e26c2e4c129e6a96e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga51a47a7458af444e26c2e4c129e6a96e">enable_if_not_string</a> = typename std::enable_if&lt; !<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:ga51a47a7458af444e26c2e4c129e6a96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）不是字符串类型。  <br /></td></tr>
+<tr class="separator:ga51a47a7458af444e26c2e4c129e6a96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga78de4b2e743481f73a60ab6fd2c873b1" id="r_ga78de4b2e743481f73a60ab6fd2c873b1"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:ga78de4b2e743481f73a60ab6fd2c873b1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga78de4b2e743481f73a60ab6fd2c873b1">enable_if_printable</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__printable.html">is_printable</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
 <tr class="memdesc:ga78de4b2e743481f73a60ab6fd2c873b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 可打印。  <br /></td></tr>
@@ -355,14 +361,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga53013a681dc63b92debe35308fb17ad4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga53013a681dc63b92debe35308fb17ad4">enable_if_not_printable</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__printable.html">is_printable</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
 <tr class="memdesc:ga53013a681dc63b92debe35308fb17ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 不可打印。  <br /></td></tr>
 <tr class="separator:ga53013a681dc63b92debe35308fb17ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb09e962bc477d095b364f453edfe3f8" id="r_gacb09e962bc477d095b364f453edfe3f8"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gacb09e962bc477d095b364f453edfe3f8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gacb09e962bc477d095b364f453edfe3f8">enable_if_char</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:gacb09e962bc477d095b364f453edfe3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）是字符类型。  <br /></td></tr>
-<tr class="separator:gacb09e962bc477d095b364f453edfe3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga696fe3a593ab15202e4317cde6e55b5d" id="r_ga696fe3a593ab15202e4317cde6e55b5d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga696fe3a593ab15202e4317cde6e55b5d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga696fe3a593ab15202e4317cde6e55b5d">enable_if_not_char</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:ga696fe3a593ab15202e4317cde6e55b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）不是字符类型。  <br /></td></tr>
-<tr class="separator:ga696fe3a593ab15202e4317cde6e55b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad25ffa0c190db2f85ad0b3e8ec11a0ca" id="r_gad25ffa0c190db2f85ad0b3e8ec11a0ca"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:gad25ffa0c190db2f85ad0b3e8ec11a0ca"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gad25ffa0c190db2f85ad0b3e8ec11a0ca">enable_if_char</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:gad25ffa0c190db2f85ad0b3e8ec11a0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）是字符类型。  <br /></td></tr>
+<tr class="separator:gad25ffa0c190db2f85ad0b3e8ec11a0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4fa6c8b6882cdcb9af41786a93eac85" id="r_gab4fa6c8b6882cdcb9af41786a93eac85"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:gab4fa6c8b6882cdcb9af41786a93eac85"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gab4fa6c8b6882cdcb9af41786a93eac85">enable_if_not_char</a> = typename std::enable_if&lt; !<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:gab4fa6c8b6882cdcb9af41786a93eac85"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）不是字符类型。  <br /></td></tr>
+<tr class="separator:gab4fa6c8b6882cdcb9af41786a93eac85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed6f37f103efe5517b99ccd43161a5de" id="r_gaed6f37f103efe5517b99ccd43161a5de"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:gaed6f37f103efe5517b99ccd43161a5de"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gaed6f37f103efe5517b99ccd43161a5de">uniform_distribution_t</a> = typename <a class="el" href="structconsole_1_1uniform__distribution__impl.html">uniform_distribution_impl</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type</td></tr>
 <tr class="memdesc:gaed6f37f103efe5517b99ccd43161a5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得对印类型所对应的均匀分布。  <br /></td></tr>
@@ -641,6 +647,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0964a614832b42652e45a86c20f8412e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_iterator_pair.html">IteratorPair</a>&lt; <a class="el" href="classconsole_1_1_range_iterator.html">RangeIterator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0964a614832b42652e45a86c20f8412e">range</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step)</td></tr>
 <tr class="memdesc:a0964a614832b42652e45a86c20f8412e"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个数值范围的迭代器对，类似于 Python 的 <a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920" title="生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。">range()</a> 函数。  <br /></td></tr>
 <tr class="separator:a0964a614832b42652e45a86c20f8412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd1af2ef04ad2b19237573e8ae74f4f" id="r_a0dd1af2ef04ad2b19237573e8ae74f4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0dd1af2ef04ad2b19237573e8ae74f4f">cc</a> (const char *clr=<a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a>, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memdesc:a0dd1af2ef04ad2b19237573e8ae74f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">修改颜色。  <br /></td></tr>
+<tr class="separator:a0dd1af2ef04ad2b19237573e8ae74f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a783b1141168975de7c5a74ddc622313b" id="r_a783b1141168975de7c5a74ddc622313b"><td class="memTemplParams" colspan="2">template&lt;class Cont &gt; </td></tr>
 <tr class="memitem:a783b1141168975de7c5a74ddc622313b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a783b1141168975de7c5a74ddc622313b">compre</a> (const Cont &amp;cont) -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt; typename Cont::value_type &gt;</td></tr>
 <tr class="memdesc:a783b1141168975de7c5a74ddc622313b"><td class="mdescLeft">&#160;</td><td class="mdescRight">从容器（左值）创建 Comprehension。  <br /></td></tr>
@@ -1465,11 +1474,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac92082727845e0dceef09efcc1d8e953"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取类型信息的可读名称（跨平台 demangle）。  <br /></td></tr>
 <tr class="separator:gac92082727845e0dceef09efcc1d8e953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6" id="r_gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__sfinae.html#ga46fb097106e24caf1b32d89d912bb0ce">enable_if_string</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__sfinae.html#ga087845fe3cc622168b486a851de2451a">enable_if_string</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os=std::cout)</td></tr>
 <tr class="memdesc:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出字符串类型（std::string, const char* 等）的表示，带双引号。  <br /></td></tr>
 <tr class="separator:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6" id="r_gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__sfinae.html#gacb09e962bc477d095b364f453edfe3f8">enable_if_char</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__sfinae.html#gad25ffa0c190db2f85ad0b3e8ec11a0ca">enable_if_char</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os=std::cout)</td></tr>
 <tr class="memdesc:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出字符类型的表示，带单引号。  <br /></td></tr>
 <tr class="separator:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6" id="r_gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
@@ -1543,6 +1552,57 @@ Functions</h2></td></tr>
 <tr class="memitem:a3bca2b2b9a35896a83ead2d33c7ec897" id="r_a3bca2b2b9a35896a83ead2d33c7ec897"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_cmd_result.html">CmdResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">syscmd</a> (const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</td></tr>
 <tr class="memdesc:a3bca2b2b9a35896a83ead2d33c7ec897"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行系统命令并捕获输出。  <br /></td></tr>
 <tr class="separator:a3bca2b2b9a35896a83ead2d33c7ec897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0a7798d555f024797417a452d1aaad" id="r_a1e0a7798d555f024797417a452d1aaad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a1e0a7798d555f024797417a452d1aaad">gotoxy</a> (int x, int y) noexcept</td></tr>
+<tr class="memdesc:a1e0a7798d555f024797417a452d1aaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">将光标移动到指定位置。  <br /></td></tr>
+<tr class="separator:a1e0a7798d555f024797417a452d1aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988e6e6d93db4a941e7ab75476a322d1" id="r_a988e6e6d93db4a941e7ab75476a322d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a988e6e6d93db4a941e7ab75476a322d1">clear</a> () noexcept</td></tr>
+<tr class="memdesc:a988e6e6d93db4a941e7ab75476a322d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空整个屏幕并将光标复位到 (1,1)。  <br /></td></tr>
+<tr class="separator:a988e6e6d93db4a941e7ab75476a322d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa813498794ba063a351ab1d041dfa0a0" id="r_aa813498794ba063a351ab1d041dfa0a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aa813498794ba063a351ab1d041dfa0a0">save_cursor</a> () noexcept</td></tr>
+<tr class="memdesc:aa813498794ba063a351ab1d041dfa0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存当前光标位置。  <br /></td></tr>
+<tr class="separator:aa813498794ba063a351ab1d041dfa0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2c711f9f357071732fbfe1ff89a4f2" id="r_aef2c711f9f357071732fbfe1ff89a4f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aef2c711f9f357071732fbfe1ff89a4f2">restore_cursor</a> () noexcept</td></tr>
+<tr class="memdesc:aef2c711f9f357071732fbfe1ff89a4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复之前保存的光标位置。  <br /></td></tr>
+<tr class="separator:aef2c711f9f357071732fbfe1ff89a4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d41fe8391efaa2ecdc9331a13cc0152" id="r_a4d41fe8391efaa2ecdc9331a13cc0152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4d41fe8391efaa2ecdc9331a13cc0152">hide_cursor</a> () noexcept</td></tr>
+<tr class="memdesc:a4d41fe8391efaa2ecdc9331a13cc0152"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏光标（提高视觉效果）。  <br /></td></tr>
+<tr class="separator:a4d41fe8391efaa2ecdc9331a13cc0152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030e179f6dcf599cb6287447032ca660" id="r_a030e179f6dcf599cb6287447032ca660"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a030e179f6dcf599cb6287447032ca660">show_cursor</a> () noexcept</td></tr>
+<tr class="memdesc:a030e179f6dcf599cb6287447032ca660"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示光标（恢复默认）。  <br /></td></tr>
+<tr class="separator:a030e179f6dcf599cb6287447032ca660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c0f2530fab92d41f08ac00f08b9dad" id="r_ac6c0f2530fab92d41f08ac00f08b9dad"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ac6c0f2530fab92d41f08ac00f08b9dad">get_terminal_size</a> () noexcept</td></tr>
+<tr class="memdesc:ac6c0f2530fab92d41f08ac00f08b9dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取终端尺寸（行数和列数）。  <br /></td></tr>
+<tr class="separator:ac6c0f2530fab92d41f08ac00f08b9dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2a3dde71963a4a46005bff4ddae509" id="r_acd2a3dde71963a4a46005bff4ddae509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#acd2a3dde71963a4a46005bff4ddae509">reset</a> () noexcept</td></tr>
+<tr class="memdesc:acd2a3dde71963a4a46005bff4ddae509"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置终端所有属性（颜色、样式、光标等）到默认状态。  <br /></td></tr>
+<tr class="separator:acd2a3dde71963a4a46005bff4ddae509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2cf10aee17398cc9ccf388dc654b71e" id="r_ae2cf10aee17398cc9ccf388dc654b71e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ae2cf10aee17398cc9ccf388dc654b71e">clear_line</a> () noexcept</td></tr>
+<tr class="memdesc:ae2cf10aee17398cc9ccf388dc654b71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空当前光标所在行。  <br /></td></tr>
+<tr class="separator:ae2cf10aee17398cc9ccf388dc654b71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65e97d95d7803645d6075437bab1cbe" id="r_ad65e97d95d7803645d6075437bab1cbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ad65e97d95d7803645d6075437bab1cbe">clear_to_eol</a> () noexcept</td></tr>
+<tr class="memdesc:ad65e97d95d7803645d6075437bab1cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空从光标位置到行尾。  <br /></td></tr>
+<tr class="separator:ad65e97d95d7803645d6075437bab1cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5dcf56d38112a96ff4a182e8f0ed350" id="r_ab5dcf56d38112a96ff4a182e8f0ed350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ab5dcf56d38112a96ff4a182e8f0ed350">movel</a> (int n=1) noexcept</td></tr>
+<tr class="memdesc:ab5dcf56d38112a96ff4a182e8f0ed350"><td class="mdescLeft">&#160;</td><td class="mdescRight">向左相对移动。  <br /></td></tr>
+<tr class="separator:ab5dcf56d38112a96ff4a182e8f0ed350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938bd0778bca517d324bcd23287335b6" id="r_a938bd0778bca517d324bcd23287335b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a938bd0778bca517d324bcd23287335b6">mover</a> (int n=1) noexcept</td></tr>
+<tr class="memdesc:a938bd0778bca517d324bcd23287335b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">向右相对移动。  <br /></td></tr>
+<tr class="separator:a938bd0778bca517d324bcd23287335b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5007266b57b371b7996a0ab497c000ad" id="r_a5007266b57b371b7996a0ab497c000ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5007266b57b371b7996a0ab497c000ad">moveu</a> (int n=1) noexcept</td></tr>
+<tr class="memdesc:a5007266b57b371b7996a0ab497c000ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">向上相对移动。  <br /></td></tr>
+<tr class="separator:a5007266b57b371b7996a0ab497c000ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9fc3074ceb02c8cf9638f73d707fbd" id="r_a1e9fc3074ceb02c8cf9638f73d707fbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a1e9fc3074ceb02c8cf9638f73d707fbd">moved</a> (int n=1) noexcept</td></tr>
+<tr class="memdesc:a1e9fc3074ceb02c8cf9638f73d707fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">向下相对移动。  <br /></td></tr>
+<tr class="separator:a1e9fc3074ceb02c8cf9638f73d707fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660e605cda0d992dca53eafeb2bdadbf" id="r_a660e605cda0d992dca53eafeb2bdadbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a660e605cda0d992dca53eafeb2bdadbf">save_screen</a> () noexcept</td></tr>
+<tr class="memdesc:a660e605cda0d992dca53eafeb2bdadbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存屏幕内容。  <br /></td></tr>
+<tr class="separator:a660e605cda0d992dca53eafeb2bdadbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ced4fde99cf2e4fc7f150a7015ceff1" id="r_a3ced4fde99cf2e4fc7f150a7015ceff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a3ced4fde99cf2e4fc7f150a7015ceff1">restore_screen</a> () noexcept</td></tr>
+<tr class="memdesc:a3ced4fde99cf2e4fc7f150a7015ceff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复屏幕内容。  <br /></td></tr>
+<tr class="separator:a3ced4fde99cf2e4fc7f150a7015ceff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d702dc105828ccc8863d72e9b3feb2" id="r_a16d702dc105828ccc8863d72e9b3feb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a16d702dc105828ccc8863d72e9b3feb2">clear_screen_save</a> () noexcept</td></tr>
+<tr class="memdesc:a16d702dc105828ccc8863d72e9b3feb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空屏幕并保留历史。  <br /></td></tr>
+<tr class="separator:a16d702dc105828ccc8863d72e9b3feb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8929153db641cb041bea419d109b08a1" id="r_a8929153db641cb041bea419d109b08a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">now</a> ()</td></tr>
 <tr class="memdesc:a8929153db641cb041bea419d109b08a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前时间点（自纪元以来的纳秒数）。  <br /></td></tr>
 <tr class="separator:a8929153db641cb041bea419d109b08a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1601,12 +1661,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a961f78601d0d038fd5c3ffba6bfd6e37" id="r_a961f78601d0d038fd5c3ffba6bfd6e37"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a> [] = &quot;CONSOLE-LIB-2026-06-20-MRXIE1109&quot;</td></tr>
+<tr class="memitem:a961f78601d0d038fd5c3ffba6bfd6e37" id="r_a961f78601d0d038fd5c3ffba6bfd6e37"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a> [] = &quot;CONSOLE-LIB-2026-07-04-MRXIE1109&quot;</td></tr>
 <tr class="separator:a961f78601d0d038fd5c3ffba6bfd6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a3d6bfc1b36f7a231fffcdb55a0402c" id="r_a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a> {std::cout, std::cin}</td></tr>
+<tr class="memitem:a4a3d6bfc1b36f7a231fffcdb55a0402c" id="r_a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a></td></tr>
 <tr class="memdesc:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认输入设置  <br /></td></tr>
 <tr class="separator:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">logger</a> = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td></tr>
+<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">logger</a></td></tr>
 <tr class="memdesc:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
 <tr class="separator:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389ee8f66941b84f2aab8734d3197a63" id="r_a389ee8f66941b84f2aab8734d3197a63"><td class="memItemLeft" >struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
@@ -1614,9 +1674,12 @@ Variables</h2></td></tr>
 <tr class="memitem:a389ee8f66941b84f2aab8734d3197a63" id="r_a389ee8f66941b84f2aab8734d3197a63"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a389ee8f66941b84f2aab8734d3197a63">nothing</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:a389ee8f66941b84f2aab8734d3197a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">空状态标记对象，用于显式构造空的 Maybe。  <br /></td></tr>
 <tr class="separator:a389ee8f66941b84f2aab8734d3197a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc94bf1b5b2d118e6d8207ef587f5a89" id="r_afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_output.html">Output</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a> = <a class="el" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</td></tr>
+<tr class="memitem:afc94bf1b5b2d118e6d8207ef587f5a89" id="r_afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_output.html">Output</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#afc94bf1b5b2d118e6d8207ef587f5a89">print</a></td></tr>
 <tr class="memdesc:afc94bf1b5b2d118e6d8207ef587f5a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局输出对象，模仿 Python 的 print 函数。  <br /></td></tr>
 <tr class="separator:afc94bf1b5b2d118e6d8207ef587f5a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560f2ab0066609b49d9f85abcefbacd3" id="r_a560f2ab0066609b49d9f85abcefbacd3"><td class="memItemLeft" align="right" valign="top">static const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a560f2ab0066609b49d9f85abcefbacd3">supports_ansi</a> = false</td></tr>
+<tr class="memdesc:a560f2ab0066609b49d9f85abcefbacd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">可能佯败  <br /></td></tr>
+<tr class="separator:a560f2ab0066609b49d9f85abcefbacd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>本库所有组件所在的顶层命名空间。 </p>
@@ -2139,8 +2202,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt;
-    </td>
+          <td></td><td> -&gt; std::future&lt;
+            decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt; </td>
         </tr>
       </table>
   </td>
@@ -2205,6 +2268,160 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="a0dd1af2ef04ad2b19237573e8ae74f4f" name="a0dd1af2ef04ad2b19237573e8ae74f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd1af2ef04ad2b19237573e8ae74f4f">&#9670;&#160;</a></span>cc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::cc </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>clr</em> = <code><a class="el" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>修改颜色。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clr</td><td>颜色，默认 Reset。 </td></tr>
+    <tr><td class="paramname">os</td><td>输出流，默认 std::cout。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>cc = change color </dd></dl>
+
+</div>
+</div>
+<a id="a988e6e6d93db4a941e7ab75476a322d1" name="a988e6e6d93db4a941e7ab75476a322d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988e6e6d93db4a941e7ab75476a322d1">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清空整个屏幕并将光标复位到 (1,1)。 </p>
+
+</div>
+</div>
+<a id="ae2cf10aee17398cc9ccf388dc654b71e" name="ae2cf10aee17398cc9ccf388dc654b71e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cf10aee17398cc9ccf388dc654b71e">&#9670;&#160;</a></span>clear_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::clear_line </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清空当前光标所在行。 </p>
+
+</div>
+</div>
+<a id="a16d702dc105828ccc8863d72e9b3feb2" name="a16d702dc105828ccc8863d72e9b3feb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d702dc105828ccc8863d72e9b3feb2">&#9670;&#160;</a></span>clear_screen_save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::clear_screen_save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清空屏幕并保留历史。 </p>
+
+</div>
+</div>
+<a id="ad65e97d95d7803645d6075437bab1cbe" name="ad65e97d95d7803645d6075437bab1cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65e97d95d7803645d6075437bab1cbe">&#9670;&#160;</a></span>clear_to_eol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::clear_to_eol </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清空从光标位置到行尾。 </p>
+
+</div>
+</div>
 <a id="ac5b690be06e783e08433655fe48343ad" name="ac5b690be06e783e08433655fe48343ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5b690be06e783e08433655fe48343ad">&#9670;&#160;</a></span>compiler()</h2>
 
@@ -2249,8 +2466,7 @@ template&lt;class Cont &gt; </div>
           <td>(</td>
           <td class="paramtype">const Cont &amp;&#160;</td>
           <td class="paramname"><em>cont</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt;
-    </td>
+          <td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt; </td>
         </tr>
       </table>
   </td>
@@ -2309,8 +2525,7 @@ template&lt;class Cont &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt;
-    </td>
+          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt; </td>
         </tr>
       </table>
   </td>
@@ -2355,8 +2570,7 @@ template&lt;class Cont &gt; </div>
           <td>(</td>
           <td class="paramtype">Cont &amp;&amp;&#160;</td>
           <td class="paramname"><em>cont</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt;
-    </td>
+          <td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt; </td>
         </tr>
       </table>
   </td>
@@ -2415,8 +2629,7 @@ template&lt;class Cont &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt;
-    </td>
+          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;typename Cont::value_type&gt; </td>
         </tr>
       </table>
   </td>
@@ -2471,8 +2684,7 @@ template&lt;class Iter &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;decltype(*beg)&gt;
-    </td>
+          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_comprehension.html">Comprehension</a>&lt;decltype(*beg)&gt; </td>
         </tr>
       </table>
   </td>
@@ -2668,6 +2880,35 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="ac6c0f2530fab92d41f08ac00f08b9dad" name="ac6c0f2530fab92d41f08ac00f08b9dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6c0f2530fab92d41f08ac00f08b9dad">&#9670;&#160;</a></span>get_terminal_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, int &gt; console::get_terminal_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取终端尺寸（行数和列数）。 </p>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;int, int&gt;，first为rows，second为cols。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>失败时返回 {0, 0}。 </dd></dl>
+
+</div>
+</div>
 <a id="af1dbeb84afc82ab5cffffd77d66d8d13" name="af1dbeb84afc82ab5cffffd77d66d8d13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1dbeb84afc82ab5cffffd77d66d8d13">&#9670;&#160;</a></span>global_thread_pool()</h2>
 
@@ -2693,6 +2934,51 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 <p>全局线程池。 </p>
 <p>内部线程池采用 abort 退出策略，程序退出时不会等待任务完成。 </p>
+
+</div>
+</div>
+<a id="a1e0a7798d555f024797417a452d1aaad" name="a1e0a7798d555f024797417a452d1aaad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0a7798d555f024797417a452d1aaad">&#9670;&#160;</a></span>gotoxy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::gotoxy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将光标移动到指定位置。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>列坐标（从 1 开始） </td></tr>
+    <tr><td class="paramname">y</td><td>行坐标（从 1 开始） </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2751,8 +3037,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::vector&lt;std::future&lt;decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt;
-    </td>
+          <td></td><td> -&gt; std::vector&lt;std::future&lt;
+            decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt; </td>
         </tr>
       </table>
   </td>
@@ -2777,7 +3063,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::future&lt;decltype(func(std::declval&lt;typename Container::value_type&gt;()))&gt;&gt; 包含所有任务 future 对象的 vector，顺序与输入容器一致。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::future&lt;decltype(func(std::declval&lt;typename
+Container::value_type&gt;()))&gt;&gt; 包含所有任务 future 对象的 vector，顺序与输入容器一致。 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classconsole_1_1_thread_pool_error.html" title="表示线程池执行器相关的错误，例如提交任务失败或线程池已关闭时提交任务。">ThreadPoolError</a></td><td>如果线程池正在关闭，则抛出异常。</td></tr>
@@ -2843,8 +3130,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt;
-    </td>
+          <td></td><td> -&gt; std::future&lt;
+            decltype(std::forward&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>&gt;(f)(std::forward&lt;Args&gt;(args)...))&gt; </td>
         </tr>
       </table>
   </td>
@@ -2904,6 +3191,33 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 <p>等待全局进程池所有已提交的任务完成。 </p>
 <p>阻塞当前线程，直到任务队列为空且所有正在执行的任务都已完成。 可用于需要等待所有后台任务完成后再继续执行的场景。 </p>
+
+</div>
+</div>
+<a id="a4d41fe8391efaa2ecdc9331a13cc0152" name="a4d41fe8391efaa2ecdc9331a13cc0152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d41fe8391efaa2ecdc9331a13cc0152">&#9670;&#160;</a></span>hide_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::hide_cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>隐藏光标（提高视觉效果）。 </p>
 
 </div>
 </div>
@@ -3350,6 +3664,142 @@ template&lt;class Iter &gt; </div>
 
 </div>
 </div>
+<a id="a1e9fc3074ceb02c8cf9638f73d707fbd" name="a1e9fc3074ceb02c8cf9638f73d707fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9fc3074ceb02c8cf9638f73d707fbd">&#9670;&#160;</a></span>moved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::moved </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向下相对移动。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>移动的步数，默认为1。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab5dcf56d38112a96ff4a182e8f0ed350" name="ab5dcf56d38112a96ff4a182e8f0ed350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5dcf56d38112a96ff4a182e8f0ed350">&#9670;&#160;</a></span>movel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::movel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向左相对移动。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>移动的步数，默认为1。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a938bd0778bca517d324bcd23287335b6" name="a938bd0778bca517d324bcd23287335b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938bd0778bca517d324bcd23287335b6">&#9670;&#160;</a></span>mover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::mover </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向右相对移动。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>移动的步数，默认为1。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5007266b57b371b7996a0ab497c000ad" name="a5007266b57b371b7996a0ab497c000ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5007266b57b371b7996a0ab497c000ad">&#9670;&#160;</a></span>moveu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::moveu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向上相对移动。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>移动的步数，默认为1。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac6f4b72bab500a681286f1d107060825" name="ac6f4b72bab500a681286f1d107060825"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6f4b72bab500a681286f1d107060825">&#9670;&#160;</a></span>next()</h2>
 
@@ -3600,8 +4050,7 @@ template&lt;class Cont &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_progress.html">Progress</a>&lt;decltype(std::begin(cont))&gt;
-    </td>
+          <td></td><td> -&gt; <a class="el" href="classconsole_1_1_progress.html">Progress</a>&lt;decltype(std::begin(cont))&gt; </td>
         </tr>
       </table>
   </td>
@@ -3630,7 +4079,7 @@ template&lt;class Cont &gt; </div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; x : <a class="code hl_function" href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">progress</a>(v)) {</div>
 <div class="line">    <span class="comment">// 处理 x</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceconsole_html_a01ca524918c855ebc0295b3d956e1df3"><div class="ttname"><a href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">console::progress</a></div><div class="ttdeci">auto progress(Cont &amp;&amp;cont, const ProgressConfig &amp;pc={}) -&gt; Progress&lt; decltype(std::begin(cont))&gt;</div><div class="ttdoc">创建进度条对象的辅助函数（自动推导容器类型）。</div><div class="ttdef"><b>Definition</b> progress.h:296</div></div>
+<div class="ttc" id="anamespaceconsole_html_a01ca524918c855ebc0295b3d956e1df3"><div class="ttname"><a href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">console::progress</a></div><div class="ttdeci">auto progress(Cont &amp;&amp;cont, const ProgressConfig &amp;pc={}) -&gt; Progress&lt; decltype(std::begin(cont))&gt;</div><div class="ttdoc">创建进度条对象的辅助函数（自动推导容器类型）。</div><div class="ttdef"><b>Definition</b> progress.h:272</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -3938,7 +4387,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sfinae.html#gacb09e962bc477d095b364f453edfe3f8">enable_if_char</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::repr </td>
+          <td class="memname"><a class="el" href="group__sfinae.html#gad25ffa0c190db2f85ad0b3e8ec11a0ca">enable_if_char</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::repr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -4109,6 +4558,168 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="acd2a3dde71963a4a46005bff4ddae509" name="acd2a3dde71963a4a46005bff4ddae509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2a3dde71963a4a46005bff4ddae509">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置终端所有属性（颜色、样式、光标等）到默认状态。 </p>
+
+</div>
+</div>
+<a id="aef2c711f9f357071732fbfe1ff89a4f2" name="aef2c711f9f357071732fbfe1ff89a4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2c711f9f357071732fbfe1ff89a4f2">&#9670;&#160;</a></span>restore_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::restore_cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>恢复之前保存的光标位置。 </p>
+
+</div>
+</div>
+<a id="a3ced4fde99cf2e4fc7f150a7015ceff1" name="a3ced4fde99cf2e4fc7f150a7015ceff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ced4fde99cf2e4fc7f150a7015ceff1">&#9670;&#160;</a></span>restore_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::restore_screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>恢复屏幕内容。 </p>
+
+</div>
+</div>
+<a id="aa813498794ba063a351ab1d041dfa0a0" name="aa813498794ba063a351ab1d041dfa0a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa813498794ba063a351ab1d041dfa0a0">&#9670;&#160;</a></span>save_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::save_cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>保存当前光标位置。 </p>
+
+</div>
+</div>
+<a id="a660e605cda0d992dca53eafeb2bdadbf" name="a660e605cda0d992dca53eafeb2bdadbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a660e605cda0d992dca53eafeb2bdadbf">&#9670;&#160;</a></span>save_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::save_screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>保存屏幕内容。 </p>
+
+</div>
+</div>
+<a id="a030e179f6dcf599cb6287447032ca660" name="a030e179f6dcf599cb6287447032ca660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a030e179f6dcf599cb6287447032ca660">&#9670;&#160;</a></span>show_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::show_cursor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示光标（恢复默认）。 </p>
+
+</div>
+</div>
 <a id="a051357a08d9c4700e4b6a4eafa3f4958" name="a051357a08d9c4700e4b6a4eafa3f4958"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a051357a08d9c4700e4b6a4eafa3f4958">&#9670;&#160;</a></span>sleep()</h2>
 
@@ -4199,7 +4810,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <div class="line">    std::cout &lt;&lt; result.<a class="code hl_function" href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">output</a>();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassconsole_1_1_cmd_result_html_a089bb5ea1e2b5abca93bf6217f323fd6"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">console::CmdResult::output</a></div><div class="ttdeci">const std::string &amp; output() const</div><div class="ttdoc">获取命令的标准输出内容。</div><div class="ttdef"><b>Definition</b> syscmd.h:105</div></div>
-<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:123</div></div>
+<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:124</div></div>
 </div><!-- fragment --> <dl class="section warning"><dt>Warning</dt><dd>函数阻塞直到命令执行完毕。 </dd></dl>
 
 </div>
@@ -4283,7 +4894,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><div class="memdoc">
 
 <p>返回库的版本字符串。 </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string 格式为 console version Major.Minor.Patch (YYYY-MM-DD) &ndash; "Commit Information"。 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 格式为 console version Major.Minor.Patch (YYYY-MM-DD) &ndash; "Commit Message"。 </dd></dl>
 
 </div>
 </div>
@@ -4464,7 +5075,7 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> console::inputSettings {std::cout, std::cin}</td>
+          <td class="memname"><a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> console::inputSettings</td>
         </tr>
       </table>
   </td>
@@ -4473,7 +5084,9 @@ template&lt;class C1 , class C2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">{std::cout,</div>
+<div class="line">                                       std::cin}</div>
+</div><!-- fragment -->
 <p>全局默认输入设置 </p>
 
 </div>
@@ -4488,7 +5101,7 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1_logging.html">Logging</a>&amp; console::logger = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td>
+          <td class="memname"><a class="el" href="classconsole_1_1_logging.html">Logging</a>&amp; console::logger</td>
         </tr>
       </table>
   </td>
@@ -4497,7 +5110,10 @@ template&lt;class C1 , class C2 &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">        <a class="code hl_function" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</div>
+<div class="ttc" id="anamespaceconsole_html_aeee954f9f21c7f53ef7b9bbf7f5055da"><div class="ttname"><a href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">console::get_logger</a></div><div class="ttdeci">Logging &amp; get_logger()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> logging.h:192</div></div>
+</div><!-- fragment -->
 <p>全局默认 logger 实例，启用颜色，级别 INFO。 </p>
 
 </div>
@@ -4512,7 +5128,7 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr char console::meta[] = &quot;CONSOLE-LIB-2026-06-20-MRXIE1109&quot;</td>
+          <td class="memname">constexpr char console::meta[] = &quot;CONSOLE-LIB-2026-07-04-MRXIE1109&quot;</td>
         </tr>
       </table>
   </td>
@@ -4551,7 +5167,34 @@ template&lt;class C1 , class C2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1_output.html">Output</a>&amp; console::print = <a class="el" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</td>
+          <td class="memname"><a class="el" href="classconsole_1_1_output.html">Output</a>&amp; console::print</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">        <a class="code hl_function" href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">get_print</a>()</div>
+<div class="ttc" id="anamespaceconsole_html_af775492d227128b6187ce642884d16b8"><div class="ttname"><a href="namespaceconsole.html#af775492d227128b6187ce642884d16b8">console::get_print</a></div><div class="ttdeci">Output &amp; get_print()</div><div class="ttdoc">内部单例。</div><div class="ttdef"><b>Definition</b> output.h:412</div></div>
+</div><!-- fragment -->
+<p>全局输出对象，模仿 Python 的 print 函数。 </p>
+
+</div>
+</div>
+<a id="a560f2ab0066609b49d9f85abcefbacd3" name="a560f2ab0066609b49d9f85abcefbacd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560f2ab0066609b49d9f85abcefbacd3">&#9670;&#160;</a></span>supports_ansi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool&amp; console::supports_ansi = false</td>
         </tr>
       </table>
   </td>
@@ -4561,14 +5204,14 @@ template&lt;class C1 , class C2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>全局输出对象，模仿 Python 的 print 函数。 </p>
+<p>可能佯败 </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

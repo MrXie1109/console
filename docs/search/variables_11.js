@@ -4,10 +4,16 @@ var searchData=
   ['sbox_1',['Sbox',['../namespaceconsole_1_1crypto_1_1aes__impl.html#a6f4178c78f165d54250155ff8c9bd805',1,'console::crypto::aes_impl']]],
   ['second_2',['second',['../namespaceconsole_1_1ops.html#a45b17f3677c9f5a49557acf74b5de77a',1,'console::ops']]],
   ['show_5fpercent_3',['show_percent',['../structconsole_1_1_progress_config.html#afacbd08910875eec7e6731513f4aab2f',1,'console::ProgressConfig']]],
-  ['signal_4',['signal',['../structconsole_1_1_exit_status.html#af56d16f6d23b646b29e5dddf54b77804',1,'console::ExitStatus']]],
-  ['signaled_5',['signaled',['../structconsole_1_1_exit_status.html#aee4939d2448426c0277758c9166b693b',1,'console::ExitStatus']]],
-  ['sqrt_6',['sqrt',['../namespaceconsole_1_1ops.html#a24666124f1c8c8de49f08cf89f2eeaf4',1,'console::ops']]],
-  ['square_7',['square',['../namespaceconsole_1_1ops.html#a36eaa5993e69f8604d14a80741ad88b3',1,'console::ops']]],
-  ['strikethrough_8',['Strikethrough',['../namespaceconsole_1_1color.html#acc3ed5a35ee1759eafcf3f666e4440a4',1,'console::color']]],
-  ['suffix_9',['suffix',['../structconsole_1_1_progress_config.html#a4601e9b151a85497c4ce9d687d316a63',1,'console::ProgressConfig']]]
+  ['sign_4',['sign',['../namespaceconsole_1_1ops.html#a3f7b022717b719f7237c8228313865c3',1,'console::ops']]],
+  ['signal_5',['signal',['../structconsole_1_1_exit_status.html#af56d16f6d23b646b29e5dddf54b77804',1,'console::ExitStatus']]],
+  ['signaled_6',['signaled',['../structconsole_1_1_exit_status.html#aee4939d2448426c0277758c9166b693b',1,'console::ExitStatus']]],
+  ['sin_7',['sin',['../namespaceconsole_1_1ops.html#aa178f25aa8bdf5451fc66f3c3ffe2bc1',1,'console::ops']]],
+  ['size_8',['size',['../namespaceconsole_1_1ops.html#a8e93b6549925a38d04332bac25ad3362',1,'console::ops']]],
+  ['sqrt_9',['sqrt',['../namespaceconsole_1_1ops.html#a24666124f1c8c8de49f08cf89f2eeaf4',1,'console::ops']]],
+  ['square_10',['square',['../namespaceconsole_1_1ops.html#a36eaa5993e69f8604d14a80741ad88b3',1,'console::ops']]],
+  ['strikethrough_11',['Strikethrough',['../namespaceconsole_1_1color.html#acc3ed5a35ee1759eafcf3f666e4440a4',1,'console::color']]],
+  ['strlen_12',['strlen',['../namespaceconsole_1_1ops.html#a8fe50c8566a15e6c7efd6696019af69f',1,'console::ops']]],
+  ['suffix_13',['suffix',['../structconsole_1_1_progress_config.html#a4601e9b151a85497c4ce9d687d316a63',1,'console::ProgressConfig']]],
+  ['sum_14',['sum',['../namespaceconsole_1_1ops.html#a65f91b21cae52dfe0949272351c81535',1,'console::ops']]],
+  ['supports_5fansi_15',['supports_ansi',['../namespaceconsole.html#a560f2ab0066609b49d9f85abcefbacd3',1,'console']]]
 ];

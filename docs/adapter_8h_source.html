@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -83,214 +83,196 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="adapter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"></span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">copies or substantial portions of the Software.</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"></span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">SOFTWARE.</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"></span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">SOFTWARE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="iter_8h.html">iter.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceconsole.html">   42</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::deque&lt;T&gt;&gt;</div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classconsole_1_1_stack.html">   59</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_stack.html">Stack</a> : <span class="keyword">public</span> std::stack&lt;T, Container&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="iter_8h.html">iter.h</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceconsole.html">   44</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::deque&lt;T&gt;&gt;</div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classconsole_1_1_stack.html">   60</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_stack.html">Stack</a> : <span class="keyword">public</span> std::stack&lt;T, Container&gt; {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">using </span>base_type = std::stack&lt;T, Container&gt;;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">using </span>base_type::stack;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">   73</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">pop</a>()</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keyword">auto</span> top = std::move(base_type::top());</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            base_type::pop();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span> top;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">   75</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">pop</a>() {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keyword">auto</span> top = std::move(base_type::top());</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            base_type::pop();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">return</span> top;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    };</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    };</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::deque&lt;T&gt;&gt;</div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="};">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classconsole_1_1_queue.html">   96</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_queue.html">Queue</a> : <span class="keyword">public</span> std::queue&lt;T, Container&gt;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::deque&lt;T&gt;&gt;</div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="};">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classconsole_1_1_queue.html">   97</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_queue.html">Queue</a> : <span class="keyword">public</span> std::queue&lt;T, Container&gt; {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">using </span>base_type = std::queue&lt;T, Container&gt;;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">using </span>base_type::queue;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">  110</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">pop</a>()</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keyword">auto</span> top = std::move(base_type::front());</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            base_type::pop();</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordflow">return</span> top;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">  112</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">pop</a>() {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keyword">auto</span> top = std::move(base_type::front());</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            base_type::pop();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordflow">return</span> top;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
 </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    };</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    };</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::vector&lt;T&gt;,</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>              <span class="keyword">class</span> Compare = std::less&lt;T&gt;&gt;</div>
-<div class="foldopen" id="foldopen00136" data-start="{" data-end="};">
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classconsole_1_1_priority_queue.html">  136</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_priority_queue.html">PriorityQueue</a> : <span class="keyword">public</span> std::priority_queue&lt;T, Container, Compare&gt;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Container = std::vector&lt;T&gt;,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>              <span class="keyword">class</span> Compare = std::less&lt;T&gt;&gt;</div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="};">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classconsole_1_1_priority_queue.html">  137</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_priority_queue.html">PriorityQueue</a> : <span class="keyword">public</span> std::priority_queue&lt;T, Container, Compare&gt; {</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keyword">using </span>base_type = std::priority_queue&lt;T, Container, Compare&gt;;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">using </span>base_type::priority_queue;</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">  150</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">pop</a>()</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keyword">auto</span> top = std::move(base_type::top());</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            base_type::pop();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">return</span> top;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">  152</a></span>        <span class="keyword">typename</span> base_type::value_type <a class="code hl_function" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">pop</a>() {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keyword">auto</span> top = std::move(base_type::top());</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            base_type::pop();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">return</span> top;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
 </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    };</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    };</div>
 </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
 <div class="foldopen" id="foldopen00166" data-start="{" data-end="};">
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html">  166</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> cur_;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> bounds_;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step_;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">  173</a></span>        <span class="keyword">typedef</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">value_type</a>; </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">  174</a></span>        <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">pointer</a>; </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a247e1a826108f4c4d4362808c01a934a">  175</a></span>        <span class="keyword">typedef</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a247e1a826108f4c4d4362808c01a934a">reference</a>;  </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html">  166</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> cur_;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> bounds_;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step_;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">  172</a></span>        <span class="keyword">typedef</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>    <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">value_type</a>; </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">  173</a></span>        <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">pointer</a>;    </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keyword">typedef</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a247e1a826108f4c4d4362808c01a934a">  175</a></span>            <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a247e1a826108f4c4d4362808c01a934a">reference</a>; </div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a98b44f7de98b34cf9f663bfc6877117a">  177</a></span>        <span class="keyword">typedef</span> std::forward_iterator_tag <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#a98b44f7de98b34cf9f663bfc6877117a">iterator_category</a>; </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#ad1b601604fc07bd8f54929d70f2e6439">  178</a></span>        <span class="keyword">typedef</span> std::ptrdiff_t <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#ad1b601604fc07bd8f54929d70f2e6439">difference_type</a>;              </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#ad1b601604fc07bd8f54929d70f2e6439">  178</a></span>        <span class="keyword">typedef</span> std::ptrdiff_t            <a class="code hl_typedef" href="classconsole_1_1_range_iterator.html#ad1b601604fc07bd8f54929d70f2e6439">difference_type</a>;   </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
 <div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a49060a0e0b3319383f9a985d230dfa50">  186</a></span>        <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a49060a0e0b3319383f9a985d230dfa50">RangeIterator</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;cur = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;bounds = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{})</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            : cur_(cur), bounds_(bounds), step_(step) {}</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a49060a0e0b3319383f9a985d230dfa50">  186</a></span>        <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a49060a0e0b3319383f9a985d230dfa50">RangeIterator</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;cur = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;bounds = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{},</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                      <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step = <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}) :</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            cur_(cur), bounds_(bounds), step_(step) {}</div>
 </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">  193</a></span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">operator*</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">return</span> cur_;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">  194</a></span>        <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">operator*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cur_; }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">  200</a></span>        <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;<a class="code hl_function" href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">operator++</a>() {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            cur_ += step_;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
 </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">  202</a></span>        <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;<a class="code hl_function" href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">operator++</a>()</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            cur_ += step_;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">  209</a></span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">operator++</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> old = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            cur_ += step_;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">return</span> old;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
 </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">  212</a></span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">operator++</a>(<span class="keywordtype">int</span>)</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> old = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            cur_ += step_;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">return</span> old;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00225" data-start="{" data-end="}">
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">  225</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">return</span> step_ &gt; <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{} ? cur_ &lt; bounds_ : cur_ &gt; bounds_;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
 </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">  228</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">return</span> step_ &gt; <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{} ? cur_ &lt; bounds_ : cur_ &gt; bounds_;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">  239</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="keywordflow">return</span> step_ &gt; <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{} ? cur_ &gt;= bounds_ : cur_ &lt;= bounds_;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        }</div>
 </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">  242</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_range_iterator.html">RangeIterator</a> &amp;)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keywordflow">return</span> step_ &gt; <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{} ? cur_ &gt;= bounds_ : cur_ &lt;= bounds_;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    };</div>
 </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    };</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00251" data-start="{" data-end="}">
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">  251</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_iterator_pair.html">IteratorPair&lt;RangeIterator&lt;T&gt;</a>&gt; <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">return</span> {{<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}, {<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}};</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
 </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">  255</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_iterator_pair.html">IteratorPair&lt;RangeIterator&lt;T&gt;</a>&gt; <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end)</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">return</span> {{<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}, {<a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{}, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}};</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a5988e92c0befcf8434d1bd44a605e18b">  263</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_iterator_pair.html">IteratorPair&lt;RangeIterator&lt;T&gt;</a>&gt; <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">return</span> {{start, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}, {start, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}};</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    }</div>
 </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a5988e92c0befcf8434d1bd44a605e18b">  268</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_iterator_pair.html">IteratorPair&lt;RangeIterator&lt;T&gt;</a>&gt; <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end)</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    {</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordflow">return</span> {{start, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}, {start, end, <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>{1}}};</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a0964a614832b42652e45a86c20f8412e">  276</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structconsole_1_1_iterator_pair.html">IteratorPair&lt;RangeIterator&lt;T&gt;</a>&gt; <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                                                <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordflow">return</span> {{start, end, step}, {start, end, step}};</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
 </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keyword">inline</span> IteratorPair&lt;RangeIterator&lt;T&gt;&gt;</div>
-<div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a0964a614832b42652e45a86c20f8412e">  283</a></span>    <a class="code hl_function" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">range</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end, <span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step)</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    {</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">return</span> {{start, end, step}, {start, end, step}};</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
-</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>}</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
 </div>
 <div class="ttc" id="aclassconsole_1_1_priority_queue_html"><div class="ttname"><a href="classconsole_1_1_priority_queue.html">console::PriorityQueue</a></div><div class="ttdoc">优先队列容器适配器，扩展自 std::priority_queue。</div><div class="ttdef"><b>Definition</b> adapter.h:137</div></div>
-<div class="ttc" id="aclassconsole_1_1_priority_queue_html_a693b9ac5331bacd9bd8d74608803ac24"><div class="ttname"><a href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">console::PriorityQueue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出优先级最高的元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:150</div></div>
+<div class="ttc" id="aclassconsole_1_1_priority_queue_html_a693b9ac5331bacd9bd8d74608803ac24"><div class="ttname"><a href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">console::PriorityQueue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出优先级最高的元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:152</div></div>
 <div class="ttc" id="aclassconsole_1_1_queue_html"><div class="ttname"><a href="classconsole_1_1_queue.html">console::Queue</a></div><div class="ttdoc">队列容器适配器，扩展自 std::queue。</div><div class="ttdef"><b>Definition</b> adapter.h:97</div></div>
-<div class="ttc" id="aclassconsole_1_1_queue_html_ae18d8cd3c0188a56fa10eaff3d400e4d"><div class="ttname"><a href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出队首元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:110</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html"><div class="ttname"><a href="classconsole_1_1_range_iterator.html">console::RangeIterator</a></div><div class="ttdoc">RangeIterator 类模板，用于实现 range() 函数生成的迭代器。</div><div class="ttdef"><b>Definition</b> adapter.h:167</div></div>
+<div class="ttc" id="aclassconsole_1_1_queue_html_ae18d8cd3c0188a56fa10eaff3d400e4d"><div class="ttname"><a href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出队首元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:112</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html"><div class="ttname"><a href="classconsole_1_1_range_iterator.html">console::RangeIterator</a></div><div class="ttdoc">RangeIterator 类模板，用于实现 range() 函数生成的迭代器。</div><div class="ttdef"><b>Definition</b> adapter.h:166</div></div>
 <div class="ttc" id="aclassconsole_1_1_range_iterator_html_a247e1a826108f4c4d4362808c01a934a"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a247e1a826108f4c4d4362808c01a934a">console::RangeIterator::reference</a></div><div class="ttdeci">T reference</div><div class="ttdoc">类型别名（由于解引用产出值，所以引用类型实际上不是引用）</div><div class="ttdef"><b>Definition</b> adapter.h:175</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a2eb27bac522b29fd8c2d6d59290155fd"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">console::RangeIterator::operator++</a></div><div class="ttdeci">const RangeIterator operator++(int)</div><div class="ttdoc">后置递增运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:212</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a2eb27bac522b29fd8c2d6d59290155fd"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a2eb27bac522b29fd8c2d6d59290155fd">console::RangeIterator::operator++</a></div><div class="ttdeci">const RangeIterator operator++(int)</div><div class="ttdoc">后置递增运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:209</div></div>
 <div class="ttc" id="aclassconsole_1_1_range_iterator_html_a49060a0e0b3319383f9a985d230dfa50"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a49060a0e0b3319383f9a985d230dfa50">console::RangeIterator::RangeIterator</a></div><div class="ttdeci">RangeIterator(const T &amp;cur=T{}, const T &amp;bounds=T{}, const T &amp;step=T{})</div><div class="ttdoc">构造函数。</div><div class="ttdef"><b>Definition</b> adapter.h:186</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a575e27d06a9ded19a6aa9582073aa4a9"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">console::RangeIterator::pointer</a></div><div class="ttdeci">void pointer</div><div class="ttdoc">类型别名（不实际使用）</div><div class="ttdef"><b>Definition</b> adapter.h:174</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a800dbffa12e74bf96159699954003644"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">console::RangeIterator::operator++</a></div><div class="ttdeci">RangeIterator &amp; operator++()</div><div class="ttdoc">前置递增运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:202</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a8ba44f82e8b5e052e6f3fa05346602e7"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">console::RangeIterator::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdoc">类型别名</div><div class="ttdef"><b>Definition</b> adapter.h:173</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a93559e4a3c34ac5847e97d5b742d4621"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">console::RangeIterator::operator==</a></div><div class="ttdeci">bool operator==(const RangeIterator &amp;) const</div><div class="ttdoc">比较运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:242</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a575e27d06a9ded19a6aa9582073aa4a9"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a575e27d06a9ded19a6aa9582073aa4a9">console::RangeIterator::pointer</a></div><div class="ttdeci">void pointer</div><div class="ttdoc">类型别名（不实际使用）</div><div class="ttdef"><b>Definition</b> adapter.h:173</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a800dbffa12e74bf96159699954003644"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a800dbffa12e74bf96159699954003644">console::RangeIterator::operator++</a></div><div class="ttdeci">RangeIterator &amp; operator++()</div><div class="ttdoc">前置递增运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:200</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a8ba44f82e8b5e052e6f3fa05346602e7"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7">console::RangeIterator::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdoc">类型别名</div><div class="ttdef"><b>Definition</b> adapter.h:172</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a93559e4a3c34ac5847e97d5b742d4621"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a93559e4a3c34ac5847e97d5b742d4621">console::RangeIterator::operator==</a></div><div class="ttdeci">bool operator==(const RangeIterator &amp;) const</div><div class="ttdoc">比较运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:239</div></div>
 <div class="ttc" id="aclassconsole_1_1_range_iterator_html_a98b44f7de98b34cf9f663bfc6877117a"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a98b44f7de98b34cf9f663bfc6877117a">console::RangeIterator::iterator_category</a></div><div class="ttdeci">std::forward_iterator_tag iterator_category</div><div class="ttdoc">类型别名</div><div class="ttdef"><b>Definition</b> adapter.h:177</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a9b4c120dd6eb497d8c001ccb64a9ae26"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">console::RangeIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const RangeIterator &amp;) const</div><div class="ttdoc">比较运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:228</div></div>
-<div class="ttc" id="aclassconsole_1_1_range_iterator_html_ac83d1564babaf057159fae8739ace54a"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">console::RangeIterator::operator*</a></div><div class="ttdeci">T operator*() const</div><div class="ttdoc">解引用运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:193</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_a9b4c120dd6eb497d8c001ccb64a9ae26"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#a9b4c120dd6eb497d8c001ccb64a9ae26">console::RangeIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const RangeIterator &amp;) const</div><div class="ttdoc">比较运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:225</div></div>
+<div class="ttc" id="aclassconsole_1_1_range_iterator_html_ac83d1564babaf057159fae8739ace54a"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#ac83d1564babaf057159fae8739ace54a">console::RangeIterator::operator*</a></div><div class="ttdeci">T operator*() const</div><div class="ttdoc">解引用运算符。</div><div class="ttdef"><b>Definition</b> adapter.h:194</div></div>
 <div class="ttc" id="aclassconsole_1_1_range_iterator_html_ad1b601604fc07bd8f54929d70f2e6439"><div class="ttname"><a href="classconsole_1_1_range_iterator.html#ad1b601604fc07bd8f54929d70f2e6439">console::RangeIterator::difference_type</a></div><div class="ttdeci">std::ptrdiff_t difference_type</div><div class="ttdoc">类型别名</div><div class="ttdef"><b>Definition</b> adapter.h:178</div></div>
 <div class="ttc" id="aclassconsole_1_1_stack_html"><div class="ttname"><a href="classconsole_1_1_stack.html">console::Stack</a></div><div class="ttdoc">栈容器适配器，扩展自 std::stack。</div><div class="ttdef"><b>Definition</b> adapter.h:60</div></div>
-<div class="ttc" id="aclassconsole_1_1_stack_html_a234f82185eda77dfef150c3fb511a719"><div class="ttname"><a href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">console::Stack::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出栈顶元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:73</div></div>
+<div class="ttc" id="aclassconsole_1_1_stack_html_a234f82185eda77dfef150c3fb511a719"><div class="ttname"><a href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">console::Stack::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出栈顶元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:75</div></div>
 <div class="ttc" id="aiter_8h_html"><div class="ttname"><a href="iter_8h.html">iter.h</a></div><div class="ttdoc">提供些许关于迭代器的拓展功能。</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
-<div class="ttc" id="anamespaceconsole_html_a050ace6587f76bb1b4179261122b4920"><div class="ttname"><a href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">console::range</a></div><div class="ttdeci">IteratorPair&lt; RangeIterator&lt; T &gt; &gt; range(const T &amp;end)</div><div class="ttdoc">生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。</div><div class="ttdef"><b>Definition</b> adapter.h:255</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
+<div class="ttc" id="anamespaceconsole_html_a050ace6587f76bb1b4179261122b4920"><div class="ttname"><a href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">console::range</a></div><div class="ttdeci">IteratorPair&lt; RangeIterator&lt; T &gt; &gt; range(const T &amp;end)</div><div class="ttdoc">生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。</div><div class="ttdef"><b>Definition</b> adapter.h:251</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
-<div class="ttc" id="astructconsole_1_1_iterator_pair_html"><div class="ttname"><a href="structconsole_1_1_iterator_pair.html">console::IteratorPair</a></div><div class="ttdoc">存储迭代器对，可以直接范围 for。</div><div class="ttdef"><b>Definition</b> iter.h:48</div></div>
+<div class="ttc" id="astructconsole_1_1_iterator_pair_html"><div class="ttname"><a href="structconsole_1_1_iterator_pair.html">console::IteratorPair</a></div><div class="ttdoc">存储迭代器对，可以直接范围 for。</div><div class="ttdef"><b>Definition</b> iter.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

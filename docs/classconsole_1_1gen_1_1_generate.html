@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -103,11 +103,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef11d48fb401f8b91011fa991df0fdfe" id="r_aef11d48fb401f8b91011fa991df0fdfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_generate.html#aef11d48fb401f8b91011fa991df0fdfe">done</a> ()</td></tr>
 <tr class="memdesc:aef11d48fb401f8b91011fa991df0fdfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
 <tr class="separator:aef11d48fb401f8b91011fa991df0fdfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5cf2119c1560bc38090b52a29163714" id="r_ae5cf2119c1560bc38090b52a29163714"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_generate.html#ae5cf2119c1560bc38090b52a29163714">current</a> () -&gt; decltype(func())</td></tr>
-<tr class="memdesc:ae5cf2119c1560bc38090b52a29163714"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值。  <br /></td></tr>
-<tr class="separator:ae5cf2119c1560bc38090b52a29163714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b56791d1ea3aaa58172c1cae6b1dbe" id="r_a58b56791d1ea3aaa58172c1cae6b1dbe"><td class="memItemLeft" align="right" valign="top">decltype(curr)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_generate.html#a58b56791d1ea3aaa58172c1cae6b1dbe">current</a> ()</td></tr>
+<tr class="memdesc:a58b56791d1ea3aaa58172c1cae6b1dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值。  <br /></td></tr>
+<tr class="separator:a58b56791d1ea3aaa58172c1cae6b1dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30df3c9c96e2db9964c1680630826ffb" id="r_a30df3c9c96e2db9964c1680630826ffb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_generate.html#a30df3c9c96e2db9964c1680630826ffb">advance</a> ()</td></tr>
-<tr class="memdesc:a30df3c9c96e2db9964c1680630826ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">向前移动一步（无操作）。  <br /></td></tr>
+<tr class="memdesc:a30df3c9c96e2db9964c1680630826ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">向前移动一步。  <br /></td></tr>
 <tr class="separator:a30df3c9c96e2db9964c1680630826ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classconsole_1_1_generator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classconsole_1_1_generator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classconsole_1_1_generator.html">console::Generator&lt; Generate&lt; Func &gt;, decltype(std::declval&lt; Func &gt;()())&gt;</a></td></tr>
 <tr class="memitem:aaa3994e3b432ab771f13ea09f258e928 inherit pub_methods_classconsole_1_1_generator" id="r_aaa3994e3b432ab771f13ea09f258e928"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#aaa3994e3b432ab771f13ea09f258e928">iter</a> ()</td></tr>
@@ -199,12 +199,12 @@ template&lt;class Func &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>向前移动一步（无操作）。 </p>
+<p>向前移动一步。 </p>
 
 </div>
 </div>
-<a id="ae5cf2119c1560bc38090b52a29163714" name="ae5cf2119c1560bc38090b52a29163714"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5cf2119c1560bc38090b52a29163714">&#9670;&#160;</a></span>current()</h2>
+<a id="a58b56791d1ea3aaa58172c1cae6b1dbe" name="a58b56791d1ea3aaa58172c1cae6b1dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b56791d1ea3aaa58172c1cae6b1dbe">&#9670;&#160;</a></span>current()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,10 +215,10 @@ template&lt;class Func &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classconsole_1_1gen_1_1_generate.html">console::gen::Generate</a>&lt; Func &gt;::current </td>
+          <td class="memname">decltype(curr) <a class="el" href="classconsole_1_1gen_1_1_generate.html">console::gen::Generate</a>&lt; Func &gt;::current </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; decltype(func()) </td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -269,7 +269,7 @@ template&lt;class Func &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

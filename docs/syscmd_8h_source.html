@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.6.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -83,120 +83,115 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="syscmd_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">copies or substantial portions of the Software.</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">SOFTWARE.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">Copyright (c) 2026 MrXie1109</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">SOFTWARE.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define POPEN _popen</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define PCLOSE _pclose</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">   44</a></span><span class="preprocessor">#define POPEN popen</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">   45</a></span><span class="preprocessor">#define PCLOSE pclose</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define POPEN _popen</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define PCLOSE _pclose</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">   45</a></span><span class="preprocessor">#define POPEN popen</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">   46</a></span><span class="preprocessor">#define PCLOSE pclose</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html">   55</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">int</span> status_;                       </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        std::unique_ptr&lt;std::string&gt; ptr_; </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a>() {}</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a> <a class="code hl_friend" href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">syscmd</a>(<span class="keyword">const</span> std::string &amp;,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">   78</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">ok</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr_ &amp;&amp; status_ == 0; }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">   85</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">error</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr_ &amp;&amp; status_ != 0; }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">   92</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">fail</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !ptr_; }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">   98</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">status</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> status_; }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html">   55</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">int</span> status_; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::unique_ptr&lt;std::string&gt; ptr_; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a>() {}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a> <a class="code hl_friend" href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">syscmd</a>(<span class="keyword">const</span> std::string &amp;,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">   77</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">ok</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr_ &amp;&amp; status_ == 0; }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">   84</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">error</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ptr_ &amp;&amp; status_ != 0; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">   91</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">fail</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !ptr_; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">   97</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">status</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> status_; }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">  105</a></span>        <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">output</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *ptr_; }</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    };</div>
 </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">  123</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classconsole_1_1_cmd_result.html">CmdResult</a> <a class="code hl_function" href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">syscmd</a>(<span class="keyword">const</span> std::string &amp;exe,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                            <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;args = {},</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                            <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;kwargs = {})</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        std::string cmd = exe;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string &amp;arg : args)</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            cmd += <span class="stringliteral">&quot; &quot;</span> + arg;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kwarg : kwargs)</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            cmd += <span class="stringliteral">&quot; &quot;</span> + kwarg.first + <span class="stringliteral">&quot; &quot;</span> + kwarg.second;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        cmd += <span class="stringliteral">&quot; 2&gt;&amp;1&quot;</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        FILE *pipe = <a class="code hl_define" href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a>(cmd.c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">if</span> (!pipe)</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            CmdResult cr;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            cr.status_ = -1;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            cr.ptr_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">return</span> cr;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        std::array&lt;char, 256&gt; buffer;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        std::unique_ptr&lt;std::string&gt; output(<span class="keyword">new</span> std::string);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">while</span> (fgets(buffer.data(), buffer.size(), pipe) != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            *output += buffer.data();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordtype">int</span> status = <a class="code hl_define" href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a>(pipe);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        CmdResult cr;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        cr.status_ = status;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        cr.ptr_ = std::move(output);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">return</span> cr;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">inline</span> CmdResult</div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="};">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">  124</a></span>    <a class="code hl_function" href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">syscmd</a>(<span class="keyword">const</span> std::string &amp;exe, <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;args = {},</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>           <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;kwargs = {}) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        std::string cmd = exe;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string &amp;arg : args) cmd += <span class="stringliteral">&quot; &quot;</span> + arg;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kwarg : kwargs)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            cmd += <span class="stringliteral">&quot; &quot;</span> + kwarg.first + <span class="stringliteral">&quot; &quot;</span> + kwarg.second;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        cmd += <span class="stringliteral">&quot; 2&gt;&amp;1&quot;</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        FILE *pipe = <a class="code hl_define" href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a>(cmd.c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span> (!pipe) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            CmdResult cr;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            cr.status_ = -1;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            cr.ptr_    = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">return</span> cr;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        std::array&lt;char, 256&gt;        buffer;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        std::unique_ptr&lt;std::string&gt; output(<span class="keyword">new</span> std::string);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">while</span> (fgets(buffer.data(), buffer.size(), pipe) != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            *output += buffer.data();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">int</span>       status = <a class="code hl_define" href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a>(pipe);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        CmdResult cr;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        cr.status_ = status;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        cr.ptr_    = std::move(output);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">return</span> cr;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
 </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#undef POPEN</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#undef PCLOSE</span></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html"><div class="ttname"><a href="classconsole_1_1_cmd_result.html">console::CmdResult</a></div><div class="ttdoc">命令执行结果封装类。</div><div class="ttdef"><b>Definition</b> syscmd.h:56</div></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html_a0581f7d628ecc3a51ce53acad560876f"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">console::CmdResult::ok</a></div><div class="ttdeci">bool ok() const</div><div class="ttdoc">检查命令是否成功执行。</div><div class="ttdef"><b>Definition</b> syscmd.h:78</div></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#undef POPEN</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#undef PCLOSE</span></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html"><div class="ttname"><a href="classconsole_1_1_cmd_result.html">console::CmdResult</a></div><div class="ttdoc">命令执行结果封装类。</div><div class="ttdef"><b>Definition</b> syscmd.h:55</div></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html_a0581f7d628ecc3a51ce53acad560876f"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f">console::CmdResult::ok</a></div><div class="ttdeci">bool ok() const</div><div class="ttdoc">检查命令是否成功执行。</div><div class="ttdef"><b>Definition</b> syscmd.h:77</div></div>
 <div class="ttc" id="aclassconsole_1_1_cmd_result_html_a089bb5ea1e2b5abca93bf6217f323fd6"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a089bb5ea1e2b5abca93bf6217f323fd6">console::CmdResult::output</a></div><div class="ttdeci">const std::string &amp; output() const</div><div class="ttdoc">获取命令的标准输出内容。</div><div class="ttdef"><b>Definition</b> syscmd.h:105</div></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html_a39b00f1edd8f9ddb9b1ee091d901e87c"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">console::CmdResult::syscmd</a></div><div class="ttdeci">friend CmdResult syscmd(const std::string &amp;, const std::vector&lt; std::string &gt; &amp;, const std::map&lt; std::string, std::string &gt; &amp;)</div><div class="ttdoc">友元声明，仅允许 syscmd 创建实例。</div><div class="ttdef"><b>Definition</b> syscmd.h:123</div></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html_ad84d88c41bd44cbbb3124eb0ae974e38"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">console::CmdResult::fail</a></div><div class="ttdeci">bool fail() const</div><div class="ttdoc">检查命令执行是否完全失败。</div><div class="ttdef"><b>Definition</b> syscmd.h:92</div></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html_ae62bb44596288018a3b29e3c5a60f547"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">console::CmdResult::status</a></div><div class="ttdeci">int status() const</div><div class="ttdoc">获取命令退出状态码。</div><div class="ttdef"><b>Definition</b> syscmd.h:98</div></div>
-<div class="ttc" id="aclassconsole_1_1_cmd_result_html_af75dd2cefdfafde0672723950594d3a0"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">console::CmdResult::error</a></div><div class="ttdeci">bool error() const</div><div class="ttdoc">检查命令是否执行但返回错误码。</div><div class="ttdef"><b>Definition</b> syscmd.h:85</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:43</div></div>
-<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:123</div></div>
-<div class="ttc" id="asyscmd_8h_html_a4c39c7c96d7f5d1f5cd1743122d476e3"><div class="ttname"><a href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a></div><div class="ttdeci">#define PCLOSE</div><div class="ttdef"><b>Definition</b> syscmd.h:45</div></div>
-<div class="ttc" id="asyscmd_8h_html_ab6949e8178edeb4294d893f3ee4966d5"><div class="ttname"><a href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a></div><div class="ttdeci">#define POPEN</div><div class="ttdef"><b>Definition</b> syscmd.h:44</div></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html_a39b00f1edd8f9ddb9b1ee091d901e87c"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">console::CmdResult::syscmd</a></div><div class="ttdeci">friend CmdResult syscmd(const std::string &amp;, const std::vector&lt; std::string &gt; &amp;, const std::map&lt; std::string, std::string &gt; &amp;)</div><div class="ttdoc">友元声明，仅允许 syscmd 创建实例。</div><div class="ttdef"><b>Definition</b> syscmd.h:124</div></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html_ad84d88c41bd44cbbb3124eb0ae974e38"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38">console::CmdResult::fail</a></div><div class="ttdeci">bool fail() const</div><div class="ttdoc">检查命令执行是否完全失败。</div><div class="ttdef"><b>Definition</b> syscmd.h:91</div></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html_ae62bb44596288018a3b29e3c5a60f547"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#ae62bb44596288018a3b29e3c5a60f547">console::CmdResult::status</a></div><div class="ttdeci">int status() const</div><div class="ttdoc">获取命令退出状态码。</div><div class="ttdef"><b>Definition</b> syscmd.h:97</div></div>
+<div class="ttc" id="aclassconsole_1_1_cmd_result_html_af75dd2cefdfafde0672723950594d3a0"><div class="ttname"><a href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0">console::CmdResult::error</a></div><div class="ttdeci">bool error() const</div><div class="ttdoc">检查命令是否执行但返回错误码。</div><div class="ttdef"><b>Definition</b> syscmd.h:84</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
+<div class="ttc" id="anamespaceconsole_html_a3bca2b2b9a35896a83ead2d33c7ec897"><div class="ttname"><a href="namespaceconsole.html#a3bca2b2b9a35896a83ead2d33c7ec897">console::syscmd</a></div><div class="ttdeci">CmdResult syscmd(const std::string &amp;exe, const std::vector&lt; std::string &gt; &amp;args={}, const std::map&lt; std::string, std::string &gt; &amp;kwargs={})</div><div class="ttdoc">执行系统命令并捕获输出。</div><div class="ttdef"><b>Definition</b> syscmd.h:124</div></div>
+<div class="ttc" id="asyscmd_8h_html_a4c39c7c96d7f5d1f5cd1743122d476e3"><div class="ttname"><a href="syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3">PCLOSE</a></div><div class="ttdeci">#define PCLOSE</div><div class="ttdef"><b>Definition</b> syscmd.h:46</div></div>
+<div class="ttc" id="asyscmd_8h_html_ab6949e8178edeb4294d893f3ee4966d5"><div class="ttname"><a href="syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5">POPEN</a></div><div class="ttdeci">#define POPEN</div><div class="ttdef"><b>Definition</b> syscmd.h:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 20 2026 20:03:33 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sat Jul 4 2026 19:24:45 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

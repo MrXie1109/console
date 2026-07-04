@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_0',['N',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa',1,'console']]],
+  ['n_0',['n',['../structconsole_1_1ops_1_1_divisible_by.html#aff7c50c08683d3566003a4ac72942b1a',1,'console::ops::DivisibleBy::n'],['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa',1,'console::N']]],
   ['nanosecond_1',['nanosecond',['../classconsole_1_1_time.html#ac226ddee62e7921bddc244ba2cb2fc51',1,'console::Time']]],
   ['ne_2',['ne',['../structconsole_1_1ops_1_1_ne.html',1,'console::ops::Ne&lt; T &gt;'],['../namespaceconsole_1_1ops.html#a8ec204c2a7b67ffac0bb66924d70a906',1,'console::ops::ne(T v)']]],
   ['negate_3',['negate',['../namespaceconsole_1_1ops.html#a5a30d146fd19bc756469a57983cb139d',1,'console::ops']]],

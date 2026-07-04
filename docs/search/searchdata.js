@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
   0: "_abcdefghijklmnopqrstuvwxyz~字打数标类统视输运随",
-  1: "abcdefghiklmnopqrstuvz",
+  1: "abcdefghiklmnopqrstuvwz",
   2: "cpr",
   3: "abcfgiklmoprstv",
   4: "abcdefghijklmnoprstuvwz~",
