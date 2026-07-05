@@ -308,11 +308,14 @@ namespace console {
         template <class Gen1, class Gen2>
         class Chain
             : public Generator<Chain<Gen1, Gen2>,
-                  decltype(true ? std::declval<typename Gen1::value_type>()
-                                : std::declval<typename Gen2::value_type>())> {
-            using T
-                = decltype(true ? std::declval<typename Gen1::value_type>()
-                                : std::declval<typename Gen2::value_type>());
+                  typename std::decay<
+                      decltype(true ? std::declval<typename Gen1::value_type>()
+                                    : std::declval<typename Gen2::
+                                              value_type>())>::type> {
+            using T = typename std::decay<
+                decltype(true ? std::declval<typename Gen1::value_type>()
+                              : std::declval<typename Gen2::value_type>())>::
+                type;
 
             Gen1 gen1;
             Gen2 gen2;
