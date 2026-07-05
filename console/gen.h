@@ -290,9 +290,9 @@ namespace console {
          * @tparam T 值类型。
          */
         template <class T> class Repeat : public Generator<Repeat<T>, T> {
-            T   value;
-            int count;
-            int index = 0;
+            T      value;
+            size_t count;
+            size_t index = 0;
 
         public:
             /**
@@ -300,7 +300,7 @@ namespace console {
              * @param val 要重复的值。
              * @param n 重复次数。
              */
-            Repeat(T val, int n) : value(val), count(n) {}
+            Repeat(T val, size_t n) : value(val), count(n) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -503,9 +503,9 @@ namespace console {
          */
         template <class Gen>
         class Take : public Generator<Take<Gen>, typename Gen::value_type> {
-            Gen gen;
-            int count;
-            int taken = 0;
+            Gen    gen;
+            size_t count;
+            size_t taken = 0;
 
         public:
             /**
@@ -513,7 +513,7 @@ namespace console {
              * @param g 源生成器。
              * @param n 要取的元素个数。
              */
-            Take(Gen g, int n) : gen(g), count(n) {}
+            Take(Gen g, size_t n) : gen(g), count(n) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -543,15 +543,15 @@ namespace console {
         template <class Gen>
         class Drop
             : public Generator<Drop<Gen>, typename Gen::iterator::value_type> {
-            Gen  gen;
-            int  count;
-            bool droped = false;
+            Gen    gen;
+            size_t count;
+            bool   droped = false;
 
             /**
              * @brief 执行跳过操作。
              */
             void do_drop() {
-                for (int i = 0; i < count && !gen.done(); i++) gen.advance();
+                for (size_t i = 0; i < count && !gen.done(); i++) gen.advance();
                 droped = true;
             }
 
@@ -561,7 +561,7 @@ namespace console {
              * @param g 源生成器。
              * @param n 要跳过的元素个数。
              */
-            Drop(Gen g, int n) : gen(g), count(n) {}
+            Drop(Gen g, size_t n) : gen(g), count(n) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -591,9 +591,9 @@ namespace console {
         template <class Gen>
         class Enumerate
             : public Generator<Enumerate<Gen>,
-                  std::pair<int, typename Gen::iterator::value_type>> {
-            Gen gen;
-            int index = 0;
+                  std::pair<size_t, typename Gen::iterator::value_type>> {
+            Gen    gen;
+            size_t index = 0;
 
         public:
             /**
@@ -846,7 +846,7 @@ namespace console {
          * @param n 重复次数。
          * @return Repeat<T> 重复生成器。
          */
-        template <class T> Repeat<T> repeat(T val, int n) {
+        template <class T> Repeat<T> repeat(T val, size_t n) {
             return Repeat<T>(val, n);
         }
 
@@ -939,10 +939,10 @@ namespace console {
          * @brief 取前n个元素适配器（用于管道操作符）。
          */
         class take_t {
-            int count;
+            size_t count;
 
         public:
-            explicit take_t(int n) : count(n) {}
+            explicit take_t(size_t n) : count(n) {}
 
             template <class Gen> friend Take<Gen> operator|(Gen g, take_t t) {
                 return Take<Gen>(g, t.count);
@@ -954,7 +954,7 @@ namespace console {
          * @param n 要取的元素个数。
          * @return take_t 取元素适配器。
          */
-        inline take_t take(int n) {
+        inline take_t take(size_t n) {
             return take_t(n);
         }
 
@@ -962,10 +962,10 @@ namespace console {
          * @brief 跳过前n个元素适配器（用于管道操作符）。
          */
         class drop_t {
-            int count;
+            size_t count;
 
         public:
-            explicit drop_t(int n) : count(n) {}
+            explicit drop_t(size_t n) : count(n) {}
 
             template <class Gen> friend Drop<Gen> operator|(Gen g, drop_t s) {
                 return Drop<Gen>(g, s.count);
@@ -977,7 +977,7 @@ namespace console {
          * @param n 要跳过的元素个数。
          * @return drop_t 跳过元素适配器。
          */
-        inline drop_t drop(int n) {
+        inline drop_t drop(size_t n) {
             return drop_t(n);
         }
 
@@ -1588,7 +1588,7 @@ namespace console {
              */
             template <class Int> bool operator()(Int n) const {
                 if (n <= 1) return false;
-                for (int i = 2; i * i <= n; ++i)
+                for (size_t i = 2; i * i <= n; ++i)
                     if (n % i == 0) return false;
                 return true;
             }
