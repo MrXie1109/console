@@ -99,7 +99,7 @@ SOFTWARE.)";
      * -- "Commit Message"。
      */
     inline std::string version() {
-        return "console version 5.8.2 (2026-07-05) -- \"int -> size_t\"";
+        return "console version 5.8.3 (2026-07-05) -- \"BUG?!\"";
     }
 
     /**

@@ -1325,7 +1325,7 @@ namespace console {
              */
             template <class Range>
             auto operator()(Range r) const -> decltype(std::accumulate(
-                r.begin(), r.end(), decltype(*r.begin()){})) {
+                r.begin(), r.end(), typename Range::value_type{})) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{});
             }
@@ -1344,8 +1344,9 @@ namespace console {
              */
             template <class Range>
             auto operator()(Range r) const
-                -> decltype(std::accumulate(
-                                r.begin(), r.end(), decltype(*r.begin()){})
+                -> decltype(std::accumulate(r.begin(),
+                                r.end(),
+                                typename Range::value_type{})
                             / r.size()) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{}) / r.size();
