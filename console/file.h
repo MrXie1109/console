@@ -130,7 +130,8 @@ namespace console {
          * @throw FileError 若文件无法打开或读取失败。
          * @note 编译期检查 T 是否为 POD 类型，否则触发 static_assert。
          */
-        template <class T> T read_POD() const {
+        template <class T>
+        T read_POD() const {
             static_assert(std::is_trivially_copyable<T>::value,
                 "This Type is Not POD Type!");
             std::ifstream fin(path, std::ios::binary);
@@ -150,7 +151,8 @@ namespace console {
          * @throw FileError 若文件无法打开或读取失败。
          * @warning 不检查 T 是否为 POD 类型，可能因类型不匹配导致未定义行为。
          */
-        template <class T> T unsafe_read_POD() const {
+        template <class T>
+        T unsafe_read_POD() const {
             std::ifstream fin(path, std::ios::binary);
             if (!fin.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');
@@ -214,7 +216,8 @@ namespace console {
          * @throw FileError 若文件无法打开或写入过程中出错。
          * @note 编译期检查 T 是否为 POD 类型。
          */
-        template <class T> void write_POD(const T &data) const {
+        template <class T>
+        void write_POD(const T &data) const {
             static_assert(std::is_trivially_copyable<T>::value,
                 "This Type is Not POD Type!");
             std::ofstream fout(path, std::ios::binary);
@@ -233,7 +236,8 @@ namespace console {
          * @warning 不检查 T 是否为 POD
          * 类型，直接以二进制写入内存表示，可能导致不可移植。
          */
-        template <class T> void unsafe_write_POD(const T &data) const {
+        template <class T>
+        void unsafe_write_POD(const T &data) const {
             std::ofstream fout(path, std::ios::binary);
             if (!fout.is_open())
                 throw FileError("Cannot Open File \"" + path + '"');

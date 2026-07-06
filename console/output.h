@@ -142,7 +142,8 @@ namespace console {
     /**
      * @brief 递归打印 tuple 的偏特化：处理单个元素。
      */
-    template <class Tuple> struct TuplePrinter<Tuple, 1> {
+    template <class Tuple>
+    struct TuplePrinter<Tuple, 1> {
         static void print(std::ostream &os, const Tuple &t) {
             put(os, std::get<0>(t));
         }
@@ -151,7 +152,8 @@ namespace console {
     /**
      * @brief 递归打印 tuple 的偏特化：处理空 tuple。
      */
-    template <class Tuple> struct TuplePrinter<Tuple, 0> {
+    template <class Tuple>
+    struct TuplePrinter<Tuple, 0> {
         static void print(std::ostream &, const Tuple &) {}
     };
 
@@ -386,7 +388,8 @@ namespace console {
          * @param t 要输出的对象。
          * @return Output& 当前对象引用。
          */
-        template <class T> Output &operator()(const T &t) {
+        template <class T>
+        Output &operator()(const T &t) {
             put(os, t);
             return operator()();
         }

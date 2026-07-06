@@ -63,7 +63,8 @@ namespace console {
          * @brief 模板派生类，具体存储类型 T 的值。
          * @tparam T 实际存储的数据类型。
          */
-        template <typename T> struct Derived : Base {
+        template <typename T>
+        struct Derived : Base {
             T value; ///< 实际存储的值
 
             /**
@@ -142,7 +143,8 @@ namespace console {
          * @return T& 存储值的引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
-        template <typename T> T &get() {
+        template <typename T>
+        T &get() {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
                 throw TypeError(std::string("type mismatch: ")
@@ -157,7 +159,8 @@ namespace console {
          * @return T& 存储值的引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
-        template <typename T> T &unsafe_get() {
+        template <typename T>
+        T &unsafe_get() {
             return ((Derived<T> *)ptr)->value;
         }
 
@@ -167,7 +170,8 @@ namespace console {
          * @return const T& 存储值的常量引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
-        template <typename T> const T &get() const {
+        template <typename T>
+        const T &get() const {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
                 throw TypeError(std::string("type mismatch: ")
@@ -182,7 +186,8 @@ namespace console {
          * @return const T& 存储值的常量引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
-        template <typename T> const T &unsafe_get() const {
+        template <typename T>
+        const T &unsafe_get() const {
             return ((Derived<T> *)ptr)->value;
         }
 
@@ -259,7 +264,8 @@ namespace console {
          * @return T& 元素的引用。
          * @throw console::TypeError 若索引越界或实际类型与 T 不匹配。
          */
-        template <class T> T &get(size_t index) {
+        template <class T>
+        T &get(size_t index) {
             return std::vector<Item>::at(index).get<T>();
         }
 
@@ -270,7 +276,8 @@ namespace console {
          * @return T& 元素的引用。
          * @warning 不检查索引越界和类型匹配，可能导致未定义行为。
          */
-        template <typename T> T &unsafe_get(size_t index) {
+        template <typename T>
+        T &unsafe_get(size_t index) {
             return std::vector<Item>::operator[](index).unsafe_get<T>();
         }
 
@@ -280,7 +287,8 @@ namespace console {
          * @param args 要赋值的变量（按引用传递）。
          * @note 若元素数量或类型不匹配会抛出 TypeError 异常。
          */
-        template <class... Args> void unpack(Args &...args) {
+        template <class... Args>
+        void unpack(Args &...args) {
             size_t i   = 0;
             int    _[] = {0, ((args = get<Args>(i++)), 0)...};
             (void)_;
@@ -293,7 +301,8 @@ namespace console {
          * @warning 不进行任何类型或边界检查，需确保 Box
          * 大小和类型与参数包完全匹配。
          */
-        template <class... Args> void unsafe_unpack(Args &...args) {
+        template <class... Args>
+        void unsafe_unpack(Args &...args) {
             size_t i   = 0;
             int    _[] = {0, ((args = unsafe_get<Args>(i++)), 0)...};
             (void)_;

@@ -408,7 +408,8 @@ namespace console {
          * @param begin 首迭代器
          * @param end 超尾迭代器
          */
-        template <class Iter> void play(Iter begin, Iter end) {
+        template <class Iter>
+        void play(Iter begin, Iter end) {
             for (; begin != end; ++begin) play(*begin);
         }
 
@@ -418,7 +419,8 @@ namespace console {
          * @param begin 首迭代器
          * @param end 超尾迭代器
          */
-        template <class Iter> void nplay(Iter begin, Iter end) {
+        template <class Iter>
+        void nplay(Iter begin, Iter end) {
             std::thread([=]() { play(begin, end); }).detach();
         }
 

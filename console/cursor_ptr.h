@@ -44,7 +44,8 @@ namespace console {
      * @warning 指针运算不进行边界检查。
      * @warning 需确保 delete 与 new 匹配（本版本使用 delete）。
      */
-    template <class T> class cursor_ptr {
+    template <class T>
+    class cursor_ptr {
         T *original_ptr; ///< 持有内存所有权，析构时释放
         T *current_ptr; ///< 当前游标位置，支持算术运算
 
@@ -83,7 +84,7 @@ namespace console {
         T *operator->() { return current_ptr; }
         T &operator[](size_t i) { return *(current_ptr + i); }
         T *get() { return current_ptr; }
-        operator T *() { return current_ptr; }
+           operator T *() { return current_ptr; }
         /// @}
 
         /// @name const 版本解引用与元素访问
@@ -92,7 +93,7 @@ namespace console {
         const T *operator->() const { return current_ptr; }
         const T &operator[](size_t i) const { return *(current_ptr + i); }
         const T *get() const { return current_ptr; }
-        operator const T *() const { return current_ptr; }
+                 operator const T *() const { return current_ptr; }
         /// @}
 
         /// @brief 析构，释放 original_ptr 指向的内存（使用 delete）。
@@ -227,7 +228,8 @@ namespace console {
      * 释放原内存。
      * @warning 需确保与 new[] 匹配。
      */
-    template <class T> class cursor_ptr<T[]> {
+    template <class T>
+    class cursor_ptr<T[]> {
         T *original_ptr;
         T *current_ptr;
 
@@ -263,7 +265,7 @@ namespace console {
         T *operator->() { return current_ptr; }
         T &operator[](size_t i) { return *(current_ptr + i); }
         T *get() { return current_ptr; }
-        operator T *() { return current_ptr; }
+           operator T *() { return current_ptr; }
         /// @}
 
         /// @name const 版本
@@ -272,7 +274,7 @@ namespace console {
         const T *operator->() const { return current_ptr; }
         const T &operator[](size_t i) const { return *(current_ptr + i); }
         const T *get() const { return current_ptr; }
-        operator const T *() const { return current_ptr; }
+                 operator const T *() const { return current_ptr; }
         /// @}
 
         /// @brief 析构，释放数组内存（使用 delete[]）。

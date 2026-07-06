@@ -56,7 +56,8 @@ namespace console {
      * fbegin/fend，支持元素级运算和常用统计函数。
      * @note 维度信息在编译期确定，所有元素连续存储于内存中。
      */
-    template <class T, size_t... Dims> class MultiArray;
+    template <class T, size_t... Dims>
+    class MultiArray;
 
     /**
      * @brief 一维特化。
@@ -108,7 +109,8 @@ namespace console {
          * @tparam F 可调用对象，接受 T&。
          * @param visit 函数对象。
          */
-        template <class F> void for_each(F &&visit) {
+        template <class F>
+        void for_each(F &&visit) {
             for (auto &item : *this) visit(item);
         }
 
@@ -117,7 +119,8 @@ namespace console {
          * @tparam F 可调用对象，接受 const T&。
          * @param visit 函数对象。
          */
-        template <class F> void for_each(F &&visit) const {
+        template <class F>
+        void for_each(F &&visit) const {
             for (const auto &item : *this) visit(item);
         }
 
@@ -242,7 +245,8 @@ namespace console {
          * @brief 遍历所有元素（非常量版本）。
          * @tparam F 可调用对象，接受 T&。
          */
-        template <class F> void for_each(F &&visit) {
+        template <class F>
+        void for_each(F &&visit) {
             for (auto &sub : *this) sub.for_each(visit);
         }
 
@@ -250,7 +254,8 @@ namespace console {
          * @brief 遍历所有元素（常量版本）。
          * @tparam F 可调用对象，接受 const T&。
          */
-        template <class F> void for_each(F &&visit) const {
+        template <class F>
+        void for_each(F &&visit) const {
             for (const auto &sub : *this) sub.for_each(visit);
         }
 
@@ -1328,7 +1333,8 @@ namespace console {
      * @param a 输入数组。
      * @return T 和。
      */
-    template <class T, size_t... Dims> T sum(const MultiArray<T, Dims...> &a) {
+    template <class T, size_t... Dims>
+    T sum(const MultiArray<T, Dims...> &a) {
         T result{};
         a.for_each([&](const T &ref) { result += ref; });
         return result;
@@ -1338,7 +1344,8 @@ namespace console {
      * @brief 求最小值。
      * @return T 最小值。
      */
-    template <class T, size_t... Dims> T min(const MultiArray<T, Dims...> &a) {
+    template <class T, size_t... Dims>
+    T min(const MultiArray<T, Dims...> &a) {
         return *std::min_element(a.fbegin(), a.fend());
     }
 
@@ -1346,7 +1353,8 @@ namespace console {
      * @brief 求最大值。
      * @return T 最大值。
      */
-    template <class T, size_t... Dims> T max(const MultiArray<T, Dims...> &a) {
+    template <class T, size_t... Dims>
+    T max(const MultiArray<T, Dims...> &a) {
         return *std::max_element(a.fbegin(), a.fend());
     }
 

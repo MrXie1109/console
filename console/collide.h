@@ -99,7 +99,8 @@ namespace console {
      * c.collide(r); // 自动调用合适的函数。
      * @endcode
      */
-    template <class T, class F = void (*)(T &, T &)> class Table {
+    template <class T, class F = void (*)(T &, T &)>
+    class Table {
     public:
         /// @brief 用作映射键的类型：type_index 对。
         typedef std::pair<std::type_index, std::type_index> KeyType;

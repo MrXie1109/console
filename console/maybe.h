@@ -42,8 +42,9 @@ namespace console {
      * @brief 空状态标记对象，用于显式构造空的 Maybe。
      * @details 使用 `nothing` 可以清空 Maybe 或构造一个空 Maybe。
      */
-    struct {
-    } nothing;
+    struct nothing_t {};
+
+    static constexpr nothing_t nothing;
 
     /**
      * @class Maybe
@@ -52,7 +53,8 @@ namespace console {
      * @details 基于 std::unique_ptr 实现，支持拷贝、移动、流输入输出。
      *          访问空 Maybe 会抛出 TypeError 异常。
      */
-    template <class T> class Maybe {
+    template <class T>
+    class Maybe {
         std::unique_ptr<T> ptr; ///< 实际存储的指针，为空表示 nothing。
 
     public:
@@ -168,7 +170,8 @@ namespace console {
          * @tparam Args 参数类型。
          * @param args 转发给 T 的构造函数。
          */
-        template <class... Args> void reset(Args &&...args) {
+        template <class... Args>
+        void reset(Args &&...args) {
             ptr.reset(new T(std::forward<Args>(args)...));
         }
 
@@ -232,7 +235,8 @@ namespace console {
          * @param default_value 默认值（可转发）。
          * @return T 当前值或转换后的默认值。
          */
-        template <class U> T value_or(U &&default_value) const {
+        template <class U>
+        T value_or(U &&default_value) const {
             return ptr ? *ptr : T(std::forward<U>(default_value));
         }
 

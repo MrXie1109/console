@@ -164,7 +164,8 @@ namespace console {
      *          可以直接用于 range-based for 循环中，生成数值范围。
      * @tparam T 值类型。
      */
-    template <class T> class RangeIterator {
+    template <class T>
+    class RangeIterator {
         T cur_;
         T bounds_;
         T step_;

@@ -171,7 +171,8 @@ namespace console {
      * @param args 传递给函数的参数。
      * @return Time 函数执行所花费的时间。
      */
-    template <class F, class... Args> inline Time timer(F &&f, Args &&...args) {
+    template <class F, class... Args>
+    inline Time timer(F &&f, Args &&...args) {
         Time start = now();
         f(args...);
         return now() - start;

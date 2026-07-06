@@ -85,7 +85,8 @@ namespace console {
      *          用法：将 Progress 对象用于范围 for 循环，例如：
      *          for (auto& item : Progress(container)) { ... }
      */
-    template <class Iter> class Progress {
+    template <class Iter>
+    class Progress {
     public:
         /**
          * @class iterator

@@ -51,7 +51,8 @@ namespace console {
      * 复制数据到新容器。
      * @note 需要确保底层容器在视图生命周期内有效。
      */
-    template <class Container> class View {
+    template <class Container>
+    class View {
         using Iterator  = typename Container::iterator;
         using cIterator = typename Container::const_iterator;
         Iterator begin_, end_;
@@ -130,7 +131,8 @@ namespace console {
      * @brief 容器的非拥有视图（常量版本）。
      * @tparam Container 容器类型。
      */
-    template <class Container> class View<const Container> {
+    template <class Container>
+    class View<const Container> {
         using cIterator = typename Container::const_iterator;
         cIterator begin_, end_;
 
@@ -228,7 +230,8 @@ namespace console {
      * @param cont 容器引用。
      * @return View<Container> 视图对象。
      */
-    template <class Container> View<Container> make_view(Container &cont) {
+    template <class Container>
+    View<Container> make_view(Container &cont) {
         return {cont};
     }
 
@@ -303,7 +306,8 @@ namespace console {
      * @param end 结束指针。
      * @return View<std::vector<T>> 视图对象。
      */
-    template <class T> View<std::vector<T>> make_view(T *begin, T *end) {
+    template <class T>
+    View<std::vector<T>> make_view(T *begin, T *end) {
         return {begin, end};
     }
 

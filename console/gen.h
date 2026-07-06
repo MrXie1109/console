@@ -45,7 +45,8 @@ namespace console {
      * @tparam Derived 派生类类型，用于CRTP模式。
      * @tparam T 生成器产生的值类型。
      */
-    template <class Derived, class T> class Generator {
+    template <class Derived, class T>
+    class Generator {
     public:
         /**
          * @brief 生成器迭代器类，实现输入迭代器接口。
@@ -223,7 +224,8 @@ namespace console {
          * @brief 用书数据的序列，从初始化列表构造。
          * @tparam T 元素类型。
          */
-        template <class T> class List : public Generator<List<T>, T> {
+        template <class T>
+        class List : public Generator<List<T>, T> {
             std::vector<T> data;
             size_t         idx = 0;
 
@@ -253,7 +255,8 @@ namespace console {
          * @brief 范围生成器，生成从start到end的等差数列。
          * @tparam T 数值类型。
          */
-        template <class T> class Range : public Generator<Range<T>, T> {
+        template <class T>
+        class Range : public Generator<Range<T>, T> {
             T start, curr, end_;
             T step;
 
@@ -289,7 +292,8 @@ namespace console {
          * @brief 重复生成器，重复生成同一个值指定次数。
          * @tparam T 值类型。
          */
-        template <class T> class Repeat : public Generator<Repeat<T>, T> {
+        template <class T>
+        class Repeat : public Generator<Repeat<T>, T> {
             T      value;
             size_t count;
             size_t index = 0;
@@ -324,7 +328,8 @@ namespace console {
          * @brief 循环生成器，无限循环遍历给定列表。
          * @tparam T 元素类型。
          */
-        template <class T> class Cycle : public Generator<Cycle<T>, T> {
+        template <class T>
+        class Cycle : public Generator<Cycle<T>, T> {
             std::vector<T> data;
             size_t         index = 0;
 
@@ -356,7 +361,8 @@ namespace console {
         /**
          * @brief 计数器生成器，生成递增或递减的整数序列。
          */
-        template <class T> class Counter : public Generator<Counter<T>, T> {
+        template <class T>
+        class Counter : public Generator<Counter<T>, T> {
             T curr;
             T step;
             T max_count;
@@ -802,7 +808,8 @@ namespace console {
          * @param end 结束迭代器。
          * @return Views<Iter> 视图生成器。
          */
-        template <class Iter> Views<Iter> views(Iter begin, Iter end) {
+        template <class Iter>
+        Views<Iter> views(Iter begin, Iter end) {
             return Views<Iter>(begin, end);
         }
 
@@ -823,7 +830,8 @@ namespace console {
          * @param list 初始化列表。
          * @return List<T> 列表生成器。
          */
-        template <class T> List<T> list(std::initializer_list<T> list) {
+        template <class T>
+        List<T> list(std::initializer_list<T> list) {
             return List<T>(list);
         }
 
@@ -835,7 +843,8 @@ namespace console {
          * @param step 步长，默认为1。
          * @return Range<T> 范围生成器。
          */
-        template <class T> Range<T> range(T begin, T end, T step = 1) {
+        template <class T>
+        Range<T> range(T begin, T end, T step = 1) {
             return Range<T>(begin, end, step);
         }
 
@@ -846,7 +855,8 @@ namespace console {
          * @param n 重复次数。
          * @return Repeat<T> 重复生成器。
          */
-        template <class T> Repeat<T> repeat(T val, size_t n) {
+        template <class T>
+        Repeat<T> repeat(T val, size_t n) {
             return Repeat<T>(val, n);
         }
 
@@ -856,7 +866,8 @@ namespace console {
          * @param list 要循环的初始化列表。
          * @return Cycle<T> 循环生成器。
          */
-        template <class T> Cycle<T> cycle(std::initializer_list<T> list) {
+        template <class T>
+        Cycle<T> cycle(std::initializer_list<T> list) {
             return Cycle<T>(list);
         }
 
@@ -867,7 +878,8 @@ namespace console {
          * @param step 步长，默认为1。
          * @return Counter<T> 无限计数器。
          */
-        template <class T> inline Counter<T> counter(T start = 0, T step = 1) {
+        template <class T>
+        inline Counter<T> counter(T start = 0, T step = 1) {
             return Counter<T>(start, step);
         }
 
@@ -879,7 +891,8 @@ namespace console {
          * @param step 步长，默认为1。
          * @return Counter<T> 有限计数器。
          */
-        template <class T> inline Counter<T> counter(T start, T times, T step) {
+        template <class T>
+        inline Counter<T> counter(T start, T times, T step) {
             return Counter<T>(start, times, step);
         }
 
@@ -887,7 +900,8 @@ namespace console {
          * @brief 映射适配器（用于管道操作符）。
          * @tparam Func 映射函数类型。
          */
-        template <class Func> class map_t {
+        template <class Func>
+        class map_t {
             Func func;
 
         public:
@@ -905,7 +919,8 @@ namespace console {
          * @param f 映射函数。
          * @return map_t<Func> 映射适配器。
          */
-        template <class Func> map_t<Func> map(Func f) {
+        template <class Func>
+        map_t<Func> map(Func f) {
             return map_t<Func>(f);
         }
 
@@ -913,7 +928,8 @@ namespace console {
          * @brief 过滤适配器（用于管道操作符）。
          * @tparam Pred 谓词函数类型。
          */
-        template <class Pred> class filter_t {
+        template <class Pred>
+        class filter_t {
             Pred pred;
 
         public:
@@ -931,7 +947,8 @@ namespace console {
          * @param pred 谓词函数。
          * @return filter_t<Pred> 过滤适配器。
          */
-        template <class Pred> filter_t<Pred> filter(Pred pred) {
+        template <class Pred>
+        filter_t<Pred> filter(Pred pred) {
             return filter_t<Pred>(pred);
         }
 
@@ -944,7 +961,8 @@ namespace console {
         public:
             explicit take_t(size_t n) : count(n) {}
 
-            template <class Gen> friend Take<Gen> operator|(Gen g, take_t t) {
+            template <class Gen>
+            friend Take<Gen> operator|(Gen g, take_t t) {
                 return Take<Gen>(g, t.count);
             }
         };
@@ -967,7 +985,8 @@ namespace console {
         public:
             explicit drop_t(size_t n) : count(n) {}
 
-            template <class Gen> friend Drop<Gen> operator|(Gen g, drop_t s) {
+            template <class Gen>
+            friend Drop<Gen> operator|(Gen g, drop_t s) {
                 return Drop<Gen>(g, s.count);
             }
         };
@@ -993,7 +1012,8 @@ namespace console {
                 return Enumerate<Gen>(g);
             }
 
-            template <class Gen> Enumerate<Gen> operator()(Gen g) {
+            template <class Gen>
+            Enumerate<Gen> operator()(Gen g) {
                 return Enumerate<Gen>(g);
             }
         };
@@ -1006,7 +1026,8 @@ namespace console {
          * @param func 生成函数。
          * @return Generate<Func> 生成器适配器。
          */
-        template <class Func> Generate<Func> generate(Func func) {
+        template <class Func>
+        Generate<Func> generate(Func func) {
             return Generate<Func>(func);
         }
 
@@ -1029,7 +1050,8 @@ namespace console {
         /**
          * @brief 取前若干个元素适配器（用于管道操作符）。
          */
-        template <class Pred> class take_while_t {
+        template <class Pred>
+        class take_while_t {
             Pred pred;
 
         public:
@@ -1046,14 +1068,16 @@ namespace console {
          * @param p 谓词。
          * @return take_while_t 取元素适配器。
          */
-        template <class Pred> inline take_while_t<Pred> take_while(Pred pred) {
+        template <class Pred>
+        inline take_while_t<Pred> take_while(Pred pred) {
             return take_while_t<Pred>(pred);
         }
 
         /**
          * @brief 跳过前若干个元素适配器（用于管道操作符）。
          */
-        template <class Pred> class drop_while_t {
+        template <class Pred>
+        class drop_while_t {
             Pred pred;
 
         public:
@@ -1070,7 +1094,8 @@ namespace console {
          * @param p 谓词。
          * @return drop_while_t 取元素适配器。
          */
-        template <class Pred> inline drop_while_t<Pred> drop_while(Pred pred) {
+        template <class Pred>
+        inline drop_while_t<Pred> drop_while(Pred pred) {
             return drop_while_t<Pred>(pred);
         }
 
@@ -1080,7 +1105,8 @@ namespace console {
          * @details 将范围中的元素收集到指定容器中。
          *          当Container为void时，自动使用std::vector作为目标容器。
          */
-        template <class Container = void> class collect {
+        template <class Container = void>
+        class collect {
         private:
             /**
              * @brief 非void版本的实现，将范围元素拷贝到指定容器。
@@ -1127,13 +1153,15 @@ namespace console {
          * @brief 创建目标迭代器适配器。
          * @tparam Iterator 目标迭代器类型。
          */
-        template <class Iterator> class to_t {
+        template <class Iterator>
+        class to_t {
             Iterator it;
 
         public:
             explicit to_t(Iterator i) : it(i) {}
 
-            template <class Range> friend void operator|(Range r, to_t m) {
+            template <class Range>
+            friend void operator|(Range r, to_t m) {
                 std::copy(r.begin(), r.end(), m.it);
             }
         };
@@ -1144,7 +1172,8 @@ namespace console {
          * @param it 目标迭代器。
          * @return to_t<Iterator> 目标迭代器适配器。
          */
-        template <class Iterator> to_t<Iterator> to(Iterator it) {
+        template <class Iterator>
+        to_t<Iterator> to(Iterator it) {
             return to_t<Iterator>(it);
         }
 
@@ -1157,8 +1186,9 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
-            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
+        auto operator&(
+            Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(std::forward<Gen1>(g1),
+                                      std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }
@@ -1168,7 +1198,8 @@ namespace console {
          * @brief 加固定值变换器。
          * @tparam T 固定值类型。
          */
-        template <class T> struct Add {
+        template <class T>
+        struct Add {
             T value;
 
             /**
@@ -1186,7 +1217,8 @@ namespace console {
          * @brief 减固定值变换器。
          * @tparam T 固定值类型。
          */
-        template <class T> struct Sub {
+        template <class T>
+        struct Sub {
             T value;
 
             /**
@@ -1204,7 +1236,8 @@ namespace console {
          * @brief 乘固定值变换器。
          * @tparam T 固定值类型。
          */
-        template <class T> struct Mul {
+        template <class T>
+        struct Mul {
             T value;
 
             /**
@@ -1222,7 +1255,8 @@ namespace console {
          * @brief 除固定值变换器。
          * @tparam T 固定值类型。
          */
-        template <class T> struct Div {
+        template <class T>
+        struct Div {
             T value;
 
             /**
@@ -1240,7 +1274,8 @@ namespace console {
          * @brief 取模固定值变换器。
          * @tparam T 固定值类型。
          */
-        template <class T> struct Mod {
+        template <class T>
+        struct Mod {
             T value;
 
             /**
@@ -1299,7 +1334,8 @@ namespace console {
              * @param x 输入值。
              * @return -x。
              */
-            template <class T> auto operator()(T x) const -> decltype(-x) {
+            template <class T>
+            auto operator()(T x) const -> decltype(-x) {
                 return -x;
             }
         };
@@ -1315,7 +1351,8 @@ namespace console {
              * @param x 输入值。
              * @return x * x。
              */
-            template <class T> auto operator()(T x) const -> decltype(x * x) {
+            template <class T>
+            auto operator()(T x) const -> decltype(x * x) {
                 return x * x;
             }
         };
@@ -1365,7 +1402,8 @@ namespace console {
              * @param x 输入值。
              * @return 1 / x。
              */
-            template <class T> auto operator()(T x) const -> decltype(1 / x) {
+            template <class T>
+            auto operator()(T x) const -> decltype(1 / x) {
                 return 1 / x;
             }
         };
@@ -1398,7 +1436,8 @@ namespace console {
              * @param x 输入值。
              * @return std::to_string(x)。
              */
-            template <class T> std::string operator()(const T &x) const {
+            template <class T>
+            std::string operator()(const T &x) const {
                 return std::to_string(x);
             }
         };
@@ -1409,7 +1448,8 @@ namespace console {
          * @brief 大于谓词。
          * @tparam T 阈值类型。
          */
-        template <class T> struct Gt {
+        template <class T>
+        struct Gt {
             T threshold;
 
             /**
@@ -1417,7 +1457,8 @@ namespace console {
              * @param x 输入值。
              * @return x > threshold。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x > threshold;
             }
         };
@@ -1426,7 +1467,8 @@ namespace console {
          * @brief 大于等于谓词。
          * @tparam T 阈值类型。
          */
-        template <class T> struct Ge {
+        template <class T>
+        struct Ge {
             T threshold;
 
             /**
@@ -1434,7 +1476,8 @@ namespace console {
              * @param x 输入值。
              * @return x >= threshold。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x >= threshold;
             }
         };
@@ -1443,7 +1486,8 @@ namespace console {
          * @brief 小于谓词。
          * @tparam T 阈值类型。
          */
-        template <class T> struct Lt {
+        template <class T>
+        struct Lt {
             T threshold;
 
             /**
@@ -1451,7 +1495,8 @@ namespace console {
              * @param x 输入值。
              * @return x < threshold。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x < threshold;
             }
         };
@@ -1460,7 +1505,8 @@ namespace console {
          * @brief 小于等于谓词。
          * @tparam T 阈值类型。
          */
-        template <class T> struct Le {
+        template <class T>
+        struct Le {
             T threshold;
 
             /**
@@ -1468,7 +1514,8 @@ namespace console {
              * @param x 输入值。
              * @return x <= threshold。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x <= threshold;
             }
         };
@@ -1477,7 +1524,8 @@ namespace console {
          * @brief 等于谓词。
          * @tparam T 比较值类型。
          */
-        template <class T> struct Eq {
+        template <class T>
+        struct Eq {
             T value;
 
             /**
@@ -1485,7 +1533,8 @@ namespace console {
              * @param x 输入值。
              * @return x == value。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x == value;
             }
         };
@@ -1494,7 +1543,8 @@ namespace console {
          * @brief 不等于谓词。
          * @tparam T 比较值类型。
          */
-        template <class T> struct Ne {
+        template <class T>
+        struct Ne {
             T value;
 
             /**
@@ -1502,7 +1552,8 @@ namespace console {
              * @param x 输入值。
              * @return x != value。
              */
-            template <class U> bool operator()(const U &x) const {
+            template <class U>
+            bool operator()(const U &x) const {
                 return x != value;
             }
         };
@@ -1516,7 +1567,10 @@ namespace console {
              * @param x 输入值。
              * @return x % 2 == 0。
              */
-            template <class T> bool operator()(T x) const { return x % 2 == 0; }
+            template <class T>
+            bool operator()(T x) const {
+                return x % 2 == 0;
+            }
         };
 
         static constexpr even_t even;
@@ -1530,7 +1584,10 @@ namespace console {
              * @param x 输入值。
              * @return x % 2 != 0。
              */
-            template <class T> bool operator()(T x) const { return x % 2 != 0; }
+            template <class T>
+            bool operator()(T x) const {
+                return x % 2 != 0;
+            }
         };
 
         static constexpr odd_t odd;
@@ -1544,7 +1601,10 @@ namespace console {
              * @param x 输入值。
              * @return x > 0。
              */
-            template <class T> bool operator()(T x) const { return x > 0; }
+            template <class T>
+            bool operator()(T x) const {
+                return x > 0;
+            }
         };
 
         static constexpr positive_t positive;
@@ -1558,7 +1618,10 @@ namespace console {
              * @param x 输入值。
              * @return x < 0。
              */
-            template <class T> bool operator()(T x) const { return x < 0; }
+            template <class T>
+            bool operator()(T x) const {
+                return x < 0;
+            }
         };
 
         static constexpr negative_t negative;
@@ -1572,7 +1635,10 @@ namespace console {
              * @param x 输入值。
              * @return x == 0。
              */
-            template <class T> bool operator()(T x) const { return x == 0; }
+            template <class T>
+            bool operator()(T x) const {
+                return x == 0;
+            }
         };
 
         static constexpr zero_t zero;
@@ -1586,7 +1652,8 @@ namespace console {
              * @param n 输入值。
              * @return 是否为素数。
              */
-            template <class Int> bool operator()(Int n) const {
+            template <class Int>
+            bool operator()(Int n) const {
                 if (n <= 1) return false;
                 for (size_t i = 2; i * i <= n; ++i)
                     if (n % i == 0) return false;
@@ -1601,7 +1668,8 @@ namespace console {
          * @tparam P 第一个谓词类型。
          * @tparam Q 第二个谓词类型。
          */
-        template <class P, typename Q> struct And {
+        template <class P, typename Q>
+        struct And {
             P p;
             Q q;
 
@@ -1610,7 +1678,8 @@ namespace console {
              * @param x 输入值。
              * @return p(x) && q(x)。
              */
-            template <class T> bool operator()(const T &x) const {
+            template <class T>
+            bool operator()(const T &x) const {
                 return p(x) && q(x);
             }
         };
@@ -1620,7 +1689,8 @@ namespace console {
          * @tparam P 第一个谓词类型。
          * @tparam Q 第二个谓词类型。
          */
-        template <class P, typename Q> struct Or {
+        template <class P, typename Q>
+        struct Or {
             P p;
             Q q;
 
@@ -1629,7 +1699,8 @@ namespace console {
              * @param x 输入值。
              * @return p(x) || q(x)。
              */
-            template <class T> bool operator()(const T &x) const {
+            template <class T>
+            bool operator()(const T &x) const {
                 return p(x) || q(x);
             }
         };
@@ -1638,7 +1709,8 @@ namespace console {
          * @brief 逻辑非组合器。
          * @tparam P 谓词类型。
          */
-        template <class P> struct Not {
+        template <class P>
+        struct Not {
             P p;
 
             /**
@@ -1646,7 +1718,8 @@ namespace console {
              * @param x 输入值。
              * @return !p(x)。
              */
-            template <class T> bool operator()(const T &x) const {
+            template <class T>
+            bool operator()(const T &x) const {
                 return !p(x);
             }
         };
@@ -1656,7 +1729,8 @@ namespace console {
          * @tparam Class 类类型。
          * @tparam Member 成员类型。
          */
-        template <class Class, typename Mem> struct Member {
+        template <class Class, typename Mem>
+        struct Member {
             Mem Class::*ptr;
 
             /**
@@ -1708,7 +1782,8 @@ namespace console {
          * @brief 相邻去重过滤器。
          * @tparam T 元素类型。
          */
-        template <class T> struct unique {
+        template <class T>
+        struct unique {
             bool first = true;
             T    last;
 
@@ -1738,7 +1813,10 @@ namespace console {
              * @param x 输入值。
              * @return x。
              */
-            template <class T> T operator()(T x) const { return x; }
+            template <class T>
+            T operator()(T x) const {
+                return x;
+            }
         };
 
         static constexpr identity_t identity;
@@ -1747,14 +1825,16 @@ namespace console {
          * @brief 转型变化器。
          * @tparam T 目标元素类型。
          */
-        template <class T> struct as {
+        template <class T>
+        struct as {
             /**
              * @brief 返回转型后的值。
              * @tparam U 输入元素类型。
              * @param x 输入值。
              * @return T 转化后的值。
              */
-            template <class U> T operator()(U &&x) {
+            template <class U>
+            T operator()(U &&x) {
                 return static_cast<T>(std::forward<U>(x));
             }
         };
@@ -1764,7 +1844,8 @@ namespace console {
          * @tparam T 值类型（自动推导）。
          * @param v 要加的值。
          */
-        template <class T> Add<T> add(T v) {
+        template <class T>
+        Add<T> add(T v) {
             return {v};
         }
 
@@ -1772,7 +1853,8 @@ namespace console {
          * @brief 创建减固定值变换器。
          * @param v 要减的值。
          */
-        template <class T> Sub<T> sub(T v) {
+        template <class T>
+        Sub<T> sub(T v) {
             return {v};
         }
 
@@ -1780,7 +1862,8 @@ namespace console {
          * @brief 创建乘固定值变换器。
          * @param v 要乘的值。
          */
-        template <class T> Mul<T> mul(T v) {
+        template <class T>
+        Mul<T> mul(T v) {
             return {v};
         }
 
@@ -1788,7 +1871,8 @@ namespace console {
          * @brief 创建除固定值变换器。
          * @param v 要除的值。
          */
-        template <class T> Div<T> div(T v) {
+        template <class T>
+        Div<T> div(T v) {
             return {v};
         }
 
@@ -1796,70 +1880,80 @@ namespace console {
          * @brief 创建取模固定值变换器。
          * @param v 要取模的值。
          */
-        template <class T> Mod<T> mod(T v) {
+        template <class T>
+        Mod<T> mod(T v) {
             return {v};
         }
 
         /**
          * @brief 创建大于谓词。
          */
-        template <class T> Gt<T> gt(T t) {
+        template <class T>
+        Gt<T> gt(T t) {
             return {t};
         }
 
         /**
          * @brief 创建大于等于谓词。
          */
-        template <class T> Ge<T> ge(T t) {
+        template <class T>
+        Ge<T> ge(T t) {
             return {t};
         }
 
         /**
          * @brief 创建小于谓词。
          */
-        template <class T> Lt<T> lt(T t) {
+        template <class T>
+        Lt<T> lt(T t) {
             return {t};
         }
 
         /**
          * @brief 创建小于等于谓词。
          */
-        template <class T> Le<T> le(T t) {
+        template <class T>
+        Le<T> le(T t) {
             return {t};
         }
 
         /**
          * @brief 创建等于谓词。
          */
-        template <class T> Eq<T> eq(T v) {
+        template <class T>
+        Eq<T> eq(T v) {
             return {v};
         }
 
         /**
          * @brief 创建不等于谓词。
          */
-        template <class T> Ne<T> ne(T v) {
+        template <class T>
+        Ne<T> ne(T v) {
             return {v};
         }
 
         /**
          * @brief 创建逻辑与组合谓词。
          */
-        template <class P, typename Q> And<P, Q> and_(P p, Q q) {
+        template <class P, typename Q>
+        And<P, Q> and_(P p, Q q) {
             return {p, q};
         }
 
         /**
          * @brief 创建逻辑或组合谓词。
          */
-        template <class P, typename Q> Or<P, Q> or_(P p, Q q) {
+        template <class P, typename Q>
+        Or<P, Q> or_(P p, Q q) {
             return {p, q};
         }
 
         /**
          * @brief 创建逻辑非组合谓词。
          */
-        template <class P> Not<P> not_(P p) {
+        template <class P>
+        Not<P> not_(P p) {
             return {p};
         }
 
@@ -1875,7 +1969,8 @@ namespace console {
          * @brief 逻辑与运算符，等价于 and_(p, q)。
          * @note 小范围内的重载，依赖 ADL，作用域可控。
          */
-        template <class P, class Q> And<P, Q> operator&&(P p, Q q) {
+        template <class P, class Q>
+        And<P, Q> operator&&(P p, Q q) {
             return {p, q};
         }
 
@@ -1883,7 +1978,8 @@ namespace console {
          * @brief 逻辑或运算符，等价于 or_(p, q)。
          * @note 小范围内的重载，依赖 ADL，作用域可控。
          */
-        template <class P, class Q> Or<P, Q> operator||(P p, Q q) {
+        template <class P, class Q>
+        Or<P, Q> operator||(P p, Q q) {
             return {p, q};
         }
 
@@ -1891,7 +1987,8 @@ namespace console {
          * @brief 逻辑非运算符，等价于 not_(p)。
          * @note 小范围内的重载，依赖 ADL，作用域可控。
          */
-        template <class P> Not<P> operator!(P p) {
+        template <class P>
+        Not<P> operator!(P p) {
             return {p};
         }
 
@@ -1900,7 +1997,8 @@ namespace console {
          * @tparam F 第一个函数类型。
          * @tparam G 第二个函数类型。
          */
-        template <class F, class G> struct Compose {
+        template <class F, class G>
+        struct Compose {
             F f;
             G g;
 
@@ -1910,7 +2008,8 @@ namespace console {
              * @param x 输入值。
              * @return g(f(x))。
              */
-            template <class T> auto operator()(T x) const -> decltype(g(f(x))) {
+            template <class T>
+            auto operator()(T x) const -> decltype(g(f(x))) {
                 return g(f(x));
             }
         };
@@ -1923,7 +2022,8 @@ namespace console {
          * @param g 第二个函数。
          * @return Compose<F, G> 组合后的函数。
          */
-        template <class F, class G> Compose<F, G> compose(F f, G g) {
+        template <class F, class G>
+        Compose<F, G> compose(F f, G g) {
             return {f, g};
         }
 
@@ -1949,7 +2049,8 @@ namespace console {
          * @param g 第二个函数。
          * @return Compose<F, G> 组合后的函数。
          */
-        template <class F, class G> Compose<F, G> operator>>(F f, G g) {
+        template <class F, class G>
+        Compose<F, G> operator>>(F f, G g) {
             return {f, g};
         }
     }

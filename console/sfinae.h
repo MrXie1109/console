@@ -48,7 +48,8 @@ namespace console {
      * @brief 检测类型是否为容器（支持 std::begin 和 std::end）。
      * @tparam T 待检测的类型。
      */
-    template <class T, class = void> struct is_container : std::false_type {};
+    template <class T, class = void>
+    struct is_container : std::false_type {};
 
     /// @cond INTERNAL
     template <class T>
@@ -83,7 +84,8 @@ namespace console {
      * @brief 检测类型是否为迭代器（具有 iterator_category）。
      * @tparam T 待检测的类型。
      */
-    template <class T, class = void> struct is_iterator : std::false_type {};
+    template <class T, class = void>
+    struct is_iterator : std::false_type {};
 
     /// @cond INTERNAL
     template <class T>
@@ -117,22 +119,35 @@ namespace console {
      * 等）。
      * @tparam T 待检测的类型。
      */
-    template <class T, class = void> struct is_string : std::false_type {};
+    template <class T, class = void>
+    struct is_string : std::false_type {};
 
     // 各种指针字符串特化
     /// @cond INTERNAL
-    template <> struct is_string<char *> : std::true_type {};
-    template <> struct is_string<signed char *> : std::true_type {};
-    template <> struct is_string<unsigned char *> : std::true_type {};
-    template <> struct is_string<wchar_t *> : std::true_type {};
-    template <> struct is_string<char16_t *> : std::true_type {};
-    template <> struct is_string<char32_t *> : std::true_type {};
-    template <> struct is_string<const char *> : std::true_type {};
-    template <> struct is_string<const signed char *> : std::true_type {};
-    template <> struct is_string<const unsigned char *> : std::true_type {};
-    template <> struct is_string<const wchar_t *> : std::true_type {};
-    template <> struct is_string<const char16_t *> : std::true_type {};
-    template <> struct is_string<const char32_t *> : std::true_type {};
+    template <>
+    struct is_string<char *> : std::true_type {};
+    template <>
+    struct is_string<signed char *> : std::true_type {};
+    template <>
+    struct is_string<unsigned char *> : std::true_type {};
+    template <>
+    struct is_string<wchar_t *> : std::true_type {};
+    template <>
+    struct is_string<char16_t *> : std::true_type {};
+    template <>
+    struct is_string<char32_t *> : std::true_type {};
+    template <>
+    struct is_string<const char *> : std::true_type {};
+    template <>
+    struct is_string<const signed char *> : std::true_type {};
+    template <>
+    struct is_string<const unsigned char *> : std::true_type {};
+    template <>
+    struct is_string<const wchar_t *> : std::true_type {};
+    template <>
+    struct is_string<const char16_t *> : std::true_type {};
+    template <>
+    struct is_string<const char32_t *> : std::true_type {};
 
     template <class CharT, class Traits, class Alloc>
     struct is_string<std::basic_string<CharT, Traits, Alloc>> : std::true_type {
@@ -149,7 +164,8 @@ namespace console {
      * @brief 检测类型是否支持输出到 std::ostream（即定义了 operator<<）。
      * @tparam T 待检测的类型。
      */
-    template <class T, class = void> struct is_printable : std::false_type {};
+    template <class T, class = void>
+    struct is_printable : std::false_type {};
 
     /// @cond INTERNAL
     template <class T>
@@ -164,16 +180,23 @@ namespace console {
      * @brief 检测类型是否为字符类型（char、wchar_t、char16_t、char32_t 等）。
      * @tparam T 待检测的类型。
      */
-    template <class T, class = void> struct is_char : std::false_type {};
+    template <class T, class = void>
+    struct is_char : std::false_type {};
 
     // 字符类型特化
     /// @cond INTERNAL
-    template <> struct is_char<char> : std::true_type {};
-    template <> struct is_char<signed char> : std::true_type {};
-    template <> struct is_char<unsigned char> : std::true_type {};
-    template <> struct is_char<wchar_t> : std::true_type {};
-    template <> struct is_char<char16_t> : std::true_type {};
-    template <> struct is_char<char32_t> : std::true_type {};
+    template <>
+    struct is_char<char> : std::true_type {};
+    template <>
+    struct is_char<signed char> : std::true_type {};
+    template <>
+    struct is_char<unsigned char> : std::true_type {};
+    template <>
+    struct is_char<wchar_t> : std::true_type {};
+    template <>
+    struct is_char<char16_t> : std::true_type {};
+    template <>
+    struct is_char<char32_t> : std::true_type {};
     /// @endcond
 
     /**
@@ -181,7 +204,8 @@ namespace console {
      * @brief 取得适配分布的主模板。
      * @tparam T 待检测的类型。
      */
-    template <typename T, typename = void> struct uniform_distribution_impl;
+    template <typename T, typename = void>
+    struct uniform_distribution_impl;
 
     /// @cond INTERNAL
     /// @brief 特化：整数类型 → uniform_int_distribution

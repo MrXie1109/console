@@ -46,7 +46,8 @@ namespace console {
      * @brief 用于表示分数的基础模板类。
      * @tparam T 存储整数和浮点数的整数类型。
      */
-    template <class T> class BasicRational {
+    template <class T>
+    class BasicRational {
         static_assert(std::is_integral<T>::value && std::is_signed<T>::value,
             "T must be signed integral type"); ///< T 必须是有符号整数
 
@@ -123,7 +124,10 @@ namespace console {
          * @tparam U 目标类型
          * @return U 转化后的值。
          */
-        template <class U> explicit operator U() const { return U(num) / den; }
+        template <class U>
+        explicit operator U() const {
+            return U(num) / den;
+        }
 
         /**
          * @brief 计算两个分数的和。

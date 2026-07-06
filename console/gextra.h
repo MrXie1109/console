@@ -45,7 +45,8 @@ namespace console {
          * @brief 随机数生成器，生成指定范围内的随机数。
          * @tparam T 数值类型。
          */
-        template <class T> class Random : public Generator<Random<T>, T> {
+        template <class T>
+        class Random : public Generator<Random<T>, T> {
             std::mt19937              gen_;
             uniform_distribution_t<T> dist_;
             T                         curr_;
@@ -540,9 +541,11 @@ namespace console {
             void advance() { gen.advance(); }
         };
 
-        template <class... Ops> class Pipeline;
+        template <class... Ops>
+        class Pipeline;
 
-        template <class Op> class Pipeline<Op> {
+        template <class Op>
+        class Pipeline<Op> {
             Op op;
 
         public:
@@ -554,7 +557,8 @@ namespace console {
             }
         };
 
-        template <class Op, class... Rest> class Pipeline<Op, Rest...> {
+        template <class Op, class... Rest>
+        class Pipeline<Op, Rest...> {
             Op                op;
             Pipeline<Rest...> rest;
 
@@ -567,7 +571,8 @@ namespace console {
             }
         };
 
-        template <class... Ops> class pipeline_t {
+        template <class... Ops>
+        class pipeline_t {
             Pipeline<Ops...> pipeline;
 
         public:
@@ -580,7 +585,8 @@ namespace console {
             }
         };
 
-        template <class... Ops> pipeline_t<Ops...> pipeline(Ops... ops) {
+        template <class... Ops>
+        pipeline_t<Ops...> pipeline(Ops... ops) {
             return pipeline_t<Ops...>(ops...);
         }
 
@@ -683,7 +689,8 @@ namespace console {
              * @param t 分块适配器。
              * @return Chunk<Gen> 分块生成器。
              */
-            template <class Gen> friend Chunk<Gen> operator|(Gen g, chunk_t t) {
+            template <class Gen>
+            friend Chunk<Gen> operator|(Gen g, chunk_t t) {
                 return Chunk<Gen>(g, t.s);
             }
         };
@@ -795,7 +802,8 @@ namespace console {
              * @param d 调试适配器。
              * @return Debug<Gen> 调试生成器。
              */
-            template <class Gen> friend Debug<Gen> operator|(Gen g, debug_t d) {
+            template <class Gen>
+            friend Debug<Gen> operator|(Gen g, debug_t d) {
                 return Debug<Gen>(g, d.message, d.out);
             }
         };
@@ -815,7 +823,8 @@ namespace console {
          * @brief 取元素直到谓词成立适配器（用于管道操作符）。
          * @tparam Pred 谓词类型。
          */
-        template <class Pred> class take_until_t {
+        template <class Pred>
+        class take_until_t {
             Pred pred;
 
         public:
@@ -844,7 +853,8 @@ namespace console {
          * @param p 谓词函数。
          * @return take_until_t<Pred> 取元素适配器。
          */
-        template <class Pred> take_until_t<Pred> take_until(Pred p) {
+        template <class Pred>
+        take_until_t<Pred> take_until(Pred p) {
             return take_until_t<Pred>(p);
         }
 
@@ -852,7 +862,8 @@ namespace console {
          * @brief 跳过元素直到谓词成立适配器（用于管道操作符）。
          * @tparam Pred 谓词类型。
          */
-        template <class Pred> class drop_until_t {
+        template <class Pred>
+        class drop_until_t {
             Pred pred;
 
         public:
@@ -881,7 +892,8 @@ namespace console {
          * @param p 谓词函数。
          * @return drop_until_t<Pred> 跳过元素适配器。
          */
-        template <class Pred> drop_until_t<Pred> drop_until(Pred p) {
+        template <class Pred>
+        drop_until_t<Pred> drop_until(Pred p) {
             return drop_until_t<Pred>(p);
         }
 
@@ -890,7 +902,8 @@ namespace console {
          * @tparam T 初始值和结果类型。
          * @tparam BinaryOp 二元操作符类型。
          */
-        template <class T, class BinaryOp> class reduce_t {
+        template <class T, class BinaryOp>
+        class reduce_t {
             T        init_;
             BinaryOp op_;
 
@@ -908,7 +921,8 @@ namespace console {
              * @param r 归约适配器。
              * @return T 归约结果。
              */
-            template <class Gen> friend T operator|(Gen gen, reduce_t r) {
+            template <class Gen>
+            friend T operator|(Gen gen, reduce_t r) {
                 T result = r.init_;
                 for (auto &&item : gen) result = r.op_(result, item);
                 return result;
@@ -934,7 +948,8 @@ namespace console {
          * @brief 幂运算变换器。
          * @tparam T 指数类型。
          */
-        template <class T> struct Pow {
+        template <class T>
+        struct Pow {
             T exponent;
 
             /**
@@ -954,7 +969,8 @@ namespace console {
          * @param exp 指数值。
          * @return Pow<T> 幂运算变换器。
          */
-        template <class T> Pow<T> pow(T exp) {
+        template <class T>
+        Pow<T> pow(T exp) {
             return {exp};
         }
 
@@ -1104,7 +1120,8 @@ namespace console {
              * @param x 输入值。
              * @return (x > 0) - (x < 0)。
              */
-            template <class T> int operator()(T x) const {
+            template <class T>
+            int operator()(T x) const {
                 return (x > 0) - (x < 0);
             }
         };
@@ -1291,8 +1308,9 @@ namespace console {
              * @return *std::max_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto operator()(const Container &c) const
-                -> decltype(*std::max_element(c.begin(), c.end())) {
+            auto
+            operator()(const Container &c) const -> decltype(*std::max_element(
+                                                     c.begin(), c.end())) {
                 return *std::max_element(c.begin(), c.end());
             }
         };
@@ -1309,8 +1327,9 @@ namespace console {
              * @return *std::min_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto operator()(const Container &c) const
-                -> decltype(*std::min_element(c.begin(), c.end())) {
+            auto
+            operator()(const Container &c) const -> decltype(*std::min_element(
+                                                     c.begin(), c.end())) {
                 return *std::min_element(c.begin(), c.end());
             }
         };
@@ -1327,8 +1346,10 @@ namespace console {
              * @return 元素总和。
              */
             template <class Range>
-            auto operator()(Range r) const -> decltype(std::accumulate(
-                r.begin(), r.end(), typename Range::value_type{})) {
+            auto
+            operator()(Range r) const -> decltype(std::accumulate(r.begin(),
+                                          r.end(),
+                                          typename Range::value_type{})) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{});
             }
@@ -1346,11 +1367,11 @@ namespace console {
              * @return 元素平均值。
              */
             template <class Range>
-            auto operator()(Range r) const
-                -> decltype(std::accumulate(r.begin(),
-                                r.end(),
-                                typename Range::value_type{})
-                            / r.size()) {
+            auto operator()(
+                Range r) const -> decltype(std::accumulate(r.begin(),
+                                               r.end(),
+                                               typename Range::value_type{})
+                                           / r.size()) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{}) / r.size();
             }
@@ -1362,7 +1383,8 @@ namespace console {
          * @brief 区间谓词（闭区间）。
          * @tparam T 元素类型。
          */
-        template <class T> struct Between {
+        template <class T>
+        struct Between {
             T low, high;
 
             /**
@@ -1380,7 +1402,8 @@ namespace console {
          * @param high 区间上界。
          * @return Between<T> 区间谓词。
          */
-        template <class T> Between<T> between(T low, T high) {
+        template <class T>
+        Between<T> between(T low, T high) {
             return {low, high};
         }
 
@@ -1388,7 +1411,8 @@ namespace console {
          * @brief 区间谓词（开区间）。
          * @tparam T 元素类型。
          */
-        template <class T> struct BetweenExclusive {
+        template <class T>
+        struct BetweenExclusive {
             T low, high;
 
             /**
@@ -1415,7 +1439,8 @@ namespace console {
          * @brief 整除谓词。
          * @tparam T 元素类型。
          */
-        template <class T> struct DivisibleBy {
+        template <class T>
+        struct DivisibleBy {
             T n;
 
             /**
@@ -1432,7 +1457,8 @@ namespace console {
          * @param n 除数。
          * @return DivisibleBy<T> 整除谓词。
          */
-        template <class T> DivisibleBy<T> divisible_by(T n) {
+        template <class T>
+        DivisibleBy<T> divisible_by(T n) {
             return {n};
         }
 
@@ -1445,7 +1471,8 @@ namespace console {
              * @param n 输入值。
              * @return 是否为2的幂次。
              */
-            template <class Int> bool operator()(Int n) const {
+            template <class Int>
+            bool operator()(Int n) const {
                 return n > 0 && (n & (n - 1)) == 0;
             }
         };
@@ -1461,7 +1488,8 @@ namespace console {
              * @param n 输入值。
              * @return 是否为回文数。
              */
-            template <class T> bool operator()(T n) const {
+            template <class T>
+            bool operator()(T n) const {
                 std::string s = std::to_string(n);
                 std::string r = s;
                 std::reverse(r.begin(), r.end());
@@ -1480,7 +1508,8 @@ namespace console {
              * @param args 任意参数。
              * @return true。
              */
-            template <class... Args> bool operator()(Args &&...) const {
+            template <class... Args>
+            bool operator()(Args &&...) const {
                 return true;
             }
         };
@@ -1496,7 +1525,8 @@ namespace console {
              * @param args 任意参数。
              * @return false。
              */
-            template <class... Args> bool operator()(Args &&...) const {
+            template <class... Args>
+            bool operator()(Args &&...) const {
                 return false;
             }
         };
@@ -1507,7 +1537,8 @@ namespace console {
          * @brief 限幅变换器。
          * @tparam T 元素类型。
          */
-        template <class T> struct Clamp {
+        template <class T>
+        struct Clamp {
             T low, high;
 
             /**
@@ -1525,7 +1556,8 @@ namespace console {
          * @param high 上界。
          * @return Clamp<T> 限幅变换器。
          */
-        template <class T> Clamp<T> clamp(T low, T high) {
+        template <class T>
+        Clamp<T> clamp(T low, T high) {
             return {low, high};
         }
 

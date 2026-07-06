@@ -113,7 +113,8 @@ namespace console {
          * @tparam Args 可变参数类型。
          * @param args 要输出的内容（可多个，自动转换为字符串）。
          */
-        template <class... Args> void debug(const Args &...args) {
+        template <class... Args>
+        void debug(const Args &...args) {
             if (settings[0]) {
                 if (colorful)
                     output(color::BrightBlack,
@@ -132,7 +133,8 @@ namespace console {
          * @tparam Args 可变参数类型。
          * @param args 要输出的内容。
          */
-        template <class... Args> void info(const Args &...args) {
+        template <class... Args>
+        void info(const Args &...args) {
             if (settings[1]) {
                 if (colorful)
                     output(color::BrightCyan,
@@ -151,7 +153,8 @@ namespace console {
          * @tparam Args 可变参数类型。
          * @param args 要输出的内容。
          */
-        template <class... Args> void warn(const Args &...args) {
+        template <class... Args>
+        void warn(const Args &...args) {
             if (settings[2]) {
                 if (colorful)
                     output(color::BrightYellow,
@@ -170,7 +173,8 @@ namespace console {
          * @tparam Args 可变参数类型。
          * @param args 要输出的内容。
          */
-        template <class... Args> void error(const Args &...args) {
+        template <class... Args>
+        void error(const Args &...args) {
             if (settings[3]) {
                 if (colorful)
                     output(color::BrightRed,
@@ -190,7 +194,8 @@ namespace console {
          * @param args 要输出的内容。
          * @throw FatalLogging 异常，异常消息包含日志内容。
          */
-        template <class... Args> void fatal(const Args &...args) {
+        template <class... Args>
+        void fatal(const Args &...args) {
             std::string error_info(to_string(args...));
             if (settings[4]) {
                 if (colorful)

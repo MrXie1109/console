@@ -43,7 +43,8 @@ namespace console {
      * @details 公开继承自 std::pair<Iter, Iter>。
      * @tparam Iter 迭代器类型。
      */
-    template <class Iter> struct IteratorPair : public std::pair<Iter, Iter> {
+    template <class Iter>
+    struct IteratorPair : public std::pair<Iter, Iter> {
         /**
          * @brief 接受迭代器对的构造函数。
          * @param beg 首迭代器。
@@ -77,7 +78,8 @@ namespace console {
      * @param beg 首迭代器。
      * @param end 超尾迭代器。
      */
-    template <class Iter> IteratorPair<Iter> iterpair(Iter beg, Iter end) {
+    template <class Iter>
+    IteratorPair<Iter> iterpair(Iter beg, Iter end) {
         return {beg, end};
     }
 
@@ -87,7 +89,8 @@ namespace console {
      * @tparam It1 迭代器类型。
      * @tparam It2 另一个迭代器类型。
      */
-    template <class It1, class It2> class TiedIterators {
+    template <class It1, class It2>
+    class TiedIterators {
         It1 it1; ///< 迭代器A
         It2 it2; ///< 迭代器B
 

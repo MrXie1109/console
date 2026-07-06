@@ -172,7 +172,8 @@ namespace console {
      * @param c 要打乱的容器（支持左值或右值引用）。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      */
-    template <class C> void shuffle(C &&c, std::mt19937 &gen = default_gen()) {
+    template <class C>
+    void shuffle(C &&c, std::mt19937 &gen = default_gen()) {
         if (std::begin(c) == std::end(c)) return;
         for (size_t i = c.size() - 1; i > 0; i--) {
             auto j = randint<size_t>(0, i, gen);

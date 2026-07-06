@@ -278,7 +278,7 @@ namespace console {
         DWORD oldMode; ///< Windows: 原始控制台输入模式（用于析构时恢复）
 #else
         struct termios oldTio; ///< Linux/Unix:
-            ///< 原始终端I/O属性（用于析构时恢复规范模式与回显）
+        ///< 原始终端I/O属性（用于析构时恢复规范模式与回显）
 #endif
 
         /**

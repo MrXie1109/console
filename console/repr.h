@@ -175,7 +175,8 @@ namespace console {
     }
 
 #else
-    template <class T> void repr(T &&value, std::ostream &os = std::cout) {
+    template <class T>
+    void repr(T &&value, std::ostream &os = std::cout) {
         os << std::forward<T>(value);
     }
 #endif

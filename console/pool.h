@@ -80,7 +80,8 @@ namespace console {
          * @tparam T 任务的返回值类型。
          * @details 继承自 TaskBase，实现 execute() 方法以执行包装的任务。
          */
-        template <class T> struct Task : public TaskBase {
+        template <class T>
+        struct Task : public TaskBase {
             std::packaged_task<T()> task;
             Task(std::packaged_task<T()> &&t) : task(std::move(t)) {}
             void execute() override { task(); }

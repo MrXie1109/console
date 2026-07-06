@@ -45,7 +45,8 @@ namespace console {
      * @tparam COLS 列数，必须是 2 的倍数。
      * @tparam ROWS 行数，必须是 4 的倍数。
      */
-    template <unsigned COLS, unsigned ROWS> class Screen {
+    template <unsigned COLS, unsigned ROWS>
+    class Screen {
         /// 列数必须是 2 的倍数。
         static_assert(COLS % 2 == 0, "COLS must be a multiple of 2!");
         /// 行数必须是 4 的倍数。

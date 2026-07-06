@@ -177,7 +177,8 @@ namespace console {
              * @tparam T 目标类型（如 int、float、double 等）。
              * @throw TypeError 类型转换失败时抛出。
              */
-            template <class T> operator T() const {
+            template <class T>
+            operator T() const {
                 std::istringstream iss(str_);
                 T                  value;
                 iss >> value;

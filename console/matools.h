@@ -120,7 +120,8 @@ namespace console {
      * @param a 输入向量。
      * @return double 范数值。
      */
-    template <class T, size_t N> double norm(const MultiArray<T, N> &a) {
+    template <class T, size_t N>
+    double norm(const MultiArray<T, N> &a) {
         return std::sqrt(double(dot(a, a)));
     }
 
@@ -236,7 +237,8 @@ namespace console {
      * @tparam N 矩阵阶数。
      * @return MultiArray<T, N, N> 单位矩阵。
      */
-    template <class T, size_t N> MultiArray<T, N, N> identity() {
+    template <class T, size_t N>
+    MultiArray<T, N, N> identity() {
         MultiArray<T, N, N> I{};
         for (size_t i = 0; i < N; i++) I[i][i] = T{1};
         return I;
@@ -249,7 +251,8 @@ namespace console {
      * @param A 方阵。
      * @return T 迹。
      */
-    template <class T, size_t N> T trace(const MultiArray<T, N, N> &A) {
+    template <class T, size_t N>
+    T trace(const MultiArray<T, N, N> &A) {
         T result{};
         for (size_t i = 0; i < N; i++) result += A[i][i];
         return result;

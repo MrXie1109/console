@@ -44,7 +44,8 @@ namespace console {
      *          并支持从多种来源构造，如容器、迭代器对、初始化列表等。
      * @note 所有转换操作都会创建新的 Comprehension 对象，不会修改原对象。
      */
-    template <class T> class Comprehension {
+    template <class T>
+    class Comprehension {
     protected:
         std::vector<T> vec; ///< 内部存储的 std::vector
 
@@ -140,7 +141,8 @@ namespace console {
          * @param f 谓词函数。
          * @return Comprehension<T> 包含满足条件的元素的 Comprehension。
          */
-        template <class F> Comprehension<T> filter(F &&f) const {
+        template <class F>
+        Comprehension<T> filter(F &&f) const {
             Comprehension<T> tmp;
             for (const T &item : vec)
                 if (f(item)) tmp.vec.push_back(item);
@@ -153,7 +155,8 @@ namespace console {
          * @return Cont 构造完成的目标容器。
          * @note 调用后当前 Comprehension 仍有效但内部元素已被移走。
          */
-        template <class Cont> Cont to() {
+        template <class Cont>
+        Cont to() {
             return Cont(std::make_move_iterator(vec.begin()),
                 std::make_move_iterator(vec.end()));
         }
@@ -164,7 +167,8 @@ namespace console {
          * @return Cont 构造完成的目标容器。
          * @note 不修改当前 Comprehension。
          */
-        template <class Cont> Cont make() const {
+        template <class Cont>
+        Cont make() const {
             return Cont(vec.begin(), vec.end());
         }
     };
