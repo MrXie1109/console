@@ -9,9 +9,10 @@ var searchData=
   ['is_5fchar_6',['is_char',['../structconsole_1_1is__char.html',1,'console']]],
   ['is_5fcontainer_7',['is_container',['../structconsole_1_1is__container.html',1,'console']]],
   ['is_5fiterator_8',['is_iterator',['../structconsole_1_1is__iterator.html',1,'console']]],
-  ['is_5fprintable_9',['is_printable',['../structconsole_1_1is__printable.html',1,'console']]],
-  ['is_5fstring_10',['is_string',['../structconsole_1_1is__string.html',1,'console']]],
-  ['item_11',['item',['../classconsole_1_1_i_n_i_config_1_1_item.html',1,'console::INIConfig::Item'],['../classconsole_1_1_item.html',1,'console::Item']]],
-  ['iterator_12',['iterator',['../classconsole_1_1_generator_1_1iterator.html',1,'console::Generator&lt; Derived, T &gt;::iterator'],['../classconsole_1_1_progress_1_1iterator.html',1,'console::Progress&lt; Iter &gt;::iterator'],['../classconsole_1_1_regex_1_1_iterator.html',1,'console::Regex::Iterator']]],
-  ['iteratorpair_13',['IteratorPair',['../structconsole_1_1_iterator_pair.html',1,'console']]]
+  ['is_5fnull_5ft_9',['is_null_t',['../structconsole_1_1ops_1_1is__null__t.html',1,'console::ops']]],
+  ['is_5fprintable_10',['is_printable',['../structconsole_1_1is__printable.html',1,'console']]],
+  ['is_5fstring_11',['is_string',['../structconsole_1_1is__string.html',1,'console']]],
+  ['item_12',['item',['../classconsole_1_1_i_n_i_config_1_1_item.html',1,'console::INIConfig::Item'],['../classconsole_1_1_item.html',1,'console::Item']]],
+  ['iterator_13',['iterator',['../classconsole_1_1_generator_1_1iterator.html',1,'console::Generator&lt; Derived, T &gt;::iterator'],['../classconsole_1_1_progress_1_1iterator.html',1,'console::Progress&lt; Iter &gt;::iterator'],['../classconsole_1_1_regex_1_1_iterator.html',1,'console::Regex::Iterator']]],
+  ['iteratorpair_14',['IteratorPair',['../structconsole_1_1_iterator_pair.html',1,'console']]]
 ];

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,13 +77,26 @@ $(function() {
   <div class="headertitle"><div class="title">console::gen::Pipeline&lt; Ops &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<hr/>The documentation for this class was generated from the following file:<ul>
+
+<p>管道类模板，用于组合多个适配器。  
+ <a href="classconsole_1_1gen_1_1_pipeline.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class... Ops&gt;<br />
+class console::gen::Pipeline&lt; Ops &gt;</div><p>管道类模板，用于组合多个适配器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Ops</td><td>适配器类型列表。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>将多个适配器组合成一个管道，按顺序应用到生成器上。 支持通过 operator| 将管道应用到生成器，或通过 operator% 组合适配器。 </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="gextra_8h_source.html">gextra.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

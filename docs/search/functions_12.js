@@ -1,8 +1,8 @@
 var searchData=
 [
   ['table_0',['Table',['../classconsole_1_1_table.html#aa8edbce458cbb132431634fbf9798d84',1,'console::Table']]],
-  ['take_1',['take',['../classconsole_1_1gen_1_1_take.html#ac2ab903979497e01bac0bffd37d2189d',1,'console::gen::Take::Take()'],['../namespaceconsole_1_1gen.html#a1aa2ae0632703c638782156b80b6c0f8',1,'console::gen::take()']]],
-  ['take_5ft_2',['take_t',['../classconsole_1_1gen_1_1take__t.html#abf4ae169ea07409578b92e739d23148f',1,'console::gen::take_t']]],
+  ['take_1',['take',['../classconsole_1_1gen_1_1_take.html#a981d9c55dc176fc933fa22f532b87df7',1,'console::gen::Take::Take()'],['../namespaceconsole_1_1gen.html#a7f1f5fef962624d51b98218c9215b1f3',1,'console::gen::take()']]],
+  ['take_5ft_2',['take_t',['../classconsole_1_1gen_1_1take__t.html#ae65ab3c671fdd0587fee8143594ee1b2',1,'console::gen::take_t']]],
   ['take_5funtil_3',['take_until',['../namespaceconsole_1_1gen.html#a777804dd0eb252dfccfee35fe512ccd5',1,'console::gen']]],
   ['take_5funtil_5ft_4',['take_until_t',['../classconsole_1_1gen_1_1take__until__t.html#af382a625263f00a487c1c06892b1a5bf',1,'console::gen::take_until_t']]],
   ['take_5fwhile_5',['take_while',['../namespaceconsole_1_1gen.html#a6cd6601deba78048e216f93d1eaa4d20',1,'console::gen']]],

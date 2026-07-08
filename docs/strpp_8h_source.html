@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -261,48 +261,51 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
 </div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="foldopen" id="foldopen00253" data-start="{" data-end="}">
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">  253</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt; std::string <a class="code hl_function" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">to_string</a>(Args &amp;&amp;...args) {</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        std::ostringstream oss;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordtype">int</span>                _[] = {0, (oss &lt;&lt; std::forward&lt;Args&gt;(args), 0)...};</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        (void)_;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">  254</a></span>    std::string <a class="code hl_function" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">to_string</a>(Args &amp;&amp;...args) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        std::ostringstream oss;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordtype">int</span>                _[] = {0, (oss &lt;&lt; std::forward&lt;Args&gt;(args), 0)...};</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        (void)_;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
 </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">  266</a></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">from_string</a>(std::string str, Args &amp;...args) {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        std::istringstream iss(str);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordtype">int</span>                _[] = {0, (iss &gt;&gt; args, 0)...};</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        (void)_;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">  268</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">from_string</a>(std::string str, Args &amp;...args) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        std::istringstream iss(str);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordtype">int</span>                _[] = {0, (iss &gt;&gt; args, 0)...};</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        (void)_;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
 </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="foldopen" id="foldopen00284" data-start="{" data-end="};">
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="classconsole_1_1f__string.html">  284</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1f__string.html">f_string</a> : <span class="keyword">public</span> std::string {</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keyword">using </span>std::string::string;</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="foldopen" id="foldopen00295" data-start="{" data-end="}">
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">  295</a></span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="classconsole_1_1f__string.html">f_string</a> <a class="code hl_function" href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">operator%</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t) {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="keyword">auto</span> pos = this-&gt;find(<span class="stringliteral">&quot;{}&quot;</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordflow">if</span> (pos != std::string::npos) {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                <span class="keyword">auto</span> bak = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                bak.replace(pos, 2, uni_to_str(t));</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                <span class="keywordflow">return</span> bak;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            }</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_bad_format.html">BadFormat</a>(<span class="stringliteral">&quot;Bad Format&quot;</span>);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="};">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="classconsole_1_1f__string.html">  286</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1f__string.html">f_string</a> : <span class="keyword">public</span> std::string {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keyword">using </span>std::string::string;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00298" data-start="{" data-end="}">
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">  298</a></span>        <a class="code hl_class" href="classconsole_1_1f__string.html">f_string</a> <a class="code hl_function" href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">operator%</a>(<span class="keyword">const</span> <a class="code hl_enumvalue" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t) {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keyword">auto</span> pos = this-&gt;find(<span class="stringliteral">&quot;{}&quot;</span>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keywordflow">if</span> (pos != std::string::npos) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                <span class="keyword">auto</span> bak = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                bak.replace(pos, 2, uni_to_str(t));</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                <span class="keywordflow">return</span> bak;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_bad_format.html">BadFormat</a>(<span class="stringliteral">&quot;Bad Format&quot;</span>);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        }</div>
 </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    };</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    };</div>
 </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
- <span class="comment">// end of strpp group</span><div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>}</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+ <span class="comment">// end of strpp group</span><div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
 <div class="ttc" id="aclassconsole_1_1_bad_format_html"><div class="ttname"><a href="classconsole_1_1_bad_format.html">console::BadFormat</a></div><div class="ttdoc">表示格式化字符串错误，例如占位符与参数不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:69</div></div>
-<div class="ttc" id="aclassconsole_1_1f__string_html"><div class="ttname"><a href="classconsole_1_1f__string.html">console::f_string</a></div><div class="ttdoc">格式化字符串类，支持使用 % 运算符进行占位符 {} 替换。</div><div class="ttdef"><b>Definition</b> strpp.h:284</div></div>
-<div class="ttc" id="aclassconsole_1_1f__string_html_a01eb4d0742604322934a19151ebcd2fa"><div class="ttname"><a href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">console::f_string::operator%</a></div><div class="ttdeci">f_string operator%(const T &amp;t)</div><div class="ttdoc">用参数替换第一个 {} 占位符。</div><div class="ttdef"><b>Definition</b> strpp.h:295</div></div>
+<div class="ttc" id="aclassconsole_1_1f__string_html"><div class="ttname"><a href="classconsole_1_1f__string.html">console::f_string</a></div><div class="ttdoc">格式化字符串类，支持使用 % 运算符进行占位符 {} 替换。</div><div class="ttdef"><b>Definition</b> strpp.h:286</div></div>
+<div class="ttc" id="aclassconsole_1_1f__string_html_a01eb4d0742604322934a19151ebcd2fa"><div class="ttname"><a href="classconsole_1_1f__string.html#a01eb4d0742604322934a19151ebcd2fa">console::f_string::operator%</a></div><div class="ttdeci">f_string operator%(const T &amp;t)</div><div class="ttdoc">用参数替换第一个 {} 占位符。</div><div class="ttdef"><b>Definition</b> strpp.h:298</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
-<div class="ttc" id="agroup__strpp_html_ga127963eae58c181d06c8efef328f029c"><div class="ttname"><a href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">console::from_string</a></div><div class="ttdeci">void from_string(std::string str, Args &amp;...args)</div><div class="ttdoc">将字符串中的值提取到多个参数中，参数类型由调用者指定。</div><div class="ttdef"><b>Definition</b> strpp.h:266</div></div>
+<div class="ttc" id="agroup__strpp_html_ga127963eae58c181d06c8efef328f029c"><div class="ttname"><a href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">console::from_string</a></div><div class="ttdeci">void from_string(std::string str, Args &amp;...args)</div><div class="ttdoc">将字符串中的值提取到多个参数中，参数类型由调用者指定。</div><div class="ttdef"><b>Definition</b> strpp.h:268</div></div>
 <div class="ttc" id="agroup__strpp_html_ga245794143f8fbcc1baec9b5d8309846f"><div class="ttname"><a href="group__strpp.html#ga245794143f8fbcc1baec9b5d8309846f">console::lower</a></div><div class="ttdeci">std::string lower(std::string str)</div><div class="ttdoc">将字符串转换为小写。</div><div class="ttdef"><b>Definition</b> strpp.h:145</div></div>
 <div class="ttc" id="agroup__strpp_html_ga32e13326520876f61cb8a33c74dc973f"><div class="ttname"><a href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">console::partition</a></div><div class="ttdeci">PartitionResult partition(const std::string &amp;text, const std::string &amp;sep)</div><div class="ttdoc">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。</div><div class="ttdef"><b>Definition</b> strpp.h:201</div></div>
 <div class="ttc" id="agroup__strpp_html_ga60b86273d02abf33f057e1e86325f455"><div class="ttname"><a href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">console::split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(std::string text, const std::string &amp;sep=&quot; &quot;)</div><div class="ttdoc">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。</div><div class="ttdef"><b>Definition</b> strpp.h:216</div></div>
@@ -310,7 +313,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="agroup__strpp_html_ga7f55de957c5fa0975647a4530b75c61c"><div class="ttname"><a href="group__strpp.html#ga7f55de957c5fa0975647a4530b75c61c">console::title</a></div><div class="ttdeci">std::string title(std::string str)</div><div class="ttdoc">将字符串转换为标题格式（每个单词首字母大写，其余小写）。</div><div class="ttdef"><b>Definition</b> strpp.h:157</div></div>
 <div class="ttc" id="agroup__strpp_html_ga808a28efa1932499e7912f519f1aa767"><div class="ttname"><a href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">console::ltrim</a></div><div class="ttdeci">std::string ltrim(std::string str)</div><div class="ttdoc">移除字符串左侧的空白字符（空格、制表符等）。</div><div class="ttdef"><b>Definition</b> strpp.h:58</div></div>
 <div class="ttc" id="agroup__strpp_html_ga9b8e55a0a5c1eafc84ec0b3b53c77170"><div class="ttname"><a href="group__strpp.html#ga9b8e55a0a5c1eafc84ec0b3b53c77170">console::upper</a></div><div class="ttdeci">std::string upper(std::string str)</div><div class="ttdoc">将字符串转换为大写。</div><div class="ttdef"><b>Definition</b> strpp.h:133</div></div>
-<div class="ttc" id="agroup__strpp_html_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><div class="ttname"><a href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a></div><div class="ttdeci">std::string to_string(Args &amp;&amp;...args)</div><div class="ttdoc">将任意多个参数转换为字符串并拼接（无分隔符）。</div><div class="ttdef"><b>Definition</b> strpp.h:253</div></div>
+<div class="ttc" id="agroup__strpp_html_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><div class="ttname"><a href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a></div><div class="ttdeci">std::string to_string(Args &amp;&amp;...args)</div><div class="ttdoc">将任意多个参数转换为字符串并拼接（无分隔符）。</div><div class="ttdef"><b>Definition</b> strpp.h:254</div></div>
 <div class="ttc" id="agroup__strpp_html_gaac7a5894d7d6708ea4912fea49a3d622"><div class="ttname"><a href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">console::join</a></div><div class="ttdeci">std::string join(const std::vector&lt; T &gt; &amp;vec, const std::string &amp;sep=&quot;&quot;)</div><div class="ttdoc">以分隔符连接容器中的字符串元素。</div><div class="ttdef"><b>Definition</b> strpp.h:238</div></div>
 <div class="ttc" id="agroup__strpp_html_gab9c219f8107af63d17ec5616fe430891"><div class="ttname"><a href="group__strpp.html#gab9c219f8107af63d17ec5616fe430891">console::trim</a></div><div class="ttdeci">std::string trim(std::string str)</div><div class="ttdoc">移除字符串两侧的空白字符。</div><div class="ttdef"><b>Definition</b> strpp.h:84</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
@@ -324,7 +327,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

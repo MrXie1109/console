@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -100,6 +100,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c72151c46dfe5507f59cd7cc1cee79c" id="r_a9c72151c46dfe5507f59cd7cc1cee79c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_cycle.html#a9c72151c46dfe5507f59cd7cc1cee79c">Cycle</a> (std::initializer_list&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; <a class="el" href="namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec">list</a>)</td></tr>
 <tr class="memdesc:a9c72151c46dfe5507f59cd7cc1cee79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，使用初始化列表。  <br /></td></tr>
 <tr class="separator:a9c72151c46dfe5507f59cd7cc1cee79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab06365132e70be87e8dd351fada046d" id="r_aab06365132e70be87e8dd351fada046d"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
+<tr class="memitem:aab06365132e70be87e8dd351fada046d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_cycle.html#aab06365132e70be87e8dd351fada046d">Cycle</a> (Iterator <a class="el" href="classconsole_1_1_generator.html#a17e389630ddb22b1a3356c1688227eb7">begin</a>, Iterator <a class="el" href="classconsole_1_1_generator.html#a57f8e76c644b72f852864520bb12df42">end</a>)</td></tr>
+<tr class="memdesc:aab06365132e70be87e8dd351fada046d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，使用迭代器范围初始化。  <br /></td></tr>
+<tr class="separator:aab06365132e70be87e8dd351fada046d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab37b9b27b2b5a0c527e8b5a62643e7a" id="r_aab37b9b27b2b5a0c527e8b5a62643e7a"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
+<tr class="memitem:aab37b9b27b2b5a0c527e8b5a62643e7a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_cycle.html#aab37b9b27b2b5a0c527e8b5a62643e7a">Cycle</a> (const Container &amp;container)</td></tr>
+<tr class="memdesc:aab37b9b27b2b5a0c527e8b5a62643e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，使用容器初始化。  <br /></td></tr>
+<tr class="separator:aab37b9b27b2b5a0c527e8b5a62643e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3719be83fea8c3ea74d1140877c3806b" id="r_a3719be83fea8c3ea74d1140877c3806b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_cycle.html#a3719be83fea8c3ea74d1140877c3806b">done</a> ()</td></tr>
 <tr class="memdesc:a3719be83fea8c3ea74d1140877c3806b"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
 <tr class="separator:a3719be83fea8c3ea74d1140877c3806b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +146,7 @@ class console::gen::Cycle&lt; T &gt;</div><p>循环生成器，无限循环遍�
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9c72151c46dfe5507f59cd7cc1cee79c" name="a9c72151c46dfe5507f59cd7cc1cee79c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c72151c46dfe5507f59cd7cc1cee79c">&#9670;&#160;</a></span>Cycle()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c72151c46dfe5507f59cd7cc1cee79c">&#9670;&#160;</a></span>Cycle() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +175,105 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>要循环的列表。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab06365132e70be87e8dd351fada046d" name="aab06365132e70be87e8dd351fada046d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab06365132e70be87e8dd351fada046d">&#9670;&#160;</a></span>Cycle() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">console::gen::Cycle</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Cycle </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，使用迭代器范围初始化。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>迭代器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>迭代器范围的起始位置。 </td></tr>
+    <tr><td class="paramname">end</td><td>迭代器范围的结束位置。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab37b9b27b2b5a0c527e8b5a62643e7a" name="aab37b9b27b2b5a0c527e8b5a62643e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab37b9b27b2b5a0c527e8b5a62643e7a">&#9670;&#160;</a></span>Cycle() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">console::gen::Cycle</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Cycle </td>
+          <td>(</td>
+          <td class="paramtype">const Container &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数，使用容器初始化。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>容器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>容器。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -269,7 +376,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

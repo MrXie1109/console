@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -81,17 +81,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>多适配器管道特化。  
+ <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gextra_8h_source.html">gextra.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a27cc4497926296fe85ec8a20d00a4d60" id="r_a27cc4497926296fe85ec8a20d00a4d60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#a27cc4497926296fe85ec8a20d00a4d60">Pipeline</a> (Op o, Rest... r)</td></tr>
+<tr class="memdesc:a27cc4497926296fe85ec8a20d00a4d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
 <tr class="separator:a27cc4497926296fe85ec8a20d00a4d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5708a1fffc27dc684f199bebc2dff7a" id="r_af5708a1fffc27dc684f199bebc2dff7a"><td class="memTemplParams" colspan="2">template&lt;class Gen &gt; </td></tr>
 <tr class="memitem:af5708a1fffc27dc684f199bebc2dff7a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#af5708a1fffc27dc684f199bebc2dff7a">operator()</a> (Gen gen) const -&gt; decltype(rest(gen|op))</td></tr>
+<tr class="memdesc:af5708a1fffc27dc684f199bebc2dff7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">将管道应用到生成器。  <br /></td></tr>
 <tr class="separator:af5708a1fffc27dc684f199bebc2dff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Op, class... Rest&gt;<br />
+class console::gen::Pipeline&lt; Op, Rest... &gt;</div><p>多适配器管道特化。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Op</td><td>第一个适配器类型。 </td></tr>
+    <tr><td class="paramname">Rest</td><td>其余适配器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a27cc4497926296fe85ec8a20d00a4d60" name="a27cc4497926296fe85ec8a20d00a4d60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27cc4497926296fe85ec8a20d00a4d60">&#9670;&#160;</a></span>Pipeline()</h2>
 
@@ -128,6 +143,15 @@ template&lt;class Op , class... Rest&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>构造函数。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>第一个适配器对象。 </td></tr>
+    <tr><td class="paramname">r</td><td>其余适配器对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -159,6 +183,21 @@ template&lt;class Gen &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将管道应用到生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen</td><td>源生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gen</td><td>源生成器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>依次应用所有适配器后的生成器。 </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -167,7 +206,7 @@ template&lt;class Gen &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

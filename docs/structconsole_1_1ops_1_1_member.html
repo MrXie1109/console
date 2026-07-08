@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -89,10 +89,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a35b442c803699ec033475dfb2ff027ec" id="r_a35b442c803699ec033475dfb2ff027ec"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a35b442c803699ec033475dfb2ff027ec"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_member.html#a35b442c803699ec033475dfb2ff027ec">operator()</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;obj) const -&gt; decltype(obj.*<a class="el" href="structconsole_1_1ops_1_1_member.html#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>)</td></tr>
-<tr class="memdesc:a35b442c803699ec033475dfb2ff027ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的成员变量。  <br /></td></tr>
-<tr class="separator:a35b442c803699ec033475dfb2ff027ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608549800bea18507c92647df3f0e140" id="r_a608549800bea18507c92647df3f0e140"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a608549800bea18507c92647df3f0e140"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_member.html#a608549800bea18507c92647df3f0e140">operator()</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;obj) const -&gt; typename std::decay&lt; decltype(obj.*<a class="el" href="structconsole_1_1ops_1_1_member.html#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>)&gt;::type</td></tr>
+<tr class="memdesc:a608549800bea18507c92647df3f0e140"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的成员变量。  <br /></td></tr>
+<tr class="separator:a608549800bea18507c92647df3f0e140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -110,8 +110,8 @@ struct console::ops::Member&lt; Class, Mem &gt;</div><p>取成员变量变换器
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a35b442c803699ec033475dfb2ff027ec" name="a35b442c803699ec033475dfb2ff027ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35b442c803699ec033475dfb2ff027ec">&#9670;&#160;</a></span>operator()()</h2>
+<a id="a608549800bea18507c92647df3f0e140" name="a608549800bea18507c92647df3f0e140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608549800bea18507c92647df3f0e140">&#9670;&#160;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +128,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
-          <td> const -&gt; decltype(obj.*<a class="el" href="structconsole_1_1ops_1_1_member.html#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>) </td>
+          <td> const -&gt; typename std::decay&lt;decltype(obj.*<a class="el" href="structconsole_1_1ops_1_1_member.html#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>)&gt;::type </td>
         </tr>
       </table>
   </td>
@@ -172,7 +172,7 @@ template&lt;class Class , typename Mem &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

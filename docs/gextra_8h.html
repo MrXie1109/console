@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -91,6 +91,7 @@ $(function() {
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
 <code>#include &quot;<a class="el" href="gen_8h_source.html">gen.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sfinae_8h_source.html">sfinae.h</a>&quot;</code><br />
 </div>
@@ -129,10 +130,15 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立（跳过第一个满足条件的元素）。  <a href="classconsole_1_1gen_1_1_drop_until.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html">console::gen::Pipeline&lt; Op &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html">console::gen::Pipeline&lt; Op, Rest... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">多适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">console::gen::pipeline_t&lt; Ops &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道适配器类，用于支持管道操作符。  <a href="classconsole_1_1gen_1_1pipeline__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_scan.html">console::gen::Scan&lt; Gen, T, BinaryOp &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1window__t.html">console::gen::window_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1window__t.html#details">More...</a><br /></td></tr>
@@ -154,6 +160,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">console::gen::reduce_t&lt; T, BinaryOp &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">归约适配器，将生成器所有元素归约为单个值。  <a href="classconsole_1_1gen_1_1reduce__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html">console::gen::scan_t&lt; T, BinaryOp &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_pow.html">console::ops::Pow&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">幂运算变换器。  <a href="structconsole_1_1ops_1_1_pow.html#details">More...</a><br /></td></tr>
@@ -269,6 +277,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1modulus__t.html">console::ops::modulus_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取模函数子。  <a href="structconsole_1_1ops_1_1modulus__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1is__null__t.html">console::ops::is_null_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1not__null__t.html">console::ops::not_null_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1nth__t.html">console::ops::nth_t&lt; N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -284,10 +298,12 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a8c356a899875997b54163e3ac165b801" id="r_a8c356a899875997b54163e3ac165b801"><td class="memTemplParams" colspan="2">template&lt;class... Ops&gt; </td></tr>
 <tr class="memitem:a8c356a899875997b54163e3ac165b801"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a8c356a899875997b54163e3ac165b801">console::gen::pipeline</a> (Ops... ops)</td></tr>
+<tr class="memdesc:a8c356a899875997b54163e3ac165b801"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建管道适配器。  <br /></td></tr>
 <tr class="separator:a8c356a899875997b54163e3ac165b801"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad556d60f746eb502784e2dea302fb5ff" id="r_ad556d60f746eb502784e2dea302fb5ff"><td class="memTemplParams" colspan="2">template&lt;class Op1 , class Op2 &gt; </td></tr>
-<tr class="memitem:ad556d60f746eb502784e2dea302fb5ff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ad556d60f746eb502784e2dea302fb5ff">console::gen::operator&gt;&gt;</a> (Op1 op1, Op2 op2)</td></tr>
-<tr class="separator:ad556d60f746eb502784e2dea302fb5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10458086452282ce3250bd67e58839e" id="r_ae10458086452282ce3250bd67e58839e"><td class="memTemplParams" colspan="2">template&lt;class Op1 , class Op2 &gt; </td></tr>
+<tr class="memitem:ae10458086452282ce3250bd67e58839e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ae10458086452282ce3250bd67e58839e">console::gen::operator%</a> (Op1 op1, Op2 op2)</td></tr>
+<tr class="memdesc:ae10458086452282ce3250bd67e58839e"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道组合操作符，用于连接两个适配器。  <br /></td></tr>
+<tr class="separator:ae10458086452282ce3250bd67e58839e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf" id="r_aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aeb356cb21aca72bce4dad353dc760cbf">console::gen::random</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">min</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">max</a>, std::mt19937::result_type <a class="el" href="group__random.html#ga71ad035c75b9d2bfa5f02d45874ec65c">seed</a>=std::random_device{}())</td></tr>
 <tr class="memdesc:aeb356cb21aca72bce4dad353dc760cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建随机数生成器。  <br /></td></tr>
@@ -334,6 +350,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">reduce_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a554e1d2a6d552b30db8cb1f232c23a86">console::gen::reduce</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;init, BinaryOp bo)</td></tr>
 <tr class="memdesc:a554e1d2a6d552b30db8cb1f232c23a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建归约适配器。  <br /></td></tr>
 <tr class="separator:a554e1d2a6d552b30db8cb1f232c23a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c5a226735c769331244cc6badb0e06" id="r_af4c5a226735c769331244cc6badb0e06"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </td></tr>
+<tr class="memitem:af4c5a226735c769331244cc6badb0e06"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1scan__t.html">scan_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#af4c5a226735c769331244cc6badb0e06">console::gen::scan</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> init, BinaryOp op)</td></tr>
+<tr class="memdesc:af4c5a226735c769331244cc6badb0e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个扫描适配器。  <br /></td></tr>
+<tr class="separator:af4c5a226735c769331244cc6badb0e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6" id="r_a7c857359f52b8826f147c0362430bea6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_pow.html">Pow</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a7c857359f52b8826f147c0362430bea6">console::ops::pow</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="namespaceconsole_1_1ops.html#af71c083953ee9d1b39f2ffa12bd04817">exp</a>)</td></tr>
 <tr class="memdesc:a7c857359f52b8826f147c0362430bea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建幂运算变换器。  <br /></td></tr>
@@ -354,6 +374,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aced8c887da7be9a865f3e320ff24055a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_clamp.html">Clamp</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#aced8c887da7be9a865f3e320ff24055a">console::ops::clamp</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> low, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> high)</td></tr>
 <tr class="memdesc:aced8c887da7be9a865f3e320ff24055a"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建限幅变换器。  <br /></td></tr>
 <tr class="separator:aced8c887da7be9a865f3e320ff24055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a" id="r_af1ea57ca92f924d6ffa4659f4a15046a"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1nth__t.html">nth_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#af1ea57ca92f924d6ffa4659f4a15046a">console::ops::nth</a> ()</td></tr>
+<tr class="memdesc:af1ea57ca92f924d6ffa4659f4a15046a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 tuple/pair/array 的第 N 个元素的函数。  <br /></td></tr>
+<tr class="separator:af1ea57ca92f924d6ffa4659f4a15046a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -423,6 +447,10 @@ Variables</h2></td></tr>
 <tr class="separator:a41a1ef1270a4bd8f0bda1f8e38a31cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c56890ba0eab3261ba7fdd0c7e55091" id="r_a2c56890ba0eab3261ba7fdd0c7e55091"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1modulus__t.html">modulus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a2c56890ba0eab3261ba7fdd0c7e55091">console::ops::modulus</a></td></tr>
 <tr class="separator:a2c56890ba0eab3261ba7fdd0c7e55091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0068a6f54d1f5c07e9bc87d654f29550" id="r_a0068a6f54d1f5c07e9bc87d654f29550"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1is__null__t.html">is_null_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a0068a6f54d1f5c07e9bc87d654f29550">console::ops::is_null</a></td></tr>
+<tr class="separator:a0068a6f54d1f5c07e9bc87d654f29550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae980a2c4a9895c98cc1af92d5d04df63" id="r_ae980a2c4a9895c98cc1af92d5d04df63"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structconsole_1_1ops_1_1not__null__t.html">not_null_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#ae980a2c4a9895c98cc1af92d5d04df63">console::ops::not_null</a></td></tr>
+<tr class="separator:ae980a2c4a9895c98cc1af92d5d04df63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>生成器库扩展功能。 </p>
@@ -431,7 +459,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -86,6 +86,7 @@ $(function() {
 <p>生成器模式头文件。  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;<a class="el" href="iter_8h_source.html">console/iter.h</a>&gt;</code><br />
 <code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
@@ -316,18 +317,34 @@ Functions</h2></td></tr>
 <tr class="memitem:a83f2efb5982379a118d7eec5dfe033ec"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_list.html">List</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec">console::gen::list</a> (std::initializer_list&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; list)</td></tr>
 <tr class="memdesc:a83f2efb5982379a118d7eec5dfe033ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">从初始化列表创建列表生成器。  <br /></td></tr>
 <tr class="separator:a83f2efb5982379a118d7eec5dfe033ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9ed100a14b577a1f3947360cf1c843c" id="r_ae9ed100a14b577a1f3947360cf1c843c"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
+<tr class="memitem:ae9ed100a14b577a1f3947360cf1c843c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_list.html">List</a>&lt; typename std::decay&lt; typename Iterator::value_type &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ae9ed100a14b577a1f3947360cf1c843c">console::gen::list</a> (Iterator begin, Iterator end)</td></tr>
+<tr class="memdesc:ae9ed100a14b577a1f3947360cf1c843c"><td class="mdescLeft">&#160;</td><td class="mdescRight">从迭代器范围创建列表生成器。  <br /></td></tr>
+<tr class="separator:ae9ed100a14b577a1f3947360cf1c843c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7538a4813bf51f08d182802d9ce917" id="r_a0e7538a4813bf51f08d182802d9ce917"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
+<tr class="memitem:a0e7538a4813bf51f08d182802d9ce917"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_list.html">List</a>&lt; typename Container::value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a0e7538a4813bf51f08d182802d9ce917">console::gen::list</a> (Container &amp;container)</td></tr>
+<tr class="memdesc:a0e7538a4813bf51f08d182802d9ce917"><td class="mdescLeft">&#160;</td><td class="mdescRight">从容器引用创建列表生成器。  <br /></td></tr>
+<tr class="separator:a0e7538a4813bf51f08d182802d9ce917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1770c78100b452c9917750fb89692e35" id="r_a1770c78100b452c9917750fb89692e35"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:a1770c78100b452c9917750fb89692e35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a1770c78100b452c9917750fb89692e35">console::gen::range</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> begin, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> end, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step=1)</td></tr>
 <tr class="memdesc:a1770c78100b452c9917750fb89692e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建范围生成器。  <br /></td></tr>
 <tr class="separator:a1770c78100b452c9917750fb89692e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46871ec1bbf385f4023b4df4b7148d12" id="r_a46871ec1bbf385f4023b4df4b7148d12"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a46871ec1bbf385f4023b4df4b7148d12"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_repeat.html">Repeat</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a46871ec1bbf385f4023b4df4b7148d12">console::gen::repeat</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> val, int n)</td></tr>
-<tr class="memdesc:a46871ec1bbf385f4023b4df4b7148d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建重复生成器。  <br /></td></tr>
-<tr class="separator:a46871ec1bbf385f4023b4df4b7148d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeffbd5d5179f0f5e6e4476883a6fab00" id="r_aeffbd5d5179f0f5e6e4476883a6fab00"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aeffbd5d5179f0f5e6e4476883a6fab00"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_repeat.html">Repeat</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aeffbd5d5179f0f5e6e4476883a6fab00">console::gen::repeat</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> val, size_t n)</td></tr>
+<tr class="memdesc:aeffbd5d5179f0f5e6e4476883a6fab00"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建重复生成器。  <br /></td></tr>
+<tr class="separator:aeffbd5d5179f0f5e6e4476883a6fab00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab46b07a5bd274a2d106509553b97556c" id="r_ab46b07a5bd274a2d106509553b97556c"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:ab46b07a5bd274a2d106509553b97556c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">Cycle</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ab46b07a5bd274a2d106509553b97556c">console::gen::cycle</a> (std::initializer_list&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; <a class="el" href="namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec">list</a>)</td></tr>
 <tr class="memdesc:ab46b07a5bd274a2d106509553b97556c"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建循环生成器。  <br /></td></tr>
 <tr class="separator:ab46b07a5bd274a2d106509553b97556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e4a92123e0a7824cc62f8dc99c1483" id="r_a06e4a92123e0a7824cc62f8dc99c1483"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
+<tr class="memitem:a06e4a92123e0a7824cc62f8dc99c1483"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">Cycle</a>&lt; typename std::decay&lt; typename Iterator::value_type &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a06e4a92123e0a7824cc62f8dc99c1483">console::gen::cycle</a> (Iterator begin, Iterator end)</td></tr>
+<tr class="memdesc:a06e4a92123e0a7824cc62f8dc99c1483"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建循环生成器。  <br /></td></tr>
+<tr class="separator:a06e4a92123e0a7824cc62f8dc99c1483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54eca9f4b4676698148a1b4a6691f13" id="r_ae54eca9f4b4676698148a1b4a6691f13"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
+<tr class="memitem:ae54eca9f4b4676698148a1b4a6691f13"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_cycle.html">Cycle</a>&lt; typename Container::value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#ae54eca9f4b4676698148a1b4a6691f13">console::gen::cycle</a> (const Container &amp;container)</td></tr>
+<tr class="memdesc:ae54eca9f4b4676698148a1b4a6691f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建循环生成器。  <br /></td></tr>
+<tr class="separator:ae54eca9f4b4676698148a1b4a6691f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af319287039df0ddf57bf5071ddfb10a8" id="r_af319287039df0ddf57bf5071ddfb10a8"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:af319287039df0ddf57bf5071ddfb10a8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_counter.html">Counter</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#af319287039df0ddf57bf5071ddfb10a8">console::gen::counter</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> start=0, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> step=1)</td></tr>
 <tr class="memdesc:af319287039df0ddf57bf5071ddfb10a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建计数器生成器。  <br /></td></tr>
@@ -344,12 +361,12 @@ Functions</h2></td></tr>
 <tr class="memitem:acab38622ced86174419357fd6555ff6b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1filter__t.html">filter_t</a>&lt; Pred &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#acab38622ced86174419357fd6555ff6b">console::gen::filter</a> (Pred pred)</td></tr>
 <tr class="memdesc:acab38622ced86174419357fd6555ff6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建过滤适配器。  <br /></td></tr>
 <tr class="separator:acab38622ced86174419357fd6555ff6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aa2ae0632703c638782156b80b6c0f8" id="r_a1aa2ae0632703c638782156b80b6c0f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1take__t.html">take_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a1aa2ae0632703c638782156b80b6c0f8">console::gen::take</a> (int n)</td></tr>
-<tr class="memdesc:a1aa2ae0632703c638782156b80b6c0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建取前n个元素适配器。  <br /></td></tr>
-<tr class="separator:a1aa2ae0632703c638782156b80b6c0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e6d402406afa83cc2e925d76d4469d9" id="r_a1e6d402406afa83cc2e925d76d4469d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__t.html">drop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a1e6d402406afa83cc2e925d76d4469d9">console::gen::drop</a> (int n)</td></tr>
-<tr class="memdesc:a1e6d402406afa83cc2e925d76d4469d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过前n个元素适配器。  <br /></td></tr>
-<tr class="separator:a1e6d402406afa83cc2e925d76d4469d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1f5fef962624d51b98218c9215b1f3" id="r_a7f1f5fef962624d51b98218c9215b1f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1take__t.html">take_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a7f1f5fef962624d51b98218c9215b1f3">console::gen::take</a> (size_t n)</td></tr>
+<tr class="memdesc:a7f1f5fef962624d51b98218c9215b1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建取前n个元素适配器。  <br /></td></tr>
+<tr class="separator:a7f1f5fef962624d51b98218c9215b1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e80d3cb7b4ebc960df3dfc18e359d3" id="r_a69e80d3cb7b4ebc960df3dfc18e359d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1drop__t.html">drop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a69e80d3cb7b4ebc960df3dfc18e359d3">console::gen::drop</a> (size_t n)</td></tr>
+<tr class="memdesc:a69e80d3cb7b4ebc960df3dfc18e359d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建跳过前n个元素适配器。  <br /></td></tr>
+<tr class="separator:a69e80d3cb7b4ebc960df3dfc18e359d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92e95c27347ad8b68f8dc310bb6c975e" id="r_a92e95c27347ad8b68f8dc310bb6c975e"><td class="memTemplParams" colspan="2">template&lt;class Func &gt; </td></tr>
 <tr class="memitem:a92e95c27347ad8b68f8dc310bb6c975e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_generate.html">Generate</a>&lt; Func &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#a92e95c27347ad8b68f8dc310bb6c975e">console::gen::generate</a> (Func func)</td></tr>
 <tr class="memdesc:a92e95c27347ad8b68f8dc310bb6c975e"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建生成器适配器。  <br /></td></tr>
@@ -508,7 +525,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:06 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

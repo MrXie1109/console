@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -82,20 +82,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>管道适配器类，用于支持管道操作符。  
+ <a href="classconsole_1_1gen_1_1pipeline__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gextra_8h_source.html">gextra.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1004cc78a74f032232f8358221f8246b" id="r_a1004cc78a74f032232f8358221f8246b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html#a1004cc78a74f032232f8358221f8246b">pipeline_t</a> (Ops... ops)</td></tr>
+<tr class="memdesc:a1004cc78a74f032232f8358221f8246b"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
 <tr class="separator:a1004cc78a74f032232f8358221f8246b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a00adfcbf0f87095b51779e8b5b0e0ea2" id="r_a00adfcbf0f87095b51779e8b5b0e0ea2"><td class="memTemplParams" colspan="2">template&lt;class Gen &gt; </td></tr>
 <tr class="memitem:a00adfcbf0f87095b51779e8b5b0e0ea2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html#a00adfcbf0f87095b51779e8b5b0e0ea2">operator|</a> (Gen gen, <a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a> pl) -&gt; decltype(pl.pipeline(gen))</td></tr>
+<tr class="memdesc:a00adfcbf0f87095b51779e8b5b0e0ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道操作符，将管道应用到生成器。  <br /></td></tr>
 <tr class="separator:a00adfcbf0f87095b51779e8b5b0e0ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class... Ops&gt;<br />
+class console::gen::pipeline_t&lt; Ops &gt;</div><p>管道适配器类，用于支持管道操作符。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Ops</td><td>适配器类型列表。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>包装 <a class="el" href="classconsole_1_1gen_1_1_pipeline.html" title="管道类模板，用于组合多个适配器。">Pipeline</a> 对象，提供 operator| 支持。 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1004cc78a74f032232f8358221f8246b" name="a1004cc78a74f032232f8358221f8246b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1004cc78a74f032232f8358221f8246b">&#9670;&#160;</a></span>pipeline_t()</h2>
 
@@ -121,6 +136,14 @@ template&lt;class... Ops&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ops</td><td>适配器对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -163,6 +186,22 @@ template&lt;class Gen &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>管道操作符，将管道应用到生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen</td><td>源生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gen</td><td>源生成器。 </td></tr>
+    <tr><td class="paramname">pl</td><td>管道适配器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>应用管道后的生成器。 </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -171,7 +210,7 @@ template&lt;class Gen &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -4,7 +4,7 @@ var searchData=
   ['license_1',['license',['../namespaceconsole.html#a102f3ee79a0df7c77068a3a3dc55b576',1,'console']]],
   ['line_2',['line',['../classconsole_1_1_screen.html#a8cdd038ef534e1464088a28cda007953',1,'console::Screen']]],
   ['linspace_3',['linspace',['../group__matools.html#gac0e485c9d3bc0fa8d921ef04fbaa01d1',1,'console']]],
-  ['list_4',['list',['../classconsole_1_1gen_1_1_list.html#ac1f880aa61fdca8938d9e4b801a3fac0',1,'console::gen::List::List()'],['../namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec',1,'console::gen::list()']]],
+  ['list_4',['list',['../classconsole_1_1gen_1_1_list.html#ac1f880aa61fdca8938d9e4b801a3fac0',1,'console::gen::List::List()'],['../namespaceconsole_1_1gen.html#a0e7538a4813bf51f08d182802d9ce917',1,'console::gen::list(Container &amp;container)'],['../namespaceconsole_1_1gen.html#ae9ed100a14b577a1f3947360cf1c843c',1,'console::gen::list(Iterator begin, Iterator end)'],['../namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec',1,'console::gen::list(std::initializer_list&lt; T &gt; list)'],['../classconsole_1_1gen_1_1_list.html#ab2a7b365372e9f44c9bad2ebaa41f11d',1,'console::gen::List::List(const Container &amp;container)'],['../classconsole_1_1gen_1_1_list.html#a0d502eb8deffa16627bea83385e5f266',1,'console::gen::List::List(Iterator begin, Iterator end)']]],
   ['load_5',['load',['../classconsole_1_1_i_n_i_config.html#a5ad4924c87b288f014f2c58251e8df14',1,'console::INIConfig']]],
   ['log_6',['log',['../group__matools.html#ga61b4ab1cc5e246b05a141baa953fe19f',1,'console']]],
   ['log10_7',['log10',['../group__matools.html#gab8499187443ce03bc5ee2b821b90e087',1,'console']]],

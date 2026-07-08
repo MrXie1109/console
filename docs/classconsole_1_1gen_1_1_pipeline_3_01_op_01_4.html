@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -81,17 +81,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>单适配器管道特化。  
+ <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gextra_8h_source.html">gextra.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0d7c1efc7d38a414f878aaa5385abee" id="r_ad0d7c1efc7d38a414f878aaa5385abee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#ad0d7c1efc7d38a414f878aaa5385abee">Pipeline</a> (Op o)</td></tr>
+<tr class="memdesc:ad0d7c1efc7d38a414f878aaa5385abee"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
 <tr class="separator:ad0d7c1efc7d38a414f878aaa5385abee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5531bd35fa84635b7d672f316a7337c" id="r_ae5531bd35fa84635b7d672f316a7337c"><td class="memTemplParams" colspan="2">template&lt;class Gen &gt; </td></tr>
 <tr class="memitem:ae5531bd35fa84635b7d672f316a7337c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#ae5531bd35fa84635b7d672f316a7337c">operator()</a> (Gen gen) const -&gt; decltype(gen|op)</td></tr>
+<tr class="memdesc:ae5531bd35fa84635b7d672f316a7337c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将管道应用到生成器。  <br /></td></tr>
 <tr class="separator:ae5531bd35fa84635b7d672f316a7337c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Op&gt;<br />
+class console::gen::Pipeline&lt; Op &gt;</div><p>单适配器管道特化。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Op</td><td>适配器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad0d7c1efc7d38a414f878aaa5385abee" name="ad0d7c1efc7d38a414f878aaa5385abee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0d7c1efc7d38a414f878aaa5385abee">&#9670;&#160;</a></span>Pipeline()</h2>
 
@@ -117,6 +131,14 @@ template&lt;class Op &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>适配器对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -149,6 +171,21 @@ template&lt;class Gen &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将管道应用到生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen</td><td>源生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gen</td><td>源生成器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>应用适配器后的生成器。 </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -157,7 +194,7 @@ template&lt;class Gen &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

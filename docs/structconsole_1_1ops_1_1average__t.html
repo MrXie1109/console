@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.8.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -88,16 +88,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aadfabe9fa9d6bed4744286df60fecaf4" id="r_aadfabe9fa9d6bed4744286df60fecaf4"><td class="memTemplParams" colspan="2">template&lt;class Range &gt; </td></tr>
-<tr class="memitem:aadfabe9fa9d6bed4744286df60fecaf4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1average__t.html#aadfabe9fa9d6bed4744286df60fecaf4">operator()</a> (Range r) const -&gt; decltype(std::accumulate(r.begin(), r.end(), decltype(*r.begin()){})/r.size())</td></tr>
-<tr class="memdesc:aadfabe9fa9d6bed4744286df60fecaf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算范围中所有元素的平均值。  <br /></td></tr>
-<tr class="separator:aadfabe9fa9d6bed4744286df60fecaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362c2079a43e778438c13e78b23b2da2" id="r_a362c2079a43e778438c13e78b23b2da2"><td class="memTemplParams" colspan="2">template&lt;class Range &gt; </td></tr>
+<tr class="memitem:a362c2079a43e778438c13e78b23b2da2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1average__t.html#a362c2079a43e778438c13e78b23b2da2">operator()</a> (Range r) const -&gt; decltype(std::accumulate(r.begin(), r.end(), typename Range::value_type{})/r.size())</td></tr>
+<tr class="memdesc:a362c2079a43e778438c13e78b23b2da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算范围中所有元素的平均值。  <br /></td></tr>
+<tr class="separator:a362c2079a43e778438c13e78b23b2da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>范围平均值变换器。 </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aadfabe9fa9d6bed4744286df60fecaf4" name="aadfabe9fa9d6bed4744286df60fecaf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadfabe9fa9d6bed4744286df60fecaf4">&#9670;&#160;</a></span>operator()()</h2>
+<a id="a362c2079a43e778438c13e78b23b2da2" name="a362c2079a43e778438c13e78b23b2da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362c2079a43e778438c13e78b23b2da2">&#9670;&#160;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,8 +112,9 @@ template&lt;class Range &gt; </div>
           <td>(</td>
           <td class="paramtype">Range&#160;</td>
           <td class="paramname"><em>r</em></td><td>)</td>
-          <td> const -&gt; decltype(std::accumulate(
-                                r.begin(), r.end(), decltype(*r.begin()){})
+          <td> const -&gt; decltype(std::accumulate(r.begin(),
+                                r.end(),
+                                typename Range::value_type{})
                             / r.size()) </td>
         </tr>
       </table>
@@ -141,7 +142,7 @@ template&lt;class Range &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 4 2026 23:10:07 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
