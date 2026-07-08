@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            "console version 5.10.0 (2026-07-08) -- \"Never Ending Extra!\"";
+            "console version 5.11.0 (2026-07-08) -- \"Eternal Evolution!\"";
     }
 
     /**

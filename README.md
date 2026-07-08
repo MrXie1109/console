@@ -3,36 +3,45 @@
 [![Language](https://img.shields.io/badge/language-C++11-blue.svg)](https://isocpp.org/)
 [![Header-Only](https://img.shields.io/badge/header--only-yes-brightgreen.svg)](https://en.wikipedia.org/wiki/Header-only)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows&Linux&macOS-lightgrey.svg)]()
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)]()
 
-> **console** 是一个 **C++11 纯头文件库**，旨在为 C++ 开发者提供类似 Python 的简洁、现代化编程体验。无需复杂的构建配置，只需包含头文件即可开始使用。
+> **console** 是一个 **C++11 纯头文件库**，提供类似 Python 的简洁、现代化编程体验。无需复杂配置，`#include` 即用。
 
 ---
 
-## ✨ 特性
+## 🎯 一句话概括
 
-| 类别 | 功能 |
-|------|------|
-| 📝 **字符串处理** | `trim`, `split`, `join`, `upper/lower`, `f_string` 格式化, `"_f"` 字面量 |
-| 🎨 **控制台样式** | ANSI 颜色/背景/样式 (`color::Red`, `color::Bold` 等) |
-| ⌨️ **输入增强** | 类型安全输入、范围检查、y/n 确认、非阻塞键盘输入 |
-| 📊 **容器输出** | 直接 `cout << vector`, `map`, `set`, `tuple`, `pair` |
-| 📦 **异构容器** | `Box` (类似 Python `list` 可存任意类型) + `Item` 类型擦除 |
-| 🎯 **可选值** | `Maybe<T>` 安全处理空值 (类似 `std::optional`) |
-| 🔄 **容器适配器** | `Stack`, `Queue`, `PriorityQueue` 带返回值 `pop()` |
-| 🧬 **生成器 & 迭代器** | `range()`, `zip()`, `enumerate`, `map/filter` 惰性求值 |
-| 📐 **多维数组** | `MultiArray<T, Dims...>` 编译期维度 + 数学运算 |
-| 🧮 **分数运算** | `Rational` 有理数类型 (支持 `intmax_t`/`int64_t` 等) |
-| 🔐 **加密工具** | SHA256, MD5, Base64, AES-128-CTR |
-| ⏱️ **时间工具** | `Time` 类, `now()`, `timer()`, `sleep()`, `datetime()` |
-| 🎲 **随机数** | `randint`, `uniform`, `choice`, `shuffle`, 多种分布 |
-| 📁 **文件操作** | `Path` 跨平台路径 + 文本/二进制/POD 读写 |
-| 📜 **正则表达式** | Python 风格 `re` 模块接口 (`search`, `match`, `findall`, `sub`) |
-| ⚙️ **配置解析** | `INIConfig` INI 文件读写 |
-| 📈 **进度条** | 容器遍历自动显示进度 |
-| 🖥️ **屏幕绘图** | Unicode 盲文位图屏幕 (点、线、圆、矩形) |
-| 🎵 **MIDI 播放** (Windows) | 128 种 GM 乐器, 音符播放, BPM 控制 |
-| 🖱️ **系统命令** | 跨平台 `syscmd()` 执行并捕获输出 |
+把 C++ 用出 Python 的舒适感，同时保留 C++ 的性能与掌控力。
+
+---
+
+## ✨ 核心特性
+
+| 类别                        | 功能                                                                                         |
+| --------------------------- | -------------------------------------------------------------------------------------------- |
+| 📝 **字符串处理**           | `trim` / `split` / `join` / `upper` / `lower` / `title` / `f_string` 格式化 / `"_f"` 字面量  |
+| 🎨 **控制台样式**           | ANSI 16色前景/背景 / 粗体/下划线/闪烁等样式 / `ColorGuard` RAII 守卫                         |
+| ⌨️ **输入增强**             | 类型安全 `input<T>()` / 范围校验 / 行读取 / y/n 确认 / 非阻塞键盘 `Keyboard`                 |
+| 📊 **容器输出**             | 直接 `cout << vector` / `map` / `set` / `tuple` / `pair` / `valarray`                        |
+| 📦 **异构容器**             | `Box`（任意类型混合存储）+ `Item`（单值类型擦除）                                            |
+| 🎯 **可选值**               | `Maybe<T>`（类似 `std::optional`，但更早支持 C++11）                                         |
+| 🔄 **容器适配器**           | `Stack` / `Queue` / `PriorityQueue`，`pop()` 直接返回值                                      |
+| 🧬 **生成器与管道**         | `range()` / `zip()` / `enumerate` / 惰性 `map`/`filter`/`take`/`drop` / 管道操作符 `\|`      |
+| 📐 **多维数组**             | `MultiArray<T, Dims...>`（编译期维度）+ 元素级运算 + 统计函数 + 矩阵乘法                     |
+| 🧮 **有理数**               | `Rational`（基于 `intmax_t` / `int64_t` 等），支持四则运算与比较                             |
+| 🔐 **加密工具**             | SHA256 / MD5 / Base64 / AES-128-CTR                                                          |
+| ⏱️ **时间工具**             | `Time` 类（纳秒精度）/ `now()` / `timer()` / `sleep()` / `datetime()` / `fps()` 帧率控制     |
+| 🎲 **随机数**               | `randint` / `uniform` / `choice` / `shuffle` / 正态/泊松/伽马/贝塔/t/F/对数正态/韦布尔等分布 |
+| 📁 **文件操作**             | `Path` 跨平台路径拼接 + 文本/二进制/POD 读写                                                 |
+| 📜 **正则表达式**           | Python 风格 `re` 模块：`search` / `match` / `findall` / `finditer` / `sub` / `split`         |
+| ⚙️ **配置解析**             | `INIConfig` INI 文件读写（支持空节/空键）                                                    |
+| 📈 **进度条**               | 容器遍历自动显示进度条（多种预置样式）                                                       |
+| 🖥️ **屏幕绘图**             | Unicode 盲文点阵屏：点 / 线 / 圆 / 矩形 / 实心填充                                           |
+| 🎵 **MIDI 播放**（Windows） | 128 种 GM 乐器 / 音符播放 / BPM 控制 / 异步播放                                              |
+| 🖱️ **系统命令**             | `syscmd()` 跨平台执行命令并捕获 stdout+stderr                                                |
+| 🧵 **线程池**               | `ThreadPool` 类 + 全局线程池 / `submit` / `map` / `wait`                                     |
+| 🔍 **双重分派**             | `Table<T>` 运行时双重分派表（碰撞检测/事件分发）                                             |
+| 📎 **其他实用工具**         | `View` 非拥有视图 / `cursor_ptr` 双指针游标 / `Generator` 生成器框架 / 类型特征 `sfinae.h`   |
 
 ---
 
@@ -40,22 +49,22 @@
 
 ### 环境要求
 
-- **C++11** 或更高版本
-- 支持的编译器：GCC, Clang, MSVC
+- **C++11** 或更高版本（部分高级特性需要 C++14/17，但核心模块兼容 C++11）
+- 编译器：GCC 4.8+ / Clang 3.4+ / MSVC 2015+
 
 ### 使用方式
 
-本库是 **纯头文件库**，只需将 `console` 文件夹复制到你的项目中，然后包含所需头文件即可：
+**纯头文件库**，复制 `console` 目录到项目，然后包含所需头文件即可：
 
 ```cpp
-#include "console/all.h"  // 一键包含所有功能
-// 或选择性包含
+#include "console/all.h"          // 一键全包含
+// 或按需包含：
 #include "console/output.h"
 #include "console/strpp.h"
 
 int main() {
     std::vector<int> v = {1, 2, 3, 4, 5};
-    console::print(v);                    // 输出: [1, 2, 3, 4, 5]
+    console::print(v);                    // [1, 2, 3, 4, 5]
 
     std::string s = console::trim("  hello  ");  // "hello"
 
@@ -67,43 +76,62 @@ int main() {
 }
 ```
 
-### 基本示例
+### 更多示例
 
 ```cpp
 #include "console/all.h"
 using namespace console;
 
 int main() {
-    // 1. 打印容器
+    // 1. 容器输出
     std::map<std::string, int> scores = {{"Alice", 95}, {"Bob", 87}};
-    print(scores);  // {"Alice": 95, "Bob": 87}
+    print(scores);   // {"Alice": 95, "Bob": 87}
 
     // 2. 字符串处理
-    auto parts = split("a,b,c,d", ",");  // ["a", "b", "c", "d"]
+    auto parts = split("a,b,c,d", ",");   // ["a", "b", "c", "d"]
+    print(join(parts, " | "));            // "a | b | c | d"
 
-    // 3. 格式化输出
-    print("Hello, {}"_f % "world");     // "Hello, world"
+    // 3. 格式化
+    print("Hello, {}"_f % "world");       // "Hello, world"
+    print("Pi ≈ {:.2f}"_f % 3.14159);     // "Pi ≈ 3.14"（需 C++11 的 to_string 支持）
 
     // 4. Maybe 安全处理
     Maybe<int> m = 42;
     if (m) {
-        print(*m);                       // 42
+        print(*m);                        // 42
     }
+    m = nothing;                          // 置空
 
     // 5. 随机选择
     std::vector<std::string> fruits = {"apple", "banana", "cherry"};
-    auto selected = choice(fruits);      // 随机一个水果
+    print(choice(fruits));                // 随机一个
 
     // 6. 进度条
-    for (auto& x : progress(fruits)) {
+    for (auto& x : progress(fruits, ProgressStyle::beautiful())) {
         // 自动显示进度条
     }
 
     // 7. 计时
     auto elapsed = timer([]{
-        sleep(1_s);
+        sleep(1_s);                       // _s 字面量，需要 using namespace literals;
     });
-    print("Elapsed:", elapsed);          // 约 1s
+    print("Elapsed:", elapsed);           // 约 1s
+
+    // 8. 正则表达式
+    auto m = re::search(r"\d+", "age: 18");
+    if (m) print(m.group());              // "18"
+
+    // 9. 线程池
+    auto pool = ThreadPool(4);
+    auto f = pool.submit([]{ return 42; });
+    print(f.get());                       // 42
+
+    // 10. 生成器管道
+    auto result = gen::range(1, 10)
+                | gen::filter(ops::even)
+                | gen::map(ops::square)
+                | gen::collect<std::vector<int>>();
+    print(result);                        // [4, 16, 36, 64]
 
     return 0;
 }
@@ -113,93 +141,108 @@ int main() {
 
 ## 📖 文档
 
-完整文档请访问：**[https://mrxie1109.github.io/console---make-cpp-easy/](https://mrxie1109.github.io/console---make-cpp-easy/)**
-
-文档包含：
-- 详细 API 参考
-- 各模块使用指南
-- 更多代码示例
+完整 API 文档与进阶指南：  
+**[https://mrxie1109.github.io/console/](https://mrxie1109.github.io/console/)**
 
 ---
 
-## 📦 模块概览
+## 📦 模块速览
 
-| 头文件 | 描述 |
-|--------|------|
-| `all.h` | 一键包含所有模块 |
-| `output.h` | 容器输出 + `print` 函数 |
-| `strpp.h` | 字符串处理 + 格式化 |
-| `colorful.h` | ANSI 颜色/样式常量 |
-| `input.h` | 类型安全输入 |
-| `kb.h` | 非阻塞键盘输入 |
-| `maybe.h` | `Maybe<T>` 可选值 |
-| `box.h` | 异构容器 `Box` + `Item` |
-| `adapter.h` | `Stack`/`Queue`/`PriorityQueue` |
-| `iter.h` | `zip()` 迭代器适配 |
-| `gen.h` | 生成器 (range, map, filter, take, skip) |
-| `multiarray.h` | 编译期多维数组 |
-| `matools.h` | 多维数组数学工具 |
-| `rational.h` | 分数运算 |
-| `time.h` | 时间/计时/休眠 |
-| `random.h` | 随机数生成 |
-| `file.h` | 跨平台文件操作 |
-| `re.h` | Python 风格正则 |
-| `config.h` | INI 配置解析 |
-| `progress.h` | 进度条显示 |
-| `screen.h` | 盲文位图屏幕 |
-| `crypto.h` | SHA256/MD5/Base64/AES |
-| `syscmd.h` | 系统命令执行 |
-| `info.h` | 版本/平台/编译器信息 |
-| `csexc.h` | 自定义异常类 |
-| `sfinae.h` | 类型特征检测 |
-| `repr.h` | Python 风格 `repr()` |
-| `literals.h` | 时间/格式化字面量 |
-| `view.h` | 容器非拥有视图 |
-| `cursor_ptr.h` | 双指针游标智能指针 |
-| `win/melody.h` | Windows MIDI 音乐 (需链接 winmm) |
+| 头文件            | 描述                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| `all.h`           | 一键包含所有模块                                                  |
+| `output.h`        | 容器输出 + `print` 函数                                           |
+| `put.h`           | `put()` 单值输出（`repr` 适配）                                   |
+| `repr.h`          | Python 风格 `repr()` 表示                                         |
+| `strpp.h`         | 字符串处理 + `f_string` 格式化                                    |
+| `literals.h`      | 时间字面量 `_s` / `_ms` / `_f` 等                                 |
+| `colorful.h`      | ANSI 颜色/样式常量                                                |
+| `input.h`         | 类型安全输入函数                                                  |
+| `kb.h`            | 非阻塞键盘输入                                                    |
+| `maybe.h`         | `Maybe<T>` 可选值                                                 |
+| `box.h`           | 异构容器 `Box` + `Item`                                           |
+| `adapter.h`       | `Stack` / `Queue` / `PriorityQueue`                               |
+| `iter.h`          | `zip()` / `IteratorPair`                                          |
+| `gen.h`           | 生成器框架 + `range` / `map` / `filter` / `take` / `drop` / 管道  |
+| `gextra.h`        | 生成器扩展：随机/文件行/窗口/分块/链式/归约/扫描                  |
+| `multiarray.h`    | 编译期多维数组 + 元素级运算                                       |
+| `matools.h`       | `MultiArray` 数学工具：统计/线性代数/卷积/随机初始化              |
+| `rational.h`      | 有理数 `Rational`                                                 |
+| `time.h`          | `Time` / `now()` / `timer()` / `sleep()` / `datetime()` / `fps()` |
+| `random.h`        | 随机数生成 + 多种分布                                             |
+| `file.h`          | `Path` 跨平台文件操作                                             |
+| `re.h`            | Python 风格正则表达式                                             |
+| `config.h`        | `INIConfig` INI 解析                                              |
+| `progress.h`      | 进度条                                                            |
+| `screen.h`        | Unicode 盲文点阵屏                                                |
+| `crypto.h`        | SHA256 / MD5 / Base64 / AES-128-CTR                               |
+| `syscmd.h`        | 跨平台系统命令执行                                                |
+| `pool.h`          | `ThreadPool` 线程池                                               |
+| `collide.h`       | `Table<T>` 双重分派表                                             |
+| `view.h`          | 非拥有视图 `View`                                                 |
+| `cursor_ptr.h`    | 双指针游标智能指针                                                |
+| `info.h`          | 版本/平台/编译器信息                                              |
+| `csexc.h`         | 自定义异常层次                                                    |
+| `sfinae.h`        | 类型特征检测工具                                                  |
+| `outfwd.h`        | 容器输出前向声明                                                  |
+| `std.h`           | 聚合 C++ 标准库头文件                                             |
+| `term.h`          | 终端控制（光标/清屏/尺寸）                                        |
+| `win/melody.h`    | Windows MIDI 音乐（需链接 `winmm`）                               |
+| `linux/process.h` | Linux 进程管理                                                    |
 
 ---
 
 ## 🛠️ 构建与依赖
 
-### Windows (MIDI 支持)
+### 基本使用
 
-如需使用 MIDI 功能 (`win/melody.h`)，需链接 `winmm` 库：
+**无需任何额外链接**，纯头文件，直接包含即可。
+
+### Windows MIDI 支持
+
+如需使用 `win/melody.h`，需链接 `winmm` 库：
 
 ```bash
-# g++
+# MinGW / GCC
 g++ -std=c++11 main.cpp -lwinmm
 
 # MSVC
 cl /EHsc main.cpp winmm.lib
 ```
 
-### 其他情况
-
-无需额外链接，直接包含头文件即可。
-
 ---
 
 ## 📝 命名空间
 
-所有功能位于 `console` 命名空间中：
+所有功能位于 `console` 命名空间：
 
 ```cpp
-using namespace console;  // 推荐在源文件中使用
-// 或显式使用 console::print, console::range 等
+using namespace console;           // 推荐在 .cpp 中使用
+// 或显式：
+console::print("Hello");
+console::range(0, 10);
 ```
+
+子命名空间：
+
+- `console::color` —— 颜色/样式常量
+- `console::literals` —— 字面量运算符（需要 `using namespace console::literals;`）
+- `console::re` —— 正则函数式接口
+- `console::gen` —— 生成器工厂与适配器
+- `console::ops` —— 预置变换器/谓词
+- `console::crypto` —— 加密算法
 
 ---
 
 ## 🤝 贡献
 
-欢迎提交 Issue 和 Pull Request！
+欢迎提交 Issue 与 Pull Request！
 
 ---
 
 ## 📄 许可证
 
-本项目采用 **MIT 许可证**。详见 [LICENSE](LICENSE) 文件。
+MIT License © 2026 MrXie1109
 
 ```
 Copyright (c) 2026 MrXie1109
@@ -209,7 +252,18 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions...
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ---
@@ -219,241 +273,14 @@ furnished to do so, subject to the following conditions...
 **MrXie1109**
 
 - GitHub: [@MrXie1109](https://github.com/MrXie1109)
-- 文档网站: https://mrxie1109.github.io/console---make-cpp-easy/
+- 文档: https://mrxie1109.github.io/console/
 
 ---
 
-## 🌟 致谢
+## ⭐ 支持
 
-感谢所有使用和反馈的朋友们！如果觉得这个库对你有帮助，欢迎 **Star** ⭐ 支持一下！
-
----
-
-# console —— Make C++ Easy
-
-[![Language](https://img.shields.io/badge/language-C++11-blue.svg)](https://isocpp.org/)
-[![Header-Only](https://img.shields.io/badge/header--only-yes-brightgreen.svg)](https://en.wikipedia.org/wiki/Header-only)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows&Linux&macOS-lightgrey.svg)]()
-
-> **console** is a **C++11 header-only library** designed to provide C++ developers with a clean, modern programming experience similar to Python. No complex build configuration — just include the headers and start coding.
+如果这个库对你有帮助，欢迎点亮 **Star** 支持一下！
 
 ---
 
-## ✨ Features
-
-| Category | Features |
-|----------|----------|
-| 📝 **String Processing** | `trim`, `split`, `join`, `upper/lower`, `f_string` formatting, `"_f"` literal |
-| 🎨 **Console Styling** | ANSI colors/backgrounds/styles (`color::Red`, `color::Bold`, etc.) |
-| ⌨️ **Enhanced Input** | Type-safe input, range validation, y/n confirmation, non-blocking keyboard |
-| 📊 **Container Output** | Direct `cout << vector`, `map`, `set`, `tuple`, `pair` |
-| 📦 **Heterogeneous Container** | `Box` (like Python `list` storing any type) + `Item` type erasure |
-| 🎯 **Optional Value** | `Maybe<T>` safe null handling (like `std::optional`) |
-| 🔄 **Container Adapters** | `Stack`, `Queue`, `PriorityQueue` with value-returning `pop()` |
-| 🧬 **Generators & Iterators** | `range()`, `zip()`, `enumerate`, lazy `map`/`filter` |
-| 📐 **Multi-dimensional Array** | `MultiArray<T, Dims...>` compile-time dimensions + math operations |
-| 🧮 **Rational Arithmetic** | `Rational` fraction type (`intmax_t`/`int64_t` based) |
-| 🔐 **Cryptography** | SHA256, MD5, Base64, AES-128-CTR |
-| ⏱️ **Time Utilities** | `Time` class, `now()`, `timer()`, `sleep()`, `datetime()` |
-| 🎲 **Random Numbers** | `randint`, `uniform`, `choice`, `shuffle`, multiple distributions |
-| 📁 **File Operations** | `Path` cross-platform path + text/binary/POD read/write |
-| 📜 **Regular Expressions** | Python-style `re` module interface (`search`, `match`, `findall`, `sub`) |
-| ⚙️ **Config Parsing** | `INIConfig` INI file reader/writer |
-| 📈 **Progress Bar** | Automatic progress display for container iteration |
-| 🖥️ **Screen Drawing** | Unicode Braille bitmap screen (points, lines, circles, rectangles) |
-| 🎵 **MIDI Playback** (Windows) | 128 GM instruments, note playback, BPM control |
-| 🖱️ **System Commands** | Cross-platform `syscmd()` execution with output capture |
-
----
-
-## 🚀 Quick Start
-
-### Requirements
-
-- **C++11** or later
-- Supported compilers: GCC, Clang, MSVC
-
-### Usage
-
-This is a **header-only library**. Simply copy the `console` folder into your project and include the desired header:
-
-```cpp
-#include "console/all.h"  // Include everything
-// Or selectively include:
-#include "console/output.h"
-#include "console/strpp.h"
-
-int main() {
-    std::vector<int> v = {1, 2, 3, 4, 5};
-    console::print(v);                    // Output: [1, 2, 3, 4, 5]
-
-    std::string s = console::trim("  hello  ");  // "hello"
-
-    for (int i : console::range(0, 10, 2)) {
-        console::print(i);                // 0, 2, 4, 6, 8
-    }
-
-    return 0;
-}
-```
-
-### Basic Examples
-
-```cpp
-#include "console/all.h"
-using namespace console;
-
-int main() {
-    // 1. Print containers
-    std::map<std::string, int> scores = {{"Alice", 95}, {"Bob", 87}};
-    print(scores);  // {"Alice": 95, "Bob": 87}
-
-    // 2. String processing
-    auto parts = split("a,b,c,d", ",");  // ["a", "b", "c", "d"]
-
-    // 3. Formatted output
-    print("Hello, {}"_f % "world");     // "Hello, world"
-
-    // 4. Maybe for safe handling
-    Maybe<int> m = 42;
-    if (m) {
-        print(*m);                       // 42
-    }
-
-    // 5. Random selection
-    std::vector<std::string> fruits = {"apple", "banana", "cherry"};
-    auto selected = choice(fruits);      // random fruit
-
-    // 6. Progress bar
-    for (auto& x : progress(fruits)) {
-        // Progress bar automatically displayed
-    }
-
-    // 7. Timing
-    auto elapsed = timer([]{
-        sleep(1_s);
-    });
-    print("Elapsed:", elapsed);          // ~1s
-
-    return 0;
-}
-```
-
----
-
-## 📖 Documentation
-
-Full documentation is available at: **[https://mrxie1109.github.io/console---make-cpp-easy/](https://mrxie1109.github.io/console---make-cpp-easy/)**
-
-The documentation includes:
-- Detailed API reference
-- Module usage guides
-- More code examples
-
----
-
-## 📦 Module Overview
-
-| Header | Description |
-|--------|-------------|
-| `all.h` | One‑include for all modules |
-| `output.h` | Container output + `print` function |
-| `strpp.h` | String processing + formatting |
-| `colorful.h` | ANSI color/style constants |
-| `input.h` | Type‑safe input |
-| `kb.h` | Non‑blocking keyboard input |
-| `maybe.h` | `Maybe<T>` optional value |
-| `box.h` | Heterogeneous `Box` + `Item` |
-| `adapter.h` | `Stack`/`Queue`/`PriorityQueue` |
-| `iter.h` | `zip()` iterator adapter |
-| `gen.h` | Generators (range, map, filter, take, skip) |
-| `multiarray.h` | Compile‑time multi‑dimensional array |
-| `matools.h` | Math tools for MultiArray |
-| `rational.h` | Fraction arithmetic |
-| `time.h` | Time/timer/sleep utilities |
-| `random.h` | Random number generation |
-| `file.h` | Cross‑platform file operations |
-| `re.h` | Python‑style regex |
-| `config.h` | INI configuration parsing |
-| `progress.h` | Progress bar display |
-| `screen.h` | Braille bitmap screen |
-| `crypto.h` | SHA256/MD5/Base64/AES |
-| `syscmd.h` | System command execution |
-| `info.h` | Version/platform/compiler info |
-| `csexc.h` | Custom exceptions |
-| `sfinae.h` | Type trait detection |
-| `repr.h` | Python‑style `repr()` |
-| `literals.h` | Time/formatting literals |
-| `view.h` | Non‑owning container view |
-| `cursor_ptr.h` | Dual‑pointer cursor smart pointer |
-| `win/melody.h` | Windows MIDI music (requires winmm linkage) |
-
----
-
-## 🛠️ Build & Dependencies
-
-### Windows (MIDI Support)
-
-To use MIDI functionality (`win/melody.h`), link against `winmm`:
-
-```bash
-# g++
-g++ -std=c++11 main.cpp -lwinmm
-
-# MSVC
-cl /EHsc main.cpp winmm.lib
-```
-
-### Otherwise
-
-No additional linking required — just include the headers.
-
----
-
-## 📝 Namespace
-
-All functionality resides in the `console` namespace:
-
-```cpp
-using namespace console;  // Recommended in source files
-// Or explicitly: console::print, console::range, etc.
-```
-
----
-
-## 🤝 Contributing
-
-Issues and Pull Requests are welcome!
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
-```
-Copyright (c) 2026 MrXie1109
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions...
-```
-
----
-
-## 💬 Author
-
-**MrXie1109**
-
-- GitHub: [@MrXie1109](https://github.com/MrXie1109)
-- Documentation: https://mrxie1109.github.io/console---make-cpp-easy/
-
----
-
-## 🌟 Acknowledgments
-
-Thanks to all who use and provide feedback! If this library helps you, please give it a **Star** ⭐ on GitHub!
+> **console —— Make C++ Easy.**
