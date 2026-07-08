@@ -99,7 +99,7 @@ SOFTWARE.)";
      * -- "Commit Message"。
      */
     inline std::string version() {
-        return "console version 5.8.5 (2026-07-05) -- \"Oh!! Exam!!!\"";
+        return "console version 5.9.0 (2026-07-08) -- \"My Score is 680/760!\"";
     }
 
     /**

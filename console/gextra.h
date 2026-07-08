@@ -617,7 +617,7 @@ namespace console {
          * @param filename 文件名。
          * @return FileLines 文件行生成器。
          */
-        FileLines file_lines(const std::string &filename) {
+        inline FileLines file_lines(const std::string &filename) {
             return FileLines(filename);
         }
 
@@ -628,9 +628,9 @@ namespace console {
          * @param mode 文件打开模式，默认为std::ios::in。
          * @return FileChunks 文件块生成器。
          */
-        FileChunks file_chunks(const std::string &filename,
-            size_t                                chunk_size = 1024,
-            std::ios_base::openmode               mode       = std::ios::in) {
+        inline FileChunks file_chunks(const std::string &filename,
+            size_t                                       chunk_size = 1024,
+            std::ios_base::openmode                      mode = std::ios::in) {
             return FileChunks(filename, chunk_size, mode);
         }
 
@@ -665,7 +665,7 @@ namespace console {
          * @param size 窗口大小，默认为16。
          * @return window_t 窗口适配器。
          */
-        window_t window(size_t size = 16) {
+        inline window_t window(size_t size = 16) {
             return window_t(size);
         }
 
@@ -700,7 +700,7 @@ namespace console {
          * @param size 块大小，默认为16。
          * @return chunk_t 分块适配器。
          */
-        chunk_t chunk(size_t size = 16) {
+        inline chunk_t chunk(size_t size = 16) {
             return chunk_t(size);
         }
 
@@ -775,7 +775,7 @@ namespace console {
          * @param size 步长，默认为1。
          * @return step_by_t 步进适配器。
          */
-        step_by_t step_by(size_t size = 1) {
+        inline step_by_t step_by(size_t size = 1) {
             return step_by_t(size);
         }
 
@@ -814,7 +814,7 @@ namespace console {
          * @param os 输出流，默认为std::cout。
          * @return debug_t 调试适配器。
          */
-        debug_t
+        inline debug_t
         debug(std::string msg = "DEBUG: ", std::ostream &os = std::cout) {
             return debug_t{msg, os};
         }
@@ -1308,9 +1308,8 @@ namespace console {
              * @return *std::max_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto
-            operator()(const Container &c) const -> decltype(*std::max_element(
-                                                     c.begin(), c.end())) {
+            auto operator()(const Container &c) const
+                -> decltype(*std::max_element(c.begin(), c.end())) {
                 return *std::max_element(c.begin(), c.end());
             }
         };
@@ -1327,9 +1326,8 @@ namespace console {
              * @return *std::min_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto
-            operator()(const Container &c) const -> decltype(*std::min_element(
-                                                     c.begin(), c.end())) {
+            auto operator()(const Container &c) const
+                -> decltype(*std::min_element(c.begin(), c.end())) {
                 return *std::min_element(c.begin(), c.end());
             }
         };
@@ -1346,10 +1344,8 @@ namespace console {
              * @return 元素总和。
              */
             template <class Range>
-            auto
-            operator()(Range r) const -> decltype(std::accumulate(r.begin(),
-                                          r.end(),
-                                          typename Range::value_type{})) {
+            auto operator()(Range r) const -> decltype(std::accumulate(
+                r.begin(), r.end(), typename Range::value_type{})) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{});
             }
@@ -1367,11 +1363,11 @@ namespace console {
              * @return 元素平均值。
              */
             template <class Range>
-            auto operator()(
-                Range r) const -> decltype(std::accumulate(r.begin(),
-                                               r.end(),
-                                               typename Range::value_type{})
-                                           / r.size()) {
+            auto operator()(Range r) const
+                -> decltype(std::accumulate(r.begin(),
+                                r.end(),
+                                typename Range::value_type{})
+                            / r.size()) {
                 using T = typename Range::value_type;
                 return std::accumulate(r.begin(), r.end(), T{}) / r.size();
             }
