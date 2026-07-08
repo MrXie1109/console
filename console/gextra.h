@@ -35,6 +35,7 @@ SOFTWARE.
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <tuple>
 
 #include "gen.h"
 #include "sfinae.h"
@@ -541,43 +542,95 @@ namespace console {
             void advance() { gen.advance(); }
         };
 
+        /**
+         * @brief 管道类模板，用于组合多个适配器。
+         * @tparam Ops 适配器类型列表。
+         * @details 将多个适配器组合成一个管道，按顺序应用到生成器上。
+         *          支持通过 operator| 将管道应用到生成器，或通过 operator% 组合适配器。
+         */
         template <class... Ops>
         class Pipeline;
 
+        /**
+         * @brief 单适配器管道特化。
+         * @tparam Op 适配器类型。
+         */
         template <class Op>
         class Pipeline<Op> {
-            Op op;
+            Op op; ///< 存储的适配器对象。
 
         public:
+            /**
+             * @brief 构造函数。
+             * @param o 适配器对象。
+             */
             Pipeline(Op o) : op(o) {}
 
+            /**
+             * @brief 将管道应用到生成器。
+             * @tparam Gen 源生成器类型。
+             * @param gen 源生成器。
+             * @return 应用适配器后的生成器。
+             */
             template <class Gen>
             auto operator()(Gen gen) const -> decltype(gen | op) {
                 return gen | op;
             }
         };
 
+        /**
+         * @brief 多适配器管道特化。
+         * @tparam Op 第一个适配器类型。
+         * @tparam Rest 其余适配器类型。
+         */
         template <class Op, class... Rest>
         class Pipeline<Op, Rest...> {
-            Op                op;
-            Pipeline<Rest...> rest;
+            Op                op; ///< 第一个适配器对象。
+            Pipeline<Rest...> rest; ///< 剩余适配器组成的管道。
 
         public:
+            /**
+             * @brief 构造函数。
+             * @param o 第一个适配器对象。
+             * @param r 其余适配器对象。
+             */
             Pipeline(Op o, Rest... r) : op(o), rest(r...) {}
 
+            /**
+             * @brief 将管道应用到生成器。
+             * @tparam Gen 源生成器类型。
+             * @param gen 源生成器。
+             * @return 依次应用所有适配器后的生成器。
+             */
             template <class Gen>
             auto operator()(Gen gen) const -> decltype(rest(gen | op)) {
                 return rest(gen | op);
             }
         };
 
+        /**
+         * @brief 管道适配器类，用于支持管道操作符。
+         * @tparam Ops 适配器类型列表。
+         * @details 包装 Pipeline 对象，提供 operator| 支持。
+         */
         template <class... Ops>
         class pipeline_t {
-            Pipeline<Ops...> pipeline;
+            Pipeline<Ops...> pipeline; ///< 内部管道对象。
 
         public:
+            /**
+             * @brief 构造函数。
+             * @param ops 适配器对象。
+             */
             pipeline_t(Ops... ops) : pipeline(ops...) {}
 
+            /**
+             * @brief 管道操作符，将管道应用到生成器。
+             * @tparam Gen 源生成器类型。
+             * @param gen 源生成器。
+             * @param pl 管道适配器。
+             * @return 应用管道后的生成器。
+             */
             template <class Gen>
             friend auto
             operator|(Gen gen, pipeline_t pl) -> decltype(pl.pipeline(gen)) {
@@ -585,15 +638,65 @@ namespace console {
             }
         };
 
+        /**
+         * @brief 创建管道适配器。
+         * @tparam Ops 适配器类型列表。
+         * @param ops 适配器对象。
+         * @return pipeline_t<Ops...> 管道适配器。
+         * @details 用于将多个适配器组合成一个管道。
+         */
         template <class... Ops>
         pipeline_t<Ops...> pipeline(Ops... ops) {
             return pipeline_t<Ops...>(ops...);
         }
 
+        /**
+         * @brief 管道组合操作符，用于连接两个适配器。
+         * @tparam Op1 第一个适配器类型。
+         * @tparam Op2 第二个适配器类型。
+         * @param op1 第一个适配器。
+         * @param op2 第二个适配器。
+         * @return pipeline_t<Op1, Op2> 组合后的管道适配器。
+         * @details 等价于 pipeline(op1, op2)，提供更简洁的语法。
+         */
         template <class Op1, class Op2>
-        pipeline_t<Op1, Op2> operator>>(Op1 op1, Op2 op2) {
+        pipeline_t<Op1, Op2> operator%(Op1 op1, Op2 op2) {
             return pipeline(op1, op2);
         }
+
+        template <class Gen, class T, class BinaryOp>
+        class Scan : public Generator<Scan<Gen, T, BinaryOp>, T> {
+            Gen      gen;
+            T        state;
+            BinaryOp op;
+            bool     started = false;
+
+            void lazy_init() {
+                if (!started) {
+                    state   = op(state, gen.current());
+                    started = true;
+                }
+            }
+
+        public:
+            Scan(Gen g, T init, BinaryOp o) : gen(g), state(init), op(o) {}
+
+            bool done() {
+                lazy_init();
+                return gen.done();
+            }
+
+            T current() {
+                lazy_init();
+                return state;
+            }
+
+            void advance() {
+                lazy_init();
+                gen.advance();
+                if (!gen.done()) state = op(state, gen.current());
+            }
+        };
 
         // =====================================================================
 
@@ -940,6 +1043,45 @@ namespace console {
         template <class T, class BinaryOp>
         reduce_t<T, BinaryOp> reduce(const T &init, BinaryOp bo) {
             return reduce_t<T, BinaryOp>(init, bo);
+        }
+
+        template <class T, class BinaryOp>
+        class scan_t {
+            T        state;
+            BinaryOp op;
+
+        public:
+            /**
+             * @brief 构造函数。
+             * @param init 初始值。
+             * @param op 二元操作符。
+             */
+            scan_t(const T &init, BinaryOp op) : state(init), op(op) {}
+
+            /**
+             * @brief 将扫描适配器应用到生成器。
+             * @tparam Gen 源生成器类型。
+             * @param gen 源生成器。
+             * @return 应用扫描适配器后的生成器。
+             */
+            template <class Gen>
+            friend Scan<Gen, T, BinaryOp>
+            operator|(Gen gen, scan_t<T, BinaryOp> scan) {
+                return Scan<Gen, T, BinaryOp>(gen, scan.state, scan.op);
+            }
+        };
+
+        /**
+         * @brief 创建一个扫描适配器。
+         * @tparam T 扫描状态类型。
+         * @tparam BinaryOp 二元操作符类型。
+         * @param init 初始值。
+         * @param op 二元操作符。
+         * @return 扫描适配器。
+         */
+        template <class T, class BinaryOp>
+        scan_t<T, BinaryOp> scan(T init, BinaryOp op) {
+            return scan_t<T, BinaryOp>(init, op);
         }
     }
 
@@ -1308,8 +1450,9 @@ namespace console {
              * @return *std::max_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto operator()(const Container &c) const
-                -> decltype(*std::max_element(c.begin(), c.end())) {
+            auto operator()(const Container &c) const ->
+                typename std::decay<decltype(*std::max_element(
+                    c.begin(), c.end()))>::type {
                 return *std::max_element(c.begin(), c.end());
             }
         };
@@ -1326,8 +1469,9 @@ namespace console {
              * @return *std::min_element(c.begin(), c.end())。
              */
             template <class Container>
-            auto operator()(const Container &c) const
-                -> decltype(*std::min_element(c.begin(), c.end())) {
+            auto operator()(const Container &c) const ->
+                typename std::decay<decltype(*std::min_element(
+                    c.begin(), c.end()))>::type {
                 return *std::min_element(c.begin(), c.end());
             }
         };
@@ -1686,5 +1830,58 @@ namespace console {
         };
 
         static constexpr modulus_t modulus;
+
+        struct is_null_t {
+            /**
+             * @brief 判断指针是否非空。
+             * @param p 输入指针。
+             * @return p != nullptr。
+             */
+            template <class T>
+            bool operator()(const T &p) const {
+                return p == nullptr;
+            }
+        };
+
+        static constexpr is_null_t is_null;
+
+        struct not_null_t {
+            /**
+             * @brief 判断指针是否非空。
+             * @param p 输入指针。
+             * @return p != nullptr。
+             */
+            template <class T>
+            bool operator()(const T &p) const {
+                return p != nullptr;
+            }
+        };
+
+        static constexpr not_null_t not_null;
+
+        template <size_t N>
+        struct nth_t {
+            /**
+             * @brief 获取 tuple/pair/array 的第 N 个元素。
+             * @param t 输入 tuple/pair/array。
+             * @return std::get<N>(t)。
+             */
+            template <class T>
+            auto operator()(T &&t) const //
+                -> typename std::decay<decltype(std::get<N>(
+                    std::forward<T>(t)))>::type {
+                return std::get<N>(std::forward<T>(t));
+            }
+        };
+
+        /**
+         * @brief 获取 tuple/pair/array 的第 N 个元素的函数。
+         * @param N 元素索引。
+         * @return nth_t<N> 对象。
+         */
+        template <size_t N>
+        nth_t<N> nth() {
+            return {};
+        }
     }
 }

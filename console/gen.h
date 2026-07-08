@@ -31,6 +31,7 @@ SOFTWARE.
 
 #pragma once
 #include <cmath>
+#include <console/iter.h>
 #include <cstdlib>
 #include <iterator>
 #include <type_traits>
@@ -237,6 +238,24 @@ namespace console {
             List(std::initializer_list<T> list) : data(list) {}
 
             /**
+             * @brief 构造函数，使用迭代器范围初始化。
+             * @tparam Iterator 迭代器类型。
+             * @param begin 迭代器范围的起始位置。
+             * @param end 迭代器范围的结束位置。
+             */
+            template <class Iterator>
+            List(Iterator begin, Iterator end) : data(begin, end) {}
+
+            /**
+             * @brief 构造函数，使用容器初始化。
+             * @tparam Container 容器类型。
+             * @param container 容器。
+             */
+            template <class Container>
+            List(const Container &container) :
+                data(std::begin(container), std::end(container)) {}
+
+            /**
              * @brief 检查生成器是否已完成。
              */
             bool done() { return idx >= data.size(); }
@@ -341,6 +360,24 @@ namespace console {
             Cycle(std::initializer_list<T> list) : data(list) {}
 
             /**
+             * @brief 构造函数，使用迭代器范围初始化。
+             * @tparam Iterator 迭代器类型。
+             * @param begin 迭代器范围的起始位置。
+             * @param end 迭代器范围的结束位置。
+             */
+            template <class Iterator>
+            Cycle(Iterator begin, Iterator end) : data(begin, end) {}
+
+            /**
+             * @brief 构造函数，使用容器初始化。
+             * @tparam Container 容器类型。
+             * @param container 容器。
+             */
+            template <class Container>
+            Cycle(const Container &container) :
+                data(std::begin(container), std::end(container)) {}
+
+            /**
              * @brief 检查生成器是否已完成。
              * @return 始终返回false（无限循环）。
              */
@@ -417,11 +454,13 @@ namespace console {
         template <class Gen, class Func>
         class Map
             : public Generator<Map<Gen, Func>,
-                  decltype(std::declval<Func>()(
-                      std::declval<typename Gen::iterator::value_type>()))> {
+                  typename std::decay<decltype(std::declval<Func>()(
+                      std::declval<typename Gen::iterator::value_type>()))>::
+                      type> {
             Gen  gen;
             Func func;
-            using ResultType = decltype(func(gen.current()));
+            using ResultType =
+                typename std::decay<decltype(func(gen.current()))>::type;
 
         public:
             /**
@@ -836,6 +875,33 @@ namespace console {
         }
 
         /**
+         * @brief 从迭代器范围创建列表生成器。
+         * @tparam Iterator 迭代器类型（自动推导）。
+         * @param begin 起始迭代器。
+         * @param end 结束迭代器。
+         * @return List<typename std::decay<typename Iterator::value_type>::type> 列表生成器。
+         */
+        template <class Iterator>
+        List<typename std::decay<typename Iterator::value_type>::type>
+        list(Iterator begin, Iterator end) {
+            return List<
+                typename std::decay<typename Iterator::value_type>::type>(
+                begin, end);
+        }
+
+        /**
+         * @brief 从容器引用创建列表生成器。
+         * @tparam Container 容器类型（自动推导）。
+         * @param container 容器引用。
+         * @return List<typename Container::value_type> 列表生成器。
+         */
+        template <class Container>
+        List<typename Container::value_type> list(Container &container) {
+            return List<typename Container::value_type>(
+                std::begin(container), std::end(container));
+        }
+
+        /**
          * @brief 创建范围生成器。
          * @tparam T 数值类型。
          * @param begin 起始值。
@@ -869,6 +935,35 @@ namespace console {
         template <class T>
         Cycle<T> cycle(std::initializer_list<T> list) {
             return Cycle<T>(list);
+        }
+
+        /**
+         * @brief 创建循环生成器。
+         * @tparam Iterator 迭代器类型。
+         * @param begin 起始迭代器。
+         * @param end 结束迭代器。
+         * @return Cycle<typename std::decay<typename Iterator::value_type>::type> 循环生成器。
+         */
+        template <class Iterator>
+        Cycle<typename std::decay<typename Iterator::value_type>::type>
+        cycle(Iterator begin, Iterator end) {
+            return Cycle<
+                typename std::decay<typename Iterator::value_type>::type>(
+                begin, end);
+        }
+
+        /**
+         * @brief 创建循环生成器。
+         * @tparam Container 容器类型。
+         * @param container 容器。
+         * @return Cycle<typename Container::value_type> 循环生成器。
+         */
+        template <class Container>
+        Cycle<typename Container::value_type>
+        cycle(const Container &container) {
+            return Cycle<
+                typename std::decay<typename Container::value_type>::type>(
+                container.begin(), container.end());
         }
 
         /**
@@ -1128,7 +1223,8 @@ namespace console {
              * 包含收集到的元素的vector。
              */
             template <class Range, class>
-            static std::vector<typename Range::value_type>
+            static std::vector<
+                typename std::decay<typename Range::value_type>::type>
             impl(Range r, std::true_type) {
                 return {r.begin(), r.end()};
             }
@@ -1186,9 +1282,8 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(
-            Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(std::forward<Gen1>(g1),
-                                      std::forward<Gen2>(g2))) {
+        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
+            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }
@@ -1739,7 +1834,8 @@ namespace console {
              * @return obj.*ptr。
              */
             template <class T>
-            auto operator()(const T &obj) const -> decltype(obj.*ptr) {
+            auto operator()(const T &obj) const ->
+                typename std::decay<decltype(obj.*ptr)>::type {
                 return obj.*ptr;
             }
         };
@@ -1754,7 +1850,7 @@ namespace console {
              * @return p.first。
              */
             template <class Pair>
-            auto operator()(const Pair &p) const -> decltype(p.first) {
+            typename Pair::first_type operator()(const Pair &p) const {
                 return p.first;
             }
         };
@@ -1771,7 +1867,7 @@ namespace console {
              * @return p.second。
              */
             template <class Pair>
-            auto operator()(const Pair &p) const -> decltype(p.second) {
+            typename Pair::second_type operator()(const Pair &p) const {
                 return p.second;
             }
         };
