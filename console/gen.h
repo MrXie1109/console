@@ -31,7 +31,6 @@ SOFTWARE.
 
 #pragma once
 #include <cmath>
-#include <console/iter.h>
 #include <cstdlib>
 #include <iterator>
 #include <type_traits>
@@ -39,6 +38,7 @@ SOFTWARE.
 #include <vector>
 
 #include "csexc.h"
+#include "iter.h"
 
 namespace console {
     /**
@@ -1282,8 +1282,9 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
-            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
+        auto operator&(
+            Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(std::forward<Gen1>(g1),
+                                      std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }

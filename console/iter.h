@@ -1,9 +1,8 @@
 /**
  * @file iter.h
  * @brief 提供些许关于迭代器的拓展功能。
- * @details 本文件提供了两个主要工具：IteratorPair
- * 用于将迭代器对包装为可范围遍历的对象， 以及 zip
- * 函数族用于同时遍历两个容器，并在较短者结束时自动停止。
+ * @details 本文件提供了两个主要工具：IteratorPair用于将迭代器对包装为可范围遍历的对象，
+ *          以及 zip 函数族用于同时遍历两个容器，并在较短者结束时自动停止。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -95,12 +94,12 @@ namespace console {
         It2 it2; ///< 迭代器B
 
     public:
-        typedef std::pair<typename It1::value_type,
-            typename It2::value_type>
+        typedef std::pair<typename std::iterator_traits<It1>::value_type,
+            typename std::iterator_traits<It2>::value_type>
                      value_type; ///< 类型别名
         typedef void pointer; ///< 类型别名（不实际使用）
-        typedef std::pair<typename It1::reference,
-            typename It2::reference>
+        typedef std::pair<typename std::iterator_traits<It1>::reference,
+            typename std::iterator_traits<It2>::reference>
                                           reference; ///< 类型别名
         typedef std::forward_iterator_tag iterator_category; ///< 类型别名
         typedef std::ptrdiff_t            difference_type; ///< 类型别名

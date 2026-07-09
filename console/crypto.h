@@ -55,7 +55,8 @@ namespace console {
             /**
              * @brief SHA256算法使用的常量K数组。
              */
-            static constexpr uint32_t K[64] = {0x428a2f98,
+            static constexpr uint32_t K[64] = { //
+                0x428a2f98,
                 0x71374491,
                 0xb5c0fbcf,
                 0xe9b5dba5,
@@ -240,14 +241,15 @@ namespace console {
          */
         inline std::string sha256(const std::string &input) {
             using namespace sha256_impl;
-            uint32_t             state[8] = {0x6a09e667,
-                            0xbb67ae85,
-                            0x3c6ef372,
-                            0xa54ff53a,
-                            0x510e527f,
-                            0x9b05688c,
-                            0x1f83d9ab,
-                            0x5be0cd19};
+            uint32_t             state[8] = {//
+                0x6a09e667,
+                0xbb67ae85,
+                0x3c6ef372,
+                0xa54ff53a,
+                0x510e527f,
+                0x9b05688c,
+                0x1f83d9ab,
+                0x5be0cd19};
             std::vector<uint8_t> data(input.begin(), input.end());
             uint64_t             bit_len = data.size() * 8;
             data.push_back(0x80);
@@ -272,14 +274,15 @@ namespace console {
             std::ifstream file(filename, std::ios::binary);
             if (!file.is_open()) return "Cannot open file: " + filename;
             using namespace sha256_impl;
-            uint32_t             state[8] = {0x6a09e667,
-                            0xbb67ae85,
-                            0x3c6ef372,
-                            0xa54ff53a,
-                            0x510e527f,
-                            0x9b05688c,
-                            0x1f83d9ab,
-                            0x5be0cd19};
+            uint32_t             state[8] = {//
+                0x6a09e667,
+                0xbb67ae85,
+                0x3c6ef372,
+                0xa54ff53a,
+                0x510e527f,
+                0x9b05688c,
+                0x1f83d9ab,
+                0x5be0cd19};
             std::vector<uint8_t> buffer(64);
             uint64_t             total_bits = 0;
             while (file.read(reinterpret_cast<char *>(buffer.data()), 64)) {
@@ -311,7 +314,8 @@ namespace console {
             /**
              * @brief MD5算法中每轮循环使用的左移位数数组。
              */
-            static constexpr uint32_t S[64] = {7,
+            static constexpr uint32_t S[64] = { //
+                7,
                 12,
                 17,
                 22,
@@ -379,7 +383,8 @@ namespace console {
             /**
              * @brief MD5算法中使用的常量K数组。
              */
-            static constexpr uint32_t K[64] = {0xd76aa478,
+            static constexpr uint32_t K[64] = { //
+                0xd76aa478,
                 0xe8c7b756,
                 0x242070db,
                 0xc1bdceee,
@@ -604,9 +609,9 @@ namespace console {
          */
         inline std::string base64_decode(const std::string &input) {
             static const std::string base64_chars
-                = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567"
-                  "89"
-                  "+/";
+                = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" //
+                  "abcdefghijklmnopqrstuvwxyz" //
+                  "0123456789+/";
             std::string result;
             result.reserve(input.size() / 4 * 3);
             uint32_t buffer         = 0;
@@ -634,7 +639,8 @@ namespace console {
             /**
              * @brief AES算法的S盒，用于字节替换。
              */
-            static constexpr uint8_t Sbox[256] = {0x63,
+            static constexpr uint8_t Sbox[256] = { //
+                0x63,
                 0x7c,
                 0x77,
                 0x7b,
@@ -894,7 +900,8 @@ namespace console {
             /**
              * @brief AES算法的逆S盒，用于解密时的字节替换。
              */
-            static constexpr uint8_t InvSbox[256] = {0x52,
+            static constexpr uint8_t InvSbox[256] = { //
+                0x52,
                 0x09,
                 0x6a,
                 0xd5,

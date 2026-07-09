@@ -36,6 +36,7 @@ SOFTWARE.
 #include <deque>
 #include <queue>
 #include <stack>
+#include <string>
 #include <utility>
 #include <vector>
 
