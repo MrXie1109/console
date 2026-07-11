@@ -35,31 +35,35 @@ SOFTWARE.
 namespace console {
     /**
      * @brief 如果是字符和串或字符，直接输出，不含引号。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam StrOrCharType
      * @param os 输出流。
      * @param value 要输出的值。
      * @note 直接输出。
      */
-    template <class StrOrCharType>
+    template <class CharT, class Traits, class StrOrCharType>
     typename std::enable_if<
         is_string<typename std::decay<StrOrCharType>::type>::value
         || is_char<typename std::decay<StrOrCharType>::type>::value>::type
-    put(std::ostream &os, StrOrCharType &&value) {
+    put(std::basic_ostream<CharT, Traits> &os, StrOrCharType &&value) {
         os << value;
     }
 
     /**
      * @brief 否则，调用 repr 格式化。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam OtherType
      * @param os 输出流。
      * @param value 要输出的值。
      * @note 调用 repr(value, os)。
      */
-    template <class OtherType>
+    template <class CharT, class Traits, class OtherType>
     typename std::enable_if<
         !is_string<typename std::decay<OtherType>::type>::value
         && !is_char<typename std::decay<OtherType>::type>::value>::type
-    put(std::ostream &os, OtherType &&value) {
-        repr(value, os);
+    put(std::basic_ostream<CharT, Traits> &os, OtherType &&value) {
+        repr<CharT, Traits>(value, os);
     }
 }

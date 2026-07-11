@@ -149,6 +149,23 @@ namespace console {
         iterator end() { return iter(); }
 
         typedef T value_type; ///< 生成器产生的值类型。
+
+        /**
+         * @brief 检查生成器是否已完成。
+         * @return 如果已完成返回true，否则返回false。
+         */
+        bool done() { return static_cast<Derived &>(*this).done(); }
+
+        /**
+         * @brief 获取当前值。
+         * @return 当前值。
+         */
+        T current() { return static_cast<Derived &>(*this).current(); }
+
+        /**
+         * @brief 推进生成器到下一个位置。
+         */
+        void advance() { static_cast<Derived &>(*this).advance(); }
     };
 
     /**
@@ -1282,9 +1299,8 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(
-            Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(std::forward<Gen1>(g1),
-                                      std::forward<Gen2>(g2))) {
+        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
+            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }

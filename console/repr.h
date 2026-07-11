@@ -50,11 +50,11 @@ namespace console {
      */
 
     /**
-     * @brief 获取类型信息的可读名称（跨平台 demangle）。
+     * @brief 获取类型信息的可读名称（跨平台 demangle），返回 std::string。
      * @param ti std::type_info 对象。
      * @return std::string 人类可读的类型名。
      */
-    inline std::string tiname(const std::type_info &ti) {
+    inline std::string tiname_impl(const std::type_info &ti) {
 #ifdef _MSC_VER
         return ti.name();
 #elif defined(__GNUG__)
@@ -68,64 +68,98 @@ namespace console {
 #endif
     }
 
+    /** @brief tiname_impl 的 char 版别名。 */
+    inline std::string tiname(const std::type_info &ti) {
+        return tiname_impl(ti);
+    }
+    /** @brief tiname_impl 的 wchar_t 版。 */
+    inline std::wstring wtiname(const std::type_info &ti) {
+        auto s = tiname_impl(ti);
+        return std::wstring(s.begin(), s.end());
+    }
+    /** @brief tiname_impl 的 char16_t 版。 */
+    inline std::u16string u16tiname(const std::type_info &ti) {
+        auto s = tiname_impl(ti);
+        return std::u16string(s.begin(), s.end());
+    }
+    /** @brief tiname_impl 的 char32_t 版。 */
+    inline std::u32string u32tiname(const std::type_info &ti) {
+        auto s = tiname_impl(ti);
+        return std::u32string(s.begin(), s.end());
+    }
+
 #ifndef CONSOLE_PLAIN_REPR
     /**
      * @brief 输出字符串类型（std::string, const char* 等）的表示，带双引号。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 字符串类型（由 enable_if_string 约束）。
      * @param value 要输出的值。
      * @param os 输出流，默认为 std::cout。
      */
-    template <class T>
-    enable_if_string<T> repr(T &&value, std::ostream &os = std::cout) {
-        os << '"' << value << '"';
+    template <class CharT, class Traits, class T>
+    typename std::enable_if<
+        is_string<typename std::decay<T>::type>::value>::type
+    repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
+        os << CharT('"') << value << CharT('"');
     }
 
     /**
      * @brief 输出字符类型的表示，带单引号。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 字符类型（由 enable_if_char 约束）。
      * @param value 要输出的字符。
      * @param os 输出流，默认为 std::cout。
      */
-    template <class T>
-    enable_if_char<T> repr(T &&value, std::ostream &os = std::cout) {
-        os << "'" << value << "'";
+    template <class CharT, class Traits, class T>
+    typename std::enable_if<is_char<typename std::decay<T>::type>::value>::type
+    repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
+        os << CharT('\'') << value << CharT('\'');
     }
 
     /**
      * @brief 输出布尔值的表示（"true" 或 "false"）。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 必须是 bool 类型。
      * @param value 布尔值。
      * @param os 输出流。
      */
-    template <class T>
+    template <class CharT, class Traits, class T>
     typename std::enable_if<
         std::is_same<typename std::decay<T>::type, bool>::value>::type
-    repr(T &&value, std::ostream &os = std::cout) {
+    repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << (value ? "true" : "false");
     }
 
     /**
      * @brief 输出 nullptr 的表示。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 必须是 std::nullptr_t。
      * @param value nullptr。
      * @param os 输出流。
      */
-    template <class T>
+    template <class CharT, class Traits, class T>
     typename std::enable_if<
         std::is_same<typename std::decay<T>::type, std::nullptr_t>::value>::type
-    repr(T &&, std::ostream &os = std::cout) {
+    repr(T &&, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << "<nullptr>";
     }
 
     /**
      * @brief 输出函数指针的表示，格式为 "<function at 地址>"。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Ret 函数返回类型。
      * @tparam Args 函数参数类型包。
      * @param f 函数指针。
      * @param os 输出流。
      */
-    template <class Ret, class... Args>
-    void repr(Ret (*f)(Args...), std::ostream &os = std::cout) {
+    template <class CharT, class Traits, class Ret, class... Args>
+    void
+    repr(Ret (*f)(Args...), std::basic_ostream<CharT, Traits> &os = std::cout) {
         if (f)
             os << "<function at " << (void *)f << '>';
         else
@@ -134,49 +168,56 @@ namespace console {
 
     /**
      * @brief 输出可打印类型（定义了 operator<<）的表示，直接输出值。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 类型条件：不是 bool，不是字符串，不是字符，不是函数指针，且
      * is_printable<T>::value 为 true。
      * @param value 要输出的值。
      * @param os 输出流。
      */
-    template <class T>
+    template <class CharT, class Traits, class T>
     typename std::enable_if<
         !std::is_same<typename std::decay<T>::type, bool>::value
         && !std::is_same<typename std::decay<T>::type, std::nullptr_t>::value
         && !is_string<typename std::decay<T>::type>::value
         && !is_char<typename std::decay<T>::type>::value
         && !std::is_function<typename std::decay<T>::type>::value
-        && is_printable<typename std::decay<T>::type>::value>::type
-    repr(T &&value, std::ostream &os = std::cout) {
+        && is_basic_printable<CharT, Traits, typename std::decay<T>::type>::
+            value>::type
+    repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << value;
     }
 
     /**
      * @brief 输出不可打印类型的表示，格式为 "<'类型名' object at 地址>"。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T 类型条件：不是 nullptr，不是字符串，不是字符，且
-     * is_printable<T>::value 为 false。
+     * is_basic_printable<T>::value 为 false。
      * @param value 要输出的对象。
      * @param os 输出流。
      */
-    template <class T>
+    template <class CharT, class Traits, class T>
     typename std::enable_if<
         !std::is_same<typename std::decay<T>::type, std::nullptr_t>::value
         && !is_string<typename std::decay<T>::type>::value
         && !is_char<typename std::decay<T>::type>::value
-        && !is_printable<typename std::decay<T>::type>::value>::type
-    repr(T &&value, std::ostream &os = std::cout) {
-        os << "<'" << tiname(typeid(typename std::decay<T>::type))
+        && !is_basic_printable<CharT, Traits, typename std::decay<T>::type>::
+            value>::type
+    repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
+        os << "<'" << tiname_impl(typeid(typename std::decay<T>::type))
            << "' object at " << &value << '>';
     }
 
-    template <class T>
-    void repr(std::reference_wrapper<T> v, std::ostream &os = std::cout) {
-        repr(v.get(), os);
+    template <class CharT, class Traits, class T>
+    void repr(std::reference_wrapper<T>    v,
+        std::basic_ostream<CharT, Traits> &os = std::cout) {
+        repr<CharT, Traits>(v.get(), os);
     }
 
 #else
-    template <class T>
-    void repr(T &&value, std::ostream &os = std::cout) {
+    template <class CharT, class Traits, class T>
+    void repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << std::forward<T>(value);
     }
 #endif

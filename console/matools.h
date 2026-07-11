@@ -693,10 +693,14 @@ namespace console {
      * @param arr 输入数组。
      * @param name 数组名称（可选），若提供则打印标题。
      */
-    template <class T, size_t... Dims>
-    void print_stats(std::ostream    &os,
-        const MultiArray<T, Dims...> &arr,
-        const char                   *name = "") {
+    template < //
+        class T,
+        size_t... Dims,
+        class CharT,
+        class Traits = std::char_traits<CharT>>
+    void print_stats(std::basic_ostream<CharT, Traits> &os,
+        const MultiArray<T, Dims...>                   &arr,
+        const char                                     *name = "") {
         if (name && *name) os << "=== " << name << " ===" << '\n';
         os << "  sum   : " << sum(arr) << '\n';
         os << "  mean  : " << mean(arr) << '\n';

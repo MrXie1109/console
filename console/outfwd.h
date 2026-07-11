@@ -2,7 +2,7 @@
  * @file outfwd.h
  * @brief 为 STL 容器提供输出流运算符的前向声明。
  * @details 该头文件声明了 console 命名空间中针对各种 STL 容器的 operator<<
- * 重载， 用于支持将这些容器直接输出到 std::ostream。实际定义在 output.h 中。
+ * 重载，用于支持将这些容器直接输出到 std::basic_ostream。实际定义在 output.h 中。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -52,70 +52,86 @@ namespace console {
      */
 
     /// @brief std::vector 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::vector<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::vector<T> &);
 
     /// @brief std::deque 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::deque<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::deque<T> &);
 
     /// @brief std::list 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::list<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::list<T> &);
 
     /// @brief std::forward_list 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::forward_list<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::forward_list<T> &);
 
     /// @brief std::array 输出声明。
-    template <class T, size_t n>
-    std::ostream &operator<<(std::ostream &, const std::array<T, n> &);
+    template <class CharT, class Traits, class T, size_t n>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::array<T, n> &);
 
     /// @brief std::set 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::set<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::set<T> &);
 
     /// @brief std::map 输出声明。
-    template <class K, class V>
-    std::ostream &operator<<(std::ostream &, const std::map<K, V> &);
+    template <class CharT, class Traits, class K, class V>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::map<K, V> &);
 
     /// @brief std::multiset 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::multiset<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::multiset<T> &);
 
     /// @brief std::multimap 输出声明。
-    template <class K, class V>
-    std::ostream &operator<<(std::ostream &, const std::multimap<K, V> &);
+    template <class CharT, class Traits, class K, class V>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::multimap<K, V> &);
 
     /// @brief std::unordered_set 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::unordered_set<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::unordered_set<T> &);
 
     /// @brief std::unordered_map 输出声明。
-    template <class K, class V>
-    std::ostream &operator<<(std::ostream &, const std::unordered_map<K, V> &);
+    template <class CharT, class Traits, class K, class V>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::unordered_map<K, V> &);
 
     /// @brief std::unordered_multiset 输出声明。
-    template <class T>
-    std::ostream &
-    operator<<(std::ostream &, const std::unordered_multiset<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::unordered_multiset<T> &);
 
     /// @brief std::unordered_multimap 输出声明。
-    template <class K, class V>
-    std::ostream &
-    operator<<(std::ostream &, const std::unordered_multimap<K, V> &);
+    template <class CharT, class Traits, class K, class V>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::unordered_multimap<K, V> &);
 
     /// @brief std::pair 输出声明。
-    template <class T, class U>
-    std::ostream &operator<<(std::ostream &, const std::pair<T, U> &);
+    template <class CharT, class Traits, class T, class U>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::pair<T, U> &);
 
     /// @brief std::tuple 输出声明。
-    template <class... Args>
-    std::ostream &operator<<(std::ostream &, const std::tuple<Args...> &);
+    template <class CharT, class Traits, class... Args>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::tuple<Args...> &);
 
     /// @brief std::valarray 输出声明。
-    template <class T>
-    std::ostream &operator<<(std::ostream &, const std::valarray<T> &);
+    template <class CharT, class Traits, class T>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &, const std::valarray<T> &);
 
     /** @} */
 }

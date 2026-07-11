@@ -2,7 +2,7 @@
  * @file output.h
  * @brief 提供 STL 容器的格式化输出和灵活的输出控制工具。
  * @details 该头文件重载了 `operator<<` 使得标准容器（vector, list, set, map
- * 等）、 pair 和 tuple 可以直接输出到流。同时提供了 `Output`
+ * 等）、 pair 和 tuple 可以直接输出到流。同时提供了 `BasicOutput`
  * 类用于灵活控制输出格式， 以及辅助函数 `to_array` 和 `to_vector` 用于将 C
  * 风格数组转换为 STL 容器。
  * @author MrXie1109
@@ -47,69 +47,77 @@ namespace console {
 
     /**
      * @brief 输出序列容器（如 vector, list）的内容，格式为 [a, b, c]。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Cont 容器类型，必须支持 begin()/end() 迭代器。
      * @param os 输出流。
      * @param cont 要输出的容器。
-     * @return std::ostream& 输出流引用。
+     * @return std::basic_ostream<CharT, Traits>& 输出流引用。
      */
-    template <class Cont>
-    inline std::ostream &
-    cont_print_sequence(std::ostream &os, const Cont &cont) {
-        if (begin(cont) == end(cont)) return os << "[]";
+    template <class CharT, class Traits, class Cont>
+    inline std::basic_ostream<CharT, Traits> &cont_print_sequence(
+        std::basic_ostream<CharT, Traits> &os, const Cont &cont) {
+        if (begin(cont) == end(cont)) return os << CharT('[') << CharT(']');
         auto it = begin(cont);
-        os << '[';
-        put(os, *it);
+        os << CharT('[');
+        repr(*it, os);
         while (++it != end(cont)) {
-            os << ", ";
-            put(os, *it);
+            os << CharT(','), os << CharT(' ');
+            repr(*it, os);
         }
-        return os << ']';
+        return os << CharT(']');
     }
 
     /**
      * @brief 输出集合容器（如 set, unordered_set）的内容，格式为 {a, b, c}。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Cont 容器类型，必须支持 begin()/end() 迭代器。
      * @param os 输出流。
      * @param cont 要输出的容器。
-     * @return std::ostream& 输出流引用。
+     * @return std::basic_ostream<CharT, Traits>& 输出流引用。
      */
-    template <class Cont>
-    inline std::ostream &cont_print_set(std::ostream &os, const Cont &cont) {
-        if (begin(cont) == end(cont)) return os << "{}";
+    template <class CharT, class Traits, class Cont>
+    inline std::basic_ostream<CharT, Traits> &
+    cont_print_set(std::basic_ostream<CharT, Traits> &os, const Cont &cont) {
+        if (begin(cont) == end(cont)) return os << CharT('{') << CharT('}');
         auto it = begin(cont);
-        os << '{';
-        put(os, *it);
+        os << CharT('{');
+        repr(*it, os);
         while (++it != end(cont)) {
-            os << ", ";
-            put(os, *it);
+            os << CharT(','), os << CharT(' ');
+            repr(*it, os);
         }
-        return os << '}';
+        return os << CharT('}');
     }
 
     /**
      * @brief 输出映射容器（如 map, unordered_map）的内容，格式为 {key: value,
      * ...}。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Cont 容器类型，其元素必须为 pair<const K, V> 且支持 ->first 和
      * ->second。
      * @param os 输出流。
      * @param cont 要输出的容器。
-     * @return std::ostream& 输出流引用。
+     * @return std::basic_ostream<CharT, Traits>& 输出流引用。
      */
-    template <class Cont>
-    inline std::ostream &cont_print_map(std::ostream &os, const Cont &cont) {
-        if (begin(cont) == end(cont)) return os << "{}";
+    template <class CharT, class Traits, class Cont>
+    inline std::basic_ostream<CharT, Traits> &
+    cont_print_map(std::basic_ostream<CharT, Traits> &os, const Cont &cont) {
+        if (begin(cont) == end(cont)) return os << CharT('{') << CharT('}');
         auto it = begin(cont);
-        os << '{';
-        put(os, it->first);
-        os << ": ";
-        put(os, it->second);
+        os << CharT('{');
+        repr(it->first, os);
+        os << CharT(':'), os << CharT(' ');
+        repr(it->second, os);
         while (++it != end(cont)) {
-            os << ", ";
-            put(os, it->first);
-            os << ": ";
-            put(os, it->second);
+            os << CharT(','), os << CharT(' ');
+            repr(it->first, os);
+            os << CharT(':'), os << CharT(' ');
+            repr(it->second, os);
         }
-        return os << '}';
+        return os << CharT('}');
     }
 
     /** @} */
@@ -122,19 +130,25 @@ namespace console {
 
     /**
      * @brief 递归打印 tuple 的辅助模板（主模板）。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Tuple tuple 类型。
      * @tparam N 当前要打印的最后一个元素的索引（从 1 开始）。
      */
-    template <class Tuple, size_t N = std::tuple_size<Tuple>::value>
-    struct TuplePrinter {
+    template <class CharT,
+        class Traits,
+        class Tuple,
+        size_t N = std::tuple_size<Tuple>::value>
+    struct BasicTuplePrinter {
         /**
          * @brief 递归打印 tuple 元素。
          * @param os 输出流。
          * @param t tuple 对象。
          */
-        static void print(std::ostream &os, const Tuple &t) {
-            TuplePrinter<Tuple, N - 1>::print(os, t);
-            if (N > 1) os << ", ";
+        static void
+        print(std::basic_ostream<CharT, Traits> &os, const Tuple &t) {
+            BasicTuplePrinter<CharT, Traits, Tuple, N - 1>::print(os, t);
+            if (N > 1) os << CharT(','), os << CharT(' ');
             put(os, std::get<N - 1>(t));
         }
     };
@@ -142,9 +156,10 @@ namespace console {
     /**
      * @brief 递归打印 tuple 的偏特化：处理单个元素。
      */
-    template <class Tuple>
-    struct TuplePrinter<Tuple, 1> {
-        static void print(std::ostream &os, const Tuple &t) {
+    template <class CharT, class Traits, class Tuple>
+    struct BasicTuplePrinter<CharT, Traits, Tuple, 1> {
+        static void
+        print(std::basic_ostream<CharT, Traits> &os, const Tuple &t) {
             put(os, std::get<0>(t));
         }
     };
@@ -152,10 +167,15 @@ namespace console {
     /**
      * @brief 递归打印 tuple 的偏特化：处理空 tuple。
      */
-    template <class Tuple>
-    struct TuplePrinter<Tuple, 0> {
-        static void print(std::ostream &, const Tuple &) {}
+    template <class CharT, class Traits, class Tuple>
+    struct BasicTuplePrinter<CharT, Traits, Tuple, 0> {
+        static void print(std::basic_ostream<CharT, Traits> &, const Tuple &) {}
     };
+
+    /** @brief BasicTuplePrinter<char> 的类型别名。 */
+    template <class Tuple, size_t N = std::tuple_size<Tuple>::value>
+    using TuplePrinter
+        = BasicTuplePrinter<char, std::char_traits<char>, Tuple, N>;
 
     /** @} */
 
@@ -168,131 +188,143 @@ namespace console {
      */
 
     /// @brief 输出 std::vector。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::vector<T> &vec) {
-        return cont_print_sequence(os, vec);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::vector<T> &vec) {
+        return cont_print_sequence<CharT, Traits>(os, vec);
     }
 
     /// @brief 输出 std::deque。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::deque<T> &deq) {
-        return cont_print_sequence(os, deq);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::deque<T> &deq) {
+        return cont_print_sequence<CharT, Traits>(os, deq);
     }
 
     /// @brief 输出 std::list。
-    template <class T>
-    inline std::ostream &operator<<(std::ostream &os, const std::list<T> &lst) {
-        return cont_print_sequence(os, lst);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os, const std::list<T> &lst) {
+        return cont_print_sequence<CharT, Traits>(os, lst);
     }
 
     /// @brief 输出 std::forward_list。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::forward_list<T> &flst) {
-        return cont_print_sequence(os, flst);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const std::forward_list<T>               &flst) {
+        return cont_print_sequence<CharT, Traits>(os, flst);
     }
 
     /// @brief 输出 std::array。
-    template <class T, size_t n>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::array<T, n> &arr) {
-        return cont_print_sequence(os, arr);
+    template <class CharT, class Traits, class T, size_t n>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::array<T, n> &arr) {
+        return cont_print_sequence<CharT, Traits>(os, arr);
     }
 
     /// @brief 输出 std::set。
-    template <class T>
-    inline std::ostream &operator<<(std::ostream &os, const std::set<T> &s) {
-        return cont_print_set(os, s);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os, const std::set<T> &s) {
+        return cont_print_set<CharT, Traits>(os, s);
     }
 
     /// @brief 输出 std::map。
-    template <class K, class V>
-    inline std::ostream &operator<<(std::ostream &os, const std::map<K, V> &m) {
-        return cont_print_map(os, m);
+    template <class CharT, class Traits, class K, class V>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os, const std::map<K, V> &m) {
+        return cont_print_map<CharT, Traits>(os, m);
     }
 
     /// @brief 输出 std::multiset。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::multiset<T> &ms) {
-        return cont_print_set(os, ms);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::multiset<T> &ms) {
+        return cont_print_set<CharT, Traits>(os, ms);
     }
 
     /// @brief 输出 std::multimap。
-    template <class K, class V>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::multimap<K, V> &mm) {
-        return cont_print_map(os, mm);
+    template <class CharT, class Traits, class K, class V>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::multimap<K, V> &mm) {
+        return cont_print_map<CharT, Traits>(os, mm);
     }
 
     /// @brief 输出 std::unordered_set。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::unordered_set<T> &us) {
-        return cont_print_set(os, us);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const std::unordered_set<T>              &us) {
+        return cont_print_set<CharT, Traits>(os, us);
     }
 
     /// @brief 输出 std::unordered_map。
-    template <class K, class V>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::unordered_map<K, V> &um) {
-        return cont_print_map(os, um);
+    template <class CharT, class Traits, class K, class V>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const std::unordered_map<K, V>           &um) {
+        return cont_print_map<CharT, Traits>(os, um);
     }
 
     /// @brief 输出 std::unordered_multiset。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::unordered_multiset<T> &ums) {
-        return cont_print_set(os, ums);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const std::unordered_multiset<T>         &ums) {
+        return cont_print_set<CharT, Traits>(os, ums);
     }
 
     /// @brief 输出 std::unordered_multimap。
-    template <class K, class V>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::unordered_multimap<K, V> &ump) {
-        return cont_print_map(os, ump);
+    template <class CharT, class Traits, class K, class V>
+    inline std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const std::unordered_multimap<K, V>      &ump) {
+        return cont_print_map<CharT, Traits>(os, ump);
     }
 
     /// @brief 输出 std::valarray。
-    template <class T>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::valarray<T> &va) {
-        return cont_print_sequence(os, va);
+    template <class CharT, class Traits, class T>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::valarray<T> &va) {
+        return cont_print_sequence<CharT, Traits>(os, va);
     }
 
     /**
      * @brief 输出 std::pair，格式为 (first, second)。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam T pair 的第一个类型。
      * @tparam U pair 的第二个类型。
      * @param os 输出流。
      * @param p pair 对象。
-     * @return std::ostream& 输出流引用。
+     * @return std::basic_ostream<CharT, Traits>& 输出流引用。
      */
-    template <class T, class U>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::pair<T, U> &p) {
-        os << '(';
+    template <class CharT, class Traits, class T, class U>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::pair<T, U> &p) {
+        os << CharT('(');
         put(os, p.first);
-        os << ", ";
+        os << CharT(','), os << CharT(' ');
         put(os, p.second);
-        return os << ')';
+        return os << CharT(')');
     }
 
     /**
      * @brief 输出 std::tuple，格式为 (elem1, elem2, ...)。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @tparam Args tuple 的元素类型。
      * @param os 输出流。
      * @param t tuple 对象。
-     * @return std::ostream& 输出流引用。
+     * @return std::basic_ostream<CharT, Traits>& 输出流引用。
      */
-    template <class... Args>
-    inline std::ostream &
-    operator<<(std::ostream &os, const std::tuple<Args...> &t) {
-        os << "(";
-        TuplePrinter<std::tuple<Args...>>::print(os, t);
-        return os << ")";
+    template <class CharT, class Traits, class... Args>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const std::tuple<Args...> &t) {
+        os << CharT('(');
+        BasicTuplePrinter<CharT, Traits, std::tuple<Args...>>::print(os, t);
+        return os << CharT(')');
     }
 
     /** @} */
@@ -334,31 +366,38 @@ namespace console {
     /** @} */
 
     /**
-     * @class Output
+     * @class BasicOutput
      * @brief 灵活的输出控制类，支持链式调用和多种参数。
+     * @tparam CharT 字符类型。
+     * @tparam Traits 字符特征类型。
      * @details 该类允许用户指定分隔符、结尾符和是否立即刷新，并提供
      * `operator()` 重载 来接收任意数量的参数进行格式化输出。 默认全局实例
-     * `print` 的行为类似于 Python 的 `print` 函数。
+     * Output 的行为类似于 Python 的 `print` 函数。
      *
      * 使用示例：
      * @code
      * print("Hello", "world");     // 输出 "Hello world\n" 并刷新
      * print();                      // 只输出换行
-     * Output err(std::cerr, "", "\n", true);
+     * BasicOutput err(std::cerr, "", "\n", true);
      * err("Error:", code);          // 输出到 stderr，无分隔符
      * @endcode
      */
-    class Output {
-        std::ostream &os; ///< 输出目标流
-        std::string   sep; ///< 多个参数之间的分隔符
-        std::string   end; ///< 结尾符（通常是换行符）
-        bool          isFlush; ///< 输出后是否立即刷新
+    template <class CharT = char, class Traits = std::char_traits<CharT>>
+    class BasicOutput {
+        using string_type = std::basic_string<CharT, Traits>;
+
+        std::basic_ostream<CharT, Traits> &os; ///< 输出目标流
+        string_type                        sep; ///< 多个参数之间的分隔符
+        string_type                        end; ///< 结尾符（通常是换行符）
+        bool                               isFlush; ///< 输出后是否立即刷新
 
     public:
         /**
          * @brief 默认构造，输出到 std::cout，分隔符为空格，结尾为换行，并刷新。
          */
-        Output() : os(std::cout), sep(" "), end("\n"), isFlush(true) {}
+        BasicOutput() :
+            os(std::cout), sep(string_type{1, CharT(' ')}),
+            end(string_type{1, CharT('\n')}), isFlush(true) {}
 
         /**
          * @brief 自定义构造。
@@ -367,16 +406,16 @@ namespace console {
          * @param e   结尾符。
          * @param isF 输出后是否刷新。
          */
-        Output(std::ostream   &o,
-            const std::string &s,
-            const std::string &e,
-            bool               isF) : os(o), sep(s), end(e), isFlush(isF) {}
+        BasicOutput(std::basic_ostream<CharT, Traits> &o,
+            const string_type                         &s,
+            const string_type                         &e,
+            bool isF) : os(o), sep(s), end(e), isFlush(isF) {}
 
         /**
          * @brief 无参数调用：仅输出结尾符（如换行）。
-         * @return Output& 当前对象引用，支持链式调用。
+         * @return BasicOutput& 当前对象引用，支持链式调用。
          */
-        Output &operator()() {
+        BasicOutput &operator()() {
             os << end;
             if (isFlush) os << std::flush;
             return *this;
@@ -386,10 +425,10 @@ namespace console {
          * @brief 单参数调用：输出该参数后加结尾符。
          * @tparam T 参数类型（必须支持 operator<<）。
          * @param t 要输出的对象。
-         * @return Output& 当前对象引用。
+         * @return BasicOutput& 当前对象引用。
          */
         template <class T>
-        Output &operator()(const T &t) {
+        BasicOutput &operator()(const T &t) {
             put(os, t);
             return operator()();
         }
@@ -401,24 +440,76 @@ namespace console {
          * @tparam Args 其余参数类型包。
          * @param t     第一个参数。
          * @param args  其余参数。
-         * @return Output& 当前对象引用。
+         * @return BasicOutput& 当前对象引用。
          */
         template <class T, class... Args>
-        Output &operator()(const T &t, const Args &...args) {
+        BasicOutput &operator()(const T &t, const Args &...args) {
             put(os, t);
             os << sep;
             return operator()(args...);
         }
     };
 
+    /** @brief BasicOutput<char> 的类型别名。 */
+    using Output = BasicOutput<char>;
+
+    /** @brief BasicOutput<wchar_t> 的类型别名。 */
+    using WOutput = BasicOutput<wchar_t>;
+
+    /** @brief BasicOutput<char16_t> 的类型别名。 */
+    using U16Output = BasicOutput<char16_t>;
+
+    /** @brief BasicOutput<char32_t> 的类型别名。 */
+    using U32Output = BasicOutput<char32_t>;
+
+    // ———— 全局实例 ————
+
     /**
-     * @brief 内部单例。
+     * @brief 内部单例（char）。
      */
-    inline Output &get_print() {
-        static Output instance;
+    inline BasicOutput<> &get_print() {
+        static BasicOutput<> instance;
         return instance;
     }
 
-    static Output &print
+    /**
+     * @brief 内部单例（wchar_t）。
+     */
+    inline BasicOutput<wchar_t> &get_wprint() {
+        static BasicOutput<wchar_t> instance(
+            std::wcout, std::wstring(1, L' '), std::wstring(1, L'\n'), true);
+        return instance;
+    }
+
+    /**
+     * @brief 内部单例（char16_t）。
+     */
+    inline BasicOutput<char16_t> &get_u16print() {
+        static BasicOutput<char16_t> instance(
+            reinterpret_cast<std::basic_ostream<char16_t> &>(std::cout),
+            std::u16string(1, u' '),
+            std::u16string(1, u'\n'),
+            true);
+        return instance;
+    }
+
+    /**
+     * @brief 内部单例（char32_t）。
+     */
+    inline BasicOutput<char32_t> &get_u32print() {
+        static BasicOutput<char32_t> instance(
+            reinterpret_cast<std::basic_ostream<char32_t> &>(std::cout),
+            std::u32string(1, U' '),
+            std::u32string(1, U'\n'),
+            true);
+        return instance;
+    }
+
+    static BasicOutput<> &print
         = get_print(); ///< 全局输出对象，模仿 Python 的 print 函数。
+    static BasicOutput<wchar_t>  &wprint = get_wprint(); ///< 全局宽字符输出。
+    static BasicOutput<char16_t> &u16print
+        = get_u16print(); ///< 全局 UTF-16 输出。
+    static BasicOutput<char32_t> &u32print
+        = get_u32print(); ///< 全局 UTF-32 输出。
 }

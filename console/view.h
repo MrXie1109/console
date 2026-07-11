@@ -39,6 +39,7 @@ SOFTWARE.
 #include <vector>
 
 #include "csexc.h"
+#include "output.h"
 
 namespace console {
     /**
@@ -110,12 +111,12 @@ namespace console {
          * @brief 带边界检查的下标访问。
          * @param pos 索引。
          * @return 元素的引用。
-         * @throw index_error 若索引超出范围。
+         * @throw IndexError 若索引超出范围。
          */
         auto at(size_t pos) const -> decltype(*begin_) {
             if (pos >= size())
-                throw index_error(std::to_string(pos) + " out of 0 ~ "
-                                  + std::to_string(size() - 1));
+                throw IndexError(std::to_string(pos) + " out of 0 ~ "
+                                 + std::to_string(size() - 1));
             return (*this)[pos];
         }
 
@@ -177,8 +178,8 @@ namespace console {
 
         auto at(size_t pos) const -> decltype(*begin_) {
             if (pos >= size())
-                throw index_error(std::to_string(pos) + " out of 0 ~ "
-                                  + std::to_string(size() - 1));
+                throw IndexError(std::to_string(pos) + " out of 0 ~ "
+                                 + std::to_string(size() - 1));
             return (*this)[pos];
         }
 
@@ -190,29 +191,102 @@ namespace console {
     };
 
     /**
-     * @brief 输出 std::string 视图的内容（直接输出字符串，不添加额外格式）。
+     * @class View<T[]>
+     * @brief T[] 的特化，包装原生数组指针。
+     * @tparam T 元素类型。
+     */
+    template <class T>
+    class View<T[]> {
+        T *begin_, *end_;
+
+    public:
+        typedef T       *iterator;
+        typedef const T *const_iterator;
+
+        T       *begin() const { return begin_; }
+        T       *end() const { return end_; }
+        const T *cbegin() const { return begin_; }
+        const T *cend() const { return end_; }
+
+        View(T *begin, T *end) : begin_(begin), end_(end) {}
+        View(T *data, size_t count) : begin_(data), end_(data + count) {}
+
+        size_t size() const { return end_ - begin_; }
+
+        T &operator[](size_t pos) const { return begin_[pos]; }
+
+        T &at(size_t pos) const {
+            if (pos >= size())
+                throw IndexError(std::to_string(pos) + " out of 0 ~ "
+                                 + std::to_string(size() - 1));
+            return begin_[pos];
+        }
+
+        std::vector<T> collect() const { return {begin_, end_}; }
+    };
+
+    /**
+     * @class View<const T[]>
+     * @brief const T[] 的特化，包装指向 const 的原生数组指针。
+     * @tparam T 元素类型。
+     */
+    template <class T>
+    class View<const T[]> {
+        const T *begin_, *end_;
+
+    public:
+        typedef const T *iterator;
+        typedef const T *const_iterator;
+
+        const T *begin() const { return begin_; }
+        const T *end() const { return end_; }
+        const T *cbegin() const { return begin_; }
+        const T *cend() const { return end_; }
+
+        View(const T *begin, const T *end) : begin_(begin), end_(end) {}
+        View(const T *data, size_t count) : begin_(data), end_(data + count) {}
+
+        size_t size() const { return end_ - begin_; }
+
+        const T &operator[](size_t pos) const { return begin_[pos]; }
+
+        const T &at(size_t pos) const {
+            if (pos >= size())
+                throw IndexError(std::to_string(pos) + " out of 0 ~ "
+                                 + std::to_string(size() - 1));
+            return begin_[pos];
+        }
+
+        std::vector<T> collect() const { return {begin_, end_}; }
+    };
+
+    /**
+     * @brief 输出 std::string 视图的内容。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
      * @param os 输出流。
      * @param sv 字符串视图。
-     * @return std::ostream& 流引用。
+     * @return std::basic_ostream<CharT, Traits>& 流引用。
      */
-    inline std::ostream &
-    operator<<(std::ostream &os, const View<std::string> &sv) {
-        for (auto it = sv.begin(); it != sv.end(); ++it) {
-            os << *it;
-        }
+    template <class CharT, class Traits>
+    inline std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const View<std::string> &sv) {
+        for (auto it = sv.begin(); it != sv.end(); ++it) os << *it;
         return os;
     }
 
     /**
-     * @brief 输出任意视图的内容（通过 collect() 转为容器后输出）。
-     * @tparam T 视图的元素类型（实际上为容器类型）。
+     * @brief 输出任意视图的内容。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
+     * @tparam T 容器类型。
      * @param os 输出流。
      * @param v 视图对象。
-     * @return std::ostream& 流引用。
-     * @warning 有性能开销。
+     * @return std::basic_ostream<CharT, Traits>& 流引用。
      */
-    template <class T>
-    std::ostream &operator<<(std::ostream &os, const View<T> &v) {
+    template <class CharT, class Traits, class Container>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &os, const View<Container> &v) {
         return os << v.collect();
     }
 
@@ -301,26 +375,50 @@ namespace console {
 
     /**
      * @brief 从指针对创建视图（可变版本）。
-     * @tparam T 指针指向的对象类型。
+     * @tparam T 元素类型。
      * @param begin 起始指针。
      * @param end 结束指针。
-     * @return View<std::vector<T>> 视图对象。
+     * @return View<T[]> 视图对象。
      */
     template <class T>
-    View<std::vector<T>> make_view(T *begin, T *end) {
+    View<T[]> make_view(T *begin, T *end) {
         return {begin, end};
     }
 
     /**
      * @brief 从指针对创建视图（常量版本）。
-     * @tparam T 指针指向的对象类型。
+     * @tparam T 元素类型。
      * @param begin 起始指针。
      * @param end 结束指针。
-     * @return View<const std::vector<T>> 视图对象。
+     * @return View<const T[]> 视图对象。
      */
     template <class T>
-    View<const std::vector<T>> make_view(const T *begin, const T *end) {
+    View<const T[]> make_view(const T *begin, const T *end) {
         return {begin, end};
+    }
+
+    /**
+     * @brief 从指针和长度创建视图（可变版本）。
+     * @tparam T 元素类型。
+     * @param data 数据指针。
+     * @param count 元素个数。
+     * @return View<T[]> 视图对象。
+     */
+    template <class T>
+    View<T[]> make_view(T *data, size_t count) {
+        return {data, count};
+    }
+
+    /**
+     * @brief 从指针和长度创建视图（常量版本）。
+     * @tparam T 元素类型。
+     * @param data 数据指针。
+     * @param count 元素个数。
+     * @return View<const T[]> 视图对象。
+     */
+    template <class T>
+    View<const T[]> make_view(const T *data, size_t count) {
+        return {data, count};
     }
 
     /** @} */ // end of view_factories

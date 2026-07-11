@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 5.11.1 (2026-07-09) -- "Daily!")";
+            R"(console version 6.0.0 (2026-07-11) -- "Unicode Everywhere!")";
     }
 
     /**

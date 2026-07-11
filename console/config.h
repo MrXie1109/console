@@ -39,36 +39,41 @@ SOFTWARE.
 namespace console {
     /**
      * @brief INI 配置文件操作类。
+     * @tparam CharT 字符类型，支持 char 和 wchar_t。
      * @details 支持加载、保存、读取、修改 INI 格式的配置文件，本类的 INI
      * 变种支持空节头和空键。
      */
-    class INIConfig {
-        std::map<std::string, std::map<std::string, std::string>> data_;
+    template <class CharT = char>
+    class BasicINIConfig {
+        using string_type = std::basic_string<CharT>;
+
+        std::map<string_type, std::map<string_type, string_type>> data_;
 
     public:
-        /**
-         * @brief 默认构造函数，创建空的配置对象。
-         */
-        INIConfig() = default;
+        /// @brief 默认构造函数，创建空的配置对象。
+        BasicINIConfig() = default;
 
         /**
          * @brief 从指定文件加载配置的构造函数。
          * @param filename 配置文件路径。
          */
-        INIConfig(const std::string &filename) { load(Path(filename)); }
+        BasicINIConfig(const std::string &filename) { load(Path(filename)); }
 
         /**
          * @brief 从指定文件加载配置的构造函数。
          * @param filename 配置文件路径。
          */
-        INIConfig(const Path &filename) { load(filename); }
+        BasicINIConfig(const Path &filename) { load(filename); }
 
         /**
          * @brief 从文件加载 INI 配置。
          * @param filename 配置文件路径。
          * @details 支持行首注释（; 或 #），支持节头 [section]。
          */
-        void load(const Path &filename) { filename.stream() >> *this; }
+        void load(const Path &filename) {
+            std::fstream fs = filename.stream();
+            fs >> *this;
+        }
 
         /**
          * @brief 将配置保存到文件。
@@ -86,51 +91,92 @@ namespace console {
             std::ofstream fout(filename.str(), std::ios::trunc);
             if (!fout.is_open())
                 throw FileError("Cannot Open File \"" + filename.str() + '"');
-            fout << *this;
+            // 用 narrow 流输出，通过窄字符串中转
+            std::ostringstream oss;
+            write_to_stream(oss);
+            fout << oss.str();
             if (!fout.good())
                 throw FileError(
                     "The Stream of \"" + filename.str() + "\" is Not Good");
         }
 
+    private:
+        void write_to_stream(std::ostream &os) const {
+            for (const auto &p : data_) {
+                if (!p.first.empty())
+                    os << '[' << to_narrow(p.first) << ']' << '\n';
+                for (const auto &kv : p.second)
+                    os << to_narrow(kv.first) << " = " << to_narrow(kv.second)
+                       << '\n';
+                os << '\n';
+            }
+        }
+
+        static std::string to_narrow(const string_type &s) {
+            return std::string(s.begin(), s.end());
+        }
+
+        void read_from_stream(std::istream &is) {
+            std::string line;
+            string_type current_section;
+            while (std::getline(is, line)) {
+                string_type trimmed_line
+                    = trim(string_type(line.begin(), line.end()));
+                if (trimmed_line.empty() || trimmed_line[0] == CharT(';')
+                    || trimmed_line[0] == CharT('#'))
+                    continue;
+                if (trimmed_line.front() == CharT('[')
+                    && trimmed_line.back() == CharT(']'))
+                    current_section
+                        = trim(trimmed_line.substr(1, trimmed_line.size() - 2));
+                else {
+                    auto pos = trimmed_line.find(CharT('='));
+                    if (pos != string_type::npos) {
+                        string_type key   = trim(trimmed_line.substr(0, pos));
+                        string_type value = trim(trimmed_line.substr(pos + 1));
+                        data_[current_section][key] = value;
+                    }
+                }
+            }
+        }
+
+    public:
         /**
          * @brief 配置对象的输出流运算符，按 INI 格式输出配置内容。
-         * @param os 输出流。
-         * @param config 配置对象。
-         * @return std::ostream& 输出流引用。
          */
-        friend std::ostream &
-        operator<<(std::ostream &os, const INIConfig &config) {
+        friend std::basic_ostream<CharT> &operator<<(
+            std::basic_ostream<CharT> &os, const BasicINIConfig &config) {
             for (const auto &p : config.data_) {
-                if (!p.first.empty()) os << '[' << p.first << ']' << '\n';
+                if (!p.first.empty())
+                    os << CharT('[') << p.first << CharT(']') << CharT('\n');
                 for (const auto &kv : p.second)
-                    os << kv.first << " = " << kv.second << '\n';
-                os << '\n';
+                    os << kv.first << " = " << kv.second << CharT('\n');
+                os << CharT('\n');
             }
             return os;
         }
 
         /**
          * @brief 配置对象的输入流运算符，按 INI 格式输入配置内容。
-         * @param is 输入流。
-         * @param config 配置对象。
-         * @return std::istream& 输入流引用。
          */
-        friend std::istream &operator>>(std::istream &is, INIConfig &config) {
-            std::string line;
-            std::string current_section;
+        friend std::basic_istream<CharT> &
+        operator>>(std::basic_istream<CharT> &is, BasicINIConfig &config) {
+            string_type line;
+            string_type current_section;
             while (std::getline(is, line)) {
-                std::string trimmed_line = trim(line);
-                if (trimmed_line.empty() || trimmed_line[0] == ';'
-                    || trimmed_line[0] == '#')
+                string_type trimmed_line = trim(line);
+                if (trimmed_line.empty() || trimmed_line[0] == CharT(';')
+                    || trimmed_line[0] == CharT('#'))
                     continue;
-                if (trimmed_line.front() == '[' && trimmed_line.back() == ']')
+                if (trimmed_line.front() == CharT('[')
+                    && trimmed_line.back() == CharT(']'))
                     current_section
                         = trim(trimmed_line.substr(1, trimmed_line.size() - 2));
                 else {
-                    auto pos = trimmed_line.find('=');
-                    if (pos != std::string::npos) {
-                        std::string key   = trim(trimmed_line.substr(0, pos));
-                        std::string value = trim(trimmed_line.substr(pos + 1));
+                    auto pos = trimmed_line.find(CharT('='));
+                    if (pos != string_type::npos) {
+                        string_type key   = trim(trimmed_line.substr(0, pos));
+                        string_type value = trim(trimmed_line.substr(pos + 1));
                         config.data_[current_section][key] = value;
                     }
                 }
@@ -140,51 +186,51 @@ namespace console {
 
         /**
          * @brief 配置项代理类，支持隐式类型转换。
-         * @details 用于封装配置值，支持自动转换为 string 或算术类型。
          */
         class Item {
-            std::string str_;
+            string_type str_;
 
         public:
-            /**
-             * @brief 用字符串构造配置项。
-             * @param s 配置值的字符串形式。
-             */
-            Item(const std::string &s) : str_(s) {}
+            Item(const string_type &s) : str_(s) {}
 
-            /**
-             * @brief 隐式转换为 std::string。
-             */
-            operator std::string() const { return str_; }
+            operator string_type() const { return str_; }
 
-            /**
-             * @brief 隐式转换为 bool。
-             */
             operator bool() const {
-                std::string lower = str_;
-                for (auto &c : lower) c = std::tolower(c);
-                if (lower == "true" || lower == "1" || lower == "yes"
-                    || lower == "on")
+                string_type lower = str_;
+                for (auto &c : lower) c = std::tolower(c, std::locale{});
+                if (lower
+                    == string_type{//
+                        CharT('t'),
+                        CharT('r'),
+                        CharT('u'),
+                        CharT('e')}
+                    || lower == string_type{CharT('1')}
+                    || lower == string_type{CharT('y'), CharT('e'), CharT('s')}
+                    || lower == string_type{CharT('o'), CharT('n')})
                     return true;
-                if (lower == "false" || lower == "0" || lower == "no"
-                    || lower == "off")
+                if (lower
+                    == string_type{//
+                        CharT('f'),
+                        CharT('a'),
+                        CharT('l'),
+                        CharT('s'),
+                        CharT('e')}
+                    || lower == string_type{CharT('0')}
+                    || lower == string_type{CharT('n'), CharT('o')}
+                    || lower == string_type{CharT('o'), CharT('f'), CharT('f')})
                     return false;
-                throw TypeError("Failed to Convert \"" + str_ + "\" to bool");
+                throw TypeError(
+                    "Failed to Convert \"" + to_narrow(str_) + "\" to bool");
             }
 
-            /**
-             * @brief 隐式转换为目标类型 T。
-             * @tparam T 目标类型（如 int、float、double 等）。
-             * @throw TypeError 类型转换失败时抛出。
-             */
             template <class T>
             operator T() const {
-                std::istringstream iss(str_);
-                T                  value;
+                std::basic_istringstream<CharT> iss(str_);
+                T                               value;
                 iss >> value;
                 if (iss.fail())
-                    throw TypeError(
-                        "Failed to Convert \"" + str_ + "\" to Target Type");
+                    throw TypeError("Failed to Convert \"" + to_narrow(str_)
+                                    + "\" to Target Type");
                 return value;
             }
         };
@@ -195,20 +241,22 @@ namespace console {
          * @return Item 配置项代理对象，可隐式转换为目标类型。
          * @throw IndexError 格式错误、节不存在或键不存在时抛出。
          */
-        Item get(const std::string &section_and_key) const {
-            auto pr = partition(section_and_key, ".");
+        Item get(const string_type &section_and_key) const {
+            auto pr = partition(section_and_key, string_type(1, CharT('.')));
             if (pr.middle.empty())
                 throw IndexError("Invalid Section and Key Format: \""
-                                 + section_and_key + '"');
+                                 + to_narrow(section_and_key) + '"');
             auto section = pr.left;
             auto key     = pr.right;
             auto sec_it  = data_.find(section);
             if (sec_it == data_.end())
-                throw IndexError("Section \"" + section + "\" Not Found");
+                throw IndexError(
+                    "Section \"" + to_narrow(section) + "\" Not Found");
             auto key_it = sec_it->second.find(key);
             if (key_it == sec_it->second.end())
-                throw IndexError("Key \"" + key + "\" Not Found in Section \""
-                                 + section + '"');
+                throw IndexError("Key \"" + to_narrow(key)
+                                 + "\" Not Found in Section \""
+                                 + to_narrow(section) + '"');
             return Item(key_it->second);
         }
 
@@ -221,9 +269,8 @@ namespace console {
          */
         template <class T>
         T
-        get(const std::string &section_and_key, const T &default_value) const {
-            auto pos = section_and_key.find('.');
-            auto pr  = partition(section_and_key, ".");
+        get(const string_type &section_and_key, const T &default_value) const {
+            auto pr = partition(section_and_key, string_type(1, CharT('.')));
             if (pr.middle.empty()) return default_value;
             auto section = pr.left;
             auto key     = pr.right;
@@ -237,15 +284,15 @@ namespace console {
         /**
          * @brief 设置配置项的值。
          * @param section_and_key 节和键，格式为 "节名.键名"。
-         * @param value 要设置的值（字符串形式）。
+         * @param value 要设置的值。
          * @throw IndexError 格式错误时抛出。
          * @note 若节或键不存在，会自动创建。
          */
-        void set(const std::string &section_and_key, const std::string &value) {
-            auto pr = partition(section_and_key, ".");
+        void set(const string_type &section_and_key, const string_type &value) {
+            auto pr = partition(section_and_key, string_type(1, CharT('.')));
             if (pr.middle.empty())
                 throw IndexError("Invalid Section and Key Format: \""
-                                 + section_and_key + '"');
+                                 + to_narrow(section_and_key) + '"');
             auto section        = pr.left;
             auto key            = pr.right;
             data_[section][key] = value;
@@ -256,8 +303,8 @@ namespace console {
          * @param section_and_key 节和键，格式为 "节名.键名" 或仅 "节名"。
          * @return bool 存在返回 true，否则返回 false。
          */
-        bool has(const std::string &section_and_key) const {
-            auto pr = partition(section_and_key, ".");
+        bool has(const string_type &section_and_key) const {
+            auto pr = partition(section_and_key, string_type(1, CharT('.')));
             if (pr.middle.empty()) {
                 auto section = pr.left;
                 return data_.find(section) != data_.end();
@@ -275,8 +322,8 @@ namespace console {
          * @param section_and_key 节和键，格式为 "节名.键名" 或仅 "节名"。
          * @return bool 成功删除返回 true，未找到返回 false。
          */
-        bool remove(const std::string &section_and_key) {
-            auto pr = partition(section_and_key, ".");
+        bool remove(const string_type &section_and_key) {
+            auto pr = partition(section_and_key, string_type(1, CharT('.')));
             if (pr.middle.empty()) {
                 auto section = pr.left;
                 return data_.erase(section) > 0;
@@ -291,12 +338,22 @@ namespace console {
 
         /**
          * @brief 获取原始数据结构的只读引用。
-         * @return const std::map<std::string, std::map<std::string,
-         * std::string>>& 内层 map 为 [节名] -> [键名] -> [值]
          */
-        const std::map<std::string, std::map<std::string, std::string>> &
+        const std::map<string_type, std::map<string_type, string_type>> &
         data() const {
             return data_;
         }
     };
+
+    /** @brief BasicINIConfig<char> 的类型别名。 */
+    using INIConfig = BasicINIConfig<char>;
+
+    /** @brief BasicINIConfig<wchar_t> 的类型别名。 */
+    using WINIConfig = BasicINIConfig<wchar_t>;
+
+    /** @brief BasicINIConfig<char16_t> 的类型别名。 */
+    using U16INIConfig = BasicINIConfig<char16_t>;
+
+    /** @brief BasicINIConfig<char32_t> 的类型别名。 */
+    using U32INIConfig = BasicINIConfig<char32_t>;
 }

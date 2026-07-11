@@ -1,8 +1,7 @@
 /**
  * @file re.h
- * @brief 提供正则表达式匹配、搜索、替换、分割等操作，接口类似 Python 的 re
- * 模块。
- * @details 封装了 C++ 标准库的 std::regex，提供更便捷的面向对象和函数式接口。
+ * @brief 提供正则表达式匹配、搜索、替换、分割等操作，接口类似 Python 的 re 模块。
+ * @details 封装了 C++ 标准库的 std::basic_regex，提供更便捷的面向对象和函数式接口。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -39,212 +38,141 @@ SOFTWARE.
 
 namespace console {
     /**
-     * @class Regex
+     * @class BasicRegex
      * @brief 正则表达式对象，封装编译后的模式，提供匹配、搜索、替换等功能。
-     * @details 该类类似于 Python 的 re.compile 返回的对象，支持链式操作。
+     * @tparam CharT 字符类型（char 或 wchar_t）。
+     * @tparam Traits 字符特征类型。
      */
-    class Regex {
+    template <class CharT = char, class Traits = std::char_traits<CharT>>
+    class BasicRegex {
+    public:
+        using string_type = std::basic_string<CharT, Traits>;
+        using regex_type  = std::basic_regex<CharT>;
+        using match_type
+            = std::match_results<typename string_type::const_iterator>;
+        using flag_type = typename regex_type::flag_type;
+        using iterator_type
+            = std::regex_iterator<typename string_type::const_iterator,
+                CharT,
+                std::regex_traits<CharT>>;
+        using token_iterator
+            = std::regex_token_iterator<typename string_type::const_iterator,
+                CharT,
+                std::regex_traits<CharT>>;
+
     private:
-        std::regex pattern; ///< 编译后的正则表达式
+        regex_type pattern;
 
     public:
-        /**
-         * @brief 构造一个 Regex 对象。
-         * @param pat 正则表达式字符串。
-         * @param flags 语法标志，默认为 ECMAScript。
-         */
-        Regex(const std::string  &pat,
-            std::regex::flag_type flags = std::regex::ECMAScript) :
-            pattern(pat, flags) {}
+        BasicRegex(const string_type &pat,
+            flag_type flags = regex_type::ECMAScript) : pattern(pat, flags) {}
 
         /**
          * @class Match
-         * @brief 匹配结果对象，包含匹配信息。
-         * @details 提供访问匹配组、位置索引等功能，类似 Python 的 re.Match
-         * 对象。
+         * @brief 匹配结果对象，保存文本副本和位置信息，不依赖迭代器有效性。
          */
         class Match {
         private:
-            std::smatch match; ///< 底层 std::smatch 对象
-            bool        success; ///< 是否匹配成功
+            string_type text_copy;
+            struct GroupInfo {
+                std::ptrdiff_t pos;
+                std::ptrdiff_t len;
+            };
+            std::vector<GroupInfo> groups_;
+            bool                   success;
 
         public:
-            /// @brief 默认构造，表示不成功的匹配。
             Match() : success(false) {}
-
-            /// @brief 从 std::smatch 构造。
-            Match(const std::smatch &m) : match(m), success(true) {}
-
-            /**
-             * @brief 获取指定捕获组的内容。
-             * @param n 组索引（0 表示整个匹配，默认为
-             * 0）。若索引无效则返回空字符串。
-             * @return std::string 匹配的子串。
-             */
-            std::string group(int n = 0) const {
-                if (!success || n < 0 || n >= int(match.size())) {
-                    return "";
-                }
-                return match[n].str();
+            Match(string_type t, const match_type &m) :
+                text_copy(std::move(t)), success(true) {
+                for (size_t i = 0; i < m.size(); ++i)
+                    groups_.push_back({m.position(i), m.length(i)});
             }
 
-            /**
-             * @brief 获取所有捕获组（不包括整个匹配）的内容。
-             * @return std::vector<std::string> 各捕获组的字符串列表。
-             */
-            std::vector<std::string> groups() const {
-                std::vector<std::string> result;
+            string_type group(int n = 0) const {
+                if (!success || n < 0 || n >= int(groups_.size()))
+                    return string_type{};
+                return text_copy.substr(groups_[n].pos, groups_[n].len);
+            }
+
+            std::vector<string_type> groups() const {
+                std::vector<string_type> result;
                 if (!success) return result;
-                for (size_t i = 1; i < match.size(); ++i) {
-                    result.push_back(match[i].str());
-                }
+                for (size_t i = 1; i < groups_.size(); ++i)
+                    result.push_back(
+                        text_copy.substr(groups_[i].pos, groups_[i].len));
                 return result;
             }
 
-            /**
-             * @brief 获取指定捕获组在原始字符串中的起始索引。
-             * @param n 组索引，默认为 0。
-             * @return int 起始索引，若无效则返回 -1。
-             */
             int start(int n = 0) const {
-                if (!success || n < 0 || n >= int(match.size())) {
-                    return -1;
-                }
-                return match.position(n);
+                if (!success || n < 0 || n >= int(groups_.size())) return -1;
+                return int(groups_[n].pos);
             }
 
-            /**
-             * @brief
-             * 获取指定捕获组在原始字符串中的结束索引（最后一个字符之后的位置）。
-             * @param n 组索引，默认为 0。
-             * @return int 结束索引，若无效则返回 -1。
-             */
             int end(int n = 0) const {
-                if (!success || n < 0 || n >= int(match.size())) {
-                    return -1;
-                }
-                return match.position(n) + match.length(n);
+                if (!success || n < 0 || n >= int(groups_.size())) return -1;
+                return int(groups_[n].pos + groups_[n].len);
             }
 
-            /**
-             * @brief 获取指定捕获组的起始和结束索引组成的 pair。
-             * @param n 组索引，默认为 0。
-             * @return std::pair<int, int> (start, end)。
-             */
             std::pair<int, int> span(int n = 0) const {
                 return {start(n), end(n)};
             }
 
-            /**
-             * @brief 检查匹配是否成功。
-             * @return true 若匹配成功，否则 false。
-             */
             explicit operator bool() const { return success; }
         };
 
         /**
-         * @brief 在文本中搜索第一个匹配。
-         * @param text 要搜索的字符串。
-         * @return Match 匹配结果对象。
+         * @brief 搜索第一个匹配。
          */
-        Match search(const std::string &text) const {
-            std::smatch match;
-            if (std::regex_search(text, match, pattern)) {
-                return Match(match);
-            }
+        Match search(string_type text) const {
+            match_type m;
+            auto       copy = text;
+            if (std::regex_search(copy, m, pattern))
+                return Match(std::move(copy), m);
             return Match();
         }
 
         /**
-         * @brief 尝试从文本开头匹配整个模式。
-         * @param text 要匹配的字符串。
-         * @return Match 匹配结果对象。
+         * @brief 从开头匹配整个模式。
          */
-        Match match(const std::string &text) const {
-            std::smatch match;
-            if (std::regex_match(text, match, pattern)) {
-                return Match(match);
-            }
+        Match match(string_type text) const {
+            match_type m;
+            auto       copy = text;
+            if (std::regex_match(copy, m, pattern))
+                return Match(std::move(copy), m);
             return Match();
         }
 
-        /**
-         * @brief match 的别名，与 Python 的 re.fullmatch 语义相同。
-         * @param text 要匹配的字符串。
-         * @return Match 匹配结果对象。
-         */
-        Match fullmatch(const std::string &text) const { return match(text); }
+        Match fullmatch(const string_type &text) const { return match(text); }
 
         /**
-         * @brief 查找所有不重叠的匹配，返回匹配字符串列表。
-         * @param text 要搜索的字符串。
-         * @return std::vector<std::string> 所有匹配的字符串。
+         * @brief 查找所有不重叠的匹配。
          */
-        std::vector<std::string> findall(const std::string &text) const {
-            std::vector<std::string> result;
-            auto                     begin
-                = std::sregex_iterator(text.begin(), text.end(), pattern);
-            auto end = std::sregex_iterator();
+        std::vector<string_type> findall(const string_type &text) const {
+            std::vector<string_type> result;
+            auto begin = iterator_type(text.begin(), text.end(), pattern);
+            auto end   = iterator_type();
 
-            for (auto it = begin; it != end; ++it) {
-                result.push_back(it->str());
-            }
+            for (auto it = begin; it != end; ++it) result.push_back(it->str());
             return result;
         }
 
         /**
-         * @class Iterator
-         * @brief 迭代器，用于遍历所有匹配。
-         */
-        class Iterator {
-        private:
-            std::sregex_iterator it;
-
-        public:
-            Iterator(std::sregex_iterator i) : it(i) {}
-
-            bool operator==(const Iterator &other) const {
-                return it == other.it;
-            }
-            bool operator!=(const Iterator &other) const {
-                return it != other.it;
-            }
-            void  operator++() { ++it; }
-            Match operator*() const { return Match(*it); }
-        };
-
-        /**
-         * @brief 返回一个可迭代对象，遍历所有匹配的 Match 对象。
-         * @param text 要搜索的字符串。
-         * @return IteratorPair<std::sregex_iterator> 可用于范围 for 循环。
-         */
-        IteratorPair<std::sregex_iterator>
-        finditer(const std::string &text) const {
-            return {{std::sregex_iterator(text.begin(), text.end(), pattern)},
-                {std::sregex_iterator()}};
-        }
-
-        /**
          * @brief 使用正则表达式分割字符串。
-         * @param text 要分割的字符串。
-         * @param maxsplit 最大分割次数，0 表示不限。
-         * @return std::vector<std::string> 分割后的子串列表。
          */
-        std::vector<std::string>
-        split(const std::string &text, int maxsplit = 0) const {
-            std::vector<std::string>   result;
-            std::sregex_token_iterator it(
-                text.begin(), text.end(), pattern, -1);
-            std::sregex_token_iterator end;
+        std::vector<string_type>
+        split(const string_type &text, int maxsplit = 0) const {
+            std::vector<string_type> result;
+            token_iterator           it(text.begin(), text.end(), pattern, -1);
+            token_iterator           end;
 
             int count = 0;
             for (; it != end && (maxsplit <= 0 || count < maxsplit);
-                 ++it, ++count) {
+                ++it, ++count)
                 result.push_back(*it);
-            }
 
             if (maxsplit > 0 && count == maxsplit && it != end) {
-                std::string remaining;
+                string_type remaining;
                 for (; it != end; ++it) {
                     if (!remaining.empty())
                         remaining += *it;
@@ -258,28 +186,21 @@ namespace console {
         }
 
         /**
-         * @brief 替换匹配的子串（最多 count 次）。
-         * @param repl 替换字符串。
-         * @param text 原始文本。
-         * @param count 最大替换次数，0 表示替换所有。
-         * @return std::string 替换后的字符串。
+         * @brief 替换匹配的子串。
          */
-        std::string sub(const std::string &repl,
-            const std::string             &text,
+        string_type sub(const string_type &repl,
+            const string_type             &text,
             int                            count = 0) const {
-            if (count <= 0) {
-                return std::regex_replace(text, pattern, repl);
-            }
+            if (count <= 0) return std::regex_replace(text, pattern, repl);
 
-            std::string result;
-            auto        begin
-                = std::sregex_iterator(text.begin(), text.end(), pattern);
-            auto end      = std::sregex_iterator();
+            string_type result;
+            auto begin    = iterator_type(text.begin(), text.end(), pattern);
+            auto end      = iterator_type();
             auto last     = text.begin();
             int  replaced = 0;
 
             for (auto it = begin; it != end && replaced < count;
-                 ++it, ++replaced) {
+                ++it, ++replaced) {
                 result.append(last, text.begin() + it->position());
                 result.append(repl);
                 last = text.begin() + it->position() + it->length();
@@ -291,32 +212,26 @@ namespace console {
 
         /**
          * @brief 替换匹配的子串并返回替换次数。
-         * @param repl 替换字符串。
-         * @param text 原始文本。
-         * @param count 最大替换次数，0 表示替换所有。
-         * @return std::pair<std::string, int> (新字符串, 替换次数)。
          */
-        std::pair<std::string, int> subn(const std::string &repl,
-            const std::string                              &text,
+        std::pair<string_type, int> subn(const string_type &repl,
+            const string_type                              &text,
             int                                             count = 0) const {
             if (count <= 0) {
                 auto result = std::regex_replace(text, pattern, repl);
-                auto begin
-                    = std::sregex_iterator(text.begin(), text.end(), pattern);
-                auto end = std::sregex_iterator();
-                int  cnt = std::distance(begin, end);
+                auto begin  = iterator_type(text.begin(), text.end(), pattern);
+                auto end    = iterator_type();
+                int  cnt    = int(std::distance(begin, end));
                 return {result, cnt};
             }
 
-            std::string result;
-            auto        begin
-                = std::sregex_iterator(text.begin(), text.end(), pattern);
-            auto end      = std::sregex_iterator();
+            string_type result;
+            auto begin    = iterator_type(text.begin(), text.end(), pattern);
+            auto end      = iterator_type();
             auto last     = text.begin();
             int  replaced = 0;
 
             for (auto it = begin; it != end && replaced < count;
-                 ++it, ++replaced) {
+                ++it, ++replaced) {
                 result.append(last, text.begin() + it->position());
                 result.append(repl);
                 last = text.begin() + it->position() + it->length();
@@ -327,88 +242,63 @@ namespace console {
         }
     };
 
-    /**
-     * @namespace re
-     * @brief 函数式正则表达式接口，模仿 Python 的 re 模块。
-     */
+    using Regex  = BasicRegex<char>;
+    using WRegex = BasicRegex<wchar_t>;
+
     namespace re {
-        /**
-         * @brief 编译正则表达式并返回 Regex 对象。
-         * @param pattern 正则字符串。
-         * @param flags 语法标志。
-         * @return Regex 编译后的对象。
-         */
+
         inline Regex compile(const std::string &pattern,
             std::regex::flag_type flags = std::regex::ECMAScript) {
             return Regex(pattern, flags);
         }
 
-        /**
-         * @brief 搜索第一个匹配（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param text 目标文本。
-         * @return Regex::Match 匹配结果。
-         */
+        inline WRegex compile(const std::wstring &pattern,
+            std::wregex::flag_type flags = std::wregex::ECMAScript) {
+            return WRegex(pattern, flags);
+        }
+
         inline Regex::Match
         search(const std::string &pattern, const std::string &text) {
             return Regex(pattern).search(text);
         }
 
-        /**
-         * @brief 从开头匹配（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param text 目标文本。
-         * @return Regex::Match 匹配结果。
-         */
+        inline WRegex::Match
+        search(const std::wstring &pattern, const std::wstring &text) {
+            return WRegex(pattern).search(text);
+        }
+
         inline Regex::Match
         match(const std::string &pattern, const std::string &text) {
             return Regex(pattern).match(text);
         }
 
-        /**
-         * @brief 查找所有匹配的字符串（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param text 目标文本。
-         * @return std::vector<std::string> 匹配列表。
-         */
+        inline WRegex::Match
+        match(const std::wstring &pattern, const std::wstring &text) {
+            return WRegex(pattern).match(text);
+        }
+
         inline std::vector<std::string>
         findall(const std::string &pattern, const std::string &text) {
             return Regex(pattern).findall(text);
         }
 
-        /**
-         * @brief 返回一个可迭代对象，遍历所有匹配的 Match 对象（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param text 目标文本。
-         * @return console::IteratorPair<std::sregex_iterator> 可用于范围 for
-         * 循环。
-         */
-        inline IteratorPair<std::sregex_iterator>
-        finditer(const std::string &pattern, const std::string &text) {
-            return Regex(pattern).finditer(text);
+        inline std::vector<std::wstring>
+        findall(const std::wstring &pattern, const std::wstring &text) {
+            return WRegex(pattern).findall(text);
         }
 
-        /**
-         * @brief 分割字符串（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param text 目标文本。
-         * @param maxsplit 最大分割次数。
-         * @return std::vector<std::string> 分割后的子串列表。
-         */
         inline std::vector<std::string> split(const std::string &pattern,
             const std::string                                   &text,
             int                                                  maxsplit = 0) {
             return Regex(pattern).split(text, maxsplit);
         }
 
-        /**
-         * @brief 替换匹配的子串（函数式接口）。
-         * @param pattern 正则字符串。
-         * @param repl 替换字符串。
-         * @param text 原始文本。
-         * @param count 最大替换次数。
-         * @return std::string 替换后的字符串。
-         */
+        inline std::vector<std::wstring> split(const std::wstring &pattern,
+            const std::wstring                                    &text,
+            int maxsplit = 0) {
+            return WRegex(pattern).split(text, maxsplit);
+        }
+
         inline std::string sub(const std::string &pattern,
             const std::string                    &repl,
             const std::string                    &text,
@@ -416,14 +306,21 @@ namespace console {
             return Regex(pattern).sub(repl, text, count);
         }
 
-        /**
-         * @brief 转义正则表达式中的特殊字符。
-         * @param s 原始字符串。
-         * @return std::string 转义后的字符串。
-         */
+        inline std::wstring sub(const std::wstring &pattern,
+            const std::wstring                     &repl,
+            const std::wstring                     &text,
+            int                                     count = 0) {
+            return WRegex(pattern).sub(repl, text, count);
+        }
+
         inline std::string escape(const std::string &s) {
             static std::regex special(R"([.^$*+?()\[\]{}|\\])");
             return std::regex_replace(s, special, R"(\$&)");
+        }
+
+        inline std::wstring escape(const std::wstring &s) {
+            static std::wregex special(LR"([.^$*+?()\[\]{}|\\])");
+            return std::regex_replace(s, special, LR"(\$&)");
         }
     }
 }

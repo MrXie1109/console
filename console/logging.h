@@ -44,14 +44,19 @@ SOFTWARE.
 
 namespace console {
     /**
-     * @class Logging
+     * @class BasicLogging
      * @brief 日志记录器，支持多级别、颜色输出和自动时间戳。
-     * @details 使用 Output
+     * @tparam CharT 字符类型。
+     * @tparam Traits 字符特征类型。
+     * @details 使用 BasicOutput
      * 类进行格式化输出，可设置最低日志级别或单独控制每个级别的开关。 FATAL
      * 级别会抛出 FatalLogging 异常。
      */
-    class Logging {
+    template <class CharT = char, class Traits = std::char_traits<CharT>>
+    class BasicLogging {
     public:
+        using string_type = std::basic_string<CharT, Traits>;
+
         /**
          * @enum Level
          * @brief 日志级别枚举。
@@ -64,8 +69,8 @@ namespace console {
         enum class Level : int8_t { DEBUG, INFO, WARN, ERROR, FATAL };
 
     private:
-        Output output; ///< 输出器
-        bool   colorful; ///< 是否启用颜色
+        BasicOutput<CharT, Traits> output; ///< 输出器
+        bool                       colorful; ///< 是否启用颜色
         bool settings[5]; ///< 每个级别的开关，索引对应 Level 枚举值
 
     public:
@@ -96,15 +101,16 @@ namespace console {
         }
 
         /**
-         * @brief 构造 Logging 对象。
-         * @param os 输出流，默认为 std::cout。
+         * @brief 构造 BasicLogging 对象。
+         * @param os 输出流，默认为 std::clog。
          * @param cf 是否启用颜色，默认 false。
          * @param lvl 最低日志级别，默认 INFO。
          */
-        Logging(std::ostream &os  = std::clog,
-            bool              cf  = false,
-            Level             lvl = Level::INFO) :
-            output(os, "", "\n", true), colorful(cf) {
+        BasicLogging(std::basic_ostream<CharT, Traits> &os  = std::clog,
+            bool                                        cf  = false,
+            Level                                       lvl = Level::INFO) :
+            output(os, string_type{}, string_type{1, CharT('\n')}, true),
+            colorful(cf) {
             set(lvl);
         }
 
@@ -118,13 +124,13 @@ namespace console {
             if (settings[0]) {
                 if (colorful)
                     output(color::BrightBlack,
-                        '[',
+                        CharT('['),
                         datetime(),
                         "] [DEBUG] - ",
                         args...,
                         color::Reset);
                 else
-                    output('[', datetime(), "] [DEBUG] - ", args...);
+                    output(CharT('['), datetime(), "] [DEBUG] - ", args...);
             }
         }
 
@@ -138,13 +144,13 @@ namespace console {
             if (settings[1]) {
                 if (colorful)
                     output(color::BrightCyan,
-                        '[',
+                        CharT('['),
                         datetime(),
                         "] [.INFO] - ",
                         args...,
                         color::Reset);
                 else
-                    output('[', datetime(), "] [.INFO] - ", args...);
+                    output(CharT('['), datetime(), "] [.INFO] - ", args...);
             }
         }
 
@@ -158,13 +164,13 @@ namespace console {
             if (settings[2]) {
                 if (colorful)
                     output(color::BrightYellow,
-                        '[',
+                        CharT('['),
                         datetime(),
                         "] [.WARN] - ",
                         args...,
                         color::Reset);
                 else
-                    output('[', datetime(), "] [.WARN] - ", args...);
+                    output(CharT('['), datetime(), "] [.WARN] - ", args...);
             }
         }
 
@@ -178,13 +184,13 @@ namespace console {
             if (settings[3]) {
                 if (colorful)
                     output(color::BrightRed,
-                        '[',
+                        CharT('['),
                         datetime(),
                         "] [ERROR] - ",
                         args...,
                         color::Reset);
                 else
-                    output('[', datetime(), "] [ERROR] - ", args...);
+                    output(CharT('['), datetime(), "] [ERROR] - ", args...);
             }
         }
 
@@ -200,26 +206,33 @@ namespace console {
             if (settings[4]) {
                 if (colorful)
                     output(color::BrightMagenta,
-                        '[',
+                        CharT('['),
                         datetime(),
                         "] [FATAL] - ",
                         error_info,
                         color::Reset);
                 else
-                    output('[', datetime(), "] [FATAL] - ", error_info);
+                    output(CharT('['), datetime(), "] [FATAL] - ", error_info);
             }
             throw FatalLogging("Fatal Error: " + error_info);
         }
     };
 
+    /** @brief BasicLogging<char> 的类型别名。 */
+    using Logging = BasicLogging<char>;
+
+    /** @brief BasicLogging<wchar_t> 的类型别名。 */
+    using WLogging = BasicLogging<wchar_t>;
+
     /**
-     * @brief 内部单例。
+     * @brief 内部单例（char）。
      */
-    inline Logging &get_logger() {
-        static Logging instance(std::clog, true, Logging::Level::INFO);
+    inline BasicLogging<> &get_logger() {
+        static BasicLogging<> instance(
+            std::clog, true, BasicLogging<>::Level::INFO);
         return instance;
     }
 
-    static Logging &logger
+    static BasicLogging<> &logger
         = get_logger(); ///< 全局默认 logger 实例，启用颜色，级别 INFO。
 }

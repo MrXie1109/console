@@ -156,17 +156,31 @@ namespace console {
             return Time(hr * 3.6e12);
         }
 
-        // ---------------------------- 格式化字符串字面量
-        // ----------------------------
         /**
-         * @brief 格式化字符串字面量，返回 f_string 对象，支持延迟格式化。
+         * @brief 格式化字符串字面量，返回 FString 对象，支持延迟格式化。
          * @param str 字符串字面量。
          * @param 长度参数（未使用）。
-         * @return f_string 可进行格式化绑定的对象。
-         * @details 用法：`"Hello, {}"_f.format("world");` 或 `"Value: {}"_f %
-         * 42;`
+         * @return FString 可进行格式化绑定的对象。
          */
-        inline f_string operator""_f(const char *str, size_t) {
+        inline FString operator""_f(const char *str, size_t) {
+            return str;
+        }
+        /**
+         * @brief 宽字符格式化字符串字面量，返回 WFString 对象。
+         */
+        inline WFString operator""_f(const wchar_t *str, size_t) {
+            return str;
+        }
+        /**
+         * @brief UTF-16 格式化字符串字面量，返回 U16FString 对象。
+         */
+        inline U16FString operator""_f(const char16_t *str, size_t) {
+            return str;
+        }
+        /**
+         * @brief UTF-32 格式化字符串字面量，返回 U32FString 对象。
+         */
+        inline U32FString operator""_f(const char32_t *str, size_t) {
             return str;
         }
     }

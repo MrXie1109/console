@@ -1,7 +1,7 @@
 /**
  * @file file.h
  * @brief 提供跨平台的文件路径封装和文件 I/O 操作。
- * @details 包含 Path 类，支持路径拼接、文本/二进制读写、按行读写、POD
+ * @details 包含 BasicPath 类，支持路径拼接、文本/二进制读写、按行读写、POD
  * 类型读写等。
  * @author MrXie1109
  * @date 2026
@@ -44,251 +44,199 @@ SOFTWARE.
 
 namespace console {
     /**
-     * @class Path
+     * @class BasicPath
      * @brief 文件路径封装类，提供便捷的文件读写和路径操作。
-     * @details 在 Windows 平台上自动将 '/' 转换为 '\\'，支持路径拼接运算符 /。
-     *          所有文件读写操作均会抛出 FileError
-     * 异常（若文件无法打开或流状态异常）。
+     * @tparam CharT 字符类型（char 或 wchar_t）。
      */
-    class Path {
-        std::string path; ///< 存储的路径字符串
+    template <class CharT = char>
+    class BasicPath {
+        using string_type = std::basic_string<CharT>;
+
+        string_type path;
 
     public:
-        /// @brief 字节类型别名，表示二进制数据的容器（unsigned char 的
-        /// vector）。
         using Bytes = std::vector<unsigned char>;
 
-        /**
-         * @brief 从字符串构造 Path 对象。
-         * @param str 路径字符串。
-         * @note 在 Windows 上会将 '/' 自动转换为 '\\'。
-         */
-        Path(const std::string &str) : path(str) {
+        BasicPath(const string_type &str) : path(str) {
 #ifdef _WIN32
-            for (char &ch : path) {
-                if (ch == '/') ch = '\\';
+            for (auto &ch : path) {
+                if (ch == static_cast<CharT>('/'))
+                    ch = static_cast<CharT>('\\');
             }
 #endif
         }
 
-        /**
-         * @brief 路径拼接运算符。
-         * @param p1 左路径。
-         * @param p2 右路径。
-         * @return Path 拼接后的新路径，格式为 "p1/p2" 或 "p1\\p2"。
-         * @note 在 Windows 拼接后，构造函数会自动将 '/' 变成 '\\'。
-         */
-        friend Path operator/(const Path &p1, const Path &p2) {
-            return p1.path + '/' + p2.path;
+        friend BasicPath operator/(const BasicPath &p1, const BasicPath &p2) {
+            return BasicPath(p1.path + static_cast<CharT>('/') + p2.path);
         }
 
-        /**
-         * @brief 以文本模式读取文件全部内容。
-         * @return std::string 文件内容。
-         * @throw FileError 若文件无法打开或读取过程中流状态出错。
-         */
-        std::string read_text() const {
-            std::ifstream fin(path);
+    private:
+        std::string narrow() const {
+            return std::string(path.begin(), path.end());
+        }
+
+        template <class T = CharT>
+        static typename std::enable_if<std::is_same<T, char>::value,
+            string_type>::type
+        widen_or_pass(const std::string &s) {
+            return s;
+        }
+
+        template <class T = CharT>
+        static typename std::enable_if<std::is_same<T, wchar_t>::value,
+            string_type>::type
+        widen_or_pass(const std::string &s) {
+            return string_type(s.begin(), s.end());
+        }
+
+        template <class T = CharT>
+        static typename std::enable_if<std::is_same<T, char>::value, void>::type
+        write_to_stream(std::ofstream &fout, const string_type &text) {
+            fout << text;
+        }
+
+        template <class T = CharT>
+        static
+            typename std::enable_if<std::is_same<T, wchar_t>::value, void>::type
+            write_to_stream(std::ofstream &fout, const string_type &text) {
+            fout << std::string(text.begin(), text.end());
+        }
+
+    public:
+        string_type read_text() const {
+            std::ifstream fin(narrow());
             if (!fin.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
-            std::string text{std::istreambuf_iterator<char>(fin),
+                throw FileError("Cannot Open File \"" + narrow() + '"');
+            std::string buf{std::istreambuf_iterator<char>(fin),
                 std::istreambuf_iterator<char>()};
-            if (!fin.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
-            return text;
+            if (fin.fail() && !fin.eof())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
+            return widen_or_pass(buf);
         }
 
-        /**
-         * @brief 以二进制模式读取文件全部内容。
-         * @return Bytes 无符号字节向量。
-         * @throw FileError 若文件无法打开或读取过程中流状态出错。
-         */
         Bytes read_binary() const {
-            std::ifstream fin(path, std::ios::binary);
+            std::ifstream fin(narrow(), std::ios::binary);
             if (!fin.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             Bytes bytes{std::istreambuf_iterator<char>(fin),
                 std::istreambuf_iterator<char>()};
-            if (!fin.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+            if (fin.fail() && !fin.eof())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
             return bytes;
         }
 
-        /**
-         * @brief 按行读取文本文件，返回每行字符串的 vector。
-         * @return std::vector<std::string> 各行内容（不包含换行符）。
-         * @throw FileError 若文件无法打开或读取过程中出错。
-         */
-        std::vector<std::string> read_lines() const {
-            return split(read_text(), "\n");
+        std::vector<string_type> read_lines() const {
+            return split(read_text(), string_type(1, static_cast<CharT>('\n')));
         }
 
-        /**
-         * @brief 从二进制文件读取一个 POD 类型对象（类型安全版本）。
-         * @tparam T 必须是平凡可复制（trivially copyable）的类型。
-         * @return T 读取到的对象。
-         * @throw FileError 若文件无法打开或读取失败。
-         * @note 编译期检查 T 是否为 POD 类型，否则触发 static_assert。
-         */
         template <class T>
         T read_POD() const {
             static_assert(std::is_trivially_copyable<T>::value,
                 "This Type is Not POD Type!");
-            std::ifstream fin(path, std::ios::binary);
+            std::ifstream fin(narrow(), std::ios::binary);
             if (!fin.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             T data;
             fin.read((char *)(&data), sizeof(data));
             if (!fin.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
             return data;
         }
 
-        /**
-         * @brief 从二进制文件读取一个 POD 类型对象（不安全版本）。
-         * @tparam T 任何类型（无编译期检查）。
-         * @return T 读取到的对象。
-         * @throw FileError 若文件无法打开或读取失败。
-         * @warning 不检查 T 是否为 POD 类型，可能因类型不匹配导致未定义行为。
-         */
         template <class T>
         T unsafe_read_POD() const {
-            std::ifstream fin(path, std::ios::binary);
+            std::ifstream fin(narrow(), std::ios::binary);
             if (!fin.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             T data;
             fin.read((char *)(&data), sizeof(data));
             if (!fin.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
             return data;
         }
 
-        /**
-         * @brief 以文本模式写入字符串到文件（覆盖模式）。
-         * @param text 要写入的文本。
-         * @throw FileError 若文件无法打开或写入过程中流状态出错。
-         */
-        void write_text(const std::string &text) const {
-            std::ofstream fout(path);
+        void write_text(const string_type &text) const {
+            std::ofstream fout(narrow());
             if (!fout.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
-            fout << text;
-            if (!fout.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("Cannot Open File \"" + narrow() + '"');
+            write_to_stream(fout, text);
+            if (fout.fail())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
         }
 
-        /**
-         * @brief 以二进制模式写入字节数据到文件（覆盖模式）。
-         * @param bts 要写入的字节向量。
-         * @throw FileError 若文件无法打开或写入过程中流状态出错。
-         */
         void write_binary(const Bytes &bts) const {
-            std::ofstream fout(path, std::ios::binary);
+            std::ofstream fout(narrow(), std::ios::binary);
             if (!fout.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             fout.write((const char *)(bts.data()), bts.size());
-            if (!fout.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+            if (fout.fail())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
         }
 
-        /**
-         * @brief 将多行字符串写入文件，每行之间用换行符分隔。
-         * @param lines 字符串向量。
-         * @throw FileError 若文件无法打开或写入过程中出错。
-         * @note 若 lines 为空，则不做任何操作（不创建文件）。
-         */
-        void write_lines(const std::vector<std::string> &lines) const {
-            std::ofstream fout(path, std::ios::binary);
+        void write_lines(const std::vector<string_type> &lines) const {
+            std::ofstream fout(narrow(), std::ios::binary);
             if (lines.empty()) return;
             if (!fout.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
-            auto it = lines.begin();
-            fout << *it;
-            while (++it != lines.end()) fout << '\n' << *it;
-            if (!fout.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+                throw FileError("Cannot Open File \"" + narrow() + '"');
+            write_to_stream(fout, lines[0]);
+            for (size_t i = 1; i < lines.size(); ++i) {
+                fout << '\n';
+                write_to_stream(fout, lines[i]);
+            }
+            if (fout.fail())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
         }
 
-        /**
-         * @brief 写入一个 POD 类型对象到二进制文件（类型安全版本）。
-         * @tparam T 必须是平凡可复制类型。
-         * @param data 要写入的对象。
-         * @throw FileError 若文件无法打开或写入过程中出错。
-         * @note 编译期检查 T 是否为 POD 类型。
-         */
         template <class T>
         void write_POD(const T &data) const {
             static_assert(std::is_trivially_copyable<T>::value,
                 "This Type is Not POD Type!");
-            std::ofstream fout(path, std::ios::binary);
+            std::ofstream fout(narrow(), std::ios::binary);
             if (!fout.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             fout.write((const char *)(&data), sizeof(data));
-            if (!fout.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+            if (fout.fail())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
         }
 
-        /**
-         * @brief 写入一个对象到二进制文件（不安全版本）。
-         * @tparam T 任何类型。
-         * @param data 要写入的对象。
-         * @throw FileError 若文件无法打开或写入过程中出错。
-         * @warning 不检查 T 是否为 POD
-         * 类型，直接以二进制写入内存表示，可能导致不可移植。
-         */
         template <class T>
         void unsafe_write_POD(const T &data) const {
-            std::ofstream fout(path, std::ios::binary);
+            std::ofstream fout(narrow(), std::ios::binary);
             if (!fout.is_open())
-                throw FileError("Cannot Open File \"" + path + '"');
+                throw FileError("Cannot Open File \"" + narrow() + '"');
             fout.write((const char *)(&data), sizeof(data));
-            if (!fout.good())
-                throw FileError("The Stream of \"" + path + "\" is Not Good");
+            if (fout.fail())
+                throw FileError(
+                    "The Stream of \"" + narrow() + "\" is Not Good");
         }
 
-        /**
-         * @brief 检查文件是否存在。
-         * @return bool 若文件存在且可打开则返回 true，否则 false。
-         */
-        bool exists() const { return std::ifstream{path}.is_open(); }
+        bool exists() const { return std::ifstream{narrow()}.is_open(); }
 
-        /**
-         * @brief 创建空文件（若已存在则更新访问和修改时间）。
-         * @details 相当于 Unix 的 touch
-         * 命令，若文件不存在则创建，若存在则仅更新时间戳。
-         */
-        void touch() const { std::ofstream{path}; }
+        void touch() const { std::ofstream{narrow()}; }
 
-        /**
-         * @brief 确保文件存在，若不存在则创建空文件。
-         * @details 使用追加模式打开文件，不会清空已有内容。
-         */
-        void ensure() const { std::ofstream{path, std::ios::app}; }
+        void ensure() const { std::ofstream{narrow(), std::ios::app}; }
 
-        /**
-         * @brief 删除文件。
-         * @details 使用 std::remove 删除文件，若删除失败（如文件不存在）
-         */
         void remove() const {
-            if (std::remove(path.c_str()) != 0)
-                throw FileError("Cannot Remove File \"" + path + '"');
+            if (std::remove(narrow().c_str()) != 0)
+                throw FileError("Cannot Remove File \"" + narrow() + '"');
         }
 
-        /**
-         * @brief 获取路径字符串。
-         * @return const std::string& 路径字符串。
-         */
-        const std::string &str() const { return path; }
+        const string_type &str() const { return path; }
 
-        /**
-         * @brief 获取文件流对象。
-         * @return std::fstream 文件流对象。
-         * @note 文件流关闭前其它操作可能会导致流状态异常，
-         *       使用前请确保正确管理流的生命周期和状态。
-         */
         std::fstream stream(std::ios_base::openmode mode
                             = std::ios_base::in | std::ios_base::out) const {
-            return std::fstream(path, mode);
+            return std::fstream(narrow(), mode);
         }
     };
+
+    using Path  = BasicPath<char>;
+    using WPath = BasicPath<wchar_t>;
 }

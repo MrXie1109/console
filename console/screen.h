@@ -204,10 +204,15 @@ namespace console {
         /**
          * @brief 将 Screen 存储的虚拟屏幕输出到指定流。
          * @details 内部使用临时字符串减少输出次数，减少 IO 导致的效率问题。
+         * @tparam CharT 字符类型。
+         * @tparam Traits 字符特征类型。
          * @param os 发送到的输出流。
+         * @param clear 是否清空屏幕。
          * @note 控制台 IO 通常是效率瓶颈，建议手动控制帧率。
          */
-        void update(std::ostream &os = std::cout, bool clear = false) const {
+        template <class CharT, class Traits = std::char_traits<CharT>>
+        void update(std::basic_ostream<CharT, Traits> &os    = std::cout,
+            bool                                       clear = false) const {
             if (clear) {
                 os << "\033[2J";
             }
@@ -222,7 +227,7 @@ namespace console {
                 }
                 out += '\n';
             }
-            os << "\033[H" << out << std::flush;
+            os << "\033[H" << out.c_str() << std::flush;
         }
     };
 }

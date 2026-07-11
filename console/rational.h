@@ -36,6 +36,7 @@ SOFTWARE.
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>
+#include <ostream>
 #include <type_traits>
 
 #include "csexc.h"
@@ -302,12 +303,15 @@ namespace console {
 
         /**
          * @brief 将一个分数打印到指定输出流。
+         * @tparam CharT 字符类型。
+         * @tparam Traits 字符特征类型。
          * @param os 输出流。
          * @param r 分数。
-         * @return std::ostream & 原输出流 os 的引用。
+         * @return std::basic_ostream<CharT, Traits> & 原输出流 os 的引用。
          */
-        friend std::ostream &
-        operator<<(std::ostream &os, const BasicRational &r) {
+        template <class CharT, class Traits>
+        friend std::basic_ostream<CharT, Traits> &operator<<(
+            std::basic_ostream<CharT, Traits> &os, const BasicRational &r) {
             os << intmax_t(r.num);
             if (r.den != 1) os << '/' << intmax_t(r.den);
             return os;
@@ -320,7 +324,9 @@ namespace console {
          * @param r 分数。
          * @return std::istream & 原输出流 is 的引用。
          */
-        friend std::istream &operator>>(std::istream &is, BasicRational &r) {
+        template <class CharT, class Traits>
+        friend std::basic_istream<CharT, Traits> &
+        operator>>(std::basic_istream<CharT, Traits> &is, BasicRational &r) {
             intmax_t n, d;
             char     slash;
             is >> n;
@@ -333,8 +339,8 @@ namespace console {
         }
     };
 
-    using Rational = BasicRational<intmax_t>; ///< 以 intmax_t 为基的分数。
-    using Rational_8 = BasicRational<int8_t>; ///< 以 int8_t 为基的分数。
+    using Rational    = BasicRational<intmax_t>; ///< 以 intmax_t 为基的分数。
+    using Rational_8  = BasicRational<int8_t>; ///< 以 int8_t 为基的分数。
     using Rational_16 = BasicRational<int16_t>; ///< 以 int16_t 为基的分数。
     using Rational_32 = BasicRational<int32_t>; ///< 以 int32_t 为基的分数。
     using Rational_64 = BasicRational<int64_t>; ///< 以 int64_t 为基的分数。

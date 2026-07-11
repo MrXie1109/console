@@ -40,41 +40,101 @@ SOFTWARE.
 
 namespace console {
     /**
-     * @struct InputSettings
+     * @struct BasicInputSettings
      * @brief 输入/输出流设置，用于自定义 input 函数的输入输出目标。
+     * @tparam CharT 字符类型。
      * @details 默认使用 std::cout 和 std::cin，可修改以实现重定向或测试。
      */
-    struct InputSettings {
-        std::ostream &os; ///< 输出提示信息的流
-        std::istream &is; ///< 读取输入的流
+    template <class CharT = char>
+    struct BasicInputSettings {
+        std::basic_ostream<CharT> &os; ///< 输出提示信息的流
+        std::basic_istream<CharT> &is; ///< 读取输入的流
     };
 
-    static InputSettings inputSettings{
+    /** @brief BasicInputSettings<char> 的类型别名。 */
+    using InputSettings = BasicInputSettings<char>;
+
+    /** @brief BasicInputSettings<wchar_t> 的类型别名。 */
+    using WInputSettings = BasicInputSettings<wchar_t>;
+
+    static BasicInputSettings<> input_settings{
         std::cout, std::cin}; ///< 全局默认输入设置
+
+    static BasicInputSettings<wchar_t> w_input_settings{
+        std::wcout, std::wcin}; ///< 全局默认宽字符输入设置
 
     /**
      * @brief 从标准输入读取一个值，支持类型模板。
      * @tparam T 要读取的类型，默认为 std::string。
-     * @param prompt 显示给用户的提示字符串。
-     * @param is 输入设置（默认使用全局 inputSettings）。
+     * @tparam CharT 字符类型。
+     * @param prompt 提示字符串。
+     * @param is 输入设置（默认使用全局 input_settings）。
      * @return T 读取的值。
      * @note 若输入失败（如类型不匹配），会清空错误状态并重新提示，直到成功。
      */
-    template <class T = std::string>
-    T input(const std::string &prompt = "",
-        const InputSettings   &is     = inputSettings) {
-        T           tmp;
-        std::string message;
+    template <class T = std::string, class CharT = char>
+    T input(const CharT                 *prompt = "",
+        const BasicInputSettings<CharT> &is     = input_settings) {
+        T tmp;
         while (true) {
             is.os << prompt << std::flush;
             is.is >> tmp;
             if (!is.is) {
                 is.is.clear();
-                is.is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                is.os << "StreamError!\n";
+                is.is.ignore(
+                    std::numeric_limits<std::streamsize>::max(), CharT('\n'));
+                is.os << "Stream Error!" << std::endl;
                 continue;
             }
-            is.is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            is.is.ignore(
+                std::numeric_limits<std::streamsize>::max(), CharT('\n'));
+            return tmp;
+        }
+    }
+
+    /**
+     * @brief 读取一行宽字符字符串。
+     * @param prompt 提示信息。
+     * @param is 输入设置。
+     * @return T 读取的值。
+     * @note 本质上是语法糖。
+     */
+    template <class T = std::string>
+    T winput(const wchar_t   *prompt = L"",
+        const WInputSettings &is     = w_input_settings) {
+        T tmp;
+        while (true) {
+            is.os << prompt << std::flush;
+            is.is >> tmp;
+            if (!is.is) {
+                is.is.clear();
+                is.is.ignore(
+                    std::numeric_limits<std::streamsize>::max(), wchar_t('\n'));
+                is.os << "Stream Error!" << std::endl;
+                continue;
+            }
+            is.is.ignore(
+                std::numeric_limits<std::streamsize>::max(), wchar_t('\n'));
+            return tmp;
+        }
+    }
+
+    template <class T = std::wstring, class CharT = wchar_t>
+    T inputLine(
+        const CharT *prompt = "", const WInputSettings &is = w_input_settings) {
+        T tmp;
+        while (true) {
+            is.os << prompt << std::flush;
+            is.is >> tmp;
+            if (!is.is) {
+                is.is.clear();
+                is.is.ignore(
+                    std::numeric_limits<std::streamsize>::max(), CharT('\n'));
+                is.os << "Stream Error!" << std::endl;
+                continue;
+            }
+            is.is.ignore(
+                std::numeric_limits<std::streamsize>::max(), CharT('\n'));
             return tmp;
         }
     }
@@ -85,43 +145,43 @@ namespace console {
      * @param is 输入设置。
      * @return long double 读取的数字。
      */
-    inline long double
-    inputNumber(const std::string &prompt = "Type a number: ",
-        const InputSettings       &is     = inputSettings) {
+    inline long double inputNumber(const char *prompt = "Type a number: ",
+        const InputSettings                   &is     = input_settings) {
         return input<long double>(prompt, is);
     }
 
     /**
      * @brief 读取一整行字符串（包含空格）。
-     * @param prompt 提示字符串（默认为 "Type a line string: "）。
+     * @param prompt 提示字符串。
      * @param is 输入设置。
-     * @return std::string 读取的行（不含换行符）。
+     * @return std::basic_string<CharT> 读取的行（不含换行符）。
      */
-    inline std::string
-    inputLine(const std::string &prompt = "Type a line string: ",
-        const InputSettings     &is     = inputSettings) {
-        std::string tmp;
+    template <class CharT = char>
+    std::basic_string<CharT> inputLine(const CharT *prompt = "",
+        const BasicInputSettings<CharT>            &is     = input_settings) {
+        std::basic_string<CharT> tmp;
         is.os << prompt << std::flush;
-        if (is.is.peek() == '\n') is.is.get();
+        if (is.is.peek() == CharT('\n')) is.is.get();
         std::getline(is.is, tmp);
         return tmp;
     }
 
     /**
      * @brief 读取一个在指定范围内的数字。
-     * @tparam T 输入类型，默认为 long double。
+     * @tparam T 输入类型。
+     * @tparam CharT 字符类型。
      * @param min 最小值（包含）。
      * @param max 最大值（包含）。
-     * @param prompt 提示字符串（默认为 "Type a number: "）。
+     * @param prompt 提示字符串。
      * @param is 输入设置。
      * @return T 验证后的数字。
      * @note 若输入超出范围，会输出错误信息并重新提示。
      */
-    template <class T>
-    T inputWithRange(T       min,
-        T                    max,
-        const std::string   &prompt = "Type a number: ",
-        const InputSettings &is     = inputSettings) {
+    template <class T, class CharT = char>
+    T inputWithRange(T                   min,
+        T                                max,
+        const CharT                     *prompt = "",
+        const BasicInputSettings<CharT> &is     = input_settings) {
         T tmp;
         while (true) {
             tmp = input<T>(prompt, is);
@@ -140,29 +200,28 @@ namespace console {
 
     /**
      * @brief 读取一个字符。
-     * @param prompt 提示字符串（默认为 "Type a character: "）。
+     * @tparam CharT 字符类型。
+     * @param prompt 提示字符串。
      * @param is 输入设置。
-     * @return char 读取的第一个字符。
-     * @note 此函数使用 is.is.get()，不会跳过空白字符，注意与格式化输入的区别。
+     * @return CharT 读取的第一个字符。
      */
-    inline char inputChar(const std::string &prompt = "Type a character: ",
-        const InputSettings                 &is     = inputSettings) {
+    template <class CharT = char>
+    CharT inputChar(const CharT         *prompt = "",
+        const BasicInputSettings<CharT> &is     = input_settings) {
         is.os << prompt << std::flush;
-        char tmp = is.is.get();
-        is.is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        CharT tmp = static_cast<CharT>(is.is.get());
+        is.is.ignore(std::numeric_limits<std::streamsize>::max(), CharT('\n'));
         return tmp;
     }
 
     /**
      * @brief 读取一个 y/n 确认，返回布尔值。
-     * @param prompt 提示字符串（默认为 "Type yes or no: "）。
+     * @param prompt 提示字符串。
      * @param is 输入设置。
-     * @return bool true 若输入 'Y' 或 'y'，false 若输入 'N' 或 'n'。
-     * @note 若输入其他字符，会提示重新输入。
+     * @return bool true 若输入 'Y'/'y'，false 若输入 'N'/'n'。
      */
-    inline bool inputYesOrNo(const std::string &prompt = "Type yes or no: ",
-        const InputSettings                    &is     = inputSettings) {
-        std::string tmp;
+    inline bool inputYesOrNo(const char *prompt = "Type yes or no: ",
+        const InputSettings             &is     = input_settings) {
         while (true) {
             char tmp = inputChar(prompt, is);
             if (tmp == 'Y' || tmp == 'y')
@@ -176,15 +235,15 @@ namespace console {
 
     /**
      * @brief 读取输入流中剩余的全部内容（直到 EOF）。
-     * @param prompt 提示字符串（默认为空）。
+     * @param prompt 提示字符串。
      * @param is 输入设置。
-     * @return std::string 从当前位置到流末尾的所有字符。
-     * @note 常用于读取多行输入，直到用户输入 EOF（Ctrl+Z/Ctrl+D）。
+     * @return std::basic_string<CharT> 从当前位置到流末尾的所有字符。
      */
-    inline std::string inputAll(const std::string &prompt = "",
-        const InputSettings                       &is     = inputSettings) {
+    template <class CharT = char>
+    std::basic_string<CharT> inputAll(const CharT *prompt = "",
+        const BasicInputSettings<CharT>           &is     = input_settings) {
         is.os << prompt;
-        return {std::istreambuf_iterator<char>(is.is),
-            std::istreambuf_iterator<char>()};
+        return {std::istreambuf_iterator<CharT>(is.is),
+            std::istreambuf_iterator<CharT>()};
     }
 }

@@ -1,10 +1,9 @@
 /**
  * @file adapter.h
- * @brief 提供带有值返回 pop 操作的容器适配器包装类和 range 函数。
+ * @brief 提供带有值返回 pop 操作的容器适配器包装类。
  * @details 该模块对 STL 容器适配器（stack、queue、priority_queue）进行扩展，
- *          重载了 pop()
- * 方法，使其在弹出元素的同时返回该元素的值。适用于需要在弹出元素时获取其值的场景。
- *          提供 range() 函数用于生成数值范围，类似于 Python 的 range() 函数。
+ *          重载了 pop() 方法，使其在弹出元素的同时返回该元素的值。
+ *          适用于需要在弹出元素时获取其值的场景。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -157,127 +156,4 @@ namespace console {
             return top;
         }
     };
-
-    /**
-     * @brief RangeIterator 类模板，用于实现 range() 函数生成的迭代器。
-     * @details 该迭代器支持前置和后置递增操作，解引用操作返回当前值。
-     *          比较操作符根据步长方向判断是否达到范围边界。
-     *          可以直接用于 range-based for 循环中，生成数值范围。
-     * @tparam T 值类型。
-     */
-    template <class T>
-    class RangeIterator {
-        T cur_;
-        T bounds_;
-        T step_;
-
-    public:
-        typedef T    value_type; ///< 类型别名
-        typedef void pointer; ///< 类型别名（不实际使用）
-        typedef T
-            reference; ///< 类型别名（由于解引用产出值，所以引用类型实际上不是引用）
-
-        typedef std::forward_iterator_tag iterator_category; ///< 类型别名
-        typedef std::ptrdiff_t            difference_type; ///< 类型别名
-
-        /**
-         * @brief 构造函数。
-         * @param start 范围的起始值，默认为 T 的默认构造值。
-         * @param end 范围的结束值，默认为 T 的默认构造
-         * @param step 范围的步长，默认为 T 的默认构造值。
-         */
-        RangeIterator(
-            const T &cur = T{}, const T &bounds = T{}, const T &step = T{}) :
-            cur_(cur), bounds_(bounds), step_(step) {}
-
-        /**
-         * @brief 解引用运算符。
-         * @return T 当前迭代器指向的值。
-         */
-        T operator*() const { return cur_; }
-
-        /**
-         * @brief 前置递增运算符。
-         * @return RangeIterator& 递增后的迭代器引用。
-         */
-        RangeIterator &operator++() {
-            cur_ += step_;
-            return *this;
-        }
-
-        /**
-         * @brief 后置递增运算符。
-         * @return const RangeIterator 递增前的迭代器副本。
-         */
-        const RangeIterator operator++(int) {
-            const RangeIterator old = *this;
-            cur_ += step_;
-            return old;
-        }
-
-        /**
-         * @brief 比较运算符。
-         * @param 另一个 RangeIterator 对象。
-         * @return bool 如果当前迭代器未达到范围边界，则返回 true；否则返回
-         * false。
-         * @note 可能不是传统语义，但是用于 range-based for 没问题。
-         *       第二个迭代器（end）只是一个空壳，比较时不使用其值，仅用于标识范围结束。
-         * @see std::istream_iterator 的比较运算符实现，类似地不使用 end
-         * 迭代器的值进行比较， 而是根据当前迭代器的状态判断是否达到范围边界。
-         */
-        bool operator!=(const RangeIterator &) const {
-            return step_ > T{} ? cur_ < bounds_ : cur_ > bounds_;
-        }
-
-        /**
-         * @brief 比较运算符。
-         * @param 另一个 RangeIterator 对象。
-         * @return bool 如果当前迭代器已达到范围边界，则返回 true；否则返回
-         * false。
-         * @note 可能不是传统语义，但是用于 range-based for 没问题。
-         *       第二个迭代器（end）只是一个空壳，比较时不使用其值，仅用于标识范围结束。
-         * @see std::istream_iterator 的比较运算符实现，类似地不使用 end
-         * 迭代器的值进行比较， 而是根据当前迭代器的状态判断是否达到范围边界。
-         */
-        bool operator==(const RangeIterator &) const {
-            return step_ > T{} ? cur_ >= bounds_ : cur_ <= bounds_;
-        }
-    };
-
-    /**
-     * @brief 生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。
-     * @tparam T 值类型。
-     * @param end 结束值。
-     * @return IteratorPair<RangeIterator<T>> 可迭代对象。
-     */
-    template <class T>
-    inline IteratorPair<RangeIterator<T>> range(const T &end) {
-        return {{T{}, end, T{1}}, {T{}, end, T{1}}};
-    }
-
-    /**
-     * @brief 生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。
-     * @tparam T 值类型。
-     * @param start 起始值。
-     * @param end 结束值。
-     * @return IteratorPair<RangeIterator<T>> 可迭代对象。
-     */
-    template <class T>
-    inline IteratorPair<RangeIterator<T>> range(const T &start, const T &end) {
-        return {{start, end, T{1}}, {start, end, T{1}}};
-    }
-
-    /**
-     * @brief 生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。
-     * @tparam T 值类型。
-     * @param start 起始值。
-     * @param end 结束值。
-     * @param step 步长。
-     * @return IteratorPair<RangeIterator<T>> 可迭代对象。
-     */
-    template <class T>
-    inline IteratorPair<RangeIterator<T>>
-    range(const T &start, const T &end, const T &step) {
-        return {{start, end, step}, {start, end, step}};
-    }
 }

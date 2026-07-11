@@ -176,6 +176,41 @@ namespace console {
     /// @endcond
 
     /**
+     * @struct is_basic_printable
+     * @brief 检测类型是否支持输出到指定字符类型的流（即定义了 operator<<）。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
+     * @tparam T 待检测的类型。
+     */
+    template <class CharT, class Traits, class T, class = void>
+    struct is_basic_printable : std::false_type {};
+
+    /// @cond INTERNAL
+    template <class CharT, class Traits, class T>
+    struct is_basic_printable<CharT,
+        Traits,
+        T,
+        typename std::enable_if<sizeof(
+            decltype(std::declval<std::basic_ostream<CharT, Traits> &>()
+                     << std::declval<T>()))>::type> : std::true_type {};
+    /// @endcond
+
+    /** @brief is_basic_printable<wchar_t, ...> 的简写。 */
+    template <class T>
+    using is_w_printable
+        = is_basic_printable<wchar_t, std::char_traits<wchar_t>, T>;
+
+    /** @brief is_basic_printable<char16_t, ...> 的简写。 */
+    template <class T>
+    using is_u16_printable
+        = is_basic_printable<char16_t, std::char_traits<char16_t>, T>;
+
+    /** @brief is_basic_printable<char32_t, ...> 的简写。 */
+    template <class T>
+    using is_u32_printable
+        = is_basic_printable<char32_t, std::char_traits<char32_t>, T>;
+
+    /**
      * @struct is_char
      * @brief 检测类型是否为字符类型（char、wchar_t、char16_t、char32_t 等）。
      * @tparam T 待检测的类型。
@@ -223,20 +258,25 @@ namespace console {
     };
     /// @endcond
 
-    // 便利别名模板（enable_if 快捷方式）
     /**
-     * @brief 启用若 T 是容器。
+     * @struct is_generator
+     * @brief 检测类型是否为生成器（具有 done()、current()、advance() 接口）。
+     * @tparam T 待检测的类型。
      */
-    template <class T>
-    using enable_if_container =
-        typename std::enable_if<is_container<T>::value>::type;
+    template <class T, class = void>
+    struct is_generator : std::false_type {};
 
-    /**
-     * @brief 启用若 T 不是容器。
-     */
+    /// @cond INTERNAL
     template <class T>
-    using enable_if_not_container =
-        typename std::enable_if<!is_container<T>::value>::type;
+    struct is_generator<T,
+        typename std::enable_if<
+            sizeof(decltype(std::declval<T>().done()))
+            && sizeof(decltype(std::declval<T>().current()))
+            && sizeof(decltype(std::declval<T>().advance()))
+            && sizeof(typename T::value_type)
+            && std::is_same<decltype(std::declval<T>().done()), bool>::value //
+            >::type> : std::true_type {};
+    /// @endcond
 
     /**
      * @brief 启用若 F 可以 Args... 参数调用。
@@ -313,6 +353,52 @@ namespace console {
      */
     template <typename T>
     using uniform_distribution_t = typename uniform_distribution_impl<T>::type;
+
+    /**
+     * @brief 启用若 T 是生成器。
+     */
+    template <class T>
+    using enable_if_generator =
+        typename std::enable_if<is_generator<T>::value>::type;
+
+    /**
+     * @brief 启用若 T 不是生成器。
+     */
+    template <class T>
+    using enable_if_not_generator =
+        typename std::enable_if<!is_generator<T>::value>::type;
+
+    // ———— basic_printable enable_if 别名 ————
+
+    /**
+     * @brief 启用若 T（decay 后）对给定字符流可打印。
+     */
+    template <class CharT, class Traits, class T>
+    using enable_if_basic_printable =
+        typename std::enable_if<is_basic_printable<CharT,
+            Traits,
+            typename std::decay<T>::type>::value>::type;
+
+    /**
+     * @brief 启用若 T（decay 后）对 wchar_t 流可打印。
+     */
+    template <class T>
+    using enable_if_w_printable = typename std::enable_if<
+        is_w_printable<typename std::decay<T>::type>::value>::type;
+
+    /**
+     * @brief 启用若 T（decay 后）对 char16_t 流可打印。
+     */
+    template <class T>
+    using enable_if_u16_printable = typename std::enable_if<
+        is_u16_printable<typename std::decay<T>::type>::value>::type;
+
+    /**
+     * @brief 启用若 T（decay 后）对 char32_t 流可打印。
+     */
+    template <class T>
+    using enable_if_u32_printable = typename std::enable_if<
+        is_u32_printable<typename std::decay<T>::type>::value>::type;
 
     /** @} */ // end of sfinae group
 }
