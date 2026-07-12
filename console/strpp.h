@@ -576,6 +576,7 @@ namespace console {
     upper(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return upper(std::wstring(str), loc);
     }
+#ifndef __clang__
     /** @copydoc upper */
     inline std::u16string
     upper(const char16_t *str, const std::locale &loc = std::locale{}) {
@@ -586,6 +587,7 @@ namespace console {
     upper(const char32_t *str, const std::locale &loc = std::locale{}) {
         return upper(std::u32string(str), loc);
     }
+#endif
 
     /** @copydoc lower */
     inline std::string
@@ -597,6 +599,7 @@ namespace console {
     lower(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return lower(std::wstring(str), loc);
     }
+#ifndef __clang__
     /** @copydoc lower */
     inline std::u16string
     lower(const char16_t *str, const std::locale &loc = std::locale{}) {
@@ -607,6 +610,7 @@ namespace console {
     lower(const char32_t *str, const std::locale &loc = std::locale{}) {
         return lower(std::u32string(str), loc);
     }
+#endif
 
     /** @copydoc title */
     inline std::string
@@ -618,6 +622,7 @@ namespace console {
     title(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return title(std::wstring(str), loc);
     }
+#ifndef __clang__
     /** @copydoc title */
     inline std::u16string
     title(const char16_t *str, const std::locale &loc = std::locale{}) {
@@ -628,6 +633,7 @@ namespace console {
     title(const char32_t *str, const std::locale &loc = std::locale{}) {
         return title(std::u32string(str), loc);
     }
+#endif
 
     // ———— C 字符串混用重载（basic_string + const CharT*） ————
 

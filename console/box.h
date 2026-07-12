@@ -397,7 +397,7 @@ namespace console {
             while (++it != box.end()) os << L", " << *it;
             return os << L')';
         }
-
+#ifndef __clang__
         /**
          * @brief 将 Box 输出到 UTF-16 流。
          */
@@ -421,5 +421,6 @@ namespace console {
             while (++it != box.end()) os << U", " << *it;
             return os << U')';
         }
+#endif
     };
 }
