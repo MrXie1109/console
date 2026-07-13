@@ -171,17 +171,5 @@ namespace console {
         inline WFString operator""_f(const wchar_t *str, size_t) {
             return str;
         }
-        /**
-         * @brief UTF-16 格式化字符串字面量，返回 U16FString 对象。
-         */
-        inline U16FString operator""_f(const char16_t *str, size_t) {
-            return str;
-        }
-        /**
-         * @brief UTF-32 格式化字符串字面量，返回 U32FString 对象。
-         */
-        inline U32FString operator""_f(const char32_t *str, size_t) {
-            return str;
-        }
     }
 }

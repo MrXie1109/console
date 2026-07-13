@@ -139,6 +139,12 @@ namespace console {
         os << clr;
     }
 
+    /** @copydoc cc */
+    inline void
+    cc(const char *clr = color::Reset, std::wostream &os = std::wcout) {
+        os << clr;
+    }
+
     /**
      * @class ColorGuard
      * @brief RAII颜色守卫，构造时设置颜色，析构时自动恢复。
@@ -165,5 +171,33 @@ namespace console {
         // 禁止拷贝
         ColorGuard(const ColorGuard &)            = delete;
         ColorGuard &operator=(const ColorGuard &) = delete;
+    };
+
+    /**
+     * @class WColorGuard
+     * @brief RAII颜色守卫，构造时设置颜色，析构时自动恢复。
+     */
+    class WColorGuard {
+        std::wostream &os_; ///< 输出流引用
+
+    public:
+        /**
+         * @brief 构造函数，应用指定颜色。
+         * @param color ANSI颜色序列（如 color::Red）
+         * @param os 输出流，默认为 std::cout
+         */
+        explicit WColorGuard(
+            const char *color, std::wostream &os = std::wcout) : os_(os) {
+            os << color;
+        }
+
+        /**
+         * @brief 析构函数，自动恢复默认颜色。
+         */
+        ~WColorGuard() { os_ << color::Reset; }
+
+        // 禁止拷贝
+        WColorGuard(const WColorGuard &)            = delete;
+        WColorGuard &operator=(const WColorGuard &) = delete;
     };
 }

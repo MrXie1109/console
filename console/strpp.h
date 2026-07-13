@@ -283,10 +283,6 @@ namespace console {
     using PartitionResult = BasicPartitionResult<char>;
     /** @brief BasicPartitionResult<wchar_t> 的类型别名。 */
     using WPartitionResult = BasicPartitionResult<wchar_t>;
-    /** @brief BasicPartitionResult<char16_t> 的类型别名。 */
-    using U16PartitionResult = BasicPartitionResult<char16_t>;
-    /** @brief BasicPartitionResult<char32_t> 的类型别名。 */
-    using U32PartitionResult = BasicPartitionResult<char32_t>;
 
     /**
      * @brief 在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。
@@ -448,13 +444,9 @@ namespace console {
     using FString = BasicFString<char>;
     /** @brief BasicFString<wchar_t> 的类型别名。 */
     using WFString = BasicFString<wchar_t>;
-    /** @brief BasicFString<char16_t> 的类型别名。 */
-    using U16FString = BasicFString<char16_t>;
-    /** @brief BasicFString<char32_t> 的类型别名。 */
-    using U32FString = BasicFString<char32_t>;
 
     // ──────────────────────────────────────────────
-    // C 字符串字面量重载（const char*, const wchar_t*, const char16_t*, const char32_t*）
+    // C 字符串字面量重载（const char*, const wchar_t*）
     // 构造对应的 basic_string 后转发给泛型版本
     // ──────────────────────────────────────────────
 
@@ -466,14 +458,6 @@ namespace console {
     inline std::wstring ltrim(const wchar_t *str) {
         return ltrim(std::wstring(str));
     }
-    /** @copydoc ltrim(basic_string) */
-    inline std::u16string ltrim(const char16_t *str) {
-        return ltrim(std::u16string(str));
-    }
-    /** @copydoc ltrim(basic_string) */
-    inline std::u32string ltrim(const char32_t *str) {
-        return ltrim(std::u32string(str));
-    }
 
     /** @copydoc rtrim(basic_string) */
     inline std::string rtrim(const char *str) {
@@ -482,14 +466,6 @@ namespace console {
     /** @copydoc rtrim(basic_string) */
     inline std::wstring rtrim(const wchar_t *str) {
         return rtrim(std::wstring(str));
-    }
-    /** @copydoc rtrim(basic_string) */
-    inline std::u16string rtrim(const char16_t *str) {
-        return rtrim(std::u16string(str));
-    }
-    /** @copydoc rtrim(basic_string) */
-    inline std::u32string rtrim(const char32_t *str) {
-        return rtrim(std::u32string(str));
     }
 
     /** @copydoc trim(basic_string) */
@@ -500,14 +476,6 @@ namespace console {
     inline std::wstring trim(const wchar_t *str) {
         return trim(std::wstring(str));
     }
-    /** @copydoc trim(basic_string) */
-    inline std::u16string trim(const char16_t *str) {
-        return trim(std::u16string(str));
-    }
-    /** @copydoc trim(basic_string) */
-    inline std::u32string trim(const char32_t *str) {
-        return trim(std::u32string(str));
-    }
 
     /** @copydoc ltrim(basic_string, basic_string) */
     inline std::string ltrim(const char *str, const std::string &chars) {
@@ -516,16 +484,6 @@ namespace console {
     /** @copydoc ltrim(basic_string, basic_string) */
     inline std::wstring ltrim(const wchar_t *str, const std::wstring &chars) {
         return ltrim(std::wstring(str), chars);
-    }
-    /** @copydoc ltrim(basic_string, basic_string) */
-    inline std::u16string
-    ltrim(const char16_t *str, const std::u16string &chars) {
-        return ltrim(std::u16string(str), chars);
-    }
-    /** @copydoc ltrim(basic_string, basic_string) */
-    inline std::u32string
-    ltrim(const char32_t *str, const std::u32string &chars) {
-        return ltrim(std::u32string(str), chars);
     }
 
     /** @copydoc rtrim(basic_string, basic_string) */
@@ -536,16 +494,6 @@ namespace console {
     inline std::wstring rtrim(const wchar_t *str, const std::wstring &chars) {
         return rtrim(std::wstring(str), chars);
     }
-    /** @copydoc rtrim(basic_string, basic_string) */
-    inline std::u16string
-    rtrim(const char16_t *str, const std::u16string &chars) {
-        return rtrim(std::u16string(str), chars);
-    }
-    /** @copydoc rtrim(basic_string, basic_string) */
-    inline std::u32string
-    rtrim(const char32_t *str, const std::u32string &chars) {
-        return rtrim(std::u32string(str), chars);
-    }
 
     /** @copydoc trim(basic_string, basic_string) */
     inline std::string trim(const char *str, const std::string &chars) {
@@ -554,16 +502,6 @@ namespace console {
     /** @copydoc trim(basic_string, basic_string) */
     inline std::wstring trim(const wchar_t *str, const std::wstring &chars) {
         return trim(std::wstring(str), chars);
-    }
-    /** @copydoc trim(basic_string, basic_string) */
-    inline std::u16string
-    trim(const char16_t *str, const std::u16string &chars) {
-        return trim(std::u16string(str), chars);
-    }
-    /** @copydoc trim(basic_string, basic_string) */
-    inline std::u32string
-    trim(const char32_t *str, const std::u32string &chars) {
-        return trim(std::u32string(str), chars);
     }
 
     /** @copydoc upper */
@@ -576,19 +514,6 @@ namespace console {
     upper(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return upper(std::wstring(str), loc);
     }
-#ifndef __clang__
-    /** @copydoc upper */
-    inline std::u16string
-    upper(const char16_t *str, const std::locale &loc = std::locale{}) {
-        return upper(std::u16string(str), loc);
-    }
-    /** @copydoc upper */
-    inline std::u32string
-    upper(const char32_t *str, const std::locale &loc = std::locale{}) {
-        return upper(std::u32string(str), loc);
-    }
-#endif
-
     /** @copydoc lower */
     inline std::string
     lower(const char *str, const std::locale &loc = std::locale{}) {
@@ -599,18 +524,6 @@ namespace console {
     lower(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return lower(std::wstring(str), loc);
     }
-#ifndef __clang__
-    /** @copydoc lower */
-    inline std::u16string
-    lower(const char16_t *str, const std::locale &loc = std::locale{}) {
-        return lower(std::u16string(str), loc);
-    }
-    /** @copydoc lower */
-    inline std::u32string
-    lower(const char32_t *str, const std::locale &loc = std::locale{}) {
-        return lower(std::u32string(str), loc);
-    }
-#endif
 
     /** @copydoc title */
     inline std::string
@@ -622,18 +535,6 @@ namespace console {
     title(const wchar_t *str, const std::locale &loc = std::locale{}) {
         return title(std::wstring(str), loc);
     }
-#ifndef __clang__
-    /** @copydoc title */
-    inline std::u16string
-    title(const char16_t *str, const std::locale &loc = std::locale{}) {
-        return title(std::u16string(str), loc);
-    }
-    /** @copydoc title */
-    inline std::u32string
-    title(const char32_t *str, const std::locale &loc = std::locale{}) {
-        return title(std::u32string(str), loc);
-    }
-#endif
 
     // ———— C 字符串混用重载（basic_string + const CharT*） ————
 
@@ -666,16 +567,6 @@ namespace console {
     partition(const wchar_t *text, const std::wstring &sep) {
         return partition(std::wstring(text), sep);
     }
-    /** @copydoc partition */
-    inline BasicPartitionResult<char16_t>
-    partition(const char16_t *text, const std::u16string &sep) {
-        return partition(std::u16string(text), sep);
-    }
-    /** @copydoc partition */
-    inline BasicPartitionResult<char32_t>
-    partition(const char32_t *text, const std::u32string &sep) {
-        return partition(std::u32string(text), sep);
-    }
 
     /** @copydoc split */
     inline std::vector<std::string>
@@ -686,16 +577,6 @@ namespace console {
     inline std::vector<std::wstring>
     split(const wchar_t *text, const std::wstring &sep = L" ") {
         return split(std::wstring(text), sep);
-    }
-    /** @copydoc split */
-    inline std::vector<std::u16string>
-    split(const char16_t *text, const std::u16string &sep = u" ") {
-        return split(std::u16string(text), sep);
-    }
-    /** @copydoc split */
-    inline std::vector<std::u32string>
-    split(const char32_t *text, const std::u32string &sep = U" ") {
-        return split(std::u32string(text), sep);
     }
 
     /** @} */ // end of strpp group

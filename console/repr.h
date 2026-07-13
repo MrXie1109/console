@@ -77,16 +77,6 @@ namespace console {
         auto s = tiname_impl(ti);
         return std::wstring(s.begin(), s.end());
     }
-    /** @brief tiname_impl 的 char16_t 版。 */
-    inline std::u16string u16tiname(const std::type_info &ti) {
-        auto s = tiname_impl(ti);
-        return std::u16string(s.begin(), s.end());
-    }
-    /** @brief tiname_impl 的 char32_t 版。 */
-    inline std::u32string u32tiname(const std::type_info &ti) {
-        auto s = tiname_impl(ti);
-        return std::u32string(s.begin(), s.end());
-    }
 
 #ifndef CONSOLE_PLAIN_REPR
     /**

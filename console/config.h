@@ -351,9 +351,4 @@ namespace console {
     /** @brief BasicINIConfig<wchar_t> 的类型别名。 */
     using WINIConfig = BasicINIConfig<wchar_t>;
 
-    /** @brief BasicINIConfig<char16_t> 的类型别名。 */
-    using U16INIConfig = BasicINIConfig<char16_t>;
-
-    /** @brief BasicINIConfig<char32_t> 的类型别名。 */
-    using U32INIConfig = BasicINIConfig<char32_t>;
 }

@@ -133,10 +133,6 @@ namespace console {
     template <>
     struct is_string<wchar_t *> : std::true_type {};
     template <>
-    struct is_string<char16_t *> : std::true_type {};
-    template <>
-    struct is_string<char32_t *> : std::true_type {};
-    template <>
     struct is_string<const char *> : std::true_type {};
     template <>
     struct is_string<const signed char *> : std::true_type {};
@@ -144,10 +140,6 @@ namespace console {
     struct is_string<const unsigned char *> : std::true_type {};
     template <>
     struct is_string<const wchar_t *> : std::true_type {};
-    template <>
-    struct is_string<const char16_t *> : std::true_type {};
-    template <>
-    struct is_string<const char32_t *> : std::true_type {};
 
     template <class CharT, class Traits, class Alloc>
     struct is_string<std::basic_string<CharT, Traits, Alloc>> : std::true_type {
@@ -200,19 +192,9 @@ namespace console {
     using is_w_printable
         = is_basic_printable<wchar_t, std::char_traits<wchar_t>, T>;
 
-    /** @brief is_basic_printable<char16_t, ...> 的简写。 */
-    template <class T>
-    using is_u16_printable
-        = is_basic_printable<char16_t, std::char_traits<char16_t>, T>;
-
-    /** @brief is_basic_printable<char32_t, ...> 的简写。 */
-    template <class T>
-    using is_u32_printable
-        = is_basic_printable<char32_t, std::char_traits<char32_t>, T>;
-
     /**
      * @struct is_char
-     * @brief 检测类型是否为字符类型（char、wchar_t、char16_t、char32_t 等）。
+     * @brief 检测类型是否为字符类型（char、wchar_t 等）。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -228,10 +210,7 @@ namespace console {
     struct is_char<unsigned char> : std::true_type {};
     template <>
     struct is_char<wchar_t> : std::true_type {};
-    template <>
-    struct is_char<char16_t> : std::true_type {};
-    template <>
-    struct is_char<char32_t> : std::true_type {};
+
     /// @endcond
 
     /**
@@ -385,20 +364,6 @@ namespace console {
     template <class T>
     using enable_if_w_printable = typename std::enable_if<
         is_w_printable<typename std::decay<T>::type>::value>::type;
-
-    /**
-     * @brief 启用若 T（decay 后）对 char16_t 流可打印。
-     */
-    template <class T>
-    using enable_if_u16_printable = typename std::enable_if<
-        is_u16_printable<typename std::decay<T>::type>::value>::type;
-
-    /**
-     * @brief 启用若 T（decay 后）对 char32_t 流可打印。
-     */
-    template <class T>
-    using enable_if_u32_printable = typename std::enable_if<
-        is_u32_printable<typename std::decay<T>::type>::value>::type;
 
     /** @} */ // end of sfinae group
 }

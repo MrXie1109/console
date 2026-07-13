@@ -52,16 +52,12 @@ namespace console {
         /// @brief 虚基类，定义了所有派生类必须实现的接口。
         struct Base {
             virtual ~Base() {}
-            virtual Base       *clone() const                               = 0;
-            virtual void        print(std::ostream &) const                 = 0;
-            virtual void        print(std::wostream &) const                = 0;
-            virtual void        print(std::basic_ostream<char16_t> &) const = 0;
-            virtual void        print(std::basic_ostream<char32_t> &) const = 0;
-            virtual std::string str() const                                 = 0;
-            virtual std::wstring          wstr() const                      = 0;
-            virtual std::u16string        u16str() const                    = 0;
-            virtual std::u32string        u32str() const                    = 0;
-            virtual const std::type_info &type() const                      = 0;
+            virtual Base                 *clone() const                = 0;
+            virtual void                  print(std::ostream &) const  = 0;
+            virtual void                  print(std::wostream &) const = 0;
+            virtual std::string           str() const                  = 0;
+            virtual std::wstring          wstr() const                 = 0;
+            virtual const std::type_info &type() const                 = 0;
         };
 
         /**
@@ -99,14 +95,6 @@ namespace console {
                 auto s = str();
                 os << std::wstring(s.begin(), s.end());
             }
-            void print(std::basic_ostream<char16_t> &os) const override {
-                auto s = str();
-                os << std::u16string(s.begin(), s.end());
-            }
-            void print(std::basic_ostream<char32_t> &os) const override {
-                auto s = str();
-                os << std::u32string(s.begin(), s.end());
-            }
 
             /**
              * @brief 返回存储值的字符串表示。
@@ -121,14 +109,6 @@ namespace console {
             std::wstring wstr() const override {
                 auto s = str();
                 return std::wstring(s.begin(), s.end());
-            }
-            std::u16string u16str() const override {
-                auto s = str();
-                return std::u16string(s.begin(), s.end());
-            }
-            std::u32string u32str() const override {
-                auto s = str();
-                return std::u32string(s.begin(), s.end());
             }
 
             /**
@@ -272,31 +252,11 @@ namespace console {
         }
 
         /**
-         * @brief 将 Item 输出到 UTF-16 流。
-         */
-        friend std::basic_ostream<char16_t> &
-        operator<<(std::basic_ostream<char16_t> &os, const Item &item) {
-            item.ptr->print(os);
-            return os;
-        }
-
-        /**
-         * @brief 将 Item 输出到 UTF-32 流。
-         */
-        friend std::basic_ostream<char32_t> &
-        operator<<(std::basic_ostream<char32_t> &os, const Item &item) {
-            item.ptr->print(os);
-            return os;
-        }
-
-        /**
          * @brief 返回 Item 的字符串表示。
          * @return std::string 字符串形式。
          */
-        std::string    str() const { return ptr->str(); }
-        std::wstring   wstr() const { return ptr->wstr(); }
-        std::u16string u16str() const { return ptr->u16str(); }
-        std::u32string u32str() const { return ptr->u32str(); }
+        std::string  str() const { return ptr->str(); }
+        std::wstring wstr() const { return ptr->wstr(); }
 
         /// @brief 析构函数，释放内部堆内存。
         ~Item() { delete ptr; }
@@ -397,30 +357,5 @@ namespace console {
             while (++it != box.end()) os << L", " << *it;
             return os << L')';
         }
-#ifndef __clang__
-        /**
-         * @brief 将 Box 输出到 UTF-16 流。
-         */
-        friend std::basic_ostream<char16_t> &
-        operator<<(std::basic_ostream<char16_t> &os, const Box &box) {
-            if (box.empty()) return os << u"()";
-            auto it = box.begin();
-            os << u'(' << *it;
-            while (++it != box.end()) os << u", " << *it;
-            return os << u')';
-        }
-
-        /**
-         * @brief 将 Box 输出到 UTF-32 流。
-         */
-        friend std::basic_ostream<char32_t> &
-        operator<<(std::basic_ostream<char32_t> &os, const Box &box) {
-            if (box.empty()) return os << U"()";
-            auto it = box.begin();
-            os << U'(' << *it;
-            while (++it != box.end()) os << U", " << *it;
-            return os << U')';
-        }
-#endif
     };
 }

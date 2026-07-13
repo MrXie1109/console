@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.0.1 (2026-07-12) -- "LLVM is Not Good for ME!")";
+            R"(console version 6.1.0 (2026-07-13) -- "U16 and U32 Are Just Too Weak.")";
     }
 
     /**

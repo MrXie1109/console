@@ -456,12 +456,6 @@ namespace console {
     /** @brief BasicOutput<wchar_t> 的类型别名。 */
     using WOutput = BasicOutput<wchar_t>;
 
-    /** @brief BasicOutput<char16_t> 的类型别名。 */
-    using U16Output = BasicOutput<char16_t>;
-
-    /** @brief BasicOutput<char32_t> 的类型别名。 */
-    using U32Output = BasicOutput<char32_t>;
-
     // ———— 全局实例 ————
 
     /**
@@ -481,35 +475,8 @@ namespace console {
         return instance;
     }
 
-    /**
-     * @brief 内部单例（char16_t）。
-     */
-    inline BasicOutput<char16_t> &get_u16print() {
-        static BasicOutput<char16_t> instance(
-            reinterpret_cast<std::basic_ostream<char16_t> &>(std::cout),
-            std::u16string(1, u' '),
-            std::u16string(1, u'\n'),
-            true);
-        return instance;
-    }
-
-    /**
-     * @brief 内部单例（char32_t）。
-     */
-    inline BasicOutput<char32_t> &get_u32print() {
-        static BasicOutput<char32_t> instance(
-            reinterpret_cast<std::basic_ostream<char32_t> &>(std::cout),
-            std::u32string(1, U' '),
-            std::u32string(1, U'\n'),
-            true);
-        return instance;
-    }
-
     static BasicOutput<> &print
         = get_print(); ///< 全局输出对象，模仿 Python 的 print 函数。
-    static BasicOutput<wchar_t>  &wprint = get_wprint(); ///< 全局宽字符输出。
-    static BasicOutput<char16_t> &u16print
-        = get_u16print(); ///< 全局 UTF-16 输出。
-    static BasicOutput<char32_t> &u32print
-        = get_u32print(); ///< 全局 UTF-32 输出。
+    static BasicOutput<wchar_t> &wprint = get_wprint(); ///< 全局宽字符输出。
+
 }
