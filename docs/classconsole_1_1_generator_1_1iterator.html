@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_generator_1_1iterator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::Generator&lt; Derived, T &gt;::iterator Class Reference</div></div>
 </div><!--header-->
@@ -102,7 +103,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aace7822a33458874e7c8569ca5dde7de" id="r_aace7822a33458874e7c8569ca5dde7de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#aace7822a33458874e7c8569ca5dde7de">iterator</a> (const Derived &amp;d)</td></tr>
+<tr class="memitem:aace7822a33458874e7c8569ca5dde7de" id="r_aace7822a33458874e7c8569ca5dde7de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#aace7822a33458874e7c8569ca5dde7de">iterator</a> (const Derived &amp;<a class="el" href="classconsole_1_1_generator_1_1iterator.html#a7399ddd3cb5f5f834a714c208f63f3c4">d</a>)</td></tr>
 <tr class="memdesc:aace7822a33458874e7c8569ca5dde7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，使用派生类引用初始化迭代器。  <br /></td></tr>
 <tr class="separator:aace7822a33458874e7c8569ca5dde7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7238144e3b576eda10a88c22931f9fd5" id="r_a7238144e3b576eda10a88c22931f9fd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#a8ef14a4481a5fe6c3e5b2c5ba47f54c9">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#a7238144e3b576eda10a88c22931f9fd5">operator*</a> ()</td></tr>
@@ -126,6 +127,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a628bb18adb2bbc9c4416fcf80085c1ba" id="r_a628bb18adb2bbc9c4416fcf80085c1ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#a628bb18adb2bbc9c4416fcf80085c1ba">done</a> ()</td></tr>
 <tr class="memdesc:a628bb18adb2bbc9c4416fcf80085c1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
 <tr class="separator:a628bb18adb2bbc9c4416fcf80085c1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7399ddd3cb5f5f834a714c208f63f3c4" id="r_a7399ddd3cb5f5f834a714c208f63f3c4"><td class="memItemLeft" align="right" valign="top">Derived&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator_1_1iterator.html#a7399ddd3cb5f5f834a714c208f63f3c4">d</a></td></tr>
+<tr class="separator:a7399ddd3cb5f5f834a714c208f63f3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Derived, class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;<br />
@@ -474,13 +480,38 @@ template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7399ddd3cb5f5f834a714c208f63f3c4" name="a7399ddd3cb5f5f834a714c208f63f3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7399ddd3cb5f5f834a714c208f63f3c4">&#9670;&#160;</a></span>d</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived <a class="el" href="classconsole_1_1_generator.html">console::Generator</a>&lt; Derived, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::iterator::d</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="gen_8h_source.html">gen.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

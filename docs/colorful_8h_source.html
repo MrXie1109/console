@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -166,31 +166,65 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
 </div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="foldopen" id="foldopen00146" data-start="{" data-end="};">
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html">  146</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        std::ostream &amp;os_; </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">  155</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">ColorGuard</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *color, std::ostream &amp;os = std::cout) :</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            os_(os) {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            os &lt;&lt; color;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="namespaceconsole.html#aedbf1524f3c17223f4df79b2b1173323">  144</a></span>    <a class="code hl_function" href="namespaceconsole.html#a0dd1af2ef04ad2b19237573e8ae74f4f">cc</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *clr = <a class="code hl_variable" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a>, std::wostream &amp;os = std::wcout) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        os &lt;&lt; clr;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
 </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">  163</a></span>        <a class="code hl_function" href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">~ColorGuard</a>() { os_ &lt;&lt; <a class="code hl_variable" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a>; }</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="comment">// 禁止拷贝</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a54431f0cd3ed2a582034c4565110d712">  166</a></span>        <a class="code hl_function" href="classconsole_1_1_color_guard.html#a54431f0cd3ed2a582034c4565110d712">ColorGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;)            = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">  167</a></span>        <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;<a class="code hl_function" href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    };</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="};">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html">  152</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">  153</a></span>        std::ostream &amp;<a class="code hl_variable" href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">os_</a>; </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">  161</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">ColorGuard</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *color, std::ostream &amp;os = std::cout) :</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <a class="code hl_variable" href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">os_</a>(os) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            os &lt;&lt; color;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
 </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
-<div class="ttc" id="aclassconsole_1_1_color_guard_html"><div class="ttname"><a href="classconsole_1_1_color_guard.html">console::ColorGuard</a></div><div class="ttdoc">RAII颜色守卫，构造时设置颜色，析构时自动恢复。</div><div class="ttdef"><b>Definition</b> colorful.h:146</div></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">  169</a></span>        <a class="code hl_function" href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">~ColorGuard</a>() { <a class="code hl_variable" href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">os_</a> &lt;&lt; <a class="code hl_variable" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a>; }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="comment">// 禁止拷贝</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#a54431f0cd3ed2a582034c4565110d712">  172</a></span>        <a class="code hl_function" href="classconsole_1_1_color_guard.html#a54431f0cd3ed2a582034c4565110d712">ColorGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;)            = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">  173</a></span>        <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;<a class="code hl_function" href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    };</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="};">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html">  180</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classconsole_1_1_w_color_guard.html">WColorGuard</a> {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0">  181</a></span>        std::wostream &amp;<a class="code hl_variable" href="classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0">os_</a>; </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00189" data-start="{" data-end="}">
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html#a64aff656d3bf1393ec4025a5ebf85aec">  189</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classconsole_1_1_w_color_guard.html#a64aff656d3bf1393ec4025a5ebf85aec">WColorGuard</a>(</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="keyword">const</span> <span class="keywordtype">char</span> *color, std::wostream &amp;os = std::wcout) : <a class="code hl_variable" href="classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0">os_</a>(os) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            os &lt;&lt; color;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        }</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html#ad6957ea7d3dc9c8b1a271ebcdc3d3e30">  197</a></span>        <a class="code hl_function" href="classconsole_1_1_w_color_guard.html#ad6957ea7d3dc9c8b1a271ebcdc3d3e30">~WColorGuard</a>() { <a class="code hl_variable" href="classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0">os_</a> &lt;&lt; <a class="code hl_variable" href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">color::Reset</a>; }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="comment">// 禁止拷贝</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html#a0e760736e8e50afc92ec203d2ca83f71">  200</a></span>        <a class="code hl_function" href="classconsole_1_1_w_color_guard.html#a0e760736e8e50afc92ec203d2ca83f71">WColorGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_w_color_guard.html">WColorGuard</a> &amp;)            = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classconsole_1_1_w_color_guard.html#a9f96f9a4542d147c4ee2ef4767e8bedf">  201</a></span>        <a class="code hl_class" href="classconsole_1_1_w_color_guard.html">WColorGuard</a> &amp;<a class="code hl_function" href="classconsole_1_1_w_color_guard.html#a9f96f9a4542d147c4ee2ef4767e8bedf">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1_w_color_guard.html">WColorGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    };</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+<div class="ttc" id="aclassconsole_1_1_color_guard_html"><div class="ttname"><a href="classconsole_1_1_color_guard.html">console::ColorGuard</a></div><div class="ttdoc">RAII颜色守卫，构造时设置颜色，析构时自动恢复。</div><div class="ttdef"><b>Definition</b> colorful.h:152</div></div>
 <div class="ttc" id="aclassconsole_1_1_color_guard_html_a54431f0cd3ed2a582034c4565110d712"><div class="ttname"><a href="classconsole_1_1_color_guard.html#a54431f0cd3ed2a582034c4565110d712">console::ColorGuard::ColorGuard</a></div><div class="ttdeci">ColorGuard(const ColorGuard &amp;)=delete</div></div>
-<div class="ttc" id="aclassconsole_1_1_color_guard_html_a6577abc6dc0f4e193496e019654c6d29"><div class="ttname"><a href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">console::ColorGuard::ColorGuard</a></div><div class="ttdeci">ColorGuard(const char *color, std::ostream &amp;os=std::cout)</div><div class="ttdoc">构造函数，应用指定颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:155</div></div>
-<div class="ttc" id="aclassconsole_1_1_color_guard_html_a8a4ff8e462f0a56e2a1cee4fa9ab41e0"><div class="ttname"><a href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">console::ColorGuard::~ColorGuard</a></div><div class="ttdeci">~ColorGuard()</div><div class="ttdoc">析构函数，自动恢复默认颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:163</div></div>
+<div class="ttc" id="aclassconsole_1_1_color_guard_html_a6577abc6dc0f4e193496e019654c6d29"><div class="ttname"><a href="classconsole_1_1_color_guard.html#a6577abc6dc0f4e193496e019654c6d29">console::ColorGuard::ColorGuard</a></div><div class="ttdeci">ColorGuard(const char *color, std::ostream &amp;os=std::cout)</div><div class="ttdoc">构造函数，应用指定颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:161</div></div>
+<div class="ttc" id="aclassconsole_1_1_color_guard_html_a8a4ff8e462f0a56e2a1cee4fa9ab41e0"><div class="ttname"><a href="classconsole_1_1_color_guard.html#a8a4ff8e462f0a56e2a1cee4fa9ab41e0">console::ColorGuard::~ColorGuard</a></div><div class="ttdeci">~ColorGuard()</div><div class="ttdoc">析构函数，自动恢复默认颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:169</div></div>
 <div class="ttc" id="aclassconsole_1_1_color_guard_html_ab55190ecce44ae62425d07a500a464cd"><div class="ttname"><a href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">console::ColorGuard::operator=</a></div><div class="ttdeci">ColorGuard &amp; operator=(const ColorGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassconsole_1_1_color_guard_html_ae9c072d3209c586ae29ae11620c16561"><div class="ttname"><a href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">console::ColorGuard::os_</a></div><div class="ttdeci">std::ostream &amp; os_</div><div class="ttdoc">输出流引用</div><div class="ttdef"><b>Definition</b> colorful.h:153</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html">console::WColorGuard</a></div><div class="ttdoc">RAII颜色守卫，构造时设置颜色，析构时自动恢复。</div><div class="ttdef"><b>Definition</b> colorful.h:180</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html_a0e760736e8e50afc92ec203d2ca83f71"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html#a0e760736e8e50afc92ec203d2ca83f71">console::WColorGuard::WColorGuard</a></div><div class="ttdeci">WColorGuard(const WColorGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html_a64aff656d3bf1393ec4025a5ebf85aec"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html#a64aff656d3bf1393ec4025a5ebf85aec">console::WColorGuard::WColorGuard</a></div><div class="ttdeci">WColorGuard(const char *color, std::wostream &amp;os=std::wcout)</div><div class="ttdoc">构造函数，应用指定颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:189</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html_a9f96f9a4542d147c4ee2ef4767e8bedf"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html#a9f96f9a4542d147c4ee2ef4767e8bedf">console::WColorGuard::operator=</a></div><div class="ttdeci">WColorGuard &amp; operator=(const WColorGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html_aaa75b6286d904238927393895baf23a0"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0">console::WColorGuard::os_</a></div><div class="ttdeci">std::wostream &amp; os_</div><div class="ttdoc">输出流引用</div><div class="ttdef"><b>Definition</b> colorful.h:181</div></div>
+<div class="ttc" id="aclassconsole_1_1_w_color_guard_html_ad6957ea7d3dc9c8b1a271ebcdc3d3e30"><div class="ttname"><a href="classconsole_1_1_w_color_guard.html#ad6957ea7d3dc9c8b1a271ebcdc3d3e30">console::WColorGuard::~WColorGuard</a></div><div class="ttdeci">~WColorGuard()</div><div class="ttdoc">析构函数，自动恢复默认颜色。</div><div class="ttdef"><b>Definition</b> colorful.h:197</div></div>
 <div class="ttc" id="anamespaceconsole_1_1color_html_a05c420baa706cecda1628806f80ef505"><div class="ttname"><a href="namespaceconsole_1_1color.html#a05c420baa706cecda1628806f80ef505">console::color::Hidden</a></div><div class="ttdeci">static constexpr char Hidden[]</div><div class="ttdoc">隐藏（不可见）</div><div class="ttdef"><b>Definition</b> colorful.h:126</div></div>
 <div class="ttc" id="anamespaceconsole_1_1color_html_a0aa006e86b4b33d98a471b0bd31cd33b"><div class="ttname"><a href="namespaceconsole_1_1color.html#a0aa006e86b4b33d98a471b0bd31cd33b">console::color::BgBrightBlue</a></div><div class="ttdeci">static constexpr char BgBrightBlue[]</div><div class="ttdoc">亮蓝色背景</div><div class="ttdef"><b>Definition</b> colorful.h:103</div></div>
 <div class="ttc" id="anamespaceconsole_1_1color_html_a0de0a8431459f4ed50cdb25d1d30ef83"><div class="ttname"><a href="namespaceconsole_1_1color.html#a0de0a8431459f4ed50cdb25d1d30ef83">console::color::Reset</a></div><div class="ttdeci">static constexpr char Reset[]</div><div class="ttdoc">重置所有颜色/样式</div><div class="ttdef"><b>Definition</b> colorful.h:75</div></div>
@@ -237,7 +271,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

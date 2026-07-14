@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -109,34 +109,33 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="repr_8h.html">repr.h</a>&quot;</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> StrOrCharType&gt;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        is_string&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        || is_char&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value&gt;::type</div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">   47</a></span>    <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(std::ostream &amp;os, StrOrCharType &amp;&amp;value) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        os &lt;&lt; value;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT, <span class="keyword">class</span> Traits, <span class="keyword">class</span> StrOrCharType&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        is_string&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        || is_char&lt;typename std::decay&lt;StrOrCharType&gt;::type&gt;::value&gt;::type</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">   49</a></span>    <a class="code hl_function" href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">put</a>(std::basic_ostream&lt;CharT, Traits&gt; &amp;os, StrOrCharType &amp;&amp;value) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        os &lt;&lt; value;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> OtherType&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        !is_string&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        &amp;&amp; !is_char&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value&gt;::type</div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespaceconsole.html#af23e6235185590bb4d07651ee645ef16">   62</a></span>    <a class="code hl_function" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">put</a>(std::ostream &amp;os, OtherType &amp;&amp;value) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">repr</a>(value, os);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT, <span class="keyword">class</span> Traits, <span class="keyword">class</span> OtherType&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">typename</span> std::enable_if&lt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        !is_string&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        &amp;&amp; !is_char&lt;typename std::decay&lt;OtherType&gt;::type&gt;::value&gt;::type</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a9ebaa1991cd25154acc44f676da44a3f">   66</a></span>    <a class="code hl_function" href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">put</a>(std::basic_ostream&lt;CharT, Traits&gt; &amp;os, OtherType &amp;&amp;value) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        repr&lt;CharT, Traits&gt;(value, os);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
-<div class="ttc" id="agroup__repr_html_gab16dfca7b068359547e9dbd3e9f8aca6"><div class="ttname"><a href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">console::repr</a></div><div class="ttdeci">enable_if_string&lt; T &gt; repr(T &amp;&amp;value, std::ostream &amp;os=std::cout)</div><div class="ttdoc">输出字符串类型（std::string, const char* 等）的表示，带双引号。</div><div class="ttdef"><b>Definition</b> repr.h:79</div></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a715464dabbf1fb29e4e18cac8d788626"><div class="ttname"><a href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::ostream &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:47</div></div>
+<div class="ttc" id="anamespaceconsole_html_ae205d1c8a957bcbd7a55095e435e6774"><div class="ttname"><a href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:49</div></div>
 <div class="ttc" id="arepr_8h_html"><div class="ttname"><a href="repr_8h.html">repr.h</a></div><div class="ttdoc">提供类似 Python 的 repr() 函数，用于生成对象的可读字符串表示。</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

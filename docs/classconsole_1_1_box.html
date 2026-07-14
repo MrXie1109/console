@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -121,6 +121,9 @@ Friends</h2></td></tr>
 <tr class="memitem:aafda1b98a2b85a9424273b64c27d4728" id="r_aafda1b98a2b85a9424273b64c27d4728"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_box.html#aafda1b98a2b85a9424273b64c27d4728">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classconsole_1_1_box.html">Box</a> &amp;box)</td></tr>
 <tr class="memdesc:aafda1b98a2b85a9424273b64c27d4728"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_box.html" title="存储多个 Item 的异构容器。">Box</a> 输出到流，格式类似于元组 (elem1, elem2, ...)。  <br /></td></tr>
 <tr class="separator:aafda1b98a2b85a9424273b64c27d4728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8921d4fc3d5d677b7312c861176f917" id="r_aa8921d4fc3d5d677b7312c861176f917"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_box.html#aa8921d4fc3d5d677b7312c861176f917">operator&lt;&lt;</a> (std::wostream &amp;os, const <a class="el" href="classconsole_1_1_box.html">Box</a> &amp;box)</td></tr>
+<tr class="memdesc:aa8921d4fc3d5d677b7312c861176f917"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_box.html" title="存储多个 Item 的异构容器。">Box</a> 输出到宽字符流。  <br /></td></tr>
+<tr class="separator:aa8921d4fc3d5d677b7312c861176f917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>存储多个 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a> 的异构容器。 </p>
@@ -350,7 +353,7 @@ template&lt;class... Args&gt; </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="aafda1b98a2b85a9424273b64c27d4728" name="aafda1b98a2b85a9424273b64c27d4728"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafda1b98a2b85a9424273b64c27d4728">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aafda1b98a2b85a9424273b64c27d4728">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,13 +398,59 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
+<a id="aa8921d4fc3d5d677b7312c861176f917" name="aa8921d4fc3d5d677b7312c861176f917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8921d4fc3d5d677b7312c861176f917">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1_box.html">Box</a> &amp;&#160;</td>
+          <td class="paramname"><em>box</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 <a class="el" href="classconsole_1_1_box.html" title="存储多个 Item 的异构容器。">Box</a> 输出到宽字符流。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>宽字符输出流。 </td></tr>
+    <tr><td class="paramname">box</td><td>要输出的 Box。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; 返回 os。 </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="box_8h_source.html">box.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

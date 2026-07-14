@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -75,6 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classconsole_1_1gen_1_1collect-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::gen::collect&lt; Container &gt; Class Template Reference</div></div>
@@ -86,10 +87,21 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="gen_8h_source.html">gen.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a79be3bbfd7eabfb46778eabd0eaa13da" id="r_a79be3bbfd7eabfb46778eabd0eaa13da"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; </td></tr>
+<tr class="memitem:a79be3bbfd7eabfb46778eabd0eaa13da"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1collect.html#a79be3bbfd7eabfb46778eabd0eaa13da">impl</a> (<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> r, std::false_type)</td></tr>
+<tr class="memdesc:a79be3bbfd7eabfb46778eabd0eaa13da"><td class="mdescLeft">&#160;</td><td class="mdescRight">非void版本的实现，将范围元素拷贝到指定容器。  <br /></td></tr>
+<tr class="separator:a79be3bbfd7eabfb46778eabd0eaa13da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eab26e57d804a7f60454a0e898e227e" id="r_a4eab26e57d804a7f60454a0e898e227e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> , class &gt; </td></tr>
+<tr class="memitem:a4eab26e57d804a7f60454a0e898e227e"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; typename std::decay&lt; typename <a class="el" href="classconsole_1_1_generator.html#ab748b7a02f8c536d709ed79590b790da">Range::value_type</a> &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1collect.html#a4eab26e57d804a7f60454a0e898e227e">impl</a> (<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> r, std::true_type)</td></tr>
+<tr class="memdesc:a4eab26e57d804a7f60454a0e898e227e"><td class="mdescLeft">&#160;</td><td class="mdescRight">void版本的实现，将范围元素拷贝到std::vector。  <br /></td></tr>
+<tr class="separator:a4eab26e57d804a7f60454a0e898e227e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a4ae9d09895ac7dd21da57a6df7e13cbc" id="r_a4ae9d09895ac7dd21da57a6df7e13cbc"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> &gt; </td></tr>
-<tr class="memitem:a4ae9d09895ac7dd21da57a6df7e13cbc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1collect.html#a4ae9d09895ac7dd21da57a6df7e13cbc">operator|</a> (<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> r, <a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt; Container &gt;) -&gt; decltype(<a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt; Container &gt;::template impl&lt; <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>, Container &gt;(r, std::is_same&lt; Container, void &gt;{}))</td></tr>
+<tr class="memitem:a4ae9d09895ac7dd21da57a6df7e13cbc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1collect.html#a4ae9d09895ac7dd21da57a6df7e13cbc">operator|</a> (<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> r, <a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt; Container &gt;) -&gt; decltype(<a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt; Container &gt;::template <a class="el" href="classconsole_1_1gen_1_1collect.html#a79be3bbfd7eabfb46778eabd0eaa13da">impl</a>&lt; <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>, Container &gt;(r, std::is_same&lt; Container, void &gt;{}))</td></tr>
 <tr class="memdesc:a4ae9d09895ac7dd21da57a6df7e13cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道操作符，将范围元素收集到容器中。  <br /></td></tr>
 <tr class="separator:a4ae9d09895ac7dd21da57a6df7e13cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -103,7 +115,119 @@ class console::gen::collect&lt; Container &gt;</div><p>容器收集适配器。 
   </dd>
 </dl>
 <p>将范围中的元素收集到指定容器中。 当Container为void时，自动使用std::vector作为目标容器。 </p>
-</div><h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a79be3bbfd7eabfb46778eabd0eaa13da" name="a79be3bbfd7eabfb46778eabd0eaa13da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79be3bbfd7eabfb46778eabd0eaa13da">&#9670;&#160;</a></span>impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container  = void&gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">C</a> <a class="el" href="classconsole_1_1gen_1_1collect.html">console::gen::collect</a>&lt; Container &gt;::impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::false_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>非void版本的实现，将范围元素拷贝到指定容器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1gen_1_1_range.html" title="范围生成器，生成从start到end的等差数列。">Range</a></td><td>范围类型。 </td></tr>
+    <tr><td class="paramname">C</td><td>容器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>输入范围。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>C 包含收集到的元素的容器。 </dd></dl>
+
+</div>
+</div>
+<a id="a4eab26e57d804a7f60454a0e898e227e" name="a4eab26e57d804a7f60454a0e898e227e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eab26e57d804a7f60454a0e898e227e">&#9670;&#160;</a></span>impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container  = void&gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a> , class &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; typename std::decay&lt; typename <a class="el" href="classconsole_1_1_generator.html#ab748b7a02f8c536d709ed79590b790da">Range::value_type</a> &gt;::type &gt; <a class="el" href="classconsole_1_1gen_1_1collect.html">console::gen::collect</a>&lt; Container &gt;::impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>void版本的实现，将范围元素拷贝到std::vector。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1gen_1_1_range.html" title="范围生成器，生成从start到end的等差数列。">Range</a></td><td>范围类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>输入范围。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;typename Range::value_type&gt; 包含收集到的元素的vector。 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="a4ae9d09895ac7dd21da57a6df7e13cbc" name="a4ae9d09895ac7dd21da57a6df7e13cbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ae9d09895ac7dd21da57a6df7e13cbc">&#9670;&#160;</a></span>operator|</h2>
 
@@ -132,7 +256,7 @@ template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range<
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt;Container&gt;::template impl&lt;<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>, Container&gt;(
+          <td></td><td> -&gt; decltype(<a class="el" href="classconsole_1_1gen_1_1collect.html">collect</a>&lt;Container&gt;::template <a class="el" href="classconsole_1_1gen_1_1collect.html#a79be3bbfd7eabfb46778eabd0eaa13da">impl</a>&lt;<a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a>, Container&gt;(
                     r, std::is_same&lt;Container, void&gt;{})) </td>
         </tr>
       </table>
@@ -166,7 +290,7 @@ template&lt;class <a class="el" href="classconsole_1_1gen_1_1_range.html">Range<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -100,23 +100,25 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1is__printable.html">console::is_printable&lt; T, class &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测类型是否支持输出到 std::ostream（即定义了 operator&lt;&lt;）。  <a href="structconsole_1_1is__printable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1is__basic__printable.html">console::is_basic_printable&lt; CharT, Traits, T, class &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测类型是否支持输出到指定字符类型的流（即定义了 operator&lt;&lt;）。  <a href="structconsole_1_1is__basic__printable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1is__char.html">console::is_char&lt; T, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测类型是否为字符类型（char、wchar_t、char16_t、char32_t 等）。  <a href="structconsole_1_1is__char.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测类型是否为字符类型（char、wchar_t 等）。  <a href="structconsole_1_1is__char.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1uniform__distribution__impl.html">console::uniform_distribution_impl&lt; T, typename &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得适配分布的主模板。  <a href="structconsole_1_1uniform__distribution__impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1is__generator.html">console::is_generator&lt; T, class &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">检测类型是否为生成器（具有 done()、current()、advance() 接口）。  <a href="structconsole_1_1is__generator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gac3f1066576b54a7f6155b8f4b5cb493e" id="r_gac3f1066576b54a7f6155b8f4b5cb493e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gac3f1066576b54a7f6155b8f4b5cb493e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gac3f1066576b54a7f6155b8f4b5cb493e">console::enable_if_container</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__container.html">is_container</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:gac3f1066576b54a7f6155b8f4b5cb493e"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 是容器。  <br /></td></tr>
-<tr class="separator:gac3f1066576b54a7f6155b8f4b5cb493e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac17c156335f861035ee22b933e94a3b5" id="r_gac17c156335f861035ee22b933e94a3b5"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gac17c156335f861035ee22b933e94a3b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gac17c156335f861035ee22b933e94a3b5">console::enable_if_not_container</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__container.html">is_container</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
-<tr class="memdesc:gac17c156335f861035ee22b933e94a3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 不是容器。  <br /></td></tr>
-<tr class="separator:gac17c156335f861035ee22b933e94a3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad53fa39d461ca10e2d2e92a9409bab20" id="r_gad53fa39d461ca10e2d2e92a9409bab20"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:gad53fa39d461ca10e2d2e92a9409bab20"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gad53fa39d461ca10e2d2e92a9409bab20">console::is_w_printable</a> = <a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt; wchar_t, std::char_traits&lt; wchar_t &gt;, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;</td></tr>
+<tr class="memdesc:gad53fa39d461ca10e2d2e92a9409bab20"><td class="mdescLeft">&#160;</td><td class="mdescRight">is_basic_printable&lt;wchar_t, ...&gt; 的简写。  <br /></td></tr>
+<tr class="separator:gad53fa39d461ca10e2d2e92a9409bab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaee9865e71414028a8229a65025fb6b41" id="r_gaee9865e71414028a8229a65025fb6b41"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a> , class... Args&gt; </td></tr>
 <tr class="memitem:gaee9865e71414028a8229a65025fb6b41"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gaee9865e71414028a8229a65025fb6b41">console::enable_if_callable</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__callable.html">is_callable</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a800618943025315f869e4e1f09471012">F</a>, Args... &gt;::value &gt;::type</td></tr>
 <tr class="memdesc:gaee9865e71414028a8229a65025fb6b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 F 可以 Args... 参数调用。  <br /></td></tr>
@@ -161,10 +163,44 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaed6f37f103efe5517b99ccd43161a5de"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gaed6f37f103efe5517b99ccd43161a5de">console::uniform_distribution_t</a> = typename <a class="el" href="structconsole_1_1uniform__distribution__impl.html">uniform_distribution_impl</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type</td></tr>
 <tr class="memdesc:gaed6f37f103efe5517b99ccd43161a5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得对印类型所对应的均匀分布。  <br /></td></tr>
 <tr class="separator:gaed6f37f103efe5517b99ccd43161a5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bb34f87022a78eb92d4696ca10036d5" id="r_ga9bb34f87022a78eb92d4696ca10036d5"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga9bb34f87022a78eb92d4696ca10036d5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga9bb34f87022a78eb92d4696ca10036d5">console::enable_if_generator</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__generator.html">is_generator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:ga9bb34f87022a78eb92d4696ca10036d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 是生成器。  <br /></td></tr>
+<tr class="separator:ga9bb34f87022a78eb92d4696ca10036d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1b616f2e1808e10d5b1d97281dbd39b" id="r_gaa1b616f2e1808e10d5b1d97281dbd39b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:gaa1b616f2e1808e10d5b1d97281dbd39b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#gaa1b616f2e1808e10d5b1d97281dbd39b">console::enable_if_not_generator</a> = typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__generator.html">is_generator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:gaa1b616f2e1808e10d5b1d97281dbd39b"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T 不是生成器。  <br /></td></tr>
+<tr class="separator:gaa1b616f2e1808e10d5b1d97281dbd39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga257c751c19ac4149ee2cf59e09cb9008" id="r_ga257c751c19ac4149ee2cf59e09cb9008"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga257c751c19ac4149ee2cf59e09cb9008"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga257c751c19ac4149ee2cf59e09cb9008">console::enable_if_basic_printable</a> = typename std::enable_if&lt; <a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt; CharT, Traits, typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:ga257c751c19ac4149ee2cf59e09cb9008"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）对给定字符流可打印。  <br /></td></tr>
+<tr class="separator:ga257c751c19ac4149ee2cf59e09cb9008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b0eccc48aa11b0534f7f7f1dfcaf03a" id="r_ga2b0eccc48aa11b0534f7f7f1dfcaf03a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga2b0eccc48aa11b0534f7f7f1dfcaf03a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__sfinae.html#ga2b0eccc48aa11b0534f7f7f1dfcaf03a">console::enable_if_w_printable</a> = typename std::enable_if&lt; <a class="el" href="group__sfinae.html#gad53fa39d461ca10e2d2e92a9409bab20">is_w_printable</a>&lt; typename std::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type</td></tr>
+<tr class="memdesc:ga2b0eccc48aa11b0534f7f7f1dfcaf03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用若 T（decay 后）对 wchar_t 流可打印。  <br /></td></tr>
+<tr class="separator:ga2b0eccc48aa11b0534f7f7f1dfcaf03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>编译期检测类型特性的模板工具。 </p>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga257c751c19ac4149ee2cf59e09cb9008" name="ga257c751c19ac4149ee2cf59e09cb9008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga257c751c19ac4149ee2cf59e09cb9008">&#9670;&#160;</a></span>enable_if_basic_printable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__sfinae.html#ga257c751c19ac4149ee2cf59e09cb9008">console::enable_if_basic_printable</a> = typedef typename std::enable_if&lt;<a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt;CharT, Traits, typename std::decay&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::type&gt;::value&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启用若 T（decay 后）对给定字符流可打印。 </p>
+
+</div>
+</div>
 <a id="gaee9865e71414028a8229a65025fb6b41" name="gaee9865e71414028a8229a65025fb6b41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaee9865e71414028a8229a65025fb6b41">&#9670;&#160;</a></span>enable_if_callable</h2>
 
@@ -201,8 +237,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
-<a id="gac3f1066576b54a7f6155b8f4b5cb493e" name="gac3f1066576b54a7f6155b8f4b5cb493e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac3f1066576b54a7f6155b8f4b5cb493e">&#9670;&#160;</a></span>enable_if_container</h2>
+<a id="ga9bb34f87022a78eb92d4696ca10036d5" name="ga9bb34f87022a78eb92d4696ca10036d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9bb34f87022a78eb92d4696ca10036d5">&#9670;&#160;</a></span>enable_if_generator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,12 +246,12 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__sfinae.html#gac3f1066576b54a7f6155b8f4b5cb493e">console::enable_if_container</a> = typedef typename std::enable_if&lt;<a class="el" href="structconsole_1_1is__container.html">is_container</a>&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value&gt;::type</td>
+          <td class="memname">using <a class="el" href="group__sfinae.html#ga9bb34f87022a78eb92d4696ca10036d5">console::enable_if_generator</a> = typedef typename std::enable_if&lt;<a class="el" href="structconsole_1_1is__generator.html">is_generator</a>&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>启用若 T 是容器。 </p>
+<p>启用若 T 是生成器。 </p>
 
 </div>
 </div>
@@ -273,8 +309,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
-<a id="gac17c156335f861035ee22b933e94a3b5" name="gac17c156335f861035ee22b933e94a3b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac17c156335f861035ee22b933e94a3b5">&#9670;&#160;</a></span>enable_if_not_container</h2>
+<a id="gaa1b616f2e1808e10d5b1d97281dbd39b" name="gaa1b616f2e1808e10d5b1d97281dbd39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1b616f2e1808e10d5b1d97281dbd39b">&#9670;&#160;</a></span>enable_if_not_generator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,12 +318,12 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__sfinae.html#gac17c156335f861035ee22b933e94a3b5">console::enable_if_not_container</a> = typedef typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__container.html">is_container</a>&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value&gt;::type</td>
+          <td class="memname">using <a class="el" href="group__sfinae.html#gaa1b616f2e1808e10d5b1d97281dbd39b">console::enable_if_not_generator</a> = typedef typename std::enable_if&lt;!<a class="el" href="structconsole_1_1is__generator.html">is_generator</a>&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>启用若 T 不是容器。 </p>
+<p>启用若 T 不是生成器。 </p>
 
 </div>
 </div>
@@ -381,6 +417,42 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="ga2b0eccc48aa11b0534f7f7f1dfcaf03a" name="ga2b0eccc48aa11b0534f7f7f1dfcaf03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b0eccc48aa11b0534f7f7f1dfcaf03a">&#9670;&#160;</a></span>enable_if_w_printable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__sfinae.html#ga2b0eccc48aa11b0534f7f7f1dfcaf03a">console::enable_if_w_printable</a> = typedef typename std::enable_if&lt; <a class="el" href="group__sfinae.html#gad53fa39d461ca10e2d2e92a9409bab20">is_w_printable</a>&lt;typename std::decay&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::type&gt;::value&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启用若 T（decay 后）对 wchar_t 流可打印。 </p>
+
+</div>
+</div>
+<a id="gad53fa39d461ca10e2d2e92a9409bab20" name="gad53fa39d461ca10e2d2e92a9409bab20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad53fa39d461ca10e2d2e92a9409bab20">&#9670;&#160;</a></span>is_w_printable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__sfinae.html#gad53fa39d461ca10e2d2e92a9409bab20">console::is_w_printable</a> = typedef <a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt;wchar_t, std::char_traits&lt;wchar_t&gt;, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>is_basic_printable&lt;wchar_t, ...&gt; 的简写。 </p>
+
+</div>
+</div>
 <a id="gaed6f37f103efe5517b99ccd43161a5de" name="gaed6f37f103efe5517b99ccd43161a5de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaed6f37f103efe5517b99ccd43161a5de">&#9670;&#160;</a></span>uniform_distribution_t</h2>
 
@@ -402,7 +474,7 @@ template&lt;typename <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

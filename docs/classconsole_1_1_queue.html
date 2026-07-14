@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="classconsole_1_1_queue-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::Queue&lt; T, Container &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -97,6 +98,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae18d8cd3c0188a56fa10eaff3d400e4d" id="r_ae18d8cd3c0188a56fa10eaff3d400e4d"><td class="memItemLeft" align="right" valign="top">base_type::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">pop</a> ()</td></tr>
 <tr class="memdesc:ae18d8cd3c0188a56fa10eaff3d400e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">弹出队首元素并返回其值。  <br /></td></tr>
 <tr class="separator:ae18d8cd3c0188a56fa10eaff3d400e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a5184a5c21eb35547cb8d2dffd22b8afc" id="r_a5184a5c21eb35547cb8d2dffd22b8afc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_queue.html#a5184a5c21eb35547cb8d2dffd22b8afc">base_type</a> = std::queue&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, Container &gt;</td></tr>
+<tr class="separator:a5184a5c21eb35547cb8d2dffd22b8afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, class Container = std::deque&lt;T&gt;&gt;<br />
@@ -114,7 +120,32 @@ class console::Queue&lt; T, Container &gt;</div><p>队列容器适配器，扩�
 <div class="line"><span class="keywordtype">int</span> value = q.<a class="code hl_function" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">pop</a>();  <span class="comment">// 返回 1 并弹出</span></div>
 <div class="ttc" id="aclassconsole_1_1_queue_html"><div class="ttname"><a href="classconsole_1_1_queue.html">console::Queue</a></div><div class="ttdoc">队列容器适配器，扩展自 std::queue。</div><div class="ttdef"><b>Definition</b> adapter.h:97</div></div>
 <div class="ttc" id="aclassconsole_1_1_queue_html_ae18d8cd3c0188a56fa10eaff3d400e4d"><div class="ttname"><a href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出队首元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:112</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a5184a5c21eb35547cb8d2dffd22b8afc" name="a5184a5c21eb35547cb8d2dffd22b8afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5184a5c21eb35547cb8d2dffd22b8afc">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class Container  = std::deque&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classconsole_1_1_queue.html">console::Queue</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, Container &gt;::base_type =  std::queue&lt;<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, Container&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae18d8cd3c0188a56fa10eaff3d400e4d" name="ae18d8cd3c0188a56fa10eaff3d400e4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae18d8cd3c0188a56fa10eaff3d400e4d">&#9670;&#160;</a></span>pop()</h2>
 
@@ -152,7 +183,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_keyboard-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::Keyboard Class Reference</div></div>
 </div><!--header-->
@@ -115,6 +117,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2fc4cc7479bcdb3b377cb1659c537ed" id="r_ae2fc4cc7479bcdb3b377cb1659c537ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#ae2fc4cc7479bcdb3b377cb1659c537ed">ignore</a> (int n=-1)</td></tr>
 <tr class="memdesc:ae2fc4cc7479bcdb3b377cb1659c537ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">消耗留在缓冲区内的按键。  <br /></td></tr>
 <tr class="separator:ae2fc4cc7479bcdb3b377cb1659c537ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8429b25b0114a9b7db6ea3d2402abce7" id="r_a8429b25b0114a9b7db6ea3d2402abce7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#a8429b25b0114a9b7db6ea3d2402abce7">readRaw</a> ()</td></tr>
+<tr class="memdesc:a8429b25b0114a9b7db6ea3d2402abce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个原始按键值（非阻塞）。  <br /></td></tr>
+<tr class="separator:a8429b25b0114a9b7db6ea3d2402abce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad282ef6b3395f6425c0ba4806c75d433" id="r_ad282ef6b3395f6425c0ba4806c75d433"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#ad282ef6b3395f6425c0ba4806c75d433">readRawBlock</a> ()</td></tr>
+<tr class="memdesc:ad282ef6b3395f6425c0ba4806c75d433"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个原始按键值（阻塞）。  <br /></td></tr>
+<tr class="separator:ad282ef6b3395f6425c0ba4806c75d433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae583e625c554b463ada504a52767f39a" id="r_ae583e625c554b463ada504a52767f39a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#ae583e625c554b463ada504a52767f39a">parse</a> (int raw)</td></tr>
+<tr class="memdesc:ae583e625c554b463ada504a52767f39a"><td class="mdescLeft">&#160;</td><td class="mdescRight">将原始扫描码解析为 Key 枚举值。  <br /></td></tr>
+<tr class="separator:ae583e625c554b463ada504a52767f39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2506d1425afeca3c3332b08de7c964ea" id="r_a2506d1425afeca3c3332b08de7c964ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#a2506d1425afeca3c3332b08de7c964ea">handleEscape</a> ()</td></tr>
+<tr class="memdesc:a2506d1425afeca3c3332b08de7c964ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理以 ESC (27) 开头的转义序列（主要针对 Linux 终端）。  <br /></td></tr>
+<tr class="separator:a2506d1425afeca3c3332b08de7c964ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1a931467338ee20317a7545ae5bd5377" id="r_a1a931467338ee20317a7545ae5bd5377"><td class="memItemLeft" align="right" valign="top">struct termios&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_keyboard.html#a1a931467338ee20317a7545ae5bd5377">oldTio</a></td></tr>
+<tr class="memdesc:a1a931467338ee20317a7545ae5bd5377"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始终端I/O属性（用于析构时恢复规范模式与回显）  <br /></td></tr>
+<tr class="separator:a1a931467338ee20317a7545ae5bd5377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>用于监视键盘键击情况的类。 </p>
@@ -260,6 +283,35 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2506d1425afeca3c3332b08de7c964ea" name="a2506d1425afeca3c3332b08de7c964ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2506d1425afeca3c3332b08de7c964ea">&#9670;&#160;</a></span>handleEscape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> console::Keyboard::handleEscape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理以 ESC (27) 开头的转义序列（主要针对 Linux 终端）。 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果识别为方向键则返回对应 Key；否则返回 Key::Esc。</dd></dl>
+<p>在 Linux 终端下，方向键会发送 "\033[A"、"\033[B" 等三字节序列。 本函数通过非阻塞 poll 检查后续输入，若在 5ms 内读到 "[A"-"[D]" 则转为方向键，否则视为普通 Esc 键。 </p>
+
+</div>
+</div>
 <a id="ae2fc4cc7479bcdb3b377cb1659c537ed" name="ae2fc4cc7479bcdb3b377cb1659c537ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2fc4cc7479bcdb3b377cb1659c537ed">&#9670;&#160;</a></span>ignore()</h2>
 
@@ -350,6 +402,106 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae583e625c554b463ada504a52767f39a" name="ae583e625c554b463ada504a52767f39a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae583e625c554b463ada504a52767f39a">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29">Key</a> console::Keyboard::parse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>raw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将原始扫描码解析为 Key 枚举值。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw</td><td>原始按键整数值（来自 readRaw 或 readRawBlock）。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对应的 Key 枚举值；若无法识别则返回 Key::Unknown。</dd></dl>
+<p>处理以下情况：</p><ul>
+<li>字母字符（自动将小写转为大写）</li>
+<li>数字字符</li>
+<li>空格、回车、Esc、退格、Tab</li>
+<li>Windows 平台扩展键（方向键、F1-F12，其扫描码为 0xE0 或 0x00）</li>
+<li>其他平台无法识别的键返回 Unknown </li>
+</ul>
+
+</div>
+</div>
+<a id="a8429b25b0114a9b7db6ea3d2402abce7" name="a8429b25b0114a9b7db6ea3d2402abce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8429b25b0114a9b7db6ea3d2402abce7">&#9670;&#160;</a></span>readRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int console::Keyboard::readRaw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>读取一个原始按键值（非阻塞）。 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果按键存在，返回按键的整数扫描码；否则返回 -1。</dd></dl>
+<p>Windows 平台使用 _kbhit() 和 _getch()； Linux 平台使用 poll() 和 read()。 </p>
+
+</div>
+</div>
+<a id="ad282ef6b3395f6425c0ba4806c75d433" name="ad282ef6b3395f6425c0ba4806c75d433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad282ef6b3395f6425c0ba4806c75d433">&#9670;&#160;</a></span>readRawBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int console::Keyboard::readRawBlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>读取一个原始按键值（阻塞）。 </p>
+<dl class="section return"><dt>Returns</dt><dd>按键的整数扫描码。</dd></dl>
+<p>Windows 平台直接调用 _getch()； Linux 平台循环调用 read() 直到成功读取一个字节。 </p>
+
+</div>
+</div>
 <a id="a442c6ffddedddef1d9b52005884404f6" name="a442c6ffddedddef1d9b52005884404f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a442c6ffddedddef1d9b52005884404f6">&#9670;&#160;</a></span>wait()</h2>
 
@@ -378,13 +530,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1a931467338ee20317a7545ae5bd5377" name="a1a931467338ee20317a7545ae5bd5377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a931467338ee20317a7545ae5bd5377">&#9670;&#160;</a></span>oldTio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct termios console::Keyboard::oldTio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>原始终端I/O属性（用于析构时恢复规范模式与回显） </p>
+<p>Linux/Unix: </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="kb_8h_source.html">kb.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

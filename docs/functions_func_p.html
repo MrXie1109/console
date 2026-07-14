@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -74,7 +74,7 @@ $(function() {
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>parent()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a6b7ba6eb6a19017063296e8b1f50a0bf">console::Process</a></li>
-<li>Path()&#160;:&#160;<a class="el" href="classconsole_1_1_path.html#a235f60c985b9bd385d5c05dcfc1ada94">console::Path</a></li>
+<li>parse()&#160;:&#160;<a class="el" href="classconsole_1_1_keyboard.html#ae583e625c554b463ada504a52767f39a">console::Keyboard</a></li>
 <li>pid()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#ad267a6f81507c81299ee6132efb7c83b">console::Process</a></li>
 <li>Pipeline()&#160;:&#160;<a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#ad0d7c1efc7d38a414f878aaa5385abee">console::gen::Pipeline&lt; Op &gt;</a>, <a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#a27cc4497926296fe85ec8a20d00a4d60">console::gen::Pipeline&lt; Op, Rest... &gt;</a></li>
 <li>pipeline_t()&#160;:&#160;<a class="el" href="classconsole_1_1gen_1_1pipeline__t.html#a1004cc78a74f032232f8358221f8246b">console::gen::pipeline_t&lt; Ops &gt;</a></li>
@@ -83,16 +83,14 @@ $(function() {
 <li>poll()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a3fd1f624ba675fec2dab1d266bf1ab84">console::Process</a></li>
 <li>pop()&#160;:&#160;<a class="el" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">console::PriorityQueue&lt; T, Container, Compare &gt;</a>, <a class="el" href="classconsole_1_1_queue.html#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue&lt; T, Container &gt;</a>, <a class="el" href="classconsole_1_1_stack.html#a234f82185eda77dfef150c3fb511a719">console::Stack&lt; T, Container &gt;</a></li>
 <li>ppid()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a4c5f9e01416dca769eaa5d54f6307082">console::Process</a></li>
-<li>print()&#160;:&#160;<a class="el" href="structconsole_1_1_tuple_printer.html#ada226e13dc70ef4641e1308e85756382">console::TuplePrinter&lt; Tuple, N &gt;</a>, <a class="el" href="structconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4.html#a2315a3b9e26b69d71e5c10b6576a7332">console::TuplePrinter&lt; Tuple, 0 &gt;</a>, <a class="el" href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#a9c4dbadaaf04317a47f6c90f27de256f">console::TuplePrinter&lt; Tuple, 1 &gt;</a></li>
-<li>Process()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a29bffed4fb3f1bd9005b503b0d53cbc5">console::Process</a></li>
+<li>print()&#160;:&#160;<a class="el" href="structconsole_1_1_basic_tuple_printer.html#ac5bcdf1d24dc4f8b32eaa9a092c68021">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, N &gt;</a>, <a class="el" href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_010_01_4.html#a8819babe24bd6d52b174e02bee9aab48">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, 0 &gt;</a>, <a class="el" href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_011_01_4.html#aef6219e9bb50ae9e3d9388f4f44dd9ad">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, 1 &gt;</a>, <a class="el" href="structconsole_1_1_item_1_1_base.html#a4d9bc219bfff673f9355c1dc8a2fa119">console::Item::Base</a>, <a class="el" href="structconsole_1_1_item_1_1_derived.html#a71dcfdbc914a28963555796ab3eb6ee9">console::Item::Derived&lt; T &gt;</a></li>
+<li>Process()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a9c2d485888ca5194ea0320b3c38382b5">console::Process</a></li>
 <li>ProcessInfo()&#160;:&#160;<a class="el" href="structconsole_1_1_process_info.html#aa9d73abc4b2ef851aa3887d20824f097">console::ProcessInfo</a></li>
-<li>Progress()&#160;:&#160;<a class="el" href="classconsole_1_1_progress.html#a02c26038ed5f9e53d8ff7421080e8369">console::Progress&lt; Iter &gt;</a></li>
-<li>ProgressConfig()&#160;:&#160;<a class="el" href="structconsole_1_1_progress_config.html#a89a38f545fab9b141107df99a48d6e07">console::ProgressConfig</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:18 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

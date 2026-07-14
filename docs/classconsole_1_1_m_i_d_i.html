@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_m_i_d_i-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::MIDI Class Reference</div></div>
 </div><!--header-->
@@ -88,7 +89,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a657549998272eb1d8637bb4c96ad0d89" id="r_a657549998272eb1d8637bb4c96ad0d89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#a657549998272eb1d8637bb4c96ad0d89">MIDI</a> (<a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592">Instrument</a> instrument=<a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592a122c178a05ade736c2cfdc2a6c2e4cc8">Instrument::AcousticGrandPiano</a>, unsigned char bpm=120, unsigned char volume=100, unsigned deviceID=0)</td></tr>
+<tr class="memitem:a657549998272eb1d8637bb4c96ad0d89" id="r_a657549998272eb1d8637bb4c96ad0d89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#a657549998272eb1d8637bb4c96ad0d89">MIDI</a> (<a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592">Instrument</a> <a class="el" href="classconsole_1_1_m_i_d_i.html#a62d7d36175cb58611635a59b98597586">instrument</a>=<a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592a122c178a05ade736c2cfdc2a6c2e4cc8">Instrument::AcousticGrandPiano</a>, unsigned char <a class="el" href="classconsole_1_1_m_i_d_i.html#ae2aff9f1e54f609b15822b84eda5ef62">bpm</a>=120, unsigned char <a class="el" href="classconsole_1_1_m_i_d_i.html#a3b5da3cd4f5081fe990bbb606e307ab5">volume</a>=100, unsigned deviceID=0)</td></tr>
 <tr class="memdesc:a657549998272eb1d8637bb4c96ad0d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造 <a class="el" href="classconsole_1_1_m_i_d_i.html" title="MIDI 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。">MIDI</a> 对象，打开默认 <a class="el" href="classconsole_1_1_m_i_d_i.html" title="MIDI 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。">MIDI</a> 设备并设置乐器、音量和 BPM。  <br /></td></tr>
 <tr class="separator:a657549998272eb1d8637bb4c96ad0d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b3190a0ddb7696eb49cb6ce2705cff" id="r_ae6b3190a0ddb7696eb49cb6ce2705cff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#ae6b3190a0ddb7696eb49cb6ce2705cff">MIDI</a> (const <a class="el" href="classconsole_1_1_m_i_d_i.html">MIDI</a> &amp;)=delete</td></tr>
@@ -146,6 +147,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af9484ea4c9a239c5ff9c5446337556d5" id="r_af9484ea4c9a239c5ff9c5446337556d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#af9484ea4c9a239c5ff9c5446337556d5">set_volume</a> (unsigned char vol)</td></tr>
 <tr class="memdesc:af9484ea4c9a239c5ff9c5446337556d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置默认音量。  <br /></td></tr>
 <tr class="separator:af9484ea4c9a239c5ff9c5446337556d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa7fbd4108c61bac0d714985d08eb37ae" id="r_aa7fbd4108c61bac0d714985d08eb37ae"><td class="memItemLeft" align="right" valign="top">HMIDIOUT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#aa7fbd4108c61bac0d714985d08eb37ae">handle</a></td></tr>
+<tr class="memdesc:aa7fbd4108c61bac0d714985d08eb37ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classconsole_1_1_m_i_d_i.html" title="MIDI 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。">MIDI</a> 输出设备句柄  <br /></td></tr>
+<tr class="separator:aa7fbd4108c61bac0d714985d08eb37ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2aff9f1e54f609b15822b84eda5ef62" id="r_ae2aff9f1e54f609b15822b84eda5ef62"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#ae2aff9f1e54f609b15822b84eda5ef62">bpm</a></td></tr>
+<tr class="memdesc:ae2aff9f1e54f609b15822b84eda5ef62"><td class="mdescLeft">&#160;</td><td class="mdescRight">每分钟节拍数（beats per minute）  <br /></td></tr>
+<tr class="separator:ae2aff9f1e54f609b15822b84eda5ef62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5da3cd4f5081fe990bbb606e307ab5" id="r_a3b5da3cd4f5081fe990bbb606e307ab5"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#a3b5da3cd4f5081fe990bbb606e307ab5">volume</a></td></tr>
+<tr class="memdesc:a3b5da3cd4f5081fe990bbb606e307ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认音量（0-127）  <br /></td></tr>
+<tr class="separator:a3b5da3cd4f5081fe990bbb606e307ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62d7d36175cb58611635a59b98597586" id="r_a62d7d36175cb58611635a59b98597586"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592">Instrument</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_m_i_d_i.html#a62d7d36175cb58611635a59b98597586">instrument</a></td></tr>
+<tr class="memdesc:a62d7d36175cb58611635a59b98597586"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前乐器  <br /></td></tr>
+<tr class="separator:a62d7d36175cb58611635a59b98597586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classconsole_1_1_m_i_d_i.html" title="MIDI 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。">MIDI</a> 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。 </p>
@@ -773,13 +789,110 @@ template&lt;class Iter &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae2aff9f1e54f609b15822b84eda5ef62" name="ae2aff9f1e54f609b15822b84eda5ef62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2aff9f1e54f609b15822b84eda5ef62">&#9670;&#160;</a></span>bpm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char console::MIDI::bpm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>每分钟节拍数（beats per minute） </p>
+
+</div>
+</div>
+<a id="aa7fbd4108c61bac0d714985d08eb37ae" name="aa7fbd4108c61bac0d714985d08eb37ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fbd4108c61bac0d714985d08eb37ae">&#9670;&#160;</a></span>handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HMIDIOUT console::MIDI::handle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classconsole_1_1_m_i_d_i.html" title="MIDI 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。">MIDI</a> 输出设备句柄 </p>
+
+</div>
+</div>
+<a id="a62d7d36175cb58611635a59b98597586" name="a62d7d36175cb58611635a59b98597586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62d7d36175cb58611635a59b98597586">&#9670;&#160;</a></span>instrument</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceconsole.html#ac3066e557db972dbb8670effba117592">Instrument</a> console::MIDI::instrument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前乐器 </p>
+
+</div>
+</div>
+<a id="a3b5da3cd4f5081fe990bbb606e307ab5" name="a3b5da3cd4f5081fe990bbb606e307ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5da3cd4f5081fe990bbb606e307ab5">&#9670;&#160;</a></span>volume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char console::MIDI::volume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认音量（0-127） </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/win/<a class="el" href="melody_8h_source.html">melody.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

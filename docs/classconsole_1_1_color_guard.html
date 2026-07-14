@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_color_guard-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::ColorGuard Class Reference</div></div>
 </div><!--header-->
@@ -98,6 +99,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a54431f0cd3ed2a582034c4565110d712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55190ecce44ae62425d07a500a464cd" id="r_ab55190ecce44ae62425d07a500a464cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_color_guard.html#ab55190ecce44ae62425d07a500a464cd">operator=</a> (const <a class="el" href="classconsole_1_1_color_guard.html">ColorGuard</a> &amp;)=delete</td></tr>
 <tr class="separator:ab55190ecce44ae62425d07a500a464cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae9c072d3209c586ae29ae11620c16561" id="r_ae9c072d3209c586ae29ae11620c16561"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561">os_</a></td></tr>
+<tr class="memdesc:ae9c072d3209c586ae29ae11620c16561"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出流引用  <br /></td></tr>
+<tr class="separator:ae9c072d3209c586ae29ae11620c16561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RAII颜色守卫，构造时设置颜色，析构时自动恢复。 </p>
@@ -227,13 +234,38 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae9c072d3209c586ae29ae11620c16561" name="ae9c072d3209c586ae29ae11620c16561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c072d3209c586ae29ae11620c16561">&#9670;&#160;</a></span>os_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; console::ColorGuard::os_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>输出流引用 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="colorful_8h_source.html">colorful.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

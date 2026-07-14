@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logging.h File Reference</div></div>
@@ -98,8 +99,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_logging.html">console::Logging</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志记录器，支持多级别、颜色输出和自动时间戳。  <a href="classconsole_1_1_logging.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_logging.html">console::BasicLogging&lt; CharT, Traits &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志记录器，支持多级别、颜色输出和自动时间戳。  <a href="classconsole_1_1_basic_logging.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -108,17 +109,26 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8b24381a4d965c11be6a06e128c83195" id="r_a8b24381a4d965c11be6a06e128c83195"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a8b24381a4d965c11be6a06e128c83195">console::Logging</a> = <a class="el" href="classconsole_1_1_basic_logging.html">BasicLogging</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:a8b24381a4d965c11be6a06e128c83195"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicLogging&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a8b24381a4d965c11be6a06e128c83195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51eb5d547189da6b24dad10a98283487" id="r_a51eb5d547189da6b24dad10a98283487"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a51eb5d547189da6b24dad10a98283487">console::WLogging</a> = <a class="el" href="classconsole_1_1_basic_logging.html">BasicLogging</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:a51eb5d547189da6b24dad10a98283487"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicLogging&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a51eb5d547189da6b24dad10a98283487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeee954f9f21c7f53ef7b9bbf7f5055da" id="r_aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">console::get_logger</a> ()</td></tr>
-<tr class="memdesc:aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部单例。  <br /></td></tr>
-<tr class="separator:aeee954f9f21c7f53ef7b9bbf7f5055da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d26a14cc65e199dfe7bfcf139cc68e" id="r_a73d26a14cc65e199dfe7bfcf139cc68e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_basic_logging.html">BasicLogging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a73d26a14cc65e199dfe7bfcf139cc68e">console::get_logger</a> ()</td></tr>
+<tr class="memdesc:a73d26a14cc65e199dfe7bfcf139cc68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部单例（char）。  <br /></td></tr>
+<tr class="separator:a73d26a14cc65e199dfe7bfcf139cc68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5253df88c70f9fa35e73a80d06e7ca8d" id="r_a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_logging.html">Logging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5253df88c70f9fa35e73a80d06e7ca8d">console::logger</a> = <a class="el" href="namespaceconsole.html#aeee954f9f21c7f53ef7b9bbf7f5055da">get_logger</a>()</td></tr>
-<tr class="memdesc:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
-<tr class="separator:a5253df88c70f9fa35e73a80d06e7ca8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5762a56cb0fa1864cdd2b9ff6cb11f23" id="r_a5762a56cb0fa1864cdd2b9ff6cb11f23"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classconsole_1_1_basic_logging.html">BasicLogging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5762a56cb0fa1864cdd2b9ff6cb11f23">console::logger</a> = <a class="el" href="namespaceconsole.html#a73d26a14cc65e199dfe7bfcf139cc68e">get_logger</a>()</td></tr>
+<tr class="memdesc:a5762a56cb0fa1864cdd2b9ff6cb11f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认 logger 实例，启用颜色，级别 INFO。  <br /></td></tr>
+<tr class="separator:a5762a56cb0fa1864cdd2b9ff6cb11f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供带颜色和级别的日志记录功能。 </p>
@@ -128,7 +138,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

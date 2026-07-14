@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_screen-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::Screen&lt; COLS, ROWS &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -112,9 +113,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a94dc5b14c8884eee98c599278c4558d9" id="r_a94dc5b14c8884eee98c599278c4558d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_screen.html#a94dc5b14c8884eee98c599278c4558d9">clear</a> ()</td></tr>
 <tr class="memdesc:a94dc5b14c8884eee98c599278c4558d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空屏幕。  <br /></td></tr>
 <tr class="separator:a94dc5b14c8884eee98c599278c4558d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c34db74132c79d5a4e7e5dd8fb85dd1" id="r_a9c34db74132c79d5a4e7e5dd8fb85dd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_screen.html#a9c34db74132c79d5a4e7e5dd8fb85dd1">update</a> (std::ostream &amp;os=std::cout, bool <a class="el" href="classconsole_1_1_screen.html#a94dc5b14c8884eee98c599278c4558d9">clear</a>=false) const</td></tr>
-<tr class="memdesc:a9c34db74132c79d5a4e7e5dd8fb85dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_screen.html" title="用于表示虚拟屏幕的类。">Screen</a> 存储的虚拟屏幕输出到指定流。  <br /></td></tr>
-<tr class="separator:a9c34db74132c79d5a4e7e5dd8fb85dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b2ce63ca569d98b37fb81e02fad247" id="r_a29b2ce63ca569d98b37fb81e02fad247"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits  = std::char_traits&lt;CharT&gt;&gt; </td></tr>
+<tr class="memitem:a29b2ce63ca569d98b37fb81e02fad247"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconsole_1_1_screen.html#a29b2ce63ca569d98b37fb81e02fad247">update</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout, bool <a class="el" href="classconsole_1_1_screen.html#a94dc5b14c8884eee98c599278c4558d9">clear</a>=false) const</td></tr>
+<tr class="memdesc:a29b2ce63ca569d98b37fb81e02fad247"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_screen.html" title="用于表示虚拟屏幕的类。">Screen</a> 存储的虚拟屏幕输出到指定流。  <br /></td></tr>
+<tr class="separator:a29b2ce63ca569d98b37fb81e02fad247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3104699bad9670ef361b319e295ff91e" id="r_a3104699bad9670ef361b319e295ff91e"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; unsigned char, COLS/2 &gt;, ROWS/4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_screen.html#a3104699bad9670ef361b319e295ff91e">masks</a></td></tr>
+<tr class="memdesc:a3104699bad9670ef361b319e295ff91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">列数必须是 2 的倍数。  <br /></td></tr>
+<tr class="separator:a3104699bad9670ef361b319e295ff91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned COLS, unsigned ROWS&gt;<br />
@@ -567,13 +575,15 @@ template&lt;unsigned COLS, unsigned ROWS&gt; </div>
 
 </div>
 </div>
-<a id="a9c34db74132c79d5a4e7e5dd8fb85dd1" name="a9c34db74132c79d5a4e7e5dd8fb85dd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c34db74132c79d5a4e7e5dd8fb85dd1">&#9670;&#160;</a></span>update()</h2>
+<a id="a29b2ce63ca569d98b37fb81e02fad247" name="a29b2ce63ca569d98b37fb81e02fad247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b2ce63ca569d98b37fb81e02fad247">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;unsigned COLS, unsigned ROWS&gt; </div>
+<div class="memtemplate">
+template&lt;class CharT , class Traits  = std::char_traits&lt;CharT&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -581,7 +591,7 @@ template&lt;unsigned COLS, unsigned ROWS&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classconsole_1_1_screen.html">console::Screen</a>&lt; COLS, ROWS &gt;::update </td>
           <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td>
           <td class="paramname"><em>os</em> = <code>std::cout</code>, </td>
         </tr>
         <tr>
@@ -604,13 +614,49 @@ template&lt;unsigned COLS, unsigned ROWS&gt; </div>
 </div><div class="memdoc">
 
 <p>将 <a class="el" href="classconsole_1_1_screen.html" title="用于表示虚拟屏幕的类。">Screen</a> 存储的虚拟屏幕输出到指定流。 </p>
-<p>内部使用临时字符串减少输出次数，减少 IO 导致的效率问题。 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>内部使用临时字符串减少输出次数，减少 IO 导致的效率问题。 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
+    <tr><td class="paramname">Traits</td><td>字符特征类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td>发送到的输出流。 </td></tr>
+    <tr><td class="paramname">clear</td><td>是否清空屏幕。 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>控制台 IO 通常是效率瓶颈，建议手动控制帧率。 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3104699bad9670ef361b319e295ff91e" name="a3104699bad9670ef361b319e295ff91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3104699bad9670ef361b319e295ff91e">&#9670;&#160;</a></span>masks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned COLS, unsigned ROWS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;std::array&lt;unsigned char, COLS / 2&gt;, ROWS / 4&gt; <a class="el" href="classconsole_1_1_screen.html">console::Screen</a>&lt; COLS, ROWS &gt;::masks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>列数必须是 2 的倍数。 </p>
+<p>行数必须是 4 的倍数。 存储数据的二维数组 </p>
 
 </div>
 </div>
@@ -620,7 +666,7 @@ template&lt;unsigned COLS, unsigned ROWS&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

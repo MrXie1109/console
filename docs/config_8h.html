@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,7 +76,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">config.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -92,11 +93,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_i_n_i_config.html">console::INIConfig</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI 配置文件操作类。  <a href="classconsole_1_1_i_n_i_config.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_i_n_i_config.html">console::BasicINIConfig&lt; CharT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">INI 配置文件操作类。  <a href="classconsole_1_1_basic_i_n_i_config.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_i_n_i_config_1_1_item.html">console::INIConfig::Item</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置项代理类，支持隐式类型转换。  <a href="classconsole_1_1_i_n_i_config_1_1_item.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_i_n_i_config_1_1_item.html">console::BasicINIConfig&lt; CharT &gt;::Item</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置项代理类，支持隐式类型转换。  <a href="classconsole_1_1_basic_i_n_i_config_1_1_item.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -104,6 +105,15 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceconsole" id="r_namespaceconsole"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html">console</a></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a07fe371223de58363b504e8e05606be3" id="r_a07fe371223de58363b504e8e05606be3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a07fe371223de58363b504e8e05606be3">console::INIConfig</a> = <a class="el" href="classconsole_1_1_basic_i_n_i_config.html">BasicINIConfig</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:a07fe371223de58363b504e8e05606be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicINIConfig&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a07fe371223de58363b504e8e05606be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ef09c06d3b55ad789433daf2cb301c" id="r_a19ef09c06d3b55ad789433daf2cb301c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a19ef09c06d3b55ad789433daf2cb301c">console::WINIConfig</a> = <a class="el" href="classconsole_1_1_basic_i_n_i_config.html">BasicINIConfig</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:a19ef09c06d3b55ad789433daf2cb301c"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicINIConfig&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a19ef09c06d3b55ad789433daf2cb301c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>INI 配置文件解析与操作类 </p>
@@ -113,7 +123,7 @@ Namespaces</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

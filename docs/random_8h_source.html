@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -113,7 +113,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;random&gt;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span> <span class="comment">// for ContainerError</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span>  <span class="comment">// for ContainerError</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="sfinae_8h.html">sfinae.h</a>&quot;</span> <span class="comment">// for uniform_distribution_t</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
@@ -401,7 +401,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="agroup__random_html_gae37cf6bc23b7aa22a753df79a4a330c8"><div class="ttname"><a href="group__random.html#gae37cf6bc23b7aa22a753df79a4a330c8">console::rweibull</a></div><div class="ttdeci">std::vector&lt; T &gt; rweibull(size_t n, T shape, T scale=1.0, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">生成 n 个服从韦布尔分布（Weibull Distribution）的随机数。</div><div class="ttdef"><b>Definition</b> random.h:396</div></div>
 <div class="ttc" id="agroup__random_html_gaf3b6fd5b9a6c15f1fb19a1b1fd5bc1f7"><div class="ttname"><a href="group__random.html#gaf3b6fd5b9a6c15f1fb19a1b1fd5bc1f7">console::rgamma</a></div><div class="ttdeci">std::vector&lt; T &gt; rgamma(size_t n, T shape, T rate=1.0, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">生成 n 个服从伽马分布（Gamma Distribution）的随机数。</div><div class="ttdef"><b>Definition</b> random.h:285</div></div>
 <div class="ttc" id="agroup__random_html_gaf6cf5db4ed276a39dec214c94b54471e"><div class="ttname"><a href="group__random.html#gaf6cf5db4ed276a39dec214c94b54471e">console::choice</a></div><div class="ttdeci">C::reference choice(C &amp;c, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">从容器中随机选择一个元素（左值版本，返回引用）。</div><div class="ttdef"><b>Definition</b> random.h:116</div></div>
-<div class="ttc" id="agroup__sfinae_html_gaed6f37f103efe5517b99ccd43161a5de"><div class="ttname"><a href="group__sfinae.html#gaed6f37f103efe5517b99ccd43161a5de">console::uniform_distribution_t</a></div><div class="ttdeci">typename uniform_distribution_impl&lt; T &gt;::type uniform_distribution_t</div><div class="ttdoc">取得对印类型所对应的均匀分布。</div><div class="ttdef"><b>Definition</b> sfinae.h:315</div></div>
+<div class="ttc" id="agroup__sfinae_html_gaed6f37f103efe5517b99ccd43161a5de"><div class="ttname"><a href="group__sfinae.html#gaed6f37f103efe5517b99ccd43161a5de">console::uniform_distribution_t</a></div><div class="ttdeci">typename uniform_distribution_impl&lt; T &gt;::type uniform_distribution_t</div><div class="ttdoc">取得对印类型所对应的均匀分布。</div><div class="ttdef"><b>Definition</b> sfinae.h:334</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">console::Key::C</a></div><div class="ttdeci">@ C</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
@@ -409,7 +409,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

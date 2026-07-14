@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,17 +76,17 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">adapter.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>提供带有值返回 pop 操作的容器适配器包装类和 range 函数。  
+<p>提供带有值返回 pop 操作的容器适配器包装类。  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;queue&gt;</code><br />
 <code>#include &lt;stack&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="iter_8h_source.html">iter.h</a>&quot;</code><br />
@@ -104,40 +104,22 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_priority_queue.html">console::PriorityQueue&lt; T, Container, Compare &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">优先队列容器适配器，扩展自 std::priority_queue。  <a href="classconsole_1_1_priority_queue.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_range_iterator.html">console::RangeIterator&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classconsole_1_1_range_iterator.html" title="RangeIterator 类模板，用于实现 range() 函数生成的迭代器。">RangeIterator</a> 类模板，用于实现 <a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920" title="生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。">range()</a> 函数生成的迭代器。  <a href="classconsole_1_1_range_iterator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceconsole" id="r_namespaceconsole"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html">console</a></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a050ace6587f76bb1b4179261122b4920" id="r_a050ace6587f76bb1b4179261122b4920"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a050ace6587f76bb1b4179261122b4920"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_iterator_pair.html">IteratorPair</a>&lt; <a class="el" href="classconsole_1_1_range_iterator.html">RangeIterator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920">console::range</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end)</td></tr>
-<tr class="memdesc:a050ace6587f76bb1b4179261122b4920"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个数值范围的迭代器对，类似于 Python 的 <a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920" title="生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。">range()</a> 函数。  <br /></td></tr>
-<tr class="separator:a050ace6587f76bb1b4179261122b4920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5988e92c0befcf8434d1bd44a605e18b" id="r_a5988e92c0befcf8434d1bd44a605e18b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a5988e92c0befcf8434d1bd44a605e18b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_iterator_pair.html">IteratorPair</a>&lt; <a class="el" href="classconsole_1_1_range_iterator.html">RangeIterator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5988e92c0befcf8434d1bd44a605e18b">console::range</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end)</td></tr>
-<tr class="memdesc:a5988e92c0befcf8434d1bd44a605e18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个数值范围的迭代器对，类似于 Python 的 <a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920" title="生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。">range()</a> 函数。  <br /></td></tr>
-<tr class="separator:a5988e92c0befcf8434d1bd44a605e18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0964a614832b42652e45a86c20f8412e" id="r_a0964a614832b42652e45a86c20f8412e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a0964a614832b42652e45a86c20f8412e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_iterator_pair.html">IteratorPair</a>&lt; <a class="el" href="classconsole_1_1_range_iterator.html">RangeIterator</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0964a614832b42652e45a86c20f8412e">console::range</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;start, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;end, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;step)</td></tr>
-<tr class="memdesc:a0964a614832b42652e45a86c20f8412e"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成一个数值范围的迭代器对，类似于 Python 的 <a class="el" href="namespaceconsole.html#a050ace6587f76bb1b4179261122b4920" title="生成一个数值范围的迭代器对，类似于 Python 的 range() 函数。">range()</a> 函数。  <br /></td></tr>
-<tr class="separator:a0964a614832b42652e45a86c20f8412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>提供带有值返回 pop 操作的容器适配器包装类和 range 函数。 </p>
-<p>该模块对 STL 容器适配器（stack、queue、priority_queue）进行扩展， 重载了 pop() 方法，使其在弹出元素的同时返回该元素的值。适用于需要在弹出元素时获取其值的场景。 提供 range() 函数用于生成数值范围，类似于 Python 的 range() 函数。 </p><dl class="section author"><dt>Author</dt><dd>MrXie1109 </dd></dl>
+<div class="textblock"><p>提供带有值返回 pop 操作的容器适配器包装类。 </p>
+<p>该模块对 STL 容器适配器（stack、queue、priority_queue）进行扩展， 重载了 pop() 方法，使其在弹出元素的同时返回该元素的值。 适用于需要在弹出元素时获取其值的场景。 </p><dl class="section author"><dt>Author</dt><dd>MrXie1109 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT License </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -95,14 +95,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a715464dabbf1fb29e4e18cac8d788626" id="r_a715464dabbf1fb29e4e18cac8d788626"><td class="memTemplParams" colspan="2">template&lt;class StrOrCharType &gt; </td></tr>
-<tr class="memitem:a715464dabbf1fb29e4e18cac8d788626"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a715464dabbf1fb29e4e18cac8d788626">console::put</a> (std::ostream &amp;os, StrOrCharType &amp;&amp;value)</td></tr>
-<tr class="memdesc:a715464dabbf1fb29e4e18cac8d788626"><td class="mdescLeft">&#160;</td><td class="mdescRight">如果是字符和串或字符，直接输出，不含引号。  <br /></td></tr>
-<tr class="separator:a715464dabbf1fb29e4e18cac8d788626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af23e6235185590bb4d07651ee645ef16" id="r_af23e6235185590bb4d07651ee645ef16"><td class="memTemplParams" colspan="2">template&lt;class OtherType &gt; </td></tr>
-<tr class="memitem:af23e6235185590bb4d07651ee645ef16"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; OtherType &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; OtherType &gt;::type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#af23e6235185590bb4d07651ee645ef16">console::put</a> (std::ostream &amp;os, OtherType &amp;&amp;value)</td></tr>
-<tr class="memdesc:af23e6235185590bb4d07651ee645ef16"><td class="mdescLeft">&#160;</td><td class="mdescRight">否则，调用 repr 格式化。  <br /></td></tr>
-<tr class="separator:af23e6235185590bb4d07651ee645ef16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae205d1c8a957bcbd7a55095e435e6774" id="r_ae205d1c8a957bcbd7a55095e435e6774"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class StrOrCharType &gt; </td></tr>
+<tr class="memitem:ae205d1c8a957bcbd7a55095e435e6774"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</td></tr>
+<tr class="memdesc:ae205d1c8a957bcbd7a55095e435e6774"><td class="mdescLeft">&#160;</td><td class="mdescRight">如果是字符和串或字符，直接输出，不含引号。  <br /></td></tr>
+<tr class="separator:ae205d1c8a957bcbd7a55095e435e6774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebaa1991cd25154acc44f676da44a3f" id="r_a9ebaa1991cd25154acc44f676da44a3f"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class OtherType &gt; </td></tr>
+<tr class="memitem:a9ebaa1991cd25154acc44f676da44a3f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; OtherType &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; OtherType &gt;::type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a9ebaa1991cd25154acc44f676da44a3f">console::put</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, OtherType &amp;&amp;value)</td></tr>
+<tr class="memdesc:a9ebaa1991cd25154acc44f676da44a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">否则，调用 repr 格式化。  <br /></td></tr>
+<tr class="separator:a9ebaa1991cd25154acc44f676da44a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供在 <a class="el" href="output_8h.html" title="提供 STL 容器的格式化输出和灵活的输出控制工具。">output.h</a> 中用于输出单个值的 put 函数。 </p>
@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['map_0',['Map',['../classconsole_1_1gen_1_1_map.html',1,'console::gen']]],
   ['map_5ft_1',['map_t',['../classconsole_1_1gen_1_1map__t.html',1,'console::gen']]],
-  ['match_2',['Match',['../classconsole_1_1_regex_1_1_match.html',1,'console::Regex']]],
+  ['match_2',['Match',['../classconsole_1_1_basic_regex_1_1_match.html',1,'console::BasicRegex']]],
   ['max_5felement_5ft_3',['max_element_t',['../structconsole_1_1ops_1_1max__element__t.html',1,'console::ops']]],
   ['maybe_4',['Maybe',['../classconsole_1_1_maybe.html',1,'console']]],
   ['member_5',['Member',['../structconsole_1_1ops_1_1_member.html',1,'console::ops']]],

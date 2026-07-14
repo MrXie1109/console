@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1gen_1_1_chain-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::gen::Chain&lt; Gen1, Gen2 &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -103,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae550b745d0ed0168c026d98bcb4d2c70" id="r_ae550b745d0ed0168c026d98bcb4d2c70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#ae550b745d0ed0168c026d98bcb4d2c70">done</a> ()</td></tr>
 <tr class="memdesc:ae550b745d0ed0168c026d98bcb4d2c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
 <tr class="separator:ae550b745d0ed0168c026d98bcb4d2c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb147d76a8d2ee28ebdeb2bdd36b2f39" id="r_adb147d76a8d2ee28ebdeb2bdd36b2f39"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#adb147d76a8d2ee28ebdeb2bdd36b2f39">current</a> ()</td></tr>
+<tr class="memitem:adb147d76a8d2ee28ebdeb2bdd36b2f39" id="r_adb147d76a8d2ee28ebdeb2bdd36b2f39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1_chain.html#a6cd8a43e0ff133822b3da331f51f9005">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#adb147d76a8d2ee28ebdeb2bdd36b2f39">current</a> ()</td></tr>
 <tr class="memdesc:adb147d76a8d2ee28ebdeb2bdd36b2f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值。  <br /></td></tr>
 <tr class="separator:adb147d76a8d2ee28ebdeb2bdd36b2f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a151e4eca8aae71cad066ddcf343433b0" id="r_a151e4eca8aae71cad066ddcf343433b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#a151e4eca8aae71cad066ddcf343433b0">advance</a> ()</td></tr>
@@ -119,6 +121,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57f8e76c644b72f852864520bb12df42 inherit pub_methods_classconsole_1_1_generator" id="r_a57f8e76c644b72f852864520bb12df42"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a57f8e76c644b72f852864520bb12df42">end</a> ()</td></tr>
 <tr class="memdesc:a57f8e76c644b72f852864520bb12df42 inherit pub_methods_classconsole_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取结束迭代器。  <br /></td></tr>
 <tr class="separator:a57f8e76c644b72f852864520bb12df42 inherit pub_methods_classconsole_1_1_generator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee47dd703ea0112563a3d109e3e9cd2 inherit pub_methods_classconsole_1_1_generator" id="r_a4ee47dd703ea0112563a3d109e3e9cd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a4ee47dd703ea0112563a3d109e3e9cd2">done</a> ()</td></tr>
+<tr class="memdesc:a4ee47dd703ea0112563a3d109e3e9cd2 inherit pub_methods_classconsole_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
+<tr class="separator:a4ee47dd703ea0112563a3d109e3e9cd2 inherit pub_methods_classconsole_1_1_generator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763ecd483c08b699c07ba61250309a72 inherit pub_methods_classconsole_1_1_generator" id="r_a763ecd483c08b699c07ba61250309a72"><td class="memItemLeft" align="right" valign="top">std::decay&lt; decltype(true ? std::declval&lt; Gen1::value_type &gt;() :std::declval&lt; Gen2::value_type &gt;())&gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a763ecd483c08b699c07ba61250309a72">current</a> ()</td></tr>
+<tr class="memdesc:a763ecd483c08b699c07ba61250309a72 inherit pub_methods_classconsole_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值。  <br /></td></tr>
+<tr class="separator:a763ecd483c08b699c07ba61250309a72 inherit pub_methods_classconsole_1_1_generator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91ea996cb8b92665814ce7c01cc4a8d inherit pub_methods_classconsole_1_1_generator" id="r_ae91ea996cb8b92665814ce7c01cc4a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#ae91ea996cb8b92665814ce7c01cc4a8d">advance</a> ()</td></tr>
+<tr class="memdesc:ae91ea996cb8b92665814ce7c01cc4a8d inherit pub_methods_classconsole_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">推进生成器到下一个位置。  <br /></td></tr>
+<tr class="separator:ae91ea996cb8b92665814ce7c01cc4a8d inherit pub_methods_classconsole_1_1_generator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a6cd8a43e0ff133822b3da331f51f9005" id="r_a6cd8a43e0ff133822b3da331f51f9005"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#a6cd8a43e0ff133822b3da331f51f9005">T</a> = typename std::decay&lt; decltype(true ? std::declval&lt; typename Gen1::value_type &gt;() :std::declval&lt; typename Gen2::value_type &gt;())&gt;::type</td></tr>
+<tr class="separator:a6cd8a43e0ff133822b3da331f51f9005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a557acb45d138c013b825a7481f2048ec" id="r_a557acb45d138c013b825a7481f2048ec"><td class="memItemLeft" align="right" valign="top">Gen1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#a557acb45d138c013b825a7481f2048ec">gen1</a></td></tr>
+<tr class="separator:a557acb45d138c013b825a7481f2048ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabdcb9c5256f4cf061b6fe053ba2293b" id="r_aabdcb9c5256f4cf061b6fe053ba2293b"><td class="memItemLeft" align="right" valign="top">Gen2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_chain.html#aabdcb9c5256f4cf061b6fe053ba2293b">gen2</a></td></tr>
+<tr class="separator:aabdcb9c5256f4cf061b6fe053ba2293b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -137,7 +160,32 @@ class console::gen::Chain&lt; Gen1, Gen2 &gt;</div><p>链式生成器，将两�
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a6cd8a43e0ff133822b3da331f51f9005" name="a6cd8a43e0ff133822b3da331f51f9005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd8a43e0ff133822b3da331f51f9005">&#9670;&#160;</a></span>T</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen1 , class Gen2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classconsole_1_1gen_1_1_chain.html">console::gen::Chain</a>&lt; Gen1, Gen2 &gt;::T =  typename std::decay&lt; decltype(true ? std::declval&lt;typename Gen1::value_type&gt;() : std::declval&lt;typename Gen2::value_type&gt;())&gt;:: type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a45f172631860b4b8dac5111e879a4b01" name="a45f172631860b4b8dac5111e879a4b01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45f172631860b4b8dac5111e879a4b01">&#9670;&#160;</a></span>Chain()</h2>
 
@@ -227,7 +275,7 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classconsole_1_1gen_1_1_chain.html">console::gen::Chain</a>&lt; Gen1, Gen2 &gt;::current </td>
+          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1_chain.html#a6cd8a43e0ff133822b3da331f51f9005">T</a> <a class="el" href="classconsole_1_1gen_1_1_chain.html">console::gen::Chain</a>&lt; Gen1, Gen2 &gt;::current </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -275,13 +323,62 @@ template&lt;class Gen1 , class Gen2 &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a557acb45d138c013b825a7481f2048ec" name="a557acb45d138c013b825a7481f2048ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557acb45d138c013b825a7481f2048ec">&#9670;&#160;</a></span>gen1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen1 , class Gen2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gen1 <a class="el" href="classconsole_1_1gen_1_1_chain.html">console::gen::Chain</a>&lt; Gen1, Gen2 &gt;::gen1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aabdcb9c5256f4cf061b6fe053ba2293b" name="aabdcb9c5256f4cf061b6fe053ba2293b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabdcb9c5256f4cf061b6fe053ba2293b">&#9670;&#160;</a></span>gen2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen1 , class Gen2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gen2 <a class="el" href="classconsole_1_1gen_1_1_chain.html">console::gen::Chain</a>&lt; Gen1, Gen2 &gt;::gen2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="gextra_8h_source.html">gextra.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

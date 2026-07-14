@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">strpp.h File Reference</div></div>
 </div><!--header-->
@@ -88,6 +89,7 @@ $(function() {
 <code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -99,11 +101,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_partition_result.html">console::PartitionResult</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串分区结果，包含左部分、分隔符、右部分。  <a href="structconsole_1_1_partition_result.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_partition_result.html">console::BasicPartitionResult&lt; CharT, Traits, Allocator &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串分区结果，包含左部分、分隔符、右部分。  <a href="structconsole_1_1_basic_partition_result.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1f__string.html">console::f_string</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化字符串类，支持使用 <code>%</code> 运算符进行占位符 <code>{}</code> 替换。  <a href="classconsole_1_1f__string.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_f_string.html">console::BasicFString&lt; CharT, Traits, Allocator &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化字符串类，支持使用 <code>%</code> 运算符进行占位符 <code>{}</code> 替换。  <a href="classconsole_1_1_basic_f_string.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -112,53 +114,141 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga56a7f4a5d1fd644ec9c2fe38147b7c70" id="r_ga56a7f4a5d1fd644ec9c2fe38147b7c70"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga56a7f4a5d1fd644ec9c2fe38147b7c70">console::PartitionResult</a> = <a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:ga56a7f4a5d1fd644ec9c2fe38147b7c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicPartitionResult&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:ga56a7f4a5d1fd644ec9c2fe38147b7c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d5628b322b802571b78ce05f21ee71b" id="r_ga2d5628b322b802571b78ce05f21ee71b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga2d5628b322b802571b78ce05f21ee71b">console::WPartitionResult</a> = <a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:ga2d5628b322b802571b78ce05f21ee71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicPartitionResult&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:ga2d5628b322b802571b78ce05f21ee71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49dbd17a53f450112ec4d2b5c17a9180" id="r_ga49dbd17a53f450112ec4d2b5c17a9180"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga49dbd17a53f450112ec4d2b5c17a9180">console::FString</a> = <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:ga49dbd17a53f450112ec4d2b5c17a9180"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicFString&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:ga49dbd17a53f450112ec4d2b5c17a9180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2a3641c58d67b5e6c73facf0c283c75" id="r_gab2a3641c58d67b5e6c73facf0c283c75"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab2a3641c58d67b5e6c73facf0c283c75">console::WFString</a> = <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:gab2a3641c58d67b5e6c73facf0c283c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicFString&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:gab2a3641c58d67b5e6c73facf0c283c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga808a28efa1932499e7912f519f1aa767" id="r_ga808a28efa1932499e7912f519f1aa767"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga808a28efa1932499e7912f519f1aa767">console::ltrim</a> (std::string str)</td></tr>
-<tr class="memdesc:ga808a28efa1932499e7912f519f1aa767"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧的空白字符（空格、制表符等）。  <br /></td></tr>
-<tr class="separator:ga808a28efa1932499e7912f519f1aa767"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga791084c0b457942320d99550c29600b7" id="r_ga791084c0b457942320d99550c29600b7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga791084c0b457942320d99550c29600b7">console::rtrim</a> (std::string str)</td></tr>
-<tr class="memdesc:ga791084c0b457942320d99550c29600b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串右侧的空白字符。  <br /></td></tr>
-<tr class="separator:ga791084c0b457942320d99550c29600b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9c219f8107af63d17ec5616fe430891" id="r_gab9c219f8107af63d17ec5616fe430891"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab9c219f8107af63d17ec5616fe430891">console::trim</a> (std::string str)</td></tr>
-<tr class="memdesc:gab9c219f8107af63d17ec5616fe430891"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串两侧的空白字符。  <br /></td></tr>
-<tr class="separator:gab9c219f8107af63d17ec5616fe430891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8095b8180454f96099dee7eb587158a6" id="r_ga8095b8180454f96099dee7eb587158a6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga8095b8180454f96099dee7eb587158a6">console::ltrim</a> (std::string str, const std::string &amp;chars)</td></tr>
-<tr class="memdesc:ga8095b8180454f96099dee7eb587158a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧指定的字符集合。  <br /></td></tr>
-<tr class="separator:ga8095b8180454f96099dee7eb587158a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43f940389befb801afd08b04156f05ba" id="r_ga43f940389befb801afd08b04156f05ba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga43f940389befb801afd08b04156f05ba">console::rtrim</a> (std::string str, const std::string &amp;chars)</td></tr>
-<tr class="memdesc:ga43f940389befb801afd08b04156f05ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串右侧指定的字符集合。  <br /></td></tr>
-<tr class="separator:ga43f940389befb801afd08b04156f05ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e54b4147b33319e6bc08a8469ae06a9" id="r_ga8e54b4147b33319e6bc08a8469ae06a9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga8e54b4147b33319e6bc08a8469ae06a9">console::trim</a> (std::string str, const std::string &amp;chars)</td></tr>
-<tr class="memdesc:ga8e54b4147b33319e6bc08a8469ae06a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串两侧指定的字符集合。  <br /></td></tr>
-<tr class="separator:ga8e54b4147b33319e6bc08a8469ae06a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9b8e55a0a5c1eafc84ec0b3b53c77170" id="r_ga9b8e55a0a5c1eafc84ec0b3b53c77170"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga9b8e55a0a5c1eafc84ec0b3b53c77170">console::upper</a> (std::string str)</td></tr>
-<tr class="memdesc:ga9b8e55a0a5c1eafc84ec0b3b53c77170"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为大写。  <br /></td></tr>
-<tr class="separator:ga9b8e55a0a5c1eafc84ec0b3b53c77170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga245794143f8fbcc1baec9b5d8309846f" id="r_ga245794143f8fbcc1baec9b5d8309846f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga245794143f8fbcc1baec9b5d8309846f">console::lower</a> (std::string str)</td></tr>
-<tr class="memdesc:ga245794143f8fbcc1baec9b5d8309846f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为小写。  <br /></td></tr>
-<tr class="separator:ga245794143f8fbcc1baec9b5d8309846f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7f55de957c5fa0975647a4530b75c61c" id="r_ga7f55de957c5fa0975647a4530b75c61c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga7f55de957c5fa0975647a4530b75c61c">console::title</a> (std::string str)</td></tr>
-<tr class="memdesc:ga7f55de957c5fa0975647a4530b75c61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。  <br /></td></tr>
-<tr class="separator:ga7f55de957c5fa0975647a4530b75c61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32e13326520876f61cb8a33c74dc973f" id="r_ga32e13326520876f61cb8a33c74dc973f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_partition_result.html">PartitionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga32e13326520876f61cb8a33c74dc973f">console::partition</a> (const std::string &amp;text, const std::string &amp;sep)</td></tr>
-<tr class="memdesc:ga32e13326520876f61cb8a33c74dc973f"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。  <br /></td></tr>
-<tr class="separator:ga32e13326520876f61cb8a33c74dc973f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60b86273d02abf33f057e1e86325f455" id="r_ga60b86273d02abf33f057e1e86325f455"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga60b86273d02abf33f057e1e86325f455">console::split</a> (std::string text, const std::string &amp;sep=&quot; &quot;)</td></tr>
-<tr class="memdesc:ga60b86273d02abf33f057e1e86325f455"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。  <br /></td></tr>
-<tr class="separator:ga60b86273d02abf33f057e1e86325f455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac7a5894d7d6708ea4912fea49a3d622" id="r_gaac7a5894d7d6708ea4912fea49a3d622"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gaac7a5894d7d6708ea4912fea49a3d622"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaac7a5894d7d6708ea4912fea49a3d622">console::join</a> (const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;vec, const std::string &amp;sep=&quot;&quot;)</td></tr>
-<tr class="memdesc:gaac7a5894d7d6708ea4912fea49a3d622"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。  <br /></td></tr>
-<tr class="separator:gaac7a5894d7d6708ea4912fea49a3d622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd772fd6f826996e368030cfe30a54d3" id="r_gadd772fd6f826996e368030cfe30a54d3"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gadd772fd6f826996e368030cfe30a54d3"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gadd772fd6f826996e368030cfe30a54d3">console::ltrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str)</td></tr>
+<tr class="memdesc:gadd772fd6f826996e368030cfe30a54d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧的空白字符（空格、制表符等）。  <br /></td></tr>
+<tr class="separator:gadd772fd6f826996e368030cfe30a54d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4597ca0a9709794842153324137b3d2" id="r_gac4597ca0a9709794842153324137b3d2"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gac4597ca0a9709794842153324137b3d2"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gac4597ca0a9709794842153324137b3d2">console::rtrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str)</td></tr>
+<tr class="memdesc:gac4597ca0a9709794842153324137b3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串右侧的空白字符。  <br /></td></tr>
+<tr class="separator:gac4597ca0a9709794842153324137b3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99c8f3c0cb4a889228f144eccbd0284e" id="r_ga99c8f3c0cb4a889228f144eccbd0284e"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga99c8f3c0cb4a889228f144eccbd0284e"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga99c8f3c0cb4a889228f144eccbd0284e">console::trim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str)</td></tr>
+<tr class="memdesc:ga99c8f3c0cb4a889228f144eccbd0284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串两侧的空白字符。  <br /></td></tr>
+<tr class="separator:ga99c8f3c0cb4a889228f144eccbd0284e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a4e0a534e4873d1bbe475379c80ae67" id="r_ga0a4e0a534e4873d1bbe475379c80ae67"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga0a4e0a534e4873d1bbe475379c80ae67"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga0a4e0a534e4873d1bbe475379c80ae67">console::ltrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;chars)</td></tr>
+<tr class="memdesc:ga0a4e0a534e4873d1bbe475379c80ae67"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧指定的字符集合。  <br /></td></tr>
+<tr class="separator:ga0a4e0a534e4873d1bbe475379c80ae67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f17c04b3c32335c8b79184ff3505604" id="r_ga0f17c04b3c32335c8b79184ff3505604"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga0f17c04b3c32335c8b79184ff3505604"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga0f17c04b3c32335c8b79184ff3505604">console::rtrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;chars)</td></tr>
+<tr class="memdesc:ga0f17c04b3c32335c8b79184ff3505604"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串右侧指定的字符集合。  <br /></td></tr>
+<tr class="separator:ga0f17c04b3c32335c8b79184ff3505604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga407691b068cbc0c1538c6baad46db59f" id="r_ga407691b068cbc0c1538c6baad46db59f"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga407691b068cbc0c1538c6baad46db59f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga407691b068cbc0c1538c6baad46db59f">console::trim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;chars)</td></tr>
+<tr class="memdesc:ga407691b068cbc0c1538c6baad46db59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串两侧指定的字符集合。  <br /></td></tr>
+<tr class="separator:ga407691b068cbc0c1538c6baad46db59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1a5c264d3b6095e64bdf99da5f839a7" id="r_gab1a5c264d3b6095e64bdf99da5f839a7"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gab1a5c264d3b6095e64bdf99da5f839a7"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab1a5c264d3b6095e64bdf99da5f839a7">console::upper</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gab1a5c264d3b6095e64bdf99da5f839a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为大写。  <br /></td></tr>
+<tr class="separator:gab1a5c264d3b6095e64bdf99da5f839a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae390b09cd3f89ac4047a34b7afc09089" id="r_gae390b09cd3f89ac4047a34b7afc09089"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gae390b09cd3f89ac4047a34b7afc09089"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gae390b09cd3f89ac4047a34b7afc09089">console::lower</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gae390b09cd3f89ac4047a34b7afc09089"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为小写。  <br /></td></tr>
+<tr class="separator:gae390b09cd3f89ac4047a34b7afc09089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga268a5425324fe0c0842e50a6ff50034f" id="r_ga268a5425324fe0c0842e50a6ff50034f"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga268a5425324fe0c0842e50a6ff50034f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga268a5425324fe0c0842e50a6ff50034f">console::title</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:ga268a5425324fe0c0842e50a6ff50034f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。  <br /></td></tr>
+<tr class="separator:ga268a5425324fe0c0842e50a6ff50034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9fe0314ab85f751be52d0b9faf9ad7a7" id="r_ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga9fe0314ab85f751be52d0b9faf9ad7a7">console::partition</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep)</td></tr>
+<tr class="memdesc:ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。  <br /></td></tr>
+<tr class="separator:ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf1d8329691187d570dd3ec750aff417" id="r_gadf1d8329691187d570dd3ec750aff417"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gadf1d8329691187d570dd3ec750aff417"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT, Traits, Allocator &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gadf1d8329691187d570dd3ec750aff417">console::split</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep=std::basic_string&lt; CharT, Traits, Allocator &gt;{1, CharT{' '}})</td></tr>
+<tr class="memdesc:gadf1d8329691187d570dd3ec750aff417"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。  <br /></td></tr>
+<tr class="separator:gadf1d8329691187d570dd3ec750aff417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e48cb5a9cec4bde4102f0ec7ebfe005" id="r_ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class CharT  = char, class Traits  = std::char_traits&lt;CharT&gt;, class Allocator  = std::allocator&lt;CharT&gt;&gt; </td></tr>
+<tr class="memitem:ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga8e48cb5a9cec4bde4102f0ec7ebfe005">console::join</a> (const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;vec, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep=std::basic_string&lt; CharT, Traits, Allocator &gt;{})</td></tr>
+<tr class="memdesc:ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。  <br /></td></tr>
+<tr class="separator:ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8" id="r_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">将任意多个参数转换为字符串并拼接（无分隔符）。  <br /></td></tr>
 <tr class="separator:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga127963eae58c181d06c8efef328f029c" id="r_ga127963eae58c181d06c8efef328f029c"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:ga127963eae58c181d06c8efef328f029c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga127963eae58c181d06c8efef328f029c">console::from_string</a> (std::string str, Args &amp;...args)</td></tr>
-<tr class="memdesc:ga127963eae58c181d06c8efef328f029c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串中的值提取到多个参数中，参数类型由调用者指定。  <br /></td></tr>
-<tr class="separator:ga127963eae58c181d06c8efef328f029c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabba5c1dd875f63645bf0625b990a3d53" id="r_gabba5c1dd875f63645bf0625b990a3d53"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator , class... Args&gt; </td></tr>
+<tr class="memitem:gabba5c1dd875f63645bf0625b990a3d53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gabba5c1dd875f63645bf0625b990a3d53">console::from_string</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, Args &amp;...args)</td></tr>
+<tr class="memdesc:gabba5c1dd875f63645bf0625b990a3d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串中的值提取到多个参数中，参数类型由调用者指定。  <br /></td></tr>
+<tr class="separator:gabba5c1dd875f63645bf0625b990a3d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab84606025787d6bd83223772cae7e22c" id="r_gab84606025787d6bd83223772cae7e22c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab84606025787d6bd83223772cae7e22c">console::ltrim</a> (const char *str)</td></tr>
+<tr class="separator:gab84606025787d6bd83223772cae7e22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdd3f8965da978869bca8c858e314c98" id="r_gabdd3f8965da978869bca8c858e314c98"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gabdd3f8965da978869bca8c858e314c98">console::ltrim</a> (const wchar_t *str)</td></tr>
+<tr class="separator:gabdd3f8965da978869bca8c858e314c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23ca12036ab1e7845d697024b3df1f7e" id="r_ga23ca12036ab1e7845d697024b3df1f7e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga23ca12036ab1e7845d697024b3df1f7e">console::rtrim</a> (const char *str)</td></tr>
+<tr class="separator:ga23ca12036ab1e7845d697024b3df1f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bb85e99ae576d01d90567d759fab177" id="r_ga9bb85e99ae576d01d90567d759fab177"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga9bb85e99ae576d01d90567d759fab177">console::rtrim</a> (const wchar_t *str)</td></tr>
+<tr class="separator:ga9bb85e99ae576d01d90567d759fab177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa48d188de42f3ae0f7d8e9cec181d787" id="r_gaa48d188de42f3ae0f7d8e9cec181d787"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa48d188de42f3ae0f7d8e9cec181d787">console::trim</a> (const char *str)</td></tr>
+<tr class="separator:gaa48d188de42f3ae0f7d8e9cec181d787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade075700f65c3459a690e37ab39ce9e8" id="r_gade075700f65c3459a690e37ab39ce9e8"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gade075700f65c3459a690e37ab39ce9e8">console::trim</a> (const wchar_t *str)</td></tr>
+<tr class="separator:gade075700f65c3459a690e37ab39ce9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a9057a18ae9995d30b16e4995349fcc" id="r_ga1a9057a18ae9995d30b16e4995349fcc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga1a9057a18ae9995d30b16e4995349fcc">console::ltrim</a> (const char *str, const std::string &amp;chars)</td></tr>
+<tr class="separator:ga1a9057a18ae9995d30b16e4995349fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa50ad489b475b4a2c39cad94cc1d2da8" id="r_gaa50ad489b475b4a2c39cad94cc1d2da8"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa50ad489b475b4a2c39cad94cc1d2da8">console::ltrim</a> (const wchar_t *str, const std::wstring &amp;chars)</td></tr>
+<tr class="separator:gaa50ad489b475b4a2c39cad94cc1d2da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83b104955d41595df5df56f171a978eb" id="r_ga83b104955d41595df5df56f171a978eb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga83b104955d41595df5df56f171a978eb">console::rtrim</a> (const char *str, const std::string &amp;chars)</td></tr>
+<tr class="separator:ga83b104955d41595df5df56f171a978eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3f210344c3fd56abcf2ffd60e5370f4" id="r_gaa3f210344c3fd56abcf2ffd60e5370f4"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa3f210344c3fd56abcf2ffd60e5370f4">console::rtrim</a> (const wchar_t *str, const std::wstring &amp;chars)</td></tr>
+<tr class="separator:gaa3f210344c3fd56abcf2ffd60e5370f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31dc5a6b1e969acbfe3444df26151344" id="r_ga31dc5a6b1e969acbfe3444df26151344"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga31dc5a6b1e969acbfe3444df26151344">console::trim</a> (const char *str, const std::string &amp;chars)</td></tr>
+<tr class="separator:ga31dc5a6b1e969acbfe3444df26151344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga079628abefa4f223960f5c6a2474e898" id="r_ga079628abefa4f223960f5c6a2474e898"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga079628abefa4f223960f5c6a2474e898">console::trim</a> (const wchar_t *str, const std::wstring &amp;chars)</td></tr>
+<tr class="separator:ga079628abefa4f223960f5c6a2474e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcc446f604c1c42d3e0f7af3022c347d" id="r_gabcc446f604c1c42d3e0f7af3022c347d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gabcc446f604c1c42d3e0f7af3022c347d">console::upper</a> (const char *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gabcc446f604c1c42d3e0f7af3022c347d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为大写。    <br /></td></tr>
+<tr class="separator:gabcc446f604c1c42d3e0f7af3022c347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga355253af8fcc196a2b072285d2a8e278" id="r_ga355253af8fcc196a2b072285d2a8e278"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga355253af8fcc196a2b072285d2a8e278">console::upper</a> (const wchar_t *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:ga355253af8fcc196a2b072285d2a8e278"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为大写。    <br /></td></tr>
+<tr class="separator:ga355253af8fcc196a2b072285d2a8e278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga642bccdc345b5c5ecc04145803ee5add" id="r_ga642bccdc345b5c5ecc04145803ee5add"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga642bccdc345b5c5ecc04145803ee5add">console::lower</a> (const char *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:ga642bccdc345b5c5ecc04145803ee5add"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为小写。    <br /></td></tr>
+<tr class="separator:ga642bccdc345b5c5ecc04145803ee5add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4e363bfff2608570677db5664018436" id="r_gac4e363bfff2608570677db5664018436"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gac4e363bfff2608570677db5664018436">console::lower</a> (const wchar_t *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gac4e363bfff2608570677db5664018436"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为小写。    <br /></td></tr>
+<tr class="separator:gac4e363bfff2608570677db5664018436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1db2a4a9089e3d4ee5614092faeefde" id="r_gab1db2a4a9089e3d4ee5614092faeefde"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab1db2a4a9089e3d4ee5614092faeefde">console::title</a> (const char *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gab1db2a4a9089e3d4ee5614092faeefde"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。    <br /></td></tr>
+<tr class="separator:gab1db2a4a9089e3d4ee5614092faeefde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf59c842b61de6d580483f8b154bda257" id="r_gaf59c842b61de6d580483f8b154bda257"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaf59c842b61de6d580483f8b154bda257">console::title</a> (const wchar_t *str, const std::locale &amp;loc=std::locale{})</td></tr>
+<tr class="memdesc:gaf59c842b61de6d580483f8b154bda257"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。    <br /></td></tr>
+<tr class="separator:gaf59c842b61de6d580483f8b154bda257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace17b55da8e23c5dc9789cca42a719c6" id="r_gace17b55da8e23c5dc9789cca42a719c6"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:gace17b55da8e23c5dc9789cca42a719c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gace17b55da8e23c5dc9789cca42a719c6">console::partition</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const CharT *sep)</td></tr>
+<tr class="memdesc:gace17b55da8e23c5dc9789cca42a719c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。    <br /></td></tr>
+<tr class="separator:gace17b55da8e23c5dc9789cca42a719c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70309132aae37a14b842cbaa572bb249" id="r_ga70309132aae37a14b842cbaa572bb249"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
+<tr class="memitem:ga70309132aae37a14b842cbaa572bb249"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT, Traits, Allocator &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga70309132aae37a14b842cbaa572bb249">console::split</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const CharT *sep)</td></tr>
+<tr class="memdesc:ga70309132aae37a14b842cbaa572bb249"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="separator:ga70309132aae37a14b842cbaa572bb249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65843ee37833fced56fa9446d76b797a" id="r_ga65843ee37833fced56fa9446d76b797a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga65843ee37833fced56fa9446d76b797a">console::partition</a> (const char *text, const std::string &amp;sep)</td></tr>
+<tr class="memdesc:ga65843ee37833fced56fa9446d76b797a"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。    <br /></td></tr>
+<tr class="separator:ga65843ee37833fced56fa9446d76b797a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38ed7ab11ef2369fa996d15ef86e3780" id="r_ga38ed7ab11ef2369fa996d15ef86e3780"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; wchar_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga38ed7ab11ef2369fa996d15ef86e3780">console::partition</a> (const wchar_t *text, const std::wstring &amp;sep)</td></tr>
+<tr class="memdesc:ga38ed7ab11ef2369fa996d15ef86e3780"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。    <br /></td></tr>
+<tr class="separator:ga38ed7ab11ef2369fa996d15ef86e3780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3356f1c370d8e40c71a1aa91cc227bf" id="r_gac3356f1c370d8e40c71a1aa91cc227bf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gac3356f1c370d8e40c71a1aa91cc227bf">console::split</a> (const char *text, const std::string &amp;sep=&quot; &quot;)</td></tr>
+<tr class="memdesc:gac3356f1c370d8e40c71a1aa91cc227bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="separator:gac3356f1c370d8e40c71a1aa91cc227bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5fa73f5b7a977161fca0d7c83071e00" id="r_gaa5fa73f5b7a977161fca0d7c83071e00"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::wstring &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa5fa73f5b7a977161fca0d7c83071e00">console::split</a> (const wchar_t *text, const std::wstring &amp;sep=L&quot; &quot;)</td></tr>
+<tr class="memdesc:gaa5fa73f5b7a977161fca0d7c83071e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="separator:gaa5fa73f5b7a977161fca0d7c83071e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供字符串处理工具函数和格式化类。 </p>
@@ -168,7 +258,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

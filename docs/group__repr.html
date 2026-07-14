@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -81,31 +81,37 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga1e69898fd2b0d540611a203743ecc0e5" id="r_ga1e69898fd2b0d540611a203743ecc0e5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__repr.html#ga1e69898fd2b0d540611a203743ecc0e5">console::tiname_impl</a> (const std::type_info &amp;ti)</td></tr>
+<tr class="memdesc:ga1e69898fd2b0d540611a203743ecc0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取类型信息的可读名称（跨平台 demangle），返回 std::string。  <br /></td></tr>
+<tr class="separator:ga1e69898fd2b0d540611a203743ecc0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac92082727845e0dceef09efcc1d8e953" id="r_gac92082727845e0dceef09efcc1d8e953"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">console::tiname</a> (const std::type_info &amp;ti)</td></tr>
-<tr class="memdesc:gac92082727845e0dceef09efcc1d8e953"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取类型信息的可读名称（跨平台 demangle）。  <br /></td></tr>
+<tr class="memdesc:gac92082727845e0dceef09efcc1d8e953"><td class="mdescLeft">&#160;</td><td class="mdescRight">tiname_impl 的 char 版别名。  <br /></td></tr>
 <tr class="separator:gac92082727845e0dceef09efcc1d8e953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6" id="r_gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__sfinae.html#ga087845fe3cc622168b486a851de2451a">enable_if_string</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#gab16dfca7b068359547e9dbd3e9f8aca6">console::repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="memdesc:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出字符串类型（std::string, const char* 等）的表示，带双引号。  <br /></td></tr>
-<tr class="separator:gab16dfca7b068359547e9dbd3e9f8aca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b98f9cb12f97585aca122e5ca781dc3" id="r_ga4b98f9cb12f97585aca122e5ca781dc3"><td class="memTemplParams" colspan="2">template&lt;class Ret , class... Args&gt; </td></tr>
-<tr class="memitem:ga4b98f9cb12f97585aca122e5ca781dc3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#ga4b98f9cb12f97585aca122e5ca781dc3">console::repr</a> (Ret(*f)(Args...), std::ostream &amp;os=std::cout)</td></tr>
-<tr class="memdesc:ga4b98f9cb12f97585aca122e5ca781dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出函数指针的表示，格式为 "&lt;function at 地址&gt;"。  <br /></td></tr>
-<tr class="separator:ga4b98f9cb12f97585aca122e5ca781dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6831da52b6f59770d2c6aa1e030e8ac3" id="r_ga6831da52b6f59770d2c6aa1e030e8ac3"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga6831da52b6f59770d2c6aa1e030e8ac3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#ga6831da52b6f59770d2c6aa1e030e8ac3">console::repr</a> (std::reference_wrapper&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; v, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="separator:ga6831da52b6f59770d2c6aa1e030e8ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5bc3c158297f06eec5fde098edfd54b" id="r_gac5bc3c158297f06eec5fde098edfd54b"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__repr.html#gac5bc3c158297f06eec5fde098edfd54b">console::wtiname</a> (const std::type_info &amp;ti)</td></tr>
+<tr class="memdesc:gac5bc3c158297f06eec5fde098edfd54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">tiname_impl 的 wchar_t 版。  <br /></td></tr>
+<tr class="separator:gac5bc3c158297f06eec5fde098edfd54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d" id="r_ga02627a15a63c76a99f7eb15abc55df1d"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#ga02627a15a63c76a99f7eb15abc55df1d">console::repr</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;value, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
+<tr class="memdesc:ga02627a15a63c76a99f7eb15abc55df1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出字符串类型（std::string, const char* 等）的表示，带双引号。  <br /></td></tr>
+<tr class="separator:ga02627a15a63c76a99f7eb15abc55df1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf06ce8973ec8b1f0c8cc99dd8068e30" id="r_gaaf06ce8973ec8b1f0c8cc99dd8068e30"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Ret , class... Args&gt; </td></tr>
+<tr class="memitem:gaaf06ce8973ec8b1f0c8cc99dd8068e30"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#gaaf06ce8973ec8b1f0c8cc99dd8068e30">console::repr</a> (Ret(*f)(Args...), std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
+<tr class="memdesc:gaaf06ce8973ec8b1f0c8cc99dd8068e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出函数指针的表示，格式为 "&lt;function at 地址&gt;"。  <br /></td></tr>
+<tr class="separator:gaaf06ce8973ec8b1f0c8cc99dd8068e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb89a3331796cdaa63754ec2be9ab522" id="r_gaeb89a3331796cdaa63754ec2be9ab522"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:gaeb89a3331796cdaa63754ec2be9ab522"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__repr.html#gaeb89a3331796cdaa63754ec2be9ab522">console::repr</a> (std::reference_wrapper&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; v, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
+<tr class="separator:gaeb89a3331796cdaa63754ec2be9ab522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>提供类型名称和值的可读表示。 </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga4b98f9cb12f97585aca122e5ca781dc3" name="ga4b98f9cb12f97585aca122e5ca781dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4b98f9cb12f97585aca122e5ca781dc3">&#9670;&#160;</a></span>repr() <span class="overload">[1/3]</span></h2>
+<a id="gaaf06ce8973ec8b1f0c8cc99dd8068e30" name="gaaf06ce8973ec8b1f0c8cc99dd8068e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf06ce8973ec8b1f0c8cc99dd8068e30">&#9670;&#160;</a></span>repr() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Ret , class... Args&gt; </div>
+template&lt;class CharT , class Traits , class Ret , class... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void console::repr </td>
@@ -116,7 +122,7 @@ template&lt;class Ret , class... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td>
           <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
         </tr>
         <tr>
@@ -130,6 +136,8 @@ template&lt;class Ret , class... Args&gt; </div>
 <p>输出函数指针的表示，格式为 "&lt;function at 地址&gt;"。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>流的字符类型。 </td></tr>
+    <tr><td class="paramname">Traits</td><td>流的字符特征类型。 </td></tr>
     <tr><td class="paramname">Ret</td><td>函数返回类型。 </td></tr>
     <tr><td class="paramname">Args</td><td>函数参数类型包。 </td></tr>
   </table>
@@ -145,13 +153,13 @@ template&lt;class Ret , class... Args&gt; </div>
 
 </div>
 </div>
-<a id="ga6831da52b6f59770d2c6aa1e030e8ac3" name="ga6831da52b6f59770d2c6aa1e030e8ac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6831da52b6f59770d2c6aa1e030e8ac3">&#9670;&#160;</a></span>repr() <span class="overload">[2/3]</span></h2>
+<a id="gaeb89a3331796cdaa63754ec2be9ab522" name="gaeb89a3331796cdaa63754ec2be9ab522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb89a3331796cdaa63754ec2be9ab522">&#9670;&#160;</a></span>repr() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void console::repr </td>
@@ -162,7 +170,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td>
           <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
         </tr>
         <tr>
@@ -175,16 +183,16 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
-<a id="gab16dfca7b068359547e9dbd3e9f8aca6" name="gab16dfca7b068359547e9dbd3e9f8aca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab16dfca7b068359547e9dbd3e9f8aca6">&#9670;&#160;</a></span>repr() <span class="overload">[3/3]</span></h2>
+<a id="ga02627a15a63c76a99f7eb15abc55df1d" name="ga02627a15a63c76a99f7eb15abc55df1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02627a15a63c76a99f7eb15abc55df1d">&#9670;&#160;</a></span>repr() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;class CharT , class Traits , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sfinae.html#ga087845fe3cc622168b486a851de2451a">enable_if_string</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; console::repr </td>
+          <td class="memname">std::enable_if&lt; <a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::type &gt;::value &gt;::type console::repr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -192,7 +200,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td>
           <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
         </tr>
         <tr>
@@ -206,6 +214,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <p>输出字符串类型（std::string, const char* 等）的表示，带双引号。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>流的字符类型。 </td></tr>
+    <tr><td class="paramname">Traits</td><td>流的字符特征类型。 </td></tr>
     <tr><td class="paramname">T</td><td>字符串类型（由 enable_if_string 约束）。 </td></tr>
   </table>
   </dd>
@@ -244,7 +254,35 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </table>
 </div><div class="memdoc">
 
-<p>获取类型信息的可读名称（跨平台 demangle）。 </p>
+<p>tiname_impl 的 char 版别名。 </p>
+
+</div>
+</div>
+<a id="ga1e69898fd2b0d540611a203743ecc0e5" name="ga1e69898fd2b0d540611a203743ecc0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e69898fd2b0d540611a203743ecc0e5">&#9670;&#160;</a></span>tiname_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::tiname_impl </td>
+          <td>(</td>
+          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramname"><em>ti</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取类型信息的可读名称（跨平台 demangle），返回 std::string。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ti</td><td>std::type_info 对象。 </td></tr>
@@ -255,10 +293,38 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<a id="gac5bc3c158297f06eec5fde098edfd54b" name="gac5bc3c158297f06eec5fde098edfd54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5bc3c158297f06eec5fde098edfd54b">&#9670;&#160;</a></span>wtiname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring console::wtiname </td>
+          <td>(</td>
+          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramname"><em>ti</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>tiname_impl 的 wchar_t 版。 </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

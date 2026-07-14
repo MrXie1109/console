@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classconsole_1_1_cmd_result-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::CmdResult Class Reference</div></div>
@@ -105,6 +107,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a089bb5ea1e2b5abca93bf6217f323fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取命令的标准输出内容。  <br /></td></tr>
 <tr class="separator:a089bb5ea1e2b5abca93bf6217f323fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a822ef947328098a190b83dec8caa13b3" id="r_a822ef947328098a190b83dec8caa13b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#a822ef947328098a190b83dec8caa13b3">CmdResult</a> ()</td></tr>
+<tr class="memdesc:a822ef947328098a190b83dec8caa13b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">私有默认构造函数。  <br /></td></tr>
+<tr class="separator:a822ef947328098a190b83dec8caa13b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab9249a539ec43dcad6ae37f1c79ee2c6" id="r_ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#ab9249a539ec43dcad6ae37f1c79ee2c6">status_</a></td></tr>
+<tr class="memdesc:ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令退出状态码（0 成功，-1 管道打开失败）  <br /></td></tr>
+<tr class="separator:ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91078579e58d89d292259e7afb5945da" id="r_a91078579e58d89d292259e7afb5945da"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#a91078579e58d89d292259e7afb5945da">ptr_</a></td></tr>
+<tr class="memdesc:a91078579e58d89d292259e7afb5945da"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令输出内容（含 stderr）  <br /></td></tr>
+<tr class="separator:a91078579e58d89d292259e7afb5945da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a39b00f1edd8f9ddb9b1ee091d901e87c" id="r_a39b00f1edd8f9ddb9b1ee091d901e87c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_cmd_result.html">CmdResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#a39b00f1edd8f9ddb9b1ee091d901e87c">syscmd</a> (const std::string &amp;, const std::vector&lt; std::string &gt; &amp;, const std::map&lt; std::string, std::string &gt; &amp;)</td></tr>
@@ -114,7 +131,35 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>命令执行结果封装类。 </p>
 <p>存储命令执行状态码和标准输出内容，对象只能通过 syscmd 函数创建。 </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a822ef947328098a190b83dec8caa13b3" name="a822ef947328098a190b83dec8caa13b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822ef947328098a190b83dec8caa13b3">&#9670;&#160;</a></span>CmdResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">console::CmdResult::CmdResult </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>私有默认构造函数。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="af75dd2cefdfafde0672723950594d3a0" name="af75dd2cefdfafde0672723950594d3a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af75dd2cefdfafde0672723950594d3a0">&#9670;&#160;</a></span>error()</h2>
 
@@ -323,13 +368,62 @@ false 执行失败 </dd></dl>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a91078579e58d89d292259e7afb5945da" name="a91078579e58d89d292259e7afb5945da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91078579e58d89d292259e7afb5945da">&#9670;&#160;</a></span>ptr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;std::string&gt; console::CmdResult::ptr_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>命令输出内容（含 stderr） </p>
+
+</div>
+</div>
+<a id="ab9249a539ec43dcad6ae37f1c79ee2c6" name="ab9249a539ec43dcad6ae37f1c79ee2c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9249a539ec43dcad6ae37f1c79ee2c6">&#9670;&#160;</a></span>status_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int console::CmdResult::status_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>命令退出状态码（0 成功，-1 管道打开失败） </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="syscmd_8h_source.html">syscmd.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

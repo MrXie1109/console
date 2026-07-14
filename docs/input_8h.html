@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">input.h File Reference</div></div>
@@ -96,8 +97,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_input_settings.html">console::InputSettings</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入/输出流设置，用于自定义 input 函数的输入输出目标。  <a href="structconsole_1_1_input_settings.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_input_settings.html">console::BasicInputSettings&lt; CharT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入/输出流设置，用于自定义 input 函数的输入输出目标。  <a href="structconsole_1_1_basic_input_settings.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -106,37 +107,59 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a68dee9baace5ae31a6e5c8da6fe0e2c0" id="r_a68dee9baace5ae31a6e5c8da6fe0e2c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a68dee9baace5ae31a6e5c8da6fe0e2c0">console::InputSettings</a> = <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:a68dee9baace5ae31a6e5c8da6fe0e2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicInputSettings&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a68dee9baace5ae31a6e5c8da6fe0e2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e171935e59d15153c3d68c4b98a88c" id="r_a61e171935e59d15153c3d68c4b98a88c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a61e171935e59d15153c3d68c4b98a88c">console::WInputSettings</a> = <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:a61e171935e59d15153c3d68c4b98a88c"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicInputSettings&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a61e171935e59d15153c3d68c4b98a88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4b13f338c16af509d1896fc6689f6fd3" id="r_a4b13f338c16af509d1896fc6689f6fd3"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>  = std::string&gt; </td></tr>
-<tr class="memitem:a4b13f338c16af509d1896fc6689f6fd3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4b13f338c16af509d1896fc6689f6fd3">console::input</a> (const std::string &amp;prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:a4b13f338c16af509d1896fc6689f6fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">从标准输入读取一个值，支持类型模板。  <br /></td></tr>
-<tr class="separator:a4b13f338c16af509d1896fc6689f6fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf67ac5ab34fd61996e7b4b445645c66" id="r_acf67ac5ab34fd61996e7b4b445645c66"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#acf67ac5ab34fd61996e7b4b445645c66">console::inputNumber</a> (const std::string &amp;prompt=&quot;Type a number: &quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:acf67ac5ab34fd61996e7b4b445645c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个 long double 类型的数字。  <br /></td></tr>
-<tr class="separator:acf67ac5ab34fd61996e7b4b445645c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acefe608cce2aafb5da8d5e7a4a3cd4b6" id="r_acefe608cce2aafb5da8d5e7a4a3cd4b6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#acefe608cce2aafb5da8d5e7a4a3cd4b6">console::inputLine</a> (const std::string &amp;prompt=&quot;Type a line string: &quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:acefe608cce2aafb5da8d5e7a4a3cd4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一整行字符串（包含空格）。  <br /></td></tr>
-<tr class="separator:acefe608cce2aafb5da8d5e7a4a3cd4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aabac00da8d6b6b50bbaa096212709c" id="r_a2aabac00da8d6b6b50bbaa096212709c"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a2aabac00da8d6b6b50bbaa096212709c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a2aabac00da8d6b6b50bbaa096212709c">console::inputWithRange</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">min</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">max</a>, const std::string &amp;prompt=&quot;Type a number: &quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:a2aabac00da8d6b6b50bbaa096212709c"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个在指定范围内的数字。  <br /></td></tr>
-<tr class="separator:a2aabac00da8d6b6b50bbaa096212709c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afec5042e6c698ef95319ddbc3d1b9544" id="r_afec5042e6c698ef95319ddbc3d1b9544"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#afec5042e6c698ef95319ddbc3d1b9544">console::inputChar</a> (const std::string &amp;prompt=&quot;Type a character: &quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:afec5042e6c698ef95319ddbc3d1b9544"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个字符。  <br /></td></tr>
-<tr class="separator:afec5042e6c698ef95319ddbc3d1b9544"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a62f97aafac8e6eb9a54d3cffc2f01e" id="r_a9a62f97aafac8e6eb9a54d3cffc2f01e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a9a62f97aafac8e6eb9a54d3cffc2f01e">console::inputYesOrNo</a> (const std::string &amp;prompt=&quot;Type yes or no: &quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:a9a62f97aafac8e6eb9a54d3cffc2f01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个 y/n 确认，返回布尔值。  <br /></td></tr>
-<tr class="separator:a9a62f97aafac8e6eb9a54d3cffc2f01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4022716f3b9231c1fe414f243ddf2e39" id="r_a4022716f3b9231c1fe414f243ddf2e39"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4022716f3b9231c1fe414f243ddf2e39">console::inputAll</a> (const std::string &amp;prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">inputSettings</a>)</td></tr>
-<tr class="memdesc:a4022716f3b9231c1fe414f243ddf2e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取输入流中剩余的全部内容（直到 EOF）。  <br /></td></tr>
-<tr class="separator:a4022716f3b9231c1fe414f243ddf2e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddc0a6c88b785bd2dac857b049c47df" id="r_a1ddc0a6c88b785bd2dac857b049c47df"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>  = std::string, class CharT  = char&gt; </td></tr>
+<tr class="memitem:a1ddc0a6c88b785bd2dac857b049c47df"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a1ddc0a6c88b785bd2dac857b049c47df">console::input</a> (const CharT *prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; CharT &gt; &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:a1ddc0a6c88b785bd2dac857b049c47df"><td class="mdescLeft">&#160;</td><td class="mdescRight">从标准输入读取一个值，支持类型模板。  <br /></td></tr>
+<tr class="separator:a1ddc0a6c88b785bd2dac857b049c47df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7aa504c7eb2aeffba7e2164aa92304" id="r_a5b7aa504c7eb2aeffba7e2164aa92304"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>  = std::string&gt; </td></tr>
+<tr class="memitem:a5b7aa504c7eb2aeffba7e2164aa92304"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5b7aa504c7eb2aeffba7e2164aa92304">console::winput</a> (const wchar_t *prompt=L&quot;&quot;, const <a class="el" href="namespaceconsole.html#a61e171935e59d15153c3d68c4b98a88c">WInputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a10e82442c08aca16d6d166624842a862">w_input_settings</a>)</td></tr>
+<tr class="memdesc:a5b7aa504c7eb2aeffba7e2164aa92304"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一行宽字符字符串。  <br /></td></tr>
+<tr class="separator:a5b7aa504c7eb2aeffba7e2164aa92304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e629999bdd97ac3744e48708d92dd6" id="r_aa2e629999bdd97ac3744e48708d92dd6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>  = std::wstring, class CharT  = wchar_t&gt; </td></tr>
+<tr class="memitem:aa2e629999bdd97ac3744e48708d92dd6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aa2e629999bdd97ac3744e48708d92dd6">console::inputLine</a> (const CharT *prompt=&quot;&quot;, const <a class="el" href="namespaceconsole.html#a61e171935e59d15153c3d68c4b98a88c">WInputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a10e82442c08aca16d6d166624842a862">w_input_settings</a>)</td></tr>
+<tr class="separator:aa2e629999bdd97ac3744e48708d92dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7e0fd48ea134d4a355e95de57fba56" id="r_a7e7e0fd48ea134d4a355e95de57fba56"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a7e7e0fd48ea134d4a355e95de57fba56">console::inputNumber</a> (const char *prompt=&quot;Type a number: &quot;, const <a class="el" href="namespaceconsole.html#a68dee9baace5ae31a6e5c8da6fe0e2c0">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:a7e7e0fd48ea134d4a355e95de57fba56"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个 long double 类型的数字。  <br /></td></tr>
+<tr class="separator:a7e7e0fd48ea134d4a355e95de57fba56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfcf0501007cc174f562bfd1fec32f2a" id="r_acfcf0501007cc174f562bfd1fec32f2a"><td class="memTemplParams" colspan="2">template&lt;class CharT  = char&gt; </td></tr>
+<tr class="memitem:acfcf0501007cc174f562bfd1fec32f2a"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#acfcf0501007cc174f562bfd1fec32f2a">console::inputLine</a> (const CharT *prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; CharT &gt; &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:acfcf0501007cc174f562bfd1fec32f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一整行字符串（包含空格）。  <br /></td></tr>
+<tr class="separator:acfcf0501007cc174f562bfd1fec32f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b9d5bd95a56e79d03ba0c6dcee000c" id="r_a06b9d5bd95a56e79d03ba0c6dcee000c"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class CharT  = char&gt; </td></tr>
+<tr class="memitem:a06b9d5bd95a56e79d03ba0c6dcee000c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a06b9d5bd95a56e79d03ba0c6dcee000c">console::inputWithRange</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga3c082110bc9f1bccd134f037cbc80d2b">min</a>, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="group__multiarray__stats.html#ga4d151dd74a5c86383bbc2526fefe2988">max</a>, const CharT *prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; CharT &gt; &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:a06b9d5bd95a56e79d03ba0c6dcee000c"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个在指定范围内的数字。  <br /></td></tr>
+<tr class="separator:a06b9d5bd95a56e79d03ba0c6dcee000c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07dbd88f85c0dba43bd45afe02d4f5d8" id="r_a07dbd88f85c0dba43bd45afe02d4f5d8"><td class="memTemplParams" colspan="2">template&lt;class CharT  = char&gt; </td></tr>
+<tr class="memitem:a07dbd88f85c0dba43bd45afe02d4f5d8"><td class="memTemplItemLeft" align="right" valign="top">CharT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a07dbd88f85c0dba43bd45afe02d4f5d8">console::inputChar</a> (const CharT *prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; CharT &gt; &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:a07dbd88f85c0dba43bd45afe02d4f5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个字符。  <br /></td></tr>
+<tr class="separator:a07dbd88f85c0dba43bd45afe02d4f5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be8a3a31ba7c47f30c9f437102a78ee" id="r_a2be8a3a31ba7c47f30c9f437102a78ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a2be8a3a31ba7c47f30c9f437102a78ee">console::inputYesOrNo</a> (const char *prompt=&quot;Type yes or no: &quot;, const <a class="el" href="namespaceconsole.html#a68dee9baace5ae31a6e5c8da6fe0e2c0">InputSettings</a> &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:a2be8a3a31ba7c47f30c9f437102a78ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取一个 y/n 确认，返回布尔值。  <br /></td></tr>
+<tr class="separator:a2be8a3a31ba7c47f30c9f437102a78ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cb7f1f0d3d7e7460431e8319e1cb96" id="r_ab8cb7f1f0d3d7e7460431e8319e1cb96"><td class="memTemplParams" colspan="2">template&lt;class CharT  = char&gt; </td></tr>
+<tr class="memitem:ab8cb7f1f0d3d7e7460431e8319e1cb96"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ab8cb7f1f0d3d7e7460431e8319e1cb96">console::inputAll</a> (const CharT *prompt=&quot;&quot;, const <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; CharT &gt; &amp;is=<a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">input_settings</a>)</td></tr>
+<tr class="memdesc:ab8cb7f1f0d3d7e7460431e8319e1cb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取输入流中剩余的全部内容（直到 EOF）。  <br /></td></tr>
+<tr class="separator:ab8cb7f1f0d3d7e7460431e8319e1cb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4a3d6bfc1b36f7a231fffcdb55a0402c" id="r_a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_input_settings.html">InputSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4a3d6bfc1b36f7a231fffcdb55a0402c">console::inputSettings</a></td></tr>
-<tr class="memdesc:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认输入设置  <br /></td></tr>
-<tr class="separator:a4a3d6bfc1b36f7a231fffcdb55a0402c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a562ec82bee3b13e314de0de262237bfc" id="r_a562ec82bee3b13e314de0de262237bfc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a562ec82bee3b13e314de0de262237bfc">console::input_settings</a></td></tr>
+<tr class="memdesc:a562ec82bee3b13e314de0de262237bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认输入设置  <br /></td></tr>
+<tr class="separator:a562ec82bee3b13e314de0de262237bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e82442c08aca16d6d166624842a862" id="r_a10e82442c08aca16d6d166624842a862"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; wchar_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a10e82442c08aca16d6d166624842a862">console::w_input_settings</a></td></tr>
+<tr class="memdesc:a10e82442c08aca16d6d166624842a862"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认宽字符输入设置  <br /></td></tr>
+<tr class="separator:a10e82442c08aca16d6d166624842a862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供丰富的控制台输入函数，支持类型安全输入、范围检查、行读取、确认输入等。 </p>
@@ -146,7 +169,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

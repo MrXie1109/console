@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -71,7 +71,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">Tuple 打印辅助</div></div>
 </div><!--header-->
 <div class="contents">
@@ -81,22 +82,48 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_tuple_printer.html">console::TuplePrinter&lt; Tuple, N &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的辅助模板（主模板）。  <a href="structconsole_1_1_tuple_printer.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_tuple_printer.html">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的辅助模板（主模板）。  <a href="structconsole_1_1_basic_tuple_printer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html">console::TuplePrinter&lt; Tuple, 1 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的偏特化：处理单个元素。  <a href="structconsole_1_1_tuple_printer_3_01_tuple_00_011_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_011_01_4.html">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, 1 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的偏特化：处理单个元素。  <a href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_011_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4.html">console::TuplePrinter&lt; Tuple, 0 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的偏特化：处理空 tuple。  <a href="structconsole_1_1_tuple_printer_3_01_tuple_00_010_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_010_01_4.html">console::BasicTuplePrinter&lt; CharT, Traits, Tuple, 0 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归打印 tuple 的偏特化：处理空 tuple。  <a href="structconsole_1_1_basic_tuple_printer_3_01_char_t_00_01_traits_00_01_tuple_00_010_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gae5a5c25e26ab5af6bedf91e5bc14c3d4" id="r_gae5a5c25e26ab5af6bedf91e5bc14c3d4"><td class="memTemplParams" colspan="2">template&lt;class Tuple , size_t N = std::tuple_size&lt;Tuple&gt;::value&gt; </td></tr>
+<tr class="memitem:gae5a5c25e26ab5af6bedf91e5bc14c3d4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__tuple__printer.html#gae5a5c25e26ab5af6bedf91e5bc14c3d4">console::TuplePrinter</a> = <a class="el" href="structconsole_1_1_basic_tuple_printer.html">BasicTuplePrinter</a>&lt; char, std::char_traits&lt; char &gt;, Tuple, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt;</td></tr>
+<tr class="memdesc:gae5a5c25e26ab5af6bedf91e5bc14c3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicTuplePrinter&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:gae5a5c25e26ab5af6bedf91e5bc14c3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>用于递归打印 std::tuple 的辅助模板。 </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="gae5a5c25e26ab5af6bedf91e5bc14c3d4" name="gae5a5c25e26ab5af6bedf91e5bc14c3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae5a5c25e26ab5af6bedf91e5bc14c3d4">&#9670;&#160;</a></span>TuplePrinter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Tuple , size_t N = std::tuple_size&lt;Tuple&gt;::value&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__tuple__printer.html#gae5a5c25e26ab5af6bedf91e5bc14c3d4">console::TuplePrinter</a> = typedef <a class="el" href="structconsole_1_1_basic_tuple_printer.html">BasicTuplePrinter</a>&lt;char, std::char_traits&lt;char&gt;, Tuple, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a8d9c307cb7f3c4a32822a51922d1ceaa">N</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BasicTuplePrinter&lt;char&gt; 的类型别名。 </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

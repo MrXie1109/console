@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -78,6 +78,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classconsole_1_1_thread_pool-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::ThreadPool Class Reference</div></div>
 </div><!--header-->
@@ -88,6 +89,15 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="pool_8h_source.html">pool.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_thread_pool_1_1_task.html">Task</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">具体任务类模板，封装 std::packaged_task。  <a href="structconsole_1_1_thread_pool_1_1_task.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_thread_pool_1_1_task_base.html">TaskBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务基类，提供多态接口。  <a href="structconsole_1_1_thread_pool_1_1_task_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a73d8d7d66ebfcadd7c72872d9b4211f0" id="r_a73d8d7d66ebfcadd7c72872d9b4211f0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> : bool { <a class="el" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0a5bb94a1c12413a2e5d14deabab29f2aa">abort</a>
@@ -141,6 +151,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae51068e4017a6e723e632b4e4ee91d68" id="r_ae51068e4017a6e723e632b4e4ee91d68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#ae51068e4017a6e723e632b4e4ee91d68">operator=</a> (<a class="el" href="classconsole_1_1_thread_pool.html">ThreadPool</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:ae51068e4017a6e723e632b4e4ee91d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁止移动赋值。  <br /></td></tr>
 <tr class="separator:ae51068e4017a6e723e632b4e4ee91d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6812bc5de961e1a467dcff39f262326c" id="r_a6812bc5de961e1a467dcff39f262326c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#a6812bc5de961e1a467dcff39f262326c">workers</a></td></tr>
+<tr class="memdesc:a6812bc5de961e1a467dcff39f262326c"><td class="mdescLeft">&#160;</td><td class="mdescRight">工作线程容器  <br /></td></tr>
+<tr class="separator:a6812bc5de961e1a467dcff39f262326c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf318c9e1e8553e0eaeb5b8fcf8870e3" id="r_abf318c9e1e8553e0eaeb5b8fcf8870e3"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::unique_ptr&lt; <a class="el" href="structconsole_1_1_thread_pool_1_1_task_base.html">TaskBase</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#abf318c9e1e8553e0eaeb5b8fcf8870e3">tasks</a></td></tr>
+<tr class="memdesc:abf318c9e1e8553e0eaeb5b8fcf8870e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">待执行任务队列  <br /></td></tr>
+<tr class="separator:abf318c9e1e8553e0eaeb5b8fcf8870e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a4de0dc3fe4833cd8360237184be25" id="r_a43a4de0dc3fe4833cd8360237184be25"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#a43a4de0dc3fe4833cd8360237184be25">mutex</a></td></tr>
+<tr class="memdesc:a43a4de0dc3fe4833cd8360237184be25"><td class="mdescLeft">&#160;</td><td class="mdescRight">保护任务队列的互斥锁  <br /></td></tr>
+<tr class="separator:a43a4de0dc3fe4833cd8360237184be25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac328972686d3b68df07be0cdaa50e8de" id="r_ac328972686d3b68df07be0cdaa50e8de"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#ac328972686d3b68df07be0cdaa50e8de">cv</a></td></tr>
+<tr class="memdesc:ac328972686d3b68df07be0cdaa50e8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于线程等待和唤醒的条件变量  <br /></td></tr>
+<tr class="separator:ac328972686d3b68df07be0cdaa50e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119527f25aa93c45f388597a53e3eec8" id="r_a119527f25aa93c45f388597a53e3eec8"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#a119527f25aa93c45f388597a53e3eec8">shutdown</a></td></tr>
+<tr class="memdesc:a119527f25aa93c45f388597a53e3eec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程池关闭标志  <br /></td></tr>
+<tr class="separator:a119527f25aa93c45f388597a53e3eec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f4cbc8789df9c6dc5d6ae712cdb19d" id="r_a15f4cbc8789df9c6dc5d6ae712cdb19d"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#a15f4cbc8789df9c6dc5d6ae712cdb19d">active_tasks</a></td></tr>
+<tr class="memdesc:a15f4cbc8789df9c6dc5d6ae712cdb19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前正在执行的任务数  <br /></td></tr>
+<tr class="separator:a15f4cbc8789df9c6dc5d6ae712cdb19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a70c8b0645164239a2be7de730918c" id="r_ae7a70c8b0645164239a2be7de730918c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_thread_pool.html#ae7a70c8b0645164239a2be7de730918c">exit_launch_</a></td></tr>
+<tr class="memdesc:ae7a70c8b0645164239a2be7de730918c"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出策略  <br /></td></tr>
+<tr class="separator:ae7a70c8b0645164239a2be7de730918c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>线程池执行器类，用于管理和执行并发任务。 </p>
@@ -675,13 +709,182 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a15f4cbc8789df9c6dc5d6ae712cdb19d" name="a15f4cbc8789df9c6dc5d6ae712cdb19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f4cbc8789df9c6dc5d6ae712cdb19d">&#9670;&#160;</a></span>active_tasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;size_t&gt; console::ThreadPool::active_tasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前正在执行的任务数 </p>
+
+</div>
+</div>
+<a id="ac328972686d3b68df07be0cdaa50e8de" name="ac328972686d3b68df07be0cdaa50e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac328972686d3b68df07be0cdaa50e8de">&#9670;&#160;</a></span>cv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable console::ThreadPool::cv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于线程等待和唤醒的条件变量 </p>
+
+</div>
+</div>
+<a id="ae7a70c8b0645164239a2be7de730918c" name="ae7a70c8b0645164239a2be7de730918c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a70c8b0645164239a2be7de730918c">&#9670;&#160;</a></span>exit_launch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1_thread_pool.html#a73d8d7d66ebfcadd7c72872d9b4211f0">launch</a> console::ThreadPool::exit_launch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出策略 </p>
+
+</div>
+</div>
+<a id="a43a4de0dc3fe4833cd8360237184be25" name="a43a4de0dc3fe4833cd8360237184be25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a4de0dc3fe4833cd8360237184be25">&#9670;&#160;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex console::ThreadPool::mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>保护任务队列的互斥锁 </p>
+
+</div>
+</div>
+<a id="a119527f25aa93c45f388597a53e3eec8" name="a119527f25aa93c45f388597a53e3eec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119527f25aa93c45f388597a53e3eec8">&#9670;&#160;</a></span>shutdown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;bool&gt; console::ThreadPool::shutdown</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>线程池关闭标志 </p>
+
+</div>
+</div>
+<a id="abf318c9e1e8553e0eaeb5b8fcf8870e3" name="abf318c9e1e8553e0eaeb5b8fcf8870e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf318c9e1e8553e0eaeb5b8fcf8870e3">&#9670;&#160;</a></span>tasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::unique_ptr&lt;<a class="el" href="structconsole_1_1_thread_pool_1_1_task_base.html">TaskBase</a>&gt; &gt; console::ThreadPool::tasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>待执行任务队列 </p>
+
+</div>
+</div>
+<a id="a6812bc5de961e1a467dcff39f262326c" name="a6812bc5de961e1a467dcff39f262326c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6812bc5de961e1a467dcff39f262326c">&#9670;&#160;</a></span>workers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::thread&gt; console::ThreadPool::workers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>工作线程容器 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="pool_8h_source.html">pool.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

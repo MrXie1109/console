@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -111,6 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57f8e76c644b72f852864520bb12df42" id="r_a57f8e76c644b72f852864520bb12df42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_generator_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a57f8e76c644b72f852864520bb12df42">end</a> ()</td></tr>
 <tr class="memdesc:a57f8e76c644b72f852864520bb12df42"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取结束迭代器。  <br /></td></tr>
 <tr class="separator:a57f8e76c644b72f852864520bb12df42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee47dd703ea0112563a3d109e3e9cd2" id="r_a4ee47dd703ea0112563a3d109e3e9cd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a4ee47dd703ea0112563a3d109e3e9cd2">done</a> ()</td></tr>
+<tr class="memdesc:a4ee47dd703ea0112563a3d109e3e9cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查生成器是否已完成。  <br /></td></tr>
+<tr class="separator:a4ee47dd703ea0112563a3d109e3e9cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763ecd483c08b699c07ba61250309a72" id="r_a763ecd483c08b699c07ba61250309a72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#a763ecd483c08b699c07ba61250309a72">current</a> ()</td></tr>
+<tr class="memdesc:a763ecd483c08b699c07ba61250309a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值。  <br /></td></tr>
+<tr class="separator:a763ecd483c08b699c07ba61250309a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91ea996cb8b92665814ce7c01cc4a8d" id="r_ae91ea996cb8b92665814ce7c01cc4a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_generator.html#ae91ea996cb8b92665814ce7c01cc4a8d">advance</a> ()</td></tr>
+<tr class="memdesc:ae91ea996cb8b92665814ce7c01cc4a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">推进生成器到下一个位置。  <br /></td></tr>
+<tr class="separator:ae91ea996cb8b92665814ce7c01cc4a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Derived, class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;<br />
@@ -142,6 +151,35 @@ template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae91ea996cb8b92665814ce7c01cc4a8d" name="ae91ea996cb8b92665814ce7c01cc4a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae91ea996cb8b92665814ce7c01cc4a8d">&#9670;&#160;</a></span>advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classconsole_1_1_generator.html">console::Generator</a>&lt; Derived, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::advance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>推进生成器到下一个位置。 </p>
+
+</div>
+</div>
 <a id="a17e389630ddb22b1a3356c1688227eb7" name="a17e389630ddb22b1a3356c1688227eb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17e389630ddb22b1a3356c1688227eb7">&#9670;&#160;</a></span>begin()</h2>
 
@@ -169,6 +207,66 @@ template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506
 
 <p>获取开始迭代器。 </p>
 <dl class="section return"><dt>Returns</dt><dd>生成器的起始迭代器。 </dd></dl>
+
+</div>
+</div>
+<a id="a763ecd483c08b699c07ba61250309a72" name="a763ecd483c08b699c07ba61250309a72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763ecd483c08b699c07ba61250309a72">&#9670;&#160;</a></span>current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="classconsole_1_1_generator.html">console::Generator</a>&lt; Derived, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::current </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前值。 </p>
+<dl class="section return"><dt>Returns</dt><dd>当前值。 </dd></dl>
+
+</div>
+</div>
+<a id="a4ee47dd703ea0112563a3d109e3e9cd2" name="a4ee47dd703ea0112563a3d109e3e9cd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee47dd703ea0112563a3d109e3e9cd2">&#9670;&#160;</a></span>done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classconsole_1_1_generator.html">console::Generator</a>&lt; Derived, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::done </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查生成器是否已完成。 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果已完成返回true，否则返回false。 </dd></dl>
 
 </div>
 </div>
@@ -238,7 +336,7 @@ template&lt;class Derived , class <a class="el" href="namespaceconsole.html#a506
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

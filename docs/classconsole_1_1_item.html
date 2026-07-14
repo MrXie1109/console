@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classconsole_1_1_item-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::Item Class Reference</div></div>
@@ -88,6 +89,15 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="box_8h_source.html">box.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_item_1_1_base.html">Base</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚基类，定义了所有派生类必须实现的接口。  <a href="structconsole_1_1_item_1_1_base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_item_1_1_derived.html">Derived</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">模板派生类，具体存储类型 T 的值。  <a href="structconsole_1_1_item_1_1_derived.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f6e179d460d0f144daf2c348360a911" id="r_a4f6e179d460d0f144daf2c348360a911"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#a4f6e179d460d0f144daf2c348360a911">Item</a> ()</td></tr>
@@ -128,15 +138,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a801550a9eef4a38b4cf905544cac375b" id="r_a801550a9eef4a38b4cf905544cac375b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#a801550a9eef4a38b4cf905544cac375b">str</a> () const</td></tr>
 <tr class="memdesc:a801550a9eef4a38b4cf905544cac375b"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a> 的字符串表示。  <br /></td></tr>
 <tr class="separator:a801550a9eef4a38b4cf905544cac375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8a0f190fa7576d2d07a6ac6ce3a1e1" id="r_abb8a0f190fa7576d2d07a6ac6ce3a1e1"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#abb8a0f190fa7576d2d07a6ac6ce3a1e1">wstr</a> () const</td></tr>
+<tr class="separator:abb8a0f190fa7576d2d07a6ac6ce3a1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee11dc124180be8b5c5a236eaf0ff16" id="r_a4ee11dc124180be8b5c5a236eaf0ff16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#a4ee11dc124180be8b5c5a236eaf0ff16">~Item</a> ()</td></tr>
 <tr class="memdesc:a4ee11dc124180be8b5c5a236eaf0ff16"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，释放内部堆内存。  <br /></td></tr>
 <tr class="separator:a4ee11dc124180be8b5c5a236eaf0ff16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aeb501ab2aa7fd501b3479b3316ecce59" id="r_aeb501ab2aa7fd501b3479b3316ecce59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_item_1_1_base.html">Base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#aeb501ab2aa7fd501b3479b3316ecce59">ptr</a></td></tr>
+<tr class="memdesc:aeb501ab2aa7fd501b3479b3316ecce59"><td class="mdescLeft">&#160;</td><td class="mdescRight">指向实际存储数据的指针（堆上对象）。  <br /></td></tr>
+<tr class="separator:aeb501ab2aa7fd501b3479b3316ecce59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a29c2fddb76908e5a5e59f0a7fe7b8dd6" id="r_a29c2fddb76908e5a5e59f0a7fe7b8dd6"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#a29c2fddb76908e5a5e59f0a7fe7b8dd6">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classconsole_1_1_item.html">Item</a> &amp;item)</td></tr>
 <tr class="memdesc:a29c2fddb76908e5a5e59f0a7fe7b8dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a> 输出到流。  <br /></td></tr>
 <tr class="separator:a29c2fddb76908e5a5e59f0a7fe7b8dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33e60b16e884e5bc9ed7252c1735e92" id="r_ac33e60b16e884e5bc9ed7252c1735e92"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_item.html#ac33e60b16e884e5bc9ed7252c1735e92">operator&lt;&lt;</a> (std::wostream &amp;os, const <a class="el" href="classconsole_1_1_item.html">Item</a> &amp;item)</td></tr>
+<tr class="memdesc:ac33e60b16e884e5bc9ed7252c1735e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a> 输出到宽字符流。  <br /></td></tr>
+<tr class="separator:ac33e60b16e884e5bc9ed7252c1735e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>可存储任意类型单个对象的类型擦除包装器。 </p>
@@ -563,9 +584,34 @@ template&lt;typename <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e
 
 </div>
 </div>
+<a id="abb8a0f190fa7576d2d07a6ac6ce3a1e1" name="abb8a0f190fa7576d2d07a6ac6ce3a1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8a0f190fa7576d2d07a6ac6ce3a1e1">&#9670;&#160;</a></span>wstr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring console::Item::wstr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="a29c2fddb76908e5a5e59f0a7fe7b8dd6" name="a29c2fddb76908e5a5e59f0a7fe7b8dd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29c2fddb76908e5a5e59f0a7fe7b8dd6">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c2fddb76908e5a5e59f0a7fe7b8dd6">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -610,13 +656,84 @@ template&lt;typename <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e
 
 </div>
 </div>
+<a id="ac33e60b16e884e5bc9ed7252c1735e92" name="ac33e60b16e884e5bc9ed7252c1735e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac33e60b16e884e5bc9ed7252c1735e92">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1_item.html">Item</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a> 输出到宽字符流。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>宽字符输出流。 </td></tr>
+    <tr><td class="paramname">item</td><td>要输出的 Item。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; 返回 os 以便链式调用。 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aeb501ab2aa7fd501b3479b3316ecce59" name="aeb501ab2aa7fd501b3479b3316ecce59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb501ab2aa7fd501b3479b3316ecce59">&#9670;&#160;</a></span>ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconsole_1_1_item_1_1_base.html">Base</a>* console::Item::ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指向实际存储数据的指针（堆上对象）。 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="box_8h_source.html">box.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

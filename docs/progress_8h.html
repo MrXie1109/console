@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -77,6 +77,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">progress.h File Reference</div></div>
 </div><!--header-->
@@ -94,14 +95,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_progress_config.html">console::ProgressConfig</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条显示配置。  <a href="structconsole_1_1_progress_config.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_progress_config.html">console::BasicProgressConfig&lt; CharT, Traits &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条显示配置。  <a href="structconsole_1_1_basic_progress_config.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_progress.html">console::Progress&lt; Iter &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条迭代器包装器，用于在遍历容器时显示进度。  <a href="classconsole_1_1_progress.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_progress.html">console::BasicProgress&lt; CharT, Traits, Iter &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条迭代器包装器，用于在遍历容器时显示进度。  <a href="classconsole_1_1_basic_progress.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_progress_1_1iterator.html">console::Progress&lt; Iter &gt;::iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条的迭代器，负责绘制进度条。  <a href="classconsole_1_1_progress_1_1iterator.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_progress_1_1iterator.html">console::BasicProgress&lt; CharT, Traits, Iter &gt;::iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">进度条的迭代器，负责绘制进度条。  <a href="classconsole_1_1_basic_progress_1_1iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -109,37 +110,48 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceconsole" id="r_namespaceconsole"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html">console</a></td></tr>
 <tr class="memdesc:namespaceconsole"><td class="mdescLeft">&#160;</td><td class="mdescRight">本库所有组件所在的顶层命名空间。 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespace_progress_style" id="r_namespace_progress_style"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_progress_style.html">ProgressStyle</a></td></tr>
-<tr class="memdesc:namespace_progress_style"><td class="mdescLeft">&#160;</td><td class="mdescRight">预定义的进度条样式。 <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceconsole_1_1_progress_style" id="r_namespaceconsole_1_1_progress_style"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html">console::ProgressStyle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4a58b60682d7f027098bb527d2b28f9a" id="r_a4a58b60682d7f027098bb527d2b28f9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4a58b60682d7f027098bb527d2b28f9a">console::ProgressConfig</a> = <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:a4a58b60682d7f027098bb527d2b28f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicProgressConfig&lt;char&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a4a58b60682d7f027098bb527d2b28f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af722010bad8d0ca13cee88427a6059bc" id="r_af722010bad8d0ca13cee88427a6059bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#af722010bad8d0ca13cee88427a6059bc">console::WProgressConfig</a> = <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a>&lt; wchar_t &gt;</td></tr>
+<tr class="memdesc:af722010bad8d0ca13cee88427a6059bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicProgressConfig&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:af722010bad8d0ca13cee88427a6059bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473fb50fd268c3caba51dd45c7d9f378" id="r_a473fb50fd268c3caba51dd45c7d9f378"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:a473fb50fd268c3caba51dd45c7d9f378"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a473fb50fd268c3caba51dd45c7d9f378">console::Progress</a> = <a class="el" href="classconsole_1_1_basic_progress.html">BasicProgress</a>&lt; char, std::char_traits&lt; char &gt;, Iter &gt;</td></tr>
+<tr class="memdesc:a473fb50fd268c3caba51dd45c7d9f378"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classconsole_1_1_basic_progress.html" title="进度条迭代器包装器，用于在遍历容器时显示进度。">BasicProgress</a>&lt;char, std::char_traits&lt;char&gt;, Iter&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a473fb50fd268c3caba51dd45c7d9f378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4e6043e499aba8fade5e056dca2aba" id="r_a3e4e6043e499aba8fade5e056dca2aba"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:a3e4e6043e499aba8fade5e056dca2aba"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a3e4e6043e499aba8fade5e056dca2aba">console::WProgress</a> = <a class="el" href="classconsole_1_1_basic_progress.html">BasicProgress</a>&lt; wchar_t, std::char_traits&lt; wchar_t &gt;, Iter &gt;</td></tr>
+<tr class="memdesc:a3e4e6043e499aba8fade5e056dca2aba"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classconsole_1_1_basic_progress.html" title="进度条迭代器包装器，用于在遍历容器时显示进度。">BasicProgress</a>&lt;wchar_t, std::char_traits&lt;wchar_t&gt;, Iter&gt; 的类型别名。  <br /></td></tr>
+<tr class="separator:a3e4e6043e499aba8fade5e056dca2aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aacd7d65694d887d7e988c4669e5d4621" id="r_aacd7d65694d887d7e988c4669e5d4621"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_progress_config.html">ProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#aacd7d65694d887d7e988c4669e5d4621">console::ProgressStyle::normal</a> ()</td></tr>
-<tr class="memdesc:aacd7d65694d887d7e988c4669e5d4621"><td class="mdescLeft">&#160;</td><td class="mdescRight">普通样式：宽度 50，填充 '#'，空白 '.'，前后缀 "[]"，显示百分比。  <br /></td></tr>
-<tr class="separator:aacd7d65694d887d7e988c4669e5d4621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f62ab93e4861d1ac4af0bec9465899" id="r_a55f62ab93e4861d1ac4af0bec9465899"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_progress_config.html">ProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#a55f62ab93e4861d1ac4af0bec9465899">console::ProgressStyle::simple</a> ()</td></tr>
-<tr class="memdesc:a55f62ab93e4861d1ac4af0bec9465899"><td class="mdescLeft">&#160;</td><td class="mdescRight">简洁样式：宽度 50，填充 '='，空白 '-'，无前后缀，不显示百分比。  <br /></td></tr>
-<tr class="separator:a55f62ab93e4861d1ac4af0bec9465899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b5a2da99a919b59b7f71339c46ec992" id="r_a0b5a2da99a919b59b7f71339c46ec992"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_progress_config.html">ProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#a0b5a2da99a919b59b7f71339c46ec992">console::ProgressStyle::beautiful</a> ()</td></tr>
-<tr class="memdesc:a0b5a2da99a919b59b7f71339c46ec992"><td class="mdescLeft">&#160;</td><td class="mdescRight">美观样式（使用 Unicode 块字符）：宽度 50，填充 '█'，空白 '░'，边框 '▒' 和 '▏'，显示百分比。  <br /></td></tr>
-<tr class="separator:a0b5a2da99a919b59b7f71339c46ec992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01ca524918c855ebc0295b3d956e1df3" id="r_a01ca524918c855ebc0295b3d956e1df3"><td class="memTemplParams" colspan="2">template&lt;class Cont &gt; </td></tr>
-<tr class="memitem:a01ca524918c855ebc0295b3d956e1df3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a01ca524918c855ebc0295b3d956e1df3">console::progress</a> (Cont &amp;&amp;cont, const <a class="el" href="structconsole_1_1_progress_config.html">ProgressConfig</a> &amp;pc={}) -&gt; <a class="el" href="classconsole_1_1_progress.html">Progress</a>&lt; decltype(std::begin(cont))&gt;</td></tr>
-<tr class="memdesc:a01ca524918c855ebc0295b3d956e1df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建进度条对象的辅助函数（自动推导容器类型）。  <br /></td></tr>
-<tr class="separator:a01ca524918c855ebc0295b3d956e1df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26700a191e1f101d307d626f6b4318c6" id="r_a26700a191e1f101d307d626f6b4318c6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#a26700a191e1f101d307d626f6b4318c6">console::ProgressStyle::normal</a> ()</td></tr>
+<tr class="separator:a26700a191e1f101d307d626f6b4318c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ae718acfc48a954229a310781851fb" id="r_af9ae718acfc48a954229a310781851fb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#af9ae718acfc48a954229a310781851fb">console::ProgressStyle::simple</a> ()</td></tr>
+<tr class="separator:af9ae718acfc48a954229a310781851fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a648bb2d0f5361cdc2494547164313" id="r_af5a648bb2d0f5361cdc2494547164313"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1_progress_style.html#af5a648bb2d0f5361cdc2494547164313">console::ProgressStyle::beautiful</a> ()</td></tr>
+<tr class="separator:af5a648bb2d0f5361cdc2494547164313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1c2d6a2fb4104fa7160dca0671c253" id="r_abb1c2d6a2fb4104fa7160dca0671c253"><td class="memTemplParams" colspan="2">template&lt;class CharT  = char, class Traits  = std::char_traits&lt;CharT&gt;, class Cont &gt; </td></tr>
+<tr class="memitem:abb1c2d6a2fb4104fa7160dca0671c253"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#abb1c2d6a2fb4104fa7160dca0671c253">console::progress</a> (Cont &amp;&amp;cont, const <a class="el" href="structconsole_1_1_basic_progress_config.html">BasicProgressConfig</a>&lt; CharT, Traits &gt; &amp;pc) -&gt; <a class="el" href="classconsole_1_1_basic_progress.html">BasicProgress</a>&lt; CharT, Traits, decltype(std::begin(cont))&gt;</td></tr>
+<tr class="memdesc:abb1c2d6a2fb4104fa7160dca0671c253"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建进度条对象的辅助函数。  <br /></td></tr>
+<tr class="separator:abb1c2d6a2fb4104fa7160dca0671c253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供非侵入式的容器遍历进度条显示。 </p>
-<p>该模块允许你在遍历任何容器（或支持迭代器的范围）时，自动在控制台输出进度条。 进度条样式可通过 ProgressConfig 自定义，也提供了几种预定义样式。 </p><dl class="section author"><dt>Author</dt><dd>MrXie1109 </dd></dl>
+<p>该模块允许你在遍历任何容器（或支持迭代器的范围）时，自动在控制台输出进度条。 进度条样式可通过 BasicProgressConfig 自定义，也提供了几种预定义样式。 </p><dl class="section author"><dt>Author</dt><dd>MrXie1109 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT License </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

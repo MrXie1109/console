@@ -11,6 +11,6 @@ var searchData=
   ['electricpiano2_8',['ElectricPiano2',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592afa89a5a74b1fc7ba182d77f5891dd679',1,'console']]],
   ['englishhorn_9',['EnglishHorn',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592a3c7a0046df6301dc164ba31b7b4223c9',1,'console']]],
   ['enter_10',['Enter',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af1851d5600eae616ee802a31ac74701b',1,'console']]],
-  ['error_11',['ERROR',['../classconsole_1_1_logging.html#adbe10800d06e6c74c22849f7f210d5e8abb1ca97ec761fc37101737ba0aa2e7c5',1,'console::Logging']]],
+  ['error_11',['ERROR',['../classconsole_1_1_basic_logging.html#ae6dc2795c66c77526b372ef7b74e3f4cabb1ca97ec761fc37101737ba0aa2e7c5',1,'console::BasicLogging']]],
   ['esc_12',['Esc',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d',1,'console']]]
 ];

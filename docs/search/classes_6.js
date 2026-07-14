@@ -29,5 +29,6 @@ var searchData=
   ['generator_3c_20views_3c_20iter_20_3e_2c_20std_3a_3aiterator_5ftraits_3c_20iter_20_3e_3a_3avalue_5ftype_20_3e_26',['Generator&lt; Views&lt; Iter &gt;, std::iterator_traits&lt; Iter &gt;::value_type &gt;',['../classconsole_1_1_generator.html',1,'console']]],
   ['generator_3c_20window_3c_20gen_20_3e_2c_20std_3a_3avector_3c_20gen_3a_3avalue_5ftype_20_3e_20_3e_27',['Generator&lt; Window&lt; Gen &gt;, std::vector&lt; Gen::value_type &gt; &gt;',['../classconsole_1_1_generator.html',1,'console']]],
   ['generator_3c_20zip_3c_20gen1_2c_20gen2_20_3e_2c_20std_3a_3apair_3c_20gen1_3a_3avalue_5ftype_2c_20gen2_3a_3avalue_5ftype_20_3e_20_3e_28',['Generator&lt; Zip&lt; Gen1, Gen2 &gt;, std::pair&lt; Gen1::value_type, Gen2::value_type &gt; &gt;',['../classconsole_1_1_generator.html',1,'console']]],
-  ['gt_29',['Gt',['../structconsole_1_1ops_1_1_gt.html',1,'console::ops']]]
+  ['groupinfo_29',['GroupInfo',['../structconsole_1_1_basic_regex_1_1_match_1_1_group_info.html',1,'console::BasicRegex::Match']]],
+  ['gt_30',['Gt',['../structconsole_1_1ops_1_1_gt.html',1,'console::ops']]]
 ];

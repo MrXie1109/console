@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -90,6 +90,7 @@ $(function() {
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="csexc_8h_source.html">csexc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="output_8h_source.html">output.h</a>&quot;</code><br />
 </div>
 <p><a href="view_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -101,6 +102,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_view_3_01const_01_container_01_4.html">console::View&lt; const Container &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">容器的非拥有视图（常量版本）。  <a href="classconsole_1_1_view_3_01const_01_container_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_view_3_01_t_0f_0e_4.html">console::View&lt; T[]&gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">T[] 的特化，包装原生数组指针。  <a href="classconsole_1_1_view_3_01_t_0f_0e_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_view_3_01const_01_t_0f_0e_4.html">console::View&lt; const T[]&gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">const T[] 的特化，包装指向 const 的原生数组指针。  <a href="classconsole_1_1_view_3_01const_01_t_0f_0e_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -110,13 +117,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac202c83668858c78f9e639529b6e842a" id="r_ac202c83668858c78f9e639529b6e842a"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ac202c83668858c78f9e639529b6e842a">console::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classconsole_1_1_view.html">View</a>&lt; std::string &gt; &amp;sv)</td></tr>
-<tr class="memdesc:ac202c83668858c78f9e639529b6e842a"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 std::string 视图的内容（直接输出字符串，不添加额外格式）。  <br /></td></tr>
-<tr class="separator:ac202c83668858c78f9e639529b6e842a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd2bea58eef8588960e5c03cb5450cf" id="r_a0fd2bea58eef8588960e5c03cb5450cf"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a0fd2bea58eef8588960e5c03cb5450cf"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0fd2bea58eef8588960e5c03cb5450cf">console::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classconsole_1_1_view.html">View</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;v)</td></tr>
-<tr class="memdesc:a0fd2bea58eef8588960e5c03cb5450cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出任意视图的内容（通过 collect() 转为容器后输出）。  <br /></td></tr>
-<tr class="separator:a0fd2bea58eef8588960e5c03cb5450cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cca4a23fb4a62aaf5354c59ece23b9b" id="r_a8cca4a23fb4a62aaf5354c59ece23b9b"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits &gt; </td></tr>
+<tr class="memitem:a8cca4a23fb4a62aaf5354c59ece23b9b"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a8cca4a23fb4a62aaf5354c59ece23b9b">console::operator&lt;&lt;</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, const <a class="el" href="classconsole_1_1_view.html">View</a>&lt; std::string &gt; &amp;sv)</td></tr>
+<tr class="memdesc:a8cca4a23fb4a62aaf5354c59ece23b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 std::string 视图的内容。  <br /></td></tr>
+<tr class="separator:a8cca4a23fb4a62aaf5354c59ece23b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab937af5cd62ac0d85635f34eebf04f7" id="r_aab937af5cd62ac0d85635f34eebf04f7"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Container &gt; </td></tr>
+<tr class="memitem:aab937af5cd62ac0d85635f34eebf04f7"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#aab937af5cd62ac0d85635f34eebf04f7">console::operator&lt;&lt;</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, const <a class="el" href="classconsole_1_1_view.html">View</a>&lt; Container &gt; &amp;v)</td></tr>
+<tr class="memdesc:aab937af5cd62ac0d85635f34eebf04f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出任意视图的内容。  <br /></td></tr>
+<tr class="separator:aab937af5cd62ac0d85635f34eebf04f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa78825f6f3a122bc90e71d82f6442996" id="r_gaa78825f6f3a122bc90e71d82f6442996"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
 <tr class="memitem:gaa78825f6f3a122bc90e71d82f6442996"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; Container &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">console::make_view</a> (Container &amp;cont)</td></tr>
 <tr class="memdesc:gaa78825f6f3a122bc90e71d82f6442996"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建整个容器的视图（可变版本）。  <br /></td></tr>
@@ -141,14 +149,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ga54759507fe414b6e3e926b8da722ccc6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; const Container &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga54759507fe414b6e3e926b8da722ccc6">console::make_view</a> (typename Container::const_iterator begin, typename Container::const_iterator end)</td></tr>
 <tr class="memdesc:ga54759507fe414b6e3e926b8da722ccc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">从迭代器对创建视图（常量版本）。  <br /></td></tr>
 <tr class="separator:ga54759507fe414b6e3e926b8da722ccc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3350ef2443bf00666f3a1af9cd200788" id="r_ga3350ef2443bf00666f3a1af9cd200788"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga3350ef2443bf00666f3a1af9cd200788"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga3350ef2443bf00666f3a1af9cd200788">console::make_view</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *begin, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *end)</td></tr>
-<tr class="memdesc:ga3350ef2443bf00666f3a1af9cd200788"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针对创建视图（可变版本）。  <br /></td></tr>
-<tr class="separator:ga3350ef2443bf00666f3a1af9cd200788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga26e3a11eeb03f75ba32458c84ff0bf1d" id="r_ga26e3a11eeb03f75ba32458c84ff0bf1d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ga26e3a11eeb03f75ba32458c84ff0bf1d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga26e3a11eeb03f75ba32458c84ff0bf1d">console::make_view</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *begin, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *end)</td></tr>
-<tr class="memdesc:ga26e3a11eeb03f75ba32458c84ff0bf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针对创建视图（常量版本）。  <br /></td></tr>
-<tr class="separator:ga26e3a11eeb03f75ba32458c84ff0bf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0751c1cf2024704346f2e5b5e391c4da" id="r_ga0751c1cf2024704346f2e5b5e391c4da"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga0751c1cf2024704346f2e5b5e391c4da"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>[]&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga0751c1cf2024704346f2e5b5e391c4da">console::make_view</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *begin, <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *end)</td></tr>
+<tr class="memdesc:ga0751c1cf2024704346f2e5b5e391c4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针对创建视图（可变版本）。  <br /></td></tr>
+<tr class="separator:ga0751c1cf2024704346f2e5b5e391c4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01e1ab5a6f9c4fd5ba765d05c1898d69" id="r_ga01e1ab5a6f9c4fd5ba765d05c1898d69"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga01e1ab5a6f9c4fd5ba765d05c1898d69"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>[]&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga01e1ab5a6f9c4fd5ba765d05c1898d69">console::make_view</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *begin, const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *end)</td></tr>
+<tr class="memdesc:ga01e1ab5a6f9c4fd5ba765d05c1898d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针对创建视图（常量版本）。  <br /></td></tr>
+<tr class="separator:ga01e1ab5a6f9c4fd5ba765d05c1898d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14aec576434e1caabeacca365fa19ebb" id="r_ga14aec576434e1caabeacca365fa19ebb"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga14aec576434e1caabeacca365fa19ebb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>[]&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga14aec576434e1caabeacca365fa19ebb">console::make_view</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *data, size_t count)</td></tr>
+<tr class="memdesc:ga14aec576434e1caabeacca365fa19ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针和长度创建视图（可变版本）。  <br /></td></tr>
+<tr class="separator:ga14aec576434e1caabeacca365fa19ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71bebe33fa2d3d6bc2dac44e58a1f5af" id="r_ga71bebe33fa2d3d6bc2dac44e58a1f5af"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ga71bebe33fa2d3d6bc2dac44e58a1f5af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_view.html">View</a>&lt; const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>[]&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__view__factories.html#ga71bebe33fa2d3d6bc2dac44e58a1f5af">console::make_view</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *data, size_t count)</td></tr>
+<tr class="memdesc:ga71bebe33fa2d3d6bc2dac44e58a1f5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指针和长度创建视图（常量版本）。  <br /></td></tr>
+<tr class="separator:ga71bebe33fa2d3d6bc2dac44e58a1f5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供容器的非拥有视图（View），支持区间切片和便捷的工厂函数。 </p>
@@ -158,7 +174,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

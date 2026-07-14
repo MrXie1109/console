@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['value_5ftype_0',['value_type',['../classconsole_1_1_range_iterator.html#a8ba44f82e8b5e052e6f3fa05346602e7',1,'console::RangeIterator::value_type'],['../classconsole_1_1_generator_1_1iterator.html#aec82f58302c38576d2e5adfa328747b4',1,'console::Generator::iterator::value_type'],['../classconsole_1_1_generator.html#ab748b7a02f8c536d709ed79590b790da',1,'console::Generator::value_type'],['../classconsole_1_1gen_1_1_views.html#ae12e84d1a795b42f7a452f6c1f6f351d',1,'console::gen::Views::value_type'],['../structconsole_1_1_iterator_pair.html#a03819806d2fe17d69d2b8df6bbb5bf77',1,'console::IteratorPair::value_type'],['../classconsole_1_1_tied_iterators.html#a85838e525dac0d377dd04e7c1a848ccc',1,'console::TiedIterators::value_type'],['../classconsole_1_1_multi_array_3_01_t_00_01_d_01_4.html#aeb98b3a1723b1db974bc162f189deb39',1,'console::MultiArray&lt; T, D &gt;::value_type'],['../classconsole_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html#afcd66fe1e79feb44cb503901a2e88405',1,'console::MultiArray&lt; T, First, Rest... &gt;::value_type']]]
+  ['partitionresult_0',['PartitionResult',['../group__strpp.html#ga56a7f4a5d1fd644ec9c2fe38147b7c70',1,'console']]],
+  ['path_1',['Path',['../namespaceconsole.html#affd5f5cdb778b9d6ab47bec96b9cf3d1',1,'console']]],
+  ['pointer_2',['pointer',['../classconsole_1_1_generator_1_1iterator.html#a37cce80985cf961c44f22204ead9eeba',1,'console::Generator::iterator::pointer'],['../structconsole_1_1_iterator_pair.html#a6aa8e1aa3cb56ee12a24da98fd9d839b',1,'console::IteratorPair::pointer'],['../classconsole_1_1_tied_iterators.html#a2659a97702980b3907fad1cb89c52164',1,'console::TiedIterators::pointer']]],
+  ['progress_3',['Progress',['../namespaceconsole.html#a473fb50fd268c3caba51dd45c7d9f378',1,'console']]],
+  ['progressconfig_4',['ProgressConfig',['../namespaceconsole.html#a4a58b60682d7f027098bb527d2b28f9a',1,'console']]]
 ];

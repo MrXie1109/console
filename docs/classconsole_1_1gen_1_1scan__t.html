@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -76,6 +76,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classconsole_1_1gen_1_1scan__t-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">console::gen::scan_t&lt; T, BinaryOp &gt; Class Template Reference</div></div>
@@ -86,9 +87,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1b56dbd961c95be85cadc3fe752be28d" id="r_a1b56dbd961c95be85cadc3fe752be28d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html#a1b56dbd961c95be85cadc3fe752be28d">scan_t</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;init, BinaryOp op)</td></tr>
+<tr class="memitem:a1b56dbd961c95be85cadc3fe752be28d" id="r_a1b56dbd961c95be85cadc3fe752be28d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html#a1b56dbd961c95be85cadc3fe752be28d">scan_t</a> (const <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;init, BinaryOp <a class="el" href="classconsole_1_1gen_1_1scan__t.html#a9be6e4f186326414c65a41ab11cf01ae">op</a>)</td></tr>
 <tr class="memdesc:a1b56dbd961c95be85cadc3fe752be28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。  <br /></td></tr>
 <tr class="separator:a1b56dbd961c95be85cadc3fe752be28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acb494a4dba7f9c3978c44790fa666b4f" id="r_acb494a4dba7f9c3978c44790fa666b4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html#acb494a4dba7f9c3978c44790fa666b4f">state</a></td></tr>
+<tr class="separator:acb494a4dba7f9c3978c44790fa666b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be6e4f186326414c65a41ab11cf01ae" id="r_a9be6e4f186326414c65a41ab11cf01ae"><td class="memItemLeft" align="right" valign="top">BinaryOp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html#a9be6e4f186326414c65a41ab11cf01ae">op</a></td></tr>
+<tr class="separator:a9be6e4f186326414c65a41ab11cf01ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -201,13 +209,62 @@ template&lt;class Gen &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9be6e4f186326414c65a41ab11cf01ae" name="a9be6e4f186326414c65a41ab11cf01ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be6e4f186326414c65a41ab11cf01ae">&#9670;&#160;</a></span>op</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BinaryOp <a class="el" href="classconsole_1_1gen_1_1scan__t.html">console::gen::scan_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;::op</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb494a4dba7f9c3978c44790fa666b4f" name="acb494a4dba7f9c3978c44790fa666b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb494a4dba7f9c3978c44790fa666b4f">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class BinaryOp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="classconsole_1_1gen_1_1scan__t.html">console::gen::scan_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;::state</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>console/<a class="el" href="gextra_8h_source.html">gextra.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

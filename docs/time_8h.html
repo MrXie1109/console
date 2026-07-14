@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;5.10.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -90,8 +90,11 @@ $(function() {
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="csexc_8h_source.html">csexc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kb_8h_source.html">kb.h</a>&quot;</code><br />
 </div>
 <p><a href="time_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -99,6 +102,8 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_time.html">console::Time</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示以纳秒为单位的时间量，支持单位转换、算术运算和自动选择合适的输出单位。  <a href="classconsole_1_1_time.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_date_time.html">console::DateTime</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -109,6 +114,24 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0578f36535a4f79f104d4f7908bcbbe2" id="r_a0578f36535a4f79f104d4f7908bcbbe2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a0578f36535a4f79f104d4f7908bcbbe2">console::nanoseconds</a> (double n)</td></tr>
+<tr class="memdesc:a0578f36535a4f79f104d4f7908bcbbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造纳秒。  <br /></td></tr>
+<tr class="separator:a0578f36535a4f79f104d4f7908bcbbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a3e744e8f1fff6fa779abdd0d2cd58" id="r_ab6a3e744e8f1fff6fa779abdd0d2cd58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#ab6a3e744e8f1fff6fa779abdd0d2cd58">console::microseconds</a> (double n)</td></tr>
+<tr class="memdesc:ab6a3e744e8f1fff6fa779abdd0d2cd58"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造微秒。  <br /></td></tr>
+<tr class="separator:ab6a3e744e8f1fff6fa779abdd0d2cd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44451210db6170a78cde983f18b4a257" id="r_a44451210db6170a78cde983f18b4a257"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a44451210db6170a78cde983f18b4a257">console::milliseconds</a> (double n)</td></tr>
+<tr class="memdesc:a44451210db6170a78cde983f18b4a257"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造毫秒。  <br /></td></tr>
+<tr class="separator:a44451210db6170a78cde983f18b4a257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4994eb8de8e78a97bb7979ce3932c5cf" id="r_a4994eb8de8e78a97bb7979ce3932c5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a4994eb8de8e78a97bb7979ce3932c5cf">console::seconds</a> (double n)</td></tr>
+<tr class="memdesc:a4994eb8de8e78a97bb7979ce3932c5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造秒。  <br /></td></tr>
+<tr class="separator:a4994eb8de8e78a97bb7979ce3932c5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51af3228e9857ca7b379eaac681628bd" id="r_a51af3228e9857ca7b379eaac681628bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a51af3228e9857ca7b379eaac681628bd">console::minutes</a> (double n)</td></tr>
+<tr class="memdesc:a51af3228e9857ca7b379eaac681628bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造分钟。  <br /></td></tr>
+<tr class="separator:a51af3228e9857ca7b379eaac681628bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f71522a98af381e84b2f389cf35f7fa" id="r_a5f71522a98af381e84b2f389cf35f7fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a5f71522a98af381e84b2f389cf35f7fa">console::hours</a> (double n)</td></tr>
+<tr class="memdesc:a5f71522a98af381e84b2f389cf35f7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造小时。  <br /></td></tr>
+<tr class="separator:a5f71522a98af381e84b2f389cf35f7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8929153db641cb041bea419d109b08a1" id="r_a8929153db641cb041bea419d109b08a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">console::now</a> ()</td></tr>
 <tr class="memdesc:a8929153db641cb041bea419d109b08a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前时间点（自纪元以来的纳秒数）。  <br /></td></tr>
 <tr class="separator:a8929153db641cb041bea419d109b08a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +157,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 8 2026 22:37:51 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
