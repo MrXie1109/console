@@ -36,7 +36,7 @@ SOFTWARE.
 #include <random>
 #include <utility>
 
-#include "csexc.h" // for ContainerError
+#include "csexc.h"  // for ContainerError
 #include "sfinae.h" // for uniform_distribution_t
 
 namespace console {

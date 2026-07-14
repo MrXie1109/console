@@ -53,13 +53,13 @@ namespace console {
         using string_type  = std::basic_string<CharT, Traits>;
         using ostream_type = std::basic_ostream<CharT, Traits>;
 
-        ostream_type &os; ///< 输出目标流。
-        int           width; ///< 进度条的宽度（字符数）。
-        string_type   fill_char; ///< 已填充部分使用的字符。
+        ostream_type &os;         ///< 输出目标流。
+        int           width;      ///< 进度条的宽度（字符数）。
+        string_type   fill_char;  ///< 已填充部分使用的字符。
         string_type   empty_char; ///< 未填充部分使用的字符。
-        string_type   prefix; ///< 进度条前缀字符串。
-        string_type   suffix; ///< 进度条后缀字符串。
-        bool          show_percent; ///< 是否在进度条后显示百分比数字。
+        string_type   prefix;     ///< 进度条前缀字符串。
+        string_type   suffix;     ///< 进度条后缀字符串。
+        bool show_percent; ///< 是否在进度条后显示百分比数字。
 
         /**
          * @brief 构造进度条配置对象。

@@ -261,9 +261,9 @@ namespace console {
     struct BasicPartitionResult {
         using string_type = std::basic_string<CharT, Traits, Allocator>;
 
-        string_type left; ///< 分隔符前的子串
+        string_type left;   ///< 分隔符前的子串
         string_type middle; ///< 分隔符本身
-        string_type right; ///< 分隔符后的子串
+        string_type right;  ///< 分隔符后的子串
 
         /**
          * @brief 输出分区结果到流，格式为 ("left", "middle", "right")。

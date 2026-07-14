@@ -59,7 +59,7 @@ namespace console {
     public:
         enum class launch : bool {
             abort, ///< 退出时调用 abort
-            close ///< 退出时调用 close
+            close  ///< 退出时调用 close
         };
 
     private:
@@ -91,7 +91,7 @@ namespace console {
         std::queue<std::unique_ptr<TaskBase>> tasks; ///< 待执行任务队列
         mutable std::mutex mutex; ///< 保护任务队列的互斥锁
         std::condition_variable cv; ///< 用于线程等待和唤醒的条件变量
-        std::atomic<bool>   shutdown; ///< 线程池关闭标志
+        std::atomic<bool>   shutdown;     ///< 线程池关闭标志
         std::atomic<size_t> active_tasks; ///< 当前正在执行的任务数
         launch              exit_launch_; ///< 退出策略
 

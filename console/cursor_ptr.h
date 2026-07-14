@@ -47,7 +47,7 @@ namespace console {
     template <class T>
     class cursor_ptr {
         T *original_ptr; ///< 持有内存所有权，析构时释放
-        T *current_ptr; ///< 当前游标位置，支持算术运算
+        T *current_ptr;  ///< 当前游标位置，支持算术运算
 
     public:
         /// @brief 默认构造，两个指针均为 nullptr。
@@ -84,7 +84,7 @@ namespace console {
         T *operator->() { return current_ptr; }
         T &operator[](size_t i) { return *(current_ptr + i); }
         T *get() { return current_ptr; }
-           operator T *() { return current_ptr; }
+        operator T *() { return current_ptr; }
         /// @}
 
         /// @name const 版本解引用与元素访问
@@ -93,7 +93,7 @@ namespace console {
         const T *operator->() const { return current_ptr; }
         const T &operator[](size_t i) const { return *(current_ptr + i); }
         const T *get() const { return current_ptr; }
-                 operator const T *() const { return current_ptr; }
+        operator const T *() const { return current_ptr; }
         /// @}
 
         /// @brief 析构，释放 original_ptr 指向的内存（使用 delete）。
@@ -265,7 +265,7 @@ namespace console {
         T *operator->() { return current_ptr; }
         T &operator[](size_t i) { return *(current_ptr + i); }
         T *get() { return current_ptr; }
-           operator T *() { return current_ptr; }
+        operator T *() { return current_ptr; }
         /// @}
 
         /// @name const 版本
@@ -274,7 +274,7 @@ namespace console {
         const T *operator->() const { return current_ptr; }
         const T &operator[](size_t i) const { return *(current_ptr + i); }
         const T *get() const { return current_ptr; }
-                 operator const T *() const { return current_ptr; }
+        operator const T *() const { return current_ptr; }
         /// @}
 
         /// @brief 析构，释放数组内存（使用 delete[]）。

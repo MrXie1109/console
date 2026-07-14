@@ -34,6 +34,7 @@ SOFTWARE.
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <memory>
 #include <string>
 #include <tuple>
 
@@ -86,8 +87,8 @@ namespace console {
          * @brief 文件行生成器，逐行读取文本文件。
          */
         class FileLines : public Generator<FileLines, std::string> {
-            std::ifstream file_;
-            std::string   current_line_;
+            std::shared_ptr<std::ifstream> file_;
+            std::string                    current_line_;
 
         public:
             /**
@@ -95,8 +96,9 @@ namespace console {
              * @param filename 文件名。
              * @throws FileError 如果文件无法打开。
              */
-            explicit FileLines(const std::string &filename) : file_(filename) {
-                if (!file_.is_open())
+            explicit FileLines(const std::string &filename) :
+                file_(std::make_shared<std::ifstream>(filename)) {
+                if (!file_->is_open())
                     throw FileError("Cannot Open File \"" + filename + '"');
                 advance();
             }
@@ -105,7 +107,7 @@ namespace console {
              * @brief 检查生成器是否已完成。
              * @return 如果已到达文件末尾则返回true。
              */
-            bool done() { return file_.eof(); }
+            bool done() { return file_->eof(); }
 
             /**
              * @brief 获取当前行内容。
@@ -116,16 +118,16 @@ namespace console {
             /**
              * @brief 向前移动一步，读取下一行。
              */
-            void advance() { std::getline(file_, current_line_); }
+            void advance() { std::getline(*file_, current_line_); }
         };
 
         /**
          * @brief 文件块生成器，按固定大小读取文件块。
          */
         class FileChunks : public Generator<FileChunks, std::string> {
-            std::ifstream file_;
-            std::string   current_chunk_;
-            size_t        chunk_size_;
+            std::shared_ptr<std::ifstream> file_;
+            std::string                    current_chunk_;
+            size_t                         chunk_size_;
 
         public:
             /**
@@ -138,8 +140,9 @@ namespace console {
             explicit FileChunks(const std::string &filename,
                 size_t                             chunk_size = 1024,
                 std::ios_base::openmode            mode       = std::ios::in) :
-                file_(filename, mode), chunk_size_(chunk_size) {
-                if (!file_.is_open())
+                file_(std::make_shared<std::ifstream>(filename, mode)),
+                chunk_size_(chunk_size) {
+                if (!file_->is_open())
                     throw FileError("Cannot Open File \"" + filename + '"');
                 advance();
             }
@@ -148,7 +151,7 @@ namespace console {
              * @brief 检查生成器是否已完成。
              * @return 如果已到达文件末尾则返回true。
              */
-            bool done() { return file_.eof(); }
+            bool done() { return file_->eof() && current_chunk_.empty(); }
 
             /**
              * @brief 获取当前数据块。
@@ -161,8 +164,8 @@ namespace console {
              */
             void advance() {
                 current_chunk_.resize(chunk_size_);
-                file_.read(&current_chunk_[0], chunk_size_);
-                current_chunk_.resize(file_.gcount());
+                file_->read(current_chunk_.data(), chunk_size_);
+                current_chunk_.resize(file_->gcount());
             }
         };
 
@@ -585,7 +588,7 @@ namespace console {
          */
         template <class Op, class... Rest>
         class Pipeline<Op, Rest...> {
-            Op                op; ///< 第一个适配器对象。
+            Op                op;   ///< 第一个适配器对象。
             Pipeline<Rest...> rest; ///< 剩余适配器组成的管道。
 
         public:

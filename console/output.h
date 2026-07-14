@@ -387,9 +387,9 @@ namespace console {
         using string_type = std::basic_string<CharT, Traits>;
 
         std::basic_ostream<CharT, Traits> &os; ///< 输出目标流
-        string_type                        sep; ///< 多个参数之间的分隔符
-        string_type                        end; ///< 结尾符（通常是换行符）
-        bool                               isFlush; ///< 输出后是否立即刷新
+        string_type sep;     ///< 多个参数之间的分隔符
+        string_type end;     ///< 结尾符（通常是换行符）
+        bool        isFlush; ///< 输出后是否立即刷新
 
     public:
         /**

@@ -69,7 +69,7 @@ namespace console {
         enum class Level : int8_t { DEBUG, INFO, WARN, ERROR, FATAL };
 
     private:
-        BasicOutput<CharT, Traits> output; ///< 输出器
+        BasicOutput<CharT, Traits> output;   ///< 输出器
         bool                       colorful; ///< 是否启用颜色
         bool settings[5]; ///< 每个级别的开关，索引对应 Level 枚举值
 

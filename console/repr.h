@@ -193,7 +193,7 @@ namespace console {
         && !is_string<typename std::decay<T>::type>::value
         && !is_char<typename std::decay<T>::type>::value
         && !is_basic_printable<CharT, Traits, typename std::decay<T>::type>::
-            value>::type
+               value>::type
     repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << "<'" << tiname_impl(typeid(typename std::decay<T>::type))
            << "' object at " << &value << '>';

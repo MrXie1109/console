@@ -168,7 +168,7 @@ namespace console {
 
             int count = 0;
             for (; it != end && (maxsplit <= 0 || count < maxsplit);
-                ++it, ++count)
+                 ++it, ++count)
                 result.push_back(*it);
 
             if (maxsplit > 0 && count == maxsplit && it != end) {
@@ -200,7 +200,7 @@ namespace console {
             int  replaced = 0;
 
             for (auto it = begin; it != end && replaced < count;
-                ++it, ++replaced) {
+                 ++it, ++replaced) {
                 result.append(last, text.begin() + it->position());
                 result.append(repl);
                 last = text.begin() + it->position() + it->length();
@@ -231,7 +231,7 @@ namespace console {
             int  replaced = 0;
 
             for (auto it = begin; it != end && replaced < count;
-                ++it, ++replaced) {
+                 ++it, ++replaced) {
                 result.append(last, text.begin() + it->position());
                 result.append(repl);
                 last = text.begin() + it->position() + it->length();

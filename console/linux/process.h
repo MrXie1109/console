@@ -50,14 +50,14 @@ namespace console {
      * @brief 常用信号枚举。
      */
     enum class Signal : int {
-        Interrupt = SIGINT, ///< 中断信号 (Ctrl+C)
+        Interrupt = SIGINT,  ///< 中断信号 (Ctrl+C)
         Terminate = SIGTERM, ///< 终止信号
         Kill      = SIGKILL, ///< 强制杀死信号
         Stop      = SIGSTOP, ///< 停止进程信号
         Continue  = SIGCONT, ///< 继续运行信号
-        Hangup    = SIGHUP, ///< 挂起信号
+        Hangup    = SIGHUP,  ///< 挂起信号
         User1     = SIGUSR1, ///< 用户自定义信号1
-        User2     = SIGUSR2 ///< 用户自定义信号2
+        User2     = SIGUSR2  ///< 用户自定义信号2
     };
 
     /**
@@ -65,9 +65,9 @@ namespace console {
      * @brief 进程退出状态，包含完整退出信息。
      */
     struct ExitStatus {
-        int  code; ///< 退出码（正常退出时有效）
-        bool signaled; ///< 是否由信号终止
-        int  signal; ///< 终止信号的编号
+        int  code;        ///< 退出码（正常退出时有效）
+        bool signaled;    ///< 是否由信号终止
+        int  signal;      ///< 终止信号的编号
         bool core_dumped; ///< 是否产生 core dump
 
         /**
@@ -100,11 +100,11 @@ namespace console {
      * @brief 进程详细信息。
      */
     struct ProcessInfo {
-        pid_t  pid; ///< 进程 ID
-        pid_t  ppid; ///< 父进程 ID
-        long   rss_kb; ///< 常驻内存大小 (KB)
+        pid_t  pid;      ///< 进程 ID
+        pid_t  ppid;     ///< 父进程 ID
+        long   rss_kb;   ///< 常驻内存大小 (KB)
         double cpu_time; ///< CPU 使用时间 (秒)
-        bool   running; ///< 进程是否在运行
+        bool   running;  ///< 进程是否在运行
 
         /**
          * @brief 构造函数，初始化所有成员为默认值。
