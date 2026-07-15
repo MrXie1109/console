@@ -149,7 +149,7 @@ namespace console {
         print(std::basic_ostream<CharT, Traits> &os, const Tuple &t) {
             BasicTuplePrinter<CharT, Traits, Tuple, N - 1>::print(os, t);
             if (N > 1) os << CharT(','), os << CharT(' ');
-            put(os, std::get<N - 1>(t));
+            repr(std::get<N - 1>(t), os);
         }
     };
 
@@ -160,7 +160,7 @@ namespace console {
     struct BasicTuplePrinter<CharT, Traits, Tuple, 1> {
         static void
         print(std::basic_ostream<CharT, Traits> &os, const Tuple &t) {
-            put(os, std::get<0>(t));
+            repr(std::get<0>(t), os);
         }
     };
 
@@ -386,10 +386,10 @@ namespace console {
     class BasicOutput {
         using string_type = std::basic_string<CharT, Traits>;
 
-        std::basic_ostream<CharT, Traits> &os; ///< 输出目标流
-        string_type sep;     ///< 多个参数之间的分隔符
-        string_type end;     ///< 结尾符（通常是换行符）
-        bool        isFlush; ///< 输出后是否立即刷新
+        std::basic_ostream<CharT, Traits> &os;      ///< 输出目标流
+        string_type                        sep;     ///< 多个参数之间的分隔符
+        string_type                        end;     ///< 结尾符（通常是换行符）
+        bool                               isFlush; ///< 输出后是否立即刷新
 
     public:
         /**

@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.2.0 (2026-07-14) -- "Shared is better than Unique.")";
+            R"(console version 6.2.1 (2026-07-15) -- "Keeps the Bugs Away.")";
     }
 
     /**

@@ -87,7 +87,9 @@ namespace console {
      * @param value 要输出的值。
      * @param os 输出流，默认为 std::cout。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<
         is_string<typename std::decay<T>::type>::value>::type
     repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
@@ -102,7 +104,9 @@ namespace console {
      * @param value 要输出的字符。
      * @param os 输出流，默认为 std::cout。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<is_char<typename std::decay<T>::type>::value>::type
     repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << CharT('\'') << value << CharT('\'');
@@ -116,7 +120,9 @@ namespace console {
      * @param value 布尔值。
      * @param os 输出流。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<
         std::is_same<typename std::decay<T>::type, bool>::value>::type
     repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
@@ -131,7 +137,9 @@ namespace console {
      * @param value nullptr。
      * @param os 输出流。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<
         std::is_same<typename std::decay<T>::type, std::nullptr_t>::value>::type
     repr(T &&, std::basic_ostream<CharT, Traits> &os = std::cout) {
@@ -165,7 +173,9 @@ namespace console {
      * @param value 要输出的值。
      * @param os 输出流。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<
         !std::is_same<typename std::decay<T>::type, bool>::value
         && !std::is_same<typename std::decay<T>::type, std::nullptr_t>::value
@@ -187,26 +197,32 @@ namespace console {
      * @param value 要输出的对象。
      * @param os 输出流。
      */
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     typename std::enable_if<
         !std::is_same<typename std::decay<T>::type, std::nullptr_t>::value
         && !is_string<typename std::decay<T>::type>::value
         && !is_char<typename std::decay<T>::type>::value
         && !is_basic_printable<CharT, Traits, typename std::decay<T>::type>::
-               value>::type
+            value>::type
     repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << "<'" << tiname_impl(typeid(typename std::decay<T>::type))
            << "' object at " << &value << '>';
     }
 
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     void repr(std::reference_wrapper<T>    v,
         std::basic_ostream<CharT, Traits> &os = std::cout) {
         repr<CharT, Traits>(v.get(), os);
     }
 
 #else
-    template <class CharT, class Traits, class T>
+    template <class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
     void repr(T &&value, std::basic_ostream<CharT, Traits> &os = std::cout) {
         os << std::forward<T>(value);
     }
