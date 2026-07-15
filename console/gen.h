@@ -39,6 +39,7 @@ SOFTWARE.
 
 #include "csexc.h"
 #include "iter.h"
+#include "repr.h"
 
 namespace console {
     /**
@@ -134,19 +135,21 @@ namespace console {
          * @brief 获取生成器的迭代器对象。
          * @return 生成器迭代器。
          */
-        iterator iter() { return iterator(static_cast<Derived &>(*this)); }
+        iterator iter() const {
+            return iterator(static_cast<const Derived &>(*this));
+        }
 
         /**
          * @brief 获取开始迭代器。
          * @return 生成器的起始迭代器。
          */
-        iterator begin() { return iter(); }
+        iterator begin() const { return iter(); }
 
         /**
          * @brief 获取结束迭代器。
          * @return 生成器的结束迭代器。
          */
-        iterator end() { return iter(); }
+        iterator end() const { return iter(); }
 
         typedef T value_type; ///< 生成器产生的值类型。
 
@@ -186,6 +189,49 @@ namespace console {
     template <class Derived, class T>
     T next(typename Generator<Derived, T>::iterator &it) {
         return it.next();
+    }
+
+    /**
+     * @brief 将 Generator 的内容输出到流，格式为 [elem1, elem2, ...]。
+     * @tparam Derived 派生类型（CRTP）。
+     * @tparam T 元素类型。
+     * @tparam CharT 流的字符类型。
+     * @tparam Traits 流的字符特征类型。
+     * @param os 输出流。
+     * @param gen 生成器对象。
+     * @return std::basic_ostream<CharT, Traits>& 流引用。
+     */
+    template <class Derived,
+        class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
+    std::basic_ostream<CharT, Traits> &
+    print_generator(std::basic_ostream<CharT, Traits> &os,
+        const Generator<Derived, T>                   &gen) {
+        os << CharT('[');
+        bool first = true;
+        for (auto it = gen.begin(); it != gen.end(); ++it) {
+            if (!first) {
+                os << CharT(','), os << CharT(' ');
+            }
+            first = false;
+            repr(*it, os);
+        }
+        os << CharT(']');
+        return os;
+    }
+
+    /**
+     * @brief 输出 Generator 到流的 operator<< 重载。
+     */
+    template <class Derived,
+        class T,
+        class CharT  = char,
+        class Traits = std::char_traits<CharT>>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &os,
+        const Generator<Derived, T>              &gen) {
+        return print_generator(os, gen);
     }
 
     namespace gen {
@@ -287,6 +333,7 @@ namespace console {
              */
             void advance() { idx++; }
         };
+
         /**
          * @brief 范围生成器，生成从start到end的等差数列。
          * @tparam T 数值类型。
@@ -305,6 +352,12 @@ namespace console {
              */
             Range(T begin, T end, T step = 1) :
                 start(begin), curr(begin), end_(end), step(step) {}
+
+            /**
+             * @brief 构造函数。
+             * @param end 结束值（不包含）。
+             */
+            Range(T end) : start(0), curr(0), end_(end), step(1) {}
 
             /**
              * @brief 检查生成器是否已完成。
@@ -343,10 +396,17 @@ namespace console {
             Repeat(T val, size_t n) : value(val), count(n) {}
 
             /**
-             * @brief 检查生成器是否已完成。
-             * @return 如果已达到指定次数则返回true。
+             * @brief 构造函数。
+             * @param val 要重复的值。
+             * @note 无限重复。
              */
-            bool done() { return index >= count; }
+            Repeat(T val) : value(val), count(size_t(-1)) {}
+
+            /**
+             * @brief 检查生成器是否已完成。
+             * @return 如果已达到指定次数则返回true，无限重复始终为false。
+             */
+            bool done() { return count != size_t(-1) && index >= count; }
 
             /**
              * @brief 获取当前值。
@@ -413,31 +473,23 @@ namespace console {
         };
 
         /**
-         * @brief 计数器生成器，生成递增或递减的整数序列。
+         * @brief 计数器生成器，生成递增或递减的序列。
          */
         template <class T>
         class Counter : public Generator<Counter<T>, T> {
-            T curr;
-            T step;
-            T max_count;
-            T count;
+            T      curr;
+            T      step;
+            size_t max_count;
+            size_t count;
 
         public:
             /**
-             * @brief 构造函数，创建无限计数器。
+             * @brief 构造函数，创建有限计数器。
              * @param start 起始值，默认为0。
              * @param step 步长，默认为1。
+             * @param times 输出次数，默认为无限。
              */
-            Counter(T start = 0, T step = 1) :
-                curr(start), step(step), max_count(-1), count(0) {}
-
-            /**
-             * @brief 构造函数，创建有限计数器。
-             * @param start 起始值。
-             * @param times 输出次数。
-             * @param step 步长，默认为1。
-             */
-            Counter(T start, T times, T step) :
+            Counter(T start = T{0}, T step = T{1}, size_t times = size_t(-1)) :
                 curr(start), step(step), max_count(times), count(0) {}
 
             /**
@@ -445,7 +497,9 @@ namespace console {
              * @return 如果已达到最大计数则返回true。
              * @note 无限计数器永远返回false。
              */
-            bool done() { return max_count != -1 && count >= max_count; }
+            bool done() {
+                return max_count != size_t(-1) && count >= max_count;
+            }
 
             /**
              * @brief 获取当前值。
@@ -638,12 +692,18 @@ namespace console {
              * @brief 获取当前值。
              * @return 当前值。
              */
-            auto current() -> decltype(gen.current()) { return gen.current(); }
+            auto current() -> decltype(gen.current()) {
+                if (!droped) do_drop();
+                return gen.current();
+            }
 
             /**
              * @brief 向前移动一步。
              */
-            void advance() { gen.advance(); }
+            void advance() {
+                if (!droped) do_drop();
+                if (!gen.done()) gen.advance();
+            }
         };
 
         /**
@@ -932,6 +992,17 @@ namespace console {
         }
 
         /**
+         * @brief 创建范围生成器。
+         * @tparam T 数值类型。
+         * @param end 结束值（不包含）。
+         * @return Range<T> 范围生成器。
+         */
+        template <class T>
+        Range<T> range(T end) {
+            return Range<T>(end);
+        }
+
+        /**
          * @brief 创建重复生成器。
          * @tparam T 值类型。
          * @param val 要重复的值。
@@ -941,6 +1012,17 @@ namespace console {
         template <class T>
         Repeat<T> repeat(T val, size_t n) {
             return Repeat<T>(val, n);
+        }
+
+        /**
+         * @brief 创建重复生成器。
+         * @tparam T 值类型。
+         * @param val 要重复的值。
+         * @return Repeat<T> 重复生成器。
+         */
+        template <class T>
+        Repeat<T> repeat(T val) {
+            return Repeat<T>(val);
         }
 
         /**
@@ -988,24 +1070,13 @@ namespace console {
          * @tparam T 值类型。
          * @param start 起始值，默认为0。
          * @param step 步长，默认为1。
-         * @return Counter<T> 无限计数器。
+         * @param times 输出次数，默认为无穷。
+         * @return Counter<T> 计数器。
          */
         template <class T>
-        inline Counter<T> counter(T start = 0, T step = 1) {
-            return Counter<T>(start, step);
-        }
-
-        /**
-         * @brief 创建有限计数器生成器。
-         * @tparam T 值类型。
-         * @param start 起始值。
-         * @param times 输出次数。
-         * @param step 步长，默认为1。
-         * @return Counter<T> 有限计数器。
-         */
-        template <class T>
-        inline Counter<T> counter(T start, T times, T step) {
-            return Counter<T>(start, times, step);
+        inline Counter<T>
+        counter(T start = T{0}, T step = T{1}, size_t times = size_t(-1)) {
+            return Counter<T>(start, step, times);
         }
 
         /**
@@ -1299,9 +1370,8 @@ namespace console {
          * @return Zip<Gen1, Gen2> 压缩生成器。
          */
         template <class Gen1, class Gen2>
-        auto operator&(
-            Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(std::forward<Gen1>(g1),
-                                      std::forward<Gen2>(g2))) {
+        auto operator&(Gen1 &&g1, Gen2 &&g2) -> decltype(gen::zip(
+            std::forward<Gen1>(g1), std::forward<Gen2>(g2))) {
             return gen::zip(std::forward<Gen1>(g1), std::forward<Gen2>(g2));
         }
     }

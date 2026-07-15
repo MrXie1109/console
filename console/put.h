@@ -64,6 +64,6 @@ namespace console {
         !is_string<typename std::decay<OtherType>::type>::value
         && !is_char<typename std::decay<OtherType>::type>::value>::type
     put(std::basic_ostream<CharT, Traits> &os, OtherType &&value) {
-        repr<CharT, Traits>(value, os);
+        repr(value, os);
     }
 }
