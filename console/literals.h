@@ -155,21 +155,5 @@ namespace console {
         inline Time operator""_hr(long double hr) {
             return Time(hr * 3.6e12);
         }
-
-        /**
-         * @brief 格式化字符串字面量，返回 FString 对象，支持延迟格式化。
-         * @param str 字符串字面量。
-         * @param 长度参数（未使用）。
-         * @return FString 可进行格式化绑定的对象。
-         */
-        inline FString operator""_f(const char *str, size_t) {
-            return str;
-        }
-        /**
-         * @brief 宽字符格式化字符串字面量，返回 WFString 对象。
-         */
-        inline WFString operator""_f(const wchar_t *str, size_t) {
-            return str;
-        }
     }
 }

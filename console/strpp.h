@@ -396,55 +396,6 @@ namespace console {
         (void)_;
     }
 
-    /**
-     * @class BasicFString
-     * @brief 格式化字符串类，支持使用 `%` 运算符进行占位符 `{}` 替换。
-     * @tparam CharT 字符类型。
-     * @tparam Traits 字符特征类型。
-     * @tparam Allocator 内存分配器类型。
-     * @details 继承自 std::basic_string，通过 `operator%` 将第一个 `{}`
-     * 替换为参数的字符串表示。 若字符串中不包含 `{}` 则抛出 bad_format 异常。
-     *
-     * 使用示例：
-     * @code
-     * FString fmt = "Hello, {}!"_f;
-     * std::string result = fmt % "world";  // "Hello, world!"
-     * @endcode
-     */
-    template <class CharT = char,
-        class Traits      = std::char_traits<CharT>,
-        class Allocator   = std::allocator<CharT>>
-    class BasicFString : public std::basic_string<CharT, Traits, Allocator> {
-        using base_type = std::basic_string<CharT, Traits, Allocator>;
-
-    public:
-        using base_type::base_type;
-
-        /**
-         * @brief 用参数替换第一个 `{}` 占位符。
-         * @tparam T 参数类型。
-         * @param t 要替换的值。
-         * @return BasicFString 替换后的新 BasicFString 对象。
-         * @throw bad_format 若当前字符串中不包含 `{}`。
-         */
-        template <class T>
-        BasicFString operator%(const T &t) {
-            static const base_type placeholder{CharT('{'), CharT('}')};
-            auto                   pos = this->find(placeholder);
-            if (pos != base_type::npos) {
-                auto bak = *this;
-                bak.replace(pos, 2, to_string(t));
-                return bak;
-            }
-            throw BadFormat("Bad Format");
-        }
-    };
-
-    /** @brief BasicFString<char> 的类型别名。 */
-    using FString = BasicFString<char>;
-    /** @brief BasicFString<wchar_t> 的类型别名。 */
-    using WFString = BasicFString<wchar_t>;
-
     // ──────────────────────────────────────────────
     // C 字符串字面量重载（const char*, const wchar_t*）
     // 构造对应的 basic_string 后转发给泛型版本

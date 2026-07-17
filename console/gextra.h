@@ -164,7 +164,7 @@ namespace console {
              */
             void advance() {
                 current_chunk_.resize(chunk_size_);
-                file_->read(current_chunk_.data(), chunk_size_);
+                file_->read(&current_chunk_[0], chunk_size_);
                 current_chunk_.resize(file_->gcount());
             }
         };

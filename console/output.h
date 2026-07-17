@@ -448,6 +448,14 @@ namespace console {
             os << sep;
             return operator()(args...);
         }
+
+        // fmt 成员函数声明（定义在 fmt.h 中）
+        template <typename... Args>
+        BasicOutput &fmt(const std::basic_string<CharT, Traits> &format_str,
+            const Args &...args);
+
+        template <typename... Args>
+        BasicOutput &fmt(const CharT *format_str, const Args &...args);
     };
 
     /** @brief BasicOutput<char> 的类型别名。 */
@@ -478,5 +486,4 @@ namespace console {
     static BasicOutput<> &print
         = get_print(); ///< 全局输出对象，模仿 Python 的 print 函数。
     static BasicOutput<wchar_t> &wprint = get_wprint(); ///< 全局宽字符输出。
-
 }

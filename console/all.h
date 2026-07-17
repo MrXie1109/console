@@ -33,12 +33,12 @@ SOFTWARE.
 #include "adapter.h"
 #include "box.h"
 #include "colorful.h"
-#include "compre.h"
 #include "config.h"
 #include "crypto.h"
 #include "csexc.h"
 #include "cursor_ptr.h"
 #include "file.h"
+#include "fmt.h"
 #include "gen.h"
 #include "gextra.h"
 #include "info.h"
@@ -79,5 +79,5 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-07-15-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-07-17-MRXIE1109";
 }
