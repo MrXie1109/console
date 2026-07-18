@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.4.0 (2026-07-17) -- "Oh My Format!")";
+            R"(console version 6.4.1 (2026-07-18) -- "print VS print.fmt")";
     }
 
     /**

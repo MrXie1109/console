@@ -75,8 +75,13 @@ namespace console {
             if (i + 1 < len) {
                 CharT first  = specStr[i];
                 CharT second = specStr[i + 1];
-                if (second == static_cast<CharT>('<')
-                    || second == static_cast<CharT>('>')) {
+                if (first == static_cast<CharT>('0')
+                    && std::isdigit(static_cast<unsigned char>(second))) {
+                    spec.fill  = first;
+                    spec.align = static_cast<CharT>('>');
+                    i += 1;
+                } else if (second == static_cast<CharT>('<')
+                           || second == static_cast<CharT>('>')) {
                     if (first == static_cast<CharT>('{')
                         || first == static_cast<CharT>('}')) {
                         throw BadFormat("invalid fill character");
