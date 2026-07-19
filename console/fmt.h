@@ -306,7 +306,7 @@ namespace console {
             CharT                   oldFill      = os.fill();
             std::streamsize         oldPrecision = os.precision();
             apply_format(os, spec);
-            os << value;
+            put(os, value);
             os.flags(oldFlags);
             os.fill(oldFill);
             os.precision(oldPrecision);
