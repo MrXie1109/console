@@ -48,14 +48,48 @@ namespace console {
          */
         template <class CharT = char>
         struct BasicFormatSpec {
-            CharT fill      = static_cast<CharT>(' ');
-            CharT align     = static_cast<CharT>('>');
-            int   width     = 0;
-            int   precision = -1;
-            CharT type      = 0;
-            bool  hasHash   = false;
-            bool  hasPlus   = false;
-            bool  hasSpace  = false;
+            /**
+             * @brief 填充字符。
+             * @details 填充字符，默认空格。
+             */
+            CharT fill = static_cast<CharT>(' ');
+            /**
+             * @brief 对齐方式。
+             * @details 支持 '>' 右对齐和 '<' 左对齐，不支持居中对齐。
+             */
+            CharT align = static_cast<CharT>('>');
+            /**
+             * @brief 最小宽度。
+             * @details 最小宽度，默认0。
+             */
+            int width = 0;
+            /**
+             * @brief 精度。
+             * @details 精度（浮点小数位数 / 字符串最大长度），-1为不限制。
+             */
+            int precision = -1;
+            /**
+             * @brief 格式类型。
+             * @details 格式类型：d 十进制 x 小写十六进制 X 大写十六进制
+             *                  o 八进制f 定点小数 e 科学计数法
+             *                  E 大写科学计数法 g 通用格式 G 大写通用格式
+             */
+            CharT type = 0;
+            /**
+             * @brief 标志 '#'。
+             * @details 标志 '#'：显示进制前缀（0x/0X/0）或强制显示小数点。
+             */
+            bool hasHash = false;
+            /**
+             * @brief 标志 '+'。
+             * @details 标志 '+'：正数前显示 + 号。
+             */
+            bool hasPlus = false;
+            /**
+             * @brief 标志 ' '。
+             * @details 标志 ' '：正数前显示空格（与 '+' 互斥）。
+             */
+            bool hasSpace = false;
         };
 
         /**
@@ -290,6 +324,19 @@ namespace console {
             if (spec.hasPlus) os << std::showpos;
         }
 
+        // 辅助：算术类型正数前加空格
+        template <class CharT, class T>
+        static typename std::enable_if<std::is_arithmetic<T>::value, void>::type
+        apply_space_if_nonneg(std::basic_ostream<CharT> &os, const T &value) {
+            if (value >= 0) os << static_cast<CharT>(' ');
+        }
+
+        template <class CharT, class T>
+        static
+            typename std::enable_if<!std::is_arithmetic<T>::value, void>::type
+            apply_space_if_nonneg(
+                std::basic_ostream<CharT> &os, const T &value) {}
+
         /**
          * @brief 格式化单个值。
          * @tparam CharT 字符类型。
@@ -306,6 +353,7 @@ namespace console {
             CharT                   oldFill      = os.fill();
             std::streamsize         oldPrecision = os.precision();
             apply_format(os, spec);
+            if (spec.hasSpace) apply_space_if_nonneg(os, value);
             put(os, value);
             os.flags(oldFlags);
             os.fill(oldFill);

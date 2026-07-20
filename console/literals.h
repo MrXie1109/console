@@ -2,9 +2,7 @@
  * @file literals.h
  * @brief
  * 提供自定义字面量运算符，包括字符串字面量、时间字面量和格式化字符串字面量。
- * @details 提供纳秒、微秒、毫秒、秒、分钟、小时的
- * `_ns`、`_us`、`_ms`、`_s`、`_min`、`_hr` 后缀； 以及用于格式化字符串的 `_f`
- * 后缀。
+ * @details 提供纳秒、微秒、毫秒、秒、分钟、小时的`_ns`、`_us`、`_ms`、`_s`、`_min`、`_hr` 后缀。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
