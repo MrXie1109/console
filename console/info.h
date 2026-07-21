@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.4.3 (2026-07-20) -- "Greater.")";
+            R"(console version 6.5.0 (2026-07-21) -- "Input Had Renamed.")";
     }
 
     /**

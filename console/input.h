@@ -100,7 +100,7 @@ namespace console {
      * @note 本质上是语法糖。
      */
     template <class T = std::string>
-    T winput(const wchar_t   *prompt = L"",
+    T w_input(const wchar_t  *prompt = L"",
         const WInputSettings &is     = w_input_settings) {
         T tmp;
         while (true) {
@@ -119,34 +119,14 @@ namespace console {
         }
     }
 
-    template <class T = std::wstring, class CharT = wchar_t>
-    T inputLine(
-        const CharT *prompt = "", const WInputSettings &is = w_input_settings) {
-        T tmp;
-        while (true) {
-            is.os << prompt << std::flush;
-            is.is >> tmp;
-            if (!is.is) {
-                is.is.clear();
-                is.is.ignore(
-                    std::numeric_limits<std::streamsize>::max(), CharT('\n'));
-                is.os << "Stream Error!" << std::endl;
-                continue;
-            }
-            is.is.ignore(
-                std::numeric_limits<std::streamsize>::max(), CharT('\n'));
-            return tmp;
-        }
-    }
-
     /**
      * @brief 读取一个 long double 类型的数字。
      * @param prompt 提示字符串（默认为 "Type a number: "）。
      * @param is 输入设置。
      * @return long double 读取的数字。
      */
-    inline long double inputNumber(const char *prompt = "Type a number: ",
-        const InputSettings                   &is     = input_settings) {
+    inline long double input_number(const char *prompt = "Type a number: ",
+        const InputSettings                    &is     = input_settings) {
         return input<long double>(prompt, is);
     }
 
@@ -157,8 +137,8 @@ namespace console {
      * @return std::basic_string<CharT> 读取的行（不含换行符）。
      */
     template <class CharT = char>
-    std::basic_string<CharT> inputLine(const CharT *prompt = "",
-        const BasicInputSettings<CharT>            &is     = input_settings) {
+    std::basic_string<CharT> input_line(const CharT *prompt = "",
+        const BasicInputSettings<CharT>             &is     = input_settings) {
         std::basic_string<CharT> tmp;
         is.os << prompt << std::flush;
         if (is.is.peek() == CharT('\n')) is.is.get();
@@ -178,7 +158,7 @@ namespace console {
      * @note 若输入超出范围，会输出错误信息并重新提示。
      */
     template <class T, class CharT = char>
-    T inputWithRange(T                   min,
+    T input_with_range(T                 min,
         T                                max,
         const CharT                     *prompt = "",
         const BasicInputSettings<CharT> &is     = input_settings) {
@@ -206,7 +186,7 @@ namespace console {
      * @return CharT 读取的第一个字符。
      */
     template <class CharT = char>
-    CharT inputChar(const CharT         *prompt = "",
+    CharT input_char(const CharT        *prompt = "",
         const BasicInputSettings<CharT> &is     = input_settings) {
         is.os << prompt << std::flush;
         CharT tmp = static_cast<CharT>(is.is.get());
@@ -220,10 +200,10 @@ namespace console {
      * @param is 输入设置。
      * @return bool true 若输入 'Y'/'y'，false 若输入 'N'/'n'。
      */
-    inline bool inputYesOrNo(const char *prompt = "Type yes or no: ",
-        const InputSettings             &is     = input_settings) {
+    inline bool input_yes_or_no(const char *prompt = "Type yes or no: ",
+        const InputSettings                &is     = input_settings) {
         while (true) {
-            char tmp = inputChar(prompt, is);
+            char tmp = input_char(prompt, is);
             if (tmp == 'Y' || tmp == 'y')
                 return true;
             else if (tmp == 'N' || tmp == 'n')
@@ -240,8 +220,8 @@ namespace console {
      * @return std::basic_string<CharT> 从当前位置到流末尾的所有字符。
      */
     template <class CharT = char>
-    std::basic_string<CharT> inputAll(const CharT *prompt = "",
-        const BasicInputSettings<CharT>           &is     = input_settings) {
+    std::basic_string<CharT> input_all(const CharT *prompt = "",
+        const BasicInputSettings<CharT>            &is     = input_settings) {
         is.os << prompt;
         return {std::istreambuf_iterator<CharT>(is.is),
             std::istreambuf_iterator<CharT>()};
