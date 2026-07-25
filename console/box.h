@@ -1,6 +1,6 @@
 /**
  * @file box.h
- * @brief 提供可存储任意类型的异构容器（Box）和类型擦除包装器（Item）。
+ * @brief 提供可存储任意类型的异构容器(Box)和类型擦除包装器(Item)。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -81,13 +81,13 @@ namespace console {
             Derived(T &&v) : value(std::move(v)) {}
 
             /**
-             * @brief 克隆当前对象（堆上分配）。
+             * @brief 克隆当前对象(堆上分配)。
              * @return 指向新拷贝的 Base 指针。
              */
             Base *clone() const override { return new Derived(value); }
 
             /**
-             * @brief 将存储的值输出到流（使用 repr 函数）。
+             * @brief 将存储的值输出到流(使用 repr 函数)。
              * @param os 目标输出流。
              */
             void print(std::ostream &os) const override { repr(value, os); }
@@ -118,16 +118,16 @@ namespace console {
             const std::type_info &type() const override { return typeid(T); }
         };
 
-        Base *ptr; ///< 指向实际存储数据的指针（堆上对象）。
+        Base *ptr; ///< 指向实际存储数据的指针(堆上对象)。
 
     public:
-        /// @brief 默认构造一个空 Item（ptr 为 nullptr）。
+        /// @brief 默认构造一个空 Item(ptr 为 nullptr)。
         Item() : ptr(nullptr) {}
 
         /**
-         * @brief 从任意类型构造 Item（万能引用）。
-         * @tparam T 推导出的数据类型（自动去除引用和 cv 限定）。
-         * @param value 要存储的值（左值或右值）。
+         * @brief 从任意类型构造 Item(万能引用)。
+         * @tparam T 推导出的数据类型(自动去除引用和 cv 限定)。
+         * @param value 要存储的值(左值或右值)。
          */
         template <typename T>
         Item(T &&value) :
@@ -143,12 +143,12 @@ namespace console {
 
         /**
          * @brief 移动构造函数。
-         * @param other 源 Item（将被置于空状态）。
+         * @param other 源 Item(将被置于空状态)。
          */
         Item(Item &&other) noexcept : ptr(other.ptr) { other.ptr = nullptr; }
 
         /**
-         * @brief 类型安全地获取存储值的引用（非常量版本）。
+         * @brief 类型安全地获取存储值的引用(非常量版本)。
          * @tparam T 期望的类型。
          * @return T& 存储值的引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
@@ -164,8 +164,8 @@ namespace console {
         }
 
         /**
-         * @brief 不安全地获取存储值的引用（非常量版本）。
-         * @tparam T 期望的类型（必须与实际类型完全匹配，否则 UB）。
+         * @brief 不安全地获取存储值的引用(非常量版本)。
+         * @tparam T 期望的类型(必须与实际类型完全匹配，否则 UB)。
          * @return T& 存储值的引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
@@ -175,7 +175,7 @@ namespace console {
         }
 
         /**
-         * @brief 类型安全地获取存储值的引用（常量版本）。
+         * @brief 类型安全地获取存储值的引用(常量版本)。
          * @tparam T 期望的类型。
          * @return const T& 存储值的常量引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
@@ -191,8 +191,8 @@ namespace console {
         }
 
         /**
-         * @brief 不安全地获取存储值的引用（常量版本）。
-         * @tparam T 期望的类型（必须与实际类型完全匹配，否则 UB）。
+         * @brief 不安全地获取存储值的引用(常量版本)。
+         * @tparam T 期望的类型(必须与实际类型完全匹配，否则 UB)。
          * @return const T& 存储值的常量引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
@@ -217,7 +217,7 @@ namespace console {
 
         /**
          * @brief 移动赋值运算符。
-         * @param other 源 Item（将被置于空状态）。
+         * @param other 源 Item(将被置于空状态)。
          * @return const Item& 返回 *this 的常量引用。
          */
         const Item &operator=(Item &&other) noexcept {
@@ -273,16 +273,16 @@ namespace console {
         /**
          * @brief 从任意数量、任意类型的值构造 Box。
          * @tparam Args 参数包类型。
-         * @param args 要存储的值（每个值都会被隐式转换为 Item）。
+         * @param args 要存储的值(每个值都会被隐式转换为 Item)。
          */
         template <class... Args>
         Box(Args &&...args) :
             std::vector<Item>({Item(std::forward<Args>(args))...}) {}
 
         /**
-         * @brief 类型安全地获取指定索引处的元素（非常量版本）。
+         * @brief 类型安全地获取指定索引处的元素(非常量版本)。
          * @tparam T 期望的类型。
-         * @param index 元素索引（从 0 开始）。
+         * @param index 元素索引(从 0 开始)。
          * @return T& 元素的引用。
          * @throw console::TypeError 若索引越界或实际类型与 T 不匹配。
          */
@@ -292,9 +292,9 @@ namespace console {
         }
 
         /**
-         * @brief 不安全地获取指定索引处的元素（非常量版本）。
-         * @tparam T 期望的类型（必须与实际类型匹配，否则 UB）。
-         * @param index 元素索引（从 0 开始）。
+         * @brief 不安全地获取指定索引处的元素(非常量版本)。
+         * @tparam T 期望的类型(必须与实际类型匹配，否则 UB)。
+         * @param index 元素索引(从 0 开始)。
          * @return T& 元素的引用。
          * @warning 不检查索引越界和类型匹配，可能导致未定义行为。
          */
@@ -304,9 +304,9 @@ namespace console {
         }
 
         /**
-         * @brief 将 Box 中的元素按顺序解包到多个变量中（类型安全）。
+         * @brief 将 Box 中的元素按顺序解包到多个变量中(类型安全)。
          * @tparam Args 变量包类型。
-         * @param args 要赋值的变量（按引用传递）。
+         * @param args 要赋值的变量(按引用传递)。
          * @note 若元素数量或类型不匹配会抛出 TypeError 异常。
          */
         template <class... Args>
@@ -317,9 +317,9 @@ namespace console {
         }
 
         /**
-         * @brief 将 Box 中的元素按顺序解包到多个变量中（不安全版本）。
+         * @brief 将 Box 中的元素按顺序解包到多个变量中(不安全版本)。
          * @tparam Args 变量包类型。
-         * @param args 要赋值的变量（按引用传递）。
+         * @param args 要赋值的变量(按引用传递)。
          * @warning 不进行任何类型或边界检查，需确保 Box
          * 大小和类型与参数包完全匹配。
          */

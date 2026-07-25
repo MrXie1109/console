@@ -1,6 +1,6 @@
 /**
  * @file collide.h
- * @brief 在运行时实现双重分派（double dispatch）。
+ * @brief 在运行时实现双重分派(double dispatch)。
  * @details 该模块提供了一个通用的双重分派表，允许根据两个对象的运行时类型，
  *          动态调用对应的处理函数。常用于碰撞检测、事件分发等场景。
  *          使用方式：创建 Table<BaseType> 实例，注册类型对对应的处理函数，
@@ -74,8 +74,8 @@ namespace console {
      * @tparam F 存储的函数类型，默认为 void (*)(T&, T&)，即接受两个 T
      * 引用的函数指针。
      * @details 该类维护一个从类型对到处理函数的映射。当需要处理两个对象时，
-     *          根据它们的实际类型（通过 typeid 获取）查找对应的处理函数并调用。
-     *          支持非对称和对称注册（自动注册两个方向）。
+     *          根据它们的实际类型(通过 typeid 获取)查找对应的处理函数并调用。
+     *          支持非对称和对称注册(自动注册两个方向)。
      * @code
      * // 使用示例：
      * Table<Shape> collisionTable;
@@ -116,7 +116,7 @@ namespace console {
             default_handler(default_handler) {}
 
         /**
-         * @brief 注册一个类型对的处理函数（非对称）。
+         * @brief 注册一个类型对的处理函数(非对称)。
          * @param type1 第一个对象的类型信息。
          * @param type2 第二个对象的类型信息。
          * @param func  当遇到 (type1, type2) 组合时调用的函数。
@@ -182,8 +182,8 @@ namespace console {
 
         /**
          * @brief 根据两个对象的运行时类型调用对应的处理函数。
-         * @param a 第一个对象（基类引用）。
-         * @param b 第二个对象（基类引用）。
+         * @param a 第一个对象(基类引用)。
+         * @param b 第二个对象(基类引用)。
          * @details 该函数自动获取 a 和 b 的实际类型，查找对应的处理函数并调用。
          * @throw TypeError 如果没有为这两个对象的实际类型注册函数。
          */

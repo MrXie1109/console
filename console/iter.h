@@ -97,7 +97,7 @@ namespace console {
         typedef std::pair<typename std::iterator_traits<It1>::value_type,
             typename std::iterator_traits<It2>::value_type>
                      value_type; ///< 类型别名
-        typedef void pointer;    ///< 类型别名（不实际使用）
+        typedef void pointer;    ///< 类型别名(不实际使用)
         typedef std::pair<typename std::iterator_traits<It1>::reference,
             typename std::iterator_traits<It2>::reference>
                                           reference;         ///< 类型别名
@@ -155,10 +155,10 @@ namespace console {
      * 迭代器对。 当使用范围 for
      * 循环遍历时，每次迭代将同时从两个容器中各取出一个元素， 并以 std::pair
      * 的形式返回。 循环会在较短的容器遍历完毕后自动结束。
-     * @tparam C1 第一个容器的类型（自动推导）。
-     * @tparam C2 第二个容器的类型（自动推导）。
-     * @param c1 第一个容器（左值，非常量）。
-     * @param c2 第二个容器（左值，非常量）。
+     * @tparam C1 第一个容器的类型(自动推导)。
+     * @tparam C2 第二个容器的类型(自动推导)。
+     * @param c1 第一个容器(左值，非常量)。
+     * @param c2 第二个容器(左值，非常量)。
      * @return IteratorPair<TiedIterators<C1::iterator, C2::iterator>>
      *         一个可用于范围 for 循环的迭代器对。
      * @note 等效操作类似 Python 的 zip 函数。

@@ -2,8 +2,8 @@
  * @file repr.h
  * @brief 提供类似 Python 的 repr() 函数，用于生成对象的可读字符串表示。
  * @details 该头文件通过 SFINAE 技术重载 repr
- * 函数，支持字符串、字符、布尔值、nullptr、函数指针、 可打印类型（有
- * operator<<）以及不可打印类型（输出类型信息及地址）。
+ * 函数，支持字符串、字符、布尔值、nullptr、函数指针、 可打印类型(有
+ * operator<<)以及不可打印类型(输出类型信息及地址)。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -50,7 +50,7 @@ namespace console {
      */
 
     /**
-     * @brief 获取类型信息的可读名称（跨平台 demangle），返回 std::string。
+     * @brief 获取类型信息的可读名称(跨平台 demangle)，返回 std::string。
      * @param ti std::type_info 对象。
      * @return std::string 人类可读的类型名。
      */
@@ -80,10 +80,10 @@ namespace console {
 
 #ifndef CONSOLE_PLAIN_REPR
     /**
-     * @brief 输出字符串类型（std::string, const char* 等）的表示，带双引号。
+     * @brief 输出字符串类型(std::string, const char* 等)的表示，带双引号。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
-     * @tparam T 字符串类型（由 enable_if_string 约束）。
+     * @tparam T 字符串类型(由 enable_if_string 约束)。
      * @param value 要输出的值。
      * @param os 输出流，默认为 std::cout。
      */
@@ -100,7 +100,7 @@ namespace console {
      * @brief 输出字符类型的表示，带单引号。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
-     * @tparam T 字符类型（由 enable_if_char 约束）。
+     * @tparam T 字符类型(由 enable_if_char 约束)。
      * @param value 要输出的字符。
      * @param os 输出流，默认为 std::cout。
      */
@@ -113,7 +113,7 @@ namespace console {
     }
 
     /**
-     * @brief 输出布尔值的表示（"true" 或 "false"）。
+     * @brief 输出布尔值的表示("true" 或 "false")。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam T 必须是 bool 类型。
@@ -165,7 +165,7 @@ namespace console {
     }
 
     /**
-     * @brief 输出可打印类型（定义了 operator<<）的表示，直接输出值。
+     * @brief 输出可打印类型(定义了 operator<<)的表示，直接输出值。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam T 类型条件：不是 bool，不是字符串，不是字符，不是函数指针，且

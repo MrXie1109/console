@@ -3,7 +3,7 @@
  * @brief Windows 平台 MIDI 音乐播放库，支持乐器选择、音符播放和 BPM 控制。
  * @details 该模块封装了 Windows Multimedia API (winmm)，提供 MIDI 输出功能。
  *          支持 128 种 GM 标准乐器，可播放单音、音符序列，并支持异步播放。
- * @warning 仅支持 Windows 平台，需要链接 winmm 库（如 -lwinmm 或 winmm.lib）。
+ * @warning 仅支持 Windows 平台，需要链接 winmm 库(如 -lwinmm 或 winmm.lib)。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -55,7 +55,7 @@ SOFTWARE.
 #define NOCOLOR             // 不需要颜色表
 #define NODRAWTEXT          // 不需要 DrawText
 #define NOGDI               // 不需要 GDI 图形接口
-#define NOUSER              // 不需要 USER 模块（窗口管理）
+#define NOUSER              // 不需要 USER 模块(窗口管理)
 #define NOMENUS             // 不需要菜单
 #define NOICONS             // 不需要图标
 #define NOSYSCOMMANDS       // 不需要系统命令
@@ -79,7 +79,7 @@ SOFTWARE.
 namespace console {
     /**
      * @enum Instrument
-     * @brief 128 种 GM 标准乐器编号（0-127）。
+     * @brief 128 种 GM 标准乐器编号(0-127)。
      * @details 枚举值与 MIDI 程序变更号对应，默认乐器为 AcousticGrandPiano。
      */
     enum class Instrument : unsigned char {
@@ -219,7 +219,7 @@ namespace console {
      * REST。
      */
     namespace pitches {
-        /// @name 自然音（C D E F G A B）
+        /// @name 自然音(C D E F G A B)
         /// @{
         const int C0 = 12, D0 = 14, E0 = 16, F0 = 17, G0 = 19, A0 = 21, B0 = 23;
         const int C1 = 24, D1 = 26, E1 = 28, F1 = 29, G1 = 31, A1 = 33, B1 = 35;
@@ -235,7 +235,7 @@ namespace console {
         const int C9 = 120, D9 = 122, E9 = 124, F9 = 125, G9 = 127;
         /// @}
 
-        /// @name 变化音（升号 #）
+        /// @name 变化音(升号 #)
         /// @{
         const int Cs0 = 13, Ds0 = 15, Fs0 = 18, Gs0 = 20, As0 = 22;
         const int Cs1 = 25, Ds1 = 27, Fs1 = 30, Gs1 = 32, As1 = 34;
@@ -249,7 +249,7 @@ namespace console {
         const int Cs9 = 121, Ds9 = 123, Fs9 = 126;
         /// @}
 
-        /// @brief 休止符（不发音，仅占用时值）
+        /// @brief 休止符(不发音，仅占用时值)
         const int REST = -1;
     }
 
@@ -259,15 +259,15 @@ namespace console {
      */
     struct Note {
         signed char
-            pitch; ///< MIDI 音高编号（0-127），或 pitches::REST 表示休止符
-        double beats; ///< 音符时值（以四分音符为单位，1 表示一拍）
-        signed char volume; ///< 力度（0-127），-1 表示使用 MIDI 对象的默认音量
+            pitch; ///< MIDI 音高编号(0-127)，或 pitches::REST 表示休止符
+        double beats; ///< 音符时值(以四分音符为单位，1 表示一拍)
+        signed char volume; ///< 力度(0-127)，-1 表示使用 MIDI 对象的默认音量
 
         /**
          * @brief 构造一个音符。
-         * @param p 音高，默认为 60（中央 C）。
-         * @param b 时值，默认为 1（一拍）。
-         * @param v 力度，默认为 -1（使用默认音量）。
+         * @param p 音高，默认为 60(中央 C)。
+         * @param b 时值，默认为 1(一拍)。
+         * @param v 力度，默认为 -1(使用默认音量)。
          */
         Note(signed char p = 60, double b = 1, signed char v = -1) :
             pitch(p), beats(b), volume(v) {}
@@ -277,17 +277,17 @@ namespace console {
      * @class MIDI
      * @brief MIDI
      * 输出设备控制器，支持乐器切换、音量调节、同步/异步播放音符序列。
-     * @details 封装 Windows MIDI 输出函数，支持设置乐器（GM
-     * 标准）、节拍（BPM）、音量。
-     *          播放音符时会阻塞当前线程（同步）或启动新线程（异步）。
+     * @details 封装 Windows MIDI 输出函数，支持设置乐器(GM
+     * 标准)、节拍(BPM)、音量。
+     *          播放音符时会阻塞当前线程(同步)或启动新线程(异步)。
      * @note 该类不可拷贝、不可移动。析构时自动关闭 MIDI 设备。
-     * @warning 异步播放（nplay）会分离线程，确保音符在 MIDI
+     * @warning 异步播放(nplay)会分离线程，确保音符在 MIDI
      * 对象销毁前播放完毕，否则可能被中断。
      */
     class MIDI {
         HMIDIOUT      handle;     ///< MIDI 输出设备句柄
-        unsigned char bpm;        ///< 每分钟节拍数（beats per minute）
-        unsigned char volume;     ///< 默认音量（0-127）
+        unsigned char bpm;        ///< 每分钟节拍数(beats per minute)
+        unsigned char volume;     ///< 默认音量(0-127)
         Instrument    instrument; ///< 当前乐器
 
     public:
@@ -296,7 +296,7 @@ namespace console {
          * @param instrument 初始乐器，默认为大钢琴。
          * @param bpm 节拍速度，默认为 120。
          * @param volume 默认音量，默认为 100。
-         * @param deviceID MIDI 设备 ID，默认为 0（系统默认设备）。
+         * @param deviceID MIDI 设备 ID，默认为 0(系统默认设备)。
          * @note 若设备打开失败，handle 将为 nullptr，后续播放操作无效。
          */
         MIDI(Instrument   instrument = Instrument::AcousticGrandPiano,
@@ -360,7 +360,7 @@ namespace console {
         unsigned char get_volume() const { return volume; }
         /**
          * @brief 设置默认音量。
-         * @param vol 新音量（0-127）。
+         * @param vol 新音量(0-127)。
          */
         void set_volume(unsigned char vol) {
             volume = vol;
@@ -371,7 +371,7 @@ namespace console {
         /// @}
 
         /**
-         * @brief 同步播放一个音符（阻塞）。
+         * @brief 同步播放一个音符(阻塞)。
          * @param note 要播放的音符。
          * @details 若音符音高为 pitches::REST，则仅等待对应时值。
          *          若音符力度为 -1，则使用 MIDI 对象的默认音量。
@@ -392,10 +392,10 @@ namespace console {
         }
 
         /**
-         * @brief 异步播放一个音符（非阻塞）。
+         * @brief 异步播放一个音符(非阻塞)。
          * @param note 要播放的音符。
          * @details 该函数启动一个新线程执行 play(note) 并立即返回。
-         * @warning 线程被分离（detach），无法等待其完成。若 MIDI
+         * @warning 线程被分离(detach)，无法等待其完成。若 MIDI
          * 对象在播放完成前被销毁，可能截断声音。
          */
         void nplay(Note note) {
@@ -403,7 +403,7 @@ namespace console {
         }
 
         /**
-         * @brief 同步播放一个音符范围（阻塞）。
+         * @brief 同步播放一个音符范围(阻塞)。
          * @tparam Iter 迭代器类型。
          * @param begin 首迭代器
          * @param end 超尾迭代器
@@ -414,7 +414,7 @@ namespace console {
         }
 
         /**
-         * @brief 异步步播放一个音符范围（非阻塞）。
+         * @brief 异步步播放一个音符范围(非阻塞)。
          * @tparam Iter 迭代器类型。
          * @param begin 首迭代器
          * @param end 超尾迭代器

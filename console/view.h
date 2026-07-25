@@ -1,6 +1,6 @@
 /**
  * @file view.h
- * @brief 提供容器的非拥有视图（View），支持区间切片和便捷的工厂函数。
+ * @brief 提供容器的非拥有视图(View)，支持区间切片和便捷的工厂函数。
  * @details View 类是一个轻量级的容器视图，不复制数据，仅保存一对迭代器。
  *          支持范围 for 循环、下标访问、边界检查的 at() 方法，以及 collect()
  * 复制数据到新容器。 同时提供工厂函数 make_view 简化 View 对象的创建。
@@ -44,7 +44,7 @@ SOFTWARE.
 namespace console {
     /**
      * @class View
-     * @brief 容器的非拥有视图（可变版本）。
+     * @brief 容器的非拥有视图(可变版本)。
      * @tparam Container 容器类型，必须支持迭代器。
      * @details View
      * 不拥有数据，仅保存一对迭代器，可以高效地表示容器的一个连续子区间。
@@ -73,7 +73,7 @@ namespace console {
 
         /**
          * @brief 构造整个容器的视图。
-         * @param container 底层容器（非 const 左值引用）。
+         * @param container 底层容器(非 const 左值引用)。
          */
         View(Container &container) :
             begin_(std::begin(container)), end_(std::end(container)) {}
@@ -81,8 +81,8 @@ namespace console {
         /**
          * @brief 构造容器子区间的视图。
          * @param container 底层容器。
-         * @param start_pos 起始索引（包含）。
-         * @param end_pos 结束索引（不包含）。
+         * @param start_pos 起始索引(包含)。
+         * @param end_pos 结束索引(不包含)。
          */
         View(Container &container, size_t start_pos, size_t end_pos) :
             begin_(std::next(std::begin(container), start_pos)),
@@ -129,7 +129,7 @@ namespace console {
 
     /**
      * @class View<const Container>
-     * @brief 容器的非拥有视图（常量版本）。
+     * @brief 容器的非拥有视图(常量版本)。
      * @tparam Container 容器类型。
      */
     template <class Container>
@@ -299,7 +299,7 @@ namespace console {
      */
 
     /**
-     * @brief 创建整个容器的视图（可变版本）。
+     * @brief 创建整个容器的视图(可变版本)。
      * @tparam Container 容器类型。
      * @param cont 容器引用。
      * @return View<Container> 视图对象。
@@ -310,7 +310,7 @@ namespace console {
     }
 
     /**
-     * @brief 创建整个容器的视图（常量版本）。
+     * @brief 创建整个容器的视图(常量版本)。
      * @tparam Container 容器类型。
      * @param cont 常量容器引用。
      * @return View<const Container> 视图对象。
@@ -321,11 +321,11 @@ namespace console {
     }
 
     /**
-     * @brief 创建容器子区间的视图（可变版本）。
+     * @brief 创建容器子区间的视图(可变版本)。
      * @tparam Container 容器类型。
      * @param cont 容器引用。
-     * @param start 起始索引（包含）。
-     * @param end 结束索引（不包含）。
+     * @param start 起始索引(包含)。
+     * @param end 结束索引(不包含)。
      * @return View<Container> 视图对象。
      */
     template <class Container>
@@ -334,7 +334,7 @@ namespace console {
     }
 
     /**
-     * @brief 创建容器子区间的视图（常量版本）。
+     * @brief 创建容器子区间的视图(常量版本)。
      * @tparam Container 容器类型。
      * @param cont 常量容器引用。
      * @param start 起始索引。
@@ -348,7 +348,7 @@ namespace console {
     }
 
     /**
-     * @brief 从迭代器对创建视图（可变版本）。
+     * @brief 从迭代器对创建视图(可变版本)。
      * @tparam Container 迭代器类型。
      * @param begin 起始迭代器。
      * @param end 结束迭代器。
@@ -361,7 +361,7 @@ namespace console {
     }
 
     /**
-     * @brief 从迭代器对创建视图（常量版本）。
+     * @brief 从迭代器对创建视图(常量版本)。
      * @tparam Container 迭代器类型。
      * @param begin 起始迭代器。
      * @param end 结束迭代器。
@@ -374,7 +374,7 @@ namespace console {
     }
 
     /**
-     * @brief 从指针对创建视图（可变版本）。
+     * @brief 从指针对创建视图(可变版本)。
      * @tparam T 元素类型。
      * @param begin 起始指针。
      * @param end 结束指针。
@@ -386,7 +386,7 @@ namespace console {
     }
 
     /**
-     * @brief 从指针对创建视图（常量版本）。
+     * @brief 从指针对创建视图(常量版本)。
      * @tparam T 元素类型。
      * @param begin 起始指针。
      * @param end 结束指针。
@@ -398,7 +398,7 @@ namespace console {
     }
 
     /**
-     * @brief 从指针和长度创建视图（可变版本）。
+     * @brief 从指针和长度创建视图(可变版本)。
      * @tparam T 元素类型。
      * @param data 数据指针。
      * @param count 元素个数。
@@ -410,7 +410,7 @@ namespace console {
     }
 
     /**
-     * @brief 从指针和长度创建视图（常量版本）。
+     * @brief 从指针和长度创建视图(常量版本)。
      * @tparam T 元素类型。
      * @param data 数据指针。
      * @param count 元素个数。

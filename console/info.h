@@ -77,7 +77,7 @@ SOFTWARE.)";
 
     /**
      * @brief 返回当前使用的编译器名称和版本。
-     * @details 支持 GCC（版本号）、MSVC（版本号）、Clang（仅名称）以及其他。
+     * @details 支持 GCC(版本号)、MSVC(版本号)、Clang(仅名称)以及其他。
      * @return std::string 编译器信息。
      */
     inline std::string compiler() {
@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.5.0 (2026-07-21) -- "Input Had Renamed.")";
+            R"(console version 6.6.0 (2026-07-25) -- "What You Want? Exception or Result?")";
     }
 
     /**

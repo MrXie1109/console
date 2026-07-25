@@ -2,8 +2,8 @@
  * @file matools.h
  * @brief 提供 MultiArray 多维数组的数学工具函数。
  * @details
- * 包含统计（均值、方差、标准差）、线性代数（点积、范数、余弦、矩阵乘法、转置、迹、叉积）、
- *          元素级运算（clamp、abs、三角函数、指数对数、幂、取整）、随机初始化、卷积等。
+ * 包含统计(均值、方差、标准差)、线性代数(点积、范数、余弦、矩阵乘法、转置、迹、叉积)、
+ *          元素级运算(clamp、abs、三角函数、指数对数、幂、取整)、随机初始化、卷积等。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -69,8 +69,8 @@ namespace console {
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
-     * @param sample 若为 true（默认），计算样本方差（除以 n-1）；若为
-     * false，计算总体方差（除以 n）。
+     * @param sample 若为 true(默认)，计算样本方差(除以 n-1)；若为
+     * false，计算总体方差(除以 n)。
      * @return double 方差。
      */
     template <class T, size_t... Dims>
@@ -89,8 +89,8 @@ namespace console {
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
-     * @param sample 若为 true，计算样本标准差（除以 n-1
-     * 的方差开根）；否则总体标准差。
+     * @param sample 若为 true，计算样本标准差(除以 n-1
+     * 的方差开根)；否则总体标准差。
      * @return double 标准差。
      */
     template <class T, size_t... Dims>
@@ -98,7 +98,7 @@ namespace console {
         return std::sqrt(variance(arr, sample));
     }
 
-    // ---------------------------- 向量运算（一维）
+    // ---------------------------- 向量运算(一维)
     // ----------------------------
     /**
      * @brief 计算两个一维向量的点积。
@@ -114,7 +114,7 @@ namespace console {
     }
 
     /**
-     * @brief 计算向量的欧几里得范数（L2 范数）。
+     * @brief 计算向量的欧几里得范数(L2 范数)。
      * @tparam T 元素类型。
      * @tparam N 向量长度。
      * @param a 输入向量。
@@ -131,7 +131,7 @@ namespace console {
      * @tparam N 向量长度。
      * @param a 向量 a。
      * @param b 向量 b。
-     * @return double 余弦值（范围 [-1, 1]）。
+     * @return double 余弦值(范围 [-1, 1])。
      */
     template <class T, size_t N>
     double cosine(const MultiArray<T, N> &a, const MultiArray<T, N> &b) {
@@ -143,7 +143,7 @@ namespace console {
      * @tparam T 元素类型。
      * @tparam N 向量长度。
      * @param a 输入向量。
-     * @return MultiArray<T, N> 归一化后的向量（若原范数为 0，返回原向量）。
+     * @return MultiArray<T, N> 归一化后的向量(若原范数为 0，返回原向量)。
      */
     template <class T, size_t N>
     MultiArray<T, N> normalize(const MultiArray<T, N> &a) {
@@ -177,7 +177,7 @@ namespace console {
     }
 
     /**
-     * @brief 计算两个向量的曼哈顿距离（L1 距离）。
+     * @brief 计算两个向量的曼哈顿距离(L1 距离)。
      * @tparam T 元素类型。
      * @tparam N 向量长度。
      * @param a 向量 a。
@@ -193,13 +193,13 @@ namespace console {
         return sum;
     }
 
-    // ---------------------------- 矩阵运算（二维）
+    // ---------------------------- 矩阵运算(二维)
     // ----------------------------
     /**
-     * @brief 矩阵乘法（二维）。
+     * @brief 矩阵乘法(二维)。
      * @tparam T 元素类型。
      * @tparam M 矩阵 A 的行数。
-     * @tparam N A 的列数（同时也是 B 的行数）。
+     * @tparam N A 的列数(同时也是 B 的行数)。
      * @tparam K B 的列数。
      * @param A 左矩阵，尺寸 M×N。
      * @param B 右矩阵，尺寸 N×K。
@@ -245,7 +245,7 @@ namespace console {
     }
 
     /**
-     * @brief 计算方阵的迹（对角线元素之和）。
+     * @brief 计算方阵的迹(对角线元素之和)。
      * @tparam T 元素类型。
      * @tparam N 矩阵阶数。
      * @param A 方阵。
@@ -261,8 +261,8 @@ namespace console {
     /**
      * @brief 三维向量的叉积。
      * @tparam T 元素类型。
-     * @param a 向量 a（长度为 3）。
-     * @param b 向量 b（长度为 3）。
+     * @param a 向量 a(长度为 3)。
+     * @param b 向量 b(长度为 3)。
      * @return MultiArray<T, 3> 叉积结果。
      */
     template <class T>
@@ -299,7 +299,7 @@ namespace console {
 
     /**
      * @brief 计算数组中每个元素的绝对值。
-     * @tparam T 元素类型（应为有符号数值类型）。
+     * @tparam T 元素类型(应为有符号数值类型)。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
      * @return MultiArray<T, Dims...> 绝对值数组。
@@ -319,8 +319,8 @@ namespace console {
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 目标数组。
-     * @param min 最小值（包含）。
-     * @param max 最大值（包含）。
+     * @param min 最小值(包含)。
+     * @param max 最大值(包含)。
      */
     template <class T, size_t... Dims>
     void randomize(MultiArray<T, Dims...> &arr, T min = 0, T max = 100) {
@@ -330,7 +330,7 @@ namespace console {
 
     /**
      * @brief 用正态分布随机数填充数组。
-     * @tparam T 元素类型（通常为浮点数）。
+     * @tparam T 元素类型(通常为浮点数)。
      * @tparam Dims 维度包。
      * @param arr 目标数组。
      * @param mean 均值。
@@ -347,9 +347,9 @@ namespace console {
      * @brief 用线性等间距值填充数组。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
-     * @param arr 目标数组（其 fsize() 决定点数）。
+     * @param arr 目标数组(其 fsize() 决定点数)。
      * @param start 起始值。
-     * @param end 结束值（包含）。
+     * @param end 结束值(包含)。
      */
     template <class T, size_t... Dims>
     void linspace(MultiArray<T, Dims...> &arr, T start, T end) {
@@ -373,11 +373,11 @@ namespace console {
     }
 
     /**
-     * @brief 查找第 k 小的元素（会修改数组顺序）。
+     * @brief 查找第 k 小的元素(会修改数组顺序)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
-     * @param arr 输入数组（将部分排序，顺序改变）。
-     * @param k 索引（0-based），若超出范围则取最大索引。
+     * @param arr 输入数组(将部分排序，顺序改变)。
+     * @param k 索引(0-based)，若超出范围则取最大索引。
      * @return T 第 k 小的元素值。
      */
     template <class T, size_t... Dims>
@@ -394,7 +394,7 @@ namespace console {
      * @tparam K 卷积核长度。
      * @param signal 信号数组。
      * @param kernel 卷积核数组。
-     * @return MultiArray<T, N + K - 1> 卷积结果（full 模式）。
+     * @return MultiArray<T, N + K - 1> 卷积结果(full 模式)。
      */
     template <class T, size_t N, size_t K>
     MultiArray<T, N + K - 1>
@@ -569,7 +569,7 @@ namespace console {
     }
 
     /**
-     * @brief 对数组每个元素应用 std::log（自然对数）。
+     * @brief 对数组每个元素应用 std::log(自然对数)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
@@ -585,7 +585,7 @@ namespace console {
     }
 
     /**
-     * @brief 对数组每个元素应用 std::log10（常用对数）。
+     * @brief 对数组每个元素应用 std::log10(常用对数)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
@@ -601,11 +601,11 @@ namespace console {
     }
 
     /**
-     * @brief 对数组每个元素取幂（常数指数）。
+     * @brief 对数组每个元素取幂(常数指数)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param arr 输入数组。
-     * @param exponent 指数（常数）。
+     * @param exponent 指数(常数)。
      * @return MultiArray<T, Dims...> 结果数组。
      */
     template <class T, size_t... Dims>
@@ -618,11 +618,11 @@ namespace console {
     }
 
     /**
-     * @brief 对数组每个元素取幂（指数也是数组，逐元素计算）。
+     * @brief 对数组每个元素取幂(指数也是数组，逐元素计算)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param base 底数数组。
-     * @param exp 指数数组（必须与 base 形状相同）。
+     * @param exp 指数数组(必须与 base 形状相同)。
      * @return MultiArray<T, Dims...> 结果数组。
      */
     template <class T, size_t... Dims>
@@ -686,12 +686,12 @@ namespace console {
     }
 
     /**
-     * @brief 打印数组的基本统计信息（和、均值、最小值、最大值、标准差）。
+     * @brief 打印数组的基本统计信息(和、均值、最小值、最大值、标准差)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param os 发送到的输出流。
      * @param arr 输入数组。
-     * @param name 数组名称（可选），若提供则打印标题。
+     * @param name 数组名称(可选)，若提供则打印标题。
      */
     template < //
         class T,

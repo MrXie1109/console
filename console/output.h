@@ -1,8 +1,8 @@
 /**
  * @file output.h
  * @brief 提供 STL 容器的格式化输出和灵活的输出控制工具。
- * @details 该头文件重载了 `operator<<` 使得标准容器（vector, list, set, map
- * 等）、 pair 和 tuple 可以直接输出到流。同时提供了 `BasicOutput`
+ * @details 该头文件重载了 `operator<<` 使得标准容器(vector, list, set, map
+ * 等)、 pair 和 tuple 可以直接输出到流。同时提供了 `BasicOutput`
  * 类用于灵活控制输出格式， 以及辅助函数 `to_array` 和 `to_vector` 用于将 C
  * 风格数组转换为 STL 容器。
  * @author MrXie1109
@@ -46,7 +46,7 @@ namespace console {
      */
 
     /**
-     * @brief 输出序列容器（如 vector, list）的内容，格式为 [a, b, c]。
+     * @brief 输出序列容器(如 vector, list)的内容，格式为 [a, b, c]。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam Cont 容器类型，必须支持 begin()/end() 迭代器。
@@ -69,7 +69,7 @@ namespace console {
     }
 
     /**
-     * @brief 输出集合容器（如 set, unordered_set）的内容，格式为 {a, b, c}。
+     * @brief 输出集合容器(如 set, unordered_set)的内容，格式为 {a, b, c}。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam Cont 容器类型，必须支持 begin()/end() 迭代器。
@@ -92,7 +92,7 @@ namespace console {
     }
 
     /**
-     * @brief 输出映射容器（如 map, unordered_map）的内容，格式为 {key: value,
+     * @brief 输出映射容器(如 map, unordered_map)的内容，格式为 {key: value,
      * ...}。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
@@ -129,11 +129,11 @@ namespace console {
      */
 
     /**
-     * @brief 递归打印 tuple 的辅助模板（主模板）。
+     * @brief 递归打印 tuple 的辅助模板(主模板)。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam Tuple tuple 类型。
-     * @tparam N 当前要打印的最后一个元素的索引（从 1 开始）。
+     * @tparam N 当前要打印的最后一个元素的索引(从 1 开始)。
      */
     template <class CharT,
         class Traits,
@@ -338,7 +338,7 @@ namespace console {
     /**
      * @brief 将 C 风格数组转换为 std::array。
      * @tparam T 数组元素类型。
-     * @tparam N 数组大小（由编译器推导）。
+     * @tparam N 数组大小(由编译器推导)。
      * @param ar 原始数组。
      * @return std::array<T, N> 转换后的 array。
      */
@@ -352,7 +352,7 @@ namespace console {
     /**
      * @brief 将 C 风格数组转换为 std::vector。
      * @tparam T 数组元素类型。
-     * @tparam N 数组大小（由编译器推导）。
+     * @tparam N 数组大小(由编译器推导)。
      * @param ar 原始数组。
      * @return std::vector<T> 转换后的 vector。
      */
@@ -388,7 +388,7 @@ namespace console {
 
         std::basic_ostream<CharT, Traits> &os;      ///< 输出目标流
         string_type                        sep;     ///< 多个参数之间的分隔符
-        string_type                        end;     ///< 结尾符（通常是换行符）
+        string_type                        end;     ///< 结尾符(通常是换行符)
         bool                               isFlush; ///< 输出后是否立即刷新
 
     public:
@@ -412,7 +412,7 @@ namespace console {
             bool isF) : os(o), sep(s), end(e), isFlush(isF) {}
 
         /**
-         * @brief 无参数调用：仅输出结尾符（如换行）。
+         * @brief 无参数调用：仅输出结尾符(如换行)。
          * @return BasicOutput& 当前对象引用，支持链式调用。
          */
         BasicOutput &operator()() {
@@ -423,7 +423,7 @@ namespace console {
 
         /**
          * @brief 单参数调用：输出该参数后加结尾符。
-         * @tparam T 参数类型（必须支持 operator<<）。
+         * @tparam T 参数类型(必须支持 operator<<)。
          * @param t 要输出的对象。
          * @return BasicOutput& 当前对象引用。
          */
@@ -449,7 +449,7 @@ namespace console {
             return operator()(args...);
         }
 
-        // fmt 成员函数声明（定义在 fmt.h 中）
+        // fmt 成员函数声明(定义在 fmt.h 中)
         template <typename... Args>
         BasicOutput &fmt(const std::basic_string<CharT, Traits> &format_str,
             const Args &...args);
@@ -467,7 +467,7 @@ namespace console {
     // ———— 全局实例 ————
 
     /**
-     * @brief 内部单例（char）。
+     * @brief 内部单例(char)。
      */
     inline BasicOutput<> &get_print() {
         static BasicOutput<> instance;
@@ -475,7 +475,7 @@ namespace console {
     }
 
     /**
-     * @brief 内部单例（wchar_t）。
+     * @brief 内部单例(wchar_t)。
      */
     inline BasicOutput<wchar_t> &get_wprint() {
         static BasicOutput<wchar_t> instance(

@@ -1,7 +1,7 @@
 /**
  * @file time.h
  * @brief 提供时间度量、计时、休眠和日期时间格式化功能。
- * @details 包含 Time 类（纳秒精度时间量），支持单位转换、算术运算和比较；提供
+ * @details 包含 Time 类(纳秒精度时间量)，支持单位转换、算术运算和比较；提供
  * now() 获取当前时间点， timer() 测量函数执行时间，sleep() 休眠，datetime()
  * 获取格式化日期时间字符串。
  * @author MrXie1109
@@ -52,7 +52,7 @@ namespace console {
      * 表示以纳秒为单位的时间量，支持单位转换、算术运算和自动选择合适的输出单位。
      * @details 内部使用 long long 存储纳秒数，提供
      * ns()、us()、ms()、s()、min()、hr() 等转换函数。
-     *          输出流会根据时间大小自动选择最合适的单位（hr/min/s/ms/μs/ns）。
+     *          输出流会根据时间大小自动选择最合适的单位(hr/min/s/ms/μs/ns)。
      */
     class Time {
         long long ns_; ///< 纳秒数
@@ -64,7 +64,7 @@ namespace console {
          */
         Time(long long ns = 0) : ns_(ns) {}
 
-        /// @brief 允许隐式转换为 long long（返回纳秒数）。
+        /// @brief 允许隐式转换为 long long(返回纳秒数)。
         operator long long() const { return ns_; }
 
         /// @brief 返回纳秒数。
@@ -185,7 +185,7 @@ namespace console {
     }
 
     /**
-     * @brief 获取当前时间点（自纪元以来的纳秒数）。
+     * @brief 获取当前时间点(自纪元以来的纳秒数)。
      * @return Time 当前时间点。
      */
     inline Time now() {
@@ -332,7 +332,7 @@ namespace console {
         /**
          * @brief 获取指定月份的天数。
          * @param y 年份。
-         * @param m 月份（1-12）。
+         * @param m 月份(1-12)。
          * @return 该月的天数。
          */
         static int days_in_month(int y, int m) {
@@ -344,7 +344,7 @@ namespace console {
         int days_in_month() const { return days_in_month(year(), month()); }
 
         /**
-         * @brief 获取本周第几天（周一=1, ..., 周日=7）。
+         * @brief 获取本周第几天(周一=1, ..., 周日=7)。
          */
         int iso_weekday() const {
             int w = tm_.tm_wday;
@@ -353,7 +353,7 @@ namespace console {
 
         /**
          * @brief 获取 ISO 8601 周数。
-         * @return 当前日期所在的 ISO 周数（1-53）。
+         * @return 当前日期所在的 ISO 周数(1-53)。
          */
         int iso_week() const {
             // 取当年 1 月 4 日所在的周一为准
@@ -400,7 +400,7 @@ namespace console {
         bool is_weekend() const { return tm_.tm_wday == 0 || tm_.tm_wday == 6; }
 
         /**
-         * @brief 获取该年中的第几天（1-based）。
+         * @brief 获取该年中的第几天(1-based)。
          */
         int day_of_year() const { return tm_.tm_yday + 1; }
 

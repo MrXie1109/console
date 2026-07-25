@@ -43,9 +43,9 @@ SOFTWARE.
 namespace console {
     namespace literals {
         // ----------------------------
-        // 时间字面量（整数版本）----------------------------
+        // 时间字面量(整数版本)----------------------------
         /**
-         * @brief 纳秒字面量（整数）。
+         * @brief 纳秒字面量(整数)。
          * @param ns 纳秒数。
          * @return Time 表示指定纳秒数的 Time 对象。
          */
@@ -54,55 +54,55 @@ namespace console {
         }
 
         /**
-         * @brief 微秒字面量（整数）。
+         * @brief 微秒字面量(整数)。
          * @param us 微秒数。
-         * @return Time 表示指定微秒数的 Time 对象（转换为纳秒）。
+         * @return Time 表示指定微秒数的 Time 对象(转换为纳秒)。
          */
         inline Time operator""_us(unsigned long long us) {
             return Time(us * 1e3);
         }
 
         /**
-         * @brief 毫秒字面量（整数）。
+         * @brief 毫秒字面量(整数)。
          * @param ms 毫秒数。
-         * @return Time 表示指定毫秒数的 Time 对象（转换为纳秒）。
+         * @return Time 表示指定毫秒数的 Time 对象(转换为纳秒)。
          */
         inline Time operator""_ms(unsigned long long ms) {
             return Time(ms * 1e6);
         }
 
         /**
-         * @brief 秒字面量（整数）。
+         * @brief 秒字面量(整数)。
          * @param s 秒数。
-         * @return Time 表示指定秒数的 Time 对象（转换为纳秒）。
+         * @return Time 表示指定秒数的 Time 对象(转换为纳秒)。
          */
         inline Time operator""_s(unsigned long long s) {
             return Time(s * 1e9);
         }
 
         /**
-         * @brief 分钟字面量（整数）。
+         * @brief 分钟字面量(整数)。
          * @param min 分钟数。
-         * @return Time 表示指定分钟数的 Time 对象（转换为纳秒）。
+         * @return Time 表示指定分钟数的 Time 对象(转换为纳秒)。
          */
         inline Time operator""_min(unsigned long long min) {
             return Time(min * 6e10);
         }
 
         /**
-         * @brief 小时字面量（整数）。
+         * @brief 小时字面量(整数)。
          * @param hr 小时数。
-         * @return Time 表示指定小时数的 Time 对象（转换为纳秒）。
+         * @return Time 表示指定小时数的 Time 对象(转换为纳秒)。
          */
         inline Time operator""_hr(unsigned long long hr) {
             return Time(hr * 3.6e12);
         }
 
         // ----------------------------
-        // 时间字面量（浮点数版本）----------------------------
+        // 时间字面量(浮点数版本)----------------------------
         /**
-         * @brief 纳秒字面量（浮点数）。
-         * @param ns 纳秒数（可为小数）。
+         * @brief 纳秒字面量(浮点数)。
+         * @param ns 纳秒数(可为小数)。
          * @return Time 表示指定纳秒数的 Time 对象。
          */
         inline Time operator""_ns(long double ns) {
@@ -110,7 +110,7 @@ namespace console {
         }
 
         /**
-         * @brief 微秒字面量（浮点数）。
+         * @brief 微秒字面量(浮点数)。
          * @param us 微秒数。
          * @return Time 表示指定微秒数的 Time 对象。
          */
@@ -119,7 +119,7 @@ namespace console {
         }
 
         /**
-         * @brief 毫秒字面量（浮点数）。
+         * @brief 毫秒字面量(浮点数)。
          * @param ms 毫秒数。
          * @return Time 表示指定毫秒数的 Time 对象。
          */
@@ -128,7 +128,7 @@ namespace console {
         }
 
         /**
-         * @brief 秒字面量（浮点数）。
+         * @brief 秒字面量(浮点数)。
          * @param s 秒数。
          * @return Time 表示指定秒数的 Time 对象。
          */
@@ -137,7 +137,7 @@ namespace console {
         }
 
         /**
-         * @brief 分钟字面量（浮点数）。
+         * @brief 分钟字面量(浮点数)。
          * @param min 分钟数。
          * @return Time 表示指定分钟数的 Time 对象。
          */
@@ -146,7 +146,7 @@ namespace console {
         }
 
         /**
-         * @brief 小时字面量（浮点数）。
+         * @brief 小时字面量(浮点数)。
          * @param hr 小时数。
          * @return Time 表示指定小时数的 Time 对象。
          */

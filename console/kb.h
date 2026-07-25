@@ -274,15 +274,15 @@ namespace console {
 
     private:
 #ifdef _WIN32
-        HANDLE hStdin; ///< Windows: 标准输入设备句柄（STD_INPUT_HANDLE）
-        DWORD oldMode; ///< Windows: 原始控制台输入模式（用于析构时恢复）
+        HANDLE hStdin; ///< Windows: 标准输入设备句柄(STD_INPUT_HANDLE)
+        DWORD oldMode; ///< Windows: 原始控制台输入模式(用于析构时恢复)
 #else
         struct termios oldTio; ///< Linux/Unix:
-        ///< 原始终端I/O属性（用于析构时恢复规范模式与回显）
+        ///< 原始终端I/O属性(用于析构时恢复规范模式与回显)
 #endif
 
         /**
-         * @brief 读取一个原始按键值（非阻塞）。
+         * @brief 读取一个原始按键值(非阻塞)。
          * @return 如果按键存在，返回按键的整数扫描码；否则返回 -1。
          * @details Windows 平台使用 _kbhit() 和 _getch()；
          *          Linux 平台使用 poll() 和 read()。
@@ -301,7 +301,7 @@ namespace console {
         }
 
         /**
-         * @brief 读取一个原始按键值（阻塞）。
+         * @brief 读取一个原始按键值(阻塞)。
          * @return 按键的整数扫描码。
          * @details Windows 平台直接调用 _getch()；
          *          Linux 平台循环调用 read() 直到成功读取一个字节。
@@ -322,14 +322,14 @@ namespace console {
 
         /**
          * @brief 将原始扫描码解析为 Key 枚举值。
-         * @param raw 原始按键整数值（来自 readRaw 或 readRawBlock）。
+         * @param raw 原始按键整数值(来自 readRaw 或 readRawBlock)。
          * @return 对应的 Key 枚举值；若无法识别则返回 Key::Unknown。
          * @details 处理以下情况：
-         *          - 字母字符（自动将小写转为大写）
+         *          - 字母字符(自动将小写转为大写)
          *          - 数字字符
          *          - 空格、回车、Esc、退格、Tab
-         *          - Windows 平台扩展键（方向键、F1-F12，其扫描码为 0xE0 或
-         * 0x00）
+         *          - Windows 平台扩展键(方向键、F1-F12，其扫描码为 0xE0 或
+         * 0x00)
          *          - 其他平台无法识别的键返回 Unknown
          */
         Key parse(int raw) {
@@ -395,7 +395,7 @@ namespace console {
         }
 
         /**
-         * @brief 处理以 ESC (27) 开头的转义序列（主要针对 Linux 终端）。
+         * @brief 处理以 ESC (27) 开头的转义序列(主要针对 Linux 终端)。
          * @return 如果识别为方向键则返回对应 Key；否则返回 Key::Esc。
          * @details 在 Linux 终端下，方向键会发送 "\033[A"、"\033[B"
          * 等三字节序列。 本函数通过非阻塞 poll 检查后续输入，若在 5ms 内读到

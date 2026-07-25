@@ -55,7 +55,7 @@ namespace console {
         static constexpr char Cyan[] = "\033[36m";
         /// @brief 白色前景
         static constexpr char White[] = "\033[37m";
-        /// @brief 亮黑色（灰）前景
+        /// @brief 亮黑色(灰)前景
         static constexpr char BrightBlack[] = "\033[90m";
         /// @brief 亮红色前景
         static constexpr char BrightRed[] = "\033[91m";
@@ -112,7 +112,7 @@ namespace console {
         // ------------------------------
         /// @brief 粗体
         static constexpr char Bold[] = "\033[1m";
-        /// @brief 暗淡（降低亮度）
+        /// @brief 暗淡(降低亮度)
         static constexpr char Dim[] = "\033[2m";
         /// @brief 斜体
         static constexpr char Italic[] = "\033[3m";
@@ -120,9 +120,9 @@ namespace console {
         static constexpr char Underline[] = "\033[4m";
         /// @brief 闪烁
         static constexpr char Blink[] = "\033[5m";
-        /// @brief 反转（交换前景和背景）
+        /// @brief 反转(交换前景和背景)
         static constexpr char Reverse[] = "\033[7m";
-        /// @brief 隐藏（不可见）
+        /// @brief 隐藏(不可见)
         static constexpr char Hidden[] = "\033[8m";
         /// @brief 删除线
         static constexpr char Strikethrough[] = "\033[9m";
@@ -155,7 +155,7 @@ namespace console {
     public:
         /**
          * @brief 构造函数，应用指定颜色。
-         * @param color ANSI颜色序列（如 color::Red）
+         * @param color ANSI颜色序列(如 color::Red)
          * @param os 输出流，默认为 std::cout
          */
         explicit ColorGuard(const char *color, std::ostream &os = std::cout) :
@@ -183,7 +183,7 @@ namespace console {
     public:
         /**
          * @brief 构造函数，应用指定颜色。
-         * @param color ANSI颜色序列（如 color::Red）
+         * @param color ANSI颜色序列(如 color::Red)
          * @param os 输出流，默认为 std::cout
          */
         explicit WColorGuard(

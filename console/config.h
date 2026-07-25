@@ -68,7 +68,7 @@ namespace console {
         /**
          * @brief 从文件加载 INI 配置。
          * @param filename 配置文件路径。
-         * @details 支持行首注释（; 或 #），支持节头 [section]。
+         * @details 支持行首注释(; 或 #)，支持节头 [section]。
          */
         void load(const Path &filename) {
             std::fstream fs = filename.stream();

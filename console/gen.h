@@ -193,7 +193,7 @@ namespace console {
 
     /**
      * @brief 将 Generator 的内容输出到流，格式为 [elem1, elem2, ...]。
-     * @tparam Derived 派生类型（CRTP）。
+     * @tparam Derived 派生类型(CRTP)。
      * @tparam T 元素类型。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
@@ -347,7 +347,7 @@ namespace console {
             /**
              * @brief 构造函数。
              * @param begin 起始值。
-             * @param end 结束值（不包含）。
+             * @param end 结束值(不包含)。
              * @param step 步长，默认为1。
              */
             Range(T begin, T end, T step = 1) :
@@ -355,7 +355,7 @@ namespace console {
 
             /**
              * @brief 构造函数。
-             * @param end 结束值（不包含）。
+             * @param end 结束值(不包含)。
              */
             Range(T end) : start(0), curr(0), end_(end), step(1) {}
 
@@ -456,7 +456,7 @@ namespace console {
 
             /**
              * @brief 检查生成器是否已完成。
-             * @return 始终返回false（无限循环）。
+             * @return 始终返回false(无限循环)。
              */
             bool done() { return false; }
 
@@ -766,7 +766,7 @@ namespace console {
 
             /**
              * @brief 检查生成器是否已完成。
-             * @return 始终返回false（无限生成）。
+             * @return 始终返回false(无限生成)。
              */
             bool done() { return false; }
 
@@ -931,7 +931,7 @@ namespace console {
 
         /**
          * @brief 从容器引用创建视图生成器。
-         * @tparam Container 容器类型（自动推导）。
+         * @tparam Container 容器类型(自动推导)。
          * @param container 容器引用。
          * @return Views<typename Container::iterator> 视图生成器。
          */
@@ -953,7 +953,7 @@ namespace console {
 
         /**
          * @brief 从迭代器范围创建列表生成器。
-         * @tparam Iterator 迭代器类型（自动推导）。
+         * @tparam Iterator 迭代器类型(自动推导)。
          * @param begin 起始迭代器。
          * @param end 结束迭代器。
          * @return List<typename std::decay<typename Iterator::value_type>::type> 列表生成器。
@@ -968,7 +968,7 @@ namespace console {
 
         /**
          * @brief 从容器引用创建列表生成器。
-         * @tparam Container 容器类型（自动推导）。
+         * @tparam Container 容器类型(自动推导)。
          * @param container 容器引用。
          * @return List<typename Container::value_type> 列表生成器。
          */
@@ -982,7 +982,7 @@ namespace console {
          * @brief 创建范围生成器。
          * @tparam T 数值类型。
          * @param begin 起始值。
-         * @param end 结束值（不包含）。
+         * @param end 结束值(不包含)。
          * @param step 步长，默认为1。
          * @return Range<T> 范围生成器。
          */
@@ -994,7 +994,7 @@ namespace console {
         /**
          * @brief 创建范围生成器。
          * @tparam T 数值类型。
-         * @param end 结束值（不包含）。
+         * @param end 结束值(不包含)。
          * @return Range<T> 范围生成器。
          */
         template <class T>
@@ -1080,7 +1080,7 @@ namespace console {
         }
 
         /**
-         * @brief 映射适配器（用于管道操作符）。
+         * @brief 映射适配器(用于管道操作符)。
          * @tparam Func 映射函数类型。
          */
         template <class Func>
@@ -1108,7 +1108,7 @@ namespace console {
         }
 
         /**
-         * @brief 过滤适配器（用于管道操作符）。
+         * @brief 过滤适配器(用于管道操作符)。
          * @tparam Pred 谓词函数类型。
          */
         template <class Pred>
@@ -1136,7 +1136,7 @@ namespace console {
         }
 
         /**
-         * @brief 取前n个元素适配器（用于管道操作符）。
+         * @brief 取前n个元素适配器(用于管道操作符)。
          */
         class take_t {
             size_t count;
@@ -1160,7 +1160,7 @@ namespace console {
         }
 
         /**
-         * @brief 跳过前n个元素适配器（用于管道操作符）。
+         * @brief 跳过前n个元素适配器(用于管道操作符)。
          */
         class drop_t {
             size_t count;
@@ -1231,7 +1231,7 @@ namespace console {
         }
 
         /**
-         * @brief 取前若干个元素适配器（用于管道操作符）。
+         * @brief 取前若干个元素适配器(用于管道操作符)。
          */
         template <class Pred>
         class take_while_t {
@@ -1257,7 +1257,7 @@ namespace console {
         }
 
         /**
-         * @brief 跳过前若干个元素适配器（用于管道操作符）。
+         * @brief 跳过前若干个元素适配器(用于管道操作符)。
          */
         template <class Pred>
         class drop_while_t {
@@ -2025,7 +2025,7 @@ namespace console {
 
         /**
          * @brief 创建加固定值变换器。
-         * @tparam T 值类型（自动推导）。
+         * @tparam T 值类型(自动推导)。
          * @param v 要加的值。
          */
         template <class T>

@@ -236,7 +236,7 @@ namespace console {
         BasicRational operator+() const { return *this; }
 
         /**
-         * @brief 比较两个分数是否相等（eq）。
+         * @brief 比较两个分数是否相等(eq)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果相等 true 否则 false。
@@ -247,7 +247,7 @@ namespace console {
         }
 
         /**
-         * @brief 比较两个分数是否不等（ne）。
+         * @brief 比较两个分数是否不等(ne)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果不等 true 否则 false。
@@ -258,7 +258,7 @@ namespace console {
         }
 
         /**
-         * @brief 比较左操作数是否小于右操作数（lt）。
+         * @brief 比较左操作数是否小于右操作数(lt)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果左 < 右 true 否则 false。
@@ -269,7 +269,7 @@ namespace console {
         }
 
         /**
-         * @brief 比较左操作数是否大于右操作数（gt）。
+         * @brief 比较左操作数是否大于右操作数(gt)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果左 > 右 true 否则 false。
@@ -280,7 +280,7 @@ namespace console {
         }
 
         /**
-         * @brief 比较左操作数是否小于等于右操作数（le）。
+         * @brief 比较左操作数是否小于等于右操作数(le)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果左 <= 右 true 否则 false。
@@ -291,7 +291,7 @@ namespace console {
         }
 
         /**
-         * @brief 比较左操作数是否大于等于右操作数（ge）。
+         * @brief 比较左操作数是否大于等于右操作数(ge)。
          * @param lhs 左操作数。
          * @param rhs 右操作数。
          * @return bool 如果左 >= 右 true 否则 false。

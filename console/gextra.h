@@ -56,8 +56,8 @@ namespace console {
         public:
             /**
              * @brief 构造函数。
-             * @param min 随机数最小值（包含）。
-             * @param max 随机数最大值（包含）。
+             * @param min 随机数最小值(包含)。
+             * @param max 随机数最大值(包含)。
              * @param seed 随机数种子，默认为随机设备生成。
              */
             Random(T                      min,
@@ -67,7 +67,7 @@ namespace console {
 
             /**
              * @brief 检查生成器是否已完成。
-             * @return 始终返回false（无限生成）。
+             * @return 始终返回false(无限生成)。
              */
             bool done() { return false; }
 
@@ -447,7 +447,7 @@ namespace console {
         };
 
         /**
-         * @brief 取元素直到谓词成立（包含第一个满足条件的元素）。
+         * @brief 取元素直到谓词成立(包含第一个满足条件的元素)。
          * @tparam Gen 源生成器类型。
          * @tparam Pred 谓词类型。
          */
@@ -499,7 +499,7 @@ namespace console {
         };
 
         /**
-         * @brief 跳过元素直到谓词成立（跳过第一个满足条件的元素）。
+         * @brief 跳过元素直到谓词成立(跳过第一个满足条件的元素)。
          * @tparam Gen 源生成器类型。
          * @tparam Pred 谓词类型。
          */
@@ -706,8 +706,8 @@ namespace console {
         /**
          * @brief 创建随机数生成器。
          * @tparam T 数值类型。
-         * @param min 随机数最小值（包含）。
-         * @param max 随机数最大值（包含）。
+         * @param min 随机数最小值(包含)。
+         * @param max 随机数最大值(包含)。
          * @param seed 随机数种子，默认为随机设备生成。
          * @return Random<T> 随机数生成器。
          */
@@ -741,7 +741,7 @@ namespace console {
         }
 
         /**
-         * @brief 窗口适配器（用于管道操作符）。
+         * @brief 窗口适配器(用于管道操作符)。
          */
         class window_t {
             size_t s;
@@ -776,7 +776,7 @@ namespace console {
         }
 
         /**
-         * @brief 分块适配器（用于管道操作符）。
+         * @brief 分块适配器(用于管道操作符)。
          */
         class chunk_t {
             size_t s;
@@ -851,7 +851,7 @@ namespace console {
         }
 
         /**
-         * @brief 步进适配器（用于管道操作符）。
+         * @brief 步进适配器(用于管道操作符)。
          */
         class step_by_t {
             size_t s;
@@ -886,7 +886,7 @@ namespace console {
         }
 
         /**
-         * @brief 调试适配器（用于管道操作符）。
+         * @brief 调试适配器(用于管道操作符)。
          */
         class debug_t {
             std::string   message;
@@ -926,7 +926,7 @@ namespace console {
         }
 
         /**
-         * @brief 取元素直到谓词成立适配器（用于管道操作符）。
+         * @brief 取元素直到谓词成立适配器(用于管道操作符)。
          * @tparam Pred 谓词类型。
          */
         template <class Pred>
@@ -965,7 +965,7 @@ namespace console {
         }
 
         /**
-         * @brief 跳过元素直到谓词成立适配器（用于管道操作符）。
+         * @brief 跳过元素直到谓词成立适配器(用于管道操作符)。
          * @tparam Pred 谓词类型。
          */
         template <class Pred>
@@ -1110,7 +1110,7 @@ namespace console {
 
         /**
          * @brief 创建幂运算变换器。
-         * @tparam T 指数类型（自动推导）。
+         * @tparam T 指数类型(自动推导)。
          * @param exp 指数值。
          * @return Pow<T> 幂运算变换器。
          */
@@ -1137,7 +1137,7 @@ namespace console {
         static constexpr exp_t exp;
 
         /**
-         * @brief 常用对数变换器（以10为底）。
+         * @brief 常用对数变换器(以10为底)。
          */
         struct log10_t {
             /**
@@ -1374,7 +1374,7 @@ namespace console {
 
         /**
          * @brief 字符串去空格变换器。
-         * @details 去除字符串首尾的空白字符（空格、制表符、换行等）。
+         * @details 去除字符串首尾的空白字符(空格、制表符、换行等)。
          */
         struct trim_t {
             /**
@@ -1523,7 +1523,7 @@ namespace console {
         static constexpr average_t average;
 
         /**
-         * @brief 区间谓词（闭区间）。
+         * @brief 区间谓词(闭区间)。
          * @tparam T 元素类型。
          */
         template <class T>
@@ -1540,7 +1540,7 @@ namespace console {
 
         /**
          * @brief 创建闭区间谓词。
-         * @tparam T 元素类型（自动推导）。
+         * @tparam T 元素类型(自动推导)。
          * @param low 区间下界。
          * @param high 区间上界。
          * @return Between<T> 区间谓词。
@@ -1551,7 +1551,7 @@ namespace console {
         }
 
         /**
-         * @brief 区间谓词（开区间）。
+         * @brief 区间谓词(开区间)。
          * @tparam T 元素类型。
          */
         template <class T>
@@ -1568,7 +1568,7 @@ namespace console {
 
         /**
          * @brief 创建开区间谓词。
-         * @tparam T 元素类型（自动推导）。
+         * @tparam T 元素类型(自动推导)。
          * @param low 区间下界。
          * @param high 区间上界。
          * @return BetweenExclusive<T> 区间谓词。
@@ -1596,7 +1596,7 @@ namespace console {
 
         /**
          * @brief 创建整除谓词。
-         * @tparam T 元素类型（自动推导）。
+         * @tparam T 元素类型(自动推导)。
          * @param n 除数。
          * @return DivisibleBy<T> 整除谓词。
          */
@@ -1694,7 +1694,7 @@ namespace console {
 
         /**
          * @brief 创建限幅变换器。
-         * @tparam T 元素类型（自动推导）。
+         * @tparam T 元素类型(自动推导)。
          * @param low 下界。
          * @param high 上界。
          * @return Clamp<T> 限幅变换器。
@@ -1706,7 +1706,7 @@ namespace console {
 
         /**
          * @brief 时间戳生成器。
-         * @details 生成当前时间的 Unix 时间戳（秒）。
+         * @details 生成当前时间的 Unix 时间戳(秒)。
          */
         struct timestamp_t {
             /**
@@ -1724,7 +1724,7 @@ namespace console {
 
         /**
          * @brief 加法函数子。
-         * @details 等价于 operator+，支持任意类型（只要定义了 operator+）。
+         * @details 等价于 operator+，支持任意类型(只要定义了 operator+)。
          *          用于 reduce 等需要二元操作的场景。
          */
         struct plus_t {
@@ -1746,7 +1746,7 @@ namespace console {
 
         /**
          * @brief 减法函数子。
-         * @details 等价于 operator-，支持任意类型（只要定义了 operator-）。
+         * @details 等价于 operator-，支持任意类型(只要定义了 operator-)。
          *          用于 reduce 等需要二元操作的场景。
          */
         struct minus_t {
@@ -1768,7 +1768,7 @@ namespace console {
 
         /**
          * @brief 乘法函数子。
-         * @details 等价于 operator*，支持任意类型（只要定义了 operator*）。
+         * @details 等价于 operator*，支持任意类型(只要定义了 operator*)。
          *          用于 reduce 等需要二元操作的场景。
          */
         struct multiplies_t {
@@ -1790,7 +1790,7 @@ namespace console {
 
         /**
          * @brief 除法函数子。
-         * @details 等价于 operator/，支持任意类型（只要定义了 operator/）。
+         * @details 等价于 operator/，支持任意类型(只要定义了 operator/)。
          *          用于 reduce 等需要二元操作的场景。
          * @note 若是算术除法语义，调用者需确保除数不为零，否则行为由 operator/ 决定。
          */
@@ -1813,7 +1813,7 @@ namespace console {
 
         /**
          * @brief 取模函数子。
-         * @details 等价于 operator%，支持任意类型（只要定义了 operator%）。
+         * @details 等价于 operator%，支持任意类型(只要定义了 operator%)。
          *          用于 reduce 等需要二元操作的场景。
          * @note 若是算术取模语义，调用者需确保除数不为零，否则行为由 operator% 决定。
          */

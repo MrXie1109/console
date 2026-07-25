@@ -1,7 +1,7 @@
 /**
  * @file sfinae.h
- * @brief 提供编译期类型特征检测（SFINAE
- * 工具），用于判断容器、可调用对象、迭代器、下标访问、字符串、可打印类型、字符类型等。
+ * @brief 提供编译期类型特征检测(SFINAE
+ * 工具)，用于判断容器、可调用对象、迭代器、下标访问、字符串、可打印类型、字符类型等。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -45,7 +45,7 @@ namespace console {
 
     /**
      * @struct is_container
-     * @brief 检测类型是否为容器（支持 std::begin 和 std::end）。
+     * @brief 检测类型是否为容器(支持 std::begin 和 std::end)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -62,8 +62,8 @@ namespace console {
 
     /**
      * @struct is_callable
-     * @brief 检测类型是否可作为函数对象以给定参数调用（返回 void 或可转换为
-     * void）。
+     * @brief 检测类型是否可作为函数对象以给定参数调用(返回 void 或可转换为
+     * void)。
      * @tparam F 待检测的类型。
      * @tparam Args 调用参数类型包。
      */
@@ -81,7 +81,7 @@ namespace console {
 
     /**
      * @struct is_iterator
-     * @brief 检测类型是否为迭代器（具有 iterator_category）。
+     * @brief 检测类型是否为迭代器(具有 iterator_category)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -97,7 +97,7 @@ namespace console {
 
     /**
      * @struct has_subscript
-     * @brief 检测类型是否支持下标操作符（如 T[Idx]）。
+     * @brief 检测类型是否支持下标操作符(如 T[Idx])。
      * @tparam T 待检测的类型。
      * @tparam Idx 下标索引类型。
      */
@@ -115,8 +115,8 @@ namespace console {
 
     /**
      * @struct is_string
-     * @brief 检测类型是否为字符串类型（char*、std::string、std::string_view
-     * 等）。
+     * @brief 检测类型是否为字符串类型(char*、std::string、std::string_view
+     * 等)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -153,7 +153,7 @@ namespace console {
 
     /**
      * @struct is_printable
-     * @brief 检测类型是否支持输出到 std::ostream（即定义了 operator<<）。
+     * @brief 检测类型是否支持输出到 std::ostream(即定义了 operator<<)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -169,7 +169,7 @@ namespace console {
 
     /**
      * @struct is_basic_printable
-     * @brief 检测类型是否支持输出到指定字符类型的流（即定义了 operator<<）。
+     * @brief 检测类型是否支持输出到指定字符类型的流(即定义了 operator<<)。
      * @tparam CharT 流的字符类型。
      * @tparam Traits 流的字符特征类型。
      * @tparam T 待检测的类型。
@@ -194,7 +194,7 @@ namespace console {
 
     /**
      * @struct is_char
-     * @brief 检测类型是否为字符类型（char、wchar_t 等）。
+     * @brief 检测类型是否为字符类型(char、wchar_t 等)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -239,7 +239,7 @@ namespace console {
 
     /**
      * @struct is_generator
-     * @brief 检测类型是否为生成器（具有 done()、current()、advance() 接口）。
+     * @brief 检测类型是否为生成器(具有 done()、current()、advance() 接口)。
      * @tparam T 待检测的类型。
      */
     template <class T, class = void>
@@ -286,14 +286,14 @@ namespace console {
         typename std::enable_if<!is_iterator<T>::value>::type;
 
     /**
-     * @brief 启用若 T（decay 后）是字符串类型。
+     * @brief 启用若 T(decay 后)是字符串类型。
      */
     template <class T>
     using enable_if_string = typename std::enable_if<
         is_string<typename std::decay<T>::type>::value>::type;
 
     /**
-     * @brief 启用若 T（decay 后）不是字符串类型。
+     * @brief 启用若 T(decay 后)不是字符串类型。
      */
     template <class T>
     using enable_if_not_string = typename std::enable_if<
@@ -314,14 +314,14 @@ namespace console {
         typename std::enable_if<!is_printable<T>::value>::type;
 
     /**
-     * @brief 启用若 T（decay 后）是字符类型。
+     * @brief 启用若 T(decay 后)是字符类型。
      */
     template <class T>
     using enable_if_char = typename std::enable_if<
         is_char<typename std::decay<T>::type>::value>::type;
 
     /**
-     * @brief 启用若 T（decay 后）不是字符类型。
+     * @brief 启用若 T(decay 后)不是字符类型。
      */
     template <class T>
     using enable_if_not_char = typename std::enable_if<
@@ -350,7 +350,7 @@ namespace console {
     // ———— basic_printable enable_if 别名 ————
 
     /**
-     * @brief 启用若 T（decay 后）对给定字符流可打印。
+     * @brief 启用若 T(decay 后)对给定字符流可打印。
      */
     template <class CharT, class Traits, class T>
     using enable_if_basic_printable =
@@ -359,7 +359,7 @@ namespace console {
             typename std::decay<T>::type>::value>::type;
 
     /**
-     * @brief 启用若 T（decay 后）对 wchar_t 流可打印。
+     * @brief 启用若 T(decay 后)对 wchar_t 流可打印。
      */
     template <class T>
     using enable_if_w_printable = typename std::enable_if<

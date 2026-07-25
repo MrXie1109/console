@@ -1,7 +1,7 @@
 /**
  * @file adapter.h
  * @brief 提供带有值返回 pop 操作的容器适配器包装类。
- * @details 该模块对 STL 容器适配器（stack、queue、priority_queue）进行扩展，
+ * @details 该模块对 STL 容器适配器(stack、queue、priority_queue)进行扩展，
  *          重载了 pop() 方法，使其在弹出元素的同时返回该元素的值。
  *          适用于需要在弹出元素时获取其值的场景。
  * @author MrXie1109
@@ -67,7 +67,7 @@ namespace console {
         /**
          * @brief 弹出栈顶元素并返回其值。
          * @return typename base_type::value_type
-         * 栈顶元素的值（通过移动语义返回）。
+         * 栈顶元素的值(通过移动语义返回)。
          * @details 该方法结合了 top() 和 pop()
          * 操作，返回栈顶元素的副本/移动值，
          *          然后将栈顶元素弹出。使用移动语义避免不必要的拷贝。
@@ -104,7 +104,7 @@ namespace console {
         /**
          * @brief 弹出队首元素并返回其值。
          * @return typename base_type::value_type
-         * 队首元素的值（通过移动语义返回）。
+         * 队首元素的值(通过移动语义返回)。
          * @details 该方法结合了 front() 和 pop()
          * 操作，返回队首元素的副本/移动值，
          *          然后将队首元素弹出。使用移动语义避免不必要的拷贝。
@@ -121,7 +121,7 @@ namespace console {
      * @brief 优先队列容器适配器，扩展自 std::priority_queue。
      * @tparam T 优先队列中存储的元素类型。
      * @tparam Container 底层容器类型，默认为 std::vector<T>。
-     * @tparam Compare 比较函数对象类型，默认为 std::less<T>（最大堆）。
+     * @tparam Compare 比较函数对象类型，默认为 std::less<T>(最大堆)。
      * @details 该适配器继承自 std::priority_queue，提供了返回值版本的 pop()
      * 方法。 使用示例：
      *          @code
@@ -129,7 +129,7 @@ namespace console {
      *          pq.push(3);
      *          pq.push(1);
      *          pq.push(4);
-     *          int value = pq.pop();  // 返回 4（最大值）并弹出
+     *          int value = pq.pop();  // 返回 4(最大值)并弹出
      *          @endcode
      */
     template <class T,
@@ -145,7 +145,7 @@ namespace console {
         /**
          * @brief 弹出优先级最高的元素并返回其值。
          * @return typename base_type::value_type
-         * 优先级最高的元素的值（通过移动语义返回）。
+         * 优先级最高的元素的值(通过移动语义返回)。
          * @details 该方法结合了 top() 和 pop()
          * 操作，返回堆顶元素的副本/移动值，
          *          然后将堆顶元素弹出。使用移动语义避免不必要的拷贝。

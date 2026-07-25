@@ -4,7 +4,7 @@
  * MultiArray，支持任意维度和元素级算术/逻辑/位运算。
  * @details MultiArray 继承自 std::array 的递归嵌套，支持 operator()
  * 多维下标访问、扁平化迭代器、
- *          元素级运算（包括数组与数组、数组与标量）、统计函数（sum/min/max/all/any）等。
+ *          元素级运算(包括数组与数组、数组与标量)、统计函数(sum/min/max/all/any)等。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -50,9 +50,9 @@ namespace console {
      * @class MultiArray
      * @brief 编译期固定维度的多维数组。
      * @tparam T 元素类型。
-     * @tparam Dims 各维度大小（可变参数，至少一个维度）。
+     * @tparam Dims 各维度大小(可变参数，至少一个维度)。
      * @details 递归继承自 std::array，提供 operator()
-     * 进行多维下标访问（带边界检查）， 提供 flatten 迭代器
+     * 进行多维下标访问(带边界检查)， 提供 flatten 迭代器
      * fbegin/fend，支持元素级运算和常用统计函数。
      * @note 维度信息在编译期确定，所有元素连续存储于内存中。
      */
@@ -73,7 +73,7 @@ namespace console {
         using reference       = T &;
         using const_reference = const T &;
 
-        /// @brief 默认构造，元素未初始化（基本类型为随机值）。
+        /// @brief 默认构造，元素未初始化(基本类型为随机值)。
         MultiArray() = default;
 
         /**
@@ -86,14 +86,14 @@ namespace console {
         MultiArray(const base_type &other) : base_type(other) {}
 
         /**
-         * @brief 从初始化列表构造（仅一维）。
+         * @brief 从初始化列表构造(仅一维)。
          * @param init 初始化列表，长度不应超过 D。
          */
         MultiArray(std::initializer_list<T> init) {
             std::copy(init.begin(), init.end(), this->begin());
         }
 
-        /// @brief 返回数组的维数（一维时为 1）。
+        /// @brief 返回数组的维数(一维时为 1)。
         static constexpr size_t rank() { return 1; }
 
         /// @brief 返回元素总数。
@@ -105,7 +105,7 @@ namespace console {
         }
 
         /**
-         * @brief 遍历所有元素并应用函数（非常量版本）。
+         * @brief 遍历所有元素并应用函数(非常量版本)。
          * @tparam F 可调用对象，接受 T&。
          * @param visit 函数对象。
          */
@@ -115,7 +115,7 @@ namespace console {
         }
 
         /**
-         * @brief 遍历所有元素并应用函数（常量版本）。
+         * @brief 遍历所有元素并应用函数(常量版本)。
          * @tparam F 可调用对象，接受 const T&。
          * @param visit 函数对象。
          */
@@ -125,7 +125,7 @@ namespace console {
         }
 
         /**
-         * @brief 带边界检查的下标访问（一维）。
+         * @brief 带边界检查的下标访问(一维)。
          * @param i 索引。
          * @return T& 元素引用。
          * @throw MultiArrayError 若索引越界。
@@ -161,26 +161,26 @@ namespace console {
             return os << ']';
         }
 
-        /// @brief 返回指向扁平化数据起始的指针（非常量）。
+        /// @brief 返回指向扁平化数据起始的指针(非常量)。
         T *fbegin() { return this->data(); }
 
         /// @brief 常量版本。
         const T *fbegin() const { return this->data(); }
 
-        /// @brief 返回指向扁平化数据末尾的指针（非常量）。
+        /// @brief 返回指向扁平化数据末尾的指针(非常量)。
         T *fend() { return this->data() + fsize(); }
 
         /// @brief 常量版本。
         const T *fend() const { return this->data() + fsize(); }
 
         /**
-         * @brief 扁平化视图（可变）。
+         * @brief 扁平化视图(可变)。
          * @note 其实就是它自己。
          */
         MultiArray &flatten() { return *this; }
 
         /**
-         * @brief 扁平化视图（常量）。
+         * @brief 扁平化视图(常量)。
          * @note 其实就是它自己。
          */
         const MultiArray &flatten() const { return *this; }
@@ -193,7 +193,7 @@ namespace console {
     };
 
     /**
-     * @brief 多维特化（维度 >= 2）。
+     * @brief 多维特化(维度 >= 2)。
      * @tparam T 元素类型。
      * @tparam First 第一维大小。
      * @tparam Rest 剩余维度大小。
@@ -221,7 +221,7 @@ namespace console {
         MultiArray(const base_type &other) : base_type(other) {}
 
         /**
-         * @brief 从初始化列表构造（多维）。
+         * @brief 从初始化列表构造(多维)。
          * @param init 初始化列表，每个元素为子数组。
          */
         MultiArray(std::initializer_list<MultiArray<T, Rest...>> init) {
@@ -242,7 +242,7 @@ namespace console {
         }
 
         /**
-         * @brief 遍历所有元素（非常量版本）。
+         * @brief 遍历所有元素(非常量版本)。
          * @tparam F 可调用对象，接受 T&。
          */
         template <class F>
@@ -251,7 +251,7 @@ namespace console {
         }
 
         /**
-         * @brief 遍历所有元素（常量版本）。
+         * @brief 遍历所有元素(常量版本)。
          * @tparam F 可调用对象，接受 const T&。
          */
         template <class F>
@@ -287,7 +287,7 @@ namespace console {
          * @tparam Indices 剩余索引类型包。
          * @param idx 第一维索引。
          * @param rest 剩余维度索引。
-         * @return 最终元素的引用（若索引数量等于维数）或子数组引用（若不足）。
+         * @return 最终元素的引用(若索引数量等于维数)或子数组引用(若不足)。
          */
         template <class... Indices>
         auto operator()(size_t idx,
@@ -324,20 +324,20 @@ namespace console {
             return os << ']';
         }
 
-        /// @brief 扁平化起始迭代器（非常量）。
+        /// @brief 扁平化起始迭代器(非常量)。
         T *fbegin() { return this->data()->fbegin(); }
 
         /// @brief 常量版本。
         const T *fbegin() const { return this->data()->fbegin(); }
 
-        /// @brief 扁平化结束迭代器（非常量）。
+        /// @brief 扁平化结束迭代器(非常量)。
         T *fend() { return this->fbegin() + this->fsize(); }
 
         /// @brief 常量版本。
         const T *fend() const { return this->fbegin() + this->fsize(); }
 
         /**
-         * @brief 扁平化视图（可变）。
+         * @brief 扁平化视图(可变)。
          * @note 这并非不安全，可以自行思考。
          */
         MultiArray<T, fsize()> &flatten() {
@@ -345,7 +345,7 @@ namespace console {
         }
 
         /**
-         * @brief 扁平化视图（常量）。
+         * @brief 扁平化视图(常量)。
          * @note 这并非不安全，可以自行思考。
          */
         const MultiArray<T, fsize()> &flatten() const {
@@ -362,7 +362,7 @@ namespace console {
         }
     };
 
-    // ========================== 运算符重载（数组与数组）
+    // ========================== 运算符重载(数组与数组)
     // ==========================
     /**
      * @defgroup multiarray_ops 运算符重载
@@ -372,7 +372,7 @@ namespace console {
      */
 
     /**
-     * @brief 元素加法（数组 + 数组）。
+     * @brief 元素加法(数组 + 数组)。
      * @tparam T 元素类型。
      * @tparam Dims 维度包。
      * @param a 左操作数。
@@ -391,7 +391,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素减法（数组 - 数组）。
+     * @brief 元素减法(数组 - 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator-(
@@ -405,7 +405,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素乘法（数组 * 数组）。
+     * @brief 元素乘法(数组 * 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator*(
@@ -419,7 +419,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素除法（数组 / 数组）。
+     * @brief 元素除法(数组 / 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator/(
@@ -433,7 +433,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素取模（数组 % 数组）。
+     * @brief 元素取模(数组 % 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator%(
@@ -447,7 +447,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素加法赋值（数组 += 数组）。
+     * @brief 元素加法赋值(数组 += 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -459,7 +459,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素减法赋值（数组 -= 数组）。
+     * @brief 元素减法赋值(数组 -= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -471,7 +471,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素乘法赋值（数组 *= 数组）。
+     * @brief 元素乘法赋值(数组 *= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -483,7 +483,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素除法赋值（数组 /= 数组）。
+     * @brief 元素除法赋值(数组 /= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -495,7 +495,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素取模赋值（数组 %= 数组）。
+     * @brief 元素取模赋值(数组 %= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -507,7 +507,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素相等比较（数组 == 数组），返回 bool 数组。
+     * @brief 元素相等比较(数组 == 数组)，返回 bool 数组。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator==(
@@ -521,7 +521,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素不等比较（数组 != 数组）。
+     * @brief 元素不等比较(数组 != 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator!=(
@@ -535,7 +535,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素小于比较（数组 < 数组）。
+     * @brief 元素小于比较(数组 < 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator<(
@@ -549,7 +549,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素大于比较（数组 > 数组）。
+     * @brief 元素大于比较(数组 > 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator>(
@@ -563,7 +563,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素小于等于比较（数组 <= 数组）。
+     * @brief 元素小于等于比较(数组 <= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator<=(
@@ -577,7 +577,7 @@ namespace console {
     }
 
     /**
-     * @brief 元素大于等于比较（数组 >= 数组）。
+     * @brief 元素大于等于比较(数组 >= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator>=(
@@ -590,7 +590,7 @@ namespace console {
         return c;
     }
 
-    // 算术运算符（数组与标量）
+    // 算术运算符(数组与标量)
     /**
      * @brief 数组 + 标量。
      */
@@ -706,7 +706,7 @@ namespace console {
         return a;
     }
 
-    // 算术运算符（标量与数组）
+    // 算术运算符(标量与数组)
     /**
      * @brief 标量 + 数组。
      */
@@ -766,7 +766,7 @@ namespace console {
 
     // 一元运算符
     /**
-     * @brief 一元正号（数组）。
+     * @brief 一元正号(数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator+(const MultiArray<T, Dims...> &a) {
@@ -774,7 +774,7 @@ namespace console {
     }
 
     /**
-     * @brief 一元负号（数组）。
+     * @brief 一元负号(数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator-(const MultiArray<T, Dims...> &a) {
@@ -786,7 +786,7 @@ namespace console {
     }
 
     /**
-     * @brief 逻辑非（数组），返回 bool 数组。
+     * @brief 逻辑非(数组)，返回 bool 数组。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator!(const MultiArray<T, Dims...> &a) {
@@ -798,7 +798,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位取反（数组）。
+     * @brief 按位取反(数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator~(const MultiArray<T, Dims...> &a) {
@@ -809,7 +809,7 @@ namespace console {
         return b;
     }
 
-    // 比较运算符（数组与标量）
+    // 比较运算符(数组与标量)
     /**
      * @brief 数组 == 标量。
      */
@@ -888,7 +888,7 @@ namespace console {
         return b;
     }
 
-    // 比较运算符（标量与数组）
+    // 比较运算符(标量与数组)
     /**
      * @brief 标量 == 数组。
      */
@@ -943,9 +943,9 @@ namespace console {
         return a <= value;
     }
 
-    // 逻辑运算符（数组与数组）
+    // 逻辑运算符(数组与数组)
     /**
-     * @brief 逻辑与（数组 && 数组），返回 bool 数组。
+     * @brief 逻辑与(数组 && 数组)，返回 bool 数组。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator&&(
@@ -959,7 +959,7 @@ namespace console {
     }
 
     /**
-     * @brief 逻辑或（数组 || 数组）。
+     * @brief 逻辑或(数组 || 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<bool, Dims...> operator||(
@@ -972,9 +972,9 @@ namespace console {
         return c;
     }
 
-    // 逻辑运算符（数组与标量）
+    // 逻辑运算符(数组与标量)
     /**
-     * @brief 逻辑与（数组 && 标量）。
+     * @brief 逻辑与(数组 && 标量)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<bool, Dims...>
@@ -987,7 +987,7 @@ namespace console {
     }
 
     /**
-     * @brief 逻辑或（数组 || 标量）。
+     * @brief 逻辑或(数组 || 标量)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<bool, Dims...>
@@ -1000,7 +1000,7 @@ namespace console {
     }
 
     /**
-     * @brief 逻辑与（标量 && 数组）。
+     * @brief 逻辑与(标量 && 数组)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<bool, Dims...>
@@ -1009,7 +1009,7 @@ namespace console {
     }
 
     /**
-     * @brief 逻辑或（标量 || 数组）。
+     * @brief 逻辑或(标量 || 数组)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<bool, Dims...>
@@ -1017,9 +1017,9 @@ namespace console {
         return a || value;
     }
 
-    // 位运算符（数组与数组）
+    // 位运算符(数组与数组)
     /**
-     * @brief 按位与（数组 & 数组）。
+     * @brief 按位与(数组 & 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator&(
@@ -1033,7 +1033,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位或（数组 | 数组）。
+     * @brief 按位或(数组 | 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator|(
@@ -1047,7 +1047,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位异或（数组 ^ 数组）。
+     * @brief 按位异或(数组 ^ 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator^(
@@ -1061,7 +1061,7 @@ namespace console {
     }
 
     /**
-     * @brief 左移（数组 << 数组）。
+     * @brief 左移(数组 << 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator<<(
@@ -1075,7 +1075,7 @@ namespace console {
     }
 
     /**
-     * @brief 右移（数组 >> 数组）。
+     * @brief 右移(数组 >> 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> operator>>(
@@ -1089,7 +1089,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位与赋值（数组 &= 数组）。
+     * @brief 按位与赋值(数组 &= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -1101,7 +1101,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位或赋值（数组 |= 数组）。
+     * @brief 按位或赋值(数组 |= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -1113,7 +1113,7 @@ namespace console {
     }
 
     /**
-     * @brief 按位异或赋值（数组 ^= 数组）。
+     * @brief 按位异或赋值(数组 ^= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -1125,7 +1125,7 @@ namespace console {
     }
 
     /**
-     * @brief 左移赋值（数组 <<= 数组）。
+     * @brief 左移赋值(数组 <<= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -1137,7 +1137,7 @@ namespace console {
     }
 
     /**
-     * @brief 右移赋值（数组 >>= 数组）。
+     * @brief 右移赋值(数组 >>= 数组)。
      */
     template <class T, size_t... Dims>
     MultiArray<T, Dims...> &
@@ -1148,9 +1148,9 @@ namespace console {
         return a;
     }
 
-    // 位运算符（数组与标量）
+    // 位运算符(数组与标量)
     /**
-     * @brief 数组 & 标量（按位与）。
+     * @brief 数组 & 标量(按位与)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1163,7 +1163,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 | 标量（按位或）。
+     * @brief 数组 | 标量(按位或)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1176,7 +1176,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 ^ 标量（按位异或）。
+     * @brief 数组 ^ 标量(按位异或)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1189,7 +1189,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 << 标量（左移）。
+     * @brief 数组 << 标量(左移)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1202,7 +1202,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 >> 标量（右移）。
+     * @brief 数组 >> 标量(右移)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1215,7 +1215,7 @@ namespace console {
     }
 
     /**
-     * @brief 标量 & 数组（按位与，对称调用）。
+     * @brief 标量 & 数组(按位与，对称调用)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1224,7 +1224,7 @@ namespace console {
     }
 
     /**
-     * @brief 标量 | 数组（按位或，对称调用）。
+     * @brief 标量 | 数组(按位或，对称调用)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1233,7 +1233,7 @@ namespace console {
     }
 
     /**
-     * @brief 标量 ^ 数组（按位异或，对称调用）。
+     * @brief 标量 ^ 数组(按位异或，对称调用)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1242,7 +1242,7 @@ namespace console {
     }
 
     /**
-     * @brief 标量 << 数组（左移，标量左移数组每位）。
+     * @brief 标量 << 数组(左移，标量左移数组每位)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1255,7 +1255,7 @@ namespace console {
     }
 
     /**
-     * @brief 标量 >> 数组（右移，标量右移数组每位）。
+     * @brief 标量 >> 数组(右移，标量右移数组每位)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...>
@@ -1268,7 +1268,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 &= 标量（按位与赋值）。
+     * @brief 数组 &= 标量(按位与赋值)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...> &
@@ -1278,7 +1278,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 |= 标量（按位或赋值）。
+     * @brief 数组 |= 标量(按位或赋值)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...> &
@@ -1288,7 +1288,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 ^= 标量（按位异或赋值）。
+     * @brief 数组 ^= 标量(按位异或赋值)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...> &
@@ -1298,7 +1298,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 <<= 标量（左移赋值）。
+     * @brief 数组 <<= 标量(左移赋值)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...> &
@@ -1308,7 +1308,7 @@ namespace console {
     }
 
     /**
-     * @brief 数组 >>= 标量（右移赋值）。
+     * @brief 数组 >>= 标量(右移赋值)。
      */
     template <class T, size_t... Dims, class U>
     MultiArray<T, Dims...> &
@@ -1359,7 +1359,7 @@ namespace console {
     }
 
     /**
-     * @brief 检查所有元素是否都为 true（逻辑与归约）。
+     * @brief 检查所有元素是否都为 true(逻辑与归约)。
      * @return bool 若所有元素均为真则返回 true。
      */
     template <class T, size_t... Dims>
@@ -1370,7 +1370,7 @@ namespace console {
     }
 
     /**
-     * @brief 检查是否存在至少一个 true 元素（逻辑或归约）。
+     * @brief 检查是否存在至少一个 true 元素(逻辑或归约)。
      * @return bool 若至少一个元素为真则返回 true。
      */
     template <class T, size_t... Dims>
@@ -1390,12 +1390,12 @@ namespace console {
      */
 
     /**
-     * @brief 改变 MultiArray 的维度形状（元素类型不变），要求总元素数相同。
+     * @brief 改变 MultiArray 的维度形状(元素类型不变)，要求总元素数相同。
      * @tparam OutArrDims 目标维度包。
      * @tparam VarType 元素类型。
      * @tparam InArrDims 源维度包。
      * @param inputArr 源数组。
-     * @return MultiArray<VarType, OutArrDims...> 转换后的数组（拷贝元素）。
+     * @return MultiArray<VarType, OutArrDims...> 转换后的数组(拷贝元素)。
      * @note 编译期检查元素总数是否一致。
      */
     template <size_t... OutArrDims, class VarType, size_t... InArrDims>
@@ -1410,7 +1410,7 @@ namespace console {
     }
 
     /**
-     * @brief 不安全地改变 MultiArray 的元素类型和维度（内存拷贝）。
+     * @brief 不安全地改变 MultiArray 的元素类型和维度(内存拷贝)。
      * @tparam OutType 目标元素类型。
      * @tparam OutArrDims 目标维度包。
      * @tparam InType 源元素类型。
@@ -1433,7 +1433,7 @@ namespace console {
     }
 
     /**
-     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝（可变版本）
+     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝(可变版本)
      * @tparam OutArrDims 目标维度包。
      * @tparam VarType 元素类型。
      * @tparam InArrDims 源维度包。
@@ -1453,7 +1453,7 @@ namespace console {
     }
 
     /**
-     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝（常量版本）
+     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝(常量版本)
      * @tparam OutArrDims 目标维度包。
      * @tparam VarType 元素类型。
      * @tparam InArrDims 源维度包。

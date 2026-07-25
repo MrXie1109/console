@@ -68,9 +68,9 @@ namespace console {
      * @tparam T 要读取的类型，默认为 std::string。
      * @tparam CharT 字符类型。
      * @param prompt 提示字符串。
-     * @param is 输入设置（默认使用全局 input_settings）。
+     * @param is 输入设置(默认使用全局 input_settings)。
      * @return T 读取的值。
-     * @note 若输入失败（如类型不匹配），会清空错误状态并重新提示，直到成功。
+     * @note 若输入失败(如类型不匹配)，会清空错误状态并重新提示，直到成功。
      */
     template <class T = std::string, class CharT = char>
     T input(const CharT                 *prompt = "",
@@ -121,7 +121,7 @@ namespace console {
 
     /**
      * @brief 读取一个 long double 类型的数字。
-     * @param prompt 提示字符串（默认为 "Type a number: "）。
+     * @param prompt 提示字符串(默认为 "Type a number: ")。
      * @param is 输入设置。
      * @return long double 读取的数字。
      */
@@ -131,10 +131,10 @@ namespace console {
     }
 
     /**
-     * @brief 读取一整行字符串（包含空格）。
+     * @brief 读取一整行字符串(包含空格)。
      * @param prompt 提示字符串。
      * @param is 输入设置。
-     * @return std::basic_string<CharT> 读取的行（不含换行符）。
+     * @return std::basic_string<CharT> 读取的行(不含换行符)。
      */
     template <class CharT = char>
     std::basic_string<CharT> input_line(const CharT *prompt = "",
@@ -150,8 +150,8 @@ namespace console {
      * @brief 读取一个在指定范围内的数字。
      * @tparam T 输入类型。
      * @tparam CharT 字符类型。
-     * @param min 最小值（包含）。
-     * @param max 最大值（包含）。
+     * @param min 最小值(包含)。
+     * @param max 最大值(包含)。
      * @param prompt 提示字符串。
      * @param is 输入设置。
      * @return T 验证后的数字。
@@ -214,7 +214,7 @@ namespace console {
     }
 
     /**
-     * @brief 读取输入流中剩余的全部内容（直到 EOF）。
+     * @brief 读取输入流中剩余的全部内容(直到 EOF)。
      * @param prompt 提示字符串。
      * @param is 输入设置。
      * @return std::basic_string<CharT> 从当前位置到流末尾的所有字符。

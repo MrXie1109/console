@@ -40,7 +40,7 @@ namespace console {
     /**
      * @class BasicRegex
      * @brief 正则表达式对象，封装编译后的模式，提供匹配、搜索、替换等功能。
-     * @tparam CharT 字符类型（char 或 wchar_t）。
+     * @tparam CharT 字符类型(char 或 wchar_t)。
      * @tparam Traits 字符特征类型。
      */
     template <class CharT = char, class Traits = std::char_traits<CharT>>

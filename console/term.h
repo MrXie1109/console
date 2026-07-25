@@ -104,8 +104,8 @@ SOFTWARE.
 namespace console {
     /**
      * @brief 将光标移动到指定位置。
-     * @param x 列坐标（从 1 开始）
-     * @param y 行坐标（从 1 开始）
+     * @param x 列坐标(从 1 开始)
+     * @param y 行坐标(从 1 开始)
      */
     inline void gotoxy(int x, int y) noexcept {
         printf("\033[%d;%dH", y, x);
@@ -133,21 +133,21 @@ namespace console {
     }
 
     /**
-     * @brief 隐藏光标（提高视觉效果）。
+     * @brief 隐藏光标(提高视觉效果)。
      */
     inline void hide_cursor() noexcept {
         printf("\033[?25l");
     }
 
     /**
-     * @brief 显示光标（恢复默认）。
+     * @brief 显示光标(恢复默认)。
      */
     inline void show_cursor() noexcept {
         printf("\033[?25h");
     }
 
     /**
-     * @brief 获取终端尺寸（行数和列数）。
+     * @brief 获取终端尺寸(行数和列数)。
      * @return std::pair<int, int>，first为rows，second为cols。
      * @note 失败时返回 {0, 0}。
      */
@@ -172,7 +172,7 @@ namespace console {
     }
 
     /**
-     * @brief 重置终端所有属性（颜色、样式、光标等）到默认状态。
+     * @brief 重置终端所有属性(颜色、样式、光标等)到默认状态。
      */
     inline void reset() noexcept {
         printf("\033[0m\033[?25h");

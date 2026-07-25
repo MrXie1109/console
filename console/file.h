@@ -46,7 +46,7 @@ namespace console {
     /**
      * @class BasicPath
      * @brief 文件路径封装类，提供便捷的文件读写和路径操作。
-     * @tparam CharT 字符类型（char 或 wchar_t）。
+     * @tparam CharT 字符类型(char 或 wchar_t)。
      */
     template <class CharT = char>
     class BasicPath {

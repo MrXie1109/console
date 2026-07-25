@@ -64,7 +64,7 @@ namespace console {
          * @var INFO  一般信息
          * @var WARN  警告
          * @var ERROR 错误
-         * @var FATAL 致命错误（会抛出异常）
+         * @var FATAL 致命错误(会抛出异常)
          */
         enum class Level : int8_t { DEBUG, INFO, WARN, ERROR, FATAL };
 
@@ -75,8 +75,8 @@ namespace console {
 
     public:
         /**
-         * @brief 设置最低日志级别（低于该级别的日志将被忽略）。
-         * @param minLevel 最低级别（包含）。
+         * @brief 设置最低日志级别(低于该级别的日志将被忽略)。
+         * @param minLevel 最低级别(包含)。
          */
         void set(Level minLevel) {
             int8_t n = int8_t(minLevel);
@@ -117,7 +117,7 @@ namespace console {
         /**
          * @brief 输出 DEBUG 级别日志。
          * @tparam Args 可变参数类型。
-         * @param args 要输出的内容（可多个，自动转换为字符串）。
+         * @param args 要输出的内容(可多个，自动转换为字符串)。
          */
         template <class... Args>
         void debug(const Args &...args) {
@@ -225,7 +225,7 @@ namespace console {
     using WLogging = BasicLogging<wchar_t>;
 
     /**
-     * @brief 内部单例（char）。
+     * @brief 内部单例(char)。
      */
     inline BasicLogging<> &get_logger() {
         static BasicLogging<> instance(

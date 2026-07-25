@@ -51,7 +51,7 @@ namespace console {
      * @class ThreadPool
      * @brief 线程池执行器类，用于管理和执行并发任务。
      * @details
-     * 该类提供了一个固定大小的线程池，支持提交可调用对象（函数、lambda、绑定表达式等），
+     * 该类提供了一个固定大小的线程池，支持提交可调用对象(函数、lambda、绑定表达式等)，
      *          并返回 std::future 对象以获取任务的执行结果。模仿了 Python 的
      *          concurrent.futures.ThreadPoolExecutor 接口。
      */
@@ -173,7 +173,7 @@ namespace console {
          * @brief 提交一个可调用对象到线程池执行。
          * @tparam F 可调用对象的类型。
          * @tparam Args 参数包的类型。
-         * @param f 要执行的可调用对象（函数、lambda 等）。
+         * @param f 要执行的可调用对象(函数、lambda 等)。
          * @param args 传递给可调用对象的参数。
          * @return
          * std::future<decltype(std::forward<F>(f)(std::forward<Args>(args)...))>
@@ -244,7 +244,7 @@ namespace console {
 
         /**
          * @brief 获取当前任务队列中的任务数量。
-         * @return size_t 等待执行的任务数量（不包括正在执行的任务）。
+         * @return size_t 等待执行的任务数量(不包括正在执行的任务)。
          * @details
          * 返回尚未被工作线程取走的任务数量。注意：正在执行的任务不计入队列大小。
          */
@@ -362,7 +362,7 @@ namespace console {
 
     /**
      * @brief 获取全局对象池当前任务队列中的任务数量。
-     * @return size_t 等待执行的任务数量（不包括正在执行的任务）。
+     * @return size_t 等待执行的任务数量(不包括正在执行的任务)。
      * @details
      * 返回尚未被工作线程取走的任务数量。注意：正在执行的任务不计入队列大小。
      */

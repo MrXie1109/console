@@ -68,10 +68,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成一个指定范围内的随机整数（均匀分布）。
+     * @brief 生成一个指定范围内的随机整数(均匀分布)。
      * @tparam T 整数类型，默认为 int。
-     * @param min 最小值（包含），默认为 0。
-     * @param max 最大值（包含），默认为 32767。
+     * @param min 最小值(包含)，默认为 0。
+     * @param max 最大值(包含)，默认为 32767。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return T 在 [min, max] 区间内的随机整数。
      */
@@ -81,10 +81,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成一个指定范围内的随机浮点数（均匀分布）。
+     * @brief 生成一个指定范围内的随机浮点数(均匀分布)。
      * @tparam T 浮点数类型，默认为 double。
-     * @param min 最小值（包含），默认为 0.0。
-     * @param max 最大值（包含），默认为 1.0。
+     * @param min 最小值(包含)，默认为 0.0。
+     * @param max 最大值(包含)，默认为 1.0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return T 在 [min, max] 区间内的随机浮点数。
      */
@@ -94,7 +94,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成一个服从伯努利分布（Bernoulli Distribution）的随机布尔值。
+     * @brief 生成一个服从伯努利分布(Bernoulli Distribution)的随机布尔值。
      * @param p 生成 true 的概率，默认为 0.5。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return bool 服从伯努利分布的随机布尔值。
@@ -104,10 +104,10 @@ namespace console {
     }
 
     /**
-     * @brief 从容器中随机选择一个元素（左值版本，返回引用）。
+     * @brief 从容器中随机选择一个元素(左值版本，返回引用)。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器以及 size()
      * 方法。
-     * @param c 要从中选择的容器（左值）。
+     * @param c 要从中选择的容器(左值)。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::reference 所选元素的引用。
      * @throw ContainerError 如果容器为空。
@@ -120,10 +120,10 @@ namespace console {
     }
 
     /**
-     * @brief 从容器中随机选择一个元素（常量左值版本，返回 const 引用）。
+     * @brief 从容器中随机选择一个元素(常量左值版本，返回 const 引用)。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器以及 size()
      * 方法。
-     * @param c 要从中选择的容器（左值）。
+     * @param c 要从中选择的容器(左值)。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::const_reference 所选元素的引用。
      * @throw ContainerError 如果容器为空。
@@ -137,10 +137,10 @@ namespace console {
     }
 
     /**
-     * @brief 从容器中随机选择一个元素（右值版本，返回值）。
+     * @brief 从容器中随机选择一个元素(右值版本，返回值)。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器以及 size()
      * 方法。
-     * @param c 要从中选择的容器（右值）。
+     * @param c 要从中选择的容器(右值)。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return typename C::value_type 所选元素的副本。
      * @throw ContainerError 如果容器为空。
@@ -153,7 +153,7 @@ namespace console {
     }
 
     /**
-     * @brief 从 std::initializer_list 中随机选择一个元素（重载版本）。
+     * @brief 从 std::initializer_list 中随机选择一个元素(重载版本)。
      * @tparam T 元素类型。
      * @param init 初始化列表。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
@@ -166,10 +166,10 @@ namespace console {
     }
 
     /**
-     * @brief 随机打乱容器中元素的顺序（Fisher-Yates 洗牌算法）。
+     * @brief 随机打乱容器中元素的顺序(Fisher-Yates 洗牌算法)。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器、size()，
      *         以及存储的元素类型支持 swap 操作。
-     * @param c 要打乱的容器（支持左值或右值引用）。
+     * @param c 要打乱的容器(支持左值或右值引用)。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      */
     template <class C>
@@ -183,7 +183,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从正态分布（Normal Distribution）的随机数。
+     * @brief 生成 n 个服从正态分布(Normal Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
      * @param mean 分布的均值 μ，默认为 0.0。
@@ -201,11 +201,11 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从均匀分布（Uniform Distribution）的随机数。
+     * @brief 生成 n 个服从均匀分布(Uniform Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
-     * @param min 下界（包含），默认为 0.0。
-     * @param max 上界（包含），默认为 1.0。
+     * @param min 下界(包含)，默认为 0.0。
+     * @param max 上界(包含)，默认为 1.0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
@@ -219,11 +219,11 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从二项分布（Binomial Distribution）的随机数。
+     * @brief 生成 n 个服从二项分布(Binomial Distribution)的随机数。
      * @tparam T 整数类型，默认为 int。
      * @param n 生成的随机数个数。
-     * @param size 每次试验的次数（trials）。
-     * @param prob 每次试验的成功概率（probability），取值范围 [0, 1]。
+     * @param size 每次试验的次数(trials)。
+     * @param prob 每次试验的成功概率(probability)，取值范围 [0, 1]。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
@@ -237,10 +237,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从泊松分布（Poisson Distribution）的随机数。
+     * @brief 生成 n 个服从泊松分布(Poisson Distribution)的随机数。
      * @tparam T 整数类型，默认为 int。
      * @param n 生成的随机数个数。
-     * @param lambda 分布的均值 λ（同时也是方差），λ > 0。
+     * @param lambda 分布的均值 λ(同时也是方差)，λ > 0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
@@ -254,10 +254,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从指数分布（Exponential Distribution）的随机数。
+     * @brief 生成 n 个服从指数分布(Exponential Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
-     * @param rate 比率参数 λ（即 1/尺度），rate > 0。默认为 1.0。
+     * @param rate 比率参数 λ(即 1/尺度)，rate > 0。默认为 1.0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
@@ -271,13 +271,13 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从伽马分布（Gamma Distribution）的随机数。
+     * @brief 生成 n 个服从伽马分布(Gamma Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
-     * @param shape 形状参数 k（α），shape > 0。
-     * @param rate 比率参数 β（即 1/尺度），rate > 0。默认为 1.0。
+     * @param shape 形状参数 k(α)，shape > 0。
+     * @param rate 比率参数 β(即 1/尺度)，rate > 0。默认为 1.0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
-     * @note 标准库实现使用的是尺度参数（scale = 1/rate），因此内部做了转换。
+     * @note 标准库实现使用的是尺度参数(scale = 1/rate)，因此内部做了转换。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
     template <class T = double>
@@ -290,7 +290,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从贝塔分布（Beta Distribution）的随机数。
+     * @brief 生成 n 个服从贝塔分布(Beta Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
      * @param shape1 α 形状参数，shape1 > 0。
@@ -316,10 +316,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从卡方分布（Chi-squared Distribution）的随机数。
+     * @brief 生成 n 个服从卡方分布(Chi-squared Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
-     * @param df 自由度（degrees of freedom），df > 0。
+     * @param df 自由度(degrees of freedom)，df > 0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @note 卡方分布是伽马分布的一个特例：χ²(k) = Gamma(k/2, 1/2)。
      * @return std::vector<T> 包含 n 个随机数的向量。
@@ -330,10 +330,10 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从 t 分布（Student's t-distribution）的随机数。
+     * @brief 生成 n 个服从 t 分布(Student's t-distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
-     * @param df 自由度（degrees of freedom），df > 0。
+     * @param df 自由度(degrees of freedom)，df > 0。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 包含 n 个随机数的向量。
      */
@@ -346,7 +346,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从 F 分布（Fisher–Snedecor F-distribution）的随机数。
+     * @brief 生成 n 个服从 F 分布(Fisher–Snedecor F-distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
      * @param df1 分子自由度，df1 > 0。
@@ -364,7 +364,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从对数正态分布（Lognormal Distribution）的随机数。
+     * @brief 生成 n 个服从对数正态分布(Lognormal Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
      * @param meanlog 取对数后的均值，默认为 0.0。
@@ -384,7 +384,7 @@ namespace console {
     }
 
     /**
-     * @brief 生成 n 个服从韦布尔分布（Weibull Distribution）的随机数。
+     * @brief 生成 n 个服从韦布尔分布(Weibull Distribution)的随机数。
      * @tparam T 浮点数类型，默认为 double。
      * @param n 生成的随机数个数。
      * @param shape 形状参数 k，shape > 0。
@@ -402,11 +402,11 @@ namespace console {
     }
 
     /**
-     * @brief 从容器中随机抽取指定数量的元素（有放回或无放回）。
+     * @brief 从容器中随机抽取指定数量的元素(有放回或无放回)。
      * @tparam C 容器类型，必须支持 std::begin 和 std::end 迭代器。
      * @param c 要抽样的容器。
      * @param size 抽取的元素数量。
-     * @param replace 是否允许重复抽取（有放回），默认为 false。
+     * @param replace 是否允许重复抽取(有放回)，默认为 false。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<typename C::value_type> 抽取结果的向量。
      * @throw ContainerError 如果容器为空，或 size 超过容器大小且
@@ -444,11 +444,11 @@ namespace console {
     }
 
     /**
-     * @brief 从 std::initializer_list 中随机抽样（重载版本）。
+     * @brief 从 std::initializer_list 中随机抽样(重载版本)。
      * @tparam T 元素类型。
      * @param init 初始化列表。
      * @param size 抽取的元素数量。
-     * @param replace 是否允许重复抽取（有放回），默认为 false。
+     * @param replace 是否允许重复抽取(有放回)，默认为 false。
      * @param gen 使用的随机数引擎，默认为 default_gen()。
      * @return std::vector<T> 抽取结果的向量。
      * @throw ContainerError 如果容器为空，或 size 超过容器大小且

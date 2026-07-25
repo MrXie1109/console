@@ -2,7 +2,7 @@
  * @file crypto.h
  * @brief 提供SHA256、MD5、Base64和AES加密功能的加密库。
  * @details
- * 该库实现了常用的密码学算法，包括哈希函数（SHA256、MD5）、编码转换（Base64）以及对称加密（AES-128-CTR）。
+ * 该库实现了常用的密码学算法，包括哈希函数(SHA256、MD5)、编码转换(Base64)以及对称加密(AES-128-CTR)。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -1329,7 +1329,7 @@ namespace console {
             }
 
             /**
-             * @brief AES加密单个块（128位）。
+             * @brief AES加密单个块(128位)。
              * @param input 输入的16字节明文块。
              * @param output 输出的16字节密文块。
              * @param round_keys 扩展后的轮密钥。
@@ -1353,7 +1353,7 @@ namespace console {
             }
 
             /**
-             * @brief AES解密单个块（128位）。
+             * @brief AES解密单个块(128位)。
              * @param input 输入的16字节密文块。
              * @param output 输出的16字节明文块。
              * @param round_keys 扩展后的轮密钥。
@@ -1377,7 +1377,7 @@ namespace console {
             }
 
             /**
-             * @brief 将密钥填充到16字节（AES-128要求的密钥长度）。
+             * @brief 将密钥填充到16字节(AES-128要求的密钥长度)。
              * @param key 原始密钥字符串。
              * @return std::string 填充后的16字节密钥，不足部分补零。
              * @warning 如果密钥长度超过16字节，多余部分将被截断。
@@ -1415,7 +1415,7 @@ namespace console {
          * @param key 加密密钥，将自动填充或截断至16字节。
          * @return std::string
          * Base64编码后的密文，包含前16字节的初始化向量和加密数据。
-         * @note 返回的密文格式为：初始化向量（16字节）+
+         * @note 返回的密文格式为：初始化向量(16字节)+
          * 密文数据，整体经过Base64编码。
          */
         inline std::string

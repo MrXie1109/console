@@ -2,7 +2,7 @@
  * @file progress.h
  * @brief 提供非侵入式的容器遍历进度条显示。
  * @details
- * 该模块允许你在遍历任何容器（或支持迭代器的范围）时，自动在控制台输出进度条。
+ * 该模块允许你在遍历任何容器(或支持迭代器的范围)时，自动在控制台输出进度条。
  *          进度条样式可通过 BasicProgressConfig 自定义，也提供了几种预定义样式。
  * @author MrXie1109
  * @date 2026
@@ -54,7 +54,7 @@ namespace console {
         using ostream_type = std::basic_ostream<CharT, Traits>;
 
         ostream_type &os;         ///< 输出目标流。
-        int           width;      ///< 进度条的宽度（字符数）。
+        int           width;      ///< 进度条的宽度(字符数)。
         string_type   fill_char;  ///< 已填充部分使用的字符。
         string_type   empty_char; ///< 未填充部分使用的字符。
         string_type   prefix;     ///< 进度条前缀字符串。
@@ -64,7 +64,7 @@ namespace console {
         /**
          * @brief 构造进度条配置对象。
          * @param o   输出流。
-         * @param w   进度条宽度（字符数），默认为 50。
+         * @param w   进度条宽度(字符数)，默认为 50。
          * @param fc  填充字符，默认为 "#"。
          * @param ec  空白字符，默认为 "."。
          * @param pre 前缀字符串，默认为 "["。
@@ -94,7 +94,7 @@ namespace console {
      * @brief 进度条迭代器包装器，用于在遍历容器时显示进度。
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
-     * @tparam Iter 底层迭代器类型（通常为容器的迭代器）。
+     * @tparam Iter 底层迭代器类型(通常为容器的迭代器)。
      * @details 该类返回一个特殊的迭代器，在每次递增时更新并重绘进度条。
      *          用法：将 BasicProgress 对象用于范围 for 循环，例如：
      *          for (auto& item : BasicProgress(container)) { ... }
@@ -239,7 +239,7 @@ namespace console {
      * @brief 创建进度条对象的辅助函数。
      * @tparam CharT 字符类型，默认为 char。
      * @tparam Traits 字符特征类型。
-     * @tparam Cont 容器类型（支持转发引用）。
+     * @tparam Cont 容器类型(支持转发引用)。
      * @param cont  容器。
      * @param pc    进度条配置，默认为默认配置。
      * @return BasicProgress<CharT, Traits, decltype(std::begin(cont))>。

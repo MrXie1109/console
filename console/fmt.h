@@ -65,7 +65,7 @@ namespace console {
             int width = 0;
             /**
              * @brief 精度。
-             * @details 精度（浮点小数位数 / 字符串最大长度），-1为不限制。
+             * @details 精度(浮点小数位数 / 字符串最大长度)，-1为不限制。
              */
             int precision = -1;
             /**
@@ -77,7 +77,7 @@ namespace console {
             CharT type = 0;
             /**
              * @brief 标志 '#'。
-             * @details 标志 '#'：显示进制前缀（0x/0X/0）或强制显示小数点。
+             * @details 标志 '#'：显示进制前缀(0x/0X/0)或强制显示小数点。
              */
             bool hasHash = false;
             /**
@@ -87,7 +87,7 @@ namespace console {
             bool hasPlus = false;
             /**
              * @brief 标志 ' '。
-             * @details 标志 ' '：正数前显示空格（与 '+' 互斥）。
+             * @details 标志 ' '：正数前显示空格(与 '+' 互斥)。
              */
             bool hasSpace = false;
         };
@@ -95,7 +95,7 @@ namespace console {
         /**
          * @brief 解析格式说明符。
          * @details 支持的语法：[[填充]对齐][宽度][:[标志][.精度][类型]]
-         * @param specStr 格式字符串（不含花括号和前导冒号）。
+         * @param specStr 格式字符串(不含花括号和前导冒号)。
          * @param spec 输出的格式说明符。
          * @throw BadFormat 格式非法时抛出。
          */
@@ -361,7 +361,7 @@ namespace console {
         }
 
         /**
-         * @brief 格式化实现（无参数版本，递归终止）。
+         * @brief 格式化实现(无参数版本，递归终止)。
          * @tparam CharT 字符类型。
          * @param os 输出流。
          * @param fmt 格式字符串。
@@ -411,7 +411,7 @@ namespace console {
         }
 
         /**
-         * @brief 格式化实现（有参数版本）。
+         * @brief 格式化实现(有参数版本)。
          * @tparam CharT 字符类型。
          * @tparam T 第一个参数类型。
          * @tparam Args 剩余参数类型。
@@ -484,7 +484,7 @@ namespace console {
     using WFormatSpec = details::BasicFormatSpec<wchar_t>;
 
     /**
-     * @brief 格式化字符串（char 版）。
+     * @brief 格式化字符串(char 版)。
      * @tparam Args 参数类型。
      * @param fmt 格式字符串。
      * @param args 要格式化的参数。
@@ -506,7 +506,7 @@ namespace console {
     }
 
     /**
-     * @brief 格式化字符串（wchar_t 版）。
+     * @brief 格式化字符串(wchar_t 版)。
      * @tparam Args 参数类型。
      * @param fmt 格式字符串。
      * @param args 要格式化的参数。

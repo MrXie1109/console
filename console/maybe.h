@@ -1,8 +1,8 @@
 /**
  * @file maybe.h
- * @brief 提供类似 std::optional 的可选值容器 Maybe，支持空状态（nothing）。
+ * @brief 提供类似 std::optional 的可选值容器 Maybe，支持空状态(nothing)。
  * @details Maybe<T> 可包含一个 T
- * 类型的值或为空（nothing）。提供安全的访问、值提取、默认值等操作。
+ * 类型的值或为空(nothing)。提供安全的访问、值提取、默认值等操作。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -90,7 +90,7 @@ namespace console {
         Maybe(decltype(nothing)) : ptr(nullptr) {}
 
         /**
-         * @brief 获取内部值的引用（非常量）。
+         * @brief 获取内部值的引用(非常量)。
          * @return T& 值的引用。
          * @throw TypeError 若 Maybe 为空。
          */
@@ -100,7 +100,7 @@ namespace console {
         }
 
         /**
-         * @brief 获取内部值的引用（常量）。
+         * @brief 获取内部值的引用(常量)。
          * @return const T& 值的常量引用。
          * @throw TypeError 若 Maybe 为空。
          */
@@ -110,7 +110,7 @@ namespace console {
         }
 
         /**
-         * @brief 从 T 值赋值（拷贝）。
+         * @brief 从 T 值赋值(拷贝)。
          * @param value 要赋值的值。
          * @return const Maybe& *this。
          */
@@ -120,7 +120,7 @@ namespace console {
         }
 
         /**
-         * @brief 从 T 值赋值（移动）。
+         * @brief 从 T 值赋值(移动)。
          * @param value 要赋值的右值。
          * @return const Maybe& *this。
          */
@@ -151,7 +151,7 @@ namespace console {
         }
 
         /**
-         * @brief 赋值为空（nothing）。
+         * @brief 赋值为空(nothing)。
          * @param nothing 标记。
          * @return const Maybe& *this。
          */
@@ -166,7 +166,7 @@ namespace console {
         void reset() { ptr.reset(); }
 
         /**
-         * @brief 重置为新的值（从参数包构造）。
+         * @brief 重置为新的值(从参数包构造)。
          * @tparam Args 参数类型。
          * @param args 转发给 T 的构造函数。
          */
@@ -217,22 +217,22 @@ namespace console {
          */
         bool has_value() const noexcept { return ptr; }
 
-        /// @brief 解引用获取值（非常量），前置条件：has_value() 为 true。
+        /// @brief 解引用获取值(非常量)，前置条件：has_value() 为 true。
         T &operator*() { return *ptr; }
 
-        /// @brief 解引用获取值（常量），前置条件：has_value() 为 true。
+        /// @brief 解引用获取值(常量)，前置条件：has_value() 为 true。
         const T &operator*() const { return *ptr; }
 
-        /// @brief 成员访问运算符（非常量），前置条件：has_value() 为 true。
+        /// @brief 成员访问运算符(非常量)，前置条件：has_value() 为 true。
         T *operator->() { return ptr.get(); }
 
-        /// @brief 成员访问运算符（常量），前置条件：has_value() 为 true。
+        /// @brief 成员访问运算符(常量)，前置条件：has_value() 为 true。
         const T *operator->() const { return ptr.get(); }
 
         /**
          * @brief 返回当前值，若为空则返回提供的默认值。
          * @tparam U 默认值类型。
-         * @param default_value 默认值（可转发）。
+         * @param default_value 默认值(可转发)。
          * @return T 当前值或转换后的默认值。
          */
         template <class U>

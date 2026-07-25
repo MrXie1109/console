@@ -36,13 +36,13 @@ SOFTWARE.
 namespace console {
     /**
      * @class cursor_ptr
-     * @brief 双指针游标智能指针（非数组版本）。
-     * @tparam T 元素类型（非数组）。
+     * @brief 双指针游标智能指针(非数组版本)。
+     * @tparam T 元素类型(非数组)。
      * @details 通过 original_ptr 管理内存生命周期，current_ptr 支持指针运算。
      *          复制构造/赋值仅复制游标位置而不转移所有权，移动构造/赋值转移所有权。
      * @warning 复制赋值要求源对象的生命周期覆盖目标对象的使用期。
      * @warning 指针运算不进行边界检查。
-     * @warning 需确保 delete 与 new 匹配（本版本使用 delete）。
+     * @warning 需确保 delete 与 new 匹配(本版本使用 delete)。
      */
     template <class T>
     class cursor_ptr {
@@ -55,7 +55,7 @@ namespace console {
 
         /**
          * @brief 从原始指针构造，获取所有权。
-         * @param p 指向动态分配内存的指针（使用 new）。
+         * @param p 指向动态分配内存的指针(使用 new)。
          * @note 当前游标位置初始化为 p。
          */
         cursor_ptr(T *p) : original_ptr(p), current_ptr(p) {}
@@ -96,7 +96,7 @@ namespace console {
         operator const T *() const { return current_ptr; }
         /// @}
 
-        /// @brief 析构，释放 original_ptr 指向的内存（使用 delete）。
+        /// @brief 析构，释放 original_ptr 指向的内存(使用 delete)。
         ~cursor_ptr() { delete original_ptr; }
 
         /// @name 自增/自减运算符
@@ -168,7 +168,7 @@ namespace console {
         /// @{
         /**
          * @brief 从原始指针赋值，释放原有内存并接管新指针。
-         * @param p 新指针（使用 new 分配）。
+         * @param p 新指针(使用 new 分配)。
          * @return const cursor_ptr& *this。
          */
         const cursor_ptr &operator=(T *p) {
@@ -208,7 +208,7 @@ namespace console {
         /// @}
 
         /**
-         * @brief 交换两个 cursor_ptr 的内容（包括所有者和游标）。
+         * @brief 交换两个 cursor_ptr 的内容(包括所有者和游标)。
          * @param cp 要交换的对象。
          */
         void swap(cursor_ptr &cp) {
@@ -222,7 +222,7 @@ namespace console {
 
     /**
      * @class cursor_ptr<T[]>
-     * @brief 双指针游标智能指针（数组版本）。
+     * @brief 双指针游标智能指针(数组版本)。
      * @tparam T 数组元素类型。
      * @details 与非数组版本的区别在于析构使用 delete[]，赋值时使用 delete[]
      * 释放原内存。
@@ -239,7 +239,7 @@ namespace console {
 
         /**
          * @brief 从原始数组指针构造，获取所有权。
-         * @param p 指向动态分配的数组（使用 new[]）。
+         * @param p 指向动态分配的数组(使用 new[])。
          */
         cursor_ptr(T *p) : original_ptr(p), current_ptr(p) {}
 
@@ -277,7 +277,7 @@ namespace console {
         operator const T *() const { return current_ptr; }
         /// @}
 
-        /// @brief 析构，释放数组内存（使用 delete[]）。
+        /// @brief 析构，释放数组内存(使用 delete[])。
         ~cursor_ptr() { delete[] original_ptr; }
 
         /// @name 自增/自减

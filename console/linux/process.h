@@ -65,7 +65,7 @@ namespace console {
      * @brief 进程退出状态，包含完整退出信息。
      */
     struct ExitStatus {
-        int  code;        ///< 退出码（正常退出时有效）
+        int  code;        ///< 退出码(正常退出时有效)
         bool signaled;    ///< 是否由信号终止
         int  signal;      ///< 终止信号的编号
         bool core_dumped; ///< 是否产生 core dump
@@ -152,12 +152,12 @@ namespace console {
         ~Process() = default;
 
         /**
-         * @brief 拷贝构造函数（删除）。
+         * @brief 拷贝构造函数(删除)。
          */
         Process(const Process &) = delete;
 
         /**
-         * @brief 拷贝赋值运算符（删除）。
+         * @brief 拷贝赋值运算符(删除)。
          */
         Process &operator=(const Process &) = delete;
 
@@ -196,7 +196,7 @@ namespace console {
 
         /**
          * @brief 经典 fork - 复制当前进程。
-         * @return 父进程返回子进程对象，子进程返回空对象（pid=0）。
+         * @return 父进程返回子进程对象，子进程返回空对象(pid=0)。
          */
         static Process fork() {
             pid_t pid = ::fork();
@@ -251,7 +251,7 @@ namespace console {
         static Process parent() { return Process(getppid()); }
 
         /**
-         * @brief 等待子进程退出（阻塞）。
+         * @brief 等待子进程退出(阻塞)。
          * @return 子进程的 ExitStatus 状态信息。
          */
         ExitStatus wait() const {
@@ -292,7 +292,7 @@ namespace console {
         }
 
         /**
-         * @brief 等待任意子进程退出（阻塞）。
+         * @brief 等待任意子进程退出(阻塞)。
          * @param status 输出参数，存储退出状态信息。
          * @return 退出的子进程对象。
          */

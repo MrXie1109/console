@@ -53,8 +53,8 @@ namespace console {
      * @details 存储命令执行状态码和标准输出内容，对象只能通过 syscmd 函数创建。
      */
     class CmdResult {
-        int status_; ///< 命令退出状态码（0 成功，-1 管道打开失败）
-        std::unique_ptr<std::string> ptr_; ///< 命令输出内容（含 stderr）
+        int status_; ///< 命令退出状态码(0 成功，-1 管道打开失败)
+        std::unique_ptr<std::string> ptr_; ///< 命令输出内容(含 stderr)
 
         /**
          * @brief 私有默认构造函数。
@@ -71,7 +71,7 @@ namespace console {
     public:
         /**
          * @brief 检查命令是否成功执行。
-         * @return true  执行成功（管道打开且退出码为 0）
+         * @return true  执行成功(管道打开且退出码为 0)
          * @return false 执行失败
          */
         bool ok() const { return ptr_ && status_ == 0; }
@@ -92,13 +92,13 @@ namespace console {
 
         /**
          * @brief 获取命令退出状态码。
-         * @return int 退出码（0 成功，非 0 错误，-1 管道打开失败）
+         * @return int 退出码(0 成功，非 0 错误，-1 管道打开失败)
          */
         int status() const { return status_; }
 
         /**
          * @brief 获取命令的标准输出内容。
-         * @return const std::string& 输出内容（含 stderr）
+         * @return const std::string& 输出内容(含 stderr)
          * @warning 请先使用 ok() 或 fail() || error()
          * 检查合法性，否则行为未定义
          */
@@ -109,7 +109,7 @@ namespace console {
      * @brief 执行系统命令并捕获输出。
      * @param exe     可执行文件路径或命令名。
      * @param args    命令行参数列表。
-     * @param kwargs  关键字参数字典（格式：key value）。
+     * @param kwargs  关键字参数字典(格式：key value)。
      * @return CmdResult 包含执行结果的对象。
      * @details 自动合并 stderr 到 stdout，使用 256 字节缓冲区读取输出。
      * @code

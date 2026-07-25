@@ -2,7 +2,7 @@
  * @file strpp.h
  * @brief 提供字符串处理工具函数和格式化类。
  * @details
- * 包含去除空白字符、大小写转换、分割与连接、分区、可变参数转字符串、格式化字符串（f_string）等功能。
+ * 包含去除空白字符、大小写转换、分割与连接、分区、可变参数转字符串、格式化字符串(f_string)等功能。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -52,11 +52,11 @@ namespace console {
      */
 
     /**
-     * @brief 移除字符串左侧的空白字符（空格、制表符等）。
+     * @brief 移除字符串左侧的空白字符(空格、制表符等)。
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
     template <class CharT, class Traits, class Allocator>
@@ -74,7 +74,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
     template <class CharT, class Traits, class Allocator>
@@ -92,7 +92,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
     template <class CharT, class Traits, class Allocator>
@@ -118,8 +118,8 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
-     * @param chars 要删除的字符集（只要字符出现在此集合中就被删除）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
+     * @param chars 要删除的字符集(只要字符出现在此集合中就被删除)。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
     template <class CharT, class Traits, class Allocator>
@@ -140,7 +140,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @param chars 要删除的字符集。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
@@ -162,7 +162,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @param chars 要删除的字符集。
      * @return std::basic_string<CharT, Traits, Allocator> 处理后的新字符串。
      */
@@ -194,7 +194,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @param loc 本地化对象，默认为当前全局 locale。
      * @return std::basic_string<CharT, Traits, Allocator> 大写形式。
      */
@@ -211,7 +211,7 @@ namespace console {
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @param loc 本地化对象，默认为当前全局 locale。
      * @return std::basic_string<CharT, Traits, Allocator> 小写形式。
      */
@@ -224,11 +224,11 @@ namespace console {
     }
 
     /**
-     * @brief 将字符串转换为标题格式（每个单词首字母大写，其余小写）。
+     * @brief 将字符串转换为标题格式(每个单词首字母大写，其余小写)。
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
-     * @param str 要处理的字符串（按值传递，内部修改副本）。
+     * @param str 要处理的字符串(按值传递，内部修改副本)。
      * @param loc 本地化对象，默认为当前全局 locale。
      * @return std::basic_string<CharT, Traits, Allocator> 标题格式的字符串。
      */
@@ -308,7 +308,7 @@ namespace console {
     }
 
     /**
-     * @brief 以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。
+     * @brief 以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
@@ -341,7 +341,7 @@ namespace console {
 
     /**
      * @brief 以分隔符连接容器中的字符串元素。
-     * @tparam T 元素类型（必须支持输出到 std::basic_ostringstream<CharT, Traits>）。
+     * @tparam T 元素类型(必须支持输出到 std::basic_ostringstream<CharT, Traits>)。
      * @tparam CharT 字符类型。
      * @tparam Traits 字符特征类型。
      * @tparam Allocator 内存分配器类型。
@@ -366,7 +366,7 @@ namespace console {
     }
 
     /**
-     * @brief 将任意多个参数转换为字符串并拼接（无分隔符）。
+     * @brief 将任意多个参数转换为字符串并拼接(无分隔符)。
      * @tparam Args 参数类型包。
      * @param args 要转换的参数。
      * @return std::string 所有参数按顺序拼接的结果。
@@ -397,7 +397,7 @@ namespace console {
     }
 
     // ──────────────────────────────────────────────
-    // C 字符串字面量重载（const char*, const wchar_t*）
+    // C 字符串字面量重载(const char*, const wchar_t*)
     // 构造对应的 basic_string 后转发给泛型版本
     // ──────────────────────────────────────────────
 
@@ -487,7 +487,7 @@ namespace console {
         return title(std::wstring(str), loc);
     }
 
-    // ———— C 字符串混用重载（basic_string + const CharT*） ————
+    // ———— C 字符串混用重载(basic_string + const CharT*) ————
 
     /** @copydoc partition */
     template <class CharT, class Traits, class Allocator>
@@ -506,7 +506,7 @@ namespace console {
         return split(text, std::basic_string<CharT, Traits, Allocator>(sep));
     }
 
-    // ———— C 字符串字面量重载（const CharT* + basic_string） ————
+    // ———— C 字符串字面量重载(const CharT* + basic_string) ————
 
     /** @copydoc partition */
     inline BasicPartitionResult<>
