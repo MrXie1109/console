@@ -39,6 +39,7 @@ SOFTWARE.
 #include <tuple>
 
 #include "gen.h"
+#include "params.h"
 #include "sfinae.h"
 
 namespace console {
@@ -1039,9 +1040,6 @@ namespace console {
          * @brief 创建归约适配器。
          * @tparam T 初始值类型。
          * @tparam BinaryOp 二元操作符类型。
-         * @param init 初始值。
-         * @param op 二元操作符。
-         * @return reduce_t<T, BinaryOp> 归约适配器。
          */
         template <class T, class BinaryOp>
         reduce_t<T, BinaryOp> reduce(const T &init, BinaryOp bo) {
@@ -1085,6 +1083,58 @@ namespace console {
         template <class T, class BinaryOp>
         scan_t<T, BinaryOp> scan(T init, BinaryOp op) {
             return scan_t<T, BinaryOp>(init, op);
+        }
+
+        /**
+         * @brief 创建一个算法适配器。
+         * @tparam F 函数类型。
+         * @tparam Args 附加参数类型。
+         */
+        template <class F, class... Args>
+        class algorithm_t {
+            F               func;
+            Params<Args...> params;
+
+        public:
+            /**
+             * @brief 构造函数。
+             * @param func 函数。
+             * @param args 附加参数。
+             */
+            algorithm_t(F func, const Args &...args) :
+                func(func), params(args...) {}
+
+            /**
+             * @brief 管道操作符。
+             * @tparam Gen 生成器类型。
+             * @param gen 生成器。
+             * @return 算法结果。
+             */
+            template <class Gen>
+            friend auto
+            operator|(Gen gen, algorithm_t alg) -> decltype(alg.func(
+                gen.begin(), gen.end(), std::declval<Args>()...)) {
+                return alg.params.apply([&](const Args &...args) {
+                    return alg.func(gen.begin(), gen.end(), args...);
+                });
+            }
+        };
+
+        /**
+         * @brief 创建算法适配器。
+         * @tparam T 函数返回类型。
+         * @tparam Args 附加参数类型。
+         * @param func 函数。
+         * @param args 附加参数。
+         * @return 算法适配器。
+         * @note 通常来说，将此应用于此生成器库所提供的生成器时，
+         *       生成器所提供的迭代器类型是输入迭代器(InputIterator)，
+         *       所以别指望能在上边应用 std::sort 之类的算法，
+         *       如果不是，比如应用于 std::vector，那您随意。
+         */
+        template <class T, class... Args>
+        algorithm_t<T, Args...> algorithm(T func, const Args &...args) {
+            return algorithm_t<T, Args...>(func, args...);
         }
     }
 

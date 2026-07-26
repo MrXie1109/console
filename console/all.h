@@ -52,6 +52,7 @@ SOFTWARE.
 #include "multiarray.h"
 #include "outfwd.h"
 #include "output.h"
+#include "params.h"
 #include "pool.h"
 #include "progress.h"
 #include "put.h"
@@ -79,5 +80,5 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-07-25-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-07-26-MRXIE1109";
 }

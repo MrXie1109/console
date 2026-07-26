@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.6.0 (2026-07-25) -- "What You Want? Exception or Result?")";
+            R"(console version 6.7.0 (2026-07-26) -- "Pipeline Your Algorithms (With Limitations).")";
     }
 
     /**
