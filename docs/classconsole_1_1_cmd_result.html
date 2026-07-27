@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -116,10 +116,10 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab9249a539ec43dcad6ae37f1c79ee2c6" id="r_ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#ab9249a539ec43dcad6ae37f1c79ee2c6">status_</a></td></tr>
-<tr class="memdesc:ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令退出状态码（0 成功，-1 管道打开失败）  <br /></td></tr>
+<tr class="memdesc:ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令退出状态码(0 成功，-1 管道打开失败)  <br /></td></tr>
 <tr class="separator:ab9249a539ec43dcad6ae37f1c79ee2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91078579e58d89d292259e7afb5945da" id="r_a91078579e58d89d292259e7afb5945da"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_cmd_result.html#a91078579e58d89d292259e7afb5945da">ptr_</a></td></tr>
-<tr class="memdesc:a91078579e58d89d292259e7afb5945da"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令输出内容（含 stderr）  <br /></td></tr>
+<tr class="memdesc:a91078579e58d89d292259e7afb5945da"><td class="mdescLeft">&#160;</td><td class="mdescRight">命令输出内容(含 stderr)  <br /></td></tr>
 <tr class="separator:a91078579e58d89d292259e7afb5945da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -244,7 +244,7 @@ false 管道成功打开 </dd></dl>
 </div><div class="memdoc">
 
 <p>检查命令是否成功执行。 </p>
-<dl class="section return"><dt>Returns</dt><dd>true 执行成功（管道打开且退出码为 0） </dd>
+<dl class="section return"><dt>Returns</dt><dd>true 执行成功(管道打开且退出码为 0) </dd>
 <dd>
 false 执行失败 </dd></dl>
 
@@ -274,7 +274,7 @@ false 执行失败 </dd></dl>
 </div><div class="memdoc">
 
 <p>获取命令的标准输出内容。 </p>
-<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; 输出内容（含 stderr） </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; 输出内容(含 stderr) </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>请先使用 <a class="el" href="classconsole_1_1_cmd_result.html#a0581f7d628ecc3a51ce53acad560876f" title="检查命令是否成功执行。">ok()</a> 或 <a class="el" href="classconsole_1_1_cmd_result.html#ad84d88c41bd44cbbb3124eb0ae974e38" title="检查命令执行是否完全失败。">fail()</a> || <a class="el" href="classconsole_1_1_cmd_result.html#af75dd2cefdfafde0672723950594d3a0" title="检查命令是否执行但返回错误码。">error()</a> 检查合法性，否则行为未定义 </dd></dl>
 
 </div>
@@ -303,7 +303,7 @@ false 执行失败 </dd></dl>
 </div><div class="memdoc">
 
 <p>获取命令退出状态码。 </p>
-<dl class="section return"><dt>Returns</dt><dd>int 退出码（0 成功，非 0 错误，-1 管道打开失败） </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int 退出码(0 成功，非 0 错误，-1 管道打开失败) </dd></dl>
 
 </div>
 </div>
@@ -353,7 +353,7 @@ false 执行失败 </dd></dl>
   <table class="params">
     <tr><td class="paramname">exe</td><td>可执行文件路径或命令名。 </td></tr>
     <tr><td class="paramname">args</td><td>命令行参数列表。 </td></tr>
-    <tr><td class="paramname">kwargs</td><td>关键字参数字典（格式：key value）。 </td></tr>
+    <tr><td class="paramname">kwargs</td><td>关键字参数字典(格式：key value)。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -389,7 +389,7 @@ false 执行失败 </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>命令输出内容（含 stderr） </p>
+<p>命令输出内容(含 stderr) </p>
 
 </div>
 </div>
@@ -413,7 +413,7 @@ false 执行失败 </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>命令退出状态码（0 成功，-1 管道打开失败） </p>
+<p>命令退出状态码(0 成功，-1 管道打开失败) </p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ false 执行失败 </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

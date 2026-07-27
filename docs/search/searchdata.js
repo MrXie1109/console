@@ -4,12 +4,12 @@ var indexSectionsWithContent =
   1: "abcdefghiklmnopqrstuvwz",
   2: "cp",
   3: "abcfgiklmoprstv",
-  4: "abcdefghijklmnoprstuvwyz~",
+  4: "abcdefghijklmnopqrstuvwyz~",
   5: "abcdefghiklmnopqrstuvwyz",
   6: "bcdefiklmoprstuvw",
-  7: "ikls",
+  7: "iklqs",
   8: "abcdefghijklmnopqrstuvwxyz",
-  9: "os",
+  9: "cimos",
   10: "_mnpw",
   11: "t字打数标类统视输运随"
 };

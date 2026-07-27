@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -111,7 +111,7 @@ class console::PriorityQueue&lt; T, Container, Compare &gt;</div><p>优先队列
   <table class="tparams">
     <tr><td class="paramname">T</td><td>优先队列中存储的元素类型。 </td></tr>
     <tr><td class="paramname">Container</td><td>底层容器类型，默认为 std::vector&lt;T&gt;。 </td></tr>
-    <tr><td class="paramname">Compare</td><td>比较函数对象类型，默认为 std::less&lt;T&gt;（最大堆）。</td></tr>
+    <tr><td class="paramname">Compare</td><td>比较函数对象类型，默认为 std::less&lt;T&gt;(最大堆)。</td></tr>
   </table>
   </dd>
 </dl>
@@ -119,7 +119,7 @@ class console::PriorityQueue&lt; T, Container, Compare &gt;</div><p>优先队列
 <div class="line">pq.push(3);</div>
 <div class="line">pq.push(1);</div>
 <div class="line">pq.push(4);</div>
-<div class="line"><span class="keywordtype">int</span> value = pq.<a class="code hl_function" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">pop</a>();  <span class="comment">// 返回 4（最大值）并弹出</span></div>
+<div class="line"><span class="keywordtype">int</span> value = pq.<a class="code hl_function" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">pop</a>();  <span class="comment">// 返回 4(最大值)并弹出</span></div>
 <div class="ttc" id="aclassconsole_1_1_priority_queue_html"><div class="ttname"><a href="classconsole_1_1_priority_queue.html">console::PriorityQueue</a></div><div class="ttdoc">优先队列容器适配器，扩展自 std::priority_queue。</div><div class="ttdef"><b>Definition</b> adapter.h:138</div></div>
 <div class="ttc" id="aclassconsole_1_1_priority_queue_html_a693b9ac5331bacd9bd8d74608803ac24"><div class="ttname"><a href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24">console::PriorityQueue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出优先级最高的元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:153</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -174,7 +174,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><div class="memdoc">
 
 <p>弹出优先级最高的元素并返回其值。 </p>
-<dl class="section return"><dt>Returns</dt><dd>typename base_type::value_type 优先级最高的元素的值（通过移动语义返回）。</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>typename base_type::value_type 优先级最高的元素的值(通过移动语义返回)。</dd></dl>
 <p>该方法结合了 top() 和 <a class="el" href="classconsole_1_1_priority_queue.html#a693b9ac5331bacd9bd8d74608803ac24" title="弹出优先级最高的元素并返回其值。">pop()</a> 操作，返回堆顶元素的副本/移动值， 然后将堆顶元素弹出。使用移动语义避免不必要的拷贝。 </p>
 
 </div>
@@ -185,7 +185,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

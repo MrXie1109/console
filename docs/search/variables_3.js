@@ -12,7 +12,7 @@ var searchData=
   ['d8_9',['D8',['../namespaceconsole_1_1pitches.html#abfdef34b1ee5888fc7edd3bd63771eca',1,'console::pitches']]],
   ['d9_10',['D9',['../namespaceconsole_1_1pitches.html#a453be85ec7b25d2d45a471c78e322c87',1,'console::pitches']]],
   ['data_11',['data',['../classconsole_1_1gen_1_1_list.html#a67efe2b5c7c9d7d23478de4073308a1d',1,'console::gen::List::data'],['../classconsole_1_1gen_1_1_cycle.html#aec41d14ab03c0f80a2d0892e402c7c53',1,'console::gen::Cycle::data']]],
-  ['data_5f_12',['data_',['../classconsole_1_1_basic_i_n_i_config.html#a29abd433fdd5ed2d946a9a3478f10197',1,'console::BasicINIConfig']]],
+  ['data_5f_12',['data_',['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html#a10001115c6a9753418d01bfa2bbb282a',1,'console::_V2::MultiArray&lt; T, First, Rest... &gt;::data_'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html#a88fb09fc7ed6752fb2f3c2f9fc131f8e',1,'console::_V2::MultiArray&lt; T, D &gt;::data_'],['../classconsole_1_1_basic_i_n_i_config.html#a29abd433fdd5ed2d946a9a3478f10197',1,'console::BasicINIConfig::data_']]],
   ['dec_13',['dec',['../namespaceconsole_1_1ops.html#a9df67c3b6ca8fee67b756d2a2ab1ce2f',1,'console::ops']]],
   ['default_5fhandler_14',['default_handler',['../classconsole_1_1_table.html#a08e63cc3362c28f70a4183445fc1e39c',1,'console::Table']]],
   ['den_15',['den',['../classconsole_1_1_basic_rational.html#ac03a0b09d5c64c5e9bcf1d7a29aaa0d1',1,'console::BasicRational']]],

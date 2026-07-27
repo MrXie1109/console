@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wfstring_0',['WFString',['../group__strpp.html#gab2a3641c58d67b5e6c73facf0c283c75',1,'console']]],
+  ['wformatspec_0',['WFormatSpec',['../namespaceconsole.html#afb09f18a2441806fec1a67a1f8ce45cb',1,'console']]],
   ['winiconfig_1',['WINIConfig',['../namespaceconsole.html#a19ef09c06d3b55ad789433daf2cb301c',1,'console']]],
   ['winputsettings_2',['WInputSettings',['../namespaceconsole.html#a61e171935e59d15153c3d68c4b98a88c',1,'console']]],
   ['wlogging_3',['WLogging',['../namespaceconsole.html#a51eb5d547189da6b24dad10a98283487',1,'console']]],

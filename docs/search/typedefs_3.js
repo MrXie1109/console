@@ -13,5 +13,6 @@ var searchData=
   ['enable_5fif_5fnot_5fstring_10',['enable_if_not_string',['../group__sfinae.html#ga51a47a7458af444e26c2e4c129e6a96e',1,'console']]],
   ['enable_5fif_5fprintable_11',['enable_if_printable',['../group__sfinae.html#ga78de4b2e743481f73a60ab6fd2c873b1',1,'console']]],
   ['enable_5fif_5fstring_12',['enable_if_string',['../group__sfinae.html#ga087845fe3cc622168b486a851de2451a',1,'console']]],
-  ['enable_5fif_5fw_5fprintable_13',['enable_if_w_printable',['../group__sfinae.html#ga2b0eccc48aa11b0534f7f7f1dfcaf03a',1,'console']]]
+  ['enable_5fif_5fw_5fprintable_13',['enable_if_w_printable',['../group__sfinae.html#ga2b0eccc48aa11b0534f7f7f1dfcaf03a',1,'console']]],
+  ['error_5ftype_14',['error_type',['../classconsole_1_1_result.html#af441032de42b930e44f43448b4452f5f',1,'console::Result']]]
 ];

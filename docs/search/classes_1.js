@@ -2,7 +2,7 @@ var searchData=
 [
   ['badformat_0',['BadFormat',['../classconsole_1_1_bad_format.html',1,'console']]],
   ['base_1',['Base',['../structconsole_1_1_item_1_1_base.html',1,'console::Item']]],
-  ['basicfstring_2',['BasicFString',['../classconsole_1_1_basic_f_string.html',1,'console']]],
+  ['basicformatspec_2',['BasicFormatSpec',['../structconsole_1_1details_1_1_basic_format_spec.html',1,'console::details']]],
   ['basiciniconfig_3',['BasicINIConfig',['../classconsole_1_1_basic_i_n_i_config.html',1,'console']]],
   ['basicinputsettings_4',['BasicInputSettings',['../structconsole_1_1_basic_input_settings.html',1,'console']]],
   ['basiclogging_5',['BasicLogging',['../classconsole_1_1_basic_logging.html',1,'console']]],

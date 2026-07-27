@@ -12,5 +12,7 @@ var searchData=
   ['englishhorn_9',['EnglishHorn',['../namespaceconsole.html#ac3066e557db972dbb8670effba117592a3c7a0046df6301dc164ba31b7b4223c9',1,'console']]],
   ['enter_10',['Enter',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af1851d5600eae616ee802a31ac74701b',1,'console']]],
   ['error_11',['ERROR',['../classconsole_1_1_basic_logging.html#ae6dc2795c66c77526b372ef7b74e3f4cabb1ca97ec761fc37101737ba0aa2e7c5',1,'console::BasicLogging']]],
-  ['esc_12',['Esc',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d',1,'console']]]
+  ['esc_12',['Esc',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a91f4253ca587ca8ac4e63b9ceb351f5d',1,'console']]],
+  ['excelexc_13',['ExcelExc',['../group__matools.html#gga7121b3eb44b8ca054098798cd95607e3a01aea9bc1c5e7ff5bf21e8585a21aa25',1,'console']]],
+  ['excelinc_14',['ExcelInc',['../group__matools.html#gga7121b3eb44b8ca054098798cd95607e3a6756b27ab5a0ed38273738bc86de9b50',1,'console']]]
 ];

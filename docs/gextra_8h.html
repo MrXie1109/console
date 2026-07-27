@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -94,6 +94,7 @@ $(function() {
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &quot;<a class="el" href="gen_8h_source.html">gen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="params_8h_source.html">params.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sfinae_8h_source.html">sfinae.h</a>&quot;</code><br />
 </div>
 <p><a href="gextra_8h_source.html">Go to the source code of this file.</a></p>
@@ -125,10 +126,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">调试生成器，打印每个元素的值。  <a href="classconsole_1_1gen_1_1_debug.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_take_until.html">console::gen::TakeUntil&lt; Gen, Pred &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立（包含第一个满足条件的元素）。  <a href="classconsole_1_1gen_1_1_take_until.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立(包含第一个满足条件的元素)。  <a href="classconsole_1_1gen_1_1_take_until.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_drop_until.html">console::gen::DropUntil&lt; Gen, Pred &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立（跳过第一个满足条件的元素）。  <a href="classconsole_1_1gen_1_1_drop_until.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立(跳过第一个满足条件的元素)。  <a href="classconsole_1_1gen_1_1_drop_until.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html">console::gen::Pipeline&lt; Op &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#details">More...</a><br /></td></tr>
@@ -142,27 +143,30 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1_scan.html">console::gen::Scan&lt; Gen, T, BinaryOp &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1window__t.html">console::gen::window_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1window__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1window__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1chunk__t.html">console::gen::chunk_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">分块适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1chunk__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">分块适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1chunk__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1step__by__t.html">console::gen::step_by_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">步进适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1step__by__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">步进适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1step__by__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1debug__t.html">console::gen::debug_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">调试适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1debug__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">调试适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1debug__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1take__until__t.html">console::gen::take_until_t&lt; Pred &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1take__until__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取元素直到谓词成立适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1take__until__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1drop__until__t.html">console::gen::drop_until_t&lt; Pred &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立适配器（用于管道操作符）。  <a href="classconsole_1_1gen_1_1drop__until__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过元素直到谓词成立适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1drop__until__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1reduce__t.html">console::gen::reduce_t&lt; T, BinaryOp &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">归约适配器，将生成器所有元素归约为单个值。  <a href="classconsole_1_1gen_1_1reduce__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1scan__t.html">console::gen::scan_t&lt; T, BinaryOp &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1gen_1_1algorithm__t.html">console::gen::algorithm_t&lt; F, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个算法适配器。  <a href="classconsole_1_1gen_1_1algorithm__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_pow.html">console::ops::Pow&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">幂运算变换器。  <a href="structconsole_1_1ops_1_1_pow.html#details">More...</a><br /></td></tr>
@@ -171,7 +175,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">自然指数变换器。  <a href="structconsole_1_1ops_1_1exp__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1log10__t.html">console::ops::log10_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">常用对数变换器（以10为底）。  <a href="structconsole_1_1ops_1_1log10__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">常用对数变换器(以10为底)。  <a href="structconsole_1_1ops_1_1log10__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1sin__t.html">console::ops::sin_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">正弦变换器。  <a href="structconsole_1_1ops_1_1sin__t.html#details">More...</a><br /></td></tr>
@@ -237,10 +241,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">范围平均值变换器。  <a href="structconsole_1_1ops_1_1average__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_between.html">console::ops::Between&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词（闭区间）。  <a href="structconsole_1_1ops_1_1_between.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词(闭区间)。  <a href="structconsole_1_1ops_1_1_between.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_between_exclusive.html">console::ops::BetweenExclusive&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词（开区间）。  <a href="structconsole_1_1ops_1_1_between_exclusive.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词(开区间)。  <a href="structconsole_1_1ops_1_1_between_exclusive.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1ops_1_1_divisible_by.html">console::ops::DivisibleBy&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">整除谓词。  <a href="structconsole_1_1ops_1_1_divisible_by.html#details">More...</a><br /></td></tr>
@@ -355,6 +359,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af4c5a226735c769331244cc6badb0e06"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1scan__t.html">scan_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, BinaryOp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#af4c5a226735c769331244cc6badb0e06">console::gen::scan</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> init, BinaryOp op)</td></tr>
 <tr class="memdesc:af4c5a226735c769331244cc6badb0e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个扫描适配器。  <br /></td></tr>
 <tr class="separator:af4c5a226735c769331244cc6badb0e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c0255622d66c37ac7a2e3fa05e1ac4" id="r_aa7c0255622d66c37ac7a2e3fa05e1ac4"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class... Args&gt; </td></tr>
+<tr class="memitem:aa7c0255622d66c37ac7a2e3fa05e1ac4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classconsole_1_1gen_1_1algorithm__t.html">algorithm_t</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, Args... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1gen.html#aa7c0255622d66c37ac7a2e3fa05e1ac4">console::gen::algorithm</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> func, const Args &amp;...args)</td></tr>
+<tr class="memdesc:aa7c0255622d66c37ac7a2e3fa05e1ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建算法适配器。  <br /></td></tr>
+<tr class="separator:aa7c0255622d66c37ac7a2e3fa05e1ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6" id="r_a7c857359f52b8826f147c0362430bea6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:a7c857359f52b8826f147c0362430bea6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1ops_1_1_pow.html">Pow</a>&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceconsole_1_1ops.html#a7c857359f52b8826f147c0362430bea6">console::ops::pow</a> (<a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="el" href="namespaceconsole_1_1ops.html#af71c083953ee9d1b39f2ffa12bd04817">exp</a>)</td></tr>
 <tr class="memdesc:a7c857359f52b8826f147c0362430bea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建幂运算变换器。  <br /></td></tr>
@@ -460,7 +468,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

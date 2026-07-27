@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -103,7 +103,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa8edbce458cbb132431634fbf9798d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造 Table。  <br /></td></tr>
 <tr class="separator:aa8edbce458cbb132431634fbf9798d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75586acf85b7f59e2b939c0cd5e40ff7" id="r_a75586acf85b7f59e2b939c0cd5e40ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_table.html#a75586acf85b7f59e2b939c0cd5e40ff7">add</a> (const std::type_index &amp;type1, const std::type_index &amp;type2, <a class="el" href="classconsole_1_1_table.html#a3ce14c671704880213c999838c571176">FunctionType</a> func)</td></tr>
-<tr class="memdesc:a75586acf85b7f59e2b939c0cd5e40ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册一个类型对的处理函数（非对称）。  <br /></td></tr>
+<tr class="memdesc:a75586acf85b7f59e2b939c0cd5e40ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册一个类型对的处理函数(非对称)。  <br /></td></tr>
 <tr class="separator:a75586acf85b7f59e2b939c0cd5e40ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e22533711f214add8c730e8cbf10193" id="r_a2e22533711f214add8c730e8cbf10193"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_table.html#a2e22533711f214add8c730e8cbf10193">add_symmetric</a> (const std::type_info &amp;type1, const std::type_info &amp;type2, <a class="el" href="classconsole_1_1_table.html#a3ce14c671704880213c999838c571176">FunctionType</a> func)</td></tr>
 <tr class="memdesc:a2e22533711f214add8c730e8cbf10193"><td class="mdescLeft">&#160;</td><td class="mdescRight">对称地注册一个类型对的处理函数。  <br /></td></tr>
@@ -152,7 +152,7 @@ class console::Table&lt; T, F &gt;</div><p>双重分派函数表，用于根据�
   </table>
   </dd>
 </dl>
-<p>该类维护一个从类型对到处理函数的映射。当需要处理两个对象时， 根据它们的实际类型（通过 typeid 获取）查找对应的处理函数并调用。 支持非对称和对称注册（自动注册两个方向）。 </p><div class="fragment"><div class="line"><span class="comment">// 使用示例：</span></div>
+<p>该类维护一个从类型对到处理函数的映射。当需要处理两个对象时， 根据它们的实际类型(通过 typeid 获取)查找对应的处理函数并调用。 支持非对称和对称注册(自动注册两个方向)。 </p><div class="fragment"><div class="line"><span class="comment">// 使用示例：</span></div>
 <div class="line"><a class="code hl_class" href="classconsole_1_1_table.html">Table&lt;Shape&gt;</a> collisionTable;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>Shape { ... };     <span class="comment">// 提供了 collide 接口，调用</span></div>
@@ -292,7 +292,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </table>
 </div><div class="memdoc">
 
-<p>注册一个类型对的处理函数（非对称）。 </p>
+<p>注册一个类型对的处理函数(非对称)。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type1</td><td>第一个对象的类型信息。 </td></tr>
@@ -399,8 +399,8 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <p>根据两个对象的运行时类型调用对应的处理函数。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>第一个对象（基类引用）。 </td></tr>
-    <tr><td class="paramname">b</td><td>第二个对象（基类引用）。</td></tr>
+    <tr><td class="paramname">a</td><td>第一个对象(基类引用)。 </td></tr>
+    <tr><td class="paramname">b</td><td>第二个对象(基类引用)。</td></tr>
   </table>
   </dd>
 </dl>
@@ -766,7 +766,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

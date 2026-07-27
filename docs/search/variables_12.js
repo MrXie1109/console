@@ -13,5 +13,6 @@ var searchData=
   ['to_5fstring_10',['to_string',['../namespaceconsole_1_1ops.html#ab59d5be9182b9d249d70ab5f59ae3d11',1,'console::ops']]],
   ['to_5fupper_11',['to_upper',['../namespaceconsole_1_1ops.html#aa5e0327ff1a64a33463396f0e3394cce',1,'console::ops']]],
   ['total_5f_12',['total_',['../classconsole_1_1_basic_progress.html#ad5da6f2c3657992ad86e31141c0e74f1',1,'console::BasicProgress::total_'],['../classconsole_1_1_basic_progress_1_1iterator.html#a72b5f1bcfe46ae50857a70a26271acf1',1,'console::BasicProgress::iterator::total_']]],
-  ['trim_13',['trim',['../namespaceconsole_1_1ops.html#aa9892ec009146576dc57cdd32d6cefa0',1,'console::ops']]]
+  ['trim_13',['trim',['../namespaceconsole_1_1ops.html#aa9892ec009146576dc57cdd32d6cefa0',1,'console::ops']]],
+  ['type_14',['type',['../structconsole_1_1details_1_1_basic_format_spec.html#a3087eb179ee06f2707029a96b1531ea8',1,'console::details::BasicFormatSpec']]]
 ];

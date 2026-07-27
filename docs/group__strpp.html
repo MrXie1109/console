@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -86,9 +86,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconsole_1_1_basic_partition_result.html">console::BasicPartitionResult&lt; CharT, Traits, Allocator &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串分区结果，包含左部分、分隔符、右部分。  <a href="structconsole_1_1_basic_partition_result.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconsole_1_1_basic_f_string.html">console::BasicFString&lt; CharT, Traits, Allocator &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化字符串类，支持使用 <code>%</code> 运算符进行占位符 <code>{}</code> 替换。  <a href="classconsole_1_1_basic_f_string.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -98,18 +95,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga2d5628b322b802571b78ce05f21ee71b" id="r_ga2d5628b322b802571b78ce05f21ee71b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga2d5628b322b802571b78ce05f21ee71b">console::WPartitionResult</a> = <a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; wchar_t &gt;</td></tr>
 <tr class="memdesc:ga2d5628b322b802571b78ce05f21ee71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicPartitionResult&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
 <tr class="separator:ga2d5628b322b802571b78ce05f21ee71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga49dbd17a53f450112ec4d2b5c17a9180" id="r_ga49dbd17a53f450112ec4d2b5c17a9180"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga49dbd17a53f450112ec4d2b5c17a9180">console::FString</a> = <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt; char &gt;</td></tr>
-<tr class="memdesc:ga49dbd17a53f450112ec4d2b5c17a9180"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicFString&lt;char&gt; 的类型别名。  <br /></td></tr>
-<tr class="separator:ga49dbd17a53f450112ec4d2b5c17a9180"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab2a3641c58d67b5e6c73facf0c283c75" id="r_gab2a3641c58d67b5e6c73facf0c283c75"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab2a3641c58d67b5e6c73facf0c283c75">console::WFString</a> = <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt; wchar_t &gt;</td></tr>
-<tr class="memdesc:gab2a3641c58d67b5e6c73facf0c283c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">BasicFString&lt;wchar_t&gt; 的类型别名。  <br /></td></tr>
-<tr class="separator:gab2a3641c58d67b5e6c73facf0c283c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gadd772fd6f826996e368030cfe30a54d3" id="r_gadd772fd6f826996e368030cfe30a54d3"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:gadd772fd6f826996e368030cfe30a54d3"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gadd772fd6f826996e368030cfe30a54d3">console::ltrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str)</td></tr>
-<tr class="memdesc:gadd772fd6f826996e368030cfe30a54d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧的空白字符（空格、制表符等）。  <br /></td></tr>
+<tr class="memdesc:gadd772fd6f826996e368030cfe30a54d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除字符串左侧的空白字符(空格、制表符等)。  <br /></td></tr>
 <tr class="separator:gadd772fd6f826996e368030cfe30a54d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac4597ca0a9709794842153324137b3d2" id="r_gac4597ca0a9709794842153324137b3d2"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:gac4597ca0a9709794842153324137b3d2"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gac4597ca0a9709794842153324137b3d2">console::rtrim</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str)</td></tr>
@@ -141,7 +132,7 @@ Functions</h2></td></tr>
 <tr class="separator:gae390b09cd3f89ac4047a34b7afc09089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga268a5425324fe0c0842e50a6ff50034f" id="r_ga268a5425324fe0c0842e50a6ff50034f"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:ga268a5425324fe0c0842e50a6ff50034f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga268a5425324fe0c0842e50a6ff50034f">console::title</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::locale &amp;loc=std::locale{})</td></tr>
-<tr class="memdesc:ga268a5425324fe0c0842e50a6ff50034f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。  <br /></td></tr>
+<tr class="memdesc:ga268a5425324fe0c0842e50a6ff50034f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式(每个单词首字母大写，其余小写)。  <br /></td></tr>
 <tr class="separator:ga268a5425324fe0c0842e50a6ff50034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9fe0314ab85f751be52d0b9faf9ad7a7" id="r_ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga9fe0314ab85f751be52d0b9faf9ad7a7">console::partition</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep)</td></tr>
@@ -149,7 +140,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga9fe0314ab85f751be52d0b9faf9ad7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadf1d8329691187d570dd3ec750aff417" id="r_gadf1d8329691187d570dd3ec750aff417"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:gadf1d8329691187d570dd3ec750aff417"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT, Traits, Allocator &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gadf1d8329691187d570dd3ec750aff417">console::split</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep=std::basic_string&lt; CharT, Traits, Allocator &gt;{1, CharT{' '}})</td></tr>
-<tr class="memdesc:gadf1d8329691187d570dd3ec750aff417"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。  <br /></td></tr>
+<tr class="memdesc:gadf1d8329691187d570dd3ec750aff417"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。  <br /></td></tr>
 <tr class="separator:gadf1d8329691187d570dd3ec750aff417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e48cb5a9cec4bde4102f0ec7ebfe005" id="r_ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class CharT  = char, class Traits  = std::char_traits&lt;CharT&gt;, class Allocator  = std::allocator&lt;CharT&gt;&gt; </td></tr>
 <tr class="memitem:ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga8e48cb5a9cec4bde4102f0ec7ebfe005">console::join</a> (const std::vector&lt; <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;vec, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep=std::basic_string&lt; CharT, Traits, Allocator &gt;{})</td></tr>
@@ -157,7 +148,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga8e48cb5a9cec4bde4102f0ec7ebfe005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8" id="r_gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8">console::to_string</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">将任意多个参数转换为字符串并拼接（无分隔符）。  <br /></td></tr>
+<tr class="memdesc:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">将任意多个参数转换为字符串并拼接(无分隔符)。  <br /></td></tr>
 <tr class="separator:gaa6b1a779bfc2be5e95c2a9db90e5bea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabba5c1dd875f63645bf0625b990a3d53" id="r_gabba5c1dd875f63645bf0625b990a3d53"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator , class... Args&gt; </td></tr>
 <tr class="memitem:gabba5c1dd875f63645bf0625b990a3d53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gabba5c1dd875f63645bf0625b990a3d53">console::from_string</a> (std::basic_string&lt; CharT, Traits, Allocator &gt; str, Args &amp;...args)</td></tr>
@@ -200,10 +191,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac4e363bfff2608570677db5664018436"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为小写。    <br /></td></tr>
 <tr class="separator:gac4e363bfff2608570677db5664018436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab1db2a4a9089e3d4ee5614092faeefde" id="r_gab1db2a4a9089e3d4ee5614092faeefde"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gab1db2a4a9089e3d4ee5614092faeefde">console::title</a> (const char *str, const std::locale &amp;loc=std::locale{})</td></tr>
-<tr class="memdesc:gab1db2a4a9089e3d4ee5614092faeefde"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。    <br /></td></tr>
+<tr class="memdesc:gab1db2a4a9089e3d4ee5614092faeefde"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式(每个单词首字母大写，其余小写)。    <br /></td></tr>
 <tr class="separator:gab1db2a4a9089e3d4ee5614092faeefde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf59c842b61de6d580483f8b154bda257" id="r_gaf59c842b61de6d580483f8b154bda257"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaf59c842b61de6d580483f8b154bda257">console::title</a> (const wchar_t *str, const std::locale &amp;loc=std::locale{})</td></tr>
-<tr class="memdesc:gaf59c842b61de6d580483f8b154bda257"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式（每个单词首字母大写，其余小写）。    <br /></td></tr>
+<tr class="memdesc:gaf59c842b61de6d580483f8b154bda257"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为标题格式(每个单词首字母大写，其余小写)。    <br /></td></tr>
 <tr class="separator:gaf59c842b61de6d580483f8b154bda257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace17b55da8e23c5dc9789cca42a719c6" id="r_gace17b55da8e23c5dc9789cca42a719c6"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:gace17b55da8e23c5dc9789cca42a719c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&lt; CharT, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#gace17b55da8e23c5dc9789cca42a719c6">console::partition</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const CharT *sep)</td></tr>
@@ -211,7 +202,7 @@ Functions</h2></td></tr>
 <tr class="separator:gace17b55da8e23c5dc9789cca42a719c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga70309132aae37a14b842cbaa572bb249" id="r_ga70309132aae37a14b842cbaa572bb249"><td class="memTemplParams" colspan="2">template&lt;class CharT , class Traits , class Allocator &gt; </td></tr>
 <tr class="memitem:ga70309132aae37a14b842cbaa572bb249"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT, Traits, Allocator &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga70309132aae37a14b842cbaa572bb249">console::split</a> (const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;text, const CharT *sep)</td></tr>
-<tr class="memdesc:ga70309132aae37a14b842cbaa572bb249"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="memdesc:ga70309132aae37a14b842cbaa572bb249"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。    <br /></td></tr>
 <tr class="separator:ga70309132aae37a14b842cbaa572bb249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga65843ee37833fced56fa9446d76b797a" id="r_ga65843ee37833fced56fa9446d76b797a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconsole_1_1_basic_partition_result.html">BasicPartitionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#ga65843ee37833fced56fa9446d76b797a">console::partition</a> (const char *text, const std::string &amp;sep)</td></tr>
 <tr class="memdesc:ga65843ee37833fced56fa9446d76b797a"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。    <br /></td></tr>
@@ -220,31 +211,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga38ed7ab11ef2369fa996d15ef86e3780"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串中查找第一个分隔符，并返回分隔符之前、分隔符本身、分隔符之后的三部分。    <br /></td></tr>
 <tr class="separator:ga38ed7ab11ef2369fa996d15ef86e3780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac3356f1c370d8e40c71a1aa91cc227bf" id="r_gac3356f1c370d8e40c71a1aa91cc227bf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gac3356f1c370d8e40c71a1aa91cc227bf">console::split</a> (const char *text, const std::string &amp;sep=&quot; &quot;)</td></tr>
-<tr class="memdesc:gac3356f1c370d8e40c71a1aa91cc227bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="memdesc:gac3356f1c370d8e40c71a1aa91cc227bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。    <br /></td></tr>
 <tr class="separator:gac3356f1c370d8e40c71a1aa91cc227bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa5fa73f5b7a977161fca0d7c83071e00" id="r_gaa5fa73f5b7a977161fca0d7c83071e00"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::wstring &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strpp.html#gaa5fa73f5b7a977161fca0d7c83071e00">console::split</a> (const wchar_t *text, const std::wstring &amp;sep=L&quot; &quot;)</td></tr>
-<tr class="memdesc:gaa5fa73f5b7a977161fca0d7c83071e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。    <br /></td></tr>
+<tr class="memdesc:gaa5fa73f5b7a977161fca0d7c83071e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。    <br /></td></tr>
 <tr class="separator:gaa5fa73f5b7a977161fca0d7c83071e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>字符串修剪、转换、分割、连接、格式化等工具。 </p>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga49dbd17a53f450112ec4d2b5c17a9180" name="ga49dbd17a53f450112ec4d2b5c17a9180"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga49dbd17a53f450112ec4d2b5c17a9180">&#9670;&#160;</a></span>FString</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="group__strpp.html#ga49dbd17a53f450112ec4d2b5c17a9180">console::FString</a> = typedef <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt;char&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BasicFString&lt;char&gt; 的类型别名。 </p>
-
-</div>
-</div>
 <a id="ga56a7f4a5d1fd644ec9c2fe38147b7c70" name="ga56a7f4a5d1fd644ec9c2fe38147b7c70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga56a7f4a5d1fd644ec9c2fe38147b7c70">&#9670;&#160;</a></span>PartitionResult</h2>
 
@@ -258,22 +233,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>BasicPartitionResult&lt;char&gt; 的类型别名。 </p>
-
-</div>
-</div>
-<a id="gab2a3641c58d67b5e6c73facf0c283c75" name="gab2a3641c58d67b5e6c73facf0c283c75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab2a3641c58d67b5e6c73facf0c283c75">&#9670;&#160;</a></span>WFString</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="group__strpp.html#gab2a3641c58d67b5e6c73facf0c283c75">console::WFString</a> = typedef <a class="el" href="classconsole_1_1_basic_f_string.html">BasicFString</a>&lt;wchar_t&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>BasicFString&lt;wchar_t&gt; 的类型别名。 </p>
 
 </div>
 </div>
@@ -373,7 +332,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 <p>以分隔符连接容器中的字符串元素。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>元素类型（必须支持输出到 std::basic_ostringstream&lt;CharT, Traits&gt;）。 </td></tr>
+    <tr><td class="paramname">T</td><td>元素类型(必须支持输出到 std::basic_ostringstream&lt;CharT, Traits&gt;)。 </td></tr>
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
     <tr><td class="paramname">Traits</td><td>字符特征类型。 </td></tr>
     <tr><td class="paramname">Allocator</td><td>内存分配器类型。 </td></tr>
@@ -436,7 +395,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -490,7 +449,7 @@ template&lt;class <a class="el" href="namespaceconsole.html#a506ee9cef0c6d79e2e8
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -538,7 +497,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -697,7 +656,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>移除字符串左侧的空白字符（空格、制表符等）。 </p>
+<p>移除字符串左侧的空白字符(空格、制表符等)。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -708,7 +667,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -755,8 +714,8 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
-    <tr><td class="paramname">chars</td><td>要删除的字符集（只要字符出现在此集合中就被删除）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
+    <tr><td class="paramname">chars</td><td>要删除的字符集(只要字符出现在此集合中就被删除)。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1133,7 +1092,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1180,7 +1139,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">chars</td><td>要删除的字符集。 </td></tr>
   </table>
   </dd>
@@ -1223,7 +1182,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。   </p>
+<p>以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1272,7 +1231,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。   </p>
+<p>以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1321,7 +1280,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。 </p>
+<p>以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1376,7 +1335,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>以分隔符分割字符串（类似 Python 的 split，默认按空格分割）。   </p>
+<p>以分隔符分割字符串(类似 Python 的 split，默认按空格分割)。   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1431,7 +1390,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>将字符串转换为标题格式（每个单词首字母大写，其余小写）。   </p>
+<p>将字符串转换为标题格式(每个单词首字母大写，其余小写)。   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1442,7 +1401,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1485,7 +1444,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>将字符串转换为标题格式（每个单词首字母大写，其余小写）。   </p>
+<p>将字符串转换为标题格式(每个单词首字母大写，其余小写)。   </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1496,7 +1455,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1533,7 +1492,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>将字符串转换为标题格式（每个单词首字母大写，其余小写）。 </p>
+<p>将字符串转换为标题格式(每个单词首字母大写，其余小写)。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
@@ -1544,7 +1503,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1571,7 +1530,7 @@ template&lt;class... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>将任意多个参数转换为字符串并拼接（无分隔符）。 </p>
+<p>将任意多个参数转换为字符串并拼接(无分隔符)。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Args</td><td>参数类型包。 </td></tr>
@@ -1749,7 +1708,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1796,7 +1755,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">chars</td><td>要删除的字符集。 </td></tr>
   </table>
   </dd>
@@ -1850,7 +1809,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1904,7 +1863,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1952,7 +1911,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>要处理的字符串（按值传递，内部修改副本）。 </td></tr>
+    <tr><td class="paramname">str</td><td>要处理的字符串(按值传递，内部修改副本)。 </td></tr>
     <tr><td class="paramname">loc</td><td>本地化对象，默认为当前全局 locale。 </td></tr>
   </table>
   </dd>
@@ -1964,7 +1923,7 @@ template&lt;class CharT , class Traits , class Allocator &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

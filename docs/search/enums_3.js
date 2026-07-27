@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['signal_0',['Signal',['../namespaceconsole.html#aad4383f95f82ad022d9ed4fb47f6c0f2',1,'console']]]
+  ['quantilemethod_0',['QuantileMethod',['../group__matools.html#ga7121b3eb44b8ca054098798cd95607e3',1,'console']]]
 ];

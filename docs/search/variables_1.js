@@ -39,5 +39,8 @@ var searchData=
   ['brightmagenta_36',['BrightMagenta',['../namespaceconsole_1_1color.html#a9856cccee07aa6cb6841026eca349f60',1,'console::color']]],
   ['brightred_37',['BrightRed',['../namespaceconsole_1_1color.html#a64bd4800ca30a89d23dfb8013ace3563',1,'console::color']]],
   ['brightwhite_38',['BrightWhite',['../namespaceconsole_1_1color.html#adbaf1749e06e03bd3f40388a89450ea0',1,'console::color']]],
-  ['brightyellow_39',['BrightYellow',['../namespaceconsole_1_1color.html#a368522b9caa25abb157355ac16699c01',1,'console::color']]]
+  ['brightyellow_39',['BrightYellow',['../namespaceconsole_1_1color.html#a368522b9caa25abb157355ac16699c01',1,'console::color']]],
+  ['buffer_40',['buffer',['../classconsole_1_1_result.html#a78d64c70c0c0aeaf16bb07ce06926bf3',1,'console::Result']]],
+  ['buffer_5falign_41',['buffer_align',['../classconsole_1_1_result.html#a02d79c540cb1b88889515606a4805da5',1,'console::Result']]],
+  ['buffer_5fsize_42',['buffer_size',['../classconsole_1_1_result.html#a1185d289cccfd8442855c4c91d9e03b5',1,'console::Result']]]
 ];

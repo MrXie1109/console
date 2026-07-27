@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.2.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;6.8.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -285,7 +285,7 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT, <span class="keyword">class</span> Traits&gt;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keyword">inline</span> std::basic_ostream&lt;CharT, Traits&gt; &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keyword">inline</span> std::basic_ostream&lt;CharT, Traits&gt; &amp;<a class="code hl_function" href="namespaceconsole.html#abde8535c0df528519ffa6fd27219d0ae">operator&lt;&lt;</a>(</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        std::basic_ostream&lt;CharT, Traits&gt; &amp;os, <span class="keyword">const</span> View&lt;std::string&gt; &amp;sv) {</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = sv.begin(); it != sv.end(); ++it) os &lt;&lt; *it;</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">return</span> os;</div>
@@ -293,7 +293,7 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT, <span class="keyword">class</span> Traits, <span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    std::basic_ostream&lt;CharT, Traits&gt; &amp;<a class="code hl_function" href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">operator&lt;&lt;</a>(</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    std::basic_ostream&lt;CharT, Traits&gt; &amp;<a class="code hl_function" href="namespaceconsole.html#abde8535c0df528519ffa6fd27219d0ae">operator&lt;&lt;</a>(</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        std::basic_ostream&lt;CharT, Traits&gt; &amp;os, <span class="keyword">const</span> View&lt;Container&gt; &amp;v) {</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordflow">return</span> os &lt;&lt; v.collect();</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    }</div>
@@ -416,7 +416,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassconsole_1_1_view_3_01const_01_t_0f_0e_4_html_aad86f8ac58b78722f28da244a2799bd9"><div class="ttname"><a href="classconsole_1_1_view_3_01const_01_t_0f_0e_4.html#aad86f8ac58b78722f28da244a2799bd9">console::View&lt; const T[]&gt;::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition</b> view.h:249</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_3_01const_01_t_0f_0e_4_html_ad07535a1ea9106659455fca31558f0ae"><div class="ttname"><a href="classconsole_1_1_view_3_01const_01_t_0f_0e_4.html#ad07535a1ea9106659455fca31558f0ae">console::View&lt; const T[]&gt;::const_iterator</a></div><div class="ttdeci">const T * const_iterator</div><div class="ttdef"><b>Definition</b> view.h:239</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_3_01const_01_t_0f_0e_4_html_aea472d9454fd304a6334e2a762474f0a"><div class="ttname"><a href="classconsole_1_1_view_3_01const_01_t_0f_0e_4.html#aea472d9454fd304a6334e2a762474f0a">console::View&lt; const T[]&gt;::at</a></div><div class="ttdeci">const T &amp; at(size_t pos) const</div><div class="ttdef"><b>Definition</b> view.h:253</div></div>
-<div class="ttc" id="aclassconsole_1_1_view_html"><div class="ttname"><a href="classconsole_1_1_view.html">console::View</a></div><div class="ttdoc">容器的非拥有视图（可变版本）。</div><div class="ttdef"><b>Definition</b> view.h:56</div></div>
+<div class="ttc" id="aclassconsole_1_1_view_html"><div class="ttname"><a href="classconsole_1_1_view.html">console::View</a></div><div class="ttdoc">容器的非拥有视图(可变版本)。</div><div class="ttdef"><b>Definition</b> view.h:56</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_html_a0354b44e53a9ffca1b03171dae74df48"><div class="ttname"><a href="classconsole_1_1_view.html#a0354b44e53a9ffca1b03171dae74df48">console::View::begin</a></div><div class="ttdeci">Iterator begin() const</div><div class="ttdoc">返回起始迭代器。</div><div class="ttdef"><b>Definition</b> view.h:66</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_html_a048585acf176ac3efeaedd08086b3827"><div class="ttname"><a href="classconsole_1_1_view.html#a048585acf176ac3efeaedd08086b3827">console::View::cbegin</a></div><div class="ttdeci">cIterator cbegin() const</div><div class="ttdoc">返回常量起始迭代器。</div><div class="ttdef"><b>Definition</b> view.h:70</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_html_a2e029d38e25384e622317a28f93bddb0"><div class="ttname"><a href="classconsole_1_1_view.html#a2e029d38e25384e622317a28f93bddb0">console::View::collect</a></div><div class="ttdeci">Container collect() const</div><div class="ttdoc">将视图中的元素复制到一个新的容器中。</div><div class="ttdef"><b>Definition</b> view.h:127</div></div>
@@ -435,16 +435,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassconsole_1_1_view_html_aebe2470d02871e941c4762944695e4f7"><div class="ttname"><a href="classconsole_1_1_view.html#aebe2470d02871e941c4762944695e4f7">console::View::cend</a></div><div class="ttdeci">cIterator cend() const</div><div class="ttdoc">返回常量结束迭代器。</div><div class="ttdef"><b>Definition</b> view.h:72</div></div>
 <div class="ttc" id="aclassconsole_1_1_view_html_afb75c854cacac12263a17168668393b1"><div class="ttname"><a href="classconsole_1_1_view.html#afb75c854cacac12263a17168668393b1">console::View::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition</b> view.h:62</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
-<div class="ttc" id="agroup__view__factories_html_gaa78825f6f3a122bc90e71d82f6442996"><div class="ttname"><a href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">console::make_view</a></div><div class="ttdeci">View&lt; Container &gt; make_view(Container &amp;cont)</div><div class="ttdoc">创建整个容器的视图（可变版本）。</div><div class="ttdef"><b>Definition</b> view.h:308</div></div>
+<div class="ttc" id="agroup__view__factories_html_gaa78825f6f3a122bc90e71d82f6442996"><div class="ttname"><a href="group__view__factories.html#gaa78825f6f3a122bc90e71d82f6442996">console::make_view</a></div><div class="ttdeci">View&lt; Container &gt; make_view(Container &amp;cont)</div><div class="ttdoc">创建整个容器的视图(可变版本)。</div><div class="ttdef"><b>Definition</b> view.h:308</div></div>
 <div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
 <div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div></div>
-<div class="ttc" id="anamespaceconsole_html_ab52cbf6e3e95c829e2756a3447695f6d"><div class="ttname"><a href="namespaceconsole.html#ab52cbf6e3e95c829e2756a3447695f6d">console::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, Key k)</div><div class="ttdoc">让 Key 可以被打印。</div><div class="ttdef"><b>Definition</b> kb.h:151</div></div>
-<div class="ttc" id="anamespaceconsole_html_ac6f4b72bab500a681286f1d107060825"><div class="ttname"><a href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">console::next</a></div><div class="ttdeci">T next(typename Generator&lt; Derived, T &gt;::iterator &amp;it)</div><div class="ttdoc">从迭代器获取下一个值的辅助函数。</div><div class="ttdef"><b>Definition</b> gen.h:187</div></div>
+<div class="ttc" id="anamespaceconsole_html_abde8535c0df528519ffa6fd27219d0ae"><div class="ttname"><a href="namespaceconsole.html#abde8535c0df528519ffa6fd27219d0ae">console::operator&lt;&lt;</a></div><div class="ttdeci">std::basic_ostream&lt; CharT, Traits &gt; &amp; operator&lt;&lt;(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, const Generator&lt; Derived, T &gt; &amp;gen)</div><div class="ttdoc">输出 Generator 到流的 operator&lt;&lt; 重载。</div><div class="ttdef"><b>Definition</b> gen.h:232</div></div>
+<div class="ttc" id="anamespaceconsole_html_ac6f4b72bab500a681286f1d107060825"><div class="ttname"><a href="namespaceconsole.html#ac6f4b72bab500a681286f1d107060825">console::next</a></div><div class="ttdeci">T next(typename Generator&lt; Derived, T &gt;::iterator &amp;it)</div><div class="ttdoc">从迭代器获取下一个值的辅助函数。</div><div class="ttdef"><b>Definition</b> gen.h:190</div></div>
 <div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">提供 STL 容器的格式化输出和灵活的输出控制工具。</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 14 2026 23:04:17 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jul 27 2026 22:05:16 for Console Library by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

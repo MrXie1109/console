@@ -12,9 +12,9 @@ var searchData=
   ['mod_9',['Mod',['../structconsole_1_1ops_1_1_mod.html',1,'console::ops']]],
   ['modulus_5ft_10',['modulus_t',['../structconsole_1_1ops_1_1modulus__t.html',1,'console::ops']]],
   ['mul_11',['Mul',['../structconsole_1_1ops_1_1_mul.html',1,'console::ops']]],
-  ['multiarray_12',['MultiArray',['../classconsole_1_1_multi_array.html',1,'console']]],
-  ['multiarray_3c_20t_2c_20d_20_3e_13',['MultiArray&lt; T, D &gt;',['../classconsole_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console']]],
-  ['multiarray_3c_20t_2c_20first_2c_20rest_2e_2e_2e_20_3e_14',['MultiArray&lt; T, First, Rest... &gt;',['../classconsole_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console']]],
+  ['multiarray_12',['multiarray',['../classconsole_1_1___v1_1_1_multi_array.html',1,'console::_V1::MultiArray&lt; T, Dims &gt;'],['../classconsole_1_1___v2_1_1_multi_array.html',1,'console::_V2::MultiArray&lt; T, Dims &gt;'],['../classconsole_1_1___v2_1_1_multi_array.html',1,'console::MultiArray&lt; T, Dims &gt;']]],
+  ['multiarray_3c_20t_2c_20d_20_3e_13',['multiarray&lt; t, d &gt;',['../classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::_V1::MultiArray&lt; T, D &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::_V2::MultiArray&lt; T, D &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::MultiArray&lt; T, D &gt;']]],
+  ['multiarray_3c_20t_2c_20first_2c_20rest_2e_2e_2e_20_3e_14',['multiarray&lt; t, first, rest... &gt;',['../classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::_V1::MultiArray&lt; T, First, Rest... &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::_V2::MultiArray&lt; T, First, Rest... &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::MultiArray&lt; T, First, Rest... &gt;']]],
   ['multiarrayerror_15',['MultiArrayError',['../classconsole_1_1_multi_array_error.html',1,'console']]],
   ['multiplies_5ft_16',['multiplies_t',['../structconsole_1_1ops_1_1multiplies__t.html',1,'console::ops']]]
 ];
