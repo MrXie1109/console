@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.7.0 (2026-07-26) -- "Pipeline Your Algorithms (With Limitations).")";
+            R"(console version 6.8.0 (2026-07-27) -- "MultiArray: I'm Back!")";
     }
 
     /**
