@@ -2311,8 +2311,7 @@ namespace console {
      * @tparam InArrDims 源维度包。
      * @param inputArr 源数组。
      * @return MultiArray<InType, OutArrDims...> 重新解释内存的结果。
-     * @warning 此函数使用 memcpy
-     * 直接复制内存，要求源和目标总字节数相同，且类型是平凡可复制的。
+     * @warning 此函数使用 memcpy 直接复制内存，要求源和目标总字节数相同，且类型是平凡可复制的。
      *          不进行任何类型检查，可能导致未定义行为。
      */
     template <class OutType,
@@ -2322,7 +2321,7 @@ namespace console {
     MultiArray<OutType, OutArrDims...>
     unsafe_multiarray_cast(const MultiArray<InType, InArrDims...> &inputArr) {
         MultiArray<OutType, OutArrDims...> outputArr;
-        memcpy(&outputArr, &inputArr, sizeof(outputArr));
+        memcpy(&outputArr, &inputArr, sizeof(InType) * inputArr.fsize());
         return outputArr;
     }
 

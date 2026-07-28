@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.8.0 (2026-07-27) -- "MultiArray: I'm Back!")";
+            R"(console version 6.8.1 (2026-07-28) -- "Oh My Bug!")";
     }
 
     /**
