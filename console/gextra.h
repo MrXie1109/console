@@ -1112,7 +1112,7 @@ namespace console {
              */
             template <class Gen>
             friend auto
-            operator|(Gen gen, algorithm_t alg) -> decltype(alg.func(
+            operator|(Gen gen, algorithm_t alg) -> decltype(std::declval<F>()(
                 gen.begin(), gen.end(), std::declval<Args>()...)) {
                 return alg.params.apply([&](const Args &...args) {
                     return alg.func(gen.begin(), gen.end(), args...);

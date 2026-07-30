@@ -47,6 +47,31 @@ namespace console {
     class Params;
 
     /**
+     * @class Params<>
+     * @brief 空参数特化版本。
+     * @details 用于处理无参数的情况，提供空的 apply 方法。
+     */
+    template <>
+    class Params<> {
+    public:
+        /**
+         * @brief 无参构造函数。
+         */
+        Params() = default;
+
+        /**
+         * @brief 将存储的参数应用于可调用对象。
+         * @tparam F 可调用对象的类型，必须能接受零个参数。
+         * @param f 要调用的可调用对象。
+         * @return decltype(f()) f 的返回值。
+         */
+        template <class F>
+        auto apply(F f) const -> decltype(f()) {
+            return f();
+        }
+    };
+
+    /**
      * @class Params<T>
      * @brief 单参数版本的 Params 特化，递归基类。
      * @tparam T 参数的类型。

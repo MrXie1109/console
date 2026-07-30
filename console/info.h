@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.9.0 (2026-07-29) -- "Macro is Good for Me!")";
+            R"(console version 6.10.0 (2026-07-30) -- "Like or Hate?")";
     }
 
     /**

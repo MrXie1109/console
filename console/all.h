@@ -31,6 +31,7 @@ SOFTWARE.
 
 #pragma once
 #include "adapter.h"
+#include "algorithm.h"
 #include "box.h"
 #include "colorful.h"
 #include "config.h"
@@ -80,5 +81,5 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-07-29-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-07-30-MRXIE1109";
 }

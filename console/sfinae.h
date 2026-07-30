@@ -44,6 +44,12 @@ namespace console {
      */
 
     /**
+     * @brief C++11 兼容的 void_t 实现。
+     */
+    template <typename... Args>
+    using void_t = void;
+
+    /**
      * @struct is_container
      * @brief 检测类型是否为容器(支持 std::begin 和 std::end)。
      * @tparam T 待检测的类型。
@@ -54,10 +60,8 @@ namespace console {
     /// @cond INTERNAL
     template <class T>
     struct is_container<T,
-        typename std::enable_if<sizeof(decltype(std::begin(std::declval<T>())))
-                                && sizeof(decltype(std::end(
-                                    std::declval<T>())))>::type>
-        : std::true_type {};
+        void_t<decltype(std::begin(std::declval<T>())),
+            decltype(std::end(std::declval<T>()))>> : std::true_type {};
     /// @endcond
 
     /**
@@ -90,8 +94,7 @@ namespace console {
     /// @cond INTERNAL
     template <class T>
     struct is_iterator<T,
-        typename std::enable_if<sizeof(
-            typename std::iterator_traits<T>::iterator_category)>::type>
+        void_t<typename std::iterator_traits<T>::iterator_category>>
         : std::true_type {};
     /// @endcond
 
@@ -108,8 +111,7 @@ namespace console {
     template <class T, class Idx>
     struct has_subscript<T,
         Idx,
-        typename std::enable_if<sizeof(
-            decltype(std::declval<T>()[std::declval<Idx>()]))>::type>
+        void_t<decltype(std::declval<T>()[std::declval<Idx>()])>>
         : std::true_type {};
     /// @endcond
 
@@ -162,9 +164,8 @@ namespace console {
     /// @cond INTERNAL
     template <class T>
     struct is_printable<T,
-        typename std::enable_if<sizeof(decltype(std::declval<std::ostream &>()
-                                                << std::declval<T>()))>::type>
-        : std::true_type {};
+        void_t<decltype(std::declval<std::ostream &>()
+                        << std::declval<const T &>())>> : std::true_type {};
     /// @endcond
 
     /**
@@ -182,9 +183,8 @@ namespace console {
     struct is_basic_printable<CharT,
         Traits,
         T,
-        typename std::enable_if<sizeof(
-            decltype(std::declval<std::basic_ostream<CharT, Traits> &>()
-                     << std::declval<T>()))>::type> : std::true_type {};
+        void_t<decltype(std::declval<std::basic_ostream<CharT, Traits> &>()
+                        << std::declval<const T &>())>> : std::true_type {};
     /// @endcond
 
     /** @brief is_basic_printable<wchar_t, ...> 的简写。 */
@@ -249,12 +249,10 @@ namespace console {
     template <class T>
     struct is_generator<T,
         typename std::enable_if<
-            sizeof(decltype(std::declval<T>().done()))
+            std::is_same<decltype(std::declval<T>().done()), bool>::value
             && sizeof(decltype(std::declval<T>().current()))
             && sizeof(decltype(std::declval<T>().advance()))
-            && sizeof(typename T::value_type)
-            && std::is_same<decltype(std::declval<T>().done()), bool>::value //
-            >::type> : std::true_type {};
+            && sizeof(typename T::value_type)>::type> : std::true_type {};
     /// @endcond
 
     /**
