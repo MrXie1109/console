@@ -88,12 +88,12 @@ namespace console {
         };
 
         std::vector<std::thread>              workers; ///< 工作线程容器
-        std::queue<std::unique_ptr<TaskBase>> tasks; ///< 待执行任务队列
-        mutable std::mutex mutex; ///< 保护任务队列的互斥锁
-        std::condition_variable cv; ///< 用于线程等待和唤醒的条件变量
-        std::atomic<bool>   shutdown;     ///< 线程池关闭标志
-        std::atomic<size_t> active_tasks; ///< 当前正在执行的任务数
-        launch              exit_launch_; ///< 退出策略
+        std::queue<std::unique_ptr<TaskBase>> tasks;   ///< 待执行任务队列
+        mutable std::mutex                    mutex;   ///< 保护任务队列的互斥锁
+        std::condition_variable cv;           ///< 用于线程等待和唤醒的条件变量
+        std::atomic<bool>       shutdown;     ///< 线程池关闭标志
+        std::atomic<size_t>     active_tasks; ///< 当前正在执行的任务数
+        launch                  exit_launch_; ///< 退出策略
 
     public:
         /**
@@ -153,8 +153,7 @@ namespace console {
          * 个工作线程，每个线程不断从任务队列中取出任务并执行，
          *          当线程池关闭且任务队列为空时，线程会退出。
          */
-        ThreadPool(size_t num_threads = std::thread::hardware_concurrency(),
-            launch        exit_launch = launch::close) :
+        ThreadPool(size_t num_threads, launch exit_launch = launch::close) :
             ThreadPool(exit_launch, num_threads) {}
 
         /**
@@ -183,9 +182,8 @@ namespace console {
          *          返回的 future 对象可用于等待任务完成并获取返回值。
          */
         template <class F, class... Args>
-        auto
-        submit(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(
-                                          f)(std::forward<Args>(args)...))> {
+        auto submit(F &&f, Args &&...args) -> std::future< //
+            decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
             using return_type
                 = decltype(std::forward<F>(f)(std::forward<Args>(args)...));
             auto bound_task
@@ -245,10 +243,9 @@ namespace console {
         /**
          * @brief 获取当前任务队列中的任务数量。
          * @return size_t 等待执行的任务数量(不包括正在执行的任务)。
-         * @details
-         * 返回尚未被工作线程取走的任务数量。注意：正在执行的任务不计入队列大小。
+         * @details 返回尚未被工作线程取走的任务数量。注意：正在执行的任务不计入队列大小。
          */
-        size_t size() const {
+        size_t waiting_task_count() const {
             std::lock_guard<std::mutex> lock(mutex);
             return tasks.size();
         }
@@ -258,9 +255,16 @@ namespace console {
          * @return size_t 正在执行的任务数量。
          * @details 返回已经被工作线程取走但尚未执行完成的任务数量。
          */
-        size_t count() const {
+        size_t active_task_count() const {
             return active_tasks.load(std::memory_order_acquire);
         }
+
+        /**
+         * @brief 获取当前存活的工作线程数。
+         * @return size_t 存活的工作线程数。
+         * @details 取决于构造线程池时传入的 num_threads。
+         */
+        size_t active_worker_count() const { return workers.size(); }
 
         /**
          * @brief 优雅关闭线程池，等待所有任务完成。
@@ -303,80 +307,90 @@ namespace console {
         ThreadPool &operator=(ThreadPool &&) = delete;
     };
 
-    /**
-     * @brief 全局线程池。
-     * @details 内部线程池采用 abort 退出策略，程序退出时不会等待任务完成。
-     */
-    inline ThreadPool &global_thread_pool() {
-        static ThreadPool exe(ThreadPool::launch::abort);
-        return exe;
-    }
+    namespace pool {
+        /**
+         * @brief 获取线程池单例。
+         * @return ThreadPool& 线程池单例。
+         */
+        inline ThreadPool &instance() {
+            static ThreadPool exe;
+            return exe;
+        }
 
-    /**
-     * @brief 提交一个可调用对象到全局线程池执行。
-     * @tparam F 可调用对象的类型。
-     * @tparam Args 参数包的类型。
-     * @param f 要执行的可调用对象。
-     * @param args 传递给可调用对象的参数。
-     * @return
-     * std::future<decltype(std::forward<F>(f)(std::forward<Args>(args)...))>
-     *         与任务关联的 future 对象，用于获取返回值。
-     * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
-     */
-    template <class F, class... Args>
-    inline auto
-    gtp_submit(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(
-                                          f)(std::forward<Args>(args)...))> {
-        return global_thread_pool().submit(
-            std::forward<F>(f), std::forward<Args>(args)...);
-    }
+        /**
+         * @brief 提交任务到线程池。
+         * @tparam F 任务函数类型。
+         * @tparam Args 任务函数参数类型。
+         * @param f 任务函数。
+         * @param args 任务函数参数。
+         * @return std::future<...>任务的 future 对象。
+         */
+        template <class F, class... Args>
+        inline auto submit(F &&f, Args &&...args) -> std::future< //
+            decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
+            return instance().submit(
+                std::forward<F>(f), std::forward<Args>(args)...);
+        }
 
-    /**
-     * @brief 批量提交任务到全局线程池，对容器中的每个元素应用函数。
-     * @tparam F 可调用对象的类型。
-     * @tparam Container 容器类型，必须包含 value_type 成员类型。
-     * @param func 要应用于每个元素的函数。
-     * @param items 包含输入元素的容器。
-     * @return std::vector<std::future<decltype(func(std::declval<typename
-     * Container::value_type>()))>> 包含所有任务 future 对象的
-     * vector，顺序与输入容器一致。
-     * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
-     * @details 对容器中的每个元素调用 submit(func, item)，将所有返回的 future
-     * 对象 收集到 vector 中返回。可用于并行处理集合中的元素。
-     */
-    template <class F, class Container>
-    inline auto gtp_map(F &&func, const Container &items)
-        -> std::vector<std::future<decltype(func(
+        /**
+         * @brief 对容器中的元素应用函数，并返回结果的 future 对象。
+         * @tparam F 函数类型。
+         * @tparam Container 容器类型。
+         * @param f 函数。
+         * @param c 容器。
+         * @return std::vector<std::future<...>> 结果的 future 对象。
+         */
+        template <class F, class Container>
+        inline auto
+        map(F &&f, const Container &c) -> std::vector<std::future<decltype(f(
             std::declval<typename Container::value_type>()))>> {
-        return global_thread_pool().map(func, items);
-    }
+            return instance().map(std::forward<F>(f), c);
+        }
 
-    /**
-     * @brief 等待全局进程池所有已提交的任务完成。
-     * @details 阻塞当前线程，直到任务队列为空且所有正在执行的任务都已完成。
-     *          可用于需要等待所有后台任务完成后再继续执行的场景。
-     */
-    inline void gtp_wait() {
-        global_thread_pool().wait();
-    }
+        /**
+         * @brief 等待所有任务完成。
+         */
+        inline void wait() {
+            instance().wait();
+        }
 
-    /**
-     * @brief 获取全局对象池当前任务队列中的任务数量。
-     * @return size_t 等待执行的任务数量(不包括正在执行的任务)。
-     * @details
-     * 返回尚未被工作线程取走的任务数量。注意：正在执行的任务不计入队列大小。
-     */
-    inline size_t gtp_size() {
-        return global_thread_pool().size();
-    }
+        /**
+         * @brief 获取等待执行的任务数量。
+         * @return size_t 等待执行的任务数量。
+         */
+        inline size_t waiting_task_count() {
+            return instance().waiting_task_count();
+        }
 
-    /**
-     * @brief 获取全局对象池当前正在执行的任务数量。
-     * @return size_t 正在执行的任务数量。
-     * @details 返回已经被工作线程取走但尚未执行完成的任务数量。
-     */
-    inline size_t gtp_count() {
-        return global_thread_pool().count();
+        /**
+         * @brief 获取当前正在执行的任务数量。
+         * @return size_t 当前正在执行的任务数量。
+         */
+        inline size_t active_task_count() {
+            return instance().active_task_count();
+        }
+
+        /**
+         * @brief 获取当前正在执行的工作线程数量。
+         * @return size_t 当前正在执行的工作线程数量。
+         */
+        inline size_t active_worker_count() {
+            return instance().active_worker_count();
+        }
+
+        /**
+         * @brief 关闭线程池。
+         */
+        inline void close() {
+            return instance().close();
+        }
+
+        /**
+         * @brief 中止线程池。
+         */
+        inline void abort() {
+            return instance().abort();
+        }
     }
 
     /**
@@ -385,17 +399,13 @@ namespace console {
      * @tparam Args 参数包的类型。
      * @param f 要执行的可调用对象。
      * @param args 传递给可调用对象的参数。
-     * @return
-     * std::future<decltype(std::forward<F>(f)(std::forward<Args>(args)...))>
-     *         与任务关联的 future 对象，用于获取返回值。
+     * @return std::future<...> 与任务关联的 future 对象，用于获取返回值。
      * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
-     * @note 等价于 gtp_submit，模拟 std::async 风格。
      * @see std::async
      */
     template <class F, class... Args>
-    inline auto
-    async(F &&f, Args &&...args) -> std::future<decltype(std::forward<F>(f)(
-                                     std::forward<Args>(args)...))> {
-        return gtp_submit(std::forward<F>(f), std::forward<Args>(args)...);
+    inline auto async(F &&f, Args &&...args) -> std::future< //
+        decltype(std::forward<F>(f)(std::forward<Args>(args)...))> {
+        return pool::submit(std::forward<F>(f), std::forward<Args>(args)...);
     }
 }

@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.10.0 (2026-07-30) -- "Like or Hate?")";
+            R"(console version 6.11.0 (2026-08-03) -- "Resharp and Repool")";
     }
 
     /**

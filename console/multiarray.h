@@ -56,9 +56,10 @@ namespace console {
          * @brief 编译期固定维度的多维数组。
          * @tparam T 元素类型。
          * @tparam Dims 各维度大小(可变参数，至少一个维度)。
-         * @details 递归继承自 std::array，提供 operator()
-         * 进行多维下标访问(带边界检查)， 提供 flatten 迭代器
-         * fbegin/fend，支持元素级运算和常用统计函数。
+         * @details 递归继承自 std::array，
+         *          提供 operator() 进行多维下标访问(带边界检查)，
+         *          提供 flatten 迭代器 fbegin/fend，
+         *          支持元素级运算和常用统计函数。
          * @note 维度信息在编译期确定，所有元素连续存储于内存中。
          */
         template <class T, size_t... Dims>
@@ -195,6 +196,30 @@ namespace console {
              * @return std::array 包含数组各维度的大小，长度为 1。
              */
             static constexpr std::array<size_t, 1> dims() { return {D}; }
+
+            /**
+             * @brief 重新调整数组的形状。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            MultiArray<T, Dims...> &reshape() {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<MultiArray<T, Dims...> *>(this);
+            }
+
+            /**
+             * @brief 重新调整数组的形状(const版本)。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            const MultiArray<T, Dims...> &reshape() const {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<const MultiArray<T, Dims...> *>(this);
+            }
         };
 
         /**
@@ -366,6 +391,30 @@ namespace console {
              */
             static constexpr std::array<size_t, rank()> dims() {
                 return {First, Rest...};
+            }
+
+            /**
+             * @brief 重新调整数组的形状。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            MultiArray<T, Dims...> &reshape() {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<MultiArray<T, Dims...> *>(this);
+            }
+
+            /**
+             * @brief 重新调整数组的形状(const版本)。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            const MultiArray<T, Dims...> &reshape() const {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<const MultiArray<T, Dims...> *>(this);
             }
         };
     }
@@ -710,6 +759,30 @@ namespace console {
              */
             friend void swap(MultiArray &a, MultiArray &b) noexcept {
                 a.swap(b);
+            }
+
+            /**
+             * @brief 重新调整数组的形状。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            MultiArray<T, Dims...> &reshape() {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<MultiArray<T, Dims...> *>(this);
+            }
+
+            /**
+             * @brief 重新调整数组的形状(const版本)。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            const MultiArray<T, Dims...> &reshape() const {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<const MultiArray<T, Dims...> *>(this);
             }
         };
 
@@ -1253,6 +1326,30 @@ namespace console {
             friend void swap(MultiArray &a, MultiArray &b) noexcept {
                 a.swap(b);
             }
+
+            /**
+             * @brief 重新调整数组的形状。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            MultiArray<T, Dims...> &reshape() {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<MultiArray<T, Dims...> *>(this);
+            }
+
+            /**
+             * @brief 重新调整数组的形状(const版本)。
+             * @tparam Dims 新的维度大小。
+             * @return 重新调整形状后的数组。
+             */
+            template <size_t... Dims>
+            const MultiArray<T, Dims...> &reshape() const {
+                static_assert(MultiArray<T, Dims...>::fsize() == fsize(),
+                    "reshape: total element count must match");
+                return *reinterpret_cast<const MultiArray<T, Dims...> *>(this);
+            }
         };
     }
 
@@ -1603,87 +1700,5 @@ namespace console {
             if (*it2 < *it1) return 1;
         }
         return 0;
-    }
-
-    /**
-     * @brief 改变 MultiArray 的维度形状(元素类型不变)，要求总元素数相同。
-     * @tparam OutArrDims 目标维度包。
-     * @tparam VarType 元素类型。
-     * @tparam InArrDims 源维度包。
-     * @param inputArr 源数组。
-     * @return MultiArray<VarType, OutArrDims...> 转换后的数组(拷贝元素)。
-     * @note 编译期检查元素总数是否一致。
-     */
-    template <size_t... OutArrDims, class VarType, size_t... InArrDims>
-    MultiArray<VarType, OutArrDims...>
-    multiarray_cast(const MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
-                          == MultiArray<VarType, InArrDims...>::fsize(),
-            "Bad multiarray_cast: Mismatch Size");
-        MultiArray<VarType, OutArrDims...> outputArr;
-        std::copy(inputArr.fbegin(), inputArr.fend(), outputArr.fbegin());
-        return outputArr;
-    }
-
-    /**
-     * @brief 不安全地改变 MultiArray 的元素类型和维度(内存拷贝)。
-     * @tparam OutType 目标元素类型。
-     * @tparam OutArrDims 目标维度包。
-     * @tparam InType 源元素类型。
-     * @tparam InArrDims 源维度包。
-     * @param inputArr 源数组。
-     * @return MultiArray<InType, OutArrDims...> 重新解释内存的结果。
-     * @warning 此函数使用 memcpy 直接复制内存，要求源和目标总字节数相同，且类型是平凡可复制的。
-     *          不进行任何类型检查，可能导致未定义行为。
-     */
-    template <class OutType,
-        size_t... OutArrDims,
-        class InType,
-        size_t... InArrDims>
-    MultiArray<OutType, OutArrDims...>
-    unsafe_multiarray_cast(const MultiArray<InType, InArrDims...> &inputArr) {
-        MultiArray<OutType, OutArrDims...> outputArr;
-        memcpy(&outputArr, &inputArr, sizeof(InType) * inputArr.fsize());
-        return outputArr;
-    }
-
-    /**
-     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝(可变版本)
-     * @tparam OutArrDims 目标维度包。
-     * @tparam VarType 元素类型。
-     * @tparam InArrDims 源维度包。
-     * @param inputArr 源数组。
-     * @return MultiArray<VarType, OutArrDims...> & 转换后的数组引用。
-     * @note 编译期检查元素总数是否一致。
-     */
-    template <size_t... OutArrDims, class VarType, size_t... InArrDims>
-    MultiArray<VarType, OutArrDims...> &
-    inplace_multiarray_cast(MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
-                          == MultiArray<VarType, InArrDims...>::fsize(),
-            "Bad inplace_multiarray_cast: Mismatch Size");
-        auto *p
-            = reinterpret_cast<MultiArray<VarType, OutArrDims...> *>(&inputArr);
-        return *p;
-    }
-
-    /**
-     * @brief @brief 就地版本的 multiarray_cast，仅视图，不拷贝(常量版本)
-     * @tparam OutArrDims 目标维度包。
-     * @tparam VarType 元素类型。
-     * @tparam InArrDims 源维度包。
-     * @param inputArr 源数组。
-     * @return const MultiArray<VarType, OutArrDims...> & 转换后的数组引用。
-     * @note 编译期检查元素总数是否一致。
-     */
-    template <size_t... OutArrDims, class VarType, size_t... InArrDims>
-    const MultiArray<VarType, OutArrDims...> &
-    inplace_multiarray_cast(const MultiArray<VarType, InArrDims...> &inputArr) {
-        static_assert(MultiArray<VarType, OutArrDims...>::fsize()
-                          == MultiArray<VarType, InArrDims...>::fsize(),
-            "Bad inplace_multiarray_cast: Mismatch Size");
-        auto *p = reinterpret_cast<const MultiArray<VarType, OutArrDims...> *>(
-            &inputArr);
-        return *p;
     }
 }
