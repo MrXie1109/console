@@ -50,6 +50,7 @@ namespace console {
 #ifdef CONSOLE_MULTIARRAY_V1
     inline
 #endif
+        /// @warning 保留但停止维护，暂时不考虑弃用。
         namespace _V1 {
         /**
          * @class MultiArray
@@ -423,6 +424,25 @@ namespace console {
     inline
 #endif
         namespace _V2 {
+
+        /**
+         * @brief 编译期固定维度的多维数组元数据。
+         * @tparam T 元素类型。
+         */
+        template <class T>
+        struct _multi_array_base {
+            T   *data_;     ///< 指向堆内存数据的指针
+            bool is_views_; ///< true 表示视图(不拥有数据)，false 表示拥有者
+
+            /**
+             * @brief 构造函数。
+             * @param data 指向堆内存数据的指针。
+             * @param is_views 是否为视图(不拥有数据)。
+             */
+            _multi_array_base(T *data, bool is_views) :
+                data_(data), is_views_(is_views) {}
+        };
+
         /**
          * @class MultiArray
          * @brief 编译期固定维度的多维数组(堆版本)。
@@ -447,18 +467,19 @@ namespace console {
          * @note 一维数组不产生子数组视图，operator[] 直接返回元素引用。
          */
         template <class T, size_t D>
-        class MultiArray<T, D> {
-            T   *data_;     ///< 指向堆内存数据的指针
-            bool is_views_; ///< true 表示视图(不拥有数据)，false 表示拥有者
+        class MultiArray<T, D> : private _multi_array_base<T> {
+        public:
+            using _multi_array_base<T>::data_;     ///< 指向堆内存数据的指针
+            using _multi_array_base<T>::is_views_; ///< 是否为视图
 
             static constexpr size_t SIZE = D; ///< 元素总数
 
             /// @brief 私有构造函数，仅供视图创建使用。
             MultiArray(T *data, bool is_views) :
-                data_(data), is_views_(is_views) {}
+                _multi_array_base<T>{data, is_views} {}
             /// @brief 私有构造函数，const 版本，仅供 const 视图使用。
             MultiArray(const T *data, bool is_views) :
-                data_(const_cast<T *>(data)), is_views_(is_views) {}
+                _multi_array_base<T>{const_cast<T *>(data), is_views} {}
 
             template <class U, size_t... Dims>
             friend class MultiArray;
@@ -478,13 +499,14 @@ namespace console {
                 = std::reverse_iterator<const_iterator>;
 
             /// @brief 默认构造，分配堆内存，元素未初始化(基本类型为随机值)。
-            MultiArray() : data_(new T[SIZE]), is_views_(false) {}
+            MultiArray() : _multi_array_base<T>{new T[SIZE], false} {}
 
             /**
              * @brief 用相同值填充所有元素。
              * @param value 填充值。
              */
-            MultiArray(const T &value) : data_(new T[SIZE]), is_views_(false) {
+            MultiArray(const T &value) :
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::fill(data_, data_ + SIZE, value);
             }
 
@@ -493,7 +515,7 @@ namespace console {
              * @param init 初始化列表，长度必须等于 D。
              */
             MultiArray(std::initializer_list<T> init) :
-                data_(new T[SIZE]), is_views_(false) {
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::copy(init.begin(), init.end(), data_);
             }
 
@@ -502,7 +524,7 @@ namespace console {
              * @param other 源数组。
              */
             MultiArray(const MultiArray &other) :
-                data_(new T[SIZE]), is_views_(false) {
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::copy(other.data_, other.data_ + SIZE, data_);
             }
 
@@ -512,7 +534,7 @@ namespace console {
              * @note 移动后 other 处于"有效但未指定"状态，仅可析构或赋值。
              */
             MultiArray(MultiArray &&other) noexcept :
-                data_(other.data_), is_views_(other.is_views_) {
+                _multi_array_base<T>{other.data_, other.is_views_} {
                 other.is_views_ = true;
             }
 
@@ -794,9 +816,9 @@ namespace console {
          * @details 多维数组的子数组访问返回视图。
          */
         template <class T, size_t First, size_t... Rest>
-        class MultiArray<T, First, Rest...> {
-            T   *data_;     ///< 指向堆内存数据的指针
-            bool is_views_; ///< true 表示视图(不拥有数据)，false 表示拥有者
+        class MultiArray<T, First, Rest...> : private _multi_array_base<T> {
+            using _multi_array_base<T>::data_;     ///< 指向堆内存数据的指针
+            using _multi_array_base<T>::is_views_; ///< 是否为视图
 
             /// @brief 编译期计算总元素数。
             template <size_t... Is>
@@ -816,10 +838,10 @@ namespace console {
 
             /// @brief 私有构造函数，仅供视图创建使用。
             MultiArray(T *data, bool is_views) :
-                data_(data), is_views_(is_views) {}
+                _multi_array_base<T>{data, is_views} {}
             /// @brief 私有构造函数，const 版本。
             MultiArray(const T *data, bool is_views) :
-                data_(const_cast<T *>(data)), is_views_(is_views) {}
+                _multi_array_base<T>{const_cast<T *>(data), is_views} {}
 
             template <class U, size_t... Dims>
             friend class MultiArray;
@@ -960,7 +982,7 @@ namespace console {
                     return it;
                 }
                 friend const_iterator
-                operator+(difference_type n, iterator it) {
+                operator+(difference_type n, const_iterator it) {
                     it.ptr_ += n * (SIZE / First);
                     return it;
                 }
@@ -986,13 +1008,14 @@ namespace console {
                 = std::reverse_iterator<const_iterator>;
 
             /// @brief 默认构造，分配堆内存，元素未初始化。
-            MultiArray() : data_(new T[SIZE]), is_views_(false) {}
+            MultiArray() : _multi_array_base<T>{new T[SIZE], false} {}
 
             /**
              * @brief 用相同值填充所有元素。
              * @param value 填充值。
              */
-            MultiArray(const T &value) : data_(new T[SIZE]), is_views_(false) {
+            MultiArray(const T &value) :
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::fill(data_, data_ + SIZE, value);
             }
 
@@ -1001,7 +1024,7 @@ namespace console {
              * @param init 初始化列表。
              */
             MultiArray(std::initializer_list<T> init) :
-                data_(new T[SIZE]), is_views_(false) {
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::copy(init.begin(), init.end(), data_);
             }
 
@@ -1010,7 +1033,7 @@ namespace console {
              * @param init 初始化列表，每个元素为子数组。
              */
             MultiArray(std::initializer_list<MultiArray<T, Rest...>> init) :
-                data_(new T[SIZE]), is_views_(false) {
+                _multi_array_base<T>{new T[SIZE], false} {
                 size_t offset = 0;
                 for (const auto &sub : init) {
                     std::copy(sub.fbegin(), sub.fend(), data_ + offset);
@@ -1023,7 +1046,7 @@ namespace console {
              * @param other 源数组。
              */
             MultiArray(const MultiArray &other) :
-                data_(new T[SIZE]), is_views_(false) {
+                _multi_array_base<T>{new T[SIZE], false} {
                 std::copy(other.data_, other.data_ + SIZE, data_);
             }
 
@@ -1033,7 +1056,7 @@ namespace console {
              * @note 移动后 other 处于"有效但未指定"状态。
              */
             MultiArray(MultiArray &&other) noexcept :
-                data_(other.data_), is_views_(other.is_views_) {
+                _multi_array_base<T>{other.data_, other.is_views_} {
                 other.is_views_ = true;
             }
 
@@ -1241,6 +1264,14 @@ namespace console {
                     sizeof...(Indices) < rank(), "Too Many Arguments!");
                 return at(idx)(rest...);
             }
+            /**
+             * @brief 多维下标访问(带边界检查)。
+             * @tparam Indices 剩余索引类型包。
+             * @param idx 第一维索引。
+             * @param rest 剩余维度索引。
+             * @return 最终元素的引用(若索引数等于维数)或子数组视图(若不足)。
+             * @throw MultiArrayError 若任意索引越界。
+             */
             template <class... Indices>
             auto operator()(size_t idx, Indices... rest) const //
                 -> decltype(at(idx)(rest...)) {
@@ -1248,6 +1279,40 @@ namespace console {
                     sizeof...(Indices) < rank(), "Too Many Arguments!");
                 return at(idx)(rest...);
             }
+
+            /// @brief 若是C++23及以上版本，提供不进行边界检查的多维下标访问。
+#if __cplusplus >= 202302L
+            /**
+             * @brief 多维下标访问。
+             * @tparam Indices 剩余索引类型包。
+             * @param idx 第一维索引。
+             * @param rest 剩余维度索引。
+             * @return 最终元素的引用(若索引数等于维数)或子数组视图(若不足)。
+             * @note 不进行边界检查。
+             */
+            template <class... Indices>
+            auto operator[](size_t idx, Indices... rest) //
+                -> decltype(operator[](idx)[rest...]) {
+                static_assert(
+                    sizeof...(Indices) < rank(), "Too Many Arguments!");
+                return operator[](idx)[rest...];
+            }
+            /**
+             * @brief 多维下标访问。
+             * @tparam Indices 剩余索引类型包。
+             * @param idx 第一维索引。
+             * @param rest 剩余维度索引。
+             * @return 最终元素的引用(若索引数等于维数)或子数组视图(若不足)。
+             * @note 不进行边界检查。
+             */
+            template <class... Indices>
+            auto operator[](size_t idx, Indices... rest) const //
+                -> decltype(operator[](idx)[rest...]) {
+                static_assert(
+                    sizeof...(Indices) < rank(), "Too Many Arguments!");
+                return operator[](idx)[rest...];
+            }
+#endif
 
             /// @brief 访问第一个子数组。
             reference front() { return operator[](0); }

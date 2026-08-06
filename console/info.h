@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.11.0 (2026-08-03) -- "Resharp and Repool")";
+            R"(console version 6.12.0 (2026-08-06) -- "Base and Bracket!")";
     }
 
     /**
