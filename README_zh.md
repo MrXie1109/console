@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library**
+**一个现代 C++ 控制台工具库**
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,51 +11,51 @@
 
 ---
 
-## Overview
+## 概述
 
-Console is a comprehensive, header-only C++ library that provides a wide range of utilities for console/terminal application development. It aims to offer Python-like convenience while maintaining C++ performance and type safety.
+Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应用程序开发提供了丰富的工具集。它旨在提供类似 Python 的便捷性，同时保持 C++ 的高性能和类型安全。
 
-P.S.: `Console` is just a symbol, don't care it.
+附注：`Console` 只是一个符号名称，不必在意。
 
-**Key capabilities include:**
+**主要能力包括：**
 
-- **Container adapters** with value-returning `pop()` operations
-- **Multi-dimensional arrays** with compile-time fixed dimensions
-- **Functional programming** with generator pipelines and lazy evaluation
-- **Type-safe formatting** with Python-style `format()` and `fmt()`
-- **Logging** with color-coded severity levels
-- **Regex** with Python `re`-like interface
-- **Random number generation** with extensive distributions
-- **Thread pool** for parallel task execution
-- **Progress bars** for iteration visualization
-- **AES-128 encryption**, **SHA256**, **MD5**, and **Base64**
-- **INI configuration** file parsing
-- **Cross-platform terminal control** (colors, cursor, screen)
-- **MIDI playback** on Windows
-- **Process management** on Linux
-- **Result/Optional types** similar to Rust
-- And much more...
-
----
-
-## Requirements
-
-- **C++11** or later (full compatibility)
-- Standard Library
-- CMake (optional, for building tests/examples)
-- On Windows: `winmm.lib` for MIDI support
-- On Linux: standard POSIX headers
+- **容器适配器** —— 支持返回值 `pop()` 操作
+- **多维数组** —— 编译期固定维度
+- **函数式编程** —— 生成器管道与惰性求值
+- **类型安全的格式化** —— 类似 Python 风格的 `format()` 和 `fmt()`
+- **日志系统** —— 带颜色编码的严重级别
+- **正则表达式** —— 类似 Python `re` 模块的接口
+- **随机数生成** —— 支持丰富的分布类型
+- **线程池** —— 并行任务执行
+- **进度条** —— 迭代可视化
+- **AES-128 加密**、**SHA256**、**MD5** 和 **Base64**
+- **INI 配置文件**解析
+- **跨平台终端控制**（颜色、光标、屏幕）
+- **Windows 平台 MIDI 播放**
+- **Linux 平台进程管理**
+- **Result/Optional 类型** —— 类似 Rust
+- 以及更多……
 
 ---
 
-## Quick Start
+## 环境要求
 
-### Basic Usage
+- **C++11** 或更高版本（完全兼容）
+- 标准库
+- CMake（可选，用于构建测试/示例）
+- Windows 平台：MIDI 支持需要 `winmm.lib`
+- Linux 平台：标准 POSIX 头文件
+
+---
+
+## 快速上手
+
+### 基本用法
 
 ```cpp
 #include <console/all.h>
 /*
-// Or include it when needed
+// 或者按需引入
 #include <console/output.h>
 #include <console/logging.h>
 #include <console/gen.h>
@@ -64,64 +64,64 @@ P.S.: `Console` is just a symbol, don't care it.
 using namespace console;
 
 int main() {
-    // Colorful output
-    std::cout << color::Red << "Hello" << color::Reset << " World\n";
+    // 彩色输出
+    std::cout << color::Red << "你好" << color::Reset << " 世界\n";
 
-    // Python-style print
-    print("The answer is", 42);
+    // Python 风格的 print
+    print("答案是", 42);
 
-    // Logging
-    logger.info("Application started");
-    logger.warn("Low memory warning");
+    // 日志
+    logger.info("应用程序已启动");
+    logger.warn("内存不足警告");
 
-    // Range-based iteration with generators
+    // 使用生成器进行区间迭代
     for (auto i : gen::range(10)) {
         print(i);
     }
 
-    // Formatting
-    auto msg = format("Value: {:.2f}", 3.14159);
+    // 格式化
+    auto msg = format("数值: {:.2f}", 3.14159);
 
     return 0;
 }
 ```
 
-### Working with Containers
+### 使用容器
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void container_example() {
-    // Stack with value-returning pop
+    // 支持返回值 pop 的栈
     Stack<int> s;
     s.push(1);
     s.push(2);
-    int value = s.pop();  // returns 2
+    int value = s.pop();  // 返回 2
 
-    // Queue
+    // 队列
     Queue<std::string> q;
     q.push("first");
     q.push("second");
-    auto str = q.pop();   // returns "first"
+    auto str = q.pop();   // 返回 "first"
 
-    // Priority Queue
+    // 优先队列
     PriorityQueue<int> pq;
     pq.push(5);
     pq.push(1);
     pq.push(3);
-    int max = pq.pop();   // returns 5
+    int max = pq.pop();   // 返回 5
 }
 ```
 
-### Generators and Pipelines
+### 生成器与管道
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void generator_example() {
-    // Create a pipeline using the pipe operator
+    // 使用管道运算符创建数据处理流水线
     auto result = gen::range(1, 20)
         | gen::filter(ops::even)
         | gen::map(ops::square)
@@ -129,33 +129,33 @@ void generator_example() {
 
     // result = [4, 16, 36, 64, 100, 144, 196, 256, 324]
 
-    // Chain generators
+    // 生成器链式拼接
     auto nums = gen::range(5) + gen::range(10, 15);
 
-    // Enumerate with index
+    // 带索引的枚举
     for (auto [idx, val] : gen::range(5) | gen::enumerate) {
         print(idx, ":", val);
     }
 }
 ```
 
-### Thread Pool
+### 线程池
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void thread_pool_example() {
-    ThreadPool pool(4);  // 4 worker threads
+    ThreadPool pool(4);  // 4 个工作线程
 
-    // Submit tasks and get futures
+    // 提交任务并获取 future
     auto f1 = pool.submit([](int x) { return x * x; }, 5);
     auto f2 = pool.submit([](int x) { return x + x; }, 10);
 
     int result1 = f1.get();  // 25
     int result2 = f2.get();  // 20
 
-    // Map a function over a container in parallel
+    // 对容器中的元素并行执行映射函数
     std::vector<int> data = {1, 2, 3, 4, 5};
     auto futures = pool.map([](int x) { return x * 2; }, data);
 
@@ -165,58 +165,58 @@ void thread_pool_example() {
 }
 ```
 
-### Multi-dimensional Arrays
+### 多维数组
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void multiarray_example() {
-    // 3x3 matrix
+    // 3x3 矩阵
     MultiArray<double, 3, 3> A = {
         1, 2, 3,
         4, 5, 6,
         7, 8, 9
     };
 
-    // Element-wise operations
+    // 逐元素运算
     auto B = A + 10;
     auto C = A * 2.5;
 
-    // Statistics
+    // 统计
     double mean_val = mean(A);
     double std_val = stddev(A);
 
-    // Matrix multiplication
+    // 矩阵乘法
     auto D = matmul(A, B);
 }
 ```
 
-### Regex
+### 正则表达式
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void regex_example() {
-    // Compile pattern
+    // 编译正则模式
     auto r = re::compile(R"(\d+-\d+-\d+)");
 
-    // Search
-    auto m = r.search("Date: 2026-08-07");
+    // 搜索
+    auto m = r.search("日期: 2026-08-07");
     if (m) {
-        print("Found:", m.group(0));
+        print("找到:", m.group(0));
     }
 
-    // Find all matches
+    // 查找所有匹配
     auto matches = r.findall("2026-08-07 2026-08-08 2026-08-09");
 
-    // Split
+    // 分割
     auto parts = re::split(R"(\s+)", "one two three");
 }
 ```
 
-### Configuration Files
+### 配置文件
 
 ```cpp
 #include <console/all.h>
@@ -225,12 +225,12 @@ using namespace console;
 void config_example() {
     INIConfig config("settings.ini");
 
-    // Read values (with automatic type conversion)
+    // 读取配置（支持自动类型转换）
     int port = config.get("server.port", 8080);
     bool debug = config.get("app.debug", false);
     std::string host = config.get("server.host", "localhost");
 
-    // Write values
+    // 写入配置
     config.set("app.version", "2.0.0");
     config.save("settings.ini");
 }
@@ -238,26 +238,26 @@ void config_example() {
 
 ---
 
-## Documentation
+## 文档
 
-Full API documentation is available at:
+完整 API 文档请访问：
 
 ## **[https://mrxie1109.github.io/console](https://mrxie1109.github.io/console)**
 
 ---
 
-## License
+## 许可证
 
-This library is distributed under the [MIT License](LICENSE).
-
----
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
+本库基于 [MIT 许可证](LICENSE) 分发。
 
 ---
 
-## Author
+## 贡献
+
+欢迎贡献！请提交 Issue 或 Pull Request。
+
+---
+
+## 作者
 
 **MrXie1109**

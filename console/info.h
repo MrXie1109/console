@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.12.0 (2026-08-06) -- "Base and Bracket!")";
+            R"(console version 6.12.1 (2026-08-07) -- "Read Me!")";
     }
 
     /**
