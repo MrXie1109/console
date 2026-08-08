@@ -64,24 +64,22 @@ namespace console {
             decltype(std::end(std::declval<T>()))>> : std::true_type {};
     /// @endcond
 
+    template <class, class = void>
+    struct is_callable_impl : std::false_type {};
+
+    template <class F, class... Args>
+    struct is_callable_impl<F(Args...),
+        void_t<decltype(std::declval<F>()(std::declval<Args>()...))>>
+        : std::true_type {};
+
     /**
      * @struct is_callable
-     * @brief 检测类型是否可作为函数对象以给定参数调用(返回 void 或可转换为
-     * void)。
+     * @brief 检测类型是否可作为函数对象以给定参数调用。
      * @tparam F 待检测的类型。
      * @tparam Args 调用参数类型包。
      */
-    template <class F, class = void, class... Args>
-    struct is_callable : std::false_type {};
-
-    /// @cond INTERNAL
     template <class F, class... Args>
-    struct is_callable<F,
-        typename std::enable_if<std::is_convertible<
-            decltype(std::declval<F>()(std::declval<Args>()...)),
-            void>::value>::type,
-        Args...> : std::true_type {};
-    /// @endcond
+    using is_callable = is_callable_impl<F(Args...), void>;
 
     /**
      * @struct is_iterator

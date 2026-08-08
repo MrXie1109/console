@@ -30,19 +30,21 @@ Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应
 - **进度条** —— 迭代可视化
 - **AES-128 加密**、**SHA256**、**MD5** 和 **Base64**
 - **INI 配置文件**解析
-- **跨平台终端控制**（颜色、光标、屏幕）
+- **跨平台终端控制**(颜色、光标、屏幕)
 - **Windows 平台 MIDI 播放**
 - **Linux 平台进程管理**
 - **Result/Optional 类型** —— 类似 Rust
+- **协作式线程管理** —— 基于 Event 的停止机制
+- **作用域退出守卫** —— 使用 `defer` 宏(RAII风格)
 - 以及更多……
 
 ---
 
 ## 环境要求
 
-- **C++11** 或更高版本（完全兼容）
+- **C++11** 或更高版本(完全兼容)
 - 标准库
-- CMake（可选，用于构建测试/示例）
+- CMake(可选，用于构建测试/示例)
 - Windows 平台：MIDI 支持需要 `winmm.lib`
 - Linux 平台：标准 POSIX 头文件
 
@@ -225,7 +227,7 @@ using namespace console;
 void config_example() {
     INIConfig config("settings.ini");
 
-    // 读取配置（支持自动类型转换）
+    // 读取配置(支持自动类型转换)
     int port = config.get("server.port", 8080);
     bool debug = config.get("app.debug", false);
     std::string host = config.get("server.host", "localhost");
@@ -235,6 +237,54 @@ void config_example() {
     config.save("settings.ini");
 }
 ```
+
+### 协作式线程管理
+
+````cpp
+#include <console/all.h>
+using namespace console;
+
+void thread_example() {
+    // 创建接受 Event& 参数的线程，支持协作式停止
+    Thread t([](const Event& stop_event) {
+        while (!stop_event.is_set()) {
+            // 执行工作...
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        print("线程已优雅停止");
+    });
+
+    // 让其运行一段时间
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+
+    // 请求线程停止
+    t.stop();
+
+    // 等待线程结束(非必要)
+    t.join();
+}
+
+### Defer(作用域退出守卫)
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void defer_example() {
+    FILE* file = fopen("data.txt", "r");
+    if (!file) return;
+
+    // 确保离开作用域时自动关闭文件
+    defer(fclose(file));
+
+    // 使用文件...
+    char buffer[256];
+    while (fgets(buffer, sizeof(buffer), file)) {
+        print(buffer);
+    }
+    // 此处自动调用 fclose(file)
+}
+````
 
 ---
 
@@ -261,3 +311,7 @@ void config_example() {
 ## 作者
 
 **MrXie1109**
+
+```
+
+```

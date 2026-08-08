@@ -34,6 +34,8 @@ P.S.: `Console` is just a symbol, don't care it.
 - **MIDI playback** on Windows
 - **Process management** on Linux
 - **Result/Optional types** similar to Rust
+- **Cooperative thread management** with Event-based stop mechanism
+- **Scope exit guards** using the `defer` macro (RAII-style)
 - And much more...
 
 ---
@@ -236,6 +238,55 @@ void config_example() {
 }
 ```
 
+### Thread with Cooperative Stop
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void thread_example() {
+    // Create a thread with a function that accepts an Event& for cooperative stop
+    Thread t([](const Event& stop_event) {
+        while (!stop_event.is_set()) {
+            // Do work...
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        print("Thread stopped gracefully");
+    });
+
+    // Let it run for a while
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+
+    // Request the thread to stop
+    t.stop();
+
+    // Wait for the thread to finish (don't have to)
+    t.join();
+}
+```
+
+### Defer (Scope Exit Guard)
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void defer_example() {
+    FILE* file = fopen("data.txt", "r");
+    if (!file) return;
+
+    // Ensure the file is closed when leaving the scope
+    defer(fclose(file));
+
+    // Use the file...
+    char buffer[256];
+    while (fgets(buffer, sizeof(buffer), file)) {
+        print(buffer);
+    }
+    // fclose(file) is automatically called here
+}
+```
+
 ---
 
 ## Documentation
@@ -261,3 +312,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## Author
 
 **MrXie1109**
+
+```
+
+```

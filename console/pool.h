@@ -177,7 +177,7 @@ namespace console {
          * @return
          * std::future<decltype(std::forward<F>(f)(std::forward<Args>(args)...))>
          *         与任务关联的 future 对象，用于获取返回值。
-         * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
+         * @throw AsyncError 如果线程池正在关闭，则抛出异常。
          * @details 将参数绑定到可调用对象后添加到任务队列，由工作线程异步执行。
          *          返回的 future 对象可用于等待任务完成并获取返回值。
          */
@@ -193,7 +193,7 @@ namespace console {
             {
                 std::lock_guard<std::mutex> lock(mutex);
                 if (shutdown.load(std::memory_order_acquire))
-                    throw ThreadPoolError("ThreadPool is shutting down");
+                    throw AsyncError("ThreadPool is shutting down");
                 tasks.emplace(std::unique_ptr<TaskBase>(
                     new Task<return_type>(std::move(task))));
             }
@@ -210,7 +210,7 @@ namespace console {
          * @return std::vector<std::future<decltype(func(std::declval<typename
          * Container::value_type>()))>> 包含所有任务 future 对象的
          * vector，顺序与输入容器一致。
-         * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
+         * @throw AsyncError 如果线程池正在关闭，则抛出异常。
          * @details 对容器中的每个元素调用 submit(func, item)，将所有返回的
          * future 对象 收集到 vector 中返回。可用于并行处理集合中的元素。
          */
@@ -400,7 +400,7 @@ namespace console {
      * @param f 要执行的可调用对象。
      * @param args 传递给可调用对象的参数。
      * @return std::future<...> 与任务关联的 future 对象，用于获取返回值。
-     * @throw ThreadPoolError 如果线程池正在关闭，则抛出异常。
+     * @throw AsyncError 如果线程池正在关闭，则抛出异常。
      * @see std::async
      */
     template <class F, class... Args>

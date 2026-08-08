@@ -182,16 +182,15 @@ namespace console {
     };
 
     /**
-     * @class ThreadPoolError
-     * @brief
-     * 表示线程池执行器相关的错误，例如提交任务失败或线程池已关闭时提交任务。
+     * @class ConsoleError
+     * @brief 表示异步相关的错误。
      */
-    class ThreadPoolError : public ConsoleError {
+    class AsyncError : public ConsoleError {
     public:
         /**
-         * @brief 构造 ThreadPoolError。
+         * @brief 构造 ConsoleError。
          * @param msg 错误描述信息。
          */
-        ThreadPoolError(const std::string &msg) : ConsoleError(msg) {}
+        AsyncError(const std::string &msg) : ConsoleError(msg) {}
     };
 }
