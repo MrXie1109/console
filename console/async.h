@@ -1,5 +1,5 @@
 /**
- * @file thread.h
+ * @file async.h
  * @brief 提供现代化的Thread类，封装了std::thread并内置Event以便协作式地请求线程终止。
  * @author MrXie1109
  * @date 2026

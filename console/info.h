@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 6.13.0 (2026-08-08) -- "Async First!")";
+            R"(console version 6.13.1 (2026-08-09) -- "Defer Async!")";
     }
 
     /**
