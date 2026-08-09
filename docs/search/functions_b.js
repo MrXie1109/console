@@ -1,16 +1,7 @@
 var searchData=
 [
-  ['lazy_5finit_0',['lazy_init',['../classconsole_1_1gen_1_1_scan.html#ae624e1962a94ce14939f836cd4b61e71',1,'console::gen::Scan']]],
-  ['le_1',['le',['../namespaceconsole_1_1ops.html#a872369bac06c9caff6d69c702378237e',1,'console::ops']]],
-  ['license_2',['license',['../namespaceconsole.html#a102f3ee79a0df7c77068a3a3dc55b576',1,'console']]],
-  ['line_3',['line',['../classconsole_1_1_screen.html#a8cdd038ef534e1464088a28cda007953',1,'console::Screen']]],
-  ['linspace_4',['linspace',['../group__matools.html#gac0e485c9d3bc0fa8d921ef04fbaa01d1',1,'console']]],
-  ['list_5',['list',['../classconsole_1_1gen_1_1_list.html#ac1f880aa61fdca8938d9e4b801a3fac0',1,'console::gen::List::List(std::initializer_list&lt; T &gt; list)'],['../classconsole_1_1gen_1_1_list.html#a0d502eb8deffa16627bea83385e5f266',1,'console::gen::List::List(Iterator begin, Iterator end)'],['../classconsole_1_1gen_1_1_list.html#ab2a7b365372e9f44c9bad2ebaa41f11d',1,'console::gen::List::List(const Container &amp;container)'],['../namespaceconsole_1_1gen.html#a83f2efb5982379a118d7eec5dfe033ec',1,'console::gen::list(std::initializer_list&lt; T &gt; list)'],['../namespaceconsole_1_1gen.html#ae9ed100a14b577a1f3947360cf1c843c',1,'console::gen::list(Iterator begin, Iterator end)'],['../namespaceconsole_1_1gen.html#a0e7538a4813bf51f08d182802d9ce917',1,'console::gen::list(Container &amp;container)']]],
-  ['load_6',['load',['../classconsole_1_1_basic_i_n_i_config.html#a5b03182b2273ecae0c5ebc640aaf9e5b',1,'console::BasicINIConfig']]],
-  ['log_7',['log',['../group__matools.html#ga61b4ab1cc5e246b05a141baa953fe19f',1,'console']]],
-  ['log10_8',['log10',['../group__matools.html#gab8499187443ce03bc5ee2b821b90e087',1,'console']]],
-  ['log_5fspectrum_9',['log_spectrum',['../group__matools.html#ga89e10440e7affc1a8d0b287a6e0416c0',1,'console']]],
-  ['lower_10',['lower',['../group__strpp.html#gae390b09cd3f89ac4047a34b7afc09089',1,'console::lower(std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::locale &amp;loc=std::locale{})'],['../group__strpp.html#ga642bccdc345b5c5ecc04145803ee5add',1,'console::lower(const char *str, const std::locale &amp;loc=std::locale{})'],['../group__strpp.html#gac4e363bfff2608570677db5664018436',1,'console::lower(const wchar_t *str, const std::locale &amp;loc=std::locale{})']]],
-  ['lt_11',['lt',['../namespaceconsole_1_1ops.html#a9b1147dcf13a6e166af7561572b15288',1,'console::ops']]],
-  ['ltrim_12',['ltrim',['../group__strpp.html#gadd772fd6f826996e368030cfe30a54d3',1,'console::ltrim(std::basic_string&lt; CharT, Traits, Allocator &gt; str)'],['../group__strpp.html#ga0a4e0a534e4873d1bbe475379c80ae67',1,'console::ltrim(std::basic_string&lt; CharT, Traits, Allocator &gt; str, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;chars)'],['../group__strpp.html#gab84606025787d6bd83223772cae7e22c',1,'console::ltrim(const char *str)'],['../group__strpp.html#gabdd3f8965da978869bca8c858e314c98',1,'console::ltrim(const wchar_t *str)'],['../group__strpp.html#ga1a9057a18ae9995d30b16e4995349fcc',1,'console::ltrim(const char *str, const std::string &amp;chars)'],['../group__strpp.html#gaa50ad489b475b4a2c39cad94cc1d2da8',1,'console::ltrim(const wchar_t *str, const std::wstring &amp;chars)']]]
+  ['key_5fexpansion_0',['key_expansion',['../namespaceconsole_1_1crypto_1_1aes__impl.html#a8471d0567fde39ae433d5a954d4f4d69',1,'console::crypto::aes_impl']]],
+  ['keyboard_1',['Keyboard',['../classconsole_1_1_keyboard.html#a34a4f8e67346f779b74e9f544343a4dc',1,'console::Keyboard::Keyboard()'],['../classconsole_1_1_keyboard.html#ae89efe454685d2cf5d4f39ada959847f',1,'console::Keyboard::Keyboard(const Keyboard &amp;)=delete'],['../classconsole_1_1_keyboard.html#a94d6ee480e6a6604ae35aa0baa852984',1,'console::Keyboard::Keyboard(Keyboard &amp;&amp;)=delete']]],
+  ['kill_2',['kill',['../classconsole_1_1_process.html#a0214fda030bf26ace4d9ff67e8a90e0b',1,'console::Process']]],
+  ['kth_5fsmallest_3',['kth_smallest',['../group__matools.html#ga3c5845a0e4b9136f472deaddf3bd4dea',1,'console']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logging_0',['Logging',['../namespaceconsole.html#a8b24381a4d965c11be6a06e128c83195',1,'console']]]
+  ['logging_0',['Logging',['../namespaceconsole.html#a76bd02965ca0238ffa3b0917b072fbbc',1,'console']]]
 ];

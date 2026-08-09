@@ -1,4 +1,30 @@
 var searchData=
 [
-  ['keyboard_0',['Keyboard',['../classconsole_1_1_keyboard.html',1,'console']]]
+  ['identity_5ft_0',['identity_t',['../structconsole_1_1ops_1_1identity__t.html',1,'console::ops']]],
+  ['inc_5ft_1',['inc_t',['../structconsole_1_1ops_1_1inc__t.html',1,'console::ops']]],
+  ['includes_5ft_2',['includes_t',['../structconsole_1_1alg_1_1includes__t.html',1,'console::alg']]],
+  ['indexerror_3',['IndexError',['../classconsole_1_1_index_error.html',1,'console']]],
+  ['inner_5fproduct_5ft_4',['inner_product_t',['../structconsole_1_1alg_1_1inner__product__t.html',1,'console::alg']]],
+  ['inplace_5fmerge_5ft_5',['inplace_merge_t',['../structconsole_1_1alg_1_1inplace__merge__t.html',1,'console::alg']]],
+  ['iota_5ft_6',['iota_t',['../structconsole_1_1alg_1_1iota__t.html',1,'console::alg']]],
+  ['is_5fbasic_5fprintable_7',['is_basic_printable',['../structconsole_1_1is__basic__printable.html',1,'console']]],
+  ['is_5fbasic_5fprintable_3c_20wchar_5ft_2c_20std_3a_3achar_5ftraits_3c_20wchar_5ft_20_3e_2c_20t_20_3e_8',['is_basic_printable&lt; wchar_t, std::char_traits&lt; wchar_t &gt;, T &gt;',['../structconsole_1_1is__basic__printable.html',1,'console']]],
+  ['is_5fcallable_9',['is_callable',['../structis__callable.html',1,'']]],
+  ['is_5fcallable_5fimpl_10',['is_callable_impl',['../structconsole_1_1is__callable__impl.html',1,'console']]],
+  ['is_5fcallable_5fimpl_3c_20f_28args_2e_2e_2e_29_2c_20void_20_3e_11',['is_callable_impl&lt; F(Args...), void &gt;',['../structconsole_1_1is__callable__impl.html',1,'console']]],
+  ['is_5fcallable_5fimpl_3c_20f_28args_2e_2e_2e_29_2c_20void_5ft_3c_20decltype_28std_3a_3adeclval_3c_20f_20_3e_28_29_28std_3a_3adeclval_3c_20args_20_3e_28_29_2e_2e_2e_29_29_3e_20_3e_12',['is_callable_impl&lt; F(Args...), void_t&lt; decltype(std::declval&lt; F &gt;()(std::declval&lt; Args &gt;()...))&gt; &gt;',['../structconsole_1_1is__callable__impl_3_01_f_07_args_8_8_8_08_00_01void__t_3_01decltype_07std_1_1d93fca231d51456c0d5eb20180d9df8c5.html',1,'console']]],
+  ['is_5fchar_13',['is_char',['../structconsole_1_1is__char.html',1,'console']]],
+  ['is_5fcontainer_14',['is_container',['../structconsole_1_1is__container.html',1,'console']]],
+  ['is_5fgenerator_15',['is_generator',['../structconsole_1_1is__generator.html',1,'console']]],
+  ['is_5fiterator_16',['is_iterator',['../structconsole_1_1is__iterator.html',1,'console']]],
+  ['is_5fnull_5ft_17',['is_null_t',['../structconsole_1_1ops_1_1is__null__t.html',1,'console::ops']]],
+  ['is_5fpartitioned_5ft_18',['is_partitioned_t',['../structconsole_1_1alg_1_1is__partitioned__t.html',1,'console::alg']]],
+  ['is_5fpermutation_5ft_19',['is_permutation_t',['../structconsole_1_1alg_1_1is__permutation__t.html',1,'console::alg']]],
+  ['is_5fprintable_20',['is_printable',['../structconsole_1_1is__printable.html',1,'console']]],
+  ['is_5fsorted_5ft_21',['is_sorted_t',['../structconsole_1_1alg_1_1is__sorted__t.html',1,'console::alg']]],
+  ['is_5fsorted_5funtil_5ft_22',['is_sorted_until_t',['../structconsole_1_1alg_1_1is__sorted__until__t.html',1,'console::alg']]],
+  ['is_5fstring_23',['is_string',['../structconsole_1_1is__string.html',1,'console']]],
+  ['item_24',['Item',['../classconsole_1_1_basic_i_n_i_config_1_1_item.html',1,'console::BasicINIConfig&lt; CharT &gt;::Item'],['../classconsole_1_1_item.html',1,'console::Item']]],
+  ['iterator_25',['iterator',['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4_1_1iterator.html',1,'console::_V2::MultiArray&lt; T, First, Rest... &gt;::iterator'],['../classconsole_1_1_basic_progress_1_1iterator.html',1,'console::BasicProgress&lt; CharT, Traits, Iter &gt;::iterator'],['../classconsole_1_1_generator_1_1iterator.html',1,'console::Generator&lt; Derived, T &gt;::iterator']]],
+  ['iteratorpair_26',['IteratorPair',['../structconsole_1_1_iterator_pair.html',1,'console']]]
 ];

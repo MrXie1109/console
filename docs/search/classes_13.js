@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['uniform_5fdistribution_5fimpl_0',['uniform_distribution_impl',['../structconsole_1_1uniform__distribution__impl.html',1,'console']]],
-  ['unique_1',['unique',['../structconsole_1_1ops_1_1unique.html',1,'console::ops']]]
+  ['table_0',['Table',['../classconsole_1_1_table.html',1,'console']]],
+  ['take_1',['Take',['../classconsole_1_1gen_1_1_take.html',1,'console::gen']]],
+  ['take_5ft_2',['take_t',['../classconsole_1_1gen_1_1take__t.html',1,'console::gen']]],
+  ['take_5funtil_5ft_3',['take_until_t',['../classconsole_1_1gen_1_1take__until__t.html',1,'console::gen']]],
+  ['take_5fwhile_5ft_4',['take_while_t',['../classconsole_1_1gen_1_1take__while__t.html',1,'console::gen']]],
+  ['takeuntil_5',['TakeUntil',['../classconsole_1_1gen_1_1_take_until.html',1,'console::gen']]],
+  ['takewhile_6',['TakeWhile',['../classconsole_1_1gen_1_1_take_while.html',1,'console::gen']]],
+  ['tan_5ft_7',['tan_t',['../structconsole_1_1ops_1_1tan__t.html',1,'console::ops']]],
+  ['task_8',['Task',['../structconsole_1_1_thread_pool_1_1_task.html',1,'console::ThreadPool']]],
+  ['taskbase_9',['TaskBase',['../structconsole_1_1_thread_pool_1_1_task_base.html',1,'console::ThreadPool']]],
+  ['thread_10',['Thread',['../classconsole_1_1_thread.html',1,'console']]],
+  ['threadpool_11',['ThreadPool',['../classconsole_1_1_thread_pool.html',1,'console']]],
+  ['tiediterators_12',['TiedIterators',['../classconsole_1_1_tied_iterators.html',1,'console']]],
+  ['time_13',['Time',['../classconsole_1_1_time.html',1,'console']]],
+  ['timestamp_5ft_14',['timestamp_t',['../structconsole_1_1ops_1_1timestamp__t.html',1,'console::ops']]],
+  ['to_5flower_5ft_15',['to_lower_t',['../structconsole_1_1ops_1_1to__lower__t.html',1,'console::ops']]],
+  ['to_5fstring_5ft_16',['to_string_t',['../structconsole_1_1ops_1_1to__string__t.html',1,'console::ops']]],
+  ['to_5ft_17',['to_t',['../classconsole_1_1gen_1_1to__t.html',1,'console::gen']]],
+  ['to_5fupper_5ft_18',['to_upper_t',['../structconsole_1_1ops_1_1to__upper__t.html',1,'console::ops']]],
+  ['transform_5ft_19',['transform_t',['../structconsole_1_1alg_1_1transform__t.html',1,'console::alg']]],
+  ['trim_5ft_20',['trim_t',['../structconsole_1_1ops_1_1trim__t.html',1,'console::ops']]],
+  ['typeerror_21',['TypeError',['../classconsole_1_1_type_error.html',1,'console']]]
 ];

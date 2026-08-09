@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['valueerror_0',['ValueError',['../classconsole_1_1_value_error.html',1,'console']]],
-  ['view_1',['View',['../classconsole_1_1_view.html',1,'console']]],
-  ['view_3c_20const_20container_20_3e_2',['View&lt; const Container &gt;',['../classconsole_1_1_view_3_01const_01_container_01_4.html',1,'console']]],
-  ['view_3c_20const_20t_5b_5d_3e_3',['View&lt; const T[]&gt;',['../classconsole_1_1_view_3_01const_01_t_0f_0e_4.html',1,'console']]],
-  ['view_3c_20t_5b_5d_3e_4',['View&lt; T[]&gt;',['../classconsole_1_1_view_3_01_t_0f_0e_4.html',1,'console']]],
-  ['views_5',['Views',['../classconsole_1_1gen_1_1_views.html',1,'console::gen']]]
+  ['uniform_5fdistribution_5fimpl_0',['uniform_distribution_impl',['../structconsole_1_1uniform__distribution__impl.html',1,'console']]],
+  ['unique_1',['unique',['../structconsole_1_1ops_1_1unique.html',1,'console::ops']]],
+  ['unique_5fcopy_5ft_2',['unique_copy_t',['../structconsole_1_1alg_1_1unique__copy__t.html',1,'console::alg']]],
+  ['unique_5ft_3',['unique_t',['../structconsole_1_1alg_1_1unique__t.html',1,'console::alg']]],
+  ['upper_5fbound_5ft_4',['upper_bound_t',['../structconsole_1_1alg_1_1upper__bound__t.html',1,'console::alg']]]
 ];

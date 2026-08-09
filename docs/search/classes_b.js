@@ -1,20 +1,9 @@
 var searchData=
 [
-  ['map_0',['Map',['../classconsole_1_1gen_1_1_map.html',1,'console::gen']]],
-  ['map_5ft_1',['map_t',['../classconsole_1_1gen_1_1map__t.html',1,'console::gen']]],
-  ['match_2',['Match',['../classconsole_1_1_basic_regex_1_1_match.html',1,'console::BasicRegex']]],
-  ['max_5felement_5ft_3',['max_element_t',['../structconsole_1_1ops_1_1max__element__t.html',1,'console::ops']]],
-  ['maybe_4',['Maybe',['../classconsole_1_1_maybe.html',1,'console']]],
-  ['member_5',['Member',['../structconsole_1_1ops_1_1_member.html',1,'console::ops']]],
-  ['midi_6',['MIDI',['../classconsole_1_1_m_i_d_i.html',1,'console']]],
-  ['min_5felement_5ft_7',['min_element_t',['../structconsole_1_1ops_1_1min__element__t.html',1,'console::ops']]],
-  ['minus_5ft_8',['minus_t',['../structconsole_1_1ops_1_1minus__t.html',1,'console::ops']]],
-  ['mod_9',['Mod',['../structconsole_1_1ops_1_1_mod.html',1,'console::ops']]],
-  ['modulus_5ft_10',['modulus_t',['../structconsole_1_1ops_1_1modulus__t.html',1,'console::ops']]],
-  ['mul_11',['Mul',['../structconsole_1_1ops_1_1_mul.html',1,'console::ops']]],
-  ['multiarray_12',['multiarray',['../classconsole_1_1___v1_1_1_multi_array.html',1,'console::_V1::MultiArray&lt; T, Dims &gt;'],['../classconsole_1_1___v2_1_1_multi_array.html',1,'console::_V2::MultiArray&lt; T, Dims &gt;'],['../classconsole_1_1___v2_1_1_multi_array.html',1,'console::MultiArray&lt; T, Dims &gt;']]],
-  ['multiarray_3c_20t_2c_20d_20_3e_13',['multiarray&lt; t, d &gt;',['../classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::_V1::MultiArray&lt; T, D &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::_V2::MultiArray&lt; T, D &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html',1,'console::MultiArray&lt; T, D &gt;']]],
-  ['multiarray_3c_20t_2c_20first_2c_20rest_2e_2e_2e_20_3e_14',['multiarray&lt; t, first, rest... &gt;',['../classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::_V1::MultiArray&lt; T, First, Rest... &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::_V2::MultiArray&lt; T, First, Rest... &gt;'],['../classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html',1,'console::MultiArray&lt; T, First, Rest... &gt;']]],
-  ['multiarrayerror_15',['MultiArrayError',['../classconsole_1_1_multi_array_error.html',1,'console']]],
-  ['multiplies_5ft_16',['multiplies_t',['../structconsole_1_1ops_1_1multiplies__t.html',1,'console::ops']]]
+  ['le_0',['Le',['../structconsole_1_1ops_1_1_le.html',1,'console::ops']]],
+  ['lexicographical_5fcompare_5ft_1',['lexicographical_compare_t',['../structconsole_1_1alg_1_1lexicographical__compare__t.html',1,'console::alg']]],
+  ['list_2',['List',['../classconsole_1_1gen_1_1_list.html',1,'console::gen']]],
+  ['log10_5ft_3',['log10_t',['../structconsole_1_1ops_1_1log10__t.html',1,'console::ops']]],
+  ['lower_5fbound_5ft_4',['lower_bound_t',['../structconsole_1_1alg_1_1lower__bound__t.html',1,'console::alg']]],
+  ['lt_5',['Lt',['../structconsole_1_1ops_1_1_lt.html',1,'console::ops']]]
 ];
