@@ -1,5 +1,16 @@
 var NAVTREEINDEX20 =
 {
+"structconsole_1_1ops_1_1_mod.html":[2,0,0,5,39],
+"structconsole_1_1ops_1_1_mod.html#a8aa78932ddc083dc1da1097804e14b8a":[1,0,0,8,39,1],
+"structconsole_1_1ops_1_1_mod.html#a8aa78932ddc083dc1da1097804e14b8a":[2,0,0,5,39,1],
+"structconsole_1_1ops_1_1_mod.html#af47ed23d3bdd0ebfbc57f50dfd500dd6":[1,0,0,8,39,0],
+"structconsole_1_1ops_1_1_mod.html#af47ed23d3bdd0ebfbc57f50dfd500dd6":[2,0,0,5,39,0],
+"structconsole_1_1ops_1_1_mul.html":[1,0,0,8,41],
+"structconsole_1_1ops_1_1_mul.html":[2,0,0,5,41],
+"structconsole_1_1ops_1_1_mul.html#a4d02b3e18054806c47714c4ccc33cbe8":[1,0,0,8,41,0],
+"structconsole_1_1ops_1_1_mul.html#a4d02b3e18054806c47714c4ccc33cbe8":[2,0,0,5,41,0],
+"structconsole_1_1ops_1_1_mul.html#a861791021ddeddd1d5b2cb1e58a2a6d8":[1,0,0,8,41,1],
+"structconsole_1_1ops_1_1_mul.html#a861791021ddeddd1d5b2cb1e58a2a6d8":[2,0,0,5,41,1],
 "structconsole_1_1ops_1_1_ne.html":[1,0,0,8,43],
 "structconsole_1_1ops_1_1_ne.html":[2,0,0,5,43],
 "structconsole_1_1ops_1_1_ne.html#a6c0c6078909a95f3eddd2392fe0dbdb7":[1,0,0,8,43,0],
@@ -238,16 +249,5 @@ var NAVTREEINDEX20 =
 "structconsole_1_1ops_1_1to__lower__t.html#ae1e7615d0521057eb3ec9a786832a350":[2,0,0,5,71,0],
 "structconsole_1_1ops_1_1to__string__t.html":[1,0,0,8,72],
 "structconsole_1_1ops_1_1to__string__t.html":[2,0,0,5,72],
-"structconsole_1_1ops_1_1to__string__t.html#a788b53e307215315b3bc7706603288a0":[1,0,0,8,72,0],
-"structconsole_1_1ops_1_1to__string__t.html#a788b53e307215315b3bc7706603288a0":[2,0,0,5,72,0],
-"structconsole_1_1ops_1_1to__upper__t.html":[1,0,0,8,73],
-"structconsole_1_1ops_1_1to__upper__t.html":[2,0,0,5,73],
-"structconsole_1_1ops_1_1to__upper__t.html#aabbcd8e0667fd0f52efb53a207e5e7fc":[1,0,0,8,73,0],
-"structconsole_1_1ops_1_1to__upper__t.html#aabbcd8e0667fd0f52efb53a207e5e7fc":[2,0,0,5,73,0],
-"structconsole_1_1ops_1_1trim__t.html":[1,0,0,8,74],
-"structconsole_1_1ops_1_1trim__t.html":[2,0,0,5,74],
-"structconsole_1_1ops_1_1trim__t.html#a35650371ed72c41ebf1e3f58b06c3f3b":[1,0,0,8,74,0],
-"structconsole_1_1ops_1_1trim__t.html#a35650371ed72c41ebf1e3f58b06c3f3b":[2,0,0,5,74,0],
-"structconsole_1_1ops_1_1unique.html":[1,0,0,8,75],
-"structconsole_1_1ops_1_1unique.html":[2,0,0,5,75]
+"structconsole_1_1ops_1_1to__string__t.html#a788b53e307215315b3bc7706603288a0":[1,0,0,8,72,0]
 };

@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "iklqs",
   8: "abcdefghijklmnopqrstuvwxyz",
   9: "cimos",
-  10: "_acdmnpsuw",
+  10: "_acdemnpstuw",
   11: "t字打数标类视输随"
 };
 

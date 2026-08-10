@@ -44,6 +44,7 @@ var dir_9f97b40203d0b7782e2ba57c500dd0f3 =
     [ "strpp.h", "strpp_8h.html", "strpp_8h" ],
     [ "syscmd.h", "syscmd_8h.html", "syscmd_8h" ],
     [ "term.h", "term_8h.html", "term_8h" ],
+    [ "test.h", "test_8h.html", "test_8h" ],
     [ "time.h", "time_8h.html", "time_8h" ],
     [ "view.h", "view_8h.html", "view_8h" ]
 ];

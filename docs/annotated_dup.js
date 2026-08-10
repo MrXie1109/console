@@ -230,6 +230,7 @@ var annotated_dup =
         [ "zero_t", "structconsole_1_1ops_1_1zero__t.html", "structconsole_1_1ops_1_1zero__t" ]
       ] ],
       [ "_multi_array_base", "structconsole_1_1___v2_1_1__multi__array__base.html", "structconsole_1_1___v2_1_1__multi__array__base" ],
+      [ "AssertError", "classconsole_1_1_assert_error.html", "classconsole_1_1_assert_error" ],
       [ "AsyncError", "classconsole_1_1_async_error.html", "classconsole_1_1_async_error" ],
       [ "BadFormat", "classconsole_1_1_bad_format.html", "classconsole_1_1_bad_format" ],
       [ "BasicINIConfig", "classconsole_1_1_basic_i_n_i_config.html", "classconsole_1_1_basic_i_n_i_config" ],

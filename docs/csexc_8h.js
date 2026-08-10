@@ -11,5 +11,6 @@ var csexc_8h =
     [ "console::IndexError", "classconsole_1_1_index_error.html", "classconsole_1_1_index_error" ],
     [ "console::DomainError", "classconsole_1_1_domain_error.html", "classconsole_1_1_domain_error" ],
     [ "console::StopIteration", "classconsole_1_1_stop_iteration.html", "classconsole_1_1_stop_iteration" ],
-    [ "console::AsyncError", "classconsole_1_1_async_error.html", "classconsole_1_1_async_error" ]
+    [ "console::AsyncError", "classconsole_1_1_async_error.html", "classconsole_1_1_async_error" ],
+    [ "console::AssertError", "classconsole_1_1_assert_error.html", "classconsole_1_1_assert_error" ]
 ];

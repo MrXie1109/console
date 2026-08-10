@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.13.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -128,14 +128,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae313bd46314aa4d0a09331e8f0948502"><td class="mdescLeft">&#160;</td><td class="mdescRight">将格式说明符应用到输出流。  <br /></td></tr>
 <tr class="memitem:a493d456ff83bb5dcd022af6f420e187f" id="r_a493d456ff83bb5dcd022af6f420e187f"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
 <tr class="memitem:a493d456ff83bb5dcd022af6f420e187f template"><td class="memItemLeft">static std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="#a493d456ff83bb5dcd022af6f420e187f">apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value)</td></tr>
-<tr class="memitem:af1e339622ee86b6043b078fb2b27a606" id="r_af1e339622ee86b6043b078fb2b27a606"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
-<tr class="memitem:af1e339622ee86b6043b078fb2b27a606 template"><td class="memItemLeft">static std::enable_if&lt;!std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="#af1e339622ee86b6043b078fb2b27a606">apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value)</td></tr>
+<tr class="memitem:a1d75a1cc89a3d83307b65af6b0c7c85d" id="r_a1d75a1cc89a3d83307b65af6b0c7c85d"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
+<tr class="memitem:a1d75a1cc89a3d83307b65af6b0c7c85d template"><td class="memItemLeft">static std::enable_if&lt;!std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="#a1d75a1cc89a3d83307b65af6b0c7c85d">apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;, const T &amp;)</td></tr>
 <tr class="memitem:a4a5183bffc453562561eb0be460d1e6b" id="r_a4a5183bffc453562561eb0be460d1e6b"><td class="memTemplParams" colspan="2">template&lt;typename CharT = char, typename T&gt; </td></tr>
 <tr class="memitem:a4a5183bffc453562561eb0be460d1e6b template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4a5183bffc453562561eb0be460d1e6b">format_value</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value, const <a class="el" href="structconsole_1_1details_1_1_basic_format_spec.html">BasicFormatSpec</a>&lt; CharT &gt; &amp;spec)</td></tr>
 <tr class="memdesc:a4a5183bffc453562561eb0be460d1e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化单个值。  <br /></td></tr>
-<tr class="memitem:a977d1f50a02e31a0e0a55504a498eb32" id="r_a977d1f50a02e31a0e0a55504a498eb32"><td class="memTemplParams" colspan="2">template&lt;class CharT = char&gt; </td></tr>
-<tr class="memitem:a977d1f50a02e31a0e0a55504a498eb32 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a977d1f50a02e31a0e0a55504a498eb32">format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t argIndex)</td></tr>
-<tr class="memdesc:a977d1f50a02e31a0e0a55504a498eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(无参数版本，递归终止)。  <br /></td></tr>
+<tr class="memitem:a79fcd8c0bec89314d4b31694888cb2d3" id="r_a79fcd8c0bec89314d4b31694888cb2d3"><td class="memTemplParams" colspan="2">template&lt;class CharT = char&gt; </td></tr>
+<tr class="memitem:a79fcd8c0bec89314d4b31694888cb2d3 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a79fcd8c0bec89314d4b31694888cb2d3">format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t)</td></tr>
+<tr class="memdesc:a79fcd8c0bec89314d4b31694888cb2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(无参数版本，递归终止)。  <br /></td></tr>
 <tr class="memitem:aee21843df4e4967818ee91b52afd65a6" id="r_aee21843df4e4967818ee91b52afd65a6"><td class="memTemplParams" colspan="2">template&lt;class CharT = char, typename T, typename... Args&gt; </td></tr>
 <tr class="memitem:aee21843df4e4967818ee91b52afd65a6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aee21843df4e4967818ee91b52afd65a6">format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t argIndex, const T &amp;first, const Args &amp;...rest)</td></tr>
 <tr class="memdesc:aee21843df4e4967818ee91b52afd65a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(有参数版本)。  <br /></td></tr>
@@ -179,8 +179,8 @@ template&lt;class CharT = char&gt; </div>
 
 </div>
 </div>
-<a id="af1e339622ee86b6043b078fb2b27a606" name="af1e339622ee86b6043b078fb2b27a606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1e339622ee86b6043b078fb2b27a606">&#9670;&#160;</a></span>apply_space_if_nonneg() <span class="overload">[1/2]</span></h2>
+<a id="a1d75a1cc89a3d83307b65af6b0c7c85d" name="a1d75a1cc89a3d83307b65af6b0c7c85d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d75a1cc89a3d83307b65af6b0c7c85d">&#9670;&#160;</a></span>apply_space_if_nonneg() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,12 +193,12 @@ template&lt;class CharT, class T&gt; </div>
         <tr>
           <td class="memname">std::enable_if&lt;!std::is_arithmetic&lt; T &gt;::value, void &gt;::type console::details::apply_space_if_nonneg </td>
           <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+          <td class="paramtype">std::basic_ostream&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -241,58 +241,8 @@ template&lt;class CharT, class T&gt; </div>
 
 </div>
 </div>
-<a id="a977d1f50a02e31a0e0a55504a498eb32" name="a977d1f50a02e31a0e0a55504a498eb32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a977d1f50a02e31a0e0a55504a498eb32">&#9670;&#160;</a></span>format_impl() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class CharT = char&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void console::details::format_impl </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::basic_string&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>argIndex</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>格式化实现(无参数版本，递归终止)。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>输出流。 </td></tr>
-    <tr><td class="paramname">fmt</td><td>格式字符串。 </td></tr>
-    <tr><td class="paramname">pos</td><td>当前解析位置。 </td></tr>
-    <tr><td class="paramname">argIndex</td><td>参数索引。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aee21843df4e4967818ee91b52afd65a6" name="aee21843df4e4967818ee91b52afd65a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee21843df4e4967818ee91b52afd65a6">&#9670;&#160;</a></span>format_impl() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aee21843df4e4967818ee91b52afd65a6">&#9670;&#160;</a></span>format_impl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,6 +299,56 @@ template&lt;class CharT = char, typename T, typename... Args&gt; </div>
     <tr><td class="paramname">argIndex</td><td>参数索引。 </td></tr>
     <tr><td class="paramname">first</td><td>第一个参数。 </td></tr>
     <tr><td class="paramname">rest</td><td>剩余参数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79fcd8c0bec89314d4b31694888cb2d3" name="a79fcd8c0bec89314d4b31694888cb2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79fcd8c0bec89314d4b31694888cb2d3">&#9670;&#160;</a></span>format_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT = char&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::details::format_impl </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_string&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>格式化实现(无参数版本，递归终止)。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>字符类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流。 </td></tr>
+    <tr><td class="paramname">fmt</td><td>格式字符串。 </td></tr>
+    <tr><td class="paramname">pos</td><td>当前解析位置。 </td></tr>
+    <tr><td class="paramname">argIndex</td><td>参数索引。 </td></tr>
   </table>
   </dd>
 </dl>

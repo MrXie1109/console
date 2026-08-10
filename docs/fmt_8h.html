@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.13.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -152,14 +152,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae313bd46314aa4d0a09331e8f0948502"><td class="mdescLeft">&#160;</td><td class="mdescRight">将格式说明符应用到输出流。  <br /></td></tr>
 <tr class="memitem:a493d456ff83bb5dcd022af6f420e187f" id="r_a493d456ff83bb5dcd022af6f420e187f"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
 <tr class="memitem:a493d456ff83bb5dcd022af6f420e187f template"><td class="memItemLeft">static std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#a493d456ff83bb5dcd022af6f420e187f">console::details::apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value)</td></tr>
-<tr class="memitem:af1e339622ee86b6043b078fb2b27a606" id="r_af1e339622ee86b6043b078fb2b27a606"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
-<tr class="memitem:af1e339622ee86b6043b078fb2b27a606 template"><td class="memItemLeft">static std::enable_if&lt;!std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#af1e339622ee86b6043b078fb2b27a606">console::details::apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value)</td></tr>
+<tr class="memitem:a1d75a1cc89a3d83307b65af6b0c7c85d" id="r_a1d75a1cc89a3d83307b65af6b0c7c85d"><td class="memTemplParams" colspan="2">template&lt;class CharT, class T&gt; </td></tr>
+<tr class="memitem:a1d75a1cc89a3d83307b65af6b0c7c85d template"><td class="memItemLeft">static std::enable_if&lt;!std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#a1d75a1cc89a3d83307b65af6b0c7c85d">console::details::apply_space_if_nonneg</a> (std::basic_ostream&lt; CharT &gt; &amp;, const T &amp;)</td></tr>
 <tr class="memitem:a4a5183bffc453562561eb0be460d1e6b" id="r_a4a5183bffc453562561eb0be460d1e6b"><td class="memTemplParams" colspan="2">template&lt;typename CharT = char, typename T&gt; </td></tr>
 <tr class="memitem:a4a5183bffc453562561eb0be460d1e6b template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#a4a5183bffc453562561eb0be460d1e6b">console::details::format_value</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value, const <a class="el" href="structconsole_1_1details_1_1_basic_format_spec.html">BasicFormatSpec</a>&lt; CharT &gt; &amp;spec)</td></tr>
 <tr class="memdesc:a4a5183bffc453562561eb0be460d1e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化单个值。  <br /></td></tr>
-<tr class="memitem:a977d1f50a02e31a0e0a55504a498eb32" id="r_a977d1f50a02e31a0e0a55504a498eb32"><td class="memTemplParams" colspan="2">template&lt;class CharT = char&gt; </td></tr>
-<tr class="memitem:a977d1f50a02e31a0e0a55504a498eb32 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#a977d1f50a02e31a0e0a55504a498eb32">console::details::format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t argIndex)</td></tr>
-<tr class="memdesc:a977d1f50a02e31a0e0a55504a498eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(无参数版本，递归终止)。  <br /></td></tr>
+<tr class="memitem:a79fcd8c0bec89314d4b31694888cb2d3" id="r_a79fcd8c0bec89314d4b31694888cb2d3"><td class="memTemplParams" colspan="2">template&lt;class CharT = char&gt; </td></tr>
+<tr class="memitem:a79fcd8c0bec89314d4b31694888cb2d3 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#a79fcd8c0bec89314d4b31694888cb2d3">console::details::format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t)</td></tr>
+<tr class="memdesc:a79fcd8c0bec89314d4b31694888cb2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(无参数版本，递归终止)。  <br /></td></tr>
 <tr class="memitem:aee21843df4e4967818ee91b52afd65a6" id="r_aee21843df4e4967818ee91b52afd65a6"><td class="memTemplParams" colspan="2">template&lt;class CharT = char, typename T, typename... Args&gt; </td></tr>
 <tr class="memitem:aee21843df4e4967818ee91b52afd65a6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1details.html#aee21843df4e4967818ee91b52afd65a6">console::details::format_impl</a> (std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t argIndex, const T &amp;first, const Args &amp;...rest)</td></tr>
 <tr class="memdesc:aee21843df4e4967818ee91b52afd65a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化实现(有参数版本)。  <br /></td></tr>

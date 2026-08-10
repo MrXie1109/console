@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scalar_5fand_5farray_0',['SCALAR_AND_ARRAY',['../multiarray_8h.html#ab0d67f01d9181819db59acee9f96c075',1,'multiarray.h']]],
-  ['scalar_5fand_5farray_5fbool_1',['SCALAR_AND_ARRAY_BOOL',['../multiarray_8h.html#ad13eb77c2c55c9825cd78bde5e21cc2e',1,'multiarray.h']]]
+  ['pclose_0',['PCLOSE',['../syscmd_8h.html#a4c39c7c96d7f5d1f5cd1743122d476e3',1,'syscmd.h']]],
+  ['popen_1',['POPEN',['../syscmd_8h.html#ab6949e8178edeb4294d893f3ee4966d5',1,'syscmd.h']]]
 ];

@@ -75,5 +75,6 @@ var searchData=
   ['exp_72',['exp',['../namespaceconsole_1_1ops.html#af71c083953ee9d1b39f2ffa12bd04817',1,'console::ops::exp'],['../group__matools.html#gae88badc0104c05d50f0a8a3d2b75ec60',1,'console::exp()']]],
   ['exp_5ft_73',['exp_t',['../structconsole_1_1ops_1_1exp__t.html',1,'console::ops']]],
   ['expect_74',['expect',['../classconsole_1_1_result.html#a28870b7bb76bb1aa3574cca32e1fba4f',1,'console::Result']]],
-  ['exponent_75',['exponent',['../structconsole_1_1ops_1_1_pow.html#abd073683a2181a60aff362aec0ed0ef0',1,'console::ops::Pow']]]
+  ['exponent_75',['exponent',['../structconsole_1_1ops_1_1_pow.html#abd073683a2181a60aff362aec0ed0ef0',1,'console::ops::Pow']]],
+  ['expr_5fwarp_76',['EXPR_WARP',['../test_8h.html#a7da4c6801bb682effe1b401fc9430d1a',1,'test.h']]]
 ];

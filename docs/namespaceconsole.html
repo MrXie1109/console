@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;6.13.1</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -139,6 +139,8 @@ Namespaces</h2></td></tr>
 Classes</h2></td></tr>
 <tr class="memitem:_5Fmulti_5Farray_5Fbase" id="r__5Fmulti_5Farray_5Fbase"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1___v2_1_1__multi__array__base.html">_multi_array_base</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">编译期固定维度的多维数组元数据。  <a href="structconsole_1_1___v2_1_1__multi__array__base.html#details">More...</a><br /></td></tr>
+<tr class="memitem:AssertError" id="r_AssertError"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1_assert_error.html">AssertError</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示断言失败的错误。  <a href="classconsole_1_1_assert_error.html#details">More...</a><br /></td></tr>
 <tr class="memitem:AsyncError" id="r_AsyncError"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1_async_error.html">AsyncError</a></td></tr>
 <tr class="memitem:BadFormat" id="r_BadFormat"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1_bad_format.html">BadFormat</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">表示格式化字符串错误，例如占位符与参数不匹配。  <a href="classconsole_1_1_bad_format.html#details">More...</a><br /></td></tr>
@@ -1435,6 +1437,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3ced4fde99cf2e4fc7f150a7015ceff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复屏幕内容。  <br /></td></tr>
 <tr class="memitem:a16d702dc105828ccc8863d72e9b3feb2" id="r_a16d702dc105828ccc8863d72e9b3feb2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a16d702dc105828ccc8863d72e9b3feb2">clear_screen_save</a> () noexcept</td></tr>
 <tr class="memdesc:a16d702dc105828ccc8863d72e9b3feb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空屏幕并保留历史。  <br /></td></tr>
+<tr class="memitem:ab210b0022badc1b355b9e2991e27fa8e" id="r_ab210b0022badc1b355b9e2991e27fa8e"><td class="memItemLeft">int &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab210b0022badc1b355b9e2991e27fa8e">passed_count</a> ()</td></tr>
+<tr class="memdesc:ab210b0022badc1b355b9e2991e27fa8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取通过的测试用例数量。  <br /></td></tr>
+<tr class="memitem:a115059bd9223530d9b6c330bcc3654d1" id="r_a115059bd9223530d9b6c330bcc3654d1"><td class="memItemLeft">int &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a115059bd9223530d9b6c330bcc3654d1">failed_count</a> ()</td></tr>
+<tr class="memdesc:a115059bd9223530d9b6c330bcc3654d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取失败的测试用例数量。  <br /></td></tr>
+<tr class="memitem:a02c0d458f9e8741dee984abd68cfb0ef" id="r_a02c0d458f9e8741dee984abd68cfb0ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02c0d458f9e8741dee984abd68cfb0ef">pre_summary</a> ()</td></tr>
+<tr class="memdesc:a02c0d458f9e8741dee984abd68cfb0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造守卫对象，程序结束时输出摘要。  <br /></td></tr>
+<tr class="memitem:ad88e0030e10417344eee98da00bef292" id="r_ad88e0030e10417344eee98da00bef292"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ad88e0030e10417344eee98da00bef292">ptr_to_str</a> (const char *s)</td></tr>
+<tr class="memdesc:ad88e0030e10417344eee98da00bef292"><td class="mdescLeft">&#160;</td><td class="mdescRight">辅助函数：安全地将 C 字符串转换为显示字符串。  <br /></td></tr>
 <tr class="memitem:a0578f36535a4f79f104d4f7908bcbbe2" id="r_a0578f36535a4f79f104d4f7908bcbbe2"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0578f36535a4f79f104d4f7908bcbbe2">nanoseconds</a> (double n)</td></tr>
 <tr class="memdesc:a0578f36535a4f79f104d4f7908bcbbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造纳秒。  <br /></td></tr>
 <tr class="memitem:ab6a3e744e8f1fff6fa779abdd0d2cd58" id="r_ab6a3e744e8f1fff6fa779abdd0d2cd58"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab6a3e744e8f1fff6fa779abdd0d2cd58">microseconds</a> (double n)</td></tr>
@@ -1497,7 +1507,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a961f78601d0d038fd5c3ffba6bfd6e37" id="r_a961f78601d0d038fd5c3ffba6bfd6e37"><td class="memItemLeft">static constexpr char&#160;</td><td class="memItemRight"><a class="el" href="#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a> [] = &quot;CONSOLE-LIB-2026-08-09-MRXIE1109&quot;</td></tr>
+<tr class="memitem:a961f78601d0d038fd5c3ffba6bfd6e37" id="r_a961f78601d0d038fd5c3ffba6bfd6e37"><td class="memItemLeft">static constexpr char&#160;</td><td class="memItemRight"><a class="el" href="#a961f78601d0d038fd5c3ffba6bfd6e37">meta</a> [] = &quot;CONSOLE-LIB-2026-08-10-MRXIE1109&quot;</td></tr>
 <tr class="memitem:a562ec82bee3b13e314de0de262237bfc" id="r_a562ec82bee3b13e314de0de262237bfc"><td class="memItemLeft">static <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&#160;</td><td class="memItemRight"><a class="el" href="#a562ec82bee3b13e314de0de262237bfc">input_settings</a></td></tr>
 <tr class="memdesc:a562ec82bee3b13e314de0de262237bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局默认输入设置  <br /></td></tr>
 <tr class="memitem:a10e82442c08aca16d6d166624842a862" id="r_a10e82442c08aca16d6d166624842a862"><td class="memItemLeft">static <a class="el" href="structconsole_1_1_basic_input_settings.html">BasicInputSettings</a>&lt; wchar_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a10e82442c08aca16d6d166624842a862">w_input_settings</a></td></tr>
@@ -2816,6 +2826,35 @@ template&lt;class T, class U, size_t... Dims1, size_t... Dims2, class Op&gt; </d
 
 <p>检查两个 <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray</a> 是否相等。 </p>
 <dl class="section return"><dt>Returns</dt><dd>恒假。 </dd></dl>
+
+</div>
+</div>
+<a id="a115059bd9223530d9b6c330bcc3654d1" name="a115059bd9223530d9b6c330bcc3654d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a115059bd9223530d9b6c330bcc3654d1">&#9670;&#160;</a></span>failed_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int &amp; console::failed_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取失败的测试用例数量。 </p>
+<dl class="section return"><dt>Returns</dt><dd>已失败的测试用例数量。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>你不应该使用内部细节。 </dd></dl>
 
 </div>
 </div>
@@ -5842,6 +5881,35 @@ template&lt;class... Ts&gt; </div>
 
 </div>
 </div>
+<a id="ab210b0022badc1b355b9e2991e27fa8e" name="ab210b0022badc1b355b9e2991e27fa8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab210b0022badc1b355b9e2991e27fa8e">&#9670;&#160;</a></span>passed_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int &amp; console::passed_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取通过的测试用例数量。 </p>
+<dl class="section return"><dt>Returns</dt><dd>已通过的测试用例数量。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>你不应该使用内部细节。 </dd></dl>
+
+</div>
+</div>
 <a id="abc7ef1377ea73b6f5fbbd0d3f160a08a" name="abc7ef1377ea73b6f5fbbd0d3f160a08a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc7ef1377ea73b6f5fbbd0d3f160a08a">&#9670;&#160;</a></span>platform()</h2>
 
@@ -5867,6 +5935,34 @@ template&lt;class... Ts&gt; </div>
 
 <p>返回当前操作系统平台名称。 </p>
 <p>根据预定义宏识别 Windows、Linux、macOS 或 Unknown。 </p><dl class="section return"><dt>Returns</dt><dd>std::string 平台名称。 </dd></dl>
+
+</div>
+</div>
+<a id="a02c0d458f9e8741dee984abd68cfb0ef" name="a02c0d458f9e8741dee984abd68cfb0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c0d458f9e8741dee984abd68cfb0ef">&#9670;&#160;</a></span>pre_summary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::pre_summary </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造守卫对象，程序结束时输出摘要。 </p>
+<dl class="section note"><dt>Note</dt><dd>你不应该使用内部细节。 </dd></dl>
 
 </div>
 </div>
@@ -5958,6 +6054,33 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;, cl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>BasicProgress&lt;CharT, Traits, decltype(std::begin(cont))&gt;。 </dd></dl>
+
+</div>
+</div>
+<a id="ad88e0030e10417344eee98da00bef292" name="ad88e0030e10417344eee98da00bef292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88e0030e10417344eee98da00bef292">&#9670;&#160;</a></span>ptr_to_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string console::ptr_to_str </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>辅助函数：安全地将 C 字符串转换为显示字符串。 </p>
 
 </div>
 </div>
@@ -6913,7 +7036,7 @@ template&lt;class C1, class C2&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char console::meta[] = &quot;CONSOLE-LIB-2026-08-09-MRXIE1109&quot;</td>
+          <td class="memname">char console::meta[] = &quot;CONSOLE-LIB-2026-08-10-MRXIE1109&quot;</td>
         </tr>
       </table>
   </td>

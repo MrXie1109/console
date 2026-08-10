@@ -313,6 +313,7 @@ var hierarchy =
     [ "console::ops::round_t", "structconsole_1_1ops_1_1round__t.html", null ],
     [ "std::runtime_error", null, [
       [ "console::ConsoleError", "classconsole_1_1_console_error.html", [
+        [ "console::AssertError", "classconsole_1_1_assert_error.html", null ],
         [ "console::AsyncError", "classconsole_1_1_async_error.html", null ],
         [ "console::BadFormat", "classconsole_1_1_bad_format.html", null ],
         [ "console::ContainerError", "classconsole_1_1_container_error.html", null ],

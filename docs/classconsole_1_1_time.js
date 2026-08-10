@@ -9,6 +9,7 @@ var classconsole_1_1_time =
     [ "operator*", "classconsole_1_1_time.html#aeebbc550c5a1732331cd2bdebb35707d", null ],
     [ "operator/", "classconsole_1_1_time.html#adc8287bf4812f5138247d21e332e9b3c", null ],
     [ "s", "classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703", null ],
+    [ "str", "classconsole_1_1_time.html#a02e22bd611d5f90a637a891b241eef77", null ],
     [ "us", "classconsole_1_1_time.html#a317cd6bd52c628afa37886796c453a2f", null ],
     [ "operator!=", "classconsole_1_1_time.html#a805d2667ca1d457c209e9ae8b982ca18", null ],
     [ "operator+", "classconsole_1_1_time.html#a105959ca67c8b7f3c9abf692c80785cb", null ],

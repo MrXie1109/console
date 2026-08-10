@@ -14,7 +14,8 @@ var searchData=
   ['any_5fof_5ft_11',['any_of_t',['../structconsole_1_1alg_1_1any__of__t.html',1,'console::alg']]],
   ['as_12',['as',['../structconsole_1_1ops_1_1as.html',1,'console::ops']]],
   ['asin_5ft_13',['asin_t',['../structconsole_1_1ops_1_1asin__t.html',1,'console::ops']]],
-  ['asyncerror_14',['AsyncError',['../classconsole_1_1_async_error.html',1,'console']]],
-  ['atan_5ft_15',['atan_t',['../structconsole_1_1ops_1_1atan__t.html',1,'console::ops']]],
-  ['average_5ft_16',['average_t',['../structconsole_1_1ops_1_1average__t.html',1,'console::ops']]]
+  ['asserterror_14',['AssertError',['../classconsole_1_1_assert_error.html',1,'console']]],
+  ['asyncerror_15',['AsyncError',['../classconsole_1_1_async_error.html',1,'console']]],
+  ['atan_5ft_16',['atan_t',['../structconsole_1_1ops_1_1atan__t.html',1,'console::ops']]],
+  ['average_5ft_17',['average_t',['../structconsole_1_1ops_1_1average__t.html',1,'console::ops']]]
 ];
