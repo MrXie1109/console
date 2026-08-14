@@ -90,9 +90,9 @@ call :success "Repository cloned successfully"
 :: --- 5. Install Header Files ---
 call :step "Installing header files"
 
-set "SOURCE_DIR=!TEMP_DIR!\console"
+set "SOURCE_DIR=!TEMP_DIR!\include"
 if not exist "!SOURCE_DIR!" (
-    call :error "Cannot find 'console' subdirectory in cloned repository."
+    call :error "Cannot find 'include' subdirectory in cloned repository."
     call :error "Please examine the contents of: !TEMP_DIR!"
     rmdir /s /q "!TEMP_DIR!" 2>nul
     pause

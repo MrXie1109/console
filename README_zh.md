@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库**
+**一个现代 C++ 控制台工具库** | **v7.0.0** · _"TEST IT!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -36,6 +36,7 @@ Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应
 - **Result/Optional 类型** —— 类似 Rust
 - **协作式线程管理** —— 基于 Event 的停止机制
 - **作用域退出守卫** —— 使用 `defer` 宏(RAII风格)
+- **单元测试框架** —— 基于宏的断言和自动测试注册(断言、异常测试、性能基准测试)
 - 以及更多……
 
 ---
@@ -240,7 +241,7 @@ void config_example() {
 
 ### 协作式线程管理
 
-````cpp
+```cpp
 #include <console/all.h>
 using namespace console;
 
@@ -263,6 +264,7 @@ void thread_example() {
     // 等待线程结束(非必要)
     t.join();
 }
+```
 
 ### Defer(作用域退出守卫)
 
@@ -284,7 +286,33 @@ void defer_example() {
     }
     // 此处自动调用 fclose(file)
 }
-````
+```
+
+### 单元测试
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+TEST(AdditionWorks) {
+    ASSERT_EQ(2 + 2, 4); // 断言 2 + 2 等于 4
+}
+
+TEST(ContainerContains) {
+    std::vector<int> v = {1, 2, 3, 4};
+    ASSERT_CONTAINS(v, 3); // 断言 v 包含 3
+    ASSERT_SIZE_EQ(v, 4); // 断言 v 的大小等于 4
+}
+
+TEST(ExceptionThrows) {
+    ASSERT_THROWS(
+        throw std::runtime_error("error"),
+        std::runtime_error
+    ); // 断言抛出 std::runtime_error 异常
+}
+
+TEST_MAIN // 等价于 `int main() {}`
+```
 
 ---
 
@@ -311,7 +339,3 @@ void defer_example() {
 ## 作者
 
 **MrXie1109**
-
-```
-
-```

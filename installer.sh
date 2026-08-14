@@ -104,9 +104,9 @@ success "Repository cloned successfully"
 
 # --- 5. Install Header Files ---
 step "Installing header files"
-SOURCE_DIR="$TEMP_DIR/console"
+SOURCE_DIR="$TEMP_DIR/include"
 if [ ! -d "$SOURCE_DIR" ]; then
-    error "Cannot find 'console' subdirectory in cloned repository."
+    error "Cannot find 'include' subdirectory in cloned repository."
     error "Please examine the contents of: $TEMP_DIR"
     rm -rf "$TEMP_DIR"
     exit 1

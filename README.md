@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library**
+**A Modern C++ Console Utility Library** | **v7.0.0** · _"TEST IT!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -36,6 +36,7 @@ P.S.: `Console` is just a symbol, don't care it.
 - **Result/Optional types** similar to Rust
 - **Cooperative thread management** with Event-based stop mechanism
 - **Scope exit guards** using the `defer` macro (RAII-style)
+- **Unit testing framework** with macro-based assertions and automatic test registration (assertions, exception testing, performance benchmarking)
 - And much more...
 
 ---
@@ -285,6 +286,32 @@ void defer_example() {
     }
     // fclose(file) is automatically called here
 }
+```
+
+### Unit Testing
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+TEST(AdditionWorks) {
+    ASSERT_EQ(2 + 2, 4); // assert 2 + 2 equals 4
+}
+
+TEST(ContainerContains) {
+    std::vector<int> v = {1, 2, 3, 4};
+    ASSERT_CONTAINS(v, 3); // assert v contains 3
+    ASSERT_SIZE_EQ(v, 4); // assert v's size equals 4
+}
+
+TEST(ExceptionThrows) {
+    ASSERT_THROWS(
+        throw std::runtime_error("error"),
+        std::runtime_error
+    ); // assert throws std::runtime_error
+}
+
+TEST_MAIN // equivalent to `int main() {}`
 ```
 
 ---
