@@ -153,14 +153,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a0b44c8c5fcc4b5df4fa3476282b1a18b" id="r_a0b44c8c5fcc4b5df4fa3476282b1a18b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b44c8c5fcc4b5df4fa3476282b1a18b">skip_to_next_valid</a> ()</td></tr>
-<tr class="memdesc:a0b44c8c5fcc4b5df4fa3476282b1a18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳过所有不满足谓词的元素。  <br /></td></tr>
+<tr class="memitem:abaeb5127488bb5702813cce30a00293e" id="r_abaeb5127488bb5702813cce30a00293e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abaeb5127488bb5702813cce30a00293e">find_next</a> ()</td></tr>
+<tr class="memdesc:abaeb5127488bb5702813cce30a00293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找下一个满足谓词的元素。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a9f009e0df21a52378cebaaab382e047c" id="r_a9f009e0df21a52378cebaaab382e047c"><td class="memItemLeft">Gen&#160;</td><td class="memItemRight"><a class="el" href="#a9f009e0df21a52378cebaaab382e047c">gen</a></td></tr>
 <tr class="memitem:a98b4ff69d94b0cfeb82b2c65df827af3" id="r_a98b4ff69d94b0cfeb82b2c65df827af3"><td class="memItemLeft">Pred&#160;</td><td class="memItemRight"><a class="el" href="#a98b4ff69d94b0cfeb82b2c65df827af3">pred</a></td></tr>
-<tr class="memitem:a6bc9270a7058551de97bcad1b20e9ee4" id="r_a6bc9270a7058551de97bcad1b20e9ee4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6bc9270a7058551de97bcad1b20e9ee4">started</a> = false</td></tr>
+<tr class="memitem:a6c9e6946a28a6dacfe8a7af0d2415bbe" id="r_a6c9e6946a28a6dacfe8a7af0d2415bbe"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c9e6946a28a6dacfe8a7af0d2415bbe">valid</a></td></tr>
+<tr class="memitem:a742f0d5aabc01c7235948e07de0cbbce" id="r_a742f0d5aabc01c7235948e07de0cbbce"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a742f0d5aabc01c7235948e07de0cbbce">initialized</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -309,8 +310,8 @@ template&lt;class Gen, class Pred&gt; </div>
 
 </div>
 </div>
-<a id="a0b44c8c5fcc4b5df4fa3476282b1a18b" name="a0b44c8c5fcc4b5df4fa3476282b1a18b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b44c8c5fcc4b5df4fa3476282b1a18b">&#9670;&#160;</a></span>skip_to_next_valid()</h2>
+<a id="abaeb5127488bb5702813cce30a00293e" name="abaeb5127488bb5702813cce30a00293e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaeb5127488bb5702813cce30a00293e">&#9670;&#160;</a></span>find_next()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,7 +322,7 @@ template&lt;class Gen, class Pred&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::skip_to_next_valid </td>
+          <td class="memname">void <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::find_next </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -334,7 +335,7 @@ template&lt;class Gen, class Pred&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>跳过所有不满足谓词的元素。 </p>
+<p>查找下一个满足谓词的元素。 </p>
 
 </div>
 </div>
@@ -352,6 +353,30 @@ template&lt;class Gen, class Pred&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">Gen <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::gen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a742f0d5aabc01c7235948e07de0cbbce" name="a742f0d5aabc01c7235948e07de0cbbce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742f0d5aabc01c7235948e07de0cbbce">&#9670;&#160;</a></span>initialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen, class Pred&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::initialized</td>
         </tr>
       </table>
   </td>
@@ -387,8 +412,8 @@ template&lt;class Gen, class Pred&gt; </div>
 
 </div>
 </div>
-<a id="a6bc9270a7058551de97bcad1b20e9ee4" name="a6bc9270a7058551de97bcad1b20e9ee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc9270a7058551de97bcad1b20e9ee4">&#9670;&#160;</a></span>started</h2>
+<a id="a6c9e6946a28a6dacfe8a7af0d2415bbe" name="a6c9e6946a28a6dacfe8a7af0d2415bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9e6946a28a6dacfe8a7af0d2415bbe">&#9670;&#160;</a></span>valid</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,7 +424,7 @@ template&lt;class Gen, class Pred&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::started = false</td>
+          <td class="memname">bool <a class="el" href="classconsole_1_1gen_1_1_filter.html">console::gen::Filter</a>&lt; Gen, Pred &gt;::valid</td>
         </tr>
       </table>
   </td>
@@ -412,7 +437,7 @@ template&lt;class Gen, class Pred&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="gen_8h_source.html">gen.h</a></li>
+<li>include/<a class="el" href="gen_8h_source.html">gen.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

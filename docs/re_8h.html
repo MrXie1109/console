@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/re.h File Reference</title>
+<title>Console Library: include/re.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -115,7 +115,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('re_8h.html',''
 
 <p>提供正则表达式匹配、搜索、替换、分割等操作，接口类似 Python 的 re 模块。  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;regex&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="iter_8h_source.html">iter.h</a>&quot;</code><br />
@@ -139,24 +140,40 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:abdfc3731184cab4d4cd4d2113c24fdef" id="r_abdfc3731184cab4d4cd4d2113c24fdef"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#abdfc3731184cab4d4cd4d2113c24fdef">console::Regex</a> = <a class="el" href="classconsole_1_1_basic_regex.html">BasicRegex</a>&lt;char&gt;</td></tr>
+<tr class="memdesc:abdfc3731184cab4d4cd4d2113c24fdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符正则表达式。  <br /></td></tr>
 <tr class="memitem:a2991a2d1b529ace7c2243a47cfeafe57" id="r_a2991a2d1b529ace7c2243a47cfeafe57"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a2991a2d1b529ace7c2243a47cfeafe57">console::WRegex</a> = <a class="el" href="classconsole_1_1_basic_regex.html">BasicRegex</a>&lt;wchar_t&gt;</td></tr>
+<tr class="memdesc:a2991a2d1b529ace7c2243a47cfeafe57"><td class="mdescLeft">&#160;</td><td class="mdescRight">宽字符正则表达式。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:add9749fefd88fdcff9227047b22a1225" id="r_add9749fefd88fdcff9227047b22a1225"><td class="memItemLeft"><a class="el" href="namespaceconsole.html#abdfc3731184cab4d4cd4d2113c24fdef">Regex</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#add9749fefd88fdcff9227047b22a1225">console::re::compile</a> (const std::string &amp;pattern, std::regex::flag_type flags=std::regex::ECMAScript)</td></tr>
+<tr class="memdesc:add9749fefd88fdcff9227047b22a1225"><td class="mdescLeft">&#160;</td><td class="mdescRight">编译字符串模式为正则表达式。  <br /></td></tr>
 <tr class="memitem:a2f061070accc262343b9211f5c1add13" id="r_a2f061070accc262343b9211f5c1add13"><td class="memItemLeft"><a class="el" href="namespaceconsole.html#a2991a2d1b529ace7c2243a47cfeafe57">WRegex</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a2f061070accc262343b9211f5c1add13">console::re::compile</a> (const std::wstring &amp;pattern, std::wregex::flag_type flags=std::wregex::ECMAScript)</td></tr>
+<tr class="memdesc:a2f061070accc262343b9211f5c1add13"><td class="mdescLeft">&#160;</td><td class="mdescRight">编译字符串模式为宽字符正则表达式。  <br /></td></tr>
 <tr class="memitem:ad5d8c7e69138f3518032bb824ec06c77" id="r_ad5d8c7e69138f3518032bb824ec06c77"><td class="memItemLeft">Regex::Match&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#ad5d8c7e69138f3518032bb824ec06c77">console::re::search</a> (const std::string &amp;pattern, const std::string &amp;text)</td></tr>
+<tr class="memdesc:ad5d8c7e69138f3518032bb824ec06c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中搜索正则表达式的第一个匹配项。  <br /></td></tr>
 <tr class="memitem:af53c7568889ac50b2390a0d596529993" id="r_af53c7568889ac50b2390a0d596529993"><td class="memItemLeft">WRegex::Match&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#af53c7568889ac50b2390a0d596529993">console::re::search</a> (const std::wstring &amp;pattern, const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:af53c7568889ac50b2390a0d596529993"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中搜索正则表达式的第一个匹配项。  <br /></td></tr>
 <tr class="memitem:a501a23125c08c48a39faff4ad5035a38" id="r_a501a23125c08c48a39faff4ad5035a38"><td class="memItemLeft">Regex::Match&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a501a23125c08c48a39faff4ad5035a38">console::re::match</a> (const std::string &amp;pattern, const std::string &amp;text)</td></tr>
+<tr class="memdesc:a501a23125c08c48a39faff4ad5035a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中匹配正则表达式的第一个匹配项。  <br /></td></tr>
 <tr class="memitem:a8c21865f16e841487eba074eff690ceb" id="r_a8c21865f16e841487eba074eff690ceb"><td class="memItemLeft">WRegex::Match&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a8c21865f16e841487eba074eff690ceb">console::re::match</a> (const std::wstring &amp;pattern, const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:a8c21865f16e841487eba074eff690ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中匹配正则表达式的第一个匹配项。  <br /></td></tr>
 <tr class="memitem:a4ca41aa1ae1c3866efcbc72670578954" id="r_a4ca41aa1ae1c3866efcbc72670578954"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a4ca41aa1ae1c3866efcbc72670578954">console::re::findall</a> (const std::string &amp;pattern, const std::string &amp;text)</td></tr>
+<tr class="memdesc:a4ca41aa1ae1c3866efcbc72670578954"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中查找所有匹配正则表达式的子串。  <br /></td></tr>
 <tr class="memitem:a027d6c38a5ab46f211f95031d09665cd" id="r_a027d6c38a5ab46f211f95031d09665cd"><td class="memItemLeft">std::vector&lt; std::wstring &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a027d6c38a5ab46f211f95031d09665cd">console::re::findall</a> (const std::wstring &amp;pattern, const std::wstring &amp;text)</td></tr>
+<tr class="memdesc:a027d6c38a5ab46f211f95031d09665cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中查找所有匹配正则表达式的子串。  <br /></td></tr>
 <tr class="memitem:aa1d589346655b81fe4591c85423d5b9f" id="r_aa1d589346655b81fe4591c85423d5b9f"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#aa1d589346655b81fe4591c85423d5b9f">console::re::split</a> (const std::string &amp;pattern, const std::string &amp;text, int maxsplit=0)</td></tr>
+<tr class="memdesc:aa1d589346655b81fe4591c85423d5b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中按正则表达式模式分割字符串。  <br /></td></tr>
 <tr class="memitem:ac77aab86060bc5a6c700b7d5c2cd7a59" id="r_ac77aab86060bc5a6c700b7d5c2cd7a59"><td class="memItemLeft">std::vector&lt; std::wstring &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#ac77aab86060bc5a6c700b7d5c2cd7a59">console::re::split</a> (const std::wstring &amp;pattern, const std::wstring &amp;text, int maxsplit=0)</td></tr>
+<tr class="memdesc:ac77aab86060bc5a6c700b7d5c2cd7a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中按正则表达式模式分割字符串。  <br /></td></tr>
 <tr class="memitem:a87080596675b594f6f5b7de7cba09647" id="r_a87080596675b594f6f5b7de7cba09647"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a87080596675b594f6f5b7de7cba09647">console::re::sub</a> (const std::string &amp;pattern, const std::string &amp;repl, const std::string &amp;text, int count=0)</td></tr>
+<tr class="memdesc:a87080596675b594f6f5b7de7cba09647"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中替换正则表达式匹配的子串。  <br /></td></tr>
 <tr class="memitem:a6caa9489e311f9ec3c3805fc77922422" id="r_a6caa9489e311f9ec3c3805fc77922422"><td class="memItemLeft">std::wstring&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a6caa9489e311f9ec3c3805fc77922422">console::re::sub</a> (const std::wstring &amp;pattern, const std::wstring &amp;repl, const std::wstring &amp;text, int count=0)</td></tr>
+<tr class="memdesc:a6caa9489e311f9ec3c3805fc77922422"><td class="mdescLeft">&#160;</td><td class="mdescRight">在文本中替换正则表达式匹配的子串。  <br /></td></tr>
 <tr class="memitem:a169c8f4ac3ff604bb1b35b13fb4518a1" id="r_a169c8f4ac3ff604bb1b35b13fb4518a1"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a169c8f4ac3ff604bb1b35b13fb4518a1">console::re::escape</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a169c8f4ac3ff604bb1b35b13fb4518a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">转义正则表达式中的特殊字符。  <br /></td></tr>
 <tr class="memitem:a9a80946e4fec3d934fc7b31de45a69a2" id="r_a9a80946e4fec3d934fc7b31de45a69a2"><td class="memItemLeft">std::wstring&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1re.html#a9a80946e4fec3d934fc7b31de45a69a2">console::re::escape</a> (const std::wstring &amp;s)</td></tr>
+<tr class="memdesc:a9a80946e4fec3d934fc7b31de45a69a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">转义正则表达式中的特殊字符。  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供正则表达式匹配、搜索、替换、分割等操作，接口类似 Python 的 re 模块。 </p>
@@ -176,7 +193,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="re_8h.html">re.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="re_8h.html">re.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

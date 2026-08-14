@@ -1,16 +1,17 @@
 var classconsole_1_1_time =
 [
     [ "Time", "classconsole_1_1_time.html#aa7e8c858673d6c5ed00b194b8eb6fb27", null ],
-    [ "hr", "classconsole_1_1_time.html#a6c6dd15926e6f3c12118e3faf37133c5", null ],
-    [ "min", "classconsole_1_1_time.html#a9795837c85479e187a971dd50fb5be84", null ],
-    [ "ms", "classconsole_1_1_time.html#adb529c9327ae6f2935cbad2d650ae920", null ],
-    [ "ns", "classconsole_1_1_time.html#adc6c0ec80d046f13a3fcc92c9f9caa12", null ],
-    [ "operator long long", "classconsole_1_1_time.html#aedc61dc880b78cd38e0c2430782ced62", null ],
-    [ "operator*", "classconsole_1_1_time.html#aeebbc550c5a1732331cd2bdebb35707d", null ],
-    [ "operator/", "classconsole_1_1_time.html#adc8287bf4812f5138247d21e332e9b3c", null ],
-    [ "s", "classconsole_1_1_time.html#a02f59b0029dbdd92f290cff6e05b8703", null ],
+    [ "count", "classconsole_1_1_time.html#a8ff0cc0157b453dbb1478dd8a023da35", null ],
+    [ "hr", "classconsole_1_1_time.html#af958d2c9dc6203bf73b79fc4958f91e1", null ],
+    [ "min", "classconsole_1_1_time.html#a5c9d64a080ee387d43eb7f593d6b44a2", null ],
+    [ "ms", "classconsole_1_1_time.html#ad61cf5e9acbdb9959b23008aea293b63", null ],
+    [ "ns", "classconsole_1_1_time.html#ae9b19ed9a02f10fe8b12eb98f0fb356e", null ],
+    [ "operator intmax_t", "classconsole_1_1_time.html#aeafc805b7ccd8c5ed6595312809d0d78", null ],
+    [ "operator*", "classconsole_1_1_time.html#a6f491526426890e92fdb16555e9b910f", null ],
+    [ "operator/", "classconsole_1_1_time.html#a50b9ed3f407b7e6008925a7016239003", null ],
+    [ "s", "classconsole_1_1_time.html#acc19135d16aa1e30f061b95ee8e07dd5", null ],
     [ "str", "classconsole_1_1_time.html#a02e22bd611d5f90a637a891b241eef77", null ],
-    [ "us", "classconsole_1_1_time.html#a317cd6bd52c628afa37886796c453a2f", null ],
+    [ "us", "classconsole_1_1_time.html#af0ffc7586bff80c3a76d725f68c47cb0", null ],
     [ "operator!=", "classconsole_1_1_time.html#a805d2667ca1d457c209e9ae8b982ca18", null ],
     [ "operator+", "classconsole_1_1_time.html#a105959ca67c8b7f3c9abf692c80785cb", null ],
     [ "operator+", "classconsole_1_1_time.html#a67e4a0ab860381e9c96e0e414b5c4c90", null ],
@@ -22,5 +23,5 @@ var classconsole_1_1_time =
     [ "operator==", "classconsole_1_1_time.html#a53616d1600f01f0f63cd297c615d27b3", null ],
     [ "operator>", "classconsole_1_1_time.html#aa1c8bfbdf47cfe964243a36ce88decb3", null ],
     [ "operator>=", "classconsole_1_1_time.html#a35836dd8710acfb4679d1941ab0d13b6", null ],
-    [ "ns_", "classconsole_1_1_time.html#a8a4b237f8ce16bb8137b45ede1cf671c", null ]
+    [ "ns_", "classconsole_1_1_time.html#a0f185a7b2be76a02908be20bfe89d116", null ]
 ];

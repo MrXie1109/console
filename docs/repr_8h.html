@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/repr.h File Reference</title>
+<title>Console Library: include/repr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h.html',
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;typeinfo&gt;</code><br />
 <code>#include &quot;<a class="el" href="sfinae_8h_source.html">sfinae.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="strpp_8h_source.html">strpp.h</a>&quot;</code><br />
 </div>
 <p><a href="repr_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -152,7 +153,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gaaf06ce8973ec8b1f0c8cc99dd8068e30 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__repr.html#gaaf06ce8973ec8b1f0c8cc99dd8068e30">console::repr</a> (Ret(*f)(Args...), std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
 <tr class="memdesc:gaaf06ce8973ec8b1f0c8cc99dd8068e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出函数指针的表示，格式为 "&lt;function at 地址&gt;"。  <br /></td></tr>
 <tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d" id="r_ga02627a15a63c76a99f7eb15abc55df1d"><td class="memTemplParams" colspan="2">template&lt;class T, class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt; </td></tr>
-<tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d template"><td class="memItemLeft">std::enable_if&lt;!std::is_same&lt; typenamestd::decay&lt; T &gt;::type, bool &gt;::value &amp;&amp;!std::is_same&lt; typenamestd::decay&lt; T &gt;::type, std::nullptr_t &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!std::is_function&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;<a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt; CharT, Traits, typenamestd::decay&lt; T &gt;::type &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#ga02627a15a63c76a99f7eb15abc55df1d">console::repr</a> (T &amp;&amp;value, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
+<tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d template"><td class="memItemLeft">std::enable_if&lt;!std::is_same&lt; typenamestd::decay&lt; T &gt;::type, bool &gt;::value &amp;&amp;!std::is_same&lt; typenamestd::decay&lt; T &gt;::type, std::nullptr_t &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!std::is_function&lt; typenamestd::remove_pointer&lt; T &gt;::type &gt;::value &amp;&amp;<a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt; CharT, Traits, typenamestd::decay&lt; T &gt;::type &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#ga02627a15a63c76a99f7eb15abc55df1d">console::repr</a> (T &amp;&amp;value, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
 <tr class="memdesc:ga02627a15a63c76a99f7eb15abc55df1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出可打印类型(定义了 operator&lt;&lt;)的表示，直接输出值。  <br /></td></tr>
 <tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d" id="r_ga02627a15a63c76a99f7eb15abc55df1d"><td class="memTemplParams" colspan="2">template&lt;class T, class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt; </td></tr>
 <tr class="memitem:ga02627a15a63c76a99f7eb15abc55df1d template"><td class="memItemLeft">std::enable_if&lt;!std::is_same&lt; typenamestd::decay&lt; T &gt;::type, std::nullptr_t &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__string.html">is_string</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__char.html">is_char</a>&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &amp;&amp;!<a class="el" href="structconsole_1_1is__basic__printable.html">is_basic_printable</a>&lt; CharT, Traits, typenamestd::decay&lt; T &gt;::type &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#ga02627a15a63c76a99f7eb15abc55df1d">console::repr</a> (T &amp;&amp;value, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</td></tr>
@@ -178,7 +179,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="repr_8h.html">repr.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="repr_8h.html">repr.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

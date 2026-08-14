@@ -129,7 +129,7 @@ var annotated_dup =
         [ "Pipeline", "classconsole_1_1gen_1_1_pipeline.html", null ],
         [ "Pipeline&lt; Op &gt;", "classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html", "classconsole_1_1gen_1_1_pipeline_3_01_op_01_4" ],
         [ "Pipeline&lt; Op, Rest... &gt;", "classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html", "classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4" ],
-        [ "pipeline_t", "classconsole_1_1gen_1_1pipeline__t.html", "classconsole_1_1gen_1_1pipeline__t" ],
+        [ "pipeline_t", "structconsole_1_1gen_1_1pipeline__t.html", "structconsole_1_1gen_1_1pipeline__t" ],
         [ "Random", "classconsole_1_1gen_1_1_random.html", "classconsole_1_1gen_1_1_random" ],
         [ "Range", "classconsole_1_1gen_1_1_range.html", "classconsole_1_1gen_1_1_range" ],
         [ "reduce_t", "classconsole_1_1gen_1_1reduce__t.html", "classconsole_1_1gen_1_1reduce__t" ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/fmt.h Source File</title>
+<title>Console Library: include/fmt.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -544,7 +544,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span></div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="foldopen" id="foldopen00516" data-start="{" data-end="}">
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno"><a class="line" href="namespaceconsole.html#afde6f559134d08c1163319351a17aaab">  516</a></span>    std::wstring <a class="code hl_function" href="namespaceconsole.html#afde6f559134d08c1163319351a17aaab">wformat</a>(<span class="keyword">const</span> std::wstring &amp;fmt, <span class="keyword">const</span> Args &amp;...args) {</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ac42e4d6ab476b6919c54e98d8a473d7d">  516</a></span>    std::wstring <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">format</a>(<span class="keyword">const</span> std::wstring &amp;fmt, <span class="keyword">const</span> Args &amp;...args) {</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        std::wostringstream oss;</div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        <span class="keywordtype">size_t</span>              pos = 0;</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        <span class="keywordflow">try</span> {</div>
@@ -600,8 +600,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <div class="ttc" id="anamespaceconsole_html_a55b3cf72d29113cc59493ee4cd3071d5"><div class="ttname"><a href="namespaceconsole.html#a55b3cf72d29113cc59493ee4cd3071d5">console::WFormatSpec</a></div><div class="ttdeci">details::BasicFormatSpec&lt; wchar_t &gt; WFormatSpec</div><div class="ttdef"><b>Definition</b> fmt.h:483</div></div>
 <div class="ttc" id="anamespaceconsole_html_a8337a4e2f3f19e9a845b6d606327dd65"><div class="ttname"><a href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a></div><div class="ttdeci">std::string format(const std::string &amp;fmt, const Args &amp;...args)</div><div class="ttdoc">格式化字符串(char 版)。</div><div class="ttdef"><b>Definition</b> fmt.h:494</div></div>
 <div class="ttc" id="anamespaceconsole_html_ad8cf069d5c8db3b82882aa8936c963b2"><div class="ttname"><a href="namespaceconsole.html#ad8cf069d5c8db3b82882aa8936c963b2">console::FormatSpec</a></div><div class="ttdeci">details::BasicFormatSpec&lt; char &gt; FormatSpec</div><div class="ttdef"><b>Definition</b> fmt.h:482</div></div>
-<div class="ttc" id="anamespaceconsole_html_ae205d1c8a957bcbd7a55095e435e6774"><div class="ttname"><a href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:49</div></div>
-<div class="ttc" id="anamespaceconsole_html_afde6f559134d08c1163319351a17aaab"><div class="ttname"><a href="namespaceconsole.html#afde6f559134d08c1163319351a17aaab">console::wformat</a></div><div class="ttdeci">std::wstring wformat(const std::wstring &amp;fmt, const Args &amp;...args)</div><div class="ttdoc">格式化字符串(wchar_t 版)。</div><div class="ttdef"><b>Definition</b> fmt.h:516</div></div>
+<div class="ttc" id="anamespaceconsole_html_ae205d1c8a957bcbd7a55095e435e6774"><div class="ttname"><a href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:50</div></div>
 <div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">提供 STL 容器的格式化输出和灵活的输出控制工具。</div></div>
 <div class="ttc" id="astructconsole_1_1details_1_1_basic_format_spec_html"><div class="ttname"><a href="structconsole_1_1details_1_1_basic_format_spec.html">console::details::BasicFormatSpec</a></div><div class="ttdoc">格式说明符结构。</div><div class="ttdef"><b>Definition</b> fmt.h:50</div></div>
 <div class="ttc" id="astructconsole_1_1details_1_1_basic_format_spec_html_a0cb9b713955655888dd8ffd06cbebde8"><div class="ttname"><a href="structconsole_1_1details_1_1_basic_format_spec.html#a0cb9b713955655888dd8ffd06cbebde8">console::details::BasicFormatSpec&lt; char &gt;::align</a></div><div class="ttdeci">char align</div><div class="ttdef"><b>Definition</b> fmt.h:60</div></div>
@@ -618,7 +617,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="fmt_8h.html">fmt.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="fmt_8h.html">fmt.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

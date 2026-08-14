@@ -132,6 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-types" class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr class="memitem:a5184a5c21eb35547cb8d2dffd22b8afc" id="r_a5184a5c21eb35547cb8d2dffd22b8afc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5184a5c21eb35547cb8d2dffd22b8afc">base_type</a> = std::queue&lt;T, Container&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2e2e27909972c9759560b901e3fe2d31" id="r_a2e2e27909972c9759560b901e3fe2d31"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:a2e2e27909972c9759560b901e3fe2d31 template"><td class="memItemLeft">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2e2e27909972c9759560b901e3fe2d31">operator&lt;&lt;</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, const <a class="el" href="classconsole_1_1_queue.html">Queue</a> &amp;queue)</td></tr>
+<tr class="memdesc:a2e2e27909972c9759560b901e3fe2d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载输出流运算符，将栈的内容输出到流中。  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, class Container = std::deque&lt;T&gt;&gt;<br />
@@ -147,8 +153,8 @@ class console::Queue&lt; T, Container &gt;</div><p>队列容器适配器，扩�
 <div class="line">q.push(1);</div>
 <div class="line">q.push(2);</div>
 <div class="line"><span class="keywordtype">int</span> value = q.<a class="code hl_function" href="#ae18d8cd3c0188a56fa10eaff3d400e4d">pop</a>();  <span class="comment">// 返回 1 并弹出</span></div>
-<div class="ttc" id="aclassconsole_1_1_queue_html"><div class="ttname"><a href="classconsole_1_1_queue.html">console::Queue</a></div><div class="ttdoc">队列容器适配器，扩展自 std::queue。</div><div class="ttdef"><b>Definition</b> adapter.h:97</div></div>
-<div class="ttc" id="aclassconsole_1_1_queue_html_ae18d8cd3c0188a56fa10eaff3d400e4d"><div class="ttname"><a href="#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出队首元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:112</div></div>
+<div class="ttc" id="aclassconsole_1_1_queue_html"><div class="ttname"><a href="classconsole_1_1_queue.html">console::Queue</a></div><div class="ttdoc">队列容器适配器，扩展自 std::queue。</div><div class="ttdef"><b>Definition</b> adapter.h:110</div></div>
+<div class="ttc" id="aclassconsole_1_1_queue_html_ae18d8cd3c0188a56fa10eaff3d400e4d"><div class="ttname"><a href="#ae18d8cd3c0188a56fa10eaff3d400e4d">console::Queue::pop</a></div><div class="ttdeci">base_type::value_type pop()</div><div class="ttdoc">弹出队首元素并返回其值。</div><div class="ttdef"><b>Definition</b> adapter.h:125</div></div>
 </div><!-- fragment --> </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a5184a5c21eb35547cb8d2dffd22b8afc" name="a5184a5c21eb35547cb8d2dffd22b8afc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5184a5c21eb35547cb8d2dffd22b8afc">&#9670;&#160;</a></span>base_type</h2>
@@ -206,8 +212,53 @@ template&lt;class T, class Container = std::deque&lt;T&gt;&gt; </div>
 
 </div>
 </div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a2e2e27909972c9759560b901e3fe2d31" name="a2e2e27909972c9759560b901e3fe2d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2e27909972c9759560b901e3fe2d31">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Container = std::deque&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class CharT, class Traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_ostream&lt; CharT, Traits &gt; &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1_queue.html">Queue</a>&lt; T, Container &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>queue</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载输出流运算符，将栈的内容输出到流中。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流对象。 </td></tr>
+    <tr><td class="paramname">queue</td><td>要输出的栈对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>输出流对象的引用。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>要求c支持输出。 </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="adapter_8h_source.html">adapter.h</a></li>
+<li>include/<a class="el" href="adapter_8h_source.html">adapter.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

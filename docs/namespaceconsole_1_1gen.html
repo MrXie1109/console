@@ -171,8 +171,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Pipeline_3C_20Op_2C_20Rest_2E_2E_2E_20_3E" id="r_Pipeline_3C_20Op_2C_20Rest_2E_2E_2E_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html">Pipeline&lt; Op, Rest... &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">多适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#details">More...</a><br /></td></tr>
-<tr class="memitem:pipeline_5Ft" id="r_pipeline_5Ft"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道适配器类，用于支持管道操作符。  <a href="classconsole_1_1gen_1_1pipeline__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:pipeline_5Ft" id="r_pipeline_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道适配器类，用于支持管道操作符。  <a href="structconsole_1_1gen_1_1pipeline__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Random" id="r_Random"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机数生成器，生成指定范围内的随机数。  <a href="classconsole_1_1gen_1_1_random.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Range" id="r_Range"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1_range.html">Range</a></td></tr>
@@ -279,11 +279,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a18aeb602a24db90e1a7e34bce447fa56" id="r_a18aeb602a24db90e1a7e34bce447fa56"><td class="memTemplParams" colspan="2">template&lt;class Gen1, class Gen2&gt; </td></tr>
 <tr class="memitem:a18aeb602a24db90e1a7e34bce447fa56 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a18aeb602a24db90e1a7e34bce447fa56">operator&amp;</a> (Gen1 &amp;&amp;g1, Gen2 &amp;&amp;g2) -&gt; decltype(<a class="el" href="#a4e595da9c0599f35884daf53e1f22c12">gen::zip</a>(std::forward&lt; Gen1 &gt;(g1), std::forward&lt; Gen2 &gt;(g2)))</td></tr>
 <tr class="memdesc:a18aeb602a24db90e1a7e34bce447fa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">按位与操作符重载，用于压缩两个生成器。  <br /></td></tr>
+<tr class="memitem:ab24cc7824bc2202af99d4e8598dc3265" id="r_ab24cc7824bc2202af99d4e8598dc3265"><td class="memTemplParams" colspan="2">template&lt;class Gen, class... Ops&gt; </td></tr>
+<tr class="memitem:ab24cc7824bc2202af99d4e8598dc3265 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab24cc7824bc2202af99d4e8598dc3265">operator|</a> (Gen gen, <a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt; pl) -&gt; decltype(pl.pipeline(gen))</td></tr>
+<tr class="memdesc:ab24cc7824bc2202af99d4e8598dc3265"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道操作符，将管道应用到生成器。  <br /></td></tr>
 <tr class="memitem:a8c356a899875997b54163e3ac165b801" id="r_a8c356a899875997b54163e3ac165b801"><td class="memTemplParams" colspan="2">template&lt;class... Ops&gt; </td></tr>
-<tr class="memitem:a8c356a899875997b54163e3ac165b801 template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8c356a899875997b54163e3ac165b801">pipeline</a> (Ops... ops)</td></tr>
+<tr class="memitem:a8c356a899875997b54163e3ac165b801 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8c356a899875997b54163e3ac165b801">pipeline</a> (Ops... ops)</td></tr>
 <tr class="memdesc:a8c356a899875997b54163e3ac165b801"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建管道适配器。  <br /></td></tr>
 <tr class="memitem:ae10458086452282ce3250bd67e58839e" id="r_ae10458086452282ce3250bd67e58839e"><td class="memTemplParams" colspan="2">template&lt;class Op1, class Op2&gt; </td></tr>
-<tr class="memitem:ae10458086452282ce3250bd67e58839e template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae10458086452282ce3250bd67e58839e">operator%</a> (Op1 op1, Op2 op2)</td></tr>
+<tr class="memitem:ae10458086452282ce3250bd67e58839e template"><td class="memItemLeft"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae10458086452282ce3250bd67e58839e">operator%</a> (Op1 op1, Op2 op2)</td></tr>
 <tr class="memdesc:ae10458086452282ce3250bd67e58839e"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道组合操作符，用于连接两个适配器。  <br /></td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf" id="r_aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aeb356cb21aca72bce4dad353dc760cbf">random</a> (T min, T max, std::mt19937::result_type seed=std::random_device{}())</td></tr>
@@ -1085,7 +1088,7 @@ template&lt;class Func&gt; </div>
 template&lt;class Op1, class Op2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt; console::gen::operator% </td>
+          <td class="memname"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt; console::gen::operator% </td>
           <td>(</td>
           <td class="paramtype">Op1</td>          <td class="paramname"><span class="paramname"><em>op1</em></span>, </td>
         </tr>
@@ -1112,7 +1115,7 @@ template&lt;class Op1, class Op2&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html" title="管道适配器类，用于支持管道操作符。">pipeline_t&lt;Op1, Op2&gt;</a> 组合后的管道适配器。</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html" title="管道适配器类，用于支持管道操作符。">pipeline_t&lt;Op1, Op2&gt;</a> 组合后的管道适配器。</dd></dl>
 <p>等价于 pipeline(op1, op2)，提供更简洁的语法。 </p>
 
 </div>
@@ -1197,6 +1200,45 @@ template&lt;class Gen1, class Gen2&gt; </div>
 
 </div>
 </div>
+<a id="ab24cc7824bc2202af99d4e8598dc3265" name="ab24cc7824bc2202af99d4e8598dc3265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24cc7824bc2202af99d4e8598dc3265">&#9670;&#160;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Gen, class... Ops&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto console::gen::operator| </td>
+          <td>(</td>
+          <td class="paramtype">Gen</td>          <td class="paramname"><span class="paramname"><em>gen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;</td>          <td class="paramname"><span class="paramname"><em>pl</em></span>&#160;) -&gt; decltype(pl.pipeline(<a class="el" href="namespaceconsole_1_1gen.html">gen</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>管道操作符，将管道应用到生成器。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Gen</td><td>源生成器类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gen</td><td>源生成器。 </td></tr>
+    <tr><td class="paramname">pl</td><td>管道适配器。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>应用管道后的生成器。 </dd></dl>
+
+</div>
+</div>
 <a id="a8c356a899875997b54163e3ac165b801" name="a8c356a899875997b54163e3ac165b801"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c356a899875997b54163e3ac165b801">&#9670;&#160;</a></span>pipeline()</h2>
 
@@ -1206,7 +1248,7 @@ template&lt;class Gen1, class Gen2&gt; </div>
 template&lt;class... Ops&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt; console::gen::pipeline </td>
+          <td class="memname"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt; console::gen::pipeline </td>
           <td>(</td>
           <td class="paramtype">Ops...</td>          <td class="paramname"><span class="paramname"><em>ops</em></span></td><td>)</td>
           <td></td>
@@ -1227,7 +1269,7 @@ template&lt;class... Ops&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html" title="管道适配器类，用于支持管道操作符。">pipeline_t&lt;Ops...&gt;</a> 管道适配器。</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html" title="管道适配器类，用于支持管道操作符。">pipeline_t&lt;Ops...&gt;</a> 管道适配器。</dd></dl>
 <p>用于将多个适配器组合成一个管道。 </p>
 
 </div>

@@ -20,7 +20,7 @@ var searchData=
   ['pipeline_3c_20op_2c_20rest_2e_2e_2e_20_3e_17',['Pipeline&lt; Op, Rest... &gt;',['../classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html',1,'console::gen']]],
   ['pipeline_3c_20ops_2e_2e_2e_20_3e_18',['Pipeline&lt; Ops... &gt;',['../classconsole_1_1gen_1_1_pipeline.html',1,'console::gen']]],
   ['pipeline_3c_20rest_2e_2e_2e_20_3e_19',['Pipeline&lt; Rest... &gt;',['../classconsole_1_1gen_1_1_pipeline.html',1,'console::gen']]],
-  ['pipeline_5ft_20',['pipeline_t',['../classconsole_1_1gen_1_1pipeline__t.html',1,'console::gen']]],
+  ['pipeline_5ft_20',['pipeline_t',['../structconsole_1_1gen_1_1pipeline__t.html',1,'console::gen']]],
   ['plus_5ft_21',['plus_t',['../structconsole_1_1ops_1_1plus__t.html',1,'console::ops']]],
   ['pop_5fheap_5ft_22',['pop_heap_t',['../structconsole_1_1alg_1_1pop__heap__t.html',1,'console::alg']]],
   ['positive_5ft_23',['positive_t',['../structconsole_1_1ops_1_1positive__t.html',1,'console::ops']]],

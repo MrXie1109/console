@@ -1,5 +1,5 @@
 var searchData=
 [
   ['j_0',['J',['../namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29aff44570aca8241914870afbc310cdb85',1,'console']]],
-  ['join_1',['join',['../classconsole_1_1_thread.html#a24d942f813df23e6badf9aa181b0d070',1,'console::Thread::join()'],['../group__strpp.html#ga8e48cb5a9cec4bde4102f0ec7ebfe005',1,'console::join()']]]
+  ['join_1',['join',['../classconsole_1_1_thread.html#a24d942f813df23e6badf9aa181b0d070',1,'console::Thread::join()'],['../group__strpp.html#ga8e48cb5a9cec4bde4102f0ec7ebfe005',1,'console::join(const std::vector&lt; T &gt; &amp;vec, const std::basic_string&lt; CharT, Traits, Allocator &gt; &amp;sep=std::basic_string&lt; CharT, Traits, Allocator &gt;{})'],['../group__strpp.html#ga4d66c2178db99c5181d64dd4c110d5ac',1,'console::join(const std::vector&lt; std::string &gt; &amp;items, const std::string &amp;sep=&quot;&quot;)'],['../group__strpp.html#ga538507d892e56a156ca98f83ddf8aef4',1,'console::join(const std::vector&lt; std::wstring &gt; &amp;items, const std::wstring &amp;sep=L&quot;&quot;)']]]
 ];

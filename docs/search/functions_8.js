@@ -11,5 +11,5 @@ var searchData=
   ['hide_5fcursor_8',['hide_cursor',['../namespaceconsole.html#a4d41fe8391efaa2ecdc9331a13cc0152',1,'console']]],
   ['hour_9',['hour',['../classconsole_1_1_date_time.html#a0cae36e8a7605b24c3c8383b9c10a0b7',1,'console::DateTime']]],
   ['hours_10',['hours',['../namespaceconsole.html#a5f71522a98af381e84b2f389cf35f7fa',1,'console']]],
-  ['hr_11',['hr',['../classconsole_1_1_time.html#a6c6dd15926e6f3c12118e3faf37133c5',1,'console::Time']]]
+  ['hr_11',['hr',['../classconsole_1_1_time.html#af958d2c9dc6203bf73b79fc4958f91e1',1,'console::Time']]]
 ];

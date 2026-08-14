@@ -164,18 +164,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a309177e9a48c927d3d6a4010fb74c6ce" id="r_a309177e9a48c927d3d6a4010fb74c6ce"><td class="memTemplParams" colspan="2">template&lt;class F, class G&gt; </td></tr>
 <tr class="memitem:a309177e9a48c927d3d6a4010fb74c6ce template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a309177e9a48c927d3d6a4010fb74c6ce">visit</a> (F &amp;&amp;f, G &amp;&amp;g) const</td></tr>
 <tr class="memdesc:a309177e9a48c927d3d6a4010fb74c6ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问 <a class="el" href="classconsole_1_1_result.html" title="表示可能成功或失败的结果，类似于 Rust 的 Result 类型。">Result</a> 的内容，根据状态调用不同的函数。  <br /></td></tr>
-<tr class="memitem:ac2df8c3b718d4ff424321d7b71aff51c" id="r_ac2df8c3b718d4ff424321d7b71aff51c"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
-<tr class="memitem:ac2df8c3b718d4ff424321d7b71aff51c template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2df8c3b718d4ff424321d7b71aff51c">and_then</a> (F &amp;&amp;f) const &amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type, E &gt;</td></tr>
-<tr class="memdesc:ac2df8c3b718d4ff424321d7b71aff51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Ok 则应用 f，否则传递 Err(左值引用版本）。  <br /></td></tr>
-<tr class="memitem:a473b54dd29ffb736f3a3bb1e692d87d0" id="r_a473b54dd29ffb736f3a3bb1e692d87d0"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
-<tr class="memitem:a473b54dd29ffb736f3a3bb1e692d87d0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a473b54dd29ffb736f3a3bb1e692d87d0">and_then</a> (F &amp;&amp;f) &amp;&amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type, E &gt;</td></tr>
-<tr class="memdesc:a473b54dd29ffb736f3a3bb1e692d87d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Ok 则应用 f，否则传递 Err(右值引用版本）。  <br /></td></tr>
-<tr class="memitem:ad8b7825d72bd945da9d9f5146d5631f2" id="r_ad8b7825d72bd945da9d9f5146d5631f2"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
-<tr class="memitem:ad8b7825d72bd945da9d9f5146d5631f2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad8b7825d72bd945da9d9f5146d5631f2">or_else</a> (F &amp;&amp;f) const &amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type &gt;</td></tr>
-<tr class="memdesc:ad8b7825d72bd945da9d9f5146d5631f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Err 则应用 f，否则传递 Ok(左值引用版本）。  <br /></td></tr>
-<tr class="memitem:aca73c4fc7c219134d890b4becbfecb48" id="r_aca73c4fc7c219134d890b4becbfecb48"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
-<tr class="memitem:aca73c4fc7c219134d890b4becbfecb48 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aca73c4fc7c219134d890b4becbfecb48">or_else</a> (F &amp;&amp;f) &amp;&amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type &gt;</td></tr>
-<tr class="memdesc:aca73c4fc7c219134d890b4becbfecb48"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Err 则应用 f，否则传递 Ok(右值引用版本）。  <br /></td></tr>
+<tr class="memitem:a986013d04a2e3c65dc9abfca72b8a210" id="r_a986013d04a2e3c65dc9abfca72b8a210"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
+<tr class="memitem:a986013d04a2e3c65dc9abfca72b8a210 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a986013d04a2e3c65dc9abfca72b8a210">and_then</a> (F &amp;&amp;f) const &amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type::value_type, E &gt;</td></tr>
+<tr class="memdesc:a986013d04a2e3c65dc9abfca72b8a210"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Ok 则应用 f，否则传递 Err(左值引用版本）。  <br /></td></tr>
+<tr class="memitem:af7f176c07428afb27be39ee9f1552c48" id="r_af7f176c07428afb27be39ee9f1552c48"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
+<tr class="memitem:af7f176c07428afb27be39ee9f1552c48 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af7f176c07428afb27be39ee9f1552c48">and_then</a> (F &amp;&amp;f) &amp;&amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type::value_type, E &gt;</td></tr>
+<tr class="memdesc:af7f176c07428afb27be39ee9f1552c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Ok 则应用 f，否则传递 Err(右值引用版本）。  <br /></td></tr>
+<tr class="memitem:a5532f03996444607db4b8e3c1cc0dc88" id="r_a5532f03996444607db4b8e3c1cc0dc88"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
+<tr class="memitem:a5532f03996444607db4b8e3c1cc0dc88 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5532f03996444607db4b8e3c1cc0dc88">or_else</a> (F &amp;&amp;f) const &amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type::error_type &gt;</td></tr>
+<tr class="memdesc:a5532f03996444607db4b8e3c1cc0dc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Err 则应用 f，否则传递 Ok(左值引用版本）。  <br /></td></tr>
+<tr class="memitem:af52d23e902c4d33ecf4c92f97860d264" id="r_af52d23e902c4d33ecf4c92f97860d264"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
+<tr class="memitem:af52d23e902c4d33ecf4c92f97860d264 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af52d23e902c4d33ecf4c92f97860d264">or_else</a> (F &amp;&amp;f) &amp;&amp;-&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type::error_type &gt;</td></tr>
+<tr class="memdesc:af52d23e902c4d33ecf4c92f97860d264"><td class="mdescLeft">&#160;</td><td class="mdescRight">链式操作：若为 Err 则应用 f，否则传递 Ok(右值引用版本）。  <br /></td></tr>
 <tr class="memitem:aa299df6e87f4ba15eb5710f6024447eb" id="r_aa299df6e87f4ba15eb5710f6024447eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa299df6e87f4ba15eb5710f6024447eb">swap</a> (<a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a> &amp;other) noexcept</td></tr>
 <tr class="memdesc:aa299df6e87f4ba15eb5710f6024447eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">交换两个 <a class="el" href="classconsole_1_1_result.html" title="表示可能成功或失败的结果，类似于 Rust 的 Result 类型。">Result</a> 的内容。  <br /></td></tr>
 <tr class="memitem:ab773bcbde1deaf5872180f68507bdfc1" id="r_ab773bcbde1deaf5872180f68507bdfc1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab773bcbde1deaf5872180f68507bdfc1">operator bool</a> () const</td></tr>
@@ -521,8 +521,8 @@ template&lt;class T, class E&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a473b54dd29ffb736f3a3bb1e692d87d0" name="a473b54dd29ffb736f3a3bb1e692d87d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a473b54dd29ffb736f3a3bb1e692d87d0">&#9670;&#160;</a></span>and_then() <span class="overload">[1/2]</span></h2>
+<a id="af7f176c07428afb27be39ee9f1552c48" name="af7f176c07428afb27be39ee9f1552c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f176c07428afb27be39ee9f1552c48">&#9670;&#160;</a></span>and_then() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -538,7 +538,7 @@ template&lt;class F&gt; </div>
           <td class="memname">auto <a class="el" href="classconsole_1_1_result.html">console::Result</a>&lt; T, E &gt;::and_then </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
-          <td> &amp;&amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type, E &gt;</td>
+          <td> &amp;&amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f( std::declval&lt; T &gt;()))&gt;::type::value_type, E &gt;</td>
         </tr>
       </table>
   </td>
@@ -562,12 +562,11 @@ template&lt;class F&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result&lt;U, E&gt; f 返回的结果，或移动的 Err。 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>与 Rust 的 and_then 语义不同，注意区分。 </dd></dl>
 
 </div>
 </div>
-<a id="ac2df8c3b718d4ff424321d7b71aff51c" name="ac2df8c3b718d4ff424321d7b71aff51c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2df8c3b718d4ff424321d7b71aff51c">&#9670;&#160;</a></span>and_then() <span class="overload">[2/2]</span></h2>
+<a id="a986013d04a2e3c65dc9abfca72b8a210" name="a986013d04a2e3c65dc9abfca72b8a210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986013d04a2e3c65dc9abfca72b8a210">&#9670;&#160;</a></span>and_then() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -583,7 +582,7 @@ template&lt;class F&gt; </div>
           <td class="memname">auto <a class="el" href="classconsole_1_1_result.html">console::Result</a>&lt; T, E &gt;::and_then </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
-          <td> const &amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type, E &gt;</td>
+          <td> const &amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; typename std::decay&lt; decltype(f( std::declval&lt; T &gt;()))&gt;::type::value_type, E &gt;</td>
         </tr>
       </table>
   </td>
@@ -607,7 +606,6 @@ template&lt;class F&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result&lt;U, E&gt; f 返回的结果，或当前的 Err。 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>与 Rust 的 and_then 语义不同，注意区分。 </dd></dl>
 
 </div>
 </div>
@@ -1208,8 +1206,8 @@ template&lt;class T, class E&gt; </div>
 
 </div>
 </div>
-<a id="aca73c4fc7c219134d890b4becbfecb48" name="aca73c4fc7c219134d890b4becbfecb48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca73c4fc7c219134d890b4becbfecb48">&#9670;&#160;</a></span>or_else() <span class="overload">[1/2]</span></h2>
+<a id="af52d23e902c4d33ecf4c92f97860d264" name="af52d23e902c4d33ecf4c92f97860d264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52d23e902c4d33ecf4c92f97860d264">&#9670;&#160;</a></span>or_else() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1225,7 +1223,7 @@ template&lt;class F&gt; </div>
           <td class="memname">auto <a class="el" href="classconsole_1_1_result.html">console::Result</a>&lt; T, E &gt;::or_else </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
-          <td> &amp;&amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type &gt;</td>
+          <td> &amp;&amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f( std::declval&lt; E &gt;()))&gt;::type::error_type &gt;</td>
         </tr>
       </table>
   </td>
@@ -1253,8 +1251,8 @@ template&lt;class F&gt; </div>
 
 </div>
 </div>
-<a id="ad8b7825d72bd945da9d9f5146d5631f2" name="ad8b7825d72bd945da9d9f5146d5631f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b7825d72bd945da9d9f5146d5631f2">&#9670;&#160;</a></span>or_else() <span class="overload">[2/2]</span></h2>
+<a id="a5532f03996444607db4b8e3c1cc0dc88" name="a5532f03996444607db4b8e3c1cc0dc88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5532f03996444607db4b8e3c1cc0dc88">&#9670;&#160;</a></span>or_else() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1270,7 +1268,7 @@ template&lt;class F&gt; </div>
           <td class="memname">auto <a class="el" href="classconsole_1_1_result.html">console::Result</a>&lt; T, E &gt;::or_else </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
-          <td> const &amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type &gt;</td>
+          <td> const &amp; -&gt; <a class="el" href="#ae823dff9fa3a72cbb38b5e074e266106">Result</a>&lt; T, typename std::decay&lt; decltype(f( std::declval&lt; E &gt;()))&gt;::type::error_type &gt;</td>
         </tr>
       </table>
   </td>
@@ -1715,7 +1713,7 @@ template&lt;class T, class E&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="result_8h_source.html">result.h</a></li>
+<li>include/<a class="el" href="result_8h_source.html">result.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

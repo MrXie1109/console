@@ -7,7 +7,7 @@ var searchData=
   ['none_5fof_4',['none_of',['../namespaceconsole_1_1alg.html#a6acb993ffa8e0f5bd7a9dd2b07c8e683',1,'console::alg']]],
   ['not_5fnull_5',['not_null',['../namespaceconsole_1_1ops.html#ae980a2c4a9895c98cc1af92d5d04df63',1,'console::ops']]],
   ['nothing_6',['nothing',['../namespaceconsole.html#adbbee7c3b8932b737e67cdf9b2c8c26d',1,'console']]],
-  ['ns_5f_7',['ns_',['../classconsole_1_1_time.html#a8a4b237f8ce16bb8137b45ede1cf671c',1,'console::Time']]],
+  ['ns_5f_7',['ns_',['../classconsole_1_1_time.html#a0f185a7b2be76a02908be20bfe89d116',1,'console::Time']]],
   ['nth_5felement_8',['nth_element',['../namespaceconsole_1_1alg.html#ac78adecc85099b028a6a297913bea406',1,'console::alg']]],
   ['num_9',['num',['../classconsole_1_1_basic_rational.html#a75f3bea6cbb1d7e19db624eb9b464f79',1,'console::BasicRational']]]
 ];

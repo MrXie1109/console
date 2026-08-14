@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classconsole_1
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0fd7259ec3bfbdc79f995558127c4a8" id="r_ac0fd7259ec3bfbdc79f995558127c4a8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac0fd7259ec3bfbdc79f995558127c4a8">Maybe</a> ()</td></tr>
 <tr class="memdesc:ac0fd7259ec3bfbdc79f995558127c4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造一个空 Maybe。  <br /></td></tr>
-<tr class="memitem:a12c3710586548b827ed8ad874d955ddb" id="r_a12c3710586548b827ed8ad874d955ddb"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a12c3710586548b827ed8ad874d955ddb template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a12c3710586548b827ed8ad874d955ddb">Maybe</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:a12c3710586548b827ed8ad874d955ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">从参数包直接构造一个包含值的 Maybe。  <br /></td></tr>
+<tr class="memitem:a41d45c371682c090503967371d371ab1" id="r_a41d45c371682c090503967371d371ab1"><td class="memTemplParams" colspan="2">template&lt;class First, class... Rest, class = typename std::enable_if&lt;                sizeof...(Rest) != 0                || !std::is_same&lt;typename std::decay&lt;First&gt;::type,                    Maybe&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a41d45c371682c090503967371d371ab1 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a41d45c371682c090503967371d371ab1">Maybe</a> (First &amp;&amp;first, Rest &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a41d45c371682c090503967371d371ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">从参数包直接构造一个包含值的 Maybe。  <br /></td></tr>
 <tr class="memitem:af816e24dce432a86bdabf6ffcda2ee0b" id="r_af816e24dce432a86bdabf6ffcda2ee0b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af816e24dce432a86bdabf6ffcda2ee0b">Maybe</a> (const Maybe &amp;other)</td></tr>
 <tr class="memdesc:af816e24dce432a86bdabf6ffcda2ee0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造，深拷贝内部值。  <br /></td></tr>
 <tr class="memitem:ab28514dee7e122b525cc0934be2aeb05" id="r_ab28514dee7e122b525cc0934be2aeb05"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab28514dee7e122b525cc0934be2aeb05">Maybe</a> (Maybe &amp;&amp;other)</td></tr>
@@ -220,15 +220,15 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="a12c3710586548b827ed8ad874d955ddb" name="a12c3710586548b827ed8ad874d955ddb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c3710586548b827ed8ad874d955ddb">&#9670;&#160;</a></span>Maybe() <span class="overload">[2/5]</span></h2>
+<a id="a41d45c371682c090503967371d371ab1" name="a41d45c371682c090503967371d371ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d45c371682c090503967371d371ab1">&#9670;&#160;</a></span>Maybe() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <div class="memtemplate">
-template&lt;class... Args&gt; </div>
+template&lt;class First, class... Rest, class = typename std::enable_if&lt;                sizeof...(Rest) != 0                || !std::is_same&lt;typename std::decay&lt;First&gt;::type,                    Maybe&gt;::value&gt;::type&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -236,8 +236,12 @@ template&lt;class... Args&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classconsole_1_1_maybe.html">console::Maybe</a>&lt; T &gt;::Maybe </td>
           <td>(</td>
-          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td class="paramtype">First &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Rest &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1061,7 +1065,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="maybe_8h_source.html">maybe.h</a></li>
+<li>include/<a class="el" href="maybe_8h_source.html">maybe.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

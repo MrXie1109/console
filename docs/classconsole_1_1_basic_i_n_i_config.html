@@ -139,6 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3b090e42553f4f7ae80b9d6e1fc398fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">将配置保存到文件。  <br /></td></tr>
 <tr class="memitem:afaf19a1050129a1805b7e04447ae73ee" id="r_afaf19a1050129a1805b7e04447ae73ee"><td class="memItemLeft"><a class="el" href="classconsole_1_1_basic_i_n_i_config_1_1_item.html">Item</a>&#160;</td><td class="memItemRight"><a class="el" href="#afaf19a1050129a1805b7e04447ae73ee">get</a> (const <a class="el" href="#ab1841adc26d36dc06559dca8dd5bb807">string_type</a> &amp;section_and_key) const</td></tr>
 <tr class="memdesc:afaf19a1050129a1805b7e04447ae73ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取配置项的值。  <br /></td></tr>
+<tr class="memitem:a71aff7467d413764f06f791ac444cbd7" id="r_a71aff7467d413764f06f791ac444cbd7"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a71aff7467d413764f06f791ac444cbd7 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a71aff7467d413764f06f791ac444cbd7">get</a> (const <a class="el" href="#ab1841adc26d36dc06559dca8dd5bb807">string_type</a> &amp;section_and_key) const</td></tr>
 <tr class="memitem:a4340aa45aed2b36ce551eabfed2ee0a7" id="r_a4340aa45aed2b36ce551eabfed2ee0a7"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a4340aa45aed2b36ce551eabfed2ee0a7 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a4340aa45aed2b36ce551eabfed2ee0a7">get</a> (const <a class="el" href="#ab1841adc26d36dc06559dca8dd5bb807">string_type</a> &amp;section_and_key, const T &amp;default_value) const</td></tr>
 <tr class="memdesc:a4340aa45aed2b36ce551eabfed2ee0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取配置项的值，若不存在则返回默认值。  <br /></td></tr>
@@ -340,8 +342,37 @@ template&lt;class CharT = char&gt; </div>
 
 </div>
 </div>
+<a id="a71aff7467d413764f06f791ac444cbd7" name="a71aff7467d413764f06f791ac444cbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71aff7467d413764f06f791ac444cbd7">&#9670;&#160;</a></span>get() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT = char&gt; </div>
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classconsole_1_1_basic_i_n_i_config.html">console::BasicINIConfig</a>&lt; CharT &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ab1841adc26d36dc06559dca8dd5bb807">string_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>section_and_key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afaf19a1050129a1805b7e04447ae73ee" name="afaf19a1050129a1805b7e04447ae73ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaf19a1050129a1805b7e04447ae73ee">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf19a1050129a1805b7e04447ae73ee">&#9670;&#160;</a></span>get() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,7 +414,7 @@ template&lt;class CharT = char&gt; </div>
 </div>
 </div>
 <a id="a4340aa45aed2b36ce551eabfed2ee0a7" name="a4340aa45aed2b36ce551eabfed2ee0a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4340aa45aed2b36ce551eabfed2ee0a7">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4340aa45aed2b36ce551eabfed2ee0a7">&#9670;&#160;</a></span>get() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -842,7 +873,7 @@ template&lt;class CharT = char&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="config_8h_source.html">config.h</a></li>
+<li>include/<a class="el" href="config_8h_source.html">config.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -39,7 +39,7 @@ var searchData=
   ['basicpartitionresult_36',['BasicPartitionResult',['../structconsole_1_1_basic_partition_result.html',1,'console']]],
   ['basicpartitionresult_3c_20char_20_3e_37',['BasicPartitionResult&lt; char &gt;',['../structconsole_1_1_basic_partition_result.html',1,'console']]],
   ['basicpartitionresult_3c_20wchar_5ft_20_3e_38',['BasicPartitionResult&lt; wchar_t &gt;',['../structconsole_1_1_basic_partition_result.html',1,'console']]],
-  ['basicpath_39',['BasicPath',['../classconsole_1_1_basic_path.html',1,'console::BasicPath&lt; CharT &gt;'],['../classconsole_1_1_basic_path.html#a916bff000e3d169183adde2b5360d2e5',1,'console::BasicPath::BasicPath()']]],
+  ['basicpath_39',['BasicPath',['../classconsole_1_1_basic_path.html',1,'console::BasicPath&lt; CharT &gt;'],['../classconsole_1_1_basic_path.html#af5c924a2cc49af66ee8e7b70b6028dac',1,'console::BasicPath::BasicPath(const CharT *str)'],['../classconsole_1_1_basic_path.html#a916bff000e3d169183adde2b5360d2e5',1,'console::BasicPath::BasicPath(const string_type &amp;str)']]],
   ['basicpath_3c_20char_20_3e_40',['BasicPath&lt; char &gt;',['../classconsole_1_1_basic_path.html',1,'console']]],
   ['basicpath_3c_20wchar_5ft_20_3e_41',['BasicPath&lt; wchar_t &gt;',['../classconsole_1_1_basic_path.html',1,'console']]],
   ['basicprogress_42',['BasicProgress',['../classconsole_1_1_basic_progress.html',1,'console::BasicProgress&lt; CharT, Traits, Iter &gt;'],['../classconsole_1_1_basic_progress.html#ae2276428d7358f6b376416e915fb0ef6',1,'console::BasicProgress::BasicProgress(const Cont &amp;cont, const config_type &amp;config)'],['../classconsole_1_1_basic_progress.html#a5638af18866838bb4fbdd7d09488d0ed',1,'console::BasicProgress::BasicProgress(Cont &amp;cont, const config_type &amp;config)']]],

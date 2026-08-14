@@ -126,20 +126,28 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a93b10c0426b4000aa4dbb5438d2538f0" id="r_a93b10c0426b4000aa4dbb5438d2538f0"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> = std::basic_string&lt;CharT, Traits&gt;</td></tr>
+<tr class="memdesc:a93b10c0426b4000aa4dbb5438d2538f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串类型。  <br /></td></tr>
 <tr class="memitem:a100fc84eeaab480f5e78ad8c6a695646" id="r_a100fc84eeaab480f5e78ad8c6a695646"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a100fc84eeaab480f5e78ad8c6a695646">regex_type</a> = std::basic_regex&lt;CharT&gt;</td></tr>
+<tr class="memdesc:a100fc84eeaab480f5e78ad8c6a695646"><td class="mdescLeft">&#160;</td><td class="mdescRight">正则表达式类型。  <br /></td></tr>
 <tr class="memitem:a1ff6e8eba7a24dcbc07900f09537306a" id="r_a1ff6e8eba7a24dcbc07900f09537306a"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a1ff6e8eba7a24dcbc07900f09537306a">match_type</a> = std::match_results&lt;typename string_type::const_iterator&gt;</td></tr>
+<tr class="memdesc:a1ff6e8eba7a24dcbc07900f09537306a"><td class="mdescLeft">&#160;</td><td class="mdescRight">正则表达式的match_results类型。  <br /></td></tr>
 <tr class="memitem:a601a45eb35f7e3140b6044e85f4b5092" id="r_a601a45eb35f7e3140b6044e85f4b5092"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a601a45eb35f7e3140b6044e85f4b5092">flag_type</a> = typename regex_type::flag_type</td></tr>
+<tr class="memdesc:a601a45eb35f7e3140b6044e85f4b5092"><td class="mdescLeft">&#160;</td><td class="mdescRight">标志类型。  <br /></td></tr>
 <tr class="memitem:ab256dba45f90318a5847d80315a21ff8" id="r_ab256dba45f90318a5847d80315a21ff8"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ab256dba45f90318a5847d80315a21ff8">iterator_type</a></td></tr>
+<tr class="memdesc:ab256dba45f90318a5847d80315a21ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器类型。  <br /></td></tr>
 <tr class="memitem:a3ee07ddd267d70043f6d6f0e37055136" id="r_a3ee07ddd267d70043f6d6f0e37055136"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a3ee07ddd267d70043f6d6f0e37055136">token_iterator</a></td></tr>
+<tr class="memdesc:a3ee07ddd267d70043f6d6f0e37055136"><td class="mdescLeft">&#160;</td><td class="mdescRight">词元类型。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a835647948f4967a11b83565208a340a7" id="r_a835647948f4967a11b83565208a340a7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a835647948f4967a11b83565208a340a7">BasicRegex</a> (const <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &amp;pat, <a class="el" href="#a601a45eb35f7e3140b6044e85f4b5092">flag_type</a> flags=regex_type::ECMAScript)</td></tr>
+<tr class="memdesc:a835647948f4967a11b83565208a340a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，初始化正则表达式模式。  <br /></td></tr>
 <tr class="memitem:a46cf37806b35a7660f05291b043c054a" id="r_a46cf37806b35a7660f05291b043c054a"><td class="memItemLeft"><a class="el" href="classconsole_1_1_basic_regex_1_1_match.html">Match</a>&#160;</td><td class="memItemRight"><a class="el" href="#a46cf37806b35a7660f05291b043c054a">search</a> (<a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> text) const</td></tr>
 <tr class="memdesc:a46cf37806b35a7660f05291b043c054a"><td class="mdescLeft">&#160;</td><td class="mdescRight">搜索第一个匹配。  <br /></td></tr>
 <tr class="memitem:aa849cb214d74067f14263cfdb559d351" id="r_aa849cb214d74067f14263cfdb559d351"><td class="memItemLeft"><a class="el" href="classconsole_1_1_basic_regex_1_1_match.html">Match</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa849cb214d74067f14263cfdb559d351">match</a> (<a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> text) const</td></tr>
-<tr class="memdesc:aa849cb214d74067f14263cfdb559d351"><td class="mdescLeft">&#160;</td><td class="mdescRight">从开头匹配整个模式。  <br /></td></tr>
+<tr class="memdesc:aa849cb214d74067f14263cfdb559d351"><td class="mdescLeft">&#160;</td><td class="mdescRight">完全匹配整个文本。  <br /></td></tr>
 <tr class="memitem:a0027b8788b0a56ff94f8cb6da7a4a7c3" id="r_a0027b8788b0a56ff94f8cb6da7a4a7c3"><td class="memItemLeft"><a class="el" href="classconsole_1_1_basic_regex_1_1_match.html">Match</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0027b8788b0a56ff94f8cb6da7a4a7c3">fullmatch</a> (const <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &amp;text) const</td></tr>
+<tr class="memdesc:a0027b8788b0a56ff94f8cb6da7a4a7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">完全匹配整个文本。  <br /></td></tr>
 <tr class="memitem:a59ba2367c0dac74b27337ecace408d81" id="r_a59ba2367c0dac74b27337ecace408d81"><td class="memItemLeft">std::vector&lt; <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a59ba2367c0dac74b27337ecace408d81">findall</a> (const <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &amp;text) const</td></tr>
 <tr class="memdesc:a59ba2367c0dac74b27337ecace408d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找所有不重叠的匹配。  <br /></td></tr>
 <tr class="memitem:a6d947df2bad85afc27b482bee60358f5" id="r_a6d947df2bad85afc27b482bee60358f5"><td class="memItemLeft">std::vector&lt; <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6d947df2bad85afc27b482bee60358f5">split</a> (const <a class="el" href="#a93b10c0426b4000aa4dbb5438d2538f0">string_type</a> &amp;text, int maxsplit=0) const</td></tr>
@@ -152,6 +160,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a373e94ec34369b2d560554db0abe83e3" id="r_a373e94ec34369b2d560554db0abe83e3"><td class="memItemLeft"><a class="el" href="#a100fc84eeaab480f5e78ad8c6a695646">regex_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a373e94ec34369b2d560554db0abe83e3">pattern</a></td></tr>
+<tr class="memdesc:a373e94ec34369b2d560554db0abe83e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">正则表达式模式。  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;<br />
@@ -178,6 +187,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
       </table>
 </div><div class="memdoc">
 
+<p>标志类型。 </p>
+
 </div>
 </div>
 <a id="ab256dba45f90318a5847d80315a21ff8" name="ab256dba45f90318a5847d80315a21ff8"></a>
@@ -197,6 +208,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 <div class="line">               CharT,</div>
 <div class="line">               std::regex_traits&lt;CharT&gt;&gt;</div>
 </div><!-- fragment -->
+<p>迭代器类型。 </p>
+
 </div>
 </div>
 <a id="a1ff6e8eba7a24dcbc07900f09537306a" name="a1ff6e8eba7a24dcbc07900f09537306a"></a>
@@ -212,6 +225,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>正则表达式的match_results类型。 </p>
 
 </div>
 </div>
@@ -229,6 +244,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
       </table>
 </div><div class="memdoc">
 
+<p>正则表达式类型。 </p>
+
 </div>
 </div>
 <a id="a93b10c0426b4000aa4dbb5438d2538f0" name="a93b10c0426b4000aa4dbb5438d2538f0"></a>
@@ -244,6 +261,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>字符串类型。 </p>
 
 </div>
 </div>
@@ -264,6 +283,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 <div class="line">               CharT,</div>
 <div class="line">               std::regex_traits&lt;CharT&gt;&gt;</div>
 </div><!-- fragment -->
+<p>词元类型。 </p>
+
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -296,6 +317,15 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </table>
 </div><div class="memdoc">
 
+<p>构造函数，初始化正则表达式模式。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pat</td><td>正则表达式模式字符串。 </td></tr>
+    <tr><td class="paramname">flags</td><td>正则表达式标志，默认为ECMAScript。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -325,6 +355,13 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div><div class="memdoc">
 
 <p>查找所有不重叠的匹配。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要搜索的文本。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>匹配成功时返回匹配对象列表，否则返回空列表。 </dd></dl>
 
 </div>
 </div>
@@ -353,6 +390,15 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </table>
 </div><div class="memdoc">
 
+<p>完全匹配整个文本。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要匹配的文本。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>匹配成功时返回匹配对象，否则返回空对象。 </dd></dl>
+
 </div>
 </div>
 <a id="aa849cb214d74067f14263cfdb559d351" name="aa849cb214d74067f14263cfdb559d351"></a>
@@ -380,7 +426,14 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </table>
 </div><div class="memdoc">
 
-<p>从开头匹配整个模式。 </p>
+<p>完全匹配整个文本。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要匹配的文本。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>匹配成功时返回匹配对象，否则返回空对象。 </dd></dl>
 
 </div>
 </div>
@@ -410,6 +463,13 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div><div class="memdoc">
 
 <p>搜索第一个匹配。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要搜索的文本。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>匹配成功时返回匹配对象，否则返回空对象。 </dd></dl>
 
 </div>
 </div>
@@ -443,6 +503,14 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div><div class="memdoc">
 
 <p>使用正则表达式分割字符串。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要分割的文本。 </td></tr>
+    <tr><td class="paramname">maxsplit</td><td>最大分割次数，默认为 0 表示不限制。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>分割后的字符串列表。 </dd></dl>
 
 </div>
 </div>
@@ -481,6 +549,15 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div><div class="memdoc">
 
 <p>替换匹配的子串。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">repl</td><td>替换字符串。 </td></tr>
+    <tr><td class="paramname">text</td><td>要替换的文本。 </td></tr>
+    <tr><td class="paramname">count</td><td>替换次数，默认为 0 表示替换所有匹配。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>替换后的字符串。 </dd></dl>
 
 </div>
 </div>
@@ -519,6 +596,15 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div><div class="memdoc">
 
 <p>替换匹配的子串并返回替换次数。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">repl</td><td>替换字符串。 </td></tr>
+    <tr><td class="paramname">text</td><td>要替换的文本。 </td></tr>
+    <tr><td class="paramname">count</td><td>替换次数，默认为 0 表示替换所有匹配。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>替换后的字符串和替换次数的对。 </dd></dl>
 
 </div>
 </div>
@@ -545,10 +631,12 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </table>
 </div><div class="memdoc">
 
+<p>正则表达式模式。 </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="re_8h_source.html">re.h</a></li>
+<li>include/<a class="el" href="re_8h_source.html">re.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

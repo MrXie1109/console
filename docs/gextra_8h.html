@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/gextra.h File Reference</title>
+<title>Console Library: include/gextra.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -155,8 +155,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#details">More...</a><br /></td></tr>
 <tr class="memitem:console_3A_3Agen_3A_3APipeline_3C_20Op_2C_20Rest_2E_2E_2E_20_3E" id="r_console_3A_3Agen_3A_3APipeline_3C_20Op_2C_20Rest_2E_2E_2E_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html">console::gen::Pipeline&lt; Op, Rest... &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">多适配器管道特化。  <a href="classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#details">More...</a><br /></td></tr>
-<tr class="memitem:console_3A_3Agen_3A_3Apipeline_5Ft_3C_20Ops_20_3E" id="r_console_3A_3Agen_3A_3Apipeline_5Ft_3C_20Ops_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">console::gen::pipeline_t&lt; Ops &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道适配器类，用于支持管道操作符。  <a href="classconsole_1_1gen_1_1pipeline__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:console_3A_3Agen_3A_3Apipeline_5Ft_3C_20Ops_20_3E" id="r_console_3A_3Agen_3A_3Apipeline_5Ft_3C_20Ops_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">console::gen::pipeline_t&lt; Ops &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道适配器类，用于支持管道操作符。  <a href="structconsole_1_1gen_1_1pipeline__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:console_3A_3Agen_3A_3AScan_3C_20Gen_2C_20T_2C_20BinaryOp_20_3E" id="r_console_3A_3Agen_3A_3AScan_3C_20Gen_2C_20T_2C_20BinaryOp_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1_scan.html">console::gen::Scan&lt; Gen, T, BinaryOp &gt;</a></td></tr>
 <tr class="memitem:console_3A_3Agen_3A_3Awindow_5Ft" id="r_console_3A_3Agen_3A_3Awindow_5Ft"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1gen_1_1window__t.html">console::gen::window_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口适配器(用于管道操作符)。  <a href="classconsole_1_1gen_1_1window__t.html#details">More...</a><br /></td></tr>
@@ -264,11 +264,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ab24cc7824bc2202af99d4e8598dc3265" id="r_ab24cc7824bc2202af99d4e8598dc3265"><td class="memTemplParams" colspan="2">template&lt;class Gen, class... Ops&gt; </td></tr>
+<tr class="memitem:ab24cc7824bc2202af99d4e8598dc3265 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#ab24cc7824bc2202af99d4e8598dc3265">console::gen::operator|</a> (Gen gen, <a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt; pl) -&gt; decltype(pl.pipeline(gen))</td></tr>
+<tr class="memdesc:ab24cc7824bc2202af99d4e8598dc3265"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道操作符，将管道应用到生成器。  <br /></td></tr>
 <tr class="memitem:a8c356a899875997b54163e3ac165b801" id="r_a8c356a899875997b54163e3ac165b801"><td class="memTemplParams" colspan="2">template&lt;class... Ops&gt; </td></tr>
-<tr class="memitem:a8c356a899875997b54163e3ac165b801 template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#a8c356a899875997b54163e3ac165b801">console::gen::pipeline</a> (Ops... ops)</td></tr>
+<tr class="memitem:a8c356a899875997b54163e3ac165b801 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Ops... &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#a8c356a899875997b54163e3ac165b801">console::gen::pipeline</a> (Ops... ops)</td></tr>
 <tr class="memdesc:a8c356a899875997b54163e3ac165b801"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建管道适配器。  <br /></td></tr>
 <tr class="memitem:ae10458086452282ce3250bd67e58839e" id="r_ae10458086452282ce3250bd67e58839e"><td class="memTemplParams" colspan="2">template&lt;class Op1, class Op2&gt; </td></tr>
-<tr class="memitem:ae10458086452282ce3250bd67e58839e template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#ae10458086452282ce3250bd67e58839e">console::gen::operator%</a> (Op1 op1, Op2 op2)</td></tr>
+<tr class="memitem:ae10458086452282ce3250bd67e58839e template"><td class="memItemLeft"><a class="el" href="structconsole_1_1gen_1_1pipeline__t.html">pipeline_t</a>&lt; Op1, Op2 &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#ae10458086452282ce3250bd67e58839e">console::gen::operator%</a> (Op1 op1, Op2 op2)</td></tr>
 <tr class="memdesc:ae10458086452282ce3250bd67e58839e"><td class="mdescLeft">&#160;</td><td class="mdescRight">管道组合操作符，用于连接两个适配器。  <br /></td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf" id="r_aeb356cb21aca72bce4dad353dc760cbf"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:aeb356cb21aca72bce4dad353dc760cbf template"><td class="memItemLeft"><a class="el" href="classconsole_1_1gen_1_1_random.html">Random</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1gen.html#aeb356cb21aca72bce4dad353dc760cbf">console::gen::random</a> (T min, T max, std::mt19937::result_type seed=std::random_device{}())</td></tr>
@@ -383,7 +386,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="gextra_8h.html">gextra.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="gextra_8h.html">gextra.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

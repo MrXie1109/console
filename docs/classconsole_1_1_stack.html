@@ -132,6 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-types" class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr class="memitem:a76d2095b701271f09189f1de99a5df85" id="r_a76d2095b701271f09189f1de99a5df85"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a76d2095b701271f09189f1de99a5df85">base_type</a> = std::stack&lt;T, Container&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac920cb2ccb20e3c212fe6c51b49ae136" id="r_ac920cb2ccb20e3c212fe6c51b49ae136"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:ac920cb2ccb20e3c212fe6c51b49ae136 template"><td class="memItemLeft">std::basic_ostream&lt; CharT, Traits &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac920cb2ccb20e3c212fe6c51b49ae136">operator&lt;&lt;</a> (std::basic_ostream&lt; CharT, Traits &gt; &amp;os, const <a class="el" href="classconsole_1_1_stack.html">Stack</a> &amp;stack)</td></tr>
+<tr class="memdesc:ac920cb2ccb20e3c212fe6c51b49ae136"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载输出流运算符，将栈的内容输出到流中。  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, class Container = std::deque&lt;T&gt;&gt;<br />
@@ -206,8 +212,53 @@ template&lt;class T, class Container = std::deque&lt;T&gt;&gt; </div>
 
 </div>
 </div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac920cb2ccb20e3c212fe6c51b49ae136" name="ac920cb2ccb20e3c212fe6c51b49ae136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac920cb2ccb20e3c212fe6c51b49ae136">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class Container = std::deque&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class CharT, class Traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_ostream&lt; CharT, Traits &gt; &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_ostream&lt; CharT, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1_stack.html">Stack</a>&lt; T, Container &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stack</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载输出流运算符，将栈的内容输出到流中。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流对象。 </td></tr>
+    <tr><td class="paramname">stack</td><td>要输出的栈对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>输出流对象的引用。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>要求c支持输出。 </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="adapter_8h_source.html">adapter.h</a></li>
+<li>include/<a class="el" href="adapter_8h_source.html">adapter.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

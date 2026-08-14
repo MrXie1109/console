@@ -127,8 +127,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8edbce458cbb132431634fbf9798d84" id="r_aa8edbce458cbb132431634fbf9798d84"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa8edbce458cbb132431634fbf9798d84">Table</a> (<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> default_handler=F{})</td></tr>
-<tr class="memdesc:aa8edbce458cbb132431634fbf9798d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造 Table。  <br /></td></tr>
+<tr class="memitem:a8733bf1a4bb4d144c0629b0ebb351cd6" id="r_a8733bf1a4bb4d144c0629b0ebb351cd6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8733bf1a4bb4d144c0629b0ebb351cd6">Table</a> (<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> default_handler=<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a>{})</td></tr>
+<tr class="memdesc:a8733bf1a4bb4d144c0629b0ebb351cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造 Table。  <br /></td></tr>
 <tr class="memitem:a75586acf85b7f59e2b939c0cd5e40ff7" id="r_a75586acf85b7f59e2b939c0cd5e40ff7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75586acf85b7f59e2b939c0cd5e40ff7">add</a> (const std::type_index &amp;type1, const std::type_index &amp;type2, <a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> func)</td></tr>
 <tr class="memdesc:a75586acf85b7f59e2b939c0cd5e40ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册一个类型对的处理函数(非对称)。  <br /></td></tr>
 <tr class="memitem:a2e22533711f214add8c730e8cbf10193" id="r_a2e22533711f214add8c730e8cbf10193"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2e22533711f214add8c730e8cbf10193">add_symmetric</a> (const std::type_info &amp;type1, const std::type_info &amp;type2, <a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> func)</td></tr>
@@ -143,8 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a005c29ac7f8a9fe26de785c7180f1e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否设置了默认处理函数。  <br /></td></tr>
 <tr class="memitem:ac2f48f816c877a85dcbd92d27e1335e2" id="r_ac2f48f816c877a85dcbd92d27e1335e2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac2f48f816c877a85dcbd92d27e1335e2">callable</a> (const std::type_index &amp;type1, const std::type_index &amp;type2) const</td></tr>
 <tr class="memdesc:ac2f48f816c877a85dcbd92d27e1335e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否为特定的类型对注册了处理函数，或者是否设置了默认处理函数。  <br /></td></tr>
-<tr class="memitem:a9bd2f2f93a3d10364fab23b8f63fdc85" id="r_a9bd2f2f93a3d10364fab23b8f63fdc85"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9bd2f2f93a3d10364fab23b8f63fdc85">set_default</a> (<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> func=F{})</td></tr>
-<tr class="memdesc:a9bd2f2f93a3d10364fab23b8f63fdc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置默认处理函数，当没有找到特定类型对的函数时调用。  <br /></td></tr>
+<tr class="memitem:aed5eaba4694aa1ae0f7ecb0b8377ec6a" id="r_aed5eaba4694aa1ae0f7ecb0b8377ec6a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aed5eaba4694aa1ae0f7ecb0b8377ec6a">set_default</a> (<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a> func=<a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a>{})</td></tr>
+<tr class="memdesc:aed5eaba4694aa1ae0f7ecb0b8377ec6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置默认处理函数，当没有找到特定类型对的函数时调用。  <br /></td></tr>
 <tr class="memitem:af7f10409313cb087d51e9c6ab6852109" id="r_af7f10409313cb087d51e9c6ab6852109"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af7f10409313cb087d51e9c6ab6852109">remove</a> (const std::type_index &amp;type1, const std::type_index &amp;type2)</td></tr>
 <tr class="memdesc:af7f10409313cb087d51e9c6ab6852109"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除一个类型对的处理函数。  <br /></td></tr>
 <tr class="memitem:a27c37b7050be81f0e273ed03ff9d5059" id="r_a27c37b7050be81f0e273ed03ff9d5059"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a27c37b7050be81f0e273ed03ff9d5059">clear</a> ()</td></tr>
@@ -158,17 +158,16 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a08e63cc3362c28f70a4183445fc1e39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认处理函数。  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt;<br />
 class console::Table&lt; T, F &gt;</div><p>双重分派函数表，用于根据两个对象的运行时类型调用注册的函数。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>所有操作的基类类型，函数表处理的对象都是 T 的派生类型。 </td></tr>
-    <tr><td class="paramname">F</td><td>存储的函数类型，默认为 void (*)(T&amp;, T&amp;)，即接受两个 T 引用的函数指针。</td></tr>
+    <tr><td class="paramname">T</td><td>所有操作的基类类型，函数表处理的对象都是 T 的派生类型。</td></tr>
   </table>
   </dd>
 </dl>
 <p>该类维护一个从类型对到处理函数的映射。当需要处理两个对象时， 根据它们的实际类型(通过 typeid 获取)查找对应的处理函数并调用。 支持非对称和对称注册(自动注册两个方向)。 </p><div class="fragment"><div class="line"><span class="comment">// 使用示例：</span></div>
-<div class="line"><a class="code hl_function" href="#aa8edbce458cbb132431634fbf9798d84">Table&lt;Shape&gt;</a> collisionTable;</div>
+<div class="line"><a class="code hl_function" href="#a8733bf1a4bb4d144c0629b0ebb351cd6">Table&lt;Shape&gt;</a> collisionTable;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>Shape { ... };     <span class="comment">// 提供了 collide 接口，调用</span></div>
 <div class="line">collisionTable.<a class="code hl_function" href="#a86076243b35883a2ecfea7baecd76c7c">call</a>(*<span class="keyword">this</span>, other); <span class="keyword">class </span>Circle : <span class="keyword">public</span> Shape { ... };</div>
@@ -187,9 +186,9 @@ class console::Table&lt; T, F &gt;</div><p>双重分派函数表，用于根据�
 <div class="line">Rect r;</div>
 <div class="line"> </div>
 <div class="line">c.collide(r); <span class="comment">// 自动调用合适的函数。</span></div>
-<div class="ttc" id="aclassconsole_1_1_table_html_a2e22533711f214add8c730e8cbf10193"><div class="ttname"><a href="#a2e22533711f214add8c730e8cbf10193">console::Table::add_symmetric</a></div><div class="ttdeci">void add_symmetric(const std::type_info &amp;type1, const std::type_info &amp;type2, FunctionType func)</div><div class="ttdoc">对称地注册一个类型对的处理函数。</div><div class="ttdef"><b>Definition</b> collide.h:141</div></div>
-<div class="ttc" id="aclassconsole_1_1_table_html_a86076243b35883a2ecfea7baecd76c7c"><div class="ttname"><a href="#a86076243b35883a2ecfea7baecd76c7c">console::Table::call</a></div><div class="ttdeci">void call(T &amp;a, T &amp;b) const</div><div class="ttdoc">根据两个对象的运行时类型调用对应的处理函数。</div><div class="ttdef"><b>Definition</b> collide.h:190</div></div>
-<div class="ttc" id="aclassconsole_1_1_table_html_aa8edbce458cbb132431634fbf9798d84"><div class="ttname"><a href="#aa8edbce458cbb132431634fbf9798d84">console::Table::Table</a></div><div class="ttdeci">Table(FunctionType default_handler=F{})</div><div class="ttdoc">构造 Table。</div><div class="ttdef"><b>Definition</b> collide.h:115</div></div>
+<div class="ttc" id="aclassconsole_1_1_table_html_a2e22533711f214add8c730e8cbf10193"><div class="ttname"><a href="#a2e22533711f214add8c730e8cbf10193">console::Table::add_symmetric</a></div><div class="ttdeci">void add_symmetric(const std::type_info &amp;type1, const std::type_info &amp;type2, FunctionType func)</div><div class="ttdoc">对称地注册一个类型对的处理函数。</div><div class="ttdef"><b>Definition</b> collide.h:138</div></div>
+<div class="ttc" id="aclassconsole_1_1_table_html_a86076243b35883a2ecfea7baecd76c7c"><div class="ttname"><a href="#a86076243b35883a2ecfea7baecd76c7c">console::Table::call</a></div><div class="ttdeci">void call(T &amp;a, T &amp;b) const</div><div class="ttdoc">根据两个对象的运行时类型调用对应的处理函数。</div><div class="ttdef"><b>Definition</b> collide.h:187</div></div>
+<div class="ttc" id="aclassconsole_1_1_table_html_a8733bf1a4bb4d144c0629b0ebb351cd6"><div class="ttname"><a href="#a8733bf1a4bb4d144c0629b0ebb351cd6">console::Table::Table</a></div><div class="ttdeci">Table(FunctionType default_handler=FunctionType{})</div><div class="ttdoc">构造 Table。</div><div class="ttdef"><b>Definition</b> collide.h:114</div></div>
 </div><!-- fragment --> </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a3ce14c671704880213c999838c571176" name="a3ce14c671704880213c999838c571176"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ce14c671704880213c999838c571176">&#9670;&#160;</a></span>FunctionType</h2>
@@ -197,7 +196,7 @@ class console::Table&lt; T, F &gt;</div><p>双重分派函数表，用于根据�
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef F <a class="el" href="classconsole_1_1_table.html">console::Table</a>&lt; T, F &gt;::FunctionType</td>
@@ -215,7 +214,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef std::pair&lt;std::type_index, std::type_index&gt; <a class="el" href="classconsole_1_1_table.html">console::Table</a>&lt; T, F &gt;::KeyType</td>
@@ -228,13 +227,13 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa8edbce458cbb132431634fbf9798d84" name="aa8edbce458cbb132431634fbf9798d84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8edbce458cbb132431634fbf9798d84">&#9670;&#160;</a></span>Table()</h2>
+<a id="a8733bf1a4bb4d144c0629b0ebb351cd6" name="a8733bf1a4bb4d144c0629b0ebb351cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8733bf1a4bb4d144c0629b0ebb351cd6">&#9670;&#160;</a></span>Table()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -242,7 +241,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classconsole_1_1_table.html">console::Table</a>&lt; T, F &gt;::Table </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a></td>          <td class="paramname"><span class="paramname"><em>default_handler</em></span><span class="paramdefsep"> = </span><span class="paramdefval">F{}</span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a></td>          <td class="paramname"><span class="paramname"><em>default_handler</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a>{}</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -270,7 +269,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -317,7 +316,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -350,11 +349,11 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
   <table class="params">
     <tr><td class="paramname">type1</td><td>第一个对象的类型信息。 </td></tr>
     <tr><td class="paramname">type2</td><td>第二个对象的类型信息。 </td></tr>
-    <tr><td class="paramname">func</td><td>当遇到 (type1, type2) 或 (type2, type1) 组合时调用的函数。</td></tr>
+    <tr><td class="paramname">func</td><td>当遇到 (type1, type2)或(type2, type1) 组合时调用的函数。</td></tr>
   </table>
   </dd>
 </dl>
-<p>该函数会同时注册 (type1, type2) 和 (type2, type1) 两个方向的函数， 且两个方向使用同一个处理函数。适用于碰撞检测等对称操作。 </p>
+<p>该函数会同时注册 (type1, type2)和(type2, type1) 两个方向的函数， 且两个方向使用同一个处理函数。适用于碰撞检测等对称操作。 </p>
 
 </div>
 </div>
@@ -364,7 +363,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -410,7 +409,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -451,7 +450,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -481,7 +480,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -522,7 +521,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -552,7 +551,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -599,7 +598,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -633,13 +632,13 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 
 </div>
 </div>
-<a id="a9bd2f2f93a3d10364fab23b8f63fdc85" name="a9bd2f2f93a3d10364fab23b8f63fdc85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bd2f2f93a3d10364fab23b8f63fdc85">&#9670;&#160;</a></span>set_default()</h2>
+<a id="aed5eaba4694aa1ae0f7ecb0b8377ec6a" name="aed5eaba4694aa1ae0f7ecb0b8377ec6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed5eaba4694aa1ae0f7ecb0b8377ec6a">&#9670;&#160;</a></span>set_default()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -647,7 +646,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classconsole_1_1_table.html">console::Table</a>&lt; T, F &gt;::set_default </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span><span class="paramdefsep"> = </span><span class="paramdefval">F{}</span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a3ce14c671704880213c999838c571176">FunctionType</a>{}</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -675,7 +674,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -701,7 +700,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
+template&lt;class T, class F = std::function&lt;void(T &amp;, T &amp;)&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -723,7 +722,7 @@ template&lt;class T, class F = void (*)(T &amp;, T &amp;)&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="collide_8h_source.html">collide.h</a></li>
+<li>include/<a class="el" href="collide_8h_source.html">collide.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

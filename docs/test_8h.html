@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/test.h File Reference</title>
+<title>Console Library: include/test.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -165,6 +165,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:a5f0b72f078cf4ea278e1f1b8d42661d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">断言C风格字符串相等（不区分大小写）。  <br /></td></tr>
 <tr class="memitem:a53bbd462e10e852af1060dfac15c7cd9" id="r_a53bbd462e10e852af1060dfac15c7cd9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a53bbd462e10e852af1060dfac15c7cd9">ASSERT_STRCONTAINS</a>(str,  substr)</td></tr>
 <tr class="memdesc:a53bbd462e10e852af1060dfac15c7cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">断言C风格字符串包含子串。  <br /></td></tr>
+<tr class="memitem:a7b98e699f8b1ee4c11e2248cb1bfcc42" id="r_a7b98e699f8b1ee4c11e2248cb1bfcc42"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7b98e699f8b1ee4c11e2248cb1bfcc42">ASSERT_STRNOTCONTAINS</a>(str,  substr)</td></tr>
+<tr class="memdesc:a7b98e699f8b1ee4c11e2248cb1bfcc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">断言字符串不包含指定子串。  <br /></td></tr>
 <tr class="memitem:aab8a6753702da428d09c7fce9ce3c86e" id="r_aab8a6753702da428d09c7fce9ce3c86e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aab8a6753702da428d09c7fce9ce3c86e">ASSERT_THROWS</a>(expression,  exception_type)</td></tr>
 <tr class="memdesc:aab8a6753702da428d09c7fce9ce3c86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">断言表达式抛出指定类型的异常。  <br /></td></tr>
 <tr class="memitem:a2f23e0b692de491a6bf5227300408d58" id="r_a2f23e0b692de491a6bf5227300408d58"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a2f23e0b692de491a6bf5227300408d58">ASSERT_NO_THROW</a>(expression)</td></tr>
@@ -222,7 +224,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;_c     = (container);                                      \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;_e     = (element);                                        \</div>
 <div class="line">    <span class="keywordtype">bool</span>        _found = <span class="keyword">false</span>;                                            \</div>
@@ -232,11 +233,11 @@ Functions</h2></td></tr>
 <div class="line">            <span class="keywordflow">break</span>;                                                         \</div>
 <div class="line">        }                                                                  \</div>
 <div class="line">    if (!_found)                                                           \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
 <div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container) <span class="stringliteral">&quot; contains &quot;</span> <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(element));         \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="atest_8h_html_a7da4c6801bb682effe1b401fc9430d1a"><div class="ttname"><a href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a></div><div class="ttdeci">#define EXPR_WARP(expression)</div><div class="ttdef"><b>Definition</b> test.h:141</div></div>
+<div class="ttc" id="aclassconsole_1_1_assert_error_html"><div class="ttname"><a href="classconsole_1_1_assert_error.html">console::AssertError</a></div><div class="ttdoc">表示断言失败的错误。</div><div class="ttdef"><b>Definition</b> csexc.h:201</div></div>
+<div class="ttc" id="atest_8h_html_a7da4c6801bb682effe1b401fc9430d1a"><div class="ttname"><a href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a></div><div class="ttdeci">#define EXPR_WARP(expression)</div><div class="ttdef"><b>Definition</b> test.h:163</div></div>
 </div><!-- fragment -->
 <p>断言容器包含指定元素。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -270,12 +271,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if (!(container).empty())                                              \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} is empty\n\tsize: {}&quot;</span>,                \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container),                                          \</div>
-<div class="line">            (container).size()));                                          \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} is empty\n\tsize: {}&quot;</span>,                     \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container),                                      \</div>
+<div class="line">                (container).size()));                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
+<div class="ttc" id="anamespaceconsole_html_a8337a4e2f3f19e9a845b6d606327dd65"><div class="ttname"><a href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a></div><div class="ttdeci">std::string format(const std::string &amp;fmt, const Args &amp;...args)</div><div class="ttdoc">格式化字符串(char 版)。</div><div class="ttdef"><b>Definition</b> fmt.h:494</div></div>
 </div><!-- fragment -->
 <p>断言容器为空。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -312,10 +314,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((expected) != (actual))                                            \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,             \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,    \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
 <div class="line">                expected,                                                  \</div>
@@ -357,8 +358,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
-<div class="line">    if (condition) <span class="keywordflow">throw</span> AssertError(<span class="stringliteral">&quot;!(&quot;</span> #condition <span class="stringliteral">&quot;)&quot;</span>);                 \</div>
+<div class="line">    if (condition) <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(<span class="stringliteral">&quot;!(&quot;</span> #condition <span class="stringliteral">&quot;)&quot;</span>);        \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言条件为假。 </p>
@@ -396,13 +396,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((a) &lt; (b))                                                         \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} &gt;= {}\n\tleft:  {}\n\tright: {}&quot;</span>,     \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                                  \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                                  \</div>
-<div class="line">            a,                                                             \</div>
-<div class="line">            b));                                                           \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} &gt;= {}\n\tleft:  {}\n\tright: {}&quot;</span>,          \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                              \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                              \</div>
+<div class="line">                a,                                                         \</div>
+<div class="line">                b));                                                       \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言第一个值大于等于第二个值。 </p>
@@ -441,13 +441,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((a) &lt;= (b))                                                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} &gt; {}\n\tleft:  {}\n\tright: {}&quot;</span>,      \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                                  \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                                  \</div>
-<div class="line">            a,                                                             \</div>
-<div class="line">            b));                                                           \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} &gt; {}\n\tleft:  {}\n\tright: {}&quot;</span>,           \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                              \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                              \</div>
+<div class="line">                a,                                                         \</div>
+<div class="line">                b));                                                       \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言第一个值大于第二个值。 </p>
@@ -486,13 +486,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((a) &gt; (b))                                                         \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} &lt;= {}\n\tleft:  {}\n\tright: {}&quot;</span>,     \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                                  \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                                  \</div>
-<div class="line">            a,                                                             \</div>
-<div class="line">            b));                                                           \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} &lt;= {}\n\tleft:  {}\n\tright: {}&quot;</span>,          \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                              \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                              \</div>
+<div class="line">                a,                                                         \</div>
+<div class="line">                b));                                                       \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言第一个值小于等于第二个值。 </p>
@@ -531,13 +531,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((a) &gt;= (b))                                                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} &lt; {}\n\tleft:  {}\n\tright: {}&quot;</span>,      \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                                  \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                                  \</div>
-<div class="line">            a,                                                             \</div>
-<div class="line">            b));                                                           \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} &lt; {}\n\tleft:  {}\n\tright: {}&quot;</span>,           \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(a),                                              \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(b),                                              \</div>
+<div class="line">                a,                                                         \</div>
+<div class="line">                b));                                                       \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言第一个值小于第二个值。 </p>
@@ -576,10 +576,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((expected) == (actual))                                            \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,             \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,    \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
 <div class="line">                expected,                                                  \</div>
@@ -627,19 +626,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">auto</span> _e = (expected);                                                  \</div>
 <div class="line">    <span class="keyword">auto</span> _a = (actual);                                                    \</div>
 <div class="line">    if ((_e - _a) &gt; (eps) || (_a - _e) &gt; (eps))                            \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} \u2248 {} [\u00B1{}]\n\texpected: &quot;</span>                 \</div>
-<div class="line">                   <span class="stringliteral">&quot;{:.20f}\n\tactual:   {:.20f}\n\tepsilon:  {:.20f}&quot;</span>,    \</div>
-<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
-<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
-<div class="line">                eps,                                                       \</div>
-<div class="line">                _e,                                                        \</div>
-<div class="line">                _a,                                                        \</div>
-<div class="line">                eps));                                                     \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(<a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(                        \</div>
+<div class="line">            <span class="stringliteral">&quot;{} \u2248 {} [\u00B1{}]\n\texpected: &quot;</span>                        \</div>
+<div class="line">            <span class="stringliteral">&quot;{:.20f}\n\tactual:   {:.20f}\n\tepsilon:  {:.20f}&quot;</span>,           \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                           \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                             \</div>
+<div class="line">            eps,                                                           \</div>
+<div class="line">            _e,                                                            \</div>
+<div class="line">            _a,                                                            \</div>
+<div class="line">            eps));                                                         \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言两个浮点数接近相等。 </p>
@@ -675,11 +673,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keywordflow">try</span> {                                                                  \</div>
 <div class="line">        expression;                                                        \</div>
 <div class="line">    } <span class="keywordflow">catch</span> (...) {                                                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(<a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should not throw&quot;</span>);      \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should not throw&quot;</span>);                    \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
@@ -714,9 +712,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((container).empty())                                               \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
 <div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container) <span class="stringliteral">&quot; is not empty\n\tsize: 0&quot;</span>);              \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
@@ -751,9 +748,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((ptr) == <span class="keyword">nullptr</span>)                                                  \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(<a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ptr) <span class="stringliteral">&quot; == nullptr\n\tptr: nullptr&quot;</span>);   \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ptr) <span class="stringliteral">&quot; == nullptr\n\tptr: nullptr&quot;</span>);                 \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言指针不为null。 </p>
@@ -787,11 +784,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((ptr) != <span class="keyword">nullptr</span>)                                                  \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} == nullptr\n\tptr: {:#x}&quot;</span>,            \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ptr),                                                \</div>
-<div class="line">            <span class="keyword">reinterpret_cast&lt;</span>uintptr_t<span class="keyword">&gt;</span>(ptr)));                            \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} == nullptr\n\tptr: {:#x}&quot;</span>,                 \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ptr),                                            \</div>
+<div class="line">                <span class="keyword">reinterpret_cast&lt;</span>uintptr_t<span class="keyword">&gt;</span>(ptr)));                        \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言指针为null。 </p>
@@ -834,21 +831,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">auto</span> _duration = timer([&amp;] {                                           \</div>
 <div class="line">        for (<span class="keyword">auto</span> i = 0ULL; i &lt; ops; ++i) expr;                            \</div>
 <div class="line">    });                                                                    \</div>
 <div class="line">    <span class="keyword">auto</span> _limit    = milliseconds(ms);                                     \</div>
 <div class="line">    if (_duration &gt; _limit)                                                \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} times {} timed out after {}\n\telapsed: {}\n\t&quot;</span>     \</div>
-<div class="line">                   <span class="stringliteral">&quot;limit:   {}\n\tops:     {}&quot;</span>,                           \</div>
-<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ops),                                            \</div>
-<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expr),                                           \</div>
-<div class="line">                _limit,                                                    \</div>
-<div class="line">                _duration,                                                 \</div>
-<div class="line">                _limit,                                                    \</div>
-<div class="line">                ops));                                                     \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(<a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(                        \</div>
+<div class="line">            <span class="stringliteral">&quot;{} times {} timed out after {}\n\telapsed: {}\n\t&quot;</span>            \</div>
+<div class="line">            <span class="stringliteral">&quot;limit:   {}\n\tops:     {}&quot;</span>,                                  \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(ops),                                                \</div>
+<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expr),                                               \</div>
+<div class="line">            _limit,                                                        \</div>
+<div class="line">            _duration,                                                     \</div>
+<div class="line">            _limit,                                                        \</div>
+<div class="line">            ops));                                                         \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言性能。 </p>
@@ -888,10 +884,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    if ((container).size() != <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(n))                 \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{}.size() == {}\n\tsize: {}\n\texpected: {}&quot;</span>,          \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{}.size() == {}\n\tsize: {}\n\texpected: {}&quot;</span>, \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container),                                      \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(n),                                              \</div>
 <div class="line">                (container).size(),                                        \</div>
@@ -970,19 +965,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_str    = (str);                                           \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_substr = (substr);                                        \</div>
 <div class="line">    if (_str == <span class="keyword">nullptr</span> || _substr == <span class="keyword">nullptr</span>                              \</div>
 <div class="line">        || std::strstr(_str, _substr) == <span class="keyword">nullptr</span>) {                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} contains {}\n\tstr:    {}\n\tsubstr: {}&quot;</span>,           \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} contains {}\n\tstr:    {}\n\tsubstr: {}&quot;</span>,  \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(str),                                            \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(substr),                                         \</div>
-<div class="line">                ptr_to_str(_str),                                          \</div>
-<div class="line">                ptr_to_str(_substr)));                                     \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_str),                                 \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_substr)));                            \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
+<div class="ttc" id="anamespaceconsole_html_ad88e0030e10417344eee98da00bef292"><div class="ttname"><a href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a></div><div class="ttdeci">std::string ptr_to_str(const char *s)</div><div class="ttdoc">辅助函数：安全地将 C 字符串转换为显示字符串。</div><div class="ttdef"><b>Definition</b> test.h:340</div></div>
 </div><!-- fragment -->
 <p>断言C风格字符串包含子串。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1020,24 +1015,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_e = (expected);                                           \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_a = (actual);                                             \</div>
 <div class="line">    if (_e == <span class="keyword">nullptr</span> || _a == <span class="keyword">nullptr</span>) {                                  \</div>
 <div class="line">        if (_e != _a)                                                      \</div>
-<div class="line">            <span class="keywordflow">throw</span> AssertError(                                             \</div>
-<div class="line">                format(<span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,         \</div>
-<div class="line">                    <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                   \</div>
-<div class="line">                    <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                     \</div>
-<div class="line">                    ptr_to_str(_e),                                        \</div>
-<div class="line">                    ptr_to_str(_a)));                                      \</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::strcmp(_e, _a) != 0) {                                 \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,             \</div>
+<div class="line">            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(<a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(                    \</div>
+<div class="line">                <span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,                \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
-<div class="line">                ptr_to_str(_e),                                            \</div>
-<div class="line">                ptr_to_str(_a)));                                          \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_e),                                   \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_a)));                                 \</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::strcmp(_e, _a) != 0) {                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} == {}\n\texpected: {}\n\tactual:   {}&quot;</span>,    \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_e),                                   \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_a)));                                 \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
@@ -1077,24 +1071,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_e = (expected);                                           \</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_a = (actual);                                             \</div>
 <div class="line">    if (_e == <span class="keyword">nullptr</span> || _a == <span class="keyword">nullptr</span>) {                                  \</div>
 <div class="line">        if (_e != _a)                                                      \</div>
-<div class="line">            <span class="keywordflow">throw</span> AssertError(                                             \</div>
-<div class="line">                format(<span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,         \</div>
-<div class="line">                    <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                   \</div>
-<div class="line">                    <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                     \</div>
-<div class="line">                    ptr_to_str(_e),                                        \</div>
-<div class="line">                    ptr_to_str(_a)));                                      \</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::strcmp(_e, _a) == 0) {                                 \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
-<div class="line">            format(<span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,             \</div>
+<div class="line">            <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(<a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(                    \</div>
+<div class="line">                <span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,                \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
 <div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
-<div class="line">                ptr_to_str(_e),                                            \</div>
-<div class="line">                ptr_to_str(_a)));                                          \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_e),                                   \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_a)));                                 \</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::strcmp(_e, _a) == 0) {                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} != {}\n\texpected: {}\n\tactual:   {}&quot;</span>,    \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expected),                                       \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(actual),                                         \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_e),                                   \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_a)));                                 \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
@@ -1109,6 +1102,50 @@ Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">AssertError</td><td>字符串相等时抛出异常。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b98e699f8b1ee4c11e2248cb1bfcc42" name="a7b98e699f8b1ee4c11e2248cb1bfcc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b98e699f8b1ee4c11e2248cb1bfcc42">&#9670;&#160;</a></span>ASSERT_STRNOTCONTAINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_STRNOTCONTAINS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>substr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_str    = (str);                                           \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *_substr = (substr);                                        \</div>
+<div class="line">    if (_str == <span class="keyword">nullptr</span> || _substr == <span class="keyword">nullptr</span>                              \</div>
+<div class="line">        || std::strstr(_str, _substr) != <span class="keyword">nullptr</span>) {                        \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} does not contain {}\n\tstr:    {}\n\t&quot;</span>     \</div>
+<div class="line">                            <span class="stringliteral">&quot;substr: {}&quot;</span>,                                  \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(str),                                            \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(substr),                                         \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_str),                                 \</div>
+<div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_substr)));                            \</div>
+<div class="line">    }                                                                      \</div>
+<div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
+</div><!-- fragment -->
+<p>断言字符串不包含指定子串。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>字符串。 </td></tr>
+    <tr><td class="paramname">substr</td><td>子串。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1134,14 +1171,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keywordflow">try</span> {                                                                  \</div>
 <div class="line">        expression;                                                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
 <div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should throw &quot;</span> #exception_type);       \</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception_type &amp;) {                                     \</div>
 <div class="line">    } <span class="keywordflow">catch</span> (...) {                                                        \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(                                                 \</div>
+<div class="line">        <span class="keywordflow">throw</span> console::AssertError(                                        \</div>
 <div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should throw &quot;</span> #exception_type);       \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
@@ -1178,13 +1214,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keywordflow">try</span> {                                                                  \</div>
 <div class="line">        expression;                                                        \</div>
 <div class="line">    } <span class="keywordflow">catch</span> (...) {                                                        \</div>
 <div class="line">        <span class="keywordflow">break</span>;                                                             \</div>
 <div class="line">    }                                                                      \</div>
-<div class="line">    <span class="keywordflow">throw</span> AssertError(<a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should throw&quot;</span>);              \</div>
+<div class="line">    <span class="keywordflow">throw</span> console::AssertError(<a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expression) <span class="stringliteral">&quot; should throw&quot;</span>);     \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言表达式抛出任意类型的异常。 </p>
@@ -1222,16 +1257,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
 <div class="line">    <span class="keyword">auto</span> _duration = timer([&amp;] { expr; });                                 \</div>
 <div class="line">    <span class="keyword">auto</span> _limit    = milliseconds(ms);                                     \</div>
 <div class="line">    if (_duration &gt; _limit)                                                \</div>
-<div class="line">        <span class="keywordflow">throw</span> AssertError(format(<span class="stringliteral">&quot;{} timed out after {}\n\telapsed: &quot;</span>      \</div>
-<div class="line">                                 <span class="stringliteral">&quot;{}\n\tlimit:   {}&quot;</span>,                      \</div>
-<div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expr),                                               \</div>
-<div class="line">            _limit,                                                        \</div>
-<div class="line">            _duration,                                                     \</div>
-<div class="line">            _limit));                                                      \</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
+<div class="line">            <a class="code hl_function" href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a>(<span class="stringliteral">&quot;{} timed out after {}\n\telapsed: &quot;</span>           \</div>
+<div class="line">                            <span class="stringliteral">&quot;{}\n\tlimit:   {}&quot;</span>,                           \</div>
+<div class="line">                <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(expr),                                           \</div>
+<div class="line">                _limit,                                                    \</div>
+<div class="line">                _duration,                                                 \</div>
+<div class="line">                _limit));                                                  \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言超时。 </p>
@@ -1266,8 +1301,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                       \</div>
-<div class="line">    <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="namespaceconsole.html">console</a>;                                             \</div>
-<div class="line">    if (!(condition)) <span class="keywordflow">throw</span> AssertError(#condition);                       \</div>
+<div class="line">    if (!(condition)) <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(#condition);              \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 <p>断言条件为真。 </p>
@@ -1352,7 +1386,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="test_8h.html">test.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="test_8h.html">test.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

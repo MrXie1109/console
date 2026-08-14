@@ -6,6 +6,7 @@ var classconsole_1_1_basic_i_n_i_config =
     [ "BasicINIConfig", "classconsole_1_1_basic_i_n_i_config.html#ade99e278211e6c8c693eb1ef3424c4fd", null ],
     [ "BasicINIConfig", "classconsole_1_1_basic_i_n_i_config.html#a9830f7389e8ae0cdf6116150e965c125", null ],
     [ "data", "classconsole_1_1_basic_i_n_i_config.html#a9020c565553840bb0e82d1ecc710d02f", null ],
+    [ "get", "classconsole_1_1_basic_i_n_i_config.html#a71aff7467d413764f06f791ac444cbd7", null ],
     [ "get", "classconsole_1_1_basic_i_n_i_config.html#afaf19a1050129a1805b7e04447ae73ee", null ],
     [ "get", "classconsole_1_1_basic_i_n_i_config.html#a4340aa45aed2b36ce551eabfed2ee0a7", null ],
     [ "has", "classconsole_1_1_basic_i_n_i_config.html#a23384ee57736b4e514d9475162da4e8f", null ],

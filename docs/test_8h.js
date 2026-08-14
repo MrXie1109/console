@@ -20,6 +20,7 @@ var test_8h =
     [ "ASSERT_STRCONTAINS", "test_8h.html#a53bbd462e10e852af1060dfac15c7cd9", null ],
     [ "ASSERT_STREQ", "test_8h.html#a54e8edaad096ff704fedaa65a3e24f78", null ],
     [ "ASSERT_STRNE", "test_8h.html#ada10455f269a76512f225fe0667a8ec8", null ],
+    [ "ASSERT_STRNOTCONTAINS", "test_8h.html#a7b98e699f8b1ee4c11e2248cb1bfcc42", null ],
     [ "ASSERT_THROWS", "test_8h.html#aab8a6753702da428d09c7fce9ce3c86e", null ],
     [ "ASSERT_THROWS_ANY", "test_8h.html#a00d89db3fffd7c38788b03863527b6f9", null ],
     [ "ASSERT_TIMEOUT", "test_8h.html#acde51bcaa039ba942ddd13a946558334", null ],

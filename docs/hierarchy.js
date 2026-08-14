@@ -273,7 +273,7 @@ var hierarchy =
     [ "console::gen::Pipeline&lt; Ops &gt;", "classconsole_1_1gen_1_1_pipeline.html", null ],
     [ "console::gen::Pipeline&lt; Op &gt;", "classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html", null ],
     [ "console::gen::Pipeline&lt; Op, Rest... &gt;", "classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html", null ],
-    [ "console::gen::pipeline_t&lt; Ops &gt;", "classconsole_1_1gen_1_1pipeline__t.html", null ],
+    [ "console::gen::pipeline_t&lt; Ops &gt;", "structconsole_1_1gen_1_1pipeline__t.html", null ],
     [ "console::ops::plus_t", "structconsole_1_1ops_1_1plus__t.html", null ],
     [ "console::alg::pop_heap_t", "structconsole_1_1alg_1_1pop__heap__t.html", null ],
     [ "console::ops::positive_t", "structconsole_1_1ops_1_1positive__t.html", null ],

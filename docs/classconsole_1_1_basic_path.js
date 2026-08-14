@@ -2,6 +2,7 @@ var classconsole_1_1_basic_path =
 [
     [ "Bytes", "classconsole_1_1_basic_path.html#a8ada002196514f904096a59be2357f4d", null ],
     [ "string_type", "classconsole_1_1_basic_path.html#a9465fba1e167181283215b20a8e27671", null ],
+    [ "BasicPath", "classconsole_1_1_basic_path.html#af5c924a2cc49af66ee8e7b70b6028dac", null ],
     [ "BasicPath", "classconsole_1_1_basic_path.html#a916bff000e3d169183adde2b5360d2e5", null ],
     [ "ensure", "classconsole_1_1_basic_path.html#ad769d2a64d0a17607fc3c34c0c11549f", null ],
     [ "exists", "classconsole_1_1_basic_path.html#a25d2af6a0c10541a82cf3c15e37e72ce", null ],

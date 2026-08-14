@@ -62,28 +62,28 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_2media_2xie_2_mr_xie1109_2_data_2console_2console_2defer_8h-example.html",
+"_2media_2xie_2_mr_xie1109_2_data_2console_2include_2defer_8h-example.html",
 "classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_d_01_4.html#a8802ed373a0acbcf38b110bcb503d61d",
 "classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html#a5fe12d33f6c0a2e51ad8e7fc592bc7f1",
 "classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4_1_1const__iterator.html#ab0ac7de651351823aece097eb3be1cfb",
-"classconsole_1_1_basic_output.html#aa9550d92472a88e0822f015020c826c8",
-"classconsole_1_1_cmd_result.html#a822ef947328098a190b83dec8caa13b3",
-"classconsole_1_1_item.html#acd429fe11e30c55003c5a2fdbd401e2b",
-"classconsole_1_1_result.html#a28870b7bb76bb1aa3574cca32e1fba4f",
-"classconsole_1_1_tied_iterators.html#aa671bdb5ae95c42b1ec9f1fc93e7598c",
-"classconsole_1_1cursor__ptr.html#a658b68cafebb6fc4e9b6625e7dddeaf0",
-"classconsole_1_1gen_1_1_drop_while.html#a8046f389d8074ff2e75ab1db97849924",
-"classconsole_1_1gen_1_1_take_until.html#a9e8947541bf2d2ee76a8a4f61a572c0a",
-"defer_8h.html",
-"group__sfinae.html#gad5b788891aa840043c293093d1a92560",
-"namespaceconsole.html#a560f2ab0066609b49d9f85abcefbacd3",
-"namespaceconsole.html#aeb635cb63f0300a172b8d37e32dfaa8b",
-"namespaceconsole_1_1literals.html#a7487ae4b05e05e8d9b482a9b1c25849b",
-"namespacemembers_func_n.html",
-"structconsole_1_1_note.html#adc856e58caa8b453ce4a8102ab6e00e4",
-"structconsole_1_1alg_1_1pop__heap__t.html#a4427820314cdd89e77678cf63f6c1e20",
-"structconsole_1_1ops_1_1_mod.html",
-"structconsole_1_1ops_1_1to__string__t.html#a788b53e307215315b3bc7706603288a0"
+"classconsole_1_1_basic_output.html#a87bef540cf0a46103b69a9f9ee73fb63",
+"classconsole_1_1_cmd_result.html",
+"classconsole_1_1_item.html#a801550a9eef4a38b4cf905544cac375b",
+"classconsole_1_1_result.html#a015c127fbbcddb4746dbc35158d5a31d",
+"classconsole_1_1_tied_iterators.html#a1a077ee0238c87d3079725383dbec644",
+"classconsole_1_1cursor__ptr.html#a3874e7538ec7259eac741145175056fb",
+"classconsole_1_1gen_1_1_drop_until.html#ac0376d723a8663933cd37d74fc24e082",
+"classconsole_1_1gen_1_1_take.html#aa6071659429b0061bc55b8a1d9cf75de",
+"colorful_8h.html",
+"group__sfinae.html#ga38065a05587762eb3aef3ae55cde2508",
+"namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a894e7d9b7dcced78e8007ba2d38b8dd2",
+"namespaceconsole.html#ac3066e557db972dbb8670effba117592afa6c4f9335143692dc097d0dd4ab0d88",
+"namespaceconsole_1_1gen.html#a736d3cfafd2180593504930c044786c5",
+"namespaceconsole_1_1re.html#a2f061070accc262343b9211f5c1add13",
+"structconsole_1_1_item_1_1_derived.html#a68222d53f01da99131a8f1c9e2a8abbc",
+"structconsole_1_1alg_1_1none__of__t.html",
+"structconsole_1_1ops_1_1_divisible_by.html#a2d5250d7c4808bed7abd1859adee5892",
+"structconsole_1_1ops_1_1sign__t.html#aa23db295c1aa8c987b6561329f5d8a56"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -129,9 +129,9 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f6e179d460d0f144daf2c348360a911" id="r_a4f6e179d460d0f144daf2c348360a911"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4f6e179d460d0f144daf2c348360a911">Item</a> ()</td></tr>
 <tr class="memdesc:a4f6e179d460d0f144daf2c348360a911"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造一个空 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a>(ptr 为 nullptr)。  <br /></td></tr>
-<tr class="memitem:adfe14fc67ea0d6c957f649cf56b3a80c" id="r_adfe14fc67ea0d6c957f649cf56b3a80c"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:adfe14fc67ea0d6c957f649cf56b3a80c template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adfe14fc67ea0d6c957f649cf56b3a80c">Item</a> (T &amp;&amp;value)</td></tr>
-<tr class="memdesc:adfe14fc67ea0d6c957f649cf56b3a80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">从任意类型构造 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a>(万能引用)。  <br /></td></tr>
+<tr class="memitem:af4b7593964b615788c355c499eb7fe01" id="r_af4b7593964b615788c355c499eb7fe01"><td class="memTemplParams" colspan="2">template&lt;class T, class = typename std::enable_if&lt;                !std::is_same&lt;typename std::decay&lt;T&gt;::type, Item&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:af4b7593964b615788c355c499eb7fe01 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af4b7593964b615788c355c499eb7fe01">Item</a> (T &amp;&amp;value)</td></tr>
+<tr class="memdesc:af4b7593964b615788c355c499eb7fe01"><td class="mdescLeft">&#160;</td><td class="mdescRight">从任意类型构造 <a class="el" href="classconsole_1_1_item.html" title="可存储任意类型单个对象的类型擦除包装器。">Item</a>(万能引用)。  <br /></td></tr>
 <tr class="memitem:a5919667b9a9564421d4d7a3b2a0bb15d" id="r_a5919667b9a9564421d4d7a3b2a0bb15d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5919667b9a9564421d4d7a3b2a0bb15d">Item</a> (const Item &amp;other)</td></tr>
 <tr class="memdesc:a5919667b9a9564421d4d7a3b2a0bb15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造函数。  <br /></td></tr>
 <tr class="memitem:a0a1acfbe991e91943d0e161938621886" id="r_a0a1acfbe991e91943d0e161938621886"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0a1acfbe991e91943d0e161938621886">Item</a> (Item &amp;&amp;other) noexcept</td></tr>
@@ -201,13 +201,13 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="adfe14fc67ea0d6c957f649cf56b3a80c" name="adfe14fc67ea0d6c957f649cf56b3a80c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe14fc67ea0d6c957f649cf56b3a80c">&#9670;&#160;</a></span>Item() <span class="overload">[2/4]</span></h2>
+<a id="af4b7593964b615788c355c499eb7fe01" name="af4b7593964b615788c355c499eb7fe01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b7593964b615788c355c499eb7fe01">&#9670;&#160;</a></span>Item() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T, class = typename std::enable_if&lt;                !std::is_same&lt;typename std::decay&lt;T&gt;::type, Item&gt;::value&gt;::type&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -720,7 +720,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="box_8h_source.html">box.h</a></li>
+<li>include/<a class="el" href="box_8h_source.html">box.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -124,6 +124,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:af5c924a2cc49af66ee8e7b70b6028dac" id="r_af5c924a2cc49af66ee8e7b70b6028dac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a> (const CharT *str)</td></tr>
 <tr class="memitem:a916bff000e3d169183adde2b5360d2e5" id="r_a916bff000e3d169183adde2b5360d2e5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a> (const <a class="el" href="#a9465fba1e167181283215b20a8e27671">string_type</a> &amp;str)</td></tr>
 <tr class="memitem:a0ff61aaed9b87cf96064a676e4ad4782" id="r_a0ff61aaed9b87cf96064a676e4ad4782"><td class="memItemLeft"><a class="el" href="#a9465fba1e167181283215b20a8e27671">string_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0ff61aaed9b87cf96064a676e4ad4782">read_text</a> () const</td></tr>
 <tr class="memitem:a9663788240c801aff9cf4038c03552ea" id="r_a9663788240c801aff9cf4038c03552ea"><td class="memItemLeft"><a class="el" href="#a8ada002196514f904096a59be2357f4d">Bytes</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9663788240c801aff9cf4038c03552ea">read_binary</a> () const</td></tr>
@@ -171,7 +172,7 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a3b62bad8bd358ba2c84e3312c1e8df16" id="r_a3b62bad8bd358ba2c84e3312c1e8df16"><td class="memItemLeft"><a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b62bad8bd358ba2c84e3312c1e8df16">operator/</a> (const <a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a> &amp;p1, const <a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a> &amp;p2)</td></tr>
+<tr class="memitem:a3b62bad8bd358ba2c84e3312c1e8df16" id="r_a3b62bad8bd358ba2c84e3312c1e8df16"><td class="memItemLeft"><a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b62bad8bd358ba2c84e3312c1e8df16">operator/</a> (const <a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a> &amp;p1, const <a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a> &amp;p2)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class CharT = char&gt;<br />
@@ -224,8 +225,35 @@ template&lt;class CharT = char&gt; </div>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af5c924a2cc49af66ee8e7b70b6028dac" name="af5c924a2cc49af66ee8e7b70b6028dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c924a2cc49af66ee8e7b70b6028dac">&#9670;&#160;</a></span>BasicPath() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT = char&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1_basic_path.html">console::BasicPath</a>&lt; CharT &gt;::BasicPath </td>
+          <td>(</td>
+          <td class="paramtype">const CharT *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a916bff000e3d169183adde2b5360d2e5" name="a916bff000e3d169183adde2b5360d2e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a916bff000e3d169183adde2b5360d2e5">&#9670;&#160;</a></span>BasicPath()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a916bff000e3d169183adde2b5360d2e5">&#9670;&#160;</a></span>BasicPath() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,14 +884,14 @@ template&lt;class CharT = char&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a> operator/ </td>
+          <td class="memname"><a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a> operator/ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a>&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a>&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a916bff000e3d169183adde2b5360d2e5">BasicPath</a>&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="#af5c924a2cc49af66ee8e7b70b6028dac">BasicPath</a>&lt; CharT &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -901,7 +929,7 @@ template&lt;class CharT = char&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>console/<a class="el" href="file_8h_source.html">file.h</a></li>
+<li>include/<a class="el" href="file_8h_source.html">file.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

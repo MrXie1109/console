@@ -13,7 +13,7 @@ var searchData=
   ['pattern_10',['pattern',['../classconsole_1_1_basic_regex.html#a373e94ec34369b2d560554db0abe83e3',1,'console::BasicRegex']]],
   ['pid_11',['pid',['../structconsole_1_1_process_info.html#a4c4387024308a716350e6447f50c9ce1',1,'console::ProcessInfo']]],
   ['pid_5f_12',['pid_',['../classconsole_1_1_process.html#a1d2566f8133b8ad2429487b0dbf98177',1,'console::Process']]],
-  ['pipeline_13',['pipeline',['../classconsole_1_1gen_1_1pipeline__t.html#a7da51526bef3a726c70cb81bae07f43f',1,'console::gen::pipeline_t']]],
+  ['pipeline_13',['pipeline',['../structconsole_1_1gen_1_1pipeline__t.html#a7da51526bef3a726c70cb81bae07f43f',1,'console::gen::pipeline_t']]],
   ['pitch_14',['pitch',['../structconsole_1_1_note.html#ac74728e00255ee98389347cdb0e55fa9',1,'console::Note']]],
   ['plus_15',['plus',['../namespaceconsole_1_1ops.html#a84d0d2b161377df429896258383793a4',1,'console::ops']]],
   ['pop_5fheap_16',['pop_heap',['../namespaceconsole_1_1alg.html#abb09eb01a97abe7df015450185f1cb20',1,'console::alg']]],

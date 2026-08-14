@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: console/algorithm.h Source File</title>
+<title>Console Library: include/algorithm.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('algorithm_8h_s
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structconsole_1_1alg_1_1stable__partition__t.html#a651f102bb900cb0331966a8b5fb8ebcc">  111</a></span>        <a class="code hl_define" href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a>(<a class="code hl_variable" href="namespaceconsole_1_1alg.html#a010350ecef24729f12244e5c54587390">stable_partition</a>)</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structconsole_1_1alg_1_1partition__copy__t.html#ac717b564f9a48b48b90b5cd8e153f08a">  112</a></span>        <a class="code hl_define" href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a>(<a class="code hl_variable" href="namespaceconsole_1_1alg.html#a2c98398079d7e2aacbd4c112dfa9ed32">partition_copy</a>)</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#if __cplusplus &gt;= 201703L</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <a class="code hl_define" href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a>(<a class="code hl_function" href="group__random.html#gacb660498d8104da35f7f0b41e487ca0f">sample</a>)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <a class="code hl_define" href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a>(<a class="code hl_function" href="group__random.html#ga3e69671a4bc0aa30577de3e1ed3d0fcb">sample</a>)</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#if __cplusplus &gt;= 202002L</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_define" href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a>(shift_left)</div>
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('algorithm_8h_s
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#undef ALGORITHM</span></div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
 <div class="ttc" id="aalgorithm_8h_html_a786ee4d792a8c5c2d98dddc603a6a2a9"><div class="ttname"><a href="algorithm_8h.html#a786ee4d792a8c5c2d98dddc603a6a2a9">ALGORITHM</a></div><div class="ttdeci">#define ALGORITHM(NAME)</div><div class="ttdef"><b>Definition</b> algorithm.h:17</div></div>
-<div class="ttc" id="agroup__random_html_gacb660498d8104da35f7f0b41e487ca0f"><div class="ttname"><a href="group__random.html#gacb660498d8104da35f7f0b41e487ca0f">console::sample</a></div><div class="ttdeci">std::vector&lt; typename C::value_type &gt; sample(const C &amp;c, size_t size, bool replace=false, std::mt19937 &amp;gen=default_gen())</div><div class="ttdoc">从容器中随机抽取指定数量的元素(有放回或无放回)。</div><div class="ttdef"><b>Definition</b> random.h:417</div></div>
+<div class="ttc" id="agroup__random_html_ga3e69671a4bc0aa30577de3e1ed3d0fcb"><div class="ttname"><a href="group__random.html#ga3e69671a4bc0aa30577de3e1ed3d0fcb">console::sample</a></div><div class="ttdeci">std::vector&lt; typename C::value_type &gt; sample(const C &amp;c, size_t size, bool replace=false, std::mt19937 &amp;gen=thread_rng())</div><div class="ttdoc">从容器中随机抽取指定数量的元素(有放回或无放回)。</div><div class="ttdef"><b>Definition</b> random.h:421</div></div>
 <div class="ttc" id="anamespaceconsole_1_1alg_html"><div class="ttname"><a href="namespaceconsole_1_1alg.html">console::alg</a></div><div class="ttdef"><b>Definition</b> algorithm.h:27</div></div>
 <div class="ttc" id="anamespaceconsole_1_1alg_html_a00689ac3a73e4f9882e2f738e7a9bae9"><div class="ttname"><a href="namespaceconsole_1_1alg.html#a00689ac3a73e4f9882e2f738e7a9bae9">console::alg::accumulate</a></div><div class="ttdeci">static constexpr accumulate_t accumulate</div><div class="ttdef"><b>Definition</b> algorithm.h:159</div></div>
 <div class="ttc" id="anamespaceconsole_1_1alg_html_a010350ecef24729f12244e5c54587390"><div class="ttname"><a href="namespaceconsole_1_1alg.html#a010350ecef24729f12244e5c54587390">console::alg::stable_partition</a></div><div class="ttdeci">static constexpr stable_partition_t stable_partition</div><div class="ttdef"><b>Definition</b> algorithm.h:111</div></div>
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('algorithm_8h_s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_9f97b40203d0b7782e2ba57c500dd0f3.html">console</a></li><li class="navelem"><a href="algorithm_8h.html">algorithm.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="algorithm_8h.html">algorithm.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
