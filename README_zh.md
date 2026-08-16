@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.0.0** · _"TEST IT!"_
+**一个现代 C++ 控制台工具库** | **v7.1.0** · _"Exclusive or Shared Access to a Task"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,6 +35,7 @@ Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应
 - **Linux 平台进程管理**
 - **Result/Optional 类型** —— 类似 Rust
 - **协作式线程管理** —— 基于 Event 的停止机制
+- **异步任务** —— 独占式 (Task) 或共享式 (SharedTask) 访问，支持取消操作
 - **作用域退出守卫** —— 使用 `defer` 宏(RAII风格)
 - **单元测试框架** —— 基于宏的断言和自动测试注册(断言、异常测试、性能基准测试)
 - 以及更多……
@@ -263,6 +264,23 @@ void thread_example() {
 
     // 等待线程结束(非必要)
     t.join();
+}
+```
+
+### 异步任务
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void task_example() {
+    Task<int> task([]() { return 42; });
+    int result = task.get();  // 42
+
+    SharedTask<int> shared([]() { return 100; });
+    auto copy = shared;
+    int r1 = copy.get();   // 100
+    int r2 = shared.get(); // 100 (可多次调用 get())
 }
 ```
 

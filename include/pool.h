@@ -139,7 +139,6 @@ namespace console {
                                     == 0
                                 && tasks.empty())
                                 cv.notify_all();
-                            throw;
                         }
                     }
                 });

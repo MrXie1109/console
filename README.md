@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.0.0** · _"TEST IT!"_
+**A Modern C++ Console Utility Library** | **v7.1.0** · _"Exclusive or Shared Access to a Task"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,6 +35,7 @@ P.S.: `Console` is just a symbol, don't care it.
 - **Process management** on Linux
 - **Result/Optional types** similar to Rust
 - **Cooperative thread management** with Event-based stop mechanism
+- **Asynchronous tasks** —— exclusive (Task) or shared (SharedTask) access with cancellation support
 - **Scope exit guards** using the `defer` macro (RAII-style)
 - **Unit testing framework** with macro-based assertions and automatic test registration (assertions, exception testing, performance benchmarking)
 - And much more...
@@ -263,6 +264,23 @@ void thread_example() {
 
     // Wait for the thread to finish (don't have to)
     t.join();
+}
+```
+
+### Asynchronous Tasks
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void task_example() {
+    Task<int> task([]() { return 42; });
+    int result = task.get();  // 42
+
+    SharedTask<int> shared([]() { return 100; });
+    auto copy = shared;
+    int r1 = copy.get();   // 100
+    int r2 = shared.get(); // 100 (can call get() multiple times)
 }
 ```
 

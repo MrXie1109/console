@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.0.0 (2026-08-14) -- "TEST IT!")";
+            R"(console version 7.1.0 (2026-08-16) -- "Exclusive or Shared Access to a Task")";
     }
 
     /**
