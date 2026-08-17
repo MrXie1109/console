@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.1.0** · _"Exclusive or Shared Access to a Task"_
+**A Modern C++ Console Utility Library** | **v7.2.0** · _"Copy-on-Write"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -38,6 +38,7 @@ P.S.: `Console` is just a symbol, don't care it.
 - **Asynchronous tasks** —— exclusive (Task) or shared (SharedTask) access with cancellation support
 - **Scope exit guards** using the `defer` macro (RAII-style)
 - **Unit testing framework** with macro-based assertions and automatic test registration (assertions, exception testing, performance benchmarking)
+- **Copy-on-Write** `Cow` class for lazy copying of shared data
 - And much more...
 
 ---
@@ -330,6 +331,35 @@ TEST(ExceptionThrows) {
 }
 
 TEST_MAIN // equivalent to `int main() {}`
+```
+
+### Copy-on-Write
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void cow_example() {
+    // Create a Cow wrapping an initial value
+    Cow<std::string> str("Hello");
+
+    // Read the underlying data (no copy occurs)
+    print(str.reader());              // Hello
+    print(str.read([](const auto& s) { return s.size(); }));  // 5
+
+    // Create a copy-on-write copy (shares underlying data)
+    Cow<std::string> copy = str;
+
+    // Both share the same underlying data (no copy yet)
+    print(copy == str);               // true
+
+    // Writing triggers detach (copies underlying data first)
+    str.write([](std::string& s) { s += " World"; });
+
+    // Now `str` and `copy` hold independent data
+    print(str.reader());              // Hello World
+    print(copy.reader());             // Hello
+}
 ```
 
 ---

@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.1.0** · _"Exclusive or Shared Access to a Task"_
+**一个现代 C++ 控制台工具库** | **v7.2.0** · _"Copy-on-Write"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -38,6 +38,7 @@ Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应
 - **异步任务** —— 独占式 (Task) 或共享式 (SharedTask) 访问，支持取消操作
 - **作用域退出守卫** —— 使用 `defer` 宏(RAII风格)
 - **单元测试框架** —— 基于宏的断言和自动测试注册(断言、异常测试、性能基准测试)
+- **写时复制** `Cow` 类 —— 延迟复制共享数据
 - 以及更多……
 
 ---
@@ -330,6 +331,35 @@ TEST(ExceptionThrows) {
 }
 
 TEST_MAIN // 等价于 `int main() {}`
+```
+
+### 写时复制
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void cow_example() {
+    // 创建一个包装初始值的 Cow
+    Cow<std::string> str("Hello");
+
+    // 读取底层数据 (无复制)
+    print(str.reader());              // Hello
+    print(str.read([](const auto& s) { return s.size(); }));  // 5
+
+    // 创建一个写时复制的副本 (共享底层数据)
+    Cow<std::string> copy = str;
+
+    // 共享底层数据 (无复制)
+    print(&copy.reader() == &str.reader());               // true
+
+    // 写入触发分离 (复制底层数据)
+    str.write([](std::string& s) { s += " World"; });
+
+    // 写入触发分离后，`str` 和 `copy` 持有独立的数据
+    print(str.reader());              // Hello World
+    print(copy.reader());             // Hello
+}
 ```
 
 ---

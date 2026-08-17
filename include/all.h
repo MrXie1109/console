@@ -37,6 +37,7 @@ SOFTWARE.
 #include "collide.h"
 #include "colorful.h"
 #include "config.h"
+#include "cow.h"
 #include "crypto.h"
 #include "csexc.h"
 #include "cursor_ptr.h"
@@ -86,5 +87,5 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-08-16-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-08-17-MRXIE1109";
 }

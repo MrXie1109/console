@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.1.0 (2026-08-16) -- "Exclusive or Shared Access to a Task")";
+            R"(console version 7.2.0 (2026-08-17) -- "Copy-on-Write")";
     }
 
     /**
