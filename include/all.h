@@ -87,5 +87,6 @@ SOFTWARE.
  * @brief 本库所有组件所在的顶层命名空间。
  */
 namespace console {
-    static constexpr char meta[] = "CONSOLE-LIB-2026-08-17-MRXIE1109";
+    /// @brief 本库的元数据，用于标识库的版本和作者 (顺便充当二进制水印)。
+    static constexpr char meta[] = "CONSOLE-LIB-2026-08-19-MRXIE1109";
 }

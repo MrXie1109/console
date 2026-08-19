@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.2.0 (2026-08-17) -- "Copy-on-Write")";
+            R"(console version 7.3.0 (2026-08-19) -- "Towards Go!")";
     }
 
     /**

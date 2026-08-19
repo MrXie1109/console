@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.2.0** · _"Copy-on-Write"_
+**A Modern C++ Console Utility Library** | **v7.3.0** · _"Towards Go!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -241,14 +241,14 @@ void config_example() {
 }
 ```
 
-### Thread with Cooperative Stop
+### Asynchronous Programming
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
+// --- Thread with cooperative stop ---
 void thread_example() {
-    // Create a thread with a function that accepts an Event& for cooperative stop
     Thread t([](const Event& stop_event) {
         while (!stop_event.is_set()) {
             // Do work...
@@ -257,23 +257,12 @@ void thread_example() {
         print("Thread stopped gracefully");
     });
 
-    // Let it run for a while
     std::this_thread::sleep_for(std::chrono::seconds(2));
-
-    // Request the thread to stop
     t.stop();
-
-    // Wait for the thread to finish (don't have to)
     t.join();
 }
-```
 
-### Asynchronous Tasks
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
+// --- Asynchronous Tasks ---
 void task_example() {
     Task<int> task([]() { return 42; });
     int result = task.get();  // 42
@@ -282,6 +271,36 @@ void task_example() {
     auto copy = shared;
     int r1 = copy.get();   // 100
     int r2 = shared.get(); // 100 (can call get() multiple times)
+}
+
+// --- Channel (MPMC Ring Buffer) ---
+void channel_example() {
+    // Buffered channel with capacity 10
+    Channel<int, 10> ch;
+
+    std::thread producer([&ch]() {
+        for (int i = 0; i < 100; ++i) {
+            ch << i;
+        }
+        close(ch);
+    });
+
+    for (int value : ch) {
+        print("Received:", value);
+    }
+    producer.join();
+
+    // Unbuffered channel (synchronous handshake)
+    Channel<std::string, 0> sync_ch;
+
+    std::thread worker([&sync_ch]() {
+        std::string msg;
+        sync_ch >> msg;
+        print("Got:", msg);
+    });
+
+    sync_ch << "Hello from main!";
+    worker.join();
 }
 ```
 
