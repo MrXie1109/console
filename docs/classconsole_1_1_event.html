@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classconsole_1
 <p>线程同步事件类，用于线程间通信。  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="async_8h_source.html">async.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="event_8h_source.html">event.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -131,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a839b5fd41bd165da8c01bc0021e8853b" id="r_a839b5fd41bd165da8c01bc0021e8853b"><td class="memTemplParams" colspan="2">template&lt;class Rep, class Period&gt; </td></tr>
 <tr class="memitem:a839b5fd41bd165da8c01bc0021e8853b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a839b5fd41bd165da8c01bc0021e8853b">wait</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration) const</td></tr>
 <tr class="memdesc:a839b5fd41bd165da8c01bc0021e8853b"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待事件标志变为 true，带有超时机制。  <br /></td></tr>
+<tr class="memitem:af626d465b49bc413de382dea47ac3943" id="r_af626d465b49bc413de382dea47ac3943"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af626d465b49bc413de382dea47ac3943">wait</a> (<a class="el" href="classconsole_1_1_time.html">Time</a> timeout) const</td></tr>
+<tr class="memdesc:af626d465b49bc413de382dea47ac3943"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待事件标志变为 true，带有超时机制。  <br /></td></tr>
 <tr class="memitem:ae5658dd03364cdce3503e6bf710dc09a" id="r_ae5658dd03364cdce3503e6bf710dc09a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae5658dd03364cdce3503e6bf710dc09a">wait</a> (double seconds) const</td></tr>
 <tr class="memdesc:ae5658dd03364cdce3503e6bf710dc09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待事件标志变为 true，带有超时机制。  <br /></td></tr>
 <tr class="memitem:a5c293b2ab55ff43a7fe7eecda97e053f" id="r_a5c293b2ab55ff43a7fe7eecda97e053f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5c293b2ab55ff43a7fe7eecda97e053f">is_set</a> () const</td></tr>
@@ -375,7 +377,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a9bf3bf10e71492394785f53361a64fe8" name="a9bf3bf10e71492394785f53361a64fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bf3bf10e71492394785f53361a64fe8">&#9670;&#160;</a></span>wait() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf3bf10e71492394785f53361a64fe8">&#9670;&#160;</a></span>wait() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +404,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a839b5fd41bd165da8c01bc0021e8853b" name="a839b5fd41bd165da8c01bc0021e8853b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a839b5fd41bd165da8c01bc0021e8853b">&#9670;&#160;</a></span>wait() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a839b5fd41bd165da8c01bc0021e8853b">&#9670;&#160;</a></span>wait() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +440,7 @@ template&lt;class Rep, class Period&gt; </div>
 </div>
 </div>
 <a id="ae5658dd03364cdce3503e6bf710dc09a" name="ae5658dd03364cdce3503e6bf710dc09a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5658dd03364cdce3503e6bf710dc09a">&#9670;&#160;</a></span>wait() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5658dd03364cdce3503e6bf710dc09a">&#9670;&#160;</a></span>wait() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -464,6 +466,40 @@ template&lt;class Rep, class Period&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">seconds</td><td>等待的时间(秒)。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果在指定时间内事件标志变为 true，则返回 true；否则返回 false。 </dd></dl>
+
+</div>
+</div>
+<a id="af626d465b49bc413de382dea47ac3943" name="af626d465b49bc413de382dea47ac3943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af626d465b49bc413de382dea47ac3943">&#9670;&#160;</a></span>wait() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool console::Event::wait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classconsole_1_1_time.html">Time</a></td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>等待事件标志变为 true，带有超时机制。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>等待的时间。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -545,7 +581,7 @@ template&lt;class Rep, class Period&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="async_8h_source.html">async.h</a></li>
+<li>include/async/<a class="el" href="event_8h_source.html">event.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('defer_8h_sourc
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
 <div class="foldopen" id="foldopen00091" data-start="" data-end="">
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="defer_8h.html#a14ec5aa23fa7d85c077ae44fe7352a8a">   91</a></span><span class="preprocessor">#define defer(...)                                                             \</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">    auto CONSOLE_CONCAT(_dg_, __LINE__) = make_defer([&amp;] { __VA_ARGS__ })</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">    auto CONSOLE_CONCAT(_dg_, __LINE__) = make_defer([&amp;] { __VA_ARGS__; })</span></div>
 </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>

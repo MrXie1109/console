@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['valid_0',['valid',['../classconsole_1_1_process.html#aa9b335ff61e01d23617beefb196f13f7',1,'console::Process']]],
+  ['valid_0',['valid',['../classconsole_1_1_task.html#a8386ce8e66fa20de0e7e8aa20b38924d',1,'console::Task::valid()'],['../classconsole_1_1_shared_task.html#aeee1905d977fb16bbe88cec3f9506194',1,'console::SharedTask::valid()'],['../classconsole_1_1_process.html#aa9b335ff61e01d23617beefb196f13f7',1,'console::Process::valid()']]],
   ['value_1',['value',['../classconsole_1_1_maybe.html#a86b3b9ed4c8adf6679483e2a591bc721',1,'console::Maybe::value()'],['../classconsole_1_1_maybe.html#a7483b3dd5c0fb4ab024a1b45191efd8d',1,'console::Maybe::value() const']]],
   ['value_5for_2',['value_or',['../classconsole_1_1_maybe.html#a5bee084fa0c10c5101c9196688ec6bbc',1,'console::Maybe']]],
   ['valueerror_3',['ValueError',['../classconsole_1_1_value_error.html#a4d6a40a3f01904d5d029854ca9bcace0',1,'console::ValueError']]],

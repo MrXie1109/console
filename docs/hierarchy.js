@@ -49,6 +49,9 @@ var hierarchy =
     [ "console::ops::BetweenExclusive&lt; T &gt;", "structconsole_1_1ops_1_1_between_exclusive.html", null ],
     [ "console::alg::binary_search_t", "structconsole_1_1alg_1_1binary__search__t.html", null ],
     [ "console::ops::ceil_t", "structconsole_1_1ops_1_1ceil__t.html", null ],
+    [ "console::Channel&lt; T, N &gt;", "classconsole_1_1_channel.html", null ],
+    [ "console::Channel&lt; T, 0 &gt;", "classconsole_1_1_channel_3_01_t_00_010_01_4.html", null ],
+    [ "console::ChannelIterator&lt; T, N &gt;", "classconsole_1_1_channel_iterator.html", null ],
     [ "console::gen::chunk_t", "classconsole_1_1gen_1_1chunk__t.html", null ],
     [ "console::ops::Clamp&lt; T &gt;", "structconsole_1_1ops_1_1_clamp.html", null ],
     [ "console::CmdResult", "classconsole_1_1_cmd_result.html", null ],
@@ -63,6 +66,7 @@ var hierarchy =
     [ "console::ops::cos_t", "structconsole_1_1ops_1_1cos__t.html", null ],
     [ "console::alg::count_if_t", "structconsole_1_1alg_1_1count__if__t.html", null ],
     [ "console::alg::count_t", "structconsole_1_1alg_1_1count__t.html", null ],
+    [ "console::Cow&lt; T &gt;", "classconsole_1_1_cow.html", null ],
     [ "console::ops::cube_t", "structconsole_1_1ops_1_1cube__t.html", null ],
     [ "console::cursor_ptr&lt; T &gt;", "classconsole_1_1cursor__ptr.html", null ],
     [ "console::cursor_ptr&lt; T[]&gt;", "classconsole_1_1cursor__ptr_3_01_t_0f_0e_4.html", null ],
@@ -192,6 +196,7 @@ var hierarchy =
     [ "console::Generator&lt; Zip&lt; Gen1, Gen2 &gt;, std::pair&lt; Gen1::value_type, Gen2::value_type &gt; &gt;", "classconsole_1_1_generator.html", [
       [ "console::gen::Zip< Gen1, Gen2 >", "classconsole_1_1gen_1_1_zip.html", null ]
     ] ],
+    [ "console::Group", "classconsole_1_1_group.html", null ],
     [ "console::BasicRegex&lt; CharT, Traits &gt;::Match::GroupInfo", "structconsole_1_1_basic_regex_1_1_match_1_1_group_info.html", null ],
     [ "console::ops::Gt&lt; T &gt;", "structconsole_1_1ops_1_1_gt.html", null ],
     [ "console::Params&lt; T, Rest... &gt;::Helper&lt; F &gt;", "structconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper.html", null ],
@@ -336,6 +341,7 @@ var hierarchy =
     [ "console::alg::set_intersection_t", "structconsole_1_1alg_1_1set__intersection__t.html", null ],
     [ "console::alg::set_symmetric_difference_t", "structconsole_1_1alg_1_1set__symmetric__difference__t.html", null ],
     [ "console::alg::set_union_t", "structconsole_1_1alg_1_1set__union__t.html", null ],
+    [ "console::SharedTask&lt; T &gt;", "classconsole_1_1_shared_task.html", null ],
     [ "console::alg::shuffle_t", "structconsole_1_1alg_1_1shuffle__t.html", null ],
     [ "console::ops::sign_t", "structconsole_1_1ops_1_1sign__t.html", null ],
     [ "console::ops::sin_t", "structconsole_1_1ops_1_1sin__t.html", null ],
@@ -359,6 +365,7 @@ var hierarchy =
     [ "console::gen::take_until_t&lt; Pred &gt;", "classconsole_1_1gen_1_1take__until__t.html", null ],
     [ "console::gen::take_while_t&lt; Pred &gt;", "classconsole_1_1gen_1_1take__while__t.html", null ],
     [ "console::ops::tan_t", "structconsole_1_1ops_1_1tan__t.html", null ],
+    [ "console::Task&lt; T &gt;", "classconsole_1_1_task.html", null ],
     [ "console::ThreadPool::TaskBase", "structconsole_1_1_thread_pool_1_1_task_base.html", [
       [ "console::ThreadPool::Task< T >", "structconsole_1_1_thread_pool_1_1_task.html", null ]
     ] ],

@@ -11,6 +11,7 @@ var classconsole_1_1_event =
     [ "wait", "classconsole_1_1_event.html#a9bf3bf10e71492394785f53361a64fe8", null ],
     [ "wait", "classconsole_1_1_event.html#a839b5fd41bd165da8c01bc0021e8853b", null ],
     [ "wait", "classconsole_1_1_event.html#ae5658dd03364cdce3503e6bf710dc09a", null ],
+    [ "wait", "classconsole_1_1_event.html#af626d465b49bc413de382dea47ac3943", null ],
     [ "cv_", "classconsole_1_1_event.html#a7eab816d61acdf8b423ac0dbb80d192b", null ],
     [ "flag_", "classconsole_1_1_event.html#a34b9a9137c4bfa180e002359fd048a19", null ],
     [ "mutex_", "classconsole_1_1_event.html#a93083fdd30370b68bfb58c37e1bc1afd", null ]

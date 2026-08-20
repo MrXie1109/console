@@ -8,7 +8,7 @@ var searchData=
   ['takeuntil_5',['TakeUntil',['../classconsole_1_1gen_1_1_take_until.html',1,'console::gen']]],
   ['takewhile_6',['TakeWhile',['../classconsole_1_1gen_1_1_take_while.html',1,'console::gen']]],
   ['tan_5ft_7',['tan_t',['../structconsole_1_1ops_1_1tan__t.html',1,'console::ops']]],
-  ['task_8',['Task',['../structconsole_1_1_thread_pool_1_1_task.html',1,'console::ThreadPool']]],
+  ['task_8',['Task',['../classconsole_1_1_task.html',1,'console::Task&lt; T &gt;'],['../structconsole_1_1_thread_pool_1_1_task.html',1,'console::ThreadPool::Task&lt; T &gt;']]],
   ['taskbase_9',['TaskBase',['../structconsole_1_1_thread_pool_1_1_task_base.html',1,'console::ThreadPool']]],
   ['thread_10',['Thread',['../classconsole_1_1_thread.html',1,'console']]],
   ['threadpool_11',['ThreadPool',['../classconsole_1_1_thread_pool.html',1,'console']]],

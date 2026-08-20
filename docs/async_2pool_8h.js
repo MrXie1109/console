@@ -1,4 +1,4 @@
-var pool_8h =
+var async_2pool_8h =
 [
     [ "console::ThreadPool", "classconsole_1_1_thread_pool.html", "classconsole_1_1_thread_pool" ],
     [ "console::ThreadPool::TaskBase", "structconsole_1_1_thread_pool_1_1_task_base.html", "structconsole_1_1_thread_pool_1_1_task_base" ],

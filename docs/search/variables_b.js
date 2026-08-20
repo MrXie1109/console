@@ -18,5 +18,5 @@ var searchData=
   ['move_5fbackward_15',['move_backward',['../namespaceconsole_1_1alg.html#a738914e771e3d499326785d4cf2eb8e0',1,'console::alg']]],
   ['multiplies_16',['multiplies',['../namespaceconsole_1_1ops.html#a589df40a4a78af21477c456a730023b2',1,'console::ops']]],
   ['mutex_17',['mutex',['../classconsole_1_1_thread_pool.html#a43a4de0dc3fe4833cd8360237184be25',1,'console::ThreadPool']]],
-  ['mutex_5f_18',['mutex_',['../classconsole_1_1_event.html#a93083fdd30370b68bfb58c37e1bc1afd',1,'console::Event']]]
+  ['mutex_5f_18',['mutex_',['../classconsole_1_1_channel.html#a304e6ec1aa1781b62742d35236c3b543',1,'console::Channel::mutex_'],['../classconsole_1_1_channel_3_01_t_00_010_01_4.html#abdb5e0220e80fe7d325e6b56194c24fe',1,'console::Channel&lt; T, 0 &gt;::mutex_'],['../classconsole_1_1_event.html#a93083fdd30370b68bfb58c37e1bc1afd',1,'console::Event::mutex_'],['../classconsole_1_1_group.html#a084ad6ce4d334ee73366b2338dbf46a9',1,'console::Group::mutex_']]]
 ];

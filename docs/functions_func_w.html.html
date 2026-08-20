@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -114,8 +114,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func
 
 
 <h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>wait()&#160;:&#160;<a class="el" href="classconsole_1_1_event.html#a9bf3bf10e71492394785f53361a64fe8">console::Event</a>, <a class="el" href="classconsole_1_1_keyboard.html#a442c6ffddedddef1d9b52005884404f6">console::Keyboard</a>, <a class="el" href="classconsole_1_1_process.html#a5e8c471f923aa5be505f8f6da5c433b1">console::Process</a>, <a class="el" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">console::ThreadPool</a></li>
+<li>w()&#160;:&#160;<a class="el" href="classconsole_1_1_cow.html#ac0ee7834d63f85e2152831261af1fd33">console::Cow&lt; T &gt;</a></li>
+<li>wait()&#160;:&#160;<a class="el" href="classconsole_1_1_event.html#a9bf3bf10e71492394785f53361a64fe8">console::Event</a>, <a class="el" href="classconsole_1_1_group.html#a2ccffeef53553d3076f3da2fdc0f2a4e">console::Group</a>, <a class="el" href="classconsole_1_1_keyboard.html#a442c6ffddedddef1d9b52005884404f6">console::Keyboard</a>, <a class="el" href="classconsole_1_1_process.html#a5e8c471f923aa5be505f8f6da5c433b1">console::Process</a>, <a class="el" href="classconsole_1_1_shared_task.html#a8b35d19232f122a29d7d703f96aad718">console::SharedTask&lt; T &gt;</a>, <a class="el" href="classconsole_1_1_task.html#ad48f78de7a89dfdaf62177040a7195f2">console::Task&lt; T &gt;</a>, <a class="el" href="classconsole_1_1_thread_pool.html#af914af0aaa51499897635491f7963350">console::ThreadPool</a></li>
 <li>wait_any()&#160;:&#160;<a class="el" href="classconsole_1_1_process.html#a93040d3152752843225375d1d0dcdc91">console::Process</a></li>
+<li>wait_for()&#160;:&#160;<a class="el" href="classconsole_1_1_shared_task.html#a4316b672e218eddba33fb6a6aef49862">console::SharedTask&lt; T &gt;</a>, <a class="el" href="classconsole_1_1_task.html#a6cbc5329c571c1b87e77572f84ebff0b">console::Task&lt; T &gt;</a></li>
+<li>wait_until()&#160;:&#160;<a class="el" href="classconsole_1_1_shared_task.html#a85b7471a99cf8eca3ea49d407cd92de7">console::SharedTask&lt; T &gt;</a>, <a class="el" href="classconsole_1_1_task.html#a45fc91341148c8c3714d8eab3b0d7800">console::Task&lt; T &gt;</a></li>
 <li>waiting_task_count()&#160;:&#160;<a class="el" href="classconsole_1_1_thread_pool.html#a8f69f9fd89c508778e3930cb4a6f2fb8">console::ThreadPool</a></li>
 <li>warn()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_logging.html#a0bcb0482192e3286905fb2acd9967dbc">console::BasicLogging&lt; CharT, Traits &gt;</a></li>
 <li>WColorGuard()&#160;:&#160;<a class="el" href="classconsole_1_1_w_color_guard.html#a64aff656d3bf1393ec4025a5ebf85aec">console::WColorGuard</a></li>
@@ -123,11 +126,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func
 <li>widen_or_pass()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_path.html#a9c5e79d7d3b603581140da6f248263a5">console::BasicPath&lt; CharT &gt;</a></li>
 <li>Window()&#160;:&#160;<a class="el" href="classconsole_1_1gen_1_1_window.html#a61e62a3eb3d45c23b6f2354830942d12">console::gen::Window&lt; Gen &gt;</a></li>
 <li>window_t()&#160;:&#160;<a class="el" href="classconsole_1_1gen_1_1window__t.html#afd2003ce6cee4f04c9faf56ad6d9f8a9">console::gen::window_t</a></li>
+<li>write()&#160;:&#160;<a class="el" href="classconsole_1_1_cow.html#a197626d3d35a9b6b15990c693ce50543">console::Cow&lt; T &gt;</a></li>
 <li>write_binary()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_path.html#a0c3e41d3990a96a4ef446122e6558896">console::BasicPath&lt; CharT &gt;</a></li>
 <li>write_lines()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_path.html#ab020e5b5ec92c05eff0a721f929ee9b2">console::BasicPath&lt; CharT &gt;</a></li>
 <li>write_POD()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_path.html#a460518c8b1594db15d0105c17f515758">console::BasicPath&lt; CharT &gt;</a></li>
 <li>write_text()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_path.html#aa8fd0f30ea228801bec02f09167d99bb">console::BasicPath&lt; CharT &gt;</a></li>
 <li>write_to_stream()&#160;:&#160;<a class="el" href="classconsole_1_1_basic_i_n_i_config.html#ab3c0c7c03658b4916fc6c830c5178ce5">console::BasicINIConfig&lt; CharT &gt;</a>, <a class="el" href="classconsole_1_1_basic_path.html#a30f3db6560df2fabd9de7c47c306a64d">console::BasicPath&lt; CharT &gt;</a></li>
+<li>writer()&#160;:&#160;<a class="el" href="classconsole_1_1_cow.html#ab19ab8b6f2e4e3e999f8075d7ed8cfbf">console::Cow&lt; T &gt;</a></li>
 <li>wstr()&#160;:&#160;<a class="el" href="classconsole_1_1_date_time.html#a70d3b9efc621f3903933f6f0ae51743f">console::DateTime</a>, <a class="el" href="structconsole_1_1_item_1_1_base.html#a01c5b60d3eca95bc0e73b4c4a05d900a">console::Item::Base</a>, <a class="el" href="structconsole_1_1_item_1_1_derived.html#aef7538e78e8b2c2147f56d572c1fc4b4">console::Item::Derived&lt; T &gt;</a>, <a class="el" href="classconsole_1_1_item.html#abb8a0f190fa7576d2d07a6ac6ce3a1e1">console::Item</a></li>
 </ul>
 </div><!-- contents -->

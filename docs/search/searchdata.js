@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "_abcdefghijklmnopqrstuvwxyz~字打数标类视输随",
   1: "_abcdefghiklmnopqrstuvwz",
   2: "cp",
-  3: "abcdfgiklmoprstv",
+  3: "abcdefgiklmoprstv",
   4: "_abcdefghijklmnopqrstuvwyz~",
   5: "abcdefghiklmnopqrstuvwyz",
   6: "bcdefiklmoprstuvw",

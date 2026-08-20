@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.0.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classconsole_1
 <p>线程类，封装了 std::thread 和 <a class="el" href="classconsole_1_1_event.html" title="线程同步事件类，用于线程间通信。">Event</a> 类。  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="async_8h_source.html">async.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="thread_8h_source.html">thread.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -133,8 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a27426b70106c56e48d00d4b4f0dd9bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">分离线程。  <br /></td></tr>
 <tr class="memitem:ae0d4233a54710f070dc135f5dc70b33a" id="r_ae0d4233a54710f070dc135f5dc70b33a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae0d4233a54710f070dc135f5dc70b33a">stop</a> ()</td></tr>
 <tr class="memdesc:ae0d4233a54710f070dc135f5dc70b33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止线程。  <br /></td></tr>
-<tr class="memitem:a918129fa07bec9581945147fb454a872" id="r_a918129fa07bec9581945147fb454a872"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a918129fa07bec9581945147fb454a872">is_joinable</a> () const</td></tr>
-<tr class="memdesc:a918129fa07bec9581945147fb454a872"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断线程是否可连接。  <br /></td></tr>
+<tr class="memitem:ae7a996e5cb0cd29be337310e6c73f28e" id="r_ae7a996e5cb0cd29be337310e6c73f28e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae7a996e5cb0cd29be337310e6c73f28e">joinable</a> () const</td></tr>
+<tr class="memdesc:ae7a996e5cb0cd29be337310e6c73f28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断线程是否可连接。  <br /></td></tr>
 <tr class="memitem:afc4fbb1e938d94b6df796b480654dbf0" id="r_afc4fbb1e938d94b6df796b480654dbf0"><td class="memItemLeft">std::thread::id&#160;</td><td class="memItemRight"><a class="el" href="#afc4fbb1e938d94b6df796b480654dbf0">get_id</a> () const</td></tr>
 <tr class="memdesc:afc4fbb1e938d94b6df796b480654dbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程ID。  <br /></td></tr>
 <tr class="memitem:afc66b09ecb2b1a269665a37bd5ce45b0" id="r_afc66b09ecb2b1a269665a37bd5ce45b0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afc66b09ecb2b1a269665a37bd5ce45b0">native_handle</a> () -&gt; decltype(thread_.native_handle())</td></tr>
@@ -393,33 +393,6 @@ template&lt;class F, class... Args&gt; </div>
 
 </div>
 </div>
-<a id="a918129fa07bec9581945147fb454a872" name="a918129fa07bec9581945147fb454a872"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918129fa07bec9581945147fb454a872">&#9670;&#160;</a></span>is_joinable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool console::Thread::is_joinable </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>判断线程是否可连接。 </p>
-
-</div>
-</div>
 <a id="a24d942f813df23e6badf9aa181b0d070" name="a24d942f813df23e6badf9aa181b0d070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24d942f813df23e6badf9aa181b0d070">&#9670;&#160;</a></span>join()</h2>
 
@@ -444,6 +417,33 @@ template&lt;class F, class... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>等待线程结束。 </p>
+
+</div>
+</div>
+<a id="ae7a996e5cb0cd29be337310e6c73f28e" name="ae7a996e5cb0cd29be337310e6c73f28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a996e5cb0cd29be337310e6c73f28e">&#9670;&#160;</a></span>joinable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool console::Thread::joinable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断线程是否可连接。 </p>
 
 </div>
 </div>
@@ -790,7 +790,7 @@ template&lt;class F, class... Args&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="async_8h_source.html">async.h</a></li>
+<li>include/async/<a class="el" href="thread_8h_source.html">thread.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

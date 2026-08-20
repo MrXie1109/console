@@ -21,7 +21,7 @@ var searchData=
   ['find_5fif_18',['find_if',['../namespaceconsole_1_1alg.html#a9d295f0fe008d7a8389fea3744353bf0',1,'console::alg']]],
   ['find_5fif_5fnot_19',['find_if_not',['../namespaceconsole_1_1alg.html#add0fa638a65d7c0fd2bd9ce1be6b6e25',1,'console::alg']]],
   ['first_20',['first',['../structconsole_1_1ops_1_1unique.html#a345cd0f2a68d94dcf06589e58aeeda44',1,'console::ops::unique::first'],['../namespaceconsole_1_1ops.html#a8f1b1cbfc0c5e2b3fbe981024fa89a2d',1,'console::ops::first']]],
-  ['flag_5f_21',['flag_',['../classconsole_1_1_event.html#a34b9a9137c4bfa180e002359fd048a19',1,'console::Event']]],
+  ['flag_5f_21',['flag_',['../classconsole_1_1_event.html#a34b9a9137c4bfa180e002359fd048a19',1,'console::Event::flag_'],['../classconsole_1_1_shared_task.html#abc932b4a5524176876b415976f94c666',1,'console::SharedTask::flag_']]],
   ['floor_22',['floor',['../namespaceconsole_1_1ops.html#a4bb459a885bf4d10b37796a9b6363647',1,'console::ops']]],
   ['for_5feach_23',['for_each',['../namespaceconsole_1_1alg.html#a8ca297a75dd35c0048e472afe68024d0',1,'console::alg']]],
   ['fs0_24',['Fs0',['../namespaceconsole_1_1pitches.html#af84b114fc2a4657d6d99f3dede94b39c',1,'console::pitches']]],
@@ -34,5 +34,6 @@ var searchData=
   ['fs7_31',['Fs7',['../namespaceconsole_1_1pitches.html#a10ebdcbfd1cb6f46596282d01cd895b3',1,'console::pitches']]],
   ['fs8_32',['Fs8',['../namespaceconsole_1_1pitches.html#a75595f2aed99be88b9adeb0d3fb3bed6',1,'console::pitches']]],
   ['fs9_33',['Fs9',['../namespaceconsole_1_1pitches.html#a6f8ea5eea11f049dbc1e47e7d9f5ccf1',1,'console::pitches']]],
-  ['func_34',['func',['../classconsole_1_1_defer_guard.html#ab132342b9f7a54c866477ea5134827cb',1,'console::DeferGuard::func'],['../classconsole_1_1gen_1_1_map.html#acfad3e02a3a78e3dff0d38a69dbf94ed',1,'console::gen::Map::func'],['../classconsole_1_1gen_1_1_generate.html#a62e641039783f9f83bcbedc401554968',1,'console::gen::Generate::func'],['../classconsole_1_1gen_1_1map__t.html#ada1e0306cf59fc79850cb719135e28e4',1,'console::gen::map_t::func'],['../classconsole_1_1gen_1_1algorithm__t.html#a919fcf0a7d59adf0f7d2729eca7037a3',1,'console::gen::algorithm_t::func']]]
+  ['func_34',['func',['../classconsole_1_1_defer_guard.html#ab132342b9f7a54c866477ea5134827cb',1,'console::DeferGuard::func'],['../classconsole_1_1gen_1_1_map.html#acfad3e02a3a78e3dff0d38a69dbf94ed',1,'console::gen::Map::func'],['../classconsole_1_1gen_1_1_generate.html#a62e641039783f9f83bcbedc401554968',1,'console::gen::Generate::func'],['../classconsole_1_1gen_1_1map__t.html#ada1e0306cf59fc79850cb719135e28e4',1,'console::gen::map_t::func'],['../classconsole_1_1gen_1_1algorithm__t.html#a919fcf0a7d59adf0f7d2729eca7037a3',1,'console::gen::algorithm_t::func']]],
+  ['future_5f_35',['future_',['../classconsole_1_1_task.html#afd3b02ffe969b2e5d1f9353a04bac672',1,'console::Task::future_'],['../classconsole_1_1_shared_task.html#a74ce1ed0df8025a1cc401ab73f7f854a',1,'console::SharedTask::future_']]]
 ];
