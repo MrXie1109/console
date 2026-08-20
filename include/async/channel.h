@@ -1,6 +1,6 @@
 /**
  * @file async/channel.h
- * @brief 基于环形缓冲区的线程安全通信通道，支持 MPMC。
+ * @brief 基于环形缓冲区的有锁线程安全通信通道。
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
@@ -46,8 +46,8 @@ namespace console {
      */
     template <class T, size_t N>
     class ChannelIterator {
-        Channel<T, N>     &channel_; ///< 通道引用
-        std::unique_ptr<T> cache_;   ///< 缓存值
+        Channel<T, N> &channel_; ///< 通道引用
+        T              cache_;   ///< 缓存值
 
     public:
         /// @brief 迭代器类别。
@@ -68,34 +68,29 @@ namespace console {
          * @return 缓存值。
          */
         T &operator*() {
-            if (!cache_) cache_ = channel_.operator->();
-            return *cache_;
+            channel_ >> cache_;
+            return cache_;
         }
 
         /**
          * @brief 成员访问查询。
          * @return 缓存值指针。
          */
-        T *operator->() { return cache_.get(); }
+        T *operator->() { return &cache_; }
 
         /**
          * @brief 前置递增。
          * @return 迭代器自身。
+         * @note No-OP，return *this。
          */
-        ChannelIterator &operator++() {
-            cache_.reset();
-            return *this;
-        }
+        ChannelIterator &operator++() { return *this; }
 
         /**
          * @brief 后置递增。
-         * @return 递增前的拷贝。
+         * @return 迭代器自身。
+         * @note No-OP，return *this。
          */
-        ChannelIterator operator++(int) {
-            ChannelIterator tmp = *this;
-            ++(*this);
-            return tmp;
-        }
+        ChannelIterator operator++(int) { return *this; }
 
         /**
          * @brief 比较相等。
@@ -140,54 +135,54 @@ namespace console {
          * @brief 向通道写入数据。
          * @details 若通道已满，则阻塞等待直到有空间可写。
          * @param value 要写入的值。
-         * @return 引用自身。
+         * @return 若写入成功。
          * @note 若通道已关闭，则 No-OP。
          */
-        Channel &operator<<(const T &value) {
+        bool operator<<(const T &value) {
             std::unique_lock<std::mutex> lock(mutex_);
             w_cv_.wait(lock,
                 [this] { return write_index_ - read_index_ < N || closed_; });
-            if (closed_) return *this;
+            if (closed_) return false;
             buffer_[write_index_ % N] = value;
             ++write_index_;
             r_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
          * @brief 向通道写入数据。
          * @details 若通道已满，则阻塞等待直到有空间可写。
          * @param value 要写入的值。
-         * @return 引用自身。
+         * @return 若写入成功。
          * @note 若通道已关闭，则 No-OP。
          */
-        Channel &operator<<(T &&value) {
+        bool operator<<(T &&value) {
             std::unique_lock<std::mutex> lock(mutex_);
             w_cv_.wait(lock,
                 [this] { return write_index_ - read_index_ < N || closed_; });
-            if (closed_) return *this;
+            if (closed_) return false;
             buffer_[write_index_ % N] = std::move(value);
             ++write_index_;
             r_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
          * @brief 从通道读取数据。
          * @details 若通道为空，则阻塞等待直到有数据可读。
          * @param value 读取的值。
-         * @return 引用自身。
+         * @return 若读取成功。
          * @note 若通道已关闭且没有剩余数据，则 No-OP。
          */
-        Channel &operator>>(T &value) {
+        bool operator>>(T &value) {
             std::unique_lock<std::mutex> lock(mutex_);
             r_cv_.wait(lock,
                 [this] { return write_index_ - read_index_ > 0 || closed_; });
-            if (closed_ && write_index_ - read_index_ == 0) return *this;
+            if (closed_ && write_index_ - read_index_ == 0) return false;
             value = std::move(buffer_[read_index_ % N]);
             ++read_index_;
             w_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
@@ -231,6 +226,8 @@ namespace console {
         /**
          * @brief 显式转换为布尔值。
          * @return 若通道已关闭且没有剩余数据，返回 false；否则返回 true。
+         * @note 注意，验明通道为 true 后仍然可能出现问题，因为验明和读值不是原子的。
+         *       得到 true 只能表明验明前管道有效，不代表读取时有效。
          */
         explicit operator bool() const {
             std::unique_lock<std::mutex> lock(mutex_);
@@ -288,51 +285,51 @@ namespace console {
          * @brief 向通道写入数据。
          * @details 若通道为空，则阻塞等待直到有空间可写。
          * @param value 要写入的值。
-         * @return 引用自身。
+         * @return 若写入成功。
          * @note 若通道已关闭，则 No-OP。
          */
-        Channel &operator<<(const T &value) {
+        bool operator<<(const T &value) {
             std::unique_lock<std::mutex> lock(mutex_);
             w_cv_.wait(lock, [this] { return empty_ || closed_; });
-            if (closed_) return *this;
+            if (closed_) return false;
             buffer_ = value;
             empty_  = false;
             r_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
          * @brief 向通道写入数据。
          * @details 若通道为空，则阻塞等待直到有空间可写。
          * @param value 要写入的值。
-         * @return 引用自身。
+         * @return 若写入成功。
          * @note 若通道已关闭，则 No-OP。
          */
-        Channel &operator<<(T &&value) {
+        bool operator<<(T &&value) {
             std::unique_lock<std::mutex> lock(mutex_);
             w_cv_.wait(lock, [this] { return empty_ || closed_; });
-            if (closed_) return *this;
+            if (closed_) return false;
             buffer_ = std::move(value);
             empty_  = false;
             r_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
          * @brief 从通道读取数据。
          * @details 若通道为空，则阻塞等待直到有数据可读。
          * @param value 读取的值。
-         * @return 引用自身。
+         * @return 若读取成功。
          * @note 若通道已关闭且没有剩余数据，则 No-OP。
          */
-        Channel &operator>>(T &value) {
+        bool operator>>(T &value) {
             std::unique_lock<std::mutex> lock(mutex_);
             r_cv_.wait(lock, [this] { return !empty_ || closed_; });
-            if (closed_ && empty_) return *this;
+            if (closed_ && empty_) return false;
             value  = std::move(buffer_);
             empty_ = true;
             w_cv_.notify_one();
-            return *this;
+            return true;
         }
 
         /**
@@ -371,7 +368,9 @@ namespace console {
 
         /**
          * @brief 显式转换为布尔值。
-         * @return 若通道已关闭，返回 false；否则返回 true。
+         * @return 若通道已关闭且没有剩余数据，返回 false；否则返回 true。
+         * @note 注意，验明通道为 true 后仍然可能出现问题，因为验明和读值不是原子的。
+         *       得到 true 只能表明验明前管道有效，不代表读取时有效。
          */
         explicit operator bool() const {
             std::unique_lock<std::mutex> lock(mutex_);
@@ -419,11 +418,7 @@ namespace console {
     template <class T, size_t N, class F>
     inline F for_each(Channel<T, N> &channel, F &&func) {
         T value;
-        while (true) {
-            if (!channel) break;
-            channel >> value;
-            func(value);
-        }
+        while (channel >> value) func(value);
         return std::forward<F>(func);
     }
 }

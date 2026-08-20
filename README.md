@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.3.0** · _"Towards Go!"_
+**A Modern C++ Console Utility Library** | **v7.4.0** · _"Re-Go!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,7 +35,7 @@ P.S.: `Console` is just a symbol, don't care it.
 - **Process management** on Linux
 - **Result/Optional types** similar to Rust
 - **Cooperative thread management** with Event-based stop mechanism
-- **Asynchronous tasks** —— exclusive (Task) or shared (SharedTask) access with cancellation support
+- **Asynchronous tasks** -- comes with a bunch of async capabilities
 - **Scope exit guards** using the `defer` macro (RAII-style)
 - **Unit testing framework** with macro-based assertions and automatic test registration (assertions, exception testing, performance benchmarking)
 - **Copy-on-Write** `Cow` class for lazy copying of shared data
@@ -301,6 +301,45 @@ void channel_example() {
 
     sync_ch << "Hello from main!";
     worker.join();
+}
+
+// --- Task Group ---
+void group_example() {
+    // Create a group to manage async tasks
+    Group group(3, []() {
+        print("All tasks completed!");
+    });
+
+    // Launch three tasks concurrently
+    std::thread t1([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        print("Task 1 finished");
+        group.done();
+    });
+
+    std::thread t2([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+        print("Task 2 finished");
+        group.done();
+    });
+
+    std::thread t3([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(600));
+        print("Task 3 finished");
+        group.done();
+    });
+
+    // Wait for all tasks to complete
+    group.wait();
+
+    t1.join();
+    t2.join();
+    t3.join();
+    // Output:
+    // Task 1 finished
+    // Task 2 finished
+    // Task 3 finished
+    // All tasks completed!
 }
 ```
 

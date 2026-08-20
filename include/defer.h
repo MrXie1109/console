@@ -89,7 +89,7 @@ namespace console {
      * @endcode
      */
 #define defer(...)                                                             \
-    auto CONSOLE_CONCAT(_dg_, __LINE__) = make_defer([&] { __VA_ARGS__ })
+    auto CONSOLE_CONCAT(_dg_, __LINE__) = make_defer([&] { __VA_ARGS__; })
 
 #endif
 }

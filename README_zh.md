@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.3.0** · _"Towards Go!"_
+**一个现代 C++ 控制台工具库** | **v7.4.0** · _"Re-Go!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -34,7 +34,7 @@ Console 是一个功能全面、仅头文件的 C++ 库，为控制台/终端应
 - **Windows 平台 MIDI 播放**
 - **Linux 平台进程管理**
 - **Result/Optional 类型** —— 类似 Rust
-- **异步编程支持** —— 基于 Event 的协作式线程、Task/SharedTask 异步任务执行、以及 MPMC 通道(有/无缓冲)实现线程安全通信
+- **异步编程支持** —— 提供丰富的异步能力
 - **作用域退出守卫** —— 使用 `defer` 宏(RAII风格)
 - **单元测试框架** —— 基于宏的断言和自动测试注册(断言、异常测试、性能基准测试)
 - **写时复制** `Cow` 类 —— 延迟复制共享数据
@@ -300,6 +300,45 @@ void channel_example() {
 
     sync_ch << "来自主线程的问候!";
     worker.join();
+}
+
+// --- 任务组 ---
+void group_example() {
+    // 创建一个任务组来管理异步任务
+    Group group(3, []() {
+        print("所有任务已完成！");
+    });
+
+    // 同时启动三个任务
+    std::thread t1([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        print("任务 1 完成");
+        group.done();
+    });
+
+    std::thread t2([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+        print("任务 2 完成");
+        group.done();
+    });
+
+    std::thread t3([&group]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(600));
+        print("任务 3 完成");
+        group.done();
+    });
+
+    // 等待所有任务完成
+    group.wait();
+
+    t1.join();
+    t2.join();
+    t3.join();
+    // 输出：
+    // 任务 1 完成
+    // 任务 2 完成
+    // 任务 3 完成
+    // 所有任务已完成！
 }
 ```
 
