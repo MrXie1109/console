@@ -1928,9 +1928,9 @@ namespace console {
          * @tparam Class 类类型。
          * @tparam Member 成员类型。
          */
-        template <class Class, typename Mem>
+        template <class Class, class Mem>
         struct Member {
-            Mem Class::*ptr;
+            Mem Class::*ptr; ///< 成员指针
 
             /**
              * @brief 获取对象的成员变量。
@@ -1938,9 +1938,18 @@ namespace console {
              * @return obj.*ptr。
              */
             template <class T>
-            auto operator()(const T &obj) const ->
-                typename std::decay<decltype(obj.*ptr)>::type {
+            Mem operator()(T &&obj) const {
                 return obj.*ptr;
+            }
+
+            /**
+             * @brief 获取对象的成员变量。
+             * @param obj 对象。
+             * @return obj.*ptr。
+             */
+            template <class T>
+            Mem operator()(T *obj) const {
+                return obj->*ptr;
             }
         };
 

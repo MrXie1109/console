@@ -249,7 +249,7 @@ namespace console {
 
     public:
         /// @brief 默认构造函数。
-        SharedTask() = default;
+        SharedTask() : flag_(new std::once_flag()) {}
 
         /**
          * @brief 构造函数，接受一个可调用对象和参数，启动异步任务。
@@ -264,7 +264,8 @@ namespace console {
             class = typename std::enable_if<
                 is_callable<F, Args...>::value
                 || is_callable<F, const Event &, Args...>::value>::type>
-        explicit SharedTask(F &&f, Args &&...args) {
+        explicit SharedTask(F &&f, Args &&...args) :
+            flag_(new std::once_flag()) {
             start(std::forward<F>(f), std::forward<Args>(args)...);
         }
 

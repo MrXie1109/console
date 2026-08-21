@@ -99,8 +99,7 @@ namespace console {
         return std::sqrt(variance(arr, sample));
     }
 
-    // ---------------------------- 向量运算(一维)
-    // ----------------------------
+    // ---------------------------- 向量运算(一维) ----------------------------
     /**
      * @brief 计算两个一维向量的点积。
      * @tparam T 元素类型。
@@ -194,8 +193,7 @@ namespace console {
         return sum;
     }
 
-    // ---------------------------- 矩阵运算(二维)
-    // ----------------------------
+    // ---------------------------- 矩阵运算(二维) ----------------------------
     /**
      * @brief 矩阵乘法(二维)。
      * @tparam T 元素类型。
@@ -211,11 +209,8 @@ namespace console {
     matmul(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
         MultiArray<T, M, K> C(T{});
         for (size_t i = 0; i < M; ++i)
-            for (size_t k = 0; k < K; ++k) {
-                T sum = T{};
-                for (size_t j = 0; j < N; ++j) sum += A[i][j] * B[j][k];
-                C[i][k] = sum;
-            }
+            for (size_t j = 0; j < N; ++j)
+                for (size_t k = 0; k < K; ++k) C[i][k] += A[i][j] * B[j][k];
         return C;
     }
 

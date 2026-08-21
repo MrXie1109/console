@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.4.0 (2026-08-20) -- "Re-Go!")";
+            R"(console version 7.4.1 (2026-08-21) -- "Would You Like Some Bug?")";
     }
 
     /**

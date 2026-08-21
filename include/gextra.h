@@ -1936,5 +1936,90 @@ namespace console {
         nth_t<N> nth() {
             return {};
         }
+
+        /**
+         * @brief 成员函数调用变换器。
+         * @tparam Class 类类型。
+         * @tparam Ret 返回值类型。
+         */
+        template <class Class, class Ret, class... Args>
+        struct Method {
+            Ret (Class::*ptr)(Args...); ///< 成员函数指针
+            Params<Args...> param;      ///< 参数包
+
+            /**
+             * @brief 构造函数。
+             * @param ptr 成员函数指针。
+             * @param args 参数包。
+             */
+            Method(Ret (Class::*ptr)(Args...), const Args &...args) :
+                ptr(ptr), param(args...) {}
+
+            /**
+             * @brief 调用对象的成员函数。
+             * @param obj 对象引用。
+             * @return 成员函数返回值。
+             */
+            template <class T>
+            Ret operator()(T &&obj) const {
+                return param.apply(
+                    [&](const Args &...args) { return (obj.*ptr)(args...); });
+            }
+
+            /**
+             * @brief 从指针调用对象的成员函数。
+             * @param obj 对象引用。
+             * @return 成员函数返回值。
+             */
+            template <class T>
+            Ret operator()(T *obj) const {
+                return param.apply(
+                    [&](const Args &...args) { return (obj->*ptr)(args...); });
+            }
+        };
+
+        /**
+         * @brief 创建成员函数调用器。
+         */
+        template <class Class, class Ret, class... Args>
+        Method<Class, Ret, Args...>
+        method(Ret (Class::*ptr)(Args...), const Args &...args) {
+            return Method<Class, Ret, Args...>{ptr, args...};
+        }
+
+        /**
+         * @brief 函数调用变化器。
+         * @tparam Args 函数参数类型。
+         */
+        template <class... Args>
+        struct Call {
+            Params<Args...> param; ///< 参数包
+
+            /**
+             * @brief 构造函数。
+             * @param args 函数参数。
+             */
+            Call(const Args &...args) : param(args...) {}
+
+            /**
+             * @brief 调用函数。
+             * @param f 函数对象。
+             * @return 函数返回值。
+             */
+            template <class F>
+            auto operator()(F &&f) const -> //
+                typename std::decay<decltype(param.apply(
+                    std::forward<F>(f)))>::type {
+                return param.apply(std::forward<F>(f));
+            }
+        };
+
+        /**
+         * @brief 创建函数调用器。
+         */
+        template <class... Args>
+        Call<Args...> call(const Args &...args) {
+            return Call<Args...>{args...};
+        }
     }
 }
