@@ -1715,7 +1715,9 @@ namespace console {
     template <class T, class U, size_t... Dims>
     bool
     equals(const MultiArray<T, Dims...> &a, const MultiArray<U, Dims...> &b) {
-        return std::equal(a.fbegin(), a.fend(), b.fbegin(), b.fend());
+        for (size_t i = 0; i < a.fsize(); ++i)
+            if (a[i] != b[i]) return false;
+        return true;
     }
 
     /**
@@ -1736,8 +1738,9 @@ namespace console {
     bool equals(const MultiArray<T, Dims...> &a,
         const MultiArray<U, Dims...>         &b,
         Op                                  &&op) {
-        return std::equal(
-            a.fbegin(), a.fend(), b.fbegin(), b.fend(), std::forward<Op>(op));
+        for (size_t i = 0; i < a.fsize(); ++i)
+            if (!op(a[i], b[i])) return false;
+        return true;
     }
 
     /**
