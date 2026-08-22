@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.4.2 (2026-08-21) -- "Do You Want to Fix Some Bugs?")";
+            R"AAA(console version 7.4.3 (2026-08-22) -- "Faster Matmul! (Why am I Improving This?)")AAA";
     }
 
     /**

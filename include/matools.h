@@ -194,8 +194,12 @@ namespace console {
     }
 
     // ---------------------------- 矩阵运算(二维) ----------------------------
+#ifndef CONSOLE_MATMUL_BLOCK_SIZE
+#define CONSOLE_MATMUL_BLOCK_SIZE 128
+#endif
+
     /**
-     * @brief 矩阵乘法(二维)。
+     * @brief 矩阵乘法(二维)，使用分块算法。
      * @tparam T 元素类型。
      * @tparam M 矩阵 A 的行数。
      * @tparam N A 的列数(同时也是 B 的行数)。
@@ -206,12 +210,90 @@ namespace console {
      */
     template <class T, size_t M, size_t N, size_t K>
     MultiArray<T, M, K>
-    matmul(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
+    matmul_blocked(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
+        using std::min;
+        MultiArray<T, M, K> C(T{});
+        constexpr size_t    BLOCK = CONSOLE_MATMUL_BLOCK_SIZE;
+        for (size_t i0 = 0; i0 < M; i0 += BLOCK)
+            for (size_t j0 = 0; j0 < K; j0 += BLOCK)
+                for (size_t k0 = 0; k0 < N; k0 += BLOCK)
+                    for (size_t i = i0; i < min(i0 + BLOCK, M); ++i)
+                        for (size_t j = j0; j < min(j0 + BLOCK, K); ++j)
+                            for (size_t k = k0; k < min(k0 + BLOCK, N); ++k)
+                                C[i][j] += A[i][k] * B[k][j];
+        return C;
+    }
+
+    /**
+     * @brief 矩阵乘法(二维)，使用简单算法。
+     * @tparam T 元素类型。
+     * @tparam M 矩阵 A 的行数。
+     * @tparam N A 的列数(同时也是 B 的行数)。
+     * @tparam K B 的列数。
+     * @param A 左矩阵，尺寸 M×N。
+     * @param B 右矩阵，尺寸 N×K。
+     * @return MultiArray<T, M, K> 乘积矩阵。
+     */
+    template <class T, size_t M, size_t N, size_t K>
+    MultiArray<T, M, K>
+    matmul_simple(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
         MultiArray<T, M, K> C(T{});
         for (size_t i = 0; i < M; ++i)
-            for (size_t j = 0; j < N; ++j)
-                for (size_t k = 0; k < K; ++k) C[i][k] += A[i][j] * B[j][k];
+            for (size_t j = 0; j < K; ++j)
+                for (size_t k = 0; k < N; ++k) C[i][j] += A[i][k] * B[k][j];
         return C;
+    }
+
+    /**
+     * @brief 矩阵乘法(二维) std::true_type 特化，使用分块算法。
+     * @tparam T 元素类型。
+     * @tparam M 矩阵 A 的行数。
+     * @tparam N A 的列数(同时也是 B 的行数)。
+     * @tparam K B 的列数。
+     * @param A 左矩阵，尺寸 M×N。
+     * @param B 右矩阵，尺寸 N×K。
+     * @return MultiArray<T, M, K> 乘积矩阵。
+     */
+    template <class T, size_t M, size_t N, size_t K>
+    inline MultiArray<T, M, K> matmul_impl(const MultiArray<T, M, N> &A,
+        const MultiArray<T, N, K>                                    &B,
+        std::true_type) {
+        return matmul_blocked(A, B);
+    }
+
+    /**
+     * @brief 矩阵乘法(二维) std::false_type 特化，使用简单算法。
+     * @tparam T 元素类型。
+     * @tparam M 矩阵 A 的行数。
+     * @tparam N A 的列数(同时也是 B 的行数)。
+     * @tparam K B 的列数。
+     * @param A 左矩阵，尺寸 M×N。
+     * @param B 右矩阵，尺寸 N×K。
+     * @return MultiArray<T, M, K> 乘积矩阵。
+     */
+    template <class T, size_t M, size_t N, size_t K>
+    inline MultiArray<T, M, K> matmul_impl(const MultiArray<T, M, N> &A,
+        const MultiArray<T, N, K>                                    &B,
+        std::false_type) {
+        return matmul_simple(A, B);
+    }
+
+    /**
+     * @brief 矩阵乘法(二维)，根据 BLOCK 大小选择简单算法或分块算法。
+     * @tparam T 元素类型。
+     * @tparam M 矩阵 A 的行数。
+     * @tparam N A 的列数(同时也是 B 的行数)。
+     * @tparam K B 的列数。
+     * @param A 左矩阵，尺寸 M×N。
+     * @param B 右矩阵，尺寸 N×K。
+     * @return MultiArray<T, M, K> 乘积矩阵。
+     */
+    template <class T, size_t M, size_t N, size_t K>
+    inline MultiArray<T, M, K>
+    matmul(const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
+        constexpr size_t BLOCK       = CONSOLE_MATMUL_BLOCK_SIZE;
+        constexpr bool   use_blocked = M >= BLOCK && N >= BLOCK && K >= BLOCK;
+        return matmul_impl(A, B, std::integral_constant<bool, use_blocked>{});
     }
 
     /**

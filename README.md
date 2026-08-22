@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.4.2** · _"Do You Want to Fix Some Bugs?"_
+**A Modern C++ Console Utility Library** | **v7.4.3** · _"Faster Matmul! (Why am I Improving This?)"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
