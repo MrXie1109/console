@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.4.3** · _"Faster Matmul! (Why am I Improving This?)"_
+**一个现代 C++ 控制台工具库** | **v7.5.0** · _"Interesting Queue!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

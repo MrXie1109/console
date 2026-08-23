@@ -7,27 +7,8 @@ setlocal enabledelayedexpansion
 :: Supports Windows 7/8/8.1/10/11
 :: ============================================================
 
-:: --- Detect Windows version and set color support ---
-call :detect_color_support
-
-:: --- Color definitions (conditional) ---
-if "%COLOR_SUPPORT%"=="true" (
-    set "RED=[91m"
-    set "GREEN=[92m"
-    set "YELLOW=[93m"
-    set "BLUE=[94m"
-    set "CYAN=[96m"
-    set "BOLD=[1m"
-    set "NC=[0m"
-) else (
-    set "RED="
-    set "GREEN="
-    set "YELLOW="
-    set "BLUE="
-    set "CYAN="
-    set "BOLD="
-    set "NC="
-)
+:: --- Color setup using Windows color command ---
+call :set_colors
 
 :: --- Helper functions ---
 
@@ -54,40 +35,25 @@ if %errorlevel% neq 0 (
 for /f "delims=" %%i in ('where git') do set "GIT_PATH=%%i"
 call :success "git found: !GIT_PATH!"
 
-:: --- 3. Ask for Clone Protocol ---
-call :step "Select clone protocol"
-echo %BOLD%1)%NC% HTTPS (recommended, usually no extra configuration needed)
-echo %BOLD%2)%NC% SSH (requires that you have already configured SSH keys)
-set /p "protocol_choice=Enter 1 or 2 [default: 1]: "
-
-if "!protocol_choice!"=="2" (
-    set "REPO_URL=git@github.com:MrXie1109/console.git"
-    call :info "SSH protocol selected"
-) else (
-    set "REPO_URL=https://github.com/MrXie1109/console.git"
-    call :info "HTTPS protocol selected"
-)
-
-:: --- 4. Prepare Temporary Directory and Clone ---
+:: --- 3. Clone Repository ---
+set "REPO_URL=https://github.com/MrXie1109/console.git"
 call :step "Preparing clone environment"
 
-:: Create temp directory
 set "TEMP_DIR=%TEMP%\console-install-%RANDOM%"
 mkdir "!TEMP_DIR!" 2>nul
 call :info "Temporary directory: !TEMP_DIR!"
 
-:: Clone repository
 call :info "Cloning repository from !REPO_URL!"
-git clone --depth 1 "!REPO_URL!" "!TEMP_DIR!"
+git clone --depth 1 "!REPO_URL%" "!TEMP_DIR!" >nul 2>&1
 if %errorlevel% neq 0 (
-    call :error "git clone failed. Please check your network connection and credentials."
+    call :error "git clone failed. Please check your network connection."
     rmdir /s /q "!TEMP_DIR!" 2>nul
     pause
     exit /b 1
 )
 call :success "Repository cloned successfully"
 
-:: --- 5. Install Header Files ---
+:: --- 4. Install Header Files ---
 call :step "Installing header files"
 
 set "SOURCE_DIR=!TEMP_DIR!\include"
@@ -99,83 +65,13 @@ if not exist "!SOURCE_DIR!" (
     exit /b 1
 )
 
-:: Determine target directory
-set "TARGET_DIR="
-set "DETECTED_COMPILER="
-
-:: Try to detect Visual Studio
-if defined VSINSTALLDIR (
-    set "DETECTED_COMPILER=Visual Studio"
-    :: Find the latest MSVC version
-    for /f "delims=" %%d in ('dir /b /ad /on "!VSINSTALLDIR!VC\Tools\MSVC\*" 2^>nul') do (
-        set "MSVC_VERSION=%%d"
-    )
-    if defined MSVC_VERSION (
-        set "TARGET_DIR=!VSINSTALLDIR!VC\Tools\MSVC\!MSVC_VERSION!\include\console"
-    ) else (
-        set "TARGET_DIR=!VSINSTALLDIR!VC\Tools\MSVC\*\include\console"
-    )
-    call :info "Visual Studio detected: !VSINSTALLDIR!"
-)
-
-:: Try to detect MinGW
-if not defined TARGET_DIR (
-    where gcc >nul 2>&1
-    if !errorlevel! equ 0 (
-        set "DETECTED_COMPILER=MinGW"
-        for /f "delims=" %%i in ('where gcc') do (
-            set "GCC_PATH=%%i"
-            :: Try common MinGW include paths
-            if exist "!GCC_PATH!\..\..\include" (
-                set "TARGET_DIR=!GCC_PATH!\..\..\include\console"
-            ) else if exist "!GCC_PATH!\..\include" (
-                set "TARGET_DIR=!GCC_PATH!\..\include\console"
-            )
-        )
-        call :info "MinGW detected: !GCC_PATH!"
-    )
-)
-
-:: Try to detect Clang (LLVM)
-if not defined TARGET_DIR (
-    where clang >nul 2>&1
-    if !errorlevel! equ 0 (
-        set "DETECTED_COMPILER=Clang"
-        for /f "delims=" %%i in ('where clang') do (
-            set "CLANG_PATH=%%i"
-            if exist "!CLANG_PATH!\..\..\include" (
-                set "TARGET_DIR=!CLANG_PATH!\..\..\include\console"
-            )
-        )
-        call :info "Clang detected: !CLANG_PATH!"
-    )
-)
-
-:: If no compiler detected, ask user
-if not defined TARGET_DIR (
-    call :warning "Could not auto-detect compiler include path."
-    echo.
-    echo Please enter the include directory where you want to install.
-    echo Example: C:\mingw64\include
-    echo Example: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include
-    echo.
-    set /p "user_path=Enter include path: "
-    if "!user_path!"=="" (
-        call :error "No path provided. Installation cancelled."
-        rmdir /s /q "!TEMP_DIR!" 2>nul
-        pause
-        exit /b 1
-    )
-    set "TARGET_DIR=!user_path!\console"
-)
-
-:: Normalize path (remove trailing backslash if any)
-if "!TARGET_DIR:~-1!"=="\" set "TARGET_DIR=!TARGET_DIR:~0,-1!"
+:: Unified installation location
+set "INSTALL_BASE=%ProgramFiles%\console"
+set "TARGET_DIR=!INSTALL_BASE!\include\console"
 
 :: Create backup if target exists
 set "BACKUP_DIR="
 if exist "!TARGET_DIR!" (
-    :: Generate timestamp for backup
     for /f "tokens=1-3 delims=/ " %%a in ('date /t') do (
         set "DATE_PART=%%a%%b%%c"
     )
@@ -190,14 +86,11 @@ if exist "!TARGET_DIR!" (
 )
 
 :: Create target parent directory if needed
-for %%a in ("!TARGET_DIR!") do (
-    set "PARENT_DIR=%%~dpa"
-)
-if not exist "!PARENT_DIR!" (
-    mkdir "!PARENT_DIR!" 2>nul
+if not exist "!INSTALL_BASE!\include" (
+    mkdir "!INSTALL_BASE!\include" 2>nul
     if !errorlevel! neq 0 (
-        call :error "Failed to create directory: !PARENT_DIR!"
-        call :error "Please check permissions and path."
+        call :error "Failed to create directory: !INSTALL_BASE!\include"
+        call :error "Please check permissions."
         rmdir /s /q "!TEMP_DIR!" 2>nul
         pause
         exit /b 1
@@ -216,6 +109,85 @@ if !errorlevel! equ 0 (
     exit /b 1
 )
 
+:: --- 5. Create Symbolic Links ---
+call :step "Creating symbolic links to compiler include paths"
+
+set "LINK_CREATED=0"
+
+:: Check if mklink is available (Windows Vista+)
+where mklink >nul 2>&1
+if %errorlevel% neq 0 (
+    call :warning "mklink command not found. Skipping symbolic link creation."
+    goto :skip_links
+)
+
+:: Try to detect Visual Studio
+if defined VSINSTALLDIR (
+    :: Find the latest MSVC version
+    for /f "delims=" %%d in ('dir /b /ad /on "!VSINSTALLDIR!VC\Tools\MSVC\*" 2^>nul') do (
+        set "MSVC_VERSION=%%d"
+    )
+    if defined MSVC_VERSION (
+        set "LINK_TARGET=!VSINSTALLDIR!VC\Tools\MSVC\!MSVC_VERSION!\include\console"
+        call :create_link "!LINK_TARGET!"
+    )
+)
+
+:: Try to detect MinGW
+if not defined LINK_TARGET_CREATED (
+    where gcc >nul 2>&1
+    if !errorlevel! equ 0 (
+        for /f "delims=" %%i in ('where gcc') do (
+            set "GCC_PATH=%%i"
+            :: Try common MinGW include paths
+            if exist "!GCC_PATH!\..\..\include" (
+                set "LINK_TARGET=!GCC_PATH!\..\..\include\console"
+                call :create_link "!LINK_TARGET!"
+            ) else if exist "!GCC_PATH!\..\include" (
+                set "LINK_TARGET=!GCC_PATH!\..\include\console"
+                call :create_link "!LINK_TARGET!"
+            ) else if exist "!GCC_PATH!\..\..\mingw32\include" (
+                set "LINK_TARGET=!GCC_PATH!\..\..\mingw32\include\console"
+                call :create_link "!LINK_TARGET!"
+            ) else if exist "!GCC_PATH!\..\..\x86_64-w64-mingw32\include" (
+                set "LINK_TARGET=!GCC_PATH!\..\..\x86_64-w64-mingw32\include\console"
+                call :create_link "!LINK_TARGET!"
+            )
+        )
+    )
+)
+
+:: Try to detect Clang
+if not defined LINK_TARGET_CREATED (
+    where clang >nul 2>&1
+    if !errorlevel! equ 0 (
+        for /f "delims=" %%i in ('where clang') do (
+            set "CLANG_PATH=%%i"
+            if exist "!CLANG_PATH!\..\..\include" (
+                set "LINK_TARGET=!CLANG_PATH!\..\..\include\console"
+                call :create_link "!LINK_TARGET!"
+            ) else if exist "!CLANG_PATH!\..\include" (
+                set "LINK_TARGET=!CLANG_PATH!\..\include\console"
+                call :create_link "!LINK_TARGET!"
+            )
+        )
+    )
+)
+
+:: If no compiler detected, try common MinGW paths
+if not defined LINK_TARGET_CREATED (
+    set "COMMON_PATHS=C:\mingw64\include\console C:\msys64\mingw64\include\console C:\MinGW\include\console"
+    for %%p in (!COMMON_PATHS!) do (
+        if exist "%%~dp" (
+            set "LINK_TARGET=%%p"
+            call :create_link "!LINK_TARGET!"
+            if defined LINK_TARGET_CREATED goto :skip_links
+        )
+    )
+)
+
+:skip_links
+
 :: --- 6. Cleanup and Finish ---
 call :step "Cleaning up"
 rmdir /s /q "!TEMP_DIR!" 2>nul
@@ -224,21 +196,23 @@ call :info "Removed temporary directory: !TEMP_DIR!"
 echo.
 call :success "Installation completed successfully"
 echo.
-echo %BOLD%Installation summary:%NC%
-echo   Location: %CYAN%!TARGET_DIR!%NC%
-echo   Usage:    %CYAN%#include ^<console/all.h^>%NC%
-echo   Type:     %CYAN%Header-only library%NC%
-if defined DETECTED_COMPILER (
-    echo   Compiler: %CYAN%!DETECTED_COMPILER!%NC%
+call :bold "Installation summary:"
+call :info "  Location: !TARGET_DIR!"
+call :info "  Usage:    #include ^<console/all.h^>"
+call :info "  Type:     Header-only library"
+if !LINK_CREATED! equ 1 (
+    call :success "  Symbolic links created for detected compilers"
+) else (
+    call :warning "  No symbolic links created. You may need to add !TARGET_DIR! to your compiler's include path."
 )
 
 :: --- 7. Backup cleanup reminder ---
 if defined BACKUP_DIR if exist "!BACKUP_DIR!" (
     echo.
-    echo %YELLOW%%BOLD%^>^>^> Backup reminder:%NC%
-    echo   Old version backed up to: %CYAN%!BACKUP_DIR!%NC%
-    echo   You can remove it with: rmdir /s /q "!BACKUP_DIR!"
-    echo   %YELLOW%Note: Keep it if you need to rollback%NC%
+    call :warning ">>> Backup reminder:"
+    call :info "  Old version backed up to: !BACKUP_DIR!"
+    call :info "  You can remove it with: rmdir /s /q "!BACKUP_DIR!""
+    call :warning "  Note: Keep it if you need to rollback"
 )
 
 echo.
@@ -249,82 +223,70 @@ exit /b 0
 :: Helper function implementations
 :: ============================================================
 
-:detect_color_support
-:: Detect Windows version and color support
-set "COLOR_SUPPORT=false"
-
-:: Get Windows version from ver command
-for /f "tokens=2" %%a in ('ver') do set "VER_STRING=%%a"
-for /f "tokens=1,2 delims=." %%a in ("!VER_STRING!") do (
-    set "WIN_MAJOR=%%a"
-    set "WIN_MINOR=%%b"
-)
-
-:: Windows 10 = 10.0, Windows 11 = 10.0 (build > 22000)
-:: Windows 8.1 = 6.3, Windows 8 = 6.2, Windows 7 = 6.1
-if !WIN_MAJOR! GEQ 10 (
-    set "COLOR_SUPPORT=true"
-) else if !WIN_MAJOR! EQU 6 (
-    if !WIN_MINOR! GEQ 3 (
-        :: Windows 8.1 has some ANSI support via updates, but not guaranteed
-        set "COLOR_SUPPORT=false"
-    )
-)
-
-:: Check if running in Windows Terminal or ConEmu (which support ANSI)
-if "%COLOR_SUPPORT%"=="false" (
-    if defined WT_SESSION set "COLOR_SUPPORT=true"
-    if defined ConEmuBuild set "COLOR_SUPPORT=true"
-)
-
-:: Also check if ANSICON is installed (older Windows ANSI support)
-if "%COLOR_SUPPORT%"=="false" (
-    if defined ANSICON set "COLOR_SUPPORT=true"
-)
-
-:: Check if we're in PowerShell (which supports ANSI via --% parameter)
-:: Not easily detectable, so we'll keep it false
-
+:set_colors
+color 07
 exit /b
 
 :info
-if "%COLOR_SUPPORT%"=="true" (
-    echo %BLUE%[INFO]%NC% %~1
-) else (
-    echo [INFO] %~1
-)
+echo [INFO] %~1
 exit /b
 
 :success
-if "%COLOR_SUPPORT%"=="true" (
-    echo %GREEN%[SUCCESS]%NC% %~1
-) else (
-    echo [SUCCESS] %~1
-)
+color 0A
+echo [SUCCESS] %~1
+color 07
 exit /b
 
 :warning
-if "%COLOR_SUPPORT%"=="true" (
-    echo %YELLOW%[WARNING]%NC% %~1
-) else (
-    echo [WARNING] %~1
-)
+color 0E
+echo [WARNING] %~1
+color 07
 exit /b
 
 :error
-if "%COLOR_SUPPORT%"=="true" (
-    echo %RED%[ERROR]%NC% %~1
-) else (
-    echo [ERROR] %~1
-)
+color 0C
+echo [ERROR] %~1
+color 07
 exit /b
 
 :step
-if "%COLOR_SUPPORT%"=="true" (
-    echo.
-    echo %CYAN%%BOLD%^>^>^>%NC% %CYAN%%~1%NC%
+echo.
+color 0B
+echo ^>^>^> %~1
+color 07
+exit /b
+
+:bold
+color 0F
+echo %~1
+color 07
+exit /b
+
+:create_link
+set "LINK_PATH=%~1"
+set "LINK_DIR="
+for %%a in ("!LINK_PATH!") do set "LINK_DIR=%%~dpa"
+
+:: Check if parent directory exists
+if not exist "!LINK_DIR!" (
+    call :info "  Directory !LINK_DIR! does not exist, skipping link creation"
+    exit /b
+)
+
+:: If link already exists, remove it first
+if exist "!LINK_PATH!" (
+    call :info "  Removing existing link/directory: !LINK_PATH!"
+    rmdir "!LINK_PATH!" 2>nul || del "!LINK_PATH!" 2>nul
+)
+
+:: Create directory junction (similar to symlink on Windows)
+call :info "  Creating symbolic link: !LINK_PATH! -> !TARGET_DIR!"
+mklink /J "!LINK_PATH!" "!TARGET_DIR!" >nul 2>&1
+if !errorlevel! equ 0 (
+    call :success "  Symbolic link created successfully"
+    set "LINK_CREATED=1"
+    set "LINK_TARGET_CREATED=1"
 ) else (
-    echo.
-    echo ^>^>^> %~1
+    call :warning "  Failed to create symbolic link. Please ensure you have administrator privileges."
 )
 exit /b

@@ -50,59 +50,22 @@ if ! command -v git >/dev/null 2>&1; then
 fi
 success "git found: $(command -v git)"
 
-# --- 3. Ask for Clone Protocol ---
-step "Select clone protocol"
-printf "${BOLD}1)${NC} HTTPS (recommended, usually no extra configuration needed)\n"
-printf "${BOLD}2)${NC} SSH (requires that you have already configured SSH keys)\n"
-printf "Enter 1 or 2 [default: 1]: "
-read -r protocol_choice
-
-if [ "$protocol_choice" = "2" ]; then
-    REPO_URL="git@github.com:MrXie1109/console.git"
-    info "SSH protocol selected"
-else
-    REPO_URL="https://github.com/MrXie1109/console.git"
-    info "HTTPS protocol selected"
-fi
-
-# --- 4. Prepare Temporary Directory and Clone ---
+# --- 3. Prepare Temporary Directory and Clone ---
+REPO_URL="https://github.com/MrXie1109/console.git"
 step "Preparing clone environment"
 TEMP_DIR=$(mktemp -d)
 info "Temporary directory: $TEMP_DIR"
-if [ "$protocol_choice" = "2" ] && [ -n "$SUDO_USER" ]; then
-    chown "$SUDO_USER":"$SUDO_USER" "$TEMP_DIR"
-    info "Changed ownership of $TEMP_DIR to $SUDO_USER for SSH clone"
-fi
 info "Cloning repository from $REPO_URL"
 
-# If using SSH under sudo, clone as the original user to preserve SSH keys
-if [ "$protocol_choice" = "2" ] && [ -n "$SUDO_USER" ]; then
-    info "Running in sudo environment, cloning as user: $SUDO_USER"
-    if ! sudo -u "$SUDO_USER" git clone --depth 1 "$REPO_URL" "$TEMP_DIR" 2>&1; then
-        error "git clone failed. Please verify your SSH key configuration."
-        error "Test your SSH connection with: sudo -u $SUDO_USER ssh -T git@github.com"
-        rm -rf "$TEMP_DIR"
-        exit 1
-    fi
-elif [ "$protocol_choice" = "2" ] && [ -z "$SUDO_USER" ]; then
-    # Running as root directly (not via sudo), SSH may still work if root has keys
-    if ! git clone --depth 1 "$REPO_URL" "$TEMP_DIR" 2>&1; then
-        error "git clone failed. Please verify that root has SSH keys configured."
-        error "Test with: ssh -T git@github.com"
-        rm -rf "$TEMP_DIR"
-        exit 1
-    fi
-else
-    # HTTPS clone
-    if ! git clone --depth 1 "$REPO_URL" "$TEMP_DIR" 2>&1; then
-        error "git clone failed. Please check your network connection."
-        rm -rf "$TEMP_DIR"
-        exit 1
-    fi
+# HTTPS clone
+if ! git clone --depth 1 "$REPO_URL" "$TEMP_DIR" >/dev/null 2>&1; then
+    error "git clone failed. Please check your network connection."
+    rm -rf "$TEMP_DIR"
+    exit 1
 fi
 success "Repository cloned successfully"
 
-# --- 5. Install Header Files ---
+# --- 4. Install Header Files ---
 step "Installing header files"
 SOURCE_DIR="$TEMP_DIR/include"
 if [ ! -d "$SOURCE_DIR" ]; then
@@ -127,7 +90,7 @@ info "Copying to $TARGET_DIR"
 cp -r "$SOURCE_DIR" "$TARGET_DIR"
 success "Header files installed"
 
-# --- 6. Cleanup and Finish ---
+# --- 5. Cleanup and Finish ---
 step "Cleaning up"
 rm -rf "$TEMP_DIR"
 info "Removed temporary directory: $TEMP_DIR"
@@ -140,7 +103,7 @@ printf "  Location: ${CYAN}%s${NC}\n" "$TARGET_DIR"
 printf "  Usage:    ${CYAN}#include <console/all.h>${NC}\n"
 printf "  Type:     ${CYAN}Header-only library${NC}\n"
 
-# --- 7. Backup cleanup reminder ---
+# --- 6. Backup cleanup reminder ---
 if [ -n "$BACKUP_DIR" ] && [ -d "$BACKUP_DIR" ]; then
     echo ""
     printf "${YELLOW}${BOLD}>>> Backup reminder:${NC}\n"
