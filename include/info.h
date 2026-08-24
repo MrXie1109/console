@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.5.0 (2026-08-23) -- "Interesting Queue!")";
+            R"(console version 7.6.0 (2026-08-24) -- "Die Queue ist tot!")";
     }
 
     /**

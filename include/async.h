@@ -33,6 +33,7 @@ SOFTWARE.
 #include "async/event.h"
 #include "async/group.h"
 #include "async/pool.h"
+#include "async/queue.h"
 #include "async/task.h"
 #include "async/thread.h"
 

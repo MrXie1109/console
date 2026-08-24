@@ -38,6 +38,7 @@ SOFTWARE.
 #include <iostream>
 #include <numeric>
 
+#include "async/pool.h"
 #include "multiarray.h"
 #include "random.h"
 
@@ -294,6 +295,47 @@ namespace console {
         constexpr size_t BLOCK       = CONSOLE_MATMUL_BLOCK_SIZE;
         constexpr bool   use_blocked = M >= BLOCK && N >= BLOCK && K >= BLOCK;
         return matmul_impl(A, B, std::integral_constant<bool, use_blocked>{});
+    }
+
+    /**
+     * @brief 并行矩阵乘法(二维)，使用分块算法并行计算。
+     * @details 将输出矩阵 C 按块划分，每个块提交到线程池并行计算。
+     *          每个块内部使用分块算法优化缓存利用率。
+     * @tparam T 元素类型。
+     * @tparam M 矩阵 A 的行数。
+     * @tparam N A 的列数(同时也是 B 的行数)。
+     * @tparam K B 的列数。
+     * @param A 左矩阵，尺寸 M×N。
+     * @param B 右矩阵，尺寸 N×K。
+     * @return MultiArray<T, M, K> 乘积矩阵。
+     */
+    template <class T, size_t M, size_t N, size_t K>
+    MultiArray<T, M, K> matmul_parallel(
+        const MultiArray<T, M, N> &A, const MultiArray<T, N, K> &B) {
+        using std::min;
+        MultiArray<T, M, K>            C(T{});
+        constexpr size_t               BLOCK        = CONSOLE_MATMUL_BLOCK_SIZE;
+        const size_t                   num_i_blocks = (M + BLOCK - 1) / BLOCK;
+        const size_t                   num_j_blocks = (K + BLOCK - 1) / BLOCK;
+        std::vector<std::future<void>> futures;
+        futures.reserve(num_i_blocks * num_j_blocks);
+        for (size_t i0_idx = 0; i0_idx < num_i_blocks; ++i0_idx)
+            for (size_t j0_idx = 0; j0_idx < num_j_blocks; ++j0_idx) {
+                size_t i0 = i0_idx * BLOCK;
+                size_t j0 = j0_idx * BLOCK;
+                futures.push_back(pool::submit([&, i0, j0]() {
+                    for (size_t k0 = 0; k0 < N; k0 += BLOCK)
+                        for (size_t i = i0; i < min(i0 + BLOCK, M); ++i)
+                            for (size_t j = j0; j < min(j0 + BLOCK, K); ++j) {
+                                T sum = C[i][j];
+                                for (size_t k = k0; k < min(k0 + BLOCK, N); ++k)
+                                    sum += A[i][k] * B[k][j];
+                                C[i][j] = sum;
+                            }
+                }));
+            }
+        for (auto &f : futures) f.get();
+        return C;
     }
 
     /**

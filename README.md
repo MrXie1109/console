@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.5.0** · _"Interesting Queue!"_
+**A Modern C++ Console Utility Library** | **v7.6.0** · _"Die Queue ist tot!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -340,6 +340,28 @@ void group_example() {
     // Task 2 finished
     // Task 3 finished
     // All tasks completed!
+}
+
+// --- Lock-Free Queue ---
+void lf_queue_example() {
+    // Create a lock-free queue instance
+    LFQueue<int> q;
+
+    int arr[] = {1, 2, 3, 4, 5};
+    q.push(42);                 // Push a single element
+    q.push(arr, 5);             // Batch push: push 5 elements from array start
+    q.push(arr, arr + 5);       // Batch push: iterator range [arr, arr+5)
+
+    int value;
+    q.pop(value);               // value = 42 (pop a single element)
+    auto up = q.pop();          // *up = 1 (returns unique_ptr)
+    q.pop(arr, 5);              // Batch pop: pop 5 elements into array, arr = [2, 3, 4, 5, 1]
+    auto vec = q.pop(4);        // Batch pop: returns vector, vec = [2, 3, 4, 5]
+
+    bool b = q.pop(value);      // b = false (queue is empty, pop failed)
+
+    // Create a multi-queue instance (4 sub-queues, reduces contention)
+    MultiLFQueue<int> mq(4);
 }
 ```
 

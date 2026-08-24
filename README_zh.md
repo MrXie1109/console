@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.5.0** · _"Interesting Queue!"_
+**一个现代 C++ 控制台工具库** | **v7.6.0** · _"Die Queue ist tot!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -339,6 +339,28 @@ void group_example() {
     // 任务 2 完成
     // 任务 3 完成
     // 所有任务已完成！
+}
+
+// --- 无锁队列 ---
+void lf_queue_example() {
+    // 创建无锁队列实例
+    LFQueue<int> q;
+
+    int arr[] = {1, 2, 3, 4, 5};
+    q.push(42);                 // 单元素推送
+    q.push(arr, 5);             // 批量推送：从数组起始位置推送 5 个元素
+    q.push(arr, arr + 5);       // 批量推送：迭代器区间 [arr, arr+5)
+
+    int value;
+    q.pop(value);               // value = 42 (单元素弹出)
+    auto up = q.pop();          // *up = 1 (返回 unique_ptr)
+    q.pop(arr, 5);              // 批量弹出：弹出 5 个元素到数组，arr = [2, 3, 4, 5, 1]
+    auto vec = q.pop(4);        // 批量弹出：返回 vector，vec = [2, 3, 4, 5]
+
+    bool b = q.pop(value);      // b = false (队列为空，弹出失败)
+
+    // 创建多队列实例 (4 个子队列，减少竞争)
+    MultiLFQueue<int> mq(4);
 }
 ```
 
