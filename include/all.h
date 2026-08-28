@@ -58,6 +58,7 @@ SOFTWARE.
 #include "outfwd.h"
 #include "output.h"
 #include "params.h"
+#include "pi.h"
 #include "pool.h"
 #include "progress.h"
 #include "put.h"
@@ -88,5 +89,5 @@ SOFTWARE.
  */
 namespace console {
     /// @brief 本库的元数据，用于标识库的版本和作者 (顺便充当二进制水印)。
-    static constexpr char meta[] = "CONSOLE-LIB-2026-08-24-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-08-28-MRXIE1109";
 }

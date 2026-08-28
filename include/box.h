@@ -157,7 +157,7 @@ namespace console {
          * @return T& 存储值的引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
-        template <typename T>
+        template <class T>
         T &get() {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
@@ -173,7 +173,7 @@ namespace console {
          * @return T& 存储值的引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
-        template <typename T>
+        template <class T>
         T &unsafe_get() {
             return ((Derived<T> *)ptr)->value;
         }
@@ -184,7 +184,7 @@ namespace console {
          * @return const T& 存储值的常量引用。
          * @throw console::TypeError 若 Item 为空或实际类型与 T 不匹配。
          */
-        template <typename T>
+        template <class T>
         const T &get() const {
             if (ptr == nullptr) throw TypeError("empty item");
             if (typeid(T) != ptr->type())
@@ -200,7 +200,7 @@ namespace console {
          * @return const T& 存储值的常量引用。
          * @warning 不进行任何类型检查或空指针检查，可能导致未定义行为。
          */
-        template <typename T>
+        template <class T>
         const T &unsafe_get() const {
             return ((Derived<T> *)ptr)->value;
         }
@@ -320,7 +320,7 @@ namespace console {
          * @return T& 元素的引用。
          * @warning 不检查索引越界和类型匹配，可能导致未定义行为。
          */
-        template <typename T>
+        template <class T>
         T &unsafe_get(size_t index) {
             return std::vector<Item>::operator[](index).unsafe_get<T>();
         }
@@ -332,7 +332,7 @@ namespace console {
          * @return const T& 元素的引用。
          * @warning 不检查索引越界和类型匹配，可能导致未定义行为。
          */
-        template <typename T>
+        template <class T>
         const T &unsafe_get(size_t index) const {
             return std::vector<Item>::operator[](index).unsafe_get<T>();
         }

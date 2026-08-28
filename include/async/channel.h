@@ -168,6 +168,36 @@ namespace console {
         }
 
         /**
+         * @brief 尝试向通道写入数据。
+         * @details 非阻塞；若通道已满或已关闭，则立即返回失败。
+         * @param value 要写入的值。
+         * @return 若写入成功。
+         */
+        bool operator<<=(const T &value) {
+            std::unique_lock<std::mutex> lock(mutex_);
+            if (closed_ || write_index_ - read_index_ >= N) return false;
+            buffer_[write_index_ % N] = value;
+            ++write_index_;
+            r_cv_.notify_one();
+            return true;
+        }
+
+        /**
+         * @brief 尝试向通道写入数据。
+         * @details 非阻塞；若通道已满或已关闭，则立即返回失败。
+         * @param value 要写入的值。
+         * @return 若写入成功。
+         */
+        bool operator<<=(T &&value) {
+            std::unique_lock<std::mutex> lock(mutex_);
+            if (closed_ || write_index_ - read_index_ >= N) return false;
+            buffer_[write_index_ % N] = std::move(value);
+            ++write_index_;
+            r_cv_.notify_one();
+            return true;
+        }
+
+        /**
          * @brief 从通道读取数据。
          * @details 若通道为空，则阻塞等待直到有数据可读。
          * @param value 读取的值。
@@ -179,6 +209,22 @@ namespace console {
             r_cv_.wait(lock,
                 [this] { return write_index_ - read_index_ > 0 || closed_; });
             if (closed_ && write_index_ - read_index_ == 0) return false;
+            value = std::move(buffer_[read_index_ % N]);
+            ++read_index_;
+            w_cv_.notify_one();
+            return true;
+        }
+
+        /**
+         * @brief 从通道尝试读取数据（非阻塞）。
+         * @details 若通道为空，则立即返回 false；否则读取数据并返回 true。
+         * @param value 读取的值。
+         * @return 若读取成功。
+         * @note 若通道已关闭且没有剩余数据，返回 false。
+         */
+        bool operator>>=(T &value) {
+            std::unique_lock<std::mutex> lock(mutex_);
+            if (write_index_ - read_index_ == 0) return false;
             value = std::move(buffer_[read_index_ % N]);
             ++read_index_;
             w_cv_.notify_one();

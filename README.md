@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.6.0** · _"Die Queue ist tot!"_
+**A Modern C++ Console Utility Library** | **v7.7.0** · _"I DON'T WANT SCHOOL TO START!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -362,6 +362,28 @@ void lf_queue_example() {
 
     // Create a multi-queue instance (4 sub-queues, reduces contention)
     MultiLFQueue<int> mq(4);
+}
+
+// --- Scheduler ---
+void scheduler_example() {
+    Scheduler sched;
+
+    // Run a function once after 1 second
+    sched.schedule(1.0, []() {
+        print("One-shot task after 1s");
+    });
+
+    // Run a function every 500ms
+    int count = 0;
+    sched.interval(0.5, [&count]() {
+        print("Tick", ++count);
+        if (count >= 5) {
+            sched.cancel_all();
+        }
+    });
+
+    // Wait a moment for tasks to run
+    std::this_thread::sleep_for(std::chrono::seconds(4));
 }
 ```
 

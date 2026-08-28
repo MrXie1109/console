@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.6.0 (2026-08-24) -- "Die Queue ist tot!")";
+            R"(console version 7.7.0 (2026-08-28) -- "I DON'T WANT SCHOOL TO START!")";
     }
 
     /**

@@ -1,6 +1,6 @@
 # Console Library
 
-**一个现代 C++ 控制台工具库** | **v7.6.0** · _"Die Queue ist tot!"_
+**一个现代 C++ 控制台工具库** | **v7.7.0** · _"I DON'T WANT SCHOOL TO START!"_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -361,6 +361,28 @@ void lf_queue_example() {
 
     // 创建多队列实例 (4 个子队列，减少竞争)
     MultiLFQueue<int> mq(4);
+}
+
+// --- 调度器 ---
+void scheduler_example() {
+    Scheduler sched;
+
+    // 1 秒后运行一次函数
+    sched.schedule(1.0, []() {
+        print("1 秒后的单次任务");
+    });
+
+    // 每 500ms 运行一次函数
+    int count = 0;
+    sched.interval(0.5, [&count]() {
+        print("滴答", ++count);
+        if (count >= 5) {
+            sched.cancel_all();
+        }
+    });
+
+    // 等待片刻以执行任务
+    std::this_thread::sleep_for(std::chrono::seconds(4));
 }
 ```
 

@@ -34,6 +34,7 @@ SOFTWARE.
 #include "async/group.h"
 #include "async/pool.h"
 #include "async/queue.h"
+#include "async/sched.h"
 #include "async/task.h"
 #include "async/thread.h"
 
