@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 7.8.0 (2026-09-01) -- "Fall Seven Times, Stand Up Eight.")";
+            R"(console version 7.9.0 (2026-09-03) -- "Advance Notice.")";
     }
 
     /**
