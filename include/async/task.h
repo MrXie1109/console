@@ -34,8 +34,8 @@ SOFTWARE.
 #include <memory>
 #include <thread>
 
-#include "../sfinae.h"
-#include "event.h"
+#include "../core/sfinae.h"
+#include "./event.h"
 
 namespace console {
     /**

@@ -1,6 +1,6 @@
 # Console Library
 
-**A Modern C++ Console Utility Library** | **v7.7.0** · _"I DON'T WANT SCHOOL TO START!"_
+**A Modern C++ Console Utility Library** | **v8.0.0** · _"One, Two, Three, Four."_
 
 [![C++11](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -15,31 +15,19 @@
 
 Console is a comprehensive, header-only C++ library that provides a wide range of utilities for console/terminal application development. It aims to offer Python-like convenience while maintaining C++ performance and type safety.
 
-P.S.: `Console` is just a symbol, don't care it.
+Note: `Console` is just a symbol name, don't worry about it.
 
 **Key capabilities include:**
 
-- **Container adapters** with value-returning `pop()` operations
-- **Multi-dimensional arrays** with compile-time fixed dimensions
-- **Functional programming** with generator pipelines and lazy evaluation
-- **Type-safe formatting** with Python-style `format()` and `fmt()`
-- **Logging** with color-coded severity levels
-- **Regex** with Python `re`-like interface
-- **Random number generation** with extensive distributions
-- **Thread pool** for parallel task execution
-- **Progress bars** for iteration visualization
-- **AES-128 encryption**, **SHA256**, **MD5**, and **Base64**
-- **INI configuration** file parsing
-- **Cross-platform terminal control** (colors, cursor, screen)
-- **MIDI playback** on Windows
-- **Process management** on Linux
-- **Result/Optional types** similar to Rust
-- **Cooperative thread management** with Event-based stop mechanism
-- **Asynchronous tasks** -- comes with a bunch of async capabilities
-- **Scope exit guards** using the `defer` macro (RAII-style)
-- **Unit testing framework** with macro-based assertions and automatic test registration (assertions, exception testing, performance benchmarking)
-- **Copy-on-Write** `Cow` class for lazy copying of shared data
-- And much more...
+- **Containers & Data Structures** —— Container adapters with value-returning pop, copy-on-write Cow, Maybe/Result, tagged Union, non-owning View, compile-time fixed-dimension MultiArray
+- **Functional Programming** —— Generator pipelines with lazy evaluation, lightweight coroutine/generator macros
+- **Text Processing** —— String utilities, formatting, regex, repr representation, INI config parsing
+- **Async & Concurrency** —— Thread pool, MPMC channels, task groups, cooperative threads, scheduler, lock-free queues
+- **Numeric Computing** —— Random number generation, rational numbers, matrix operations, pi constant
+- **Cryptography & Encoding** —— AES-128, SHA256, MD5, Base64
+- **I/O & Terminal Control** —— Colorful output, progress bars, cross-platform keyboard input, terminal control, file operations
+- **Utilities** —— Scope exit guard defer, argument parsing, system commands, type name demangling, unit testing framework, time measurement
+- **Cross-platform** —— Windows MIDI playback, Linux process management
 
 ---
 
@@ -59,408 +47,426 @@ P.S.: `Console` is just a symbol, don't care it.
 
 ```cpp
 #include <console/all.h>
-/*
-// Or include it when needed
-#include <console/output.h>
-#include <console/logging.h>
-#include <console/gen.h>
-#include <console/fmt.h>
- */
 using namespace console;
 
 int main() {
-    // Colorful output
     std::cout << color::Red << "Hello" << color::Reset << " World\n";
 
-    // Python-style print
     print("The answer is", 42);
 
-    // Logging
     logger.info("Application started");
     logger.warn("Low memory warning");
 
-    // Range-based iteration with generators
     for (auto i : gen::range(10)) {
         print(i);
     }
 
-    // Formatting
     auto msg = format("Value: {:.2f}", 3.14159);
 
     return 0;
 }
 ```
 
-### Working with Containers
+---
+
+### Containers
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
-void container_example() {
-    // Stack with value-returning pop
+void stack_queue_example() {
     Stack<int> s;
     s.push(1);
     s.push(2);
-    int value = s.pop();  // returns 2
+    int v1 = s.pop();  // 2
 
-    // Queue
     Queue<std::string> q;
     q.push("first");
     q.push("second");
-    auto str = q.pop();   // returns "first"
+    auto str = q.pop();  // "first"
 
-    // Priority Queue
     PriorityQueue<int> pq;
     pq.push(5);
     pq.push(1);
     pq.push(3);
-    int max = pq.pop();   // returns 5
+    int max = pq.pop();  // 5
+}
+
+void box_maybe_result_example() {
+    Box<int> b = make_box(42);
+    *b = 100;
+
+    Maybe<int> m = 10;
+    if (m) print(*m);
+
+    Result<int, std::string> res = Ok(42);
+    if (res.is_ok()) print(res.unwrap());
+}
+
+void cow_union_example() {
+    Cow<std::string> str("Hello");
+    Cow<std::string> copy = str;
+    str.write([](std::string& s) { s += " World"; });
+    print(str.reader());   // Hello World
+    print(copy.reader());  // Hello
+
+    Union<int, double, std::string> u = 42;
+    u.visit(
+        [](int i) { print("int:", i); },
+        [](double d) { print("double:", d); },
+        [](const std::string& s) { print("string:", s); }
+    );
+}
+
+void view_multiarray_example() {
+    std::vector<int> data = {1, 2, 3, 4, 5};
+    View<int> v(data);
+
+    MultiArray<double, 3, 3> A = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto B = A + 10;
+    auto C = matmul(A, B);
 }
 ```
 
-### Generators and Pipelines
+---
+
+### Generators & Pipelines
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
-void generator_example() {
-    // Create a pipeline using the pipe operator
+void generator_pipeline_example() {
     auto result = gen::range(1, 20)
         | gen::filter(ops::even)
         | gen::map(ops::square)
         | gen::collect();
+    // [4, 16, 36, 64, 100, 144, 196, 256, 324]
 
-    // result = [4, 16, 36, 64, 100, 144, 196, 256, 324]
-
-    // Chain generators
     auto nums = gen::range(5) + gen::range(10, 15);
 
-    // Enumerate with index
     for (auto [idx, val] : gen::range(5) | gen::enumerate) {
         print(idx, ":", val);
     }
 }
+
+void coroutine_example() {
+    auto fibonacci = []() {
+        int a = 0, b = 1;
+        cr_begin(int);
+        while (true) {
+            cr_yield(a);
+            int tmp = a;
+            a = b;
+            b += tmp;
+        }
+        cr_end;
+    };
+
+    Coroutine<int()> fib(fibonacci());
+    for (int i = 0; i < 10; ++i) print(fib());  // 0 1 1 2 3 5 8 13 21 34
+}
 ```
 
-### Thread Pool
+---
+
+### Thread Pool & Concurrency
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
 void thread_pool_example() {
-    ThreadPool pool(4);  // 4 worker threads
+    ThreadPool pool(4);
 
-    // Submit tasks and get futures
     auto f1 = pool.submit([](int x) { return x * x; }, 5);
     auto f2 = pool.submit([](int x) { return x + x; }, 10);
+    print(f1.get());  // 25
+    print(f2.get());  // 20
 
-    int result1 = f1.get();  // 25
-    int result2 = f2.get();  // 20
-
-    // Map a function over a container in parallel
     std::vector<int> data = {1, 2, 3, 4, 5};
     auto futures = pool.map([](int x) { return x * 2; }, data);
-
-    for (auto& f : futures) {
-        print(f.get());
-    }
-}
-```
-
-### Multi-dimensional Arrays
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
-void multiarray_example() {
-    // 3x3 matrix
-    MultiArray<double, 3, 3> A = {
-        1, 2, 3,
-        4, 5, 6,
-        7, 8, 9
-    };
-
-    // Element-wise operations
-    auto B = A + 10;
-    auto C = A * 2.5;
-
-    // Statistics
-    double mean_val = mean(A);
-    double std_val = stddev(A);
-
-    // Matrix multiplication
-    auto D = matmul(A, B);
-}
-```
-
-### Regex
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
-void regex_example() {
-    // Compile pattern
-    auto r = re::compile(R"(\d+-\d+-\d+)");
-
-    // Search
-    auto m = r.search("Date: 2026-08-07");
-    if (m) {
-        print("Found:", m.group(0));
-    }
-
-    // Find all matches
-    auto matches = r.findall("2026-08-07 2026-08-08 2026-08-09");
-
-    // Split
-    auto parts = re::split(R"(\s+)", "one two three");
-}
-```
-
-### Configuration Files
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
-void config_example() {
-    INIConfig config("settings.ini");
-
-    // Read values (with automatic type conversion)
-    int port = config.get("server.port", 8080);
-    bool debug = config.get("app.debug", false);
-    std::string host = config.get("server.host", "localhost");
-
-    // Write values
-    config.set("app.version", "2.0.0");
-    config.save("settings.ini");
-}
-```
-
-### Asynchronous Programming
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
-// --- Thread with cooperative stop ---
-void thread_example() {
-    Thread t([](const Event& stop_event) {
-        while (!stop_event.is_set()) {
-            // Do work...
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
-        print("Thread stopped gracefully");
-    });
-
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-    t.stop();
-    t.join();
+    for (auto& f : futures) print(f.get());
 }
 
-// --- Asynchronous Tasks ---
-void task_example() {
-    Task<int> task([]() { return 42; });
-    int result = task.get();  // 42
-
-    SharedTask<int> shared([]() { return 100; });
-    auto copy = shared;
-    int r1 = copy.get();   // 100
-    int r2 = shared.get(); // 100 (can call get() multiple times)
-}
-
-// --- Channel (MPMC Ring Buffer) ---
 void channel_example() {
-    // Buffered channel with capacity 10
     Channel<int, 10> ch;
-
     std::thread producer([&ch]() {
-        for (int i = 0; i < 100; ++i) {
-            ch << i;
-        }
+        for (int i = 0; i < 100; ++i) ch << i;
         close(ch);
     });
-
-    for (int value : ch) {
-        print("Received:", value);
-    }
+    for (int value : ch) print("Received:", value);
     producer.join();
 
-    // Unbuffered channel (synchronous handshake)
     Channel<std::string, 0> sync_ch;
-
     std::thread worker([&sync_ch]() {
         std::string msg;
         sync_ch >> msg;
         print("Got:", msg);
     });
-
     sync_ch << "Hello from main!";
     worker.join();
 }
 
-// --- Task Group ---
-void group_example() {
-    // Create a group to manage async tasks
-    Group group(3, []() {
-        print("All tasks completed!");
-    });
+void task_group_example() {
+    Group group(3, []() { print("All tasks completed!"); });
 
-    // Launch three tasks concurrently
     std::thread t1([&group]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
         print("Task 1 finished");
         group.done();
     });
-
     std::thread t2([&group]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(400));
         print("Task 2 finished");
         group.done();
     });
-
     std::thread t3([&group]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
         print("Task 3 finished");
         group.done();
     });
 
-    // Wait for all tasks to complete
     group.wait();
-
-    t1.join();
-    t2.join();
-    t3.join();
-    // Output:
-    // Task 1 finished
-    // Task 2 finished
-    // Task 3 finished
-    // All tasks completed!
+    t1.join(); t2.join(); t3.join();
 }
 
-// --- Lock-Free Queue ---
-void lf_queue_example() {
-    // Create a lock-free queue instance
-    LFQueue<int> q;
-
-    int arr[] = {1, 2, 3, 4, 5};
-    q.push(42);                 // Push a single element
-    q.push(arr, 5);             // Batch push: push 5 elements from array start
-    q.push(arr, arr + 5);       // Batch push: iterator range [arr, arr+5)
-
-    int value;
-    q.pop(value);               // value = 42 (pop a single element)
-    auto up = q.pop();          // *up = 1 (returns unique_ptr)
-    q.pop(arr, 5);              // Batch pop: pop 5 elements into array, arr = [2, 3, 4, 5, 1]
-    auto vec = q.pop(4);        // Batch pop: returns vector, vec = [2, 3, 4, 5]
-
-    bool b = q.pop(value);      // b = false (queue is empty, pop failed)
-
-    // Create a multi-queue instance (4 sub-queues, reduces contention)
-    MultiLFQueue<int> mq(4);
-}
-
-// --- Scheduler ---
-void scheduler_example() {
-    Scheduler sched;
-
-    // Run a function once after 1 second
-    sched.schedule(1.0, []() {
-        print("One-shot task after 1s");
-    });
-
-    // Run a function every 500ms
-    int count = 0;
-    sched.interval(0.5, [&count]() {
-        print("Tick", ++count);
-        if (count >= 5) {
-            sched.cancel_all();
+void thread_scheduler_example() {
+    Thread t([](const Event& stop) {
+        while (!stop.is_set()) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
+        print("Thread stopped gracefully");
     });
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    t.stop();
+    t.join();
 
-    // Wait a moment for tasks to run
+    Scheduler sched;
+    sched.schedule(1.0, []() { print("One-shot after 1s"); });
+    int count = 0;
+    sched.interval(0.5, [&count, &sched]() {
+        print("Tick", ++count);
+        if (count >= 5) sched.cancel_all();
+    });
     std::this_thread::sleep_for(std::chrono::seconds(4));
 }
 ```
 
-### Defer (Scope Exit Guard)
+---
+
+### Numeric Computing
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
-void defer_example() {
+void random_example() {
+    Random rng;
+    int i = rng.randint(1, 100);
+    double d = rng.uniform(0.0, 1.0);
+    auto vec = rng.normal(0.0, 1.0, 100);
+    std::vector<int> data = {1, 2, 3, 4, 5};
+    rng.shuffle(data);
+}
+
+void rational_example() {
+    Rational a(1, 2);
+    Rational b(1, 3);
+    Rational c = a + b;  // 5/6
+    print(a);            // 1/2
+    print(c);            // 5/6
+}
+
+void matools_example() {
+    MultiArray<double, 3, 3> A = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    MultiArray<double, 3, 3> B = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+
+    auto C = matmul(A, B);
+    double mean_val = mean(A);
+    double std_val = stddev(A);
+    auto D = matmul_parallel(A, B);
+}
+```
+
+---
+
+### Text Processing
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void string_utilities_example() {
+    std::string s = to_string("Hello", " ", "World", 42);
+    print(s);  // Hello World42
+
+    auto parts = split("one,two,three", ",");
+    auto joined = join(parts, " | ");  // "one | two | three"
+
+    std::string lower = lower("Hello World");
+    std::string upper = upper("Hello World");
+    std::string trimmed = trim("  hello  ");
+}
+
+void format_example() {
+    auto msg = format("Value: {:.2f}, Name: {}", 3.14159, "Alice");
+    print(msg);  // Value: 3.14, Name: Alice
+
+    auto s = format("{1} -> {0}", "world", "hello");  // hello -> world
+}
+
+void repr_example() {
+    std::string s = "Hello\nWorld";
+    print(repr(s));   // "Hello\nWorld"
+    print(repr(42));  // 42
+    print(repr(true));// true
+    print(repr(nullptr)); // <nullptr>
+}
+
+void config_regex_example() {
+    INIConfig config("settings.ini");
+    int port = config.get("server.port", 8080);
+    bool debug = config.get("app.debug", false);
+    std::string host = config.get("server.host", "localhost");
+    config.set("app.version", "2.0.0");
+    config.save("settings.ini");
+
+    auto r = re::compile(R"(\d+-\d+-\d+)");
+    auto m = r.search("Date: 2026-08-07");
+    if (m) print("Found:", m.group(0));
+
+    auto matches = r.findall("2026-08-07 2026-08-08 2026-08-09");
+    auto parts = re::split(R"(\s+)", "one two three");
+}
+```
+
+---
+
+### Utilities
+
+```cpp
+#include <console/all.h>
+using namespace console;
+
+void defer_time_example() {
     FILE* file = fopen("data.txt", "r");
     if (!file) return;
-
-    // Ensure the file is closed when leaving the scope
     defer(fclose(file));
 
-    // Use the file...
     char buffer[256];
-    while (fgets(buffer, sizeof(buffer), file)) {
-        print(buffer);
+    while (fgets(buffer, sizeof(buffer), file)) print(buffer);
+
+    using namespace console::literals;
+    Time t = 5_s + 100_ms;
+    print(t);  // 5100000000ns
+
+    auto elapsed = timer([]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    });
+    print("Elapsed:", elapsed);
+}
+
+void crypto_example() {
+    std::string plaintext = "Hello World!";
+    std::string key = "0123456789abcdef";
+    auto cipher = crypto::aes_encrypt(plaintext, key);
+    auto decrypted = crypto::aes_decrypt(cipher, key);
+    print(decrypted);
+
+    auto hash = crypto::sha256("Hello World!");
+    print(hash);
+    auto md5_hash = crypto::md5("Hello World!");
+    auto encoded = crypto::base64_encode("Hello");
+    auto decoded = crypto::base64_decode(encoded);
+}
+
+void syscmd_collide_example() {
+    auto result = syscmd("ls -la");
+    print(result.output);
+    print("Exit code:", result.exit_code);
+
+    std::string demangled = tiname(typeid(std::vector<int>));
+    print(demangled);
+
+    auto range = iterpair(0, 10);
+    for (int i : range) print(i);
+}
+
+void params_test_example() {
+    auto p = params(1, "hello", 3.14);
+    p.apply([](int a, const char* b, double c) {
+        print(a, b, c);
+    });
+
+    logger.info("Application started");
+    logger.warn("Low memory warning");
+    logger.error("Failed to open file");
+    logger.set(Logging::Level::Warning);
+
+    TEST(AdditionWorks) {
+        ASSERT_EQ(2 + 2, 4);
     }
-    // fclose(file) is automatically called here
+
+    TEST(ContainerContains) {
+        std::vector<int> v = {1, 2, 3, 4};
+        ASSERT_CONTAINS(v, 3);
+        ASSERT_SIZE_EQ(v, 4);
+    }
+
+    TEST(ExceptionThrows) {
+        ASSERT_THROWS(
+            throw std::runtime_error("error"),
+            std::runtime_error
+        );
+    }
+
+    TEST_MAIN
 }
 ```
 
-### Unit Testing
+---
+
+### I/O & Terminal Control
 
 ```cpp
 #include <console/all.h>
 using namespace console;
 
-TEST(AdditionWorks) {
-    ASSERT_EQ(2 + 2, 4); // assert 2 + 2 equals 4
+void colorful_output_example() {
+    std::cout << color::Red << "Red" << color::Reset << " "
+              << color::Green << "Green" << color::Reset << "\n";
+    std::cout << color::BgBlue << "Blue Background" << color::Reset << "\n";
+    std::cout << color::Bold << "Bold" << color::Reset << "\n";
+    std::cout << color::Underline << "Underline" << color::Reset << "\n";
 }
 
-TEST(ContainerContains) {
-    std::vector<int> v = {1, 2, 3, 4};
-    ASSERT_CONTAINS(v, 3); // assert v contains 3
-    ASSERT_SIZE_EQ(v, 4); // assert v's size equals 4
+void input_progress_example() {
+    if (kbhit()) {
+        int ch = getch();
+        print("Key pressed:", ch);
+    }
+
+    std::vector<int> data(100);
+    ProgressConfig cfg(std::cout);
+    for (auto _ : progress(data, cfg)) {
+        // Progress automatically updated
+    }
 }
 
-TEST(ExceptionThrows) {
-    ASSERT_THROWS(
-        throw std::runtime_error("error"),
-        std::runtime_error
-    ); // assert throws std::runtime_error
-}
+void term_file_example() {
+    clear();
+    gotoxy(10, 5);
+    hide_cursor();
+    std::cout << "Hello at position";
+    show_cursor();
+    auto [rows, cols] = get_terminal_size();
 
-TEST_MAIN // equivalent to `int main() {}`
-```
-
-### Copy-on-Write
-
-```cpp
-#include <console/all.h>
-using namespace console;
-
-void cow_example() {
-    // Create a Cow wrapping an initial value
-    Cow<std::string> str("Hello");
-
-    // Read the underlying data (no copy occurs)
-    print(str.reader());              // Hello
-    print(str.read([](const auto& s) { return s.size(); }));  // 5
-
-    // Create a copy-on-write copy (shares underlying data)
-    Cow<std::string> copy = str;
-
-    // Both share the same underlying data (no copy yet)
-    print(copy == str);               // true
-
-    // Writing triggers detach (copies underlying data first)
-    str.write([](std::string& s) { s += " World"; });
-
-    // Now `str` and `copy` hold independent data
-    print(str.reader());              // Hello World
-    print(copy.reader());             // Hello
+    Path f("data.txt");
+    auto content = f.read_text();
+    print(content);
+    f.write_text("Hello, File!");
 }
 ```
 
@@ -470,7 +476,7 @@ void cow_example() {
 
 Full API documentation is available at:
 
-## **[https://mrxie1109.github.io/console](https://mrxie1109.github.io/console)**
+## [https://mrxie1109.github.io/console](https://mrxie1109.github.io/console)
 
 ---
 

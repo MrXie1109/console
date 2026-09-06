@@ -43,7 +43,7 @@ SOFTWARE.
 #include <utility>
 #include <vector>
 
-#include "../csexc.h"
+#include "../core/csexc.h"
 
 namespace console {
     /**

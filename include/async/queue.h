@@ -317,6 +317,40 @@ namespace console {
             return idx;
         }
 
+        /**
+         * @brief 类似标准库的 advance。
+         * @note 令我深痛恶觉的是，就我机器上的 GCC 实现，
+         *       std::advance 不支持 OutputIterator，我也不知道为什么。
+         */
+        template <class OtherIterator, class IteratorTag>
+        void _advance(OtherIterator &it, size_t n, IteratorTag) {
+            for (size_t i = 0; i < n; ++i) ++it;
+        }
+
+        /**
+         * @brief 类似标准库的 advance。
+         * @note 令我深痛恶觉的是，就我机器上的 GCC 实现，
+         *       std::advance 不支持 OutputIterator，我也不知道为什么。
+         */
+        template <class RandomAccessIterator>
+        void _advance(RandomAccessIterator &it,
+            size_t                          n,
+            std::random_access_iterator_tag) {
+            it += n;
+        }
+
+        /**
+         * @brief 类似标准库的 advance。
+         * @note 令我深痛恶觉的是，就我机器上的 GCC 实现，
+         *       std::advance 不支持 OutputIterator，我也不知道为什么。
+         */
+        template <class Iterator>
+        void _advance(Iterator &it, size_t n) {
+            _advance(it,
+                n,
+                typename std::iterator_traits<Iterator>::iterator_category{});
+        }
+
     public:
         /**
          * @brief 构造函数，初始化指定数量的子队列。
@@ -381,7 +415,7 @@ namespace console {
             for (size_t i = 0; i < queues_.size() * RobinTimes; ++i) {
                 size_t idx         = (start + i) % queues_.size();
                 size_t popped_this = queues_[idx]->pop(output, count);
-                std::advance(output, popped_this);
+                _advance(output, popped_this);
                 popped += popped_this;
                 count -= popped_this;
                 if (count == 0) break;

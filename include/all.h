@@ -30,58 +30,13 @@ SOFTWARE.
 */
 
 #pragma once
-#include "adapter.h"
-#include "algorithm.h"
-#include "async.h"
-#include "box.h"
-#include "collide.h"
-#include "colorful.h"
-#include "config.h"
-#include "cow.h"
-#include "crypto.h"
-#include "csexc.h"
-#include "cursor_ptr.h"
-#include "defer.h"
-#include "file.h"
-#include "fmt.h"
-#include "gen.h"
-#include "gextra.h"
-#include "info.h"
-#include "input.h"
-#include "iter.h"
-#include "kb.h" // windows.h on Windows
-#include "literals.h"
-#include "logging.h"
-#include "matools.h"
-#include "maybe.h"
-#include "multiarray.h"
-#include "outfwd.h"
-#include "output.h"
-#include "params.h"
-#include "pi.h"
-#include "pool.h"
-#include "progress.h"
-#include "put.h"
-#include "random.h"
-#include "rational.h"
-#include "re.h"
-#include "repr.h"
-#include "result.h"
-#include "screen.h"
-#include "sfinae.h"
-#include "std.h"
-#include "strpp.h"
-#include "syscmd.h"
-#include "term.h" // windows.h on Windows
-#include "test.h"
-#include "time.h"
-#include "view.h"
-
-// #include "win/melody.h" // 需要链接，所以不自动包含
-
-#ifdef __linux__
-#include "linux/process.h"
-#endif
+#include "./async.h"
+#include "./container.h"
+#include "./core.h"
+#include "./io.h"
+#include "./numeric.h"
+#include "./text.h"
+#include "./util.h"
 
 /**
  * @namespace console
@@ -89,5 +44,5 @@ SOFTWARE.
  */
 namespace console {
     /// @brief 本库的元数据，用于标识库的版本和作者 (顺便充当二进制水印)。
-    static constexpr char meta[] = "CONSOLE-LIB-2026-09-03-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-09-06-MRXIE1109";
 }

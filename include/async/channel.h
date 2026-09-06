@@ -33,7 +33,7 @@ SOFTWARE.
 #include <cstddef>
 #include <mutex>
 
-#include "../csexc.h"
+#include "../core/csexc.h"
 
 namespace console {
     template <class T, size_t N>
