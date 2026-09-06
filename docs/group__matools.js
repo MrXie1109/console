@@ -1,5 +1,6 @@
 var group__matools =
 [
+    [ "CONSOLE_MATMUL_BLOCK_SIZE", "group__matools.html#ga83fa0a0e7a164516d12662c559f30ffd", null ],
     [ "console::QuantileMethod", "group__matools.html#ga7121b3eb44b8ca054098798cd95607e3", [
       [ "console::QuantileMethod::Nearest", "group__matools.html#gga7121b3eb44b8ca054098798cd95607e3a60494f02d440f316319dd0fad40ad007", null ],
       [ "console::QuantileMethod::Linear", "group__matools.html#gga7121b3eb44b8ca054098798cd95607e3a32a843da6ea40ab3b17a3421ccdf671b", null ],
@@ -49,6 +50,11 @@ var group__matools =
     [ "console::log_spectrum", "group__matools.html#ga89e10440e7affc1a8d0b287a6e0416c0", null ],
     [ "console::manhattan", "group__matools.html#ga190b1f3c09f7cd2ff7b191a827cc2b9c", null ],
     [ "console::matmul", "group__matools.html#ga5c6aa2e681a6e63242251494000eb7b0", null ],
+    [ "console::matmul_blocked", "group__matools.html#gac1c5ba050d347022dc29a64abfd8b84c", null ],
+    [ "console::matmul_impl", "group__matools.html#ga928484221150c5884c756b4f7b8fdf65", null ],
+    [ "console::matmul_impl", "group__matools.html#ga85235ed099de419cd9e2e3603a9d0df9", null ],
+    [ "console::matmul_parallel", "group__matools.html#ga23a0bf96de04c37613154ff58298a56f", null ],
+    [ "console::matmul_simple", "group__matools.html#ga0d0d8ca0a2ed580fcbe3f6b69a604dba", null ],
     [ "console::matvec", "group__matools.html#ga5f4c239559075a6cb12a72cb4fa1b37c", null ],
     [ "console::mean", "group__matools.html#gaa52523dce981db3d239cf22aee9a6cbf", null ],
     [ "console::median", "group__matools.html#ga7531c8ff0906e677fbf674b2217505e2", null ],

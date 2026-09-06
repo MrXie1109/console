@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/fmt.h Source File</title>
+<title>Console Library: include/text/fmt.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -144,8 +144,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="output_8h.html">output.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">../core/csexc.h</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="output_8h.html">../io/output.h</a>&quot;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
@@ -581,13 +581,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    }</div>
 </div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>}</div>
-<div class="ttc" id="aclassconsole_1_1_bad_format_html"><div class="ttname"><a href="classconsole_1_1_bad_format.html">console::BadFormat</a></div><div class="ttdoc">表示格式化字符串错误，例如占位符与参数不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:69</div></div>
-<div class="ttc" id="aclassconsole_1_1_bad_format_html_a87553a67b9f746d176ef16835a9984b8"><div class="ttname"><a href="classconsole_1_1_bad_format.html#a87553a67b9f746d176ef16835a9984b8">console::BadFormat::BadFormat</a></div><div class="ttdeci">BadFormat(const std::string &amp;msg)</div><div class="ttdoc">构造 BadFormat。</div><div class="ttdef"><b>Definition</b> csexc.h:75</div></div>
+<div class="ttc" id="aclassconsole_1_1_bad_format_html"><div class="ttname"><a href="classconsole_1_1_bad_format.html">console::BadFormat</a></div><div class="ttdoc">表示格式化字符串错误，例如占位符与参数不匹配。</div><div class="ttdef"><b>Definition</b> csexc.h:68</div></div>
+<div class="ttc" id="aclassconsole_1_1_bad_format_html_a87553a67b9f746d176ef16835a9984b8"><div class="ttname"><a href="classconsole_1_1_bad_format.html#a87553a67b9f746d176ef16835a9984b8">console::BadFormat::BadFormat</a></div><div class="ttdeci">BadFormat(const std::string &amp;msg)</div><div class="ttdoc">构造 BadFormat。</div><div class="ttdef"><b>Definition</b> csexc.h:74</div></div>
 <div class="ttc" id="aclassconsole_1_1_basic_output_html_a35cf996ab0495afe4b48d9d282cadbd5"><div class="ttname"><a href="classconsole_1_1_basic_output.html#a35cf996ab0495afe4b48d9d282cadbd5">console::BasicOutput::fmt</a></div><div class="ttdeci">BasicOutput &amp; fmt(const std::basic_string&lt; CharT, Traits &gt; &amp;format_str, const Args &amp;...args)</div></div>
-<div class="ttc" id="aclassconsole_1_1_basic_output_html_a4761e378c8e01ece6d3ab86e216b3d31"><div class="ttname"><a href="classconsole_1_1_basic_output.html#a4761e378c8e01ece6d3ab86e216b3d31">console::BasicOutput&lt; char &gt;::end</a></div><div class="ttdeci">string_type end</div><div class="ttdef"><b>Definition</b> output.h:390</div></div>
-<div class="ttc" id="aclassconsole_1_1_basic_output_html_a728f887e3652054a68a35a534f57cef3"><div class="ttname"><a href="classconsole_1_1_basic_output.html#a728f887e3652054a68a35a534f57cef3">console::BasicOutput&lt; char &gt;::BasicOutput</a></div><div class="ttdeci">BasicOutput()</div><div class="ttdef"><b>Definition</b> output.h:397</div></div>
-<div class="ttc" id="aclassconsole_1_1_basic_output_html_aa9550d92472a88e0822f015020c826c8"><div class="ttname"><a href="classconsole_1_1_basic_output.html#aa9550d92472a88e0822f015020c826c8">console::BasicOutput&lt; char &gt;::isFlush</a></div><div class="ttdeci">bool isFlush</div><div class="ttdef"><b>Definition</b> output.h:391</div></div>
-<div class="ttc" id="aclassconsole_1_1_basic_output_html_ab9d36e4324992a2f7ddfc754bc39b4d1"><div class="ttname"><a href="classconsole_1_1_basic_output.html#ab9d36e4324992a2f7ddfc754bc39b4d1">console::BasicOutput&lt; char &gt;::os</a></div><div class="ttdeci">std::basic_ostream&lt; char, std::char_traits&lt; char &gt; &gt; &amp; os</div><div class="ttdef"><b>Definition</b> output.h:388</div></div>
+<div class="ttc" id="aclassconsole_1_1_basic_output_html_a4761e378c8e01ece6d3ab86e216b3d31"><div class="ttname"><a href="classconsole_1_1_basic_output.html#a4761e378c8e01ece6d3ab86e216b3d31">console::BasicOutput&lt; char &gt;::end</a></div><div class="ttdeci">string_type end</div><div class="ttdef"><b>Definition</b> output.h:425</div></div>
+<div class="ttc" id="aclassconsole_1_1_basic_output_html_a728f887e3652054a68a35a534f57cef3"><div class="ttname"><a href="classconsole_1_1_basic_output.html#a728f887e3652054a68a35a534f57cef3">console::BasicOutput&lt; char &gt;::BasicOutput</a></div><div class="ttdeci">BasicOutput()</div><div class="ttdef"><b>Definition</b> output.h:432</div></div>
+<div class="ttc" id="aclassconsole_1_1_basic_output_html_aa9550d92472a88e0822f015020c826c8"><div class="ttname"><a href="classconsole_1_1_basic_output.html#aa9550d92472a88e0822f015020c826c8">console::BasicOutput&lt; char &gt;::isFlush</a></div><div class="ttdeci">bool isFlush</div><div class="ttdef"><b>Definition</b> output.h:426</div></div>
+<div class="ttc" id="aclassconsole_1_1_basic_output_html_ab9d36e4324992a2f7ddfc754bc39b4d1"><div class="ttname"><a href="classconsole_1_1_basic_output.html#ab9d36e4324992a2f7ddfc754bc39b4d1">console::BasicOutput&lt; char &gt;::os</a></div><div class="ttdeci">std::basic_ostream&lt; char, std::char_traits&lt; char &gt; &gt; &amp; os</div><div class="ttdef"><b>Definition</b> output.h:423</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="anamespaceconsole_1_1details_html"><div class="ttname"><a href="namespaceconsole_1_1details.html">console::details</a></div><div class="ttdef"><b>Definition</b> fmt.h:44</div></div>
 <div class="ttc" id="anamespaceconsole_1_1details_html_a493d456ff83bb5dcd022af6f420e187f"><div class="ttname"><a href="namespaceconsole_1_1details.html#a493d456ff83bb5dcd022af6f420e187f">console::details::apply_space_if_nonneg</a></div><div class="ttdeci">static std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value, void &gt;::type apply_space_if_nonneg(std::basic_ostream&lt; CharT &gt; &amp;os, const T &amp;value)</div><div class="ttdef"><b>Definition</b> fmt.h:330</div></div>
@@ -595,12 +595,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <div class="ttc" id="anamespaceconsole_1_1details_html_a79fcd8c0bec89314d4b31694888cb2d3"><div class="ttname"><a href="namespaceconsole_1_1details.html#a79fcd8c0bec89314d4b31694888cb2d3">console::details::format_impl</a></div><div class="ttdeci">void format_impl(std::basic_ostream&lt; CharT &gt; &amp;os, const std::basic_string&lt; CharT &gt; &amp;fmt, size_t &amp;pos, size_t)</div><div class="ttdoc">格式化实现(无参数版本，递归终止)。</div><div class="ttdef"><b>Definition</b> fmt.h:371</div></div>
 <div class="ttc" id="anamespaceconsole_1_1details_html_a858187c84f4f4353ad6449e09cf2ad1f"><div class="ttname"><a href="namespaceconsole_1_1details.html#a858187c84f4f4353ad6449e09cf2ad1f">console::details::parse_format_spec</a></div><div class="ttdeci">void parse_format_spec(const std::basic_string&lt; CharT &gt; &amp;specStr, BasicFormatSpec&lt; CharT &gt; &amp;spec)</div><div class="ttdoc">解析格式说明符。</div><div class="ttdef"><b>Definition</b> fmt.h:103</div></div>
 <div class="ttc" id="anamespaceconsole_1_1details_html_ae313bd46314aa4d0a09331e8f0948502"><div class="ttname"><a href="namespaceconsole_1_1details.html#ae313bd46314aa4d0a09331e8f0948502">console::details::apply_format</a></div><div class="ttdeci">void apply_format(std::basic_ostream&lt; CharT &gt; &amp;os, const BasicFormatSpec&lt; CharT &gt; &amp;spec)</div><div class="ttdoc">将格式说明符应用到输出流。</div><div class="ttdef"><b>Definition</b> fmt.h:279</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
 <div class="ttc" id="anamespaceconsole_html_a55b3cf72d29113cc59493ee4cd3071d5"><div class="ttname"><a href="namespaceconsole.html#a55b3cf72d29113cc59493ee4cd3071d5">console::WFormatSpec</a></div><div class="ttdeci">details::BasicFormatSpec&lt; wchar_t &gt; WFormatSpec</div><div class="ttdef"><b>Definition</b> fmt.h:483</div></div>
 <div class="ttc" id="anamespaceconsole_html_a8337a4e2f3f19e9a845b6d606327dd65"><div class="ttname"><a href="namespaceconsole.html#a8337a4e2f3f19e9a845b6d606327dd65">console::format</a></div><div class="ttdeci">std::string format(const std::string &amp;fmt, const Args &amp;...args)</div><div class="ttdoc">格式化字符串(char 版)。</div><div class="ttdef"><b>Definition</b> fmt.h:494</div></div>
 <div class="ttc" id="anamespaceconsole_html_ad8cf069d5c8db3b82882aa8936c963b2"><div class="ttname"><a href="namespaceconsole.html#ad8cf069d5c8db3b82882aa8936c963b2">console::FormatSpec</a></div><div class="ttdeci">details::BasicFormatSpec&lt; char &gt; FormatSpec</div><div class="ttdef"><b>Definition</b> fmt.h:482</div></div>
-<div class="ttc" id="anamespaceconsole_html_ae205d1c8a957bcbd7a55095e435e6774"><div class="ttname"><a href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdoc">如果是字符和串或字符，直接输出，不含引号。</div><div class="ttdef"><b>Definition</b> put.h:50</div></div>
+<div class="ttc" id="anamespaceconsole_html_ae205d1c8a957bcbd7a55095e435e6774"><div class="ttname"><a href="namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774">console::put</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value||is_char&lt; typenamestd::decay&lt; StrOrCharType &gt;::type &gt;::value &gt;::type put(std::basic_ostream&lt; CharT, Traits &gt; &amp;os, StrOrCharType &amp;&amp;value)</div><div class="ttdef"><b>Definition</b> output.h:56</div></div>
 <div class="ttc" id="aoutput_8h_html"><div class="ttname"><a href="output_8h.html">output.h</a></div><div class="ttdoc">提供 STL 容器的格式化输出和灵活的输出控制工具。</div></div>
 <div class="ttc" id="astructconsole_1_1details_1_1_basic_format_spec_html"><div class="ttname"><a href="structconsole_1_1details_1_1_basic_format_spec.html">console::details::BasicFormatSpec</a></div><div class="ttdoc">格式说明符结构。</div><div class="ttdef"><b>Definition</b> fmt.h:50</div></div>
 <div class="ttc" id="astructconsole_1_1details_1_1_basic_format_spec_html_a0cb9b713955655888dd8ffd06cbebde8"><div class="ttname"><a href="structconsole_1_1details_1_1_basic_format_spec.html#a0cb9b713955655888dd8ffd06cbebde8">console::details::BasicFormatSpec&lt; char &gt;::align</a></div><div class="ttdeci">char align</div><div class="ttdef"><b>Definition</b> fmt.h:60</div></div>
@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fmt_8h_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="fmt_8h.html">fmt.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_42d41070953014e4936f61bdc375df58.html">text</a></li><li class="navelem"><a href="fmt_8h.html">fmt.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

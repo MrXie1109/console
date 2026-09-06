@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/strpp.h File Reference</title>
+<title>Console Library: include/text/strpp.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('strpp_8h.html'
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;climits&gt;</code><br />
+<code>#include &lt;clocale&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;initializer_list&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('strpp_8h.html'
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="csexc_8h_source.html">csexc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="csexc_8h_source.html">../core/csexc.h</a>&quot;</code><br />
 </div>
 <p><a href="strpp_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -239,6 +240,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4d66c2178db99c5181d64dd4c110d5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。     <br /></td></tr>
 <tr class="memitem:ga538507d892e56a156ca98f83ddf8aef4" id="r_ga538507d892e56a156ca98f83ddf8aef4"><td class="memItemLeft">std::wstring&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga538507d892e56a156ca98f83ddf8aef4">console::join</a> (const std::vector&lt; std::wstring &gt; &amp;items, const std::wstring &amp;sep=L&quot;&quot;)</td></tr>
 <tr class="memdesc:ga538507d892e56a156ca98f83ddf8aef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。     <br /></td></tr>
+<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28" id="r_ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga627aacb7ec0a756aa0e428a7ff55ee28">console::to_stream</a> (char ch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 ch 输出到流。  <br /></td></tr>
+<tr class="memitem:ga2b73041b104b1524916baff800321d28" id="r_ga2b73041b104b1524916baff800321d28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:ga2b73041b104b1524916baff800321d28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga2b73041b104b1524916baff800321d28">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga2b73041b104b1524916baff800321d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 wch 输出到流。  <br /></td></tr>
+<tr class="memitem:ga736bc150b7f50bcfe6b71001b4a873f6" id="r_ga736bc150b7f50bcfe6b71001b4a873f6"><td class="memTemplParams" colspan="2">template&lt;class Traits&gt; </td></tr>
+<tr class="memitem:ga736bc150b7f50bcfe6b71001b4a873f6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga736bc150b7f50bcfe6b71001b4a873f6">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; wchar_t, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga736bc150b7f50bcfe6b71001b4a873f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 wch 输出到流。  <br /></td></tr>
 <tr class="memitem:gad35ba5f234938cdc11d8b8ed520ba618" id="r_gad35ba5f234938cdc11d8b8ed520ba618"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:gad35ba5f234938cdc11d8b8ed520ba618 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#gad35ba5f234938cdc11d8b8ed520ba618">console::to_stream</a> (const std::string &amp;str, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
 <tr class="memdesc:gad35ba5f234938cdc11d8b8ed520ba618"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 std::string 输出到流。  <br /></td></tr>
@@ -247,12 +257,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gabec745854bd899d3fca3c7648d75c139"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 std::wstring 输出到流。  <br /></td></tr>
 <tr class="memitem:ga3982a59b455c675c9725a214cdf7316c" id="r_ga3982a59b455c675c9725a214cdf7316c"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:ga3982a59b455c675c9725a214cdf7316c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga3982a59b455c675c9725a214cdf7316c">console::to_stream</a> (const char *str, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga3982a59b455c675c9725a214cdf7316c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 const char * 输出到流。  <br /></td></tr>
 <tr class="memitem:gaaf721c88c0e4608b426d3b81c0918051" id="r_gaaf721c88c0e4608b426d3b81c0918051"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:gaaf721c88c0e4608b426d3b81c0918051 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#gaaf721c88c0e4608b426d3b81c0918051">console::to_stream</a> (const wchar_t *wstr, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
-<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28" id="r_ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
-<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga627aacb7ec0a756aa0e428a7ff55ee28">console::to_stream</a> (char ch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
-<tr class="memitem:ga2b73041b104b1524916baff800321d28" id="r_ga2b73041b104b1524916baff800321d28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
-<tr class="memitem:ga2b73041b104b1524916baff800321d28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga2b73041b104b1524916baff800321d28">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:gaaf721c88c0e4608b426d3b81c0918051"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 const wchar_t * 输出到流。  <br /></td></tr>
 <tr class="memitem:ga7eed721fd9aedc11ea5bc8105dd997fc" id="r_ga7eed721fd9aedc11ea5bc8105dd997fc"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits, std::size_t N&gt; </td></tr>
 <tr class="memitem:ga7eed721fd9aedc11ea5bc8105dd997fc template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__strpp.html#ga7eed721fd9aedc11ea5bc8105dd997fc">console::to_stream</a> (char(&amp;arr)[N], std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
 <tr class="memitem:gac567fe4180595ab0a83084aeb2dfafda" id="r_gac567fe4180595ab0a83084aeb2dfafda"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits, std::size_t N&gt; </td></tr>
@@ -284,7 +292,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="strpp_8h.html">strpp.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_42d41070953014e4936f61bdc375df58.html">text</a></li><li class="navelem"><a href="strpp_8h.html">strpp.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

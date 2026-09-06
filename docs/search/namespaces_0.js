@@ -11,10 +11,9 @@ var searchData=
   ['console_3a_3acrypto_3a_3asha256_5fimpl_8',['sha256_impl',['../namespaceconsole_1_1crypto_1_1sha256__impl.html',1,'console::crypto']]],
   ['console_3a_3adetails_9',['details',['../namespaceconsole_1_1details.html',1,'console']]],
   ['console_3a_3agen_10',['gen',['../namespaceconsole_1_1gen.html',1,'console']]],
-  ['console_3a_3aliterals_11',['literals',['../namespaceconsole_1_1literals.html',1,'console']]],
-  ['console_3a_3aops_12',['ops',['../namespaceconsole_1_1ops.html',1,'console']]],
-  ['console_3a_3apitches_13',['pitches',['../namespaceconsole_1_1pitches.html',1,'console']]],
-  ['console_3a_3apool_14',['pool',['../namespaceconsole_1_1pool.html',1,'console']]],
-  ['console_3a_3aprogressstyle_15',['ProgressStyle',['../namespaceconsole_1_1_progress_style.html',1,'console']]],
-  ['console_3a_3are_16',['re',['../namespaceconsole_1_1re.html',1,'console']]]
+  ['console_3a_3aops_11',['ops',['../namespaceconsole_1_1ops.html',1,'console']]],
+  ['console_3a_3apitches_12',['pitches',['../namespaceconsole_1_1pitches.html',1,'console']]],
+  ['console_3a_3apool_13',['pool',['../namespaceconsole_1_1pool.html',1,'console']]],
+  ['console_3a_3aprogressstyle_14',['ProgressStyle',['../namespaceconsole_1_1_progress_style.html',1,'console']]],
+  ['console_3a_3are_15',['re',['../namespaceconsole_1_1re.html',1,'console']]]
 ];

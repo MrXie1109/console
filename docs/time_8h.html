@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/time.h File Reference</title>
+<title>Console Library: include/util/time.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('time_8h.html',
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
-<code>#include &quot;<a class="el" href="csexc_8h_source.html">csexc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="kb_8h_source.html">kb.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="csexc_8h_source.html">../core/csexc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kb_8h_source.html">../io/kb.h</a>&quot;</code><br />
 </div>
 <p><a href="time_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -156,6 +156,30 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5f71522a98af381e84b2f389cf35f7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态函数，构造小时。  <br /></td></tr>
 <tr class="memitem:a8929153db641cb041bea419d109b08a1" id="r_a8929153db641cb041bea419d109b08a1"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a8929153db641cb041bea419d109b08a1">console::now</a> ()</td></tr>
 <tr class="memdesc:a8929153db641cb041bea419d109b08a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前时间点(自纪元以来的纳秒数)。  <br /></td></tr>
+<tr class="memitem:aac9efbf97e534feac1f8291540c1ede9" id="r_aac9efbf97e534feac1f8291540c1ede9"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#aac9efbf97e534feac1f8291540c1ede9">console::operator&quot;&quot;_ns</a> (unsigned long long ns)</td></tr>
+<tr class="memdesc:aac9efbf97e534feac1f8291540c1ede9"><td class="mdescLeft">&#160;</td><td class="mdescRight">纳秒字面量(整数)。  <br /></td></tr>
+<tr class="memitem:aa3b48678203d297c86b865bf8572173a" id="r_aa3b48678203d297c86b865bf8572173a"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#aa3b48678203d297c86b865bf8572173a">console::operator&quot;&quot;_us</a> (unsigned long long us)</td></tr>
+<tr class="memdesc:aa3b48678203d297c86b865bf8572173a"><td class="mdescLeft">&#160;</td><td class="mdescRight">微秒字面量(整数)。  <br /></td></tr>
+<tr class="memitem:a42f1e69b652dac2de9e971a613a7c334" id="r_a42f1e69b652dac2de9e971a613a7c334"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a42f1e69b652dac2de9e971a613a7c334">console::operator&quot;&quot;_ms</a> (unsigned long long ms)</td></tr>
+<tr class="memdesc:a42f1e69b652dac2de9e971a613a7c334"><td class="mdescLeft">&#160;</td><td class="mdescRight">毫秒字面量(整数)。  <br /></td></tr>
+<tr class="memitem:a960091f569b2db063f5e5255e809b5b8" id="r_a960091f569b2db063f5e5255e809b5b8"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a960091f569b2db063f5e5255e809b5b8">console::operator&quot;&quot;_s</a> (unsigned long long s)</td></tr>
+<tr class="memdesc:a960091f569b2db063f5e5255e809b5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">秒字面量(整数)。  <br /></td></tr>
+<tr class="memitem:aad5b881859b6a4e38f2218d3d874a6ff" id="r_aad5b881859b6a4e38f2218d3d874a6ff"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#aad5b881859b6a4e38f2218d3d874a6ff">console::operator&quot;&quot;_min</a> (unsigned long long min)</td></tr>
+<tr class="memdesc:aad5b881859b6a4e38f2218d3d874a6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">分钟字面量(整数)。  <br /></td></tr>
+<tr class="memitem:af084bcb4fd705bf8e656c8be030ea465" id="r_af084bcb4fd705bf8e656c8be030ea465"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#af084bcb4fd705bf8e656c8be030ea465">console::operator&quot;&quot;_hr</a> (unsigned long long hr)</td></tr>
+<tr class="memdesc:af084bcb4fd705bf8e656c8be030ea465"><td class="mdescLeft">&#160;</td><td class="mdescRight">小时字面量(整数)。  <br /></td></tr>
+<tr class="memitem:a5230612788e4197408ea01cfc62c9123" id="r_a5230612788e4197408ea01cfc62c9123"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a5230612788e4197408ea01cfc62c9123">console::operator&quot;&quot;_ns</a> (long double ns)</td></tr>
+<tr class="memdesc:a5230612788e4197408ea01cfc62c9123"><td class="mdescLeft">&#160;</td><td class="mdescRight">纳秒字面量(浮点数)。  <br /></td></tr>
+<tr class="memitem:a619051c8685d757f62affae1dadc2664" id="r_a619051c8685d757f62affae1dadc2664"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a619051c8685d757f62affae1dadc2664">console::operator&quot;&quot;_us</a> (long double us)</td></tr>
+<tr class="memdesc:a619051c8685d757f62affae1dadc2664"><td class="mdescLeft">&#160;</td><td class="mdescRight">微秒字面量(浮点数)。  <br /></td></tr>
+<tr class="memitem:a2c739d39bcb531febdc22550e6398148" id="r_a2c739d39bcb531febdc22550e6398148"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a2c739d39bcb531febdc22550e6398148">console::operator&quot;&quot;_ms</a> (long double ms)</td></tr>
+<tr class="memdesc:a2c739d39bcb531febdc22550e6398148"><td class="mdescLeft">&#160;</td><td class="mdescRight">毫秒字面量(浮点数)。  <br /></td></tr>
+<tr class="memitem:af3b9051a1dc9caeac82a70fd79f6d622" id="r_af3b9051a1dc9caeac82a70fd79f6d622"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#af3b9051a1dc9caeac82a70fd79f6d622">console::operator&quot;&quot;_s</a> (long double s)</td></tr>
+<tr class="memdesc:af3b9051a1dc9caeac82a70fd79f6d622"><td class="mdescLeft">&#160;</td><td class="mdescRight">秒字面量(浮点数)。  <br /></td></tr>
+<tr class="memitem:ac7464a672bfbe8544c410cb61f469c10" id="r_ac7464a672bfbe8544c410cb61f469c10"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#ac7464a672bfbe8544c410cb61f469c10">console::operator&quot;&quot;_min</a> (long double min)</td></tr>
+<tr class="memdesc:ac7464a672bfbe8544c410cb61f469c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">分钟字面量(浮点数)。  <br /></td></tr>
+<tr class="memitem:ad16e32c7e79aa370f9f7f54fb9da8f68" id="r_ad16e32c7e79aa370f9f7f54fb9da8f68"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#ad16e32c7e79aa370f9f7f54fb9da8f68">console::operator&quot;&quot;_hr</a> (long double hr)</td></tr>
+<tr class="memdesc:ad16e32c7e79aa370f9f7f54fb9da8f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">小时字面量(浮点数)。  <br /></td></tr>
 <tr class="memitem:a7a7013e6ffcb7a903210303ca185f71e" id="r_a7a7013e6ffcb7a903210303ca185f71e"><td class="memTemplParams" colspan="2">template&lt;class F, class... Args&gt; </td></tr>
 <tr class="memitem:a7a7013e6ffcb7a903210303ca185f71e template"><td class="memItemLeft"><a class="el" href="classconsole_1_1_time.html">Time</a>&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole.html#a7a7013e6ffcb7a903210303ca185f71e">console::timer</a> (F &amp;&amp;f, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a7a7013e6ffcb7a903210303ca185f71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">测量函数调用的执行时间。  <br /></td></tr>
@@ -184,7 +208,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="time_8h.html">time.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li><li class="navelem"><a href="time_8h.html">time.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

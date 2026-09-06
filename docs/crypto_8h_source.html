@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/crypto.h Source File</title>
+<title>Console Library: include/util/crypto.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -1441,7 +1441,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('crypto_8h_sour
 <div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>    }</div>
 </div>
 <div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>}</div>
-<div class="ttc" id="agroup__matools_html_ga19e7f7652aed68e69b6e8bd6a60394a4"><div class="ttname"><a href="group__matools.html#ga19e7f7652aed68e69b6e8bd6a60394a4">console::round</a></div><div class="ttdeci">MultiArray&lt; T, Dims... &gt; round(const MultiArray&lt; T, Dims... &gt; &amp;arr)</div><div class="ttdoc">对数组每个元素四舍五入。</div><div class="ttdef"><b>Definition</b> matools.h:686</div></div>
+<div class="ttc" id="agroup__matools_html_ga19e7f7652aed68e69b6e8bd6a60394a4"><div class="ttname"><a href="group__matools.html#ga19e7f7652aed68e69b6e8bd6a60394a4">console::round</a></div><div class="ttdeci">MultiArray&lt; T, Dims... &gt; round(const MultiArray&lt; T, Dims... &gt; &amp;arr)</div><div class="ttdoc">对数组每个元素四舍五入。</div><div class="ttdef"><b>Definition</b> matools.h:806</div></div>
 <div class="ttc" id="anamespaceconsole_1_1crypto_1_1aes__impl_html"><div class="ttname"><a href="namespaceconsole_1_1crypto_1_1aes__impl.html">console::crypto::aes_impl</a></div><div class="ttdoc">AES加密算法的内部实现细节。</div><div class="ttdef"><b>Definition</b> crypto.h:638</div></div>
 <div class="ttc" id="anamespaceconsole_1_1crypto_1_1aes__impl_html_a0a0e6e46c330a49198266f480abad47e"><div class="ttname"><a href="namespaceconsole_1_1crypto_1_1aes__impl.html#a0a0e6e46c330a49198266f480abad47e">console::crypto::aes_impl::add_round_key</a></div><div class="ttdeci">void add_round_key(uint8_t *state, const uint8_t *key)</div><div class="ttdoc">轮密钥加操作，将状态矩阵与轮密钥进行异或。</div><div class="ttdef"><b>Definition</b> crypto.h:1297</div></div>
 <div class="ttc" id="anamespaceconsole_1_1crypto_1_1aes__impl_html_a1442a0e682a58e277ee1664a7f4c2b35"><div class="ttname"><a href="namespaceconsole_1_1crypto_1_1aes__impl.html#a1442a0e682a58e277ee1664a7f4c2b35">console::crypto::aes_impl::mix_columns</a></div><div class="ttdeci">void mix_columns(uint8_t *state)</div><div class="ttdoc">列混合操作，对状态矩阵的每一列进行线性变换。</div><div class="ttdef"><b>Definition</b> crypto.h:1247</div></div>
@@ -1486,22 +1486,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('crypto_8h_sour
 <div class="ttc" id="anamespaceconsole_1_1crypto_html_af2499b5c76c90681a7240bf8c2199431"><div class="ttname"><a href="namespaceconsole_1_1crypto.html#af2499b5c76c90681a7240bf8c2199431">console::crypto::aes_encrypt</a></div><div class="ttdeci">std::string aes_encrypt(const std::string &amp;plaintext, const std::string &amp;key)</div><div class="ttdoc">使用AES-128-CTR模式加密明文。</div><div class="ttdef"><b>Definition</b> crypto.h:1422</div></div>
 <div class="ttc" id="anamespaceconsole_1_1crypto_html_afde87e85ba242b0fcbbfe72ad50ba5ec"><div class="ttname"><a href="namespaceconsole_1_1crypto.html#afde87e85ba242b0fcbbfe72ad50ba5ec">console::crypto::base64_decode</a></div><div class="ttdeci">std::string base64_decode(const std::string &amp;input)</div><div class="ttdoc">对Base64编码的字符串进行解码。</div><div class="ttdef"><b>Definition</b> crypto.h:610</div></div>
 <div class="ttc" id="anamespaceconsole_1_1gen_html"><div class="ttname"><a href="namespaceconsole_1_1gen.html">console::gen</a></div><div class="ttdef"><b>Definition</b> gen.h:237</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a1ddc0a6c88b785bd2dac857b049c47df"><div class="ttname"><a href="namespaceconsole.html#a1ddc0a6c88b785bd2dac857b049c47df">console::input</a></div><div class="ttdeci">T input(const CharT *prompt=&quot;&quot;, const BasicInputSettings&lt; CharT &gt; &amp;is=input_settings)</div><div class="ttdoc">从标准输入读取一个值，支持类型模板。</div><div class="ttdef"><b>Definition</b> input.h:76</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">console::Key::C</a></div><div class="ttdeci">@ C</div><div class="ttdef"><b>Definition</b> kb.h:83</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da">console::Key::E</a></div><div class="ttdeci">@ E</div><div class="ttdef"><b>Definition</b> kb.h:85</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a61e9c06ea9a85a5088a499df6458d276"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a61e9c06ea9a85a5088a499df6458d276">console::Key::W</a></div><div class="ttdeci">@ W</div><div class="ttdef"><b>Definition</b> kb.h:103</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a69691c7bdcc3ce6d5d8a1361f22d04ac"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a69691c7bdcc3ce6d5d8a1361f22d04ac">console::Key::M</a></div><div class="ttdeci">@ M</div><div class="ttdef"><b>Definition</b> kb.h:93</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a7fc56270e7a70fa81a5935b72eacbe29"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a7fc56270e7a70fa81a5935b72eacbe29">console::Key::A</a></div><div class="ttdeci">@ A</div><div class="ttdef"><b>Definition</b> kb.h:81</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a9d5ed678fe57bcca610140957afab571"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a9d5ed678fe57bcca610140957afab571">console::Key::B</a></div><div class="ttdeci">@ B</div><div class="ttdef"><b>Definition</b> kb.h:82</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5">console::Key::D</a></div><div class="ttdeci">@ D</div><div class="ttdef"><b>Definition</b> kb.h:84</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a1ddc0a6c88b785bd2dac857b049c47df"><div class="ttname"><a href="namespaceconsole.html#a1ddc0a6c88b785bd2dac857b049c47df">console::input</a></div><div class="ttdeci">T input(const CharT *prompt=&quot;&quot;, const BasicInputSettings&lt; CharT &gt; &amp;is=input_settings)</div><div class="ttdoc">从标准输入读取一个值，支持类型模板。</div><div class="ttdef"><b>Definition</b> input.h:75</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a0d61f8370cad1d412f80b84d143e1257">console::Key::C</a></div><div class="ttdeci">@ C</div><div class="ttdef"><b>Definition</b> kb.h:82</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da">console::Key::E</a></div><div class="ttdeci">@ E</div><div class="ttdef"><b>Definition</b> kb.h:84</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a61e9c06ea9a85a5088a499df6458d276"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a61e9c06ea9a85a5088a499df6458d276">console::Key::W</a></div><div class="ttdeci">@ W</div><div class="ttdef"><b>Definition</b> kb.h:102</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a69691c7bdcc3ce6d5d8a1361f22d04ac"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a69691c7bdcc3ce6d5d8a1361f22d04ac">console::Key::M</a></div><div class="ttdeci">@ M</div><div class="ttdef"><b>Definition</b> kb.h:92</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a7fc56270e7a70fa81a5935b72eacbe29"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a7fc56270e7a70fa81a5935b72eacbe29">console::Key::A</a></div><div class="ttdeci">@ A</div><div class="ttdef"><b>Definition</b> kb.h:80</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a9d5ed678fe57bcca610140957afab571"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a9d5ed678fe57bcca610140957afab571">console::Key::B</a></div><div class="ttdeci">@ B</div><div class="ttdef"><b>Definition</b> kb.h:81</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5">console::Key::D</a></div><div class="ttdeci">@ D</div><div class="ttdef"><b>Definition</b> kb.h:83</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="crypto_8h.html">crypto.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li><li class="navelem"><a href="crypto_8h.html">crypto.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

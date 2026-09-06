@@ -7,6 +7,7 @@ var classconsole_1_1_basic_path =
     [ "ensure", "classconsole_1_1_basic_path.html#ad769d2a64d0a17607fc3c34c0c11549f", null ],
     [ "exists", "classconsole_1_1_basic_path.html#a25d2af6a0c10541a82cf3c15e37e72ce", null ],
     [ "narrow", "classconsole_1_1_basic_path.html#a9d128ed33516ec32120fd53d1467100e", null ],
+    [ "operator/=", "classconsole_1_1_basic_path.html#aed6dc1cdf1d9551c2fa9ffdc1e39fea5", null ],
     [ "read_binary", "classconsole_1_1_basic_path.html#a9663788240c801aff9cf4038c03552ea", null ],
     [ "read_lines", "classconsole_1_1_basic_path.html#a72600da560aae4c03efa16d478792b98", null ],
     [ "read_POD", "classconsole_1_1_basic_path.html#ac52d2074be6d3722f8c587f2a7e6c19e", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/gextra.h File Reference</title>
+<title>Console Library: include/util/gextra.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gextra_8h.html
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
-<code>#include &quot;<a class="el" href="gen_8h_source.html">gen.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="params_8h_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sfinae_8h_source.html">sfinae.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sfinae_8h_source.html">../core/sfinae.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="params_8h_source.html">../util/params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gen_8h_source.html">./gen.h</a>&quot;</code><br />
 </div>
 <p><a href="gextra_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -254,6 +254,10 @@ Classes</h2></td></tr>
 <tr class="memitem:console_3A_3Aops_3A_3Ais_5Fnull_5Ft" id="r_console_3A_3Aops_3A_3Ais_5Fnull_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1is__null__t.html">console::ops::is_null_t</a></td></tr>
 <tr class="memitem:console_3A_3Aops_3A_3Anot_5Fnull_5Ft" id="r_console_3A_3Aops_3A_3Anot_5Fnull_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1not__null__t.html">console::ops::not_null_t</a></td></tr>
 <tr class="memitem:console_3A_3Aops_3A_3Anth_5Ft_3C_20N_20_3E" id="r_console_3A_3Aops_3A_3Anth_5Ft_3C_20N_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1nth__t.html">console::ops::nth_t&lt; N &gt;</a></td></tr>
+<tr class="memitem:console_3A_3Aops_3A_3AMethod_3C_20Class_2C_20Ret_2C_20Args_20_3E" id="r_console_3A_3Aops_3A_3AMethod_3C_20Class_2C_20Ret_2C_20Args_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_method.html">console::ops::Method&lt; Class, Ret, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">成员函数调用变换器。  <a href="structconsole_1_1ops_1_1_method.html#details">More...</a><br /></td></tr>
+<tr class="memitem:console_3A_3Aops_3A_3ACall_3C_20Args_20_3E" id="r_console_3A_3Aops_3A_3ACall_3C_20Args_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_call.html">console::ops::Call&lt; Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数调用变化器。  <a href="structconsole_1_1ops_1_1_call.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -330,6 +334,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a" id="r_af1ea57ca92f924d6ffa4659f4a15046a"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
 <tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1nth__t.html">nth_t</a>&lt; N &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1ops.html#af1ea57ca92f924d6ffa4659f4a15046a">console::ops::nth</a> ()</td></tr>
 <tr class="memdesc:af1ea57ca92f924d6ffa4659f4a15046a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 tuple/pair/array 的第 N 个元素的函数。  <br /></td></tr>
+<tr class="memitem:a0af6ce4922282c27ff6693f213246473" id="r_a0af6ce4922282c27ff6693f213246473"><td class="memTemplParams" colspan="2">template&lt;class Class, class Ret, class... Args&gt; </td></tr>
+<tr class="memitem:a0af6ce4922282c27ff6693f213246473 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1_method.html">Method</a>&lt; Class, Ret, Args... &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1ops.html#a0af6ce4922282c27ff6693f213246473">console::ops::method</a> (Ret(Class::*ptr)(Args...), const Args &amp;...args)</td></tr>
+<tr class="memdesc:a0af6ce4922282c27ff6693f213246473"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建成员函数调用器。  <br /></td></tr>
+<tr class="memitem:a535b9767f3ee5a95314eea19622e3010" id="r_a535b9767f3ee5a95314eea19622e3010"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a535b9767f3ee5a95314eea19622e3010 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1_call.html">Call</a>&lt; Args... &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespaceconsole_1_1ops.html#a535b9767f3ee5a95314eea19622e3010">console::ops::call</a> (const Args &amp;...args)</td></tr>
+<tr class="memdesc:a535b9767f3ee5a95314eea19622e3010"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建函数调用器。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -386,7 +396,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="gextra_8h.html">gextra.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li><li class="navelem"><a href="gextra_8h.html">gextra.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

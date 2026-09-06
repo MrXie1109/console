@@ -25,6 +25,8 @@ var output_8h =
     [ "console::operator<<", "group__output__forward__decl.html#ga3dcacfb7fd3a6a7578d71f33090d5850", null ],
     [ "console::operator<<", "group__output__forward__decl.html#gaef5e0bbae4b491a0a694a0531a8f258c", null ],
     [ "console::operator<<", "group__output__forward__decl.html#ga7a38da850bbebe477b6f94dedb254089", null ],
+    [ "console::put", "namespaceconsole.html#a9ebaa1991cd25154acc44f676da44a3f", null ],
+    [ "console::put", "namespaceconsole.html#ae205d1c8a957bcbd7a55095e435e6774", null ],
     [ "console::to_array", "group__array__conversion.html#ga06143e5b1305ddc6184ff5539b7dd9fc", null ],
     [ "console::to_vector", "group__array__conversion.html#ga37f2589e9a16b5646e8b2faeaa053dbe", null ],
     [ "console::print", "namespaceconsole.html#a712c355f4a6cef0f6f85af54e1d8ea51", null ],

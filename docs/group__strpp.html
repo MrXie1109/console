@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -220,6 +220,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4d66c2178db99c5181d64dd4c110d5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。     <br /></td></tr>
 <tr class="memitem:ga538507d892e56a156ca98f83ddf8aef4" id="r_ga538507d892e56a156ca98f83ddf8aef4"><td class="memItemLeft">std::wstring&#160;</td><td class="memItemRight"><a class="el" href="#ga538507d892e56a156ca98f83ddf8aef4">console::join</a> (const std::vector&lt; std::wstring &gt; &amp;items, const std::wstring &amp;sep=L&quot;&quot;)</td></tr>
 <tr class="memdesc:ga538507d892e56a156ca98f83ddf8aef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">以分隔符连接容器中的字符串元素。     <br /></td></tr>
+<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28" id="r_ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga627aacb7ec0a756aa0e428a7ff55ee28">console::to_stream</a> (char ch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 ch 输出到流。  <br /></td></tr>
+<tr class="memitem:ga2b73041b104b1524916baff800321d28" id="r_ga2b73041b104b1524916baff800321d28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
+<tr class="memitem:ga2b73041b104b1524916baff800321d28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2b73041b104b1524916baff800321d28">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga2b73041b104b1524916baff800321d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 wch 输出到流。  <br /></td></tr>
+<tr class="memitem:ga736bc150b7f50bcfe6b71001b4a873f6" id="r_ga736bc150b7f50bcfe6b71001b4a873f6"><td class="memTemplParams" colspan="2">template&lt;class Traits&gt; </td></tr>
+<tr class="memitem:ga736bc150b7f50bcfe6b71001b4a873f6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga736bc150b7f50bcfe6b71001b4a873f6">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; wchar_t, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga736bc150b7f50bcfe6b71001b4a873f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 wch 输出到流。  <br /></td></tr>
 <tr class="memitem:gad35ba5f234938cdc11d8b8ed520ba618" id="r_gad35ba5f234938cdc11d8b8ed520ba618"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:gad35ba5f234938cdc11d8b8ed520ba618 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad35ba5f234938cdc11d8b8ed520ba618">console::to_stream</a> (const std::string &amp;str, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
 <tr class="memdesc:gad35ba5f234938cdc11d8b8ed520ba618"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 std::string 输出到流。  <br /></td></tr>
@@ -228,12 +237,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gabec745854bd899d3fca3c7648d75c139"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 std::wstring 输出到流。  <br /></td></tr>
 <tr class="memitem:ga3982a59b455c675c9725a214cdf7316c" id="r_ga3982a59b455c675c9725a214cdf7316c"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:ga3982a59b455c675c9725a214cdf7316c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga3982a59b455c675c9725a214cdf7316c">console::to_stream</a> (const char *str, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:ga3982a59b455c675c9725a214cdf7316c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 const char * 输出到流。  <br /></td></tr>
 <tr class="memitem:gaaf721c88c0e4608b426d3b81c0918051" id="r_gaaf721c88c0e4608b426d3b81c0918051"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
 <tr class="memitem:gaaf721c88c0e4608b426d3b81c0918051 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaaf721c88c0e4608b426d3b81c0918051">console::to_stream</a> (const wchar_t *wstr, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
-<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28" id="r_ga627aacb7ec0a756aa0e428a7ff55ee28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
-<tr class="memitem:ga627aacb7ec0a756aa0e428a7ff55ee28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga627aacb7ec0a756aa0e428a7ff55ee28">console::to_stream</a> (char ch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
-<tr class="memitem:ga2b73041b104b1524916baff800321d28" id="r_ga2b73041b104b1524916baff800321d28"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits&gt; </td></tr>
-<tr class="memitem:ga2b73041b104b1524916baff800321d28 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2b73041b104b1524916baff800321d28">console::to_stream</a> (wchar_t wch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
+<tr class="memdesc:gaaf721c88c0e4608b426d3b81c0918051"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 const wchar_t * 输出到流。  <br /></td></tr>
 <tr class="memitem:ga7eed721fd9aedc11ea5bc8105dd997fc" id="r_ga7eed721fd9aedc11ea5bc8105dd997fc"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits, std::size_t N&gt; </td></tr>
 <tr class="memitem:ga7eed721fd9aedc11ea5bc8105dd997fc template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga7eed721fd9aedc11ea5bc8105dd997fc">console::to_stream</a> (char(&amp;arr)[N], std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</td></tr>
 <tr class="memitem:gac567fe4180595ab0a83084aeb2dfafda" id="r_gac567fe4180595ab0a83084aeb2dfafda"><td class="memTemplParams" colspan="2">template&lt;class CharT, class Traits, std::size_t N&gt; </td></tr>
@@ -1727,7 +1734,7 @@ template&lt;class CharT, class Traits, class Allocator&gt; </div>
 </div>
 </div>
 <a id="ga627aacb7ec0a756aa0e428a7ff55ee28" name="ga627aacb7ec0a756aa0e428a7ff55ee28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga627aacb7ec0a756aa0e428a7ff55ee28">&#9670;&#160;</a></span>to_stream() <span class="overload">[1/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga627aacb7ec0a756aa0e428a7ff55ee28">&#9670;&#160;</a></span>to_stream() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1755,10 +1762,12 @@ template&lt;class CharT, class Traits&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将 ch 输出到流。 </p>
+
 </div>
 </div>
 <a id="ga7eed721fd9aedc11ea5bc8105dd997fc" name="ga7eed721fd9aedc11ea5bc8105dd997fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7eed721fd9aedc11ea5bc8105dd997fc">&#9670;&#160;</a></span>to_stream() <span class="overload">[2/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7eed721fd9aedc11ea5bc8105dd997fc">&#9670;&#160;</a></span>to_stream() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1789,7 +1798,7 @@ template&lt;class CharT, class Traits, std::size_t N&gt; </div>
 </div>
 </div>
 <a id="ga3982a59b455c675c9725a214cdf7316c" name="ga3982a59b455c675c9725a214cdf7316c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3982a59b455c675c9725a214cdf7316c">&#9670;&#160;</a></span>to_stream() <span class="overload">[3/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3982a59b455c675c9725a214cdf7316c">&#9670;&#160;</a></span>to_stream() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1817,10 +1826,12 @@ template&lt;class CharT, class Traits&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将 const char * 输出到流。 </p>
+
 </div>
 </div>
 <a id="gad35ba5f234938cdc11d8b8ed520ba618" name="gad35ba5f234938cdc11d8b8ed520ba618"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad35ba5f234938cdc11d8b8ed520ba618">&#9670;&#160;</a></span>to_stream() <span class="overload">[4/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gad35ba5f234938cdc11d8b8ed520ba618">&#9670;&#160;</a></span>to_stream() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1853,7 +1864,7 @@ template&lt;class CharT, class Traits&gt; </div>
 </div>
 </div>
 <a id="gabec745854bd899d3fca3c7648d75c139" name="gabec745854bd899d3fca3c7648d75c139"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabec745854bd899d3fca3c7648d75c139">&#9670;&#160;</a></span>to_stream() <span class="overload">[5/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabec745854bd899d3fca3c7648d75c139">&#9670;&#160;</a></span>to_stream() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1886,7 +1897,7 @@ template&lt;class CharT, class Traits&gt; </div>
 </div>
 </div>
 <a id="gaaf721c88c0e4608b426d3b81c0918051" name="gaaf721c88c0e4608b426d3b81c0918051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaf721c88c0e4608b426d3b81c0918051">&#9670;&#160;</a></span>to_stream() <span class="overload">[6/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf721c88c0e4608b426d3b81c0918051">&#9670;&#160;</a></span>to_stream() <span class="overload">[6/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1914,10 +1925,12 @@ template&lt;class CharT, class Traits&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将 const wchar_t * 输出到流。 </p>
+
 </div>
 </div>
 <a id="ga7dc89850b70fb282026228c5fe9f3b5e" name="ga7dc89850b70fb282026228c5fe9f3b5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7dc89850b70fb282026228c5fe9f3b5e">&#9670;&#160;</a></span>to_stream() <span class="overload">[7/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dc89850b70fb282026228c5fe9f3b5e">&#9670;&#160;</a></span>to_stream() <span class="overload">[7/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1948,7 +1961,7 @@ template&lt;class CharT, class Traits, class T&gt; </div>
 </div>
 </div>
 <a id="ga2b73041b104b1524916baff800321d28" name="ga2b73041b104b1524916baff800321d28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b73041b104b1524916baff800321d28">&#9670;&#160;</a></span>to_stream() <span class="overload">[8/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b73041b104b1524916baff800321d28">&#9670;&#160;</a></span>to_stream() <span class="overload">[8/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1976,10 +1989,45 @@ template&lt;class CharT, class Traits&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>将 wch 输出到流。 </p>
+
+</div>
+</div>
+<a id="ga736bc150b7f50bcfe6b71001b4a873f6" name="ga736bc150b7f50bcfe6b71001b4a873f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga736bc150b7f50bcfe6b71001b4a873f6">&#9670;&#160;</a></span>to_stream() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Traits&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void console::to_stream </td>
+          <td>(</td>
+          <td class="paramtype">wchar_t</td>          <td class="paramname"><span class="paramname"><em>wch</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::basic_ostream&lt; wchar_t, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 wch 输出到流。 </p>
+
 </div>
 </div>
 <a id="gac567fe4180595ab0a83084aeb2dfafda" name="gac567fe4180595ab0a83084aeb2dfafda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac567fe4180595ab0a83084aeb2dfafda">&#9670;&#160;</a></span>to_stream() <span class="overload">[9/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac567fe4180595ab0a83084aeb2dfafda">&#9670;&#160;</a></span>to_stream() <span class="overload">[10/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

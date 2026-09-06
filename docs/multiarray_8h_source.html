@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/multiarray.h Source File</title>
+<title>Console Library: include/container/multiarray.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiarray_8h_
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;<a class="code" href="repr_8h.html">repr.h</a>&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">../core/csexc.h</a>&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;<a class="code" href="repr_8h.html">../text/repr.h</a>&quot;</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef CONSOLE_MULTIARRAY_V1</span></div>
@@ -1662,51 +1662,54 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiarray_8h_
 <div class="line"><a id="l01716" name="l01716"></a><span class="lineno"> 1716</span>    <span class="keywordtype">bool</span></div>
 <div class="foldopen" id="foldopen01717" data-start="{" data-end="}">
 <div class="line"><a id="l01717" name="l01717"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d"> 1717</a></span>    <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims...&gt;</a> &amp;a, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims...&gt;</a> &amp;b) {</div>
-<div class="line"><a id="l01718" name="l01718"></a><span class="lineno"> 1718</span>        <span class="keywordflow">return</span> std::equal(a.fbegin(), a.fend(), b.fbegin(), b.fend());</div>
-<div class="line"><a id="l01719" name="l01719"></a><span class="lineno"> 1719</span>    }</div>
+<div class="line"><a id="l01718" name="l01718"></a><span class="lineno"> 1718</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; a.fsize(); ++i)</div>
+<div class="line"><a id="l01719" name="l01719"></a><span class="lineno"> 1719</span>            <span class="keywordflow">if</span> (a[i] != b[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01720" name="l01720"></a><span class="lineno"> 1720</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01721" name="l01721"></a><span class="lineno"> 1721</span>    }</div>
 </div>
-<div class="line"><a id="l01720" name="l01720"></a><span class="lineno"> 1720</span></div>
-<div class="line"><a id="l01725" name="l01725"></a><span class="lineno"> 1725</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims1, <span class="keywordtype">size_t</span>... Dims2&gt;</div>
-<div class="line"><a id="l01726" name="l01726"></a><span class="lineno"> 1726</span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span></div>
-<div class="foldopen" id="foldopen01727" data-start="{" data-end="}">
-<div class="line"><a id="l01727" name="l01727"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a1399cbe07ef10e8e434a8d65ffbfbbcd"> 1727</a></span>    <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims1...&gt;</a> &amp;, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims2...&gt;</a> &amp;) {</div>
-<div class="line"><a id="l01728" name="l01728"></a><span class="lineno"> 1728</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01729" name="l01729"></a><span class="lineno"> 1729</span>    }</div>
+<div class="line"><a id="l01722" name="l01722"></a><span class="lineno"> 1722</span></div>
+<div class="line"><a id="l01727" name="l01727"></a><span class="lineno"> 1727</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims1, <span class="keywordtype">size_t</span>... Dims2&gt;</div>
+<div class="line"><a id="l01728" name="l01728"></a><span class="lineno"> 1728</span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span></div>
+<div class="foldopen" id="foldopen01729" data-start="{" data-end="}">
+<div class="line"><a id="l01729" name="l01729"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a1399cbe07ef10e8e434a8d65ffbfbbcd"> 1729</a></span>    <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims1...&gt;</a> &amp;, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims2...&gt;</a> &amp;) {</div>
+<div class="line"><a id="l01730" name="l01730"></a><span class="lineno"> 1730</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01731" name="l01731"></a><span class="lineno"> 1731</span>    }</div>
 </div>
-<div class="line"><a id="l01730" name="l01730"></a><span class="lineno"> 1730</span></div>
-<div class="line"><a id="l01735" name="l01735"></a><span class="lineno"> 1735</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims, <span class="keyword">class </span>Op&gt;</div>
-<div class="foldopen" id="foldopen01736" data-start="{" data-end="}">
-<div class="line"><a id="l01736" name="l01736"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a3d45ecc8b2a3830af059873a298ee7cb"> 1736</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims...&gt;</a> &amp;a,</div>
-<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims...&gt;</a>         &amp;b,</div>
-<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"> 1738</span>        Op                                  &amp;&amp;op) {</div>
-<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span>        <span class="keywordflow">return</span> std::equal(</div>
-<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span>            a.fbegin(), a.fend(), b.fbegin(), b.fend(), std::forward&lt;Op&gt;(op));</div>
-<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span>    }</div>
+<div class="line"><a id="l01732" name="l01732"></a><span class="lineno"> 1732</span></div>
+<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims, <span class="keyword">class </span>Op&gt;</div>
+<div class="foldopen" id="foldopen01738" data-start="{" data-end="}">
+<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"><a class="line" href="namespaceconsole.html#a3d45ecc8b2a3830af059873a298ee7cb"> 1738</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims...&gt;</a> &amp;a,</div>
+<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims...&gt;</a>         &amp;b,</div>
+<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span>        Op                                  &amp;&amp;op) {</div>
+<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; a.fsize(); ++i)</div>
+<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span>            <span class="keywordflow">if</span> (!op(a[i], b[i])) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01743" name="l01743"></a><span class="lineno"> 1743</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01744" name="l01744"></a><span class="lineno"> 1744</span>    }</div>
 </div>
-<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span></div>
-<div class="line"><a id="l01747" name="l01747"></a><span class="lineno"> 1747</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims1, <span class="keywordtype">size_t</span>... Dims2, <span class="keyword">class </span>Op&gt;</div>
-<div class="foldopen" id="foldopen01748" data-start="{" data-end="}">
-<div class="line"><a id="l01748" name="l01748"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ab02ad5d34bd75b9afb99bf1d577450ff"> 1748</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims1...&gt;</a> &amp;,</div>
-<div class="line"><a id="l01749" name="l01749"></a><span class="lineno"> 1749</span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims2...&gt;</a> &amp;,</div>
-<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span>        Op &amp;&amp;) {</div>
-<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"> 1751</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01752" name="l01752"></a><span class="lineno"> 1752</span>    }</div>
+<div class="line"><a id="l01745" name="l01745"></a><span class="lineno"> 1745</span></div>
+<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims1, <span class="keywordtype">size_t</span>... Dims2, <span class="keyword">class </span>Op&gt;</div>
+<div class="foldopen" id="foldopen01751" data-start="{" data-end="}">
+<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ab02ad5d34bd75b9afb99bf1d577450ff"> 1751</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims1...&gt;</a> &amp;,</div>
+<div class="line"><a id="l01752" name="l01752"></a><span class="lineno"> 1752</span>        <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims2...&gt;</a> &amp;,</div>
+<div class="line"><a id="l01753" name="l01753"></a><span class="lineno"> 1753</span>        Op &amp;&amp;) {</div>
+<div class="line"><a id="l01754" name="l01754"></a><span class="lineno"> 1754</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01755" name="l01755"></a><span class="lineno"> 1755</span>    }</div>
 </div>
-<div class="line"><a id="l01753" name="l01753"></a><span class="lineno"> 1753</span></div>
-<div class="line"><a id="l01758" name="l01758"></a><span class="lineno"> 1758</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims&gt;</div>
-<div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span>    <span class="keywordtype">int</span></div>
-<div class="foldopen" id="foldopen01760" data-start="{" data-end="}">
-<div class="line"><a id="l01760" name="l01760"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73"> 1760</a></span>    <a class="code hl_function" href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73">compare</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims...&gt;</a> &amp;a, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims...&gt;</a> &amp;b) {</div>
-<div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it1 = a.fbegin(), it2 = b.fbegin(); <span class="comment">//</span></div>
-<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>            it1 != a.fend();                          <span class="comment">//</span></div>
-<div class="line"><a id="l01763" name="l01763"></a><span class="lineno"> 1763</span>            ++it1, ++it2) {</div>
-<div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span>            <span class="keywordflow">if</span> (*it1 &lt; *it2) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"> 1765</span>            <span class="keywordflow">if</span> (*it2 &lt; *it1) <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l01766" name="l01766"></a><span class="lineno"> 1766</span>        }</div>
-<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l01768" name="l01768"></a><span class="lineno"> 1768</span>    }</div>
+<div class="line"><a id="l01756" name="l01756"></a><span class="lineno"> 1756</span></div>
+<div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class </span>U, <span class="keywordtype">size_t</span>... Dims&gt;</div>
+<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>    <span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen01763" data-start="{" data-end="}">
+<div class="line"><a id="l01763" name="l01763"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73"> 1763</a></span>    <a class="code hl_function" href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73">compare</a>(<span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;T, Dims...&gt;</a> &amp;a, <span class="keyword">const</span> <a class="code hl_class" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray&lt;U, Dims...&gt;</a> &amp;b) {</div>
+<div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it1 = a.fbegin(), it2 = b.fbegin(); <span class="comment">//</span></div>
+<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"> 1765</span>            it1 != a.fend();                          <span class="comment">//</span></div>
+<div class="line"><a id="l01766" name="l01766"></a><span class="lineno"> 1766</span>            ++it1, ++it2) {</div>
+<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span>            <span class="keywordflow">if</span> (*it1 &lt; *it2) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l01768" name="l01768"></a><span class="lineno"> 1768</span>            <span class="keywordflow">if</span> (*it2 &lt; *it1) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l01769" name="l01769"></a><span class="lineno"> 1769</span>        }</div>
+<div class="line"><a id="l01770" name="l01770"></a><span class="lineno"> 1770</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l01771" name="l01771"></a><span class="lineno"> 1771</span>    }</div>
 </div>
-<div class="line"><a id="l01769" name="l01769"></a><span class="lineno"> 1769</span>}</div>
+<div class="line"><a id="l01772" name="l01772"></a><span class="lineno"> 1772</span>}</div>
 <div class="ttc" id="aclassconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4_html_a02e1f25c2ab170ab5e8839ced80f37b5"><div class="ttname"><a href="classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4.html#a02e1f25c2ab170ab5e8839ced80f37b5">console::_V1::MultiArray&lt; T, D &gt;::const_reference</a></div><div class="ttdeci">const T &amp; const_reference</div><div class="ttdef"><b>Definition</b> multiarray.h:81</div></div>
 <div class="ttc" id="aclassconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4_html_a1256347de6a85b84fe1fb79a16616d42"><div class="ttname"><a href="classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4.html#a1256347de6a85b84fe1fb79a16616d42">console::_V1::MultiArray&lt; T, D &gt;::fsize</a></div><div class="ttdeci">static constexpr size_t fsize()</div><div class="ttdoc">返回元素总数。</div><div class="ttdef"><b>Definition</b> multiarray.h:107</div></div>
 <div class="ttc" id="aclassconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4_html_a1753da47c9b36de301a93276dc1da26d"><div class="ttname"><a href="classconsole_1_1___v1_1_1_multi_array_3_01_t_00_01_d_01_4.html#a1753da47c9b36de301a93276dc1da26d">console::_V1::MultiArray&lt; T, D &gt;::for_each</a></div><div class="ttdeci">void for_each(F &amp;&amp;visit)</div><div class="ttdoc">遍历所有元素并应用函数(非常量版本)。</div><div class="ttdef"><b>Definition</b> multiarray.h:120</div></div>
@@ -1897,7 +1900,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiarray_8h_
 <div class="ttc" id="aclassconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4_html_af7fe99b04397fde66f89d1911a7f2ed6"><div class="ttname"><a href="classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html#af7fe99b04397fde66f89d1911a7f2ed6">console::_V2::MultiArray&lt; T, First, Rest... &gt;::dims</a></div><div class="ttdeci">static constexpr std::array&lt; size_t, rank()&gt; dims()</div><div class="ttdoc">静态成员函数 dims，返回数组的维度数组。</div><div class="ttdef"><b>Definition</b> multiarray.h:1163</div></div>
 <div class="ttc" id="aclassconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4_html_af9bafeedde17d2d0ac5358a0eade90da"><div class="ttname"><a href="classconsole_1_1___v2_1_1_multi_array_3_01_t_00_01_first_00_01_rest_8_8_8_01_4.html#af9bafeedde17d2d0ac5358a0eade90da">console::_V2::MultiArray&lt; T, First, Rest... &gt;::fend</a></div><div class="ttdeci">T * fend()</div><div class="ttdoc">扁平迭代器 fend，返回指向尾元素的指针。</div><div class="ttdef"><b>Definition</b> multiarray.h:1156</div></div>
 <div class="ttc" id="aclassconsole_1_1___v2_1_1_multi_array_html"><div class="ttname"><a href="classconsole_1_1___v2_1_1_multi_array.html">console::_V2::MultiArray</a></div><div class="ttdoc">编译期固定维度的多维数组(堆版本)。</div><div class="ttdef"><b>Definition</b> multiarray.h:461</div></div>
-<div class="ttc" id="aclassconsole_1_1_multi_array_error_html_a18dac292aa69178c7d3e95de54fe68cb"><div class="ttname"><a href="classconsole_1_1_multi_array_error.html#a18dac292aa69178c7d3e95de54fe68cb">console::MultiArrayError::MultiArrayError</a></div><div class="ttdeci">MultiArrayError(const std::string &amp;msg)</div><div class="ttdoc">构造 MultiArrayError。</div><div class="ttdef"><b>Definition</b> csexc.h:128</div></div>
+<div class="ttc" id="aclassconsole_1_1_multi_array_error_html_a18dac292aa69178c7d3e95de54fe68cb"><div class="ttname"><a href="classconsole_1_1_multi_array_error.html#a18dac292aa69178c7d3e95de54fe68cb">console::MultiArrayError::MultiArrayError</a></div><div class="ttdeci">MultiArrayError(const std::string &amp;msg)</div><div class="ttdoc">构造 MultiArrayError。</div><div class="ttdef"><b>Definition</b> csexc.h:127</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
 <div class="ttc" id="agroup__repr_html_ga02627a15a63c76a99f7eb15abc55df1d"><div class="ttname"><a href="group__repr.html#ga02627a15a63c76a99f7eb15abc55df1d">console::repr</a></div><div class="ttdeci">std::enable_if&lt; is_string&lt; typenamestd::decay&lt; T &gt;::type &gt;::value &gt;::type repr(T &amp;&amp;value, std::basic_ostream&lt; CharT, Traits &gt; &amp;os=std::cout)</div><div class="ttdoc">输出字符串类型(std::string, const char* 等)的表示，带双引号。</div><div class="ttdef"><b>Definition</b> repr.h:97</div></div>
 <div class="ttc" id="amultiarray_8h_html_a03d8fe44705cf79a1901899b7bbde1f3"><div class="ttname"><a href="multiarray_8h.html#a03d8fe44705cf79a1901899b7bbde1f3">ARRAY_AND_ARRAY_BOOL</a></div><div class="ttdeci">#define ARRAY_AND_ARRAY_BOOL(OP)</div><div class="ttdef"><b>Definition</b> multiarray.h:1480</div></div>
@@ -1912,15 +1915,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiarray_8h_
 <div class="ttc" id="amultiarray_8h_html_ad13eb77c2c55c9825cd78bde5e21cc2e"><div class="ttname"><a href="multiarray_8h.html#ad13eb77c2c55c9825cd78bde5e21cc2e">SCALAR_AND_ARRAY_BOOL</a></div><div class="ttdeci">#define SCALAR_AND_ARRAY_BOOL(OP)</div><div class="ttdef"><b>Definition</b> multiarray.h:1504</div></div>
 <div class="ttc" id="anamespaceconsole_1_1___v1_html"><div class="ttname"><a href="namespaceconsole_1_1___v1.html">console::_V1</a></div><div class="ttdef"><b>Definition</b> multiarray.h:54</div></div>
 <div class="ttc" id="anamespaceconsole_1_1___v2_html"><div class="ttname"><a href="namespaceconsole_1_1___v2.html">console::_V2</a></div><div class="ttdef"><b>Definition</b> multiarray.h:426</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
 <div class="ttc" id="anamespaceconsole_html_a098f089920a165b93d045817a3fef167"><div class="ttname"><a href="namespaceconsole.html#a098f089920a165b93d045817a3fef167">console::all</a></div><div class="ttdeci">bool all(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">检查所有元素是否都为 true(逻辑与归约)。</div><div class="ttdef"><b>Definition</b> multiarray.h:1694</div></div>
 <div class="ttc" id="anamespaceconsole_html_a3c082110bc9f1bccd134f037cbc80d2b"><div class="ttname"><a href="namespaceconsole.html#a3c082110bc9f1bccd134f037cbc80d2b">console::min</a></div><div class="ttdeci">T min(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最小值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1676</div></div>
 <div class="ttc" id="anamespaceconsole_html_a469b8a52b961a34dd49318d3cf98abf4"><div class="ttname"><a href="namespaceconsole.html#a469b8a52b961a34dd49318d3cf98abf4">console::any</a></div><div class="ttdeci">bool any(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">检查是否存在至少一个 true 元素(逻辑或归约)。</div><div class="ttdef"><b>Definition</b> multiarray.h:1705</div></div>
 <div class="ttc" id="anamespaceconsole_html_a4d151dd74a5c86383bbc2526fefe2988"><div class="ttname"><a href="namespaceconsole.html#a4d151dd74a5c86383bbc2526fefe2988">console::max</a></div><div class="ttdeci">T max(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求最大值。</div><div class="ttdef"><b>Definition</b> multiarray.h:1685</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4c614360da93c0a041b22e537de151eb">console::Key::U</a></div><div class="ttdeci">@ U</div><div class="ttdef"><b>Definition</b> kb.h:101</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5">console::Key::D</a></div><div class="ttdeci">@ D</div><div class="ttdef"><b>Definition</b> kb.h:84</div></div>
-<div class="ttc" id="anamespaceconsole_html_ac19ecd9f1ce44d4fb8610be94c397c73"><div class="ttname"><a href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73">console::compare</a></div><div class="ttdeci">int compare(const MultiArray&lt; T, Dims... &gt; &amp;a, const MultiArray&lt; U, Dims... &gt; &amp;b)</div><div class="ttdoc">比较两个 MultiArray 的大小。</div><div class="ttdef"><b>Definition</b> multiarray.h:1760</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a4c614360da93c0a041b22e537de151eb">console::Key::U</a></div><div class="ttdeci">@ U</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29af623e75af30e62bbd73d6df5b50bb7b5">console::Key::D</a></div><div class="ttdeci">@ D</div><div class="ttdef"><b>Definition</b> kb.h:83</div></div>
+<div class="ttc" id="anamespaceconsole_html_ac19ecd9f1ce44d4fb8610be94c397c73"><div class="ttname"><a href="namespaceconsole.html#ac19ecd9f1ce44d4fb8610be94c397c73">console::compare</a></div><div class="ttdeci">int compare(const MultiArray&lt; T, Dims... &gt; &amp;a, const MultiArray&lt; U, Dims... &gt; &amp;b)</div><div class="ttdoc">比较两个 MultiArray 的大小。</div><div class="ttdef"><b>Definition</b> multiarray.h:1763</div></div>
 <div class="ttc" id="anamespaceconsole_html_ac77dd17c6c6aabf513856c4e41f2aa51"><div class="ttname"><a href="namespaceconsole.html#ac77dd17c6c6aabf513856c4e41f2aa51">console::sum</a></div><div class="ttdeci">T sum(const MultiArray&lt; T, Dims... &gt; &amp;a)</div><div class="ttdoc">求和所有元素。</div><div class="ttdef"><b>Definition</b> multiarray.h:1665</div></div>
 <div class="ttc" id="anamespaceconsole_html_ae4fa4373669ac5c9f0477fdf6326a97d"><div class="ttname"><a href="namespaceconsole.html#ae4fa4373669ac5c9f0477fdf6326a97d">console::equals</a></div><div class="ttdeci">bool equals(const MultiArray&lt; T, Dims... &gt; &amp;a, const MultiArray&lt; U, Dims... &gt; &amp;b)</div><div class="ttdoc">检查两个 MultiArray 是否相等。</div><div class="ttdef"><b>Definition</b> multiarray.h:1717</div></div>
 <div class="ttc" id="arepr_8h_html"><div class="ttname"><a href="repr_8h.html">repr.h</a></div><div class="ttdoc">提供类似 Python 的 repr() 函数，用于生成对象的可读字符串表示。</div></div>
@@ -1937,7 +1940,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiarray_8h_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="multiarray_8h.html">multiarray.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_e0f5f6345e438c73b9ae78ec2940718c.html">container</a></li><li class="navelem"><a href="multiarray_8h.html">multiarray.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

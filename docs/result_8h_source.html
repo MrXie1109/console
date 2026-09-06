@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/result.h Source File</title>
+<title>Console Library: include/container/result.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('result_8h_sour
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">../core/csexc.h</a>&quot;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#if __cplusplus &gt;= 201703L</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
@@ -462,18 +462,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('result_8h_sour
 <div class="ttc" id="aclassconsole_1_1_result_html_af52d23e902c4d33ecf4c92f97860d264"><div class="ttname"><a href="classconsole_1_1_result.html#af52d23e902c4d33ecf4c92f97860d264">console::Result::or_else</a></div><div class="ttdeci">auto or_else(F &amp;&amp;f) &amp;&amp;-&gt; Result&lt; T, typename std::decay&lt; decltype(f(std::declval&lt; E &gt;()))&gt;::type::error_type &gt;</div><div class="ttdoc">链式操作：若为 Err 则应用 f，否则传递 Ok(右值引用版本）。</div><div class="ttdef"><b>Definition</b> result.h:314</div></div>
 <div class="ttc" id="aclassconsole_1_1_result_html_af7f176c07428afb27be39ee9f1552c48"><div class="ttname"><a href="classconsole_1_1_result.html#af7f176c07428afb27be39ee9f1552c48">console::Result::and_then</a></div><div class="ttdeci">auto and_then(F &amp;&amp;f) &amp;&amp;-&gt; Result&lt; typename std::decay&lt; decltype(f(std::declval&lt; T &gt;()))&gt;::type::value_type, E &gt;</div><div class="ttdoc">链式操作：若为 Ok 则应用 f，否则传递 Err(右值引用版本）。</div><div class="ttdef"><b>Definition</b> result.h:283</div></div>
 <div class="ttc" id="aclassconsole_1_1_result_html_afca97c6ba5418b112011f516692b6b29"><div class="ttname"><a href="classconsole_1_1_result.html#afca97c6ba5418b112011f516692b6b29">console::Result::Result</a></div><div class="ttdeci">Result(E &amp;&amp;error)</div><div class="ttdoc">从错误值构造 Result(移动）。</div><div class="ttdef"><b>Definition</b> result.h:108</div></div>
-<div class="ttc" id="aclassconsole_1_1_value_error_html_a4d6a40a3f01904d5d029854ca9bcace0"><div class="ttname"><a href="classconsole_1_1_value_error.html#a4d6a40a3f01904d5d029854ca9bcace0">console::ValueError::ValueError</a></div><div class="ttdeci">ValueError(const std::string &amp;msg)</div><div class="ttdoc">构造 ValueError。</div><div class="ttdef"><b>Definition</b> csexc.h:116</div></div>
+<div class="ttc" id="aclassconsole_1_1_value_error_html_a4d6a40a3f01904d5d029854ca9bcace0"><div class="ttname"><a href="classconsole_1_1_value_error.html#a4d6a40a3f01904d5d029854ca9bcace0">console::ValueError::ValueError</a></div><div class="ttdeci">ValueError(const std::string &amp;msg)</div><div class="ttdoc">构造 ValueError。</div><div class="ttdef"><b>Definition</b> csexc.h:115</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da">console::Key::E</a></div><div class="ttdeci">@ E</div><div class="ttdef"><b>Definition</b> kb.h:85</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29a3a3ea00cfc35332cedf6e5e9a32e94da">console::Key::E</a></div><div class="ttdeci">@ E</div><div class="ttdef"><b>Definition</b> kb.h:84</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="result_8h.html">result.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_e0f5f6345e438c73b9ae78ec2940718c.html">container</a></li><li class="navelem"><a href="result_8h.html">result.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

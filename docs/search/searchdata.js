@@ -3,13 +3,13 @@ var indexSectionsWithContent =
   0: "_abcdefghijklmnopqrstuvwxyz~字打数标类视输随",
   1: "_abcdefghiklmnopqrstuvwz",
   2: "cp",
-  3: "abcdefgiklmoprstv",
+  3: "abcdefgiklmnopqrstuv",
   4: "_abcdefghijklmnopqrstuvwyz~",
-  5: "abcdefghiklmnopqrstuvwyz",
-  6: "bcdefiklmoprstuvw",
+  5: "_abcdefghiklmnopqrstuvwyz",
+  6: "bcdefiklmnoprstuvw",
   7: "iklqs",
   8: "abcdefghijklmnopqrstuvwxyz",
-  9: "cimos",
+  9: "cimosu",
   10: "_acdemnpstuw",
   11: "t字打数标类视输随"
 };

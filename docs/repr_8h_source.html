@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/repr.h Source File</title>
+<title>Console Library: include/text/repr.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h_source
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="sfinae_8h.html">sfinae.h</a>&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="strpp_8h.html">strpp.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="sfinae_8h.html">../core/sfinae.h</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="strpp_8h.html">./strpp.h</a>&quot;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#ifdef __GNUG__</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;cxxabi.h&gt;</span></div>
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h_source
 <div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__repr.html#ga02627a15a63c76a99f7eb15abc55df1d">   97</a></span>    <a class="code hl_function" href="group__repr.html#ga02627a15a63c76a99f7eb15abc55df1d">repr</a>(T &amp;&amp;value, std::basic_ostream&lt;CharT, Traits&gt; &amp;os = std::cout) {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        os &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="group__strpp.html#gad35ba5f234938cdc11d8b8ed520ba618">to_stream</a>(value, os);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="group__strpp.html#ga627aacb7ec0a756aa0e428a7ff55ee28">to_stream</a>(value, os);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        os &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
 </div>
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h_source
 <div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="namespaceconsole.html#ga02627a15a63c76a99f7eb15abc55df1d">  115</a></span>    <a class="code hl_function" href="group__repr.html#ga02627a15a63c76a99f7eb15abc55df1d">repr</a>(T &amp;&amp;value, std::basic_ostream&lt;CharT, Traits&gt; &amp;os = std::cout) {</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        os &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_function" href="group__strpp.html#gad35ba5f234938cdc11d8b8ed520ba618">to_stream</a>(value, os);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_function" href="group__strpp.html#ga627aacb7ec0a756aa0e428a7ff55ee28">to_stream</a>(value, os);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        os &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 </div>
@@ -296,9 +296,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h_source
 <div class="ttc" id="agroup__repr_html_ga1e69898fd2b0d540611a203743ecc0e5"><div class="ttname"><a href="group__repr.html#ga1e69898fd2b0d540611a203743ecc0e5">console::tiname_impl</a></div><div class="ttdeci">std::string tiname_impl(const std::type_info &amp;ti)</div><div class="ttdoc">获取类型信息的可读名称(跨平台 demangle)，返回 std::string。</div><div class="ttdef"><b>Definition</b> repr.h:59</div></div>
 <div class="ttc" id="agroup__repr_html_gac5bc3c158297f06eec5fde098edfd54b"><div class="ttname"><a href="group__repr.html#gac5bc3c158297f06eec5fde098edfd54b">console::wtiname</a></div><div class="ttdeci">std::wstring wtiname(const std::type_info &amp;ti)</div><div class="ttdoc">tiname_impl 的 wchar_t 版。</div><div class="ttdef"><b>Definition</b> repr.h:78</div></div>
 <div class="ttc" id="agroup__repr_html_gac92082727845e0dceef09efcc1d8e953"><div class="ttname"><a href="group__repr.html#gac92082727845e0dceef09efcc1d8e953">console::tiname</a></div><div class="ttdeci">std::string tiname(const std::type_info &amp;ti)</div><div class="ttdoc">tiname_impl 的 char 版别名。</div><div class="ttdef"><b>Definition</b> repr.h:74</div></div>
-<div class="ttc" id="agroup__strpp_html_gad35ba5f234938cdc11d8b8ed520ba618"><div class="ttname"><a href="group__strpp.html#gad35ba5f234938cdc11d8b8ed520ba618">console::to_stream</a></div><div class="ttdeci">void to_stream(const std::string &amp;str, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</div><div class="ttdoc">将 std::string 输出到流。</div><div class="ttdef"><b>Definition</b> strpp.h:574</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="asfinae_8h_html"><div class="ttname"><a href="sfinae_8h.html">sfinae.h</a></div><div class="ttdoc">提供编译期类型特征检测(SFINAE 工具)，用于判断容器、可调用对象、迭代器、下标访问、字符串、可打印类型、字符类型等。</div></div>
+<div class="ttc" id="agroup__strpp_html_ga627aacb7ec0a756aa0e428a7ff55ee28"><div class="ttname"><a href="group__strpp.html#ga627aacb7ec0a756aa0e428a7ff55ee28">console::to_stream</a></div><div class="ttdeci">void to_stream(char ch, std::basic_ostream&lt; CharT, Traits &gt; &amp;os)</div><div class="ttdoc">将 ch 输出到流。</div><div class="ttdef"><b>Definition</b> strpp.h:574</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="asfinae_8h_html"><div class="ttname"><a href="sfinae_8h.html">sfinae.h</a></div><div class="ttdoc">提供编译期类型特征检测(SFINAE 工具)， 用于判断容器、可调用对象、迭代器、下标访问、字符串、可打印类型、字符类型等。</div></div>
 <div class="ttc" id="astrpp_8h_html"><div class="ttname"><a href="strpp_8h.html">strpp.h</a></div><div class="ttdoc">提供字符串处理工具函数和格式化类。</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('repr_8h_source
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="repr_8h.html">repr.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_42d41070953014e4936f61bdc375df58.html">text</a></li><li class="navelem"><a href="repr_8h.html">repr.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

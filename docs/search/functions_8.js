@@ -4,7 +4,7 @@ var searchData=
   ['hamming_5fwindow_1',['hamming_window',['../group__matools.html#ga5136d83585bf45a7f0ee31cdd14df827',1,'console']]],
   ['handleescape_2',['handleEscape',['../classconsole_1_1_keyboard.html#a2506d1425afeca3c3332b08de7c964ea',1,'console::Keyboard']]],
   ['hann_5fwindow_3',['hann_window',['../group__matools.html#ga6193732bd6ce54f82250b90f265534c0',1,'console']]],
-  ['has_4',['has',['../classconsole_1_1_table.html#a5bbd2e95ca2fc22d297e5c640b06082c',1,'console::Table::has()'],['../classconsole_1_1_basic_i_n_i_config.html#a23384ee57736b4e514d9475162da4e8f',1,'console::BasicINIConfig::has()']]],
+  ['has_4',['has',['../classconsole_1_1_basic_i_n_i_config.html#a23384ee57736b4e514d9475162da4e8f',1,'console::BasicINIConfig::has()'],['../classconsole_1_1_table.html#a5bbd2e95ca2fc22d297e5c640b06082c',1,'console::Table::has(const std::type_index &amp;type1, const std::type_index &amp;type2) const']]],
   ['has_5fdefault_5',['has_default',['../classconsole_1_1_table.html#a005c29ac7f8a9fe26de785c7180f1e0d',1,'console::Table']]],
   ['has_5fvalue_6',['has_value',['../classconsole_1_1_maybe.html#a353e01b32717f29fc70ee977910c3ec5',1,'console::Maybe']]],
   ['helper_7',['Helper',['../structconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper.html#a7a5fd2613dcb9e7913446a30d05b73cb',1,'console::Params&lt; T, Rest... &gt;::Helper']]],

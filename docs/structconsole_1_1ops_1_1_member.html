@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -120,16 +120,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structconsole_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a608549800bea18507c92647df3f0e140" id="r_a608549800bea18507c92647df3f0e140"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a608549800bea18507c92647df3f0e140 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a608549800bea18507c92647df3f0e140">operator()</a> (const T &amp;obj) const -&gt; typename std::decay&lt; decltype(obj.*<a class="el" href="#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>)&gt;::type</td></tr>
-<tr class="memdesc:a608549800bea18507c92647df3f0e140"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的成员变量。  <br /></td></tr>
+<tr class="memitem:a67e239fe039c9f2d07305d3e126f4b57" id="r_a67e239fe039c9f2d07305d3e126f4b57"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a67e239fe039c9f2d07305d3e126f4b57 template"><td class="memItemLeft">Mem&#160;</td><td class="memItemRight"><a class="el" href="#a67e239fe039c9f2d07305d3e126f4b57">operator()</a> (T &amp;&amp;obj) const</td></tr>
+<tr class="memdesc:a67e239fe039c9f2d07305d3e126f4b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的成员变量。  <br /></td></tr>
+<tr class="memitem:a2096d3e8f48f7ebdf07aabd82de3f52a" id="r_a2096d3e8f48f7ebdf07aabd82de3f52a"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a2096d3e8f48f7ebdf07aabd82de3f52a template"><td class="memItemLeft">Mem&#160;</td><td class="memItemRight"><a class="el" href="#a2096d3e8f48f7ebdf07aabd82de3f52a">operator()</a> (T *obj) const</td></tr>
+<tr class="memdesc:a2096d3e8f48f7ebdf07aabd82de3f52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的成员变量。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a05e8e1a6acc1b88f653f930eb87219e2" id="r_a05e8e1a6acc1b88f653f930eb87219e2"><td class="memItemLeft">Mem Class::*&#160;</td><td class="memItemRight"><a class="el" href="#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a></td></tr>
+<tr class="memdesc:a05e8e1a6acc1b88f653f930eb87219e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">成员指针  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class Class, typename Mem&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Class, class Mem&gt;<br />
 struct console::ops::Member&lt; Class, Mem &gt;</div><p>取成员变量变换器。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -139,13 +143,13 @@ struct console::ops::Member&lt; Class, Mem &gt;</div><p>取成员变量变换器
   </dd>
 </dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a608549800bea18507c92647df3f0e140" name="a608549800bea18507c92647df3f0e140"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a608549800bea18507c92647df3f0e140">&#9670;&#160;</a></span>operator()()</h2>
+<a id="a67e239fe039c9f2d07305d3e126f4b57" name="a67e239fe039c9f2d07305d3e126f4b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e239fe039c9f2d07305d3e126f4b57">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Class, typename Mem&gt; </div>
+template&lt;class Class, class Mem&gt; </div>
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <table class="mlabels">
@@ -153,10 +157,48 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structconsole_1_1ops_1_1_member.html">console::ops::Member</a>&lt; Class, Mem &gt;::operator() </td>
+          <td class="memname">Mem <a class="el" href="structconsole_1_1ops_1_1_member.html">console::ops::Member</a>&lt; Class, Mem &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const -&gt; typename std::decay&lt; decltype(obj.*<a class="el" href="#a05e8e1a6acc1b88f653f930eb87219e2">ptr</a>)&gt;::type</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象的成员变量。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>对象。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>obj.*ptr。 </dd></dl>
+
+</div>
+</div>
+<a id="a2096d3e8f48f7ebdf07aabd82de3f52a" name="a2096d3e8f48f7ebdf07aabd82de3f52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2096d3e8f48f7ebdf07aabd82de3f52a">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Class, class Mem&gt; </div>
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mem <a class="el" href="structconsole_1_1ops_1_1_member.html">console::ops::Member</a>&lt; Class, Mem &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -184,7 +226,7 @@ template&lt;class T&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Class, typename Mem&gt; </div>
+template&lt;class Class, class Mem&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">Mem Class::* <a class="el" href="structconsole_1_1ops_1_1_member.html">console::ops::Member</a>&lt; Class, Mem &gt;::ptr</td>
@@ -192,10 +234,12 @@ template&lt;class Class, typename Mem&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>成员指针 </p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="gen_8h_source.html">gen.h</a></li>
+<li>include/util/<a class="el" href="gen_8h_source.html">gen.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

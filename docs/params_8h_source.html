@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/params.h Source File</title>
+<title>Console Library: include/util/params.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -232,8 +232,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('params_8h_sour
 <div class="ttc" id="aclassconsole_1_1_params_3_4_html_a07ad2304a60418846947b3cd02c3f26d"><div class="ttname"><a href="classconsole_1_1_params_3_4.html#a07ad2304a60418846947b3cd02c3f26d">console::Params&lt;&gt;::apply</a></div><div class="ttdeci">auto apply(F f) const -&gt; decltype(f())</div><div class="ttdoc">将存储的参数应用于可调用对象。</div><div class="ttdef"><b>Definition</b> params.h:70</div></div>
 <div class="ttc" id="aclassconsole_1_1_params_3_4_html_a578520709cd8b338da915b1d1fe1126c"><div class="ttname"><a href="classconsole_1_1_params_3_4.html#a578520709cd8b338da915b1d1fe1126c">console::Params&lt;&gt;::Params</a></div><div class="ttdeci">Params()=default</div><div class="ttdoc">无参构造函数。</div></div>
 <div class="ttc" id="aclassconsole_1_1_params_html"><div class="ttname"><a href="classconsole_1_1_params.html">console::Params</a></div><div class="ttdoc">递归参数包包装器，将多个参数存储为值类型，并支持通过 apply 方法延迟调用。</div><div class="ttdef"><b>Definition</b> params.h:48</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
 <div class="ttc" id="anamespaceconsole_html_aa3070b61b7b1537a84c538387f652035"><div class="ttname"><a href="namespaceconsole.html#aa3070b61b7b1537a84c538387f652035">console::params</a></div><div class="ttdeci">Params&lt; typename std::decay&lt; Ts &gt;::type... &gt; params(Ts &amp;&amp;...values)</div><div class="ttdoc">便捷函数，用于构造 Params 对象。</div><div class="ttdef"><b>Definition</b> params.h:185</div></div>
 <div class="ttc" id="astructconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper_html"><div class="ttname"><a href="structconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper.html">console::Params&lt; T, Rest... &gt;::Helper</a></div><div class="ttdoc">辅助函数对象，用于在 apply 过程中将当前参数与剩余参数合并。</div><div class="ttdef"><b>Definition</b> params.h:126</div></div>
 <div class="ttc" id="astructconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper_html_a058464e12066ce917d5bb143ee08f73d"><div class="ttname"><a href="structconsole_1_1_params_3_01_t_00_01_rest_8_8_8_01_4_1_1_helper.html#a058464e12066ce917d5bb143ee08f73d">console::Params&lt; T, Rest... &gt;::Helper::value</a></div><div class="ttdeci">const T &amp; value</div><div class="ttdoc">当前参数值的引用</div><div class="ttdef"><b>Definition</b> params.h:128</div></div>
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('params_8h_sour
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="params_8h.html">params.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li><li class="navelem"><a href="params_8h.html">params.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

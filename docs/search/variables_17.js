@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_0',['zero',['../namespaceconsole_1_1ops.html#abf56a7bd2ff8a85f93be8fa4fabb6af6',1,'console::ops']]]
+  ['yellow_0',['Yellow',['../namespaceconsole_1_1color.html#a504e29f5f93ebe272b73fa3bfdfecff0',1,'console::color']]]
 ];

@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -137,19 +137,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('async_8h_sourc
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="channel_8h.html">async/channel.h</a>&quot;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="event_8h.html">async/event.h</a>&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="group_8h.html">async/group.h</a>&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="async_2pool_8h.html">async/pool.h</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="task_8h.html">async/task.h</a>&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">async/thread.h</a>&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {}</div>
-<div class="ttc" id="aasync_2pool_8h_html"><div class="ttname"><a href="async_2pool_8h.html">pool.h</a></div><div class="ttdoc">简单的线程池实现，模仿了 Python 的 concurrent.futures.ThreadPoolExecutor 接口。</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="channel_8h.html">./async/channel.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="event_8h.html">./async/event.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="group_8h.html">./async/group.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="pool_8h.html">./async/pool.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="queue_8h.html">./async/queue.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="sched_8h.html">./async/sched.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="task_8h.html">./async/task.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">./async/thread.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {}</div>
 <div class="ttc" id="achannel_8h_html"><div class="ttname"><a href="channel_8h.html">channel.h</a></div><div class="ttdoc">基于环形缓冲区的有锁线程安全通信通道。</div></div>
 <div class="ttc" id="aevent_8h_html"><div class="ttname"><a href="event_8h.html">event.h</a></div><div class="ttdoc">提供线程同步的 Event 类，支持设置、清除、等待和超时等待等操作。</div></div>
 <div class="ttc" id="agroup_8h_html"><div class="ttname"><a href="group_8h.html">group.h</a></div><div class="ttdoc">异步任务组，用于管理一组异步任务的执行，提供添加任务、等待完成及回调通知功能。</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="apool_8h_html"><div class="ttname"><a href="pool_8h.html">pool.h</a></div><div class="ttdoc">简单的线程池实现，模仿了 Python 的 concurrent.futures.ThreadPoolExecutor 接口。</div></div>
+<div class="ttc" id="aqueue_8h_html"><div class="ttname"><a href="queue_8h.html">queue.h</a></div><div class="ttdoc">基于自旋的高性能 FIFO 队列，支持多生产者/多消费者并发场景。</div></div>
+<div class="ttc" id="asched_8h_html"><div class="ttname"><a href="sched_8h.html">sched.h</a></div><div class="ttdoc">基于条件变量的简单调度器，用于延迟执行或周期性的后台任务。</div></div>
 <div class="ttc" id="atask_8h_html"><div class="ttname"><a href="task_8h.html">task.h</a></div><div class="ttdoc">异步任务框架，提供 Task 和 SharedTask 两类异步任务工具。</div></div>
 <div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div><div class="ttdoc">线程封装类，提供线程的启动、停止和等待功能。</div></div>
 </div><!-- fragment --></div><!-- contents -->

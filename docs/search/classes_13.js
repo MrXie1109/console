@@ -21,5 +21,11 @@ var searchData=
   ['to_5fupper_5ft_18',['to_upper_t',['../structconsole_1_1ops_1_1to__upper__t.html',1,'console::ops']]],
   ['transform_5ft_19',['transform_t',['../structconsole_1_1alg_1_1transform__t.html',1,'console::alg']]],
   ['trim_5ft_20',['trim_t',['../structconsole_1_1ops_1_1trim__t.html',1,'console::ops']]],
-  ['typeerror_21',['TypeError',['../classconsole_1_1_type_error.html',1,'console']]]
+  ['type_5fat_21',['type_at',['../structconsole_1_1_union_1_1type__at.html',1,'console::Union']]],
+  ['type_5fat_3c_200_2c_20t_2c_20rest_2e_2e_2e_20_3e_22',['type_at&lt; 0, T, Rest... &gt;',['../structconsole_1_1_union_1_1type__at_3_010_00_01_t_00_01_rest_8_8_8_01_4.html',1,'console::Union']]],
+  ['type_5fat_3c_20n_2c_20t_2c_20rest_2e_2e_2e_20_3e_23',['type_at&lt; N, T, Rest... &gt;',['../structconsole_1_1_union_1_1type__at_3_01_n_00_01_t_00_01_rest_8_8_8_01_4.html',1,'console::Union']]],
+  ['type_5findex_24',['type_index',['../structconsole_1_1_union_1_1type__index.html',1,'console::Union']]],
+  ['type_5findex_3c_20t_20_3e_25',['type_index&lt; T &gt;',['../structconsole_1_1_union_1_1type__index_3_01_t_01_4.html',1,'console::Union']]],
+  ['type_5findex_3c_20t_2c_20u_2c_20rest_2e_2e_2e_20_3e_26',['type_index&lt; T, U, Rest... &gt;',['../structconsole_1_1_union_1_1type__index_3_01_t_00_01_u_00_01_rest_8_8_8_01_4.html',1,'console::Union']]],
+  ['typeerror_27',['TypeError',['../classconsole_1_1_type_error.html',1,'console']]]
 ];

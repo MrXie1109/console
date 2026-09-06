@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -148,6 +148,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf4c684e60309acb1cf1f7b9ec939fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除移动构造函数。  <br /></td></tr>
 <tr class="memitem:a890e3e84632f9ae7d85998625897991c" id="r_a890e3e84632f9ae7d85998625897991c"><td class="memItemLeft"><a class="el" href="#ac10fe695cee118eccbc67b318042b813">Channel</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a890e3e84632f9ae7d85998625897991c">operator=</a> (<a class="el" href="#ac10fe695cee118eccbc67b318042b813">Channel</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:a890e3e84632f9ae7d85998625897991c"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除移动赋值函数。  <br /></td></tr>
+<tr class="memitem:a71967a84a7e507cbb57469823ecdcbc7" id="r_a71967a84a7e507cbb57469823ecdcbc7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1_channel.html#a71967a84a7e507cbb57469823ecdcbc7">operator&lt;&lt;=</a> (const T &amp;value)</td></tr>
+<tr class="memdesc:a71967a84a7e507cbb57469823ecdcbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试向通道写入数据。  <br /></td></tr>
+<tr class="memitem:a8eb24e9f68ac228993e409aabf1e1836" id="r_a8eb24e9f68ac228993e409aabf1e1836"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classconsole_1_1_channel.html#a8eb24e9f68ac228993e409aabf1e1836">operator&gt;&gt;=</a> (T &amp;value)</td></tr>
+<tr class="memdesc:a8eb24e9f68ac228993e409aabf1e1836"><td class="mdescLeft">&#160;</td><td class="mdescRight">从通道尝试读取数据（非阻塞）。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -518,6 +522,40 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a id="a71967a84a7e507cbb57469823ecdcbc7" name="a71967a84a7e507cbb57469823ecdcbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71967a84a7e507cbb57469823ecdcbc7">&#9670;&#160;</a></span>operator&lt;&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classconsole_1_1_channel.html">console::Channel</a>&lt; T, N &gt;::operator&lt;&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>尝试向通道写入数据。 </p>
+<p>非阻塞；若通道已满或已关闭，则立即返回失败。 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>要写入的值。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>若写入成功。 </dd></dl>
+
+</div>
+</div>
 <a id="a890e3e84632f9ae7d85998625897991c" name="a890e3e84632f9ae7d85998625897991c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a890e3e84632f9ae7d85998625897991c">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -610,6 +648,41 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>若读取成功。 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>若通道已关闭且没有剩余数据，则 No-OP。 </dd></dl>
+
+</div>
+</div>
+<a id="a8eb24e9f68ac228993e409aabf1e1836" name="a8eb24e9f68ac228993e409aabf1e1836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb24e9f68ac228993e409aabf1e1836">&#9670;&#160;</a></span>operator&gt;&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classconsole_1_1_channel.html">console::Channel</a>&lt; T, N &gt;::operator&gt;&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从通道尝试读取数据（非阻塞）。 </p>
+<p>若通道为空，则立即返回 false；否则读取数据并返回 true。 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>读取的值。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>若读取成功。 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>若通道已关闭且没有剩余数据，返回 false。 </dd></dl>
 
 </div>
 </div>

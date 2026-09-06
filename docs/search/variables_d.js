@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['odd_0',['odd',['../namespaceconsole_1_1ops.html#a2fbf8fedc375d240059459f644895da7',1,'console::ops']]],
-  ['oldtio_1',['oldTio',['../classconsole_1_1_keyboard.html#a1a931467338ee20317a7545ae5bd5377',1,'console::Keyboard']]],
-  ['op_2',['op',['../classconsole_1_1gen_1_1_pipeline_3_01_op_01_4.html#ad804388dfc35b8df618f00feda07199a',1,'console::gen::Pipeline&lt; Op &gt;::op'],['../classconsole_1_1gen_1_1_pipeline_3_01_op_00_01_rest_8_8_8_01_4.html#acfe1436d69d9932e905dfb0c595fee93',1,'console::gen::Pipeline&lt; Op, Rest... &gt;::op'],['../classconsole_1_1gen_1_1_scan.html#a6615a1a57d4894fc94dec6da27ecc324',1,'console::gen::Scan::op'],['../classconsole_1_1gen_1_1scan__t.html#a9be6e4f186326414c65a41ab11cf01ae',1,'console::gen::scan_t::op']]],
-  ['op_5f_3',['op_',['../classconsole_1_1gen_1_1reduce__t.html#ab440c80bcbb062df28b7c28d584a92d0',1,'console::gen::reduce_t']]],
-  ['original_5fptr_4',['original_ptr',['../classconsole_1_1cursor__ptr.html#a658b68cafebb6fc4e9b6625e7dddeaf0',1,'console::cursor_ptr::original_ptr'],['../classconsole_1_1cursor__ptr_3_01_t_0f_0e_4.html#a7f7163600869c43c27b7e0b1acd0012b',1,'console::cursor_ptr&lt; T[]&gt;::original_ptr']]],
-  ['os_5',['os',['../structconsole_1_1_basic_input_settings.html#a1d92b301c40ced8eead161a8123bdf51',1,'console::BasicInputSettings::os'],['../classconsole_1_1_basic_output.html#ab9d36e4324992a2f7ddfc754bc39b4d1',1,'console::BasicOutput::os'],['../structconsole_1_1_basic_progress_config.html#ad1f120dd1ce3a2d4c928271f1633dd12',1,'console::BasicProgressConfig::os']]],
-  ['os_5f_6',['os_',['../classconsole_1_1_color_guard.html#ae9c072d3209c586ae29ae11620c16561',1,'console::ColorGuard::os_'],['../classconsole_1_1_w_color_guard.html#aaa75b6286d904238927393895baf23a0',1,'console::WColorGuard::os_']]],
-  ['out_7',['out',['../classconsole_1_1gen_1_1_debug.html#ac0f9f7c800514b30b7945cc1644a9164',1,'console::gen::Debug::out'],['../classconsole_1_1gen_1_1debug__t.html#af520933403056236d20ffc63a9621a32',1,'console::gen::debug_t::out']]],
-  ['output_8',['output',['../classconsole_1_1_basic_logging.html#ae074baaf80ebc3af328166270ef7119c',1,'console::BasicLogging']]]
+  ['n_0',['n',['../structconsole_1_1ops_1_1_divisible_by.html#aff7c50c08683d3566003a4ac72942b1a',1,'console::ops::DivisibleBy']]],
+  ['negate_1',['negate',['../namespaceconsole_1_1ops.html#a5a30d146fd19bc756469a57983cb139d',1,'console::ops']]],
+  ['negative_2',['negative',['../namespaceconsole_1_1ops.html#a781d89b24b8482339e5f525073bc79db',1,'console::ops']]],
+  ['next_5f_3',['next_',['../structconsole_1_1_l_f_queue_1_1_node.html#ab8a5fc53e2fec5c72d7f9347ae8ef177',1,'console::LFQueue::Node']]],
+  ['next_5fpermutation_4',['next_permutation',['../namespaceconsole_1_1alg.html#a4093a2f56afc978b96c2a253acdcfc63',1,'console::alg']]],
+  ['none_5fof_5',['none_of',['../namespaceconsole_1_1alg.html#a6acb993ffa8e0f5bd7a9dd2b07c8e683',1,'console::alg']]],
+  ['not_5fnull_6',['not_null',['../namespaceconsole_1_1ops.html#ae980a2c4a9895c98cc1af92d5d04df63',1,'console::ops']]],
+  ['nothing_7',['nothing',['../namespaceconsole.html#adbbee7c3b8932b737e67cdf9b2c8c26d',1,'console']]],
+  ['ns_5f_8',['ns_',['../classconsole_1_1_time.html#a0f185a7b2be76a02908be20bfe89d116',1,'console::Time']]],
+  ['nth_5f_9',['nth_',['../classconsole_1_1_multi_l_f_queue.html#a31f2af05a6cf574472e6c46457f57c44',1,'console::MultiLFQueue']]],
+  ['nth_5felement_10',['nth_element',['../namespaceconsole_1_1alg.html#ac78adecc85099b028a6a297913bea406',1,'console::alg']]],
+  ['num_11',['num',['../classconsole_1_1_basic_rational.html#a75f3bea6cbb1d7e19db624eb9b464f79',1,'console::BasicRational']]]
 ];

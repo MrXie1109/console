@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -173,8 +173,8 @@ class console::BasicOutput&lt; CharT, Traits &gt;</div><p>灵活的输出控制�
 <div class="line"><a class="code hl_variable" href="namespaceconsole.html#a712c355f4a6cef0f6f85af54e1d8ea51">print</a>();                      <span class="comment">// 只输出换行</span></div>
 <div class="line"><a class="code hl_function" href="#a728f887e3652054a68a35a534f57cef3">BasicOutput</a> err(std::cerr, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;\n&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line">err(<span class="stringliteral">&quot;Error:&quot;</span>, code);          <span class="comment">// 输出到 stderr，无分隔符</span></div>
-<div class="ttc" id="aclassconsole_1_1_basic_output_html_a728f887e3652054a68a35a534f57cef3"><div class="ttname"><a href="#a728f887e3652054a68a35a534f57cef3">console::BasicOutput::BasicOutput</a></div><div class="ttdeci">BasicOutput()</div><div class="ttdoc">默认构造，输出到 std::cout，分隔符为空格，结尾为换行，并刷新。</div><div class="ttdef"><b>Definition</b> output.h:397</div></div>
-<div class="ttc" id="anamespaceconsole_html_a712c355f4a6cef0f6f85af54e1d8ea51"><div class="ttname"><a href="namespaceconsole.html#a712c355f4a6cef0f6f85af54e1d8ea51">console::print</a></div><div class="ttdeci">static BasicOutput &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:486</div></div>
+<div class="ttc" id="aclassconsole_1_1_basic_output_html_a728f887e3652054a68a35a534f57cef3"><div class="ttname"><a href="#a728f887e3652054a68a35a534f57cef3">console::BasicOutput::BasicOutput</a></div><div class="ttdeci">BasicOutput()</div><div class="ttdoc">默认构造，输出到 std::cout，分隔符为空格，结尾为换行，并刷新。</div><div class="ttdef"><b>Definition</b> output.h:432</div></div>
+<div class="ttc" id="anamespaceconsole_html_a712c355f4a6cef0f6f85af54e1d8ea51"><div class="ttname"><a href="namespaceconsole.html#a712c355f4a6cef0f6f85af54e1d8ea51">console::print</a></div><div class="ttdeci">static BasicOutput &amp; print</div><div class="ttdoc">全局输出对象，模仿 Python 的 print 函数。</div><div class="ttdef"><b>Definition</b> output.h:521</div></div>
 </div><!-- fragment --> </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a293f14f0ca814f12d5c637dbf2a25fe9" name="a293f14f0ca814f12d5c637dbf2a25fe9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a293f14f0ca814f12d5c637dbf2a25fe9">&#9670;&#160;</a></span>string_type</h2>
@@ -283,55 +283,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a79214dcf772ba5b1a465336069436135" name="a79214dcf772ba5b1a465336069436135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79214dcf772ba5b1a465336069436135">&#9670;&#160;</a></span>fmt() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a728f887e3652054a68a35a534f57cef3">BasicOutput</a>&lt; CharT, Traits &gt; &amp; <a class="el" href="classconsole_1_1_basic_output.html">console::BasicOutput</a>&lt; CharT, Traits &gt;::fmt </td>
-          <td>(</td>
-          <td class="paramtype">const CharT *</td>          <td class="paramname"><span class="paramname"><em>format_str</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>格式化字符串。 </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>参数类型。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">format_str</td><td>格式字符串。 </td></tr>
-    <tr><td class="paramname">args</td><td>要格式化的参数。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1_basic_output.html" title="灵活的输出控制类，支持链式调用和多种参数。">BasicOutput</a> 格式化后的输出对象。 </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classconsole_1_1_bad_format.html" title="表示格式化字符串错误，例如占位符与参数不匹配。">BadFormat</a></td><td>格式错误时抛出。 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a33ac2e3caf9b8024d43835e86c50ab78" name="a33ac2e3caf9b8024d43835e86c50ab78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ac2e3caf9b8024d43835e86c50ab78">&#9670;&#160;</a></span>fmt() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ac2e3caf9b8024d43835e86c50ab78">&#9670;&#160;</a></span>fmt() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,8 +308,8 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a87bef540cf0a46103b69a9f9ee73fb63" name="a87bef540cf0a46103b69a9f9ee73fb63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87bef540cf0a46103b69a9f9ee73fb63">&#9670;&#160;</a></span>fmt() <span class="overload">[3/4]</span></h2>
+<a id="a79214dcf772ba5b1a465336069436135" name="a79214dcf772ba5b1a465336069436135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79214dcf772ba5b1a465336069436135">&#9670;&#160;</a></span>fmt() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,7 +321,7 @@ template&lt;typename... Args&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="#a728f887e3652054a68a35a534f57cef3">BasicOutput</a>&lt; CharT, Traits &gt; &amp; <a class="el" href="classconsole_1_1_basic_output.html">console::BasicOutput</a>&lt; CharT, Traits &gt;::fmt </td>
           <td>(</td>
-          <td class="paramtype">const std::basic_string&lt; CharT, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>format_str</em></span>, </td>
+          <td class="paramtype">const CharT *</td>          <td class="paramname"><span class="paramname"><em>format_str</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -403,7 +356,7 @@ template&lt;typename... Args&gt; </div>
 </div>
 </div>
 <a id="a35cf996ab0495afe4b48d9d282cadbd5" name="a35cf996ab0495afe4b48d9d282cadbd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35cf996ab0495afe4b48d9d282cadbd5">&#9670;&#160;</a></span>fmt() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a35cf996ab0495afe4b48d9d282cadbd5">&#9670;&#160;</a></span>fmt() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,6 +377,53 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87bef540cf0a46103b69a9f9ee73fb63" name="a87bef540cf0a46103b69a9f9ee73fb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87bef540cf0a46103b69a9f9ee73fb63">&#9670;&#160;</a></span>fmt() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a728f887e3652054a68a35a534f57cef3">BasicOutput</a>&lt; CharT, Traits &gt; &amp; <a class="el" href="classconsole_1_1_basic_output.html">console::BasicOutput</a>&lt; CharT, Traits &gt;::fmt </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_string&lt; CharT, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>format_str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>格式化字符串。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>参数类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format_str</td><td>格式字符串。 </td></tr>
+    <tr><td class="paramname">args</td><td>要格式化的参数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1_basic_output.html" title="灵活的输出控制类，支持链式调用和多种参数。">BasicOutput</a> 格式化后的输出对象。 </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classconsole_1_1_bad_format.html" title="表示格式化字符串错误，例如占位符与参数不匹配。">BadFormat</a></td><td>格式错误时抛出。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -657,8 +657,8 @@ template&lt;class CharT = char, class Traits = std::char_traits&lt;CharT&gt;&gt;
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="output_8h_source.html">output.h</a></li>
-<li>include/<a class="el" href="fmt_8h_source.html">fmt.h</a></li>
+<li>include/io/<a class="el" href="output_8h_source.html">output.h</a></li>
+<li>include/text/<a class="el" href="fmt_8h_source.html">fmt.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

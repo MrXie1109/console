@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -139,6 +139,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词(闭区间)。  <a href="structconsole_1_1ops_1_1_between.html#details">More...</a><br /></td></tr>
 <tr class="memitem:BetweenExclusive" id="r_BetweenExclusive"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_between_exclusive.html">BetweenExclusive</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间谓词(开区间)。  <a href="structconsole_1_1ops_1_1_between_exclusive.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Call" id="r_Call"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_call.html">Call</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数调用变化器。  <a href="structconsole_1_1ops_1_1_call.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ceil_5Ft" id="r_ceil_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1ceil__t.html">ceil_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">向上取整变换器。  <a href="structconsole_1_1ops_1_1ceil__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Clamp" id="r_Clamp"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_clamp.html">Clamp</a></td></tr>
@@ -188,6 +190,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">容器最大值变换器。  <a href="structconsole_1_1ops_1_1max__element__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Member" id="r_Member"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_member.html">Member</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">取成员变量变换器。  <a href="structconsole_1_1ops_1_1_member.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Method" id="r_Method"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1_method.html">Method</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">成员函数调用变换器。  <a href="structconsole_1_1ops_1_1_method.html#details">More...</a><br /></td></tr>
 <tr class="memitem:min_5Felement_5Ft" id="r_min_5Felement_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1min__element__t.html">min_element_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">容器最小值变换器。  <a href="structconsole_1_1ops_1_1min__element__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:minus_5Ft" id="r_minus_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structconsole_1_1ops_1_1minus__t.html">minus_t</a></td></tr>
@@ -350,6 +354,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a" id="r_af1ea57ca92f924d6ffa4659f4a15046a"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
 <tr class="memitem:af1ea57ca92f924d6ffa4659f4a15046a template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1nth__t.html">nth_t</a>&lt; N &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af1ea57ca92f924d6ffa4659f4a15046a">nth</a> ()</td></tr>
 <tr class="memdesc:af1ea57ca92f924d6ffa4659f4a15046a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 tuple/pair/array 的第 N 个元素的函数。  <br /></td></tr>
+<tr class="memitem:a0af6ce4922282c27ff6693f213246473" id="r_a0af6ce4922282c27ff6693f213246473"><td class="memTemplParams" colspan="2">template&lt;class Class, class Ret, class... Args&gt; </td></tr>
+<tr class="memitem:a0af6ce4922282c27ff6693f213246473 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1_method.html">Method</a>&lt; Class, Ret, Args... &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0af6ce4922282c27ff6693f213246473">method</a> (Ret(Class::*ptr)(Args...), const Args &amp;...args)</td></tr>
+<tr class="memdesc:a0af6ce4922282c27ff6693f213246473"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建成员函数调用器。  <br /></td></tr>
+<tr class="memitem:a535b9767f3ee5a95314eea19622e3010" id="r_a535b9767f3ee5a95314eea19622e3010"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a535b9767f3ee5a95314eea19622e3010 template"><td class="memItemLeft"><a class="el" href="structconsole_1_1ops_1_1_call.html">Call</a>&lt; Args... &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a535b9767f3ee5a95314eea19622e3010">call</a> (const Args &amp;...args)</td></tr>
+<tr class="memdesc:a535b9767f3ee5a95314eea19622e3010"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建函数调用器。  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -541,6 +551,27 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconsole_1_1ops_1_1_between_exclusive.html" title="区间谓词(开区间)。">BetweenExclusive&lt;T&gt;</a> 区间谓词。 </dd></dl>
+
+</div>
+</div>
+<a id="a535b9767f3ee5a95314eea19622e3010" name="a535b9767f3ee5a95314eea19622e3010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535b9767f3ee5a95314eea19622e3010">&#9670;&#160;</a></span>call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconsole_1_1ops_1_1_call.html">Call</a>&lt; Args... &gt; console::ops::call </td>
+          <td>(</td>
+          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建函数调用器。 </p>
 
 </div>
 </div>
@@ -847,6 +878,31 @@ template&lt;class Class, typename Mem&gt; </div>
 </div><div class="memdoc">
 
 <p>创建成员变量访问器。 </p>
+
+</div>
+</div>
+<a id="a0af6ce4922282c27ff6693f213246473" name="a0af6ce4922282c27ff6693f213246473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af6ce4922282c27ff6693f213246473">&#9670;&#160;</a></span>method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Class, class Ret, class... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconsole_1_1ops_1_1_method.html">Method</a>&lt; Class, Ret, Args... &gt; console::ops::method </td>
+          <td>(</td>
+          <td class="paramtype">Ret(Class::*</td>          <td class="paramname"><span class="paramname"><em>ptr&#160;</em></span>)(Args...), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建成员函数调用器。 </p>
 
 </div>
 </div>

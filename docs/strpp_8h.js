@@ -48,6 +48,7 @@ var strpp_8h =
     [ "console::to_stream", "group__strpp.html#gaaf721c88c0e4608b426d3b81c0918051", null ],
     [ "console::to_stream", "group__strpp.html#ga7dc89850b70fb282026228c5fe9f3b5e", null ],
     [ "console::to_stream", "group__strpp.html#ga2b73041b104b1524916baff800321d28", null ],
+    [ "console::to_stream", "group__strpp.html#ga736bc150b7f50bcfe6b71001b4a873f6", null ],
     [ "console::to_stream", "group__strpp.html#gac567fe4180595ab0a83084aeb2dfafda", null ],
     [ "console::to_string", "group__strpp.html#gaa6b1a779bfc2be5e95c2a9db90e5bea8", null ],
     [ "console::trim", "group__strpp.html#gaa48d188de42f3ae0f7d8e9cec181d787", null ],

@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -116,6 +116,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__matools
 <p><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray</a> 的数学运算函数集合。  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga83fa0a0e7a164516d12662c559f30ffd" id="r_ga83fa0a0e7a164516d12662c559f30ffd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga83fa0a0e7a164516d12662c559f30ffd">CONSOLE_MATMUL_BLOCK_SIZE</a>&#160;&#160;&#160;128</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga7121b3eb44b8ca054098798cd95607e3" id="r_ga7121b3eb44b8ca054098798cd95607e3"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ga7121b3eb44b8ca054098798cd95607e3">console::QuantileMethod</a> { <br />
@@ -159,9 +163,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga190b1f3c09f7cd2ff7b191a827cc2b9c" id="r_ga190b1f3c09f7cd2ff7b191a827cc2b9c"><td class="memTemplParams" colspan="2">template&lt;class T, size_t N&gt; </td></tr>
 <tr class="memitem:ga190b1f3c09f7cd2ff7b191a827cc2b9c template"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ga190b1f3c09f7cd2ff7b191a827cc2b9c">console::manhattan</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N &gt; &amp;a, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N &gt; &amp;b)</td></tr>
 <tr class="memdesc:ga190b1f3c09f7cd2ff7b191a827cc2b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个向量的曼哈顿距离(L1 距离)。  <br /></td></tr>
+<tr class="memitem:gac1c5ba050d347022dc29a64abfd8b84c" id="r_gac1c5ba050d347022dc29a64abfd8b84c"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
+<tr class="memitem:gac1c5ba050d347022dc29a64abfd8b84c template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#gac1c5ba050d347022dc29a64abfd8b84c">console::matmul_blocked</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B)</td></tr>
+<tr class="memdesc:gac1c5ba050d347022dc29a64abfd8b84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维)，使用分块算法。  <br /></td></tr>
+<tr class="memitem:ga0d0d8ca0a2ed580fcbe3f6b69a604dba" id="r_ga0d0d8ca0a2ed580fcbe3f6b69a604dba"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
+<tr class="memitem:ga0d0d8ca0a2ed580fcbe3f6b69a604dba template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ga0d0d8ca0a2ed580fcbe3f6b69a604dba">console::matmul_simple</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B)</td></tr>
+<tr class="memdesc:ga0d0d8ca0a2ed580fcbe3f6b69a604dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维)，使用简单算法。  <br /></td></tr>
+<tr class="memitem:ga85235ed099de419cd9e2e3603a9d0df9" id="r_ga85235ed099de419cd9e2e3603a9d0df9"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
+<tr class="memitem:ga85235ed099de419cd9e2e3603a9d0df9 template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ga85235ed099de419cd9e2e3603a9d0df9">console::matmul_impl</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B, std::true_type)</td></tr>
+<tr class="memdesc:ga85235ed099de419cd9e2e3603a9d0df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维) std::true_type 特化，使用分块算法。  <br /></td></tr>
+<tr class="memitem:ga928484221150c5884c756b4f7b8fdf65" id="r_ga928484221150c5884c756b4f7b8fdf65"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
+<tr class="memitem:ga928484221150c5884c756b4f7b8fdf65 template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ga928484221150c5884c756b4f7b8fdf65">console::matmul_impl</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B, std::false_type)</td></tr>
+<tr class="memdesc:ga928484221150c5884c756b4f7b8fdf65"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维) std::false_type 特化，使用简单算法。  <br /></td></tr>
 <tr class="memitem:ga5c6aa2e681a6e63242251494000eb7b0" id="r_ga5c6aa2e681a6e63242251494000eb7b0"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
 <tr class="memitem:ga5c6aa2e681a6e63242251494000eb7b0 template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ga5c6aa2e681a6e63242251494000eb7b0">console::matmul</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B)</td></tr>
-<tr class="memdesc:ga5c6aa2e681a6e63242251494000eb7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维)。  <br /></td></tr>
+<tr class="memdesc:ga5c6aa2e681a6e63242251494000eb7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法(二维)，根据 BLOCK 大小选择简单算法或分块算法。  <br /></td></tr>
+<tr class="memitem:ga23a0bf96de04c37613154ff58298a56f" id="r_ga23a0bf96de04c37613154ff58298a56f"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N, size_t K&gt; </td></tr>
+<tr class="memitem:ga23a0bf96de04c37613154ff58298a56f template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ga23a0bf96de04c37613154ff58298a56f">console::matmul_parallel</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A, const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;B)</td></tr>
+<tr class="memdesc:ga23a0bf96de04c37613154ff58298a56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行矩阵乘法(二维)，使用分块算法并行计算。  <br /></td></tr>
 <tr class="memitem:gab151caaf2813dbb7bdc313eda4b0984c" id="r_gab151caaf2813dbb7bdc313eda4b0984c"><td class="memTemplParams" colspan="2">template&lt;class T, size_t M, size_t N&gt; </td></tr>
 <tr class="memitem:gab151caaf2813dbb7bdc313eda4b0984c template"><td class="memItemLeft"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, M &gt;&#160;</td><td class="memItemRight"><a class="el" href="#gab151caaf2813dbb7bdc313eda4b0984c">console::transpose</a> (const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;A)</td></tr>
 <tr class="memdesc:gab151caaf2813dbb7bdc313eda4b0984c"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵转置。  <br /></td></tr>
@@ -348,7 +367,22 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray</a> 的数学运算函数集合。 </p>
-</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="ga83fa0a0e7a164516d12662c559f30ffd" name="ga83fa0a0e7a164516d12662c559f30ffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83fa0a0e7a164516d12662c559f30ffd">&#9670;&#160;</a></span>CONSOLE_MATMUL_BLOCK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSOLE_MATMUL_BLOCK_SIZE&#160;&#160;&#160;128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga7121b3eb44b8ca054098798cd95607e3" name="ga7121b3eb44b8ca054098798cd95607e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7121b3eb44b8ca054098798cd95607e3">&#9670;&#160;</a></span>QuantileMethod</h2>
 
@@ -1812,6 +1846,9 @@ template&lt;class T, size_t N&gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul </td>
@@ -1824,9 +1861,250 @@ template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
           <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>矩阵乘法(二维)。 </p>
+<p>矩阵乘法(二维)，根据 BLOCK 大小选择简单算法或分块算法。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型。 </td></tr>
+    <tr><td class="paramname">M</td><td>矩阵 A 的行数。 </td></tr>
+    <tr><td class="paramname">N</td><td>A 的列数(同时也是 B 的行数)。 </td></tr>
+    <tr><td class="paramname">K</td><td>B 的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>左矩阵，尺寸 M×N。 </td></tr>
+    <tr><td class="paramname">B</td><td>右矩阵，尺寸 N×K。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray&lt;T, M, K&gt;</a> 乘积矩阵。 </dd></dl>
+
+</div>
+</div>
+<a id="gac1c5ba050d347022dc29a64abfd8b84c" name="gac1c5ba050d347022dc29a64abfd8b84c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1c5ba050d347022dc29a64abfd8b84c">&#9670;&#160;</a></span>matmul_blocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul_blocked </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>矩阵乘法(二维)，使用分块算法。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型。 </td></tr>
+    <tr><td class="paramname">M</td><td>矩阵 A 的行数。 </td></tr>
+    <tr><td class="paramname">N</td><td>A 的列数(同时也是 B 的行数)。 </td></tr>
+    <tr><td class="paramname">K</td><td>B 的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>左矩阵，尺寸 M×N。 </td></tr>
+    <tr><td class="paramname">B</td><td>右矩阵，尺寸 N×K。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray&lt;T, M, K&gt;</a> 乘积矩阵。 </dd></dl>
+
+</div>
+</div>
+<a id="ga928484221150c5884c756b4f7b8fdf65" name="ga928484221150c5884c756b4f7b8fdf65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga928484221150c5884c756b4f7b8fdf65">&#9670;&#160;</a></span>matmul_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::false_type</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵乘法(二维) std::false_type 特化，使用简单算法。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型。 </td></tr>
+    <tr><td class="paramname">M</td><td>矩阵 A 的行数。 </td></tr>
+    <tr><td class="paramname">N</td><td>A 的列数(同时也是 B 的行数)。 </td></tr>
+    <tr><td class="paramname">K</td><td>B 的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>左矩阵，尺寸 M×N。 </td></tr>
+    <tr><td class="paramname">B</td><td>右矩阵，尺寸 N×K。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray&lt;T, M, K&gt;</a> 乘积矩阵。 </dd></dl>
+
+</div>
+</div>
+<a id="ga85235ed099de419cd9e2e3603a9d0df9" name="ga85235ed099de419cd9e2e3603a9d0df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85235ed099de419cd9e2e3603a9d0df9">&#9670;&#160;</a></span>matmul_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵乘法(二维) std::true_type 特化，使用分块算法。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型。 </td></tr>
+    <tr><td class="paramname">M</td><td>矩阵 A 的行数。 </td></tr>
+    <tr><td class="paramname">N</td><td>A 的列数(同时也是 B 的行数)。 </td></tr>
+    <tr><td class="paramname">K</td><td>B 的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>左矩阵，尺寸 M×N。 </td></tr>
+    <tr><td class="paramname">B</td><td>右矩阵，尺寸 N×K。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray&lt;T, M, K&gt;</a> 乘积矩阵。 </dd></dl>
+
+</div>
+</div>
+<a id="ga23a0bf96de04c37613154ff58298a56f" name="ga23a0bf96de04c37613154ff58298a56f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23a0bf96de04c37613154ff58298a56f">&#9670;&#160;</a></span>matmul_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul_parallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>并行矩阵乘法(二维)，使用分块算法并行计算。 </p>
+<p>将输出矩阵 C 按块划分，每个块提交到线程池并行计算。 每个块内部使用分块算法优化缓存利用率。 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型。 </td></tr>
+    <tr><td class="paramname">M</td><td>矩阵 A 的行数。 </td></tr>
+    <tr><td class="paramname">N</td><td>A 的列数(同时也是 B 的行数)。 </td></tr>
+    <tr><td class="paramname">K</td><td>B 的列数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>左矩阵，尺寸 M×N。 </td></tr>
+    <tr><td class="paramname">B</td><td>右矩阵，尺寸 N×K。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html" title="编译期固定维度的多维数组(堆版本)。">MultiArray&lt;T, M, K&gt;</a> 乘积矩阵。 </dd></dl>
+
+</div>
+</div>
+<a id="ga0d0d8ca0a2ed580fcbe3f6b69a604dba" name="ga0d0d8ca0a2ed580fcbe3f6b69a604dba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d0d8ca0a2ed580fcbe3f6b69a604dba">&#9670;&#160;</a></span>matmul_simple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, size_t M, size_t N, size_t K&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, K &gt; console::matmul_simple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, M, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconsole_1_1___v2_1_1_multi_array.html">MultiArray</a>&lt; T, N, K &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>矩阵乘法(二维)，使用简单算法。 </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>元素类型。 </td></tr>

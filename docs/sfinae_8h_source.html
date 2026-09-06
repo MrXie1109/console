@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/sfinae.h Source File</title>
+<title>Console Library: include/core/sfinae.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sfinae_8h_sour
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;random&gt;</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="outfwd_8h.html">outfwd.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="outfwd_8h.html">../io/outfwd.h</a>&quot;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
@@ -359,8 +359,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sfinae_8h_sour
 <div class="ttc" id="agroup__sfinae_html_gaf3cf5b6fa03cf24807484bed097f6def"><div class="ttname"><a href="group__sfinae.html#gaf3cf5b6fa03cf24807484bed097f6def">console::enable_if_printable</a></div><div class="ttdeci">typename std::enable_if&lt; is_printable&lt; T &gt;::value &gt;::type enable_if_printable</div><div class="ttdoc">启用若 T 可打印。</div><div class="ttdef"><b>Definition</b> sfinae.h:300</div></div>
 <div class="ttc" id="agroup__sfinae_html_gaf64e62e02e782488486b8a63197d6586"><div class="ttname"><a href="group__sfinae.html#gaf64e62e02e782488486b8a63197d6586">console::enable_if_w_printable</a></div><div class="ttdeci">typename std::enable_if&lt; is_w_printable&lt; typename std::decay&lt; T &gt;::type &gt;::value &gt;::type enable_if_w_printable</div><div class="ttdoc">启用若 T(decay 后)对 wchar_t 流可打印。</div><div class="ttdef"><b>Definition</b> sfinae.h:359</div></div>
 <div class="ttc" id="agroup__sfinae_html_gaf7b74250ac19c39de303f881a3e8e3a0"><div class="ttname"><a href="group__sfinae.html#gaf7b74250ac19c39de303f881a3e8e3a0">console::enable_if_not_iterator</a></div><div class="ttdeci">typename std::enable_if&lt;!is_iterator&lt; T &gt;::value &gt;::type enable_if_not_iterator</div><div class="ttdoc">启用若 T 不是迭代器。</div><div class="ttdef"><b>Definition</b> sfinae.h:279</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
 <div class="ttc" id="aoutfwd_8h_html"><div class="ttname"><a href="outfwd_8h.html">outfwd.h</a></div><div class="ttdoc">为 STL 容器提供输出流运算符的前向声明。</div></div>
 <div class="ttc" id="astructconsole_1_1has__subscript_html"><div class="ttname"><a href="structconsole_1_1has__subscript.html">console::has_subscript</a></div><div class="ttdoc">检测类型是否支持下标操作符(如 T[Idx])。</div><div class="ttdef"><b>Definition</b> sfinae.h:106</div></div>
 <div class="ttc" id="astructconsole_1_1is__basic__printable_html"><div class="ttname"><a href="structconsole_1_1is__basic__printable.html">console::is_basic_printable</a></div><div class="ttdoc">检测类型是否支持输出到指定字符类型的流(即定义了 operator&lt;&lt;)。</div><div class="ttdef"><b>Definition</b> sfinae.h:177</div></div>
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sfinae_8h_sour
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="sfinae_8h.html">sfinae.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3d69f64eaf81436fe2b22361382717e5.html">core</a></li><li class="navelem"><a href="sfinae_8h.html">sfinae.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

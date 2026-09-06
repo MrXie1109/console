@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/maybe.h Source File</title>
+<title>Console Library: include/container/maybe.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('maybe_8h_sourc
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">csexc.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="csexc_8h.html">../core/csexc.h</a>&quot;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structconsole_1_1nothing__t.html">   45</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structconsole_1_1nothing__t.html">nothing_t</a> {};</div>
@@ -304,10 +304,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('maybe_8h_sourc
 <div class="ttc" id="aclassconsole_1_1_maybe_html_ae07f8a1c522062f4fde63f0148c904b1"><div class="ttname"><a href="classconsole_1_1_maybe.html#ae07f8a1c522062f4fde63f0148c904b1">console::Maybe::operator=</a></div><div class="ttdeci">const Maybe &amp; operator=(decltype(nothing))</div><div class="ttdoc">赋值为空(nothing)。</div><div class="ttdef"><b>Definition</b> maybe.h:165</div></div>
 <div class="ttc" id="aclassconsole_1_1_maybe_html_af816e24dce432a86bdabf6ffcda2ee0b"><div class="ttname"><a href="classconsole_1_1_maybe.html#af816e24dce432a86bdabf6ffcda2ee0b">console::Maybe::Maybe</a></div><div class="ttdeci">Maybe(const Maybe &amp;other)</div><div class="ttdoc">拷贝构造，深拷贝内部值。</div><div class="ttdef"><b>Definition</b> maybe.h:84</div></div>
 <div class="ttc" id="aclassconsole_1_1_maybe_html_afa2c8647024fb006b755291b408fa671"><div class="ttname"><a href="classconsole_1_1_maybe.html#afa2c8647024fb006b755291b408fa671">console::Maybe::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">清空 Maybe，使其为空。</div><div class="ttdef"><b>Definition</b> maybe.h:173</div></div>
-<div class="ttc" id="aclassconsole_1_1_type_error_html_ac3ebc81092b2961c6078db9c59c87bb4"><div class="ttname"><a href="classconsole_1_1_type_error.html#ac3ebc81092b2961c6078db9c59c87bb4">console::TypeError::TypeError</a></div><div class="ttdeci">TypeError(const std::string &amp;msg)</div><div class="ttdoc">构造 TypeError。</div><div class="ttdef"><b>Definition</b> csexc.h:103</div></div>
+<div class="ttc" id="aclassconsole_1_1_type_error_html_ac3ebc81092b2961c6078db9c59c87bb4"><div class="ttname"><a href="classconsole_1_1_type_error.html#ac3ebc81092b2961c6078db9c59c87bb4">console::TypeError::TypeError</a></div><div class="ttdeci">TypeError(const std::string &amp;msg)</div><div class="ttdoc">构造 TypeError。</div><div class="ttdef"><b>Definition</b> csexc.h:102</div></div>
 <div class="ttc" id="acsexc_8h_html"><div class="ttname"><a href="csexc_8h.html">csexc.h</a></div><div class="ttdoc">定义 console 库使用的自定义异常类层次结构。</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
-<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:100</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
+<div class="ttc" id="anamespaceconsole_html_a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="namespaceconsole.html#a506ee9cef0c6d79e2e87674233647f29ab9ece18c950afbfa6b0fdbfa4ff731d3">console::Key::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition</b> kb.h:99</div></div>
 <div class="ttc" id="anamespaceconsole_html_adbbee7c3b8932b737e67cdf9b2c8c26d"><div class="ttname"><a href="namespaceconsole.html#adbbee7c3b8932b737e67cdf9b2c8c26d">console::nothing</a></div><div class="ttdeci">static constexpr nothing_t nothing</div><div class="ttdef"><b>Definition</b> maybe.h:47</div></div>
 <div class="ttc" id="astructconsole_1_1nothing__t_html"><div class="ttname"><a href="structconsole_1_1nothing__t.html">console::nothing_t</a></div><div class="ttdoc">空状态标记对象，用于显式构造空的 Maybe。</div><div class="ttdef"><b>Definition</b> maybe.h:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('maybe_8h_sourc
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="maybe_8h.html">maybe.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_e0f5f6345e438c73b9ae78ec2940718c.html">container</a></li><li class="navelem"><a href="maybe_8h.html">maybe.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

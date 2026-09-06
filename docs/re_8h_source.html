@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/re.h Source File</title>
+<title>Console Library: include/text/re.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('re_8h_source.h
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="iter_8h.html">iter.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="iter_8h.html">../util/iter.h</a>&quot;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceconsole.html">console</a> {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT = <span class="keywordtype">char</span>, <span class="keyword">class</span> Traits = std::<span class="keywordtype">char</span>_traits&lt;CharT&gt;&gt;</div>
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('re_8h_source.h
 <div class="ttc" id="anamespaceconsole_1_1re_html_aa1d589346655b81fe4591c85423d5b9f"><div class="ttname"><a href="namespaceconsole_1_1re.html#aa1d589346655b81fe4591c85423d5b9f">console::re::split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(const std::string &amp;pattern, const std::string &amp;text, int maxsplit=0)</div><div class="ttdoc">在文本中按正则表达式模式分割字符串。</div><div class="ttdef"><b>Definition</b> re.h:397</div></div>
 <div class="ttc" id="anamespaceconsole_1_1re_html_ad5d8c7e69138f3518032bb824ec06c77"><div class="ttname"><a href="namespaceconsole_1_1re.html#ad5d8c7e69138f3518032bb824ec06c77">console::re::search</a></div><div class="ttdeci">Regex::Match search(const std::string &amp;pattern, const std::string &amp;text)</div><div class="ttdoc">在文本中搜索正则表达式的第一个匹配项。</div><div class="ttdef"><b>Definition</b> re.h:331</div></div>
 <div class="ttc" id="anamespaceconsole_1_1re_html_add9749fefd88fdcff9227047b22a1225"><div class="ttname"><a href="namespaceconsole_1_1re.html#add9749fefd88fdcff9227047b22a1225">console::re::compile</a></div><div class="ttdeci">Regex compile(const std::string &amp;pattern, std::regex::flag_type flags=std::regex::ECMAScript)</div><div class="ttdoc">编译字符串模式为正则表达式。</div><div class="ttdef"><b>Definition</b> re.h:308</div></div>
-<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div><div class="ttdef"><b>Definition</b> adapter.h:44</div></div>
+<div class="ttc" id="anamespaceconsole_html"><div class="ttname"><a href="namespaceconsole.html">console</a></div><div class="ttdoc">本库所有组件所在的顶层命名空间。</div></div>
 <div class="ttc" id="anamespaceconsole_html_a2991a2d1b529ace7c2243a47cfeafe57"><div class="ttname"><a href="namespaceconsole.html#a2991a2d1b529ace7c2243a47cfeafe57">console::WRegex</a></div><div class="ttdeci">BasicRegex&lt; wchar_t &gt; WRegex</div><div class="ttdoc">宽字符正则表达式。</div><div class="ttdef"><b>Definition</b> re.h:299</div></div>
 <div class="ttc" id="anamespaceconsole_html_abdfc3731184cab4d4cd4d2113c24fdef"><div class="ttname"><a href="namespaceconsole.html#abdfc3731184cab4d4cd4d2113c24fdef">console::Regex</a></div><div class="ttdeci">BasicRegex&lt; char &gt; Regex</div><div class="ttdoc">字符正则表达式。</div><div class="ttdef"><b>Definition</b> re.h:298</div></div>
 <div class="ttc" id="astructconsole_1_1_basic_regex_1_1_match_1_1_group_info_html"><div class="ttname"><a href="structconsole_1_1_basic_regex_1_1_match_1_1_group_info.html">console::BasicRegex::Match::GroupInfo</a></div><div class="ttdef"><b>Definition</b> re.h:86</div></div>
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('re_8h_source.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="re_8h.html">re.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_42d41070953014e4936f61bdc375df58.html">text</a></li><li class="navelem"><a href="re_8h.html">re.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

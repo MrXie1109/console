@@ -1,7 +1,22 @@
 var searchData=
 [
-  ['underline_0',['Underline',['../namespaceconsole_1_1color.html#a2936de81e29dd6928a19a612ae3b3094',1,'console::color']]],
-  ['unique_1',['unique',['../namespaceconsole_1_1alg.html#a5f2c02cc623aa4718abfef8322923fb9',1,'console::alg']]],
-  ['unique_5fcopy_2',['unique_copy',['../namespaceconsole_1_1alg.html#a78efb0d819fc2cde7ab63dc8df8f5f0b',1,'console::alg']]],
-  ['upper_5fbound_3',['upper_bound',['../namespaceconsole_1_1alg.html#ada99412575b346831c5fa9fd668c24b2',1,'console::alg']]]
+  ['table_0',['table',['../classconsole_1_1_table.html#aa7dc0b91cccb22850490e34a2d9f9c95',1,'console::Table']]],
+  ['tail_5f_1',['tail_',['../classconsole_1_1_l_f_queue.html#a1e81e4851f0283cef511945bc36c4550',1,'console::LFQueue']]],
+  ['taken_2',['taken',['../classconsole_1_1gen_1_1_take.html#a07243266106af6d3bda431f4a3c13059',1,'console::gen::Take']]],
+  ['tan_3',['tan',['../namespaceconsole_1_1ops.html#a62f6291f3ee868f768cbcd20ef332996',1,'console::ops']]],
+  ['task_4',['task',['../structconsole_1_1_thread_pool_1_1_task.html#aad3e3bd60ecc0ed80ee208f94c634222',1,'console::ThreadPool::Task']]],
+  ['tasks_5',['tasks',['../classconsole_1_1_thread_pool.html#abf318c9e1e8553e0eaeb5b8fcf8870e3',1,'console::ThreadPool']]],
+  ['text_5fcopy_6',['text_copy',['../classconsole_1_1_basic_regex_1_1_match.html#a012cf27c4e7c038f0987a86dbc7ccfd5',1,'console::BasicRegex::Match']]],
+  ['thread_5f_7',['thread_',['../classconsole_1_1_task.html#a57d344962d1f5d84d9906aa1a454f46a',1,'console::Task::thread_'],['../classconsole_1_1_shared_task.html#a674d42eac5063b8749c082ea947e784f',1,'console::SharedTask::thread_'],['../classconsole_1_1_thread.html#ac8849550760752efe35f79713539c352',1,'console::Thread::thread_']]],
+  ['threads_8',['threads',['../classconsole_1_1_scheduler.html#a4b1124854c1dd9986de3fb4057be8590',1,'console::Scheduler']]],
+  ['threshold_9',['threshold',['../structconsole_1_1ops_1_1_gt.html#ab6f587f0c2ad36ffe06c7ead7d34428a',1,'console::ops::Gt::threshold'],['../structconsole_1_1ops_1_1_ge.html#a7f23d9f4e6b72700c9b326c0ec2c49db',1,'console::ops::Ge::threshold'],['../structconsole_1_1ops_1_1_lt.html#acc0370edd606a8f43dc17f6c9c8c962c',1,'console::ops::Lt::threshold'],['../structconsole_1_1ops_1_1_le.html#a6a86f3e4cf67fb514aaf80f8edac91e0',1,'console::ops::Le::threshold']]],
+  ['timestamp_10',['timestamp',['../namespaceconsole_1_1ops.html#a5c2b52276e558a8420d26d59de35b0ea',1,'console::ops']]],
+  ['tm_5f_11',['tm_',['../classconsole_1_1_date_time.html#ad343593a8c72476a5f1e9185398ccc0b',1,'console::DateTime']]],
+  ['to_5flower_12',['to_lower',['../namespaceconsole_1_1ops.html#ac3f55cef649e5ef090f8f01f7c58dacb',1,'console::ops']]],
+  ['to_5fstring_13',['to_string',['../namespaceconsole_1_1ops.html#ab59d5be9182b9d249d70ab5f59ae3d11',1,'console::ops']]],
+  ['to_5fupper_14',['to_upper',['../namespaceconsole_1_1ops.html#aa5e0327ff1a64a33463396f0e3394cce',1,'console::ops']]],
+  ['total_5f_15',['total_',['../classconsole_1_1_basic_progress_1_1iterator.html#a72b5f1bcfe46ae50857a70a26271acf1',1,'console::BasicProgress::iterator::total_'],['../classconsole_1_1_basic_progress.html#ad5da6f2c3657992ad86e31141c0e74f1',1,'console::BasicProgress::total_']]],
+  ['transform_16',['transform',['../namespaceconsole_1_1alg.html#a95b7fd144f9095a5a9d0fe369ae93976',1,'console::alg']]],
+  ['trim_17',['trim',['../namespaceconsole_1_1ops.html#aa9892ec009146576dc57cdd32d6cefa0',1,'console::ops']]],
+  ['type_18',['type',['../structconsole_1_1details_1_1_basic_format_spec.html#a3087eb179ee06f2707029a96b1531ea8',1,'console::details::BasicFormatSpec']]]
 ];

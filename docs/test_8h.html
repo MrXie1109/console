@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Console Library: include/test.h File Reference</title>
+<title>Console Library: include/util/test.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Console Library<span id="projectnumber">&#160;7.4.0</span>
+   <div id="projectname">Console Library<span id="projectnumber">&#160;8.0.0</span>
    </div>
    <div id="projectbrief">A header-only library that makes C++ simple</div>
   </td>
@@ -119,10 +119,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('test_8h.html',
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="colorful_8h_source.html">colorful.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="csexc_8h_source.html">csexc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fmt_8h_source.html">fmt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="time_8h_source.html">time.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="csexc_8h_source.html">../core/csexc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="colorful_8h_source.html">../io/colorful.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fmt_8h_source.html">../text/fmt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="repr_8h_source.html">../text/repr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="time_8h_source.html">./time.h</a>&quot;</code><br />
 </div>
 <p><a href="test_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -236,8 +237,8 @@ Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classconsole_1_1_assert_error.html">console::AssertError</a>(                                        \</div>
 <div class="line">            <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(container) <span class="stringliteral">&quot; contains &quot;</span> <a class="code hl_define" href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a>(element));         \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
-<div class="ttc" id="aclassconsole_1_1_assert_error_html"><div class="ttname"><a href="classconsole_1_1_assert_error.html">console::AssertError</a></div><div class="ttdoc">表示断言失败的错误。</div><div class="ttdef"><b>Definition</b> csexc.h:201</div></div>
-<div class="ttc" id="atest_8h_html_a7da4c6801bb682effe1b401fc9430d1a"><div class="ttname"><a href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a></div><div class="ttdeci">#define EXPR_WARP(expression)</div><div class="ttdef"><b>Definition</b> test.h:163</div></div>
+<div class="ttc" id="aclassconsole_1_1_assert_error_html"><div class="ttname"><a href="classconsole_1_1_assert_error.html">console::AssertError</a></div><div class="ttdoc">表示断言失败的错误。</div><div class="ttdef"><b>Definition</b> csexc.h:200</div></div>
+<div class="ttc" id="atest_8h_html_a7da4c6801bb682effe1b401fc9430d1a"><div class="ttname"><a href="#a7da4c6801bb682effe1b401fc9430d1a">EXPR_WARP</a></div><div class="ttdeci">#define EXPR_WARP(expression)</div><div class="ttdef"><b>Definition</b> test.h:164</div></div>
 </div><!-- fragment -->
 <p>断言容器包含指定元素。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -977,7 +978,7 @@ Functions</h2></td></tr>
 <div class="line">                <a class="code hl_function" href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a>(_substr)));                            \</div>
 <div class="line">    }                                                                      \</div>
 <div class="line">} <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div>
-<div class="ttc" id="anamespaceconsole_html_ad88e0030e10417344eee98da00bef292"><div class="ttname"><a href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a></div><div class="ttdeci">std::string ptr_to_str(const char *s)</div><div class="ttdoc">辅助函数：安全地将 C 字符串转换为显示字符串。</div><div class="ttdef"><b>Definition</b> test.h:340</div></div>
+<div class="ttc" id="anamespaceconsole_html_ad88e0030e10417344eee98da00bef292"><div class="ttname"><a href="namespaceconsole.html#ad88e0030e10417344eee98da00bef292">console::ptr_to_str</a></div><div class="ttdeci">std::string ptr_to_str(const char *s)</div><div class="ttdoc">辅助函数：安全地将 C 字符串转换为显示字符串。</div><div class="ttdef"><b>Definition</b> test.h:341</div></div>
 </div><!-- fragment -->
 <p>断言C风格字符串包含子串。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1386,7 +1387,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="test_8h.html">test.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li><li class="navelem"><a href="test_8h.html">test.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for Console Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>
