@@ -205,4 +205,17 @@ namespace console {
          */
         AssertError(const std::string &msg) : ConsoleError(msg) {}
     };
+
+    /**
+     * @class WavError
+     * @brief 表示 WAV 相关的错误。
+     */
+    class WavError : public ConsoleError {
+    public:
+        /**
+         * @brief 构造 WavError。
+         * @param msg 错误描述信息。
+         */
+        WavError(const std::string &msg) : ConsoleError(msg) {}
+    };
 }
