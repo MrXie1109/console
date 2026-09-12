@@ -362,10 +362,10 @@ namespace console {
 
             /// AudioQueueBuffer 的公开布局。
             struct QueueBuffer {
-                uint32_t mAudioDataBytesCapacity;    ///< 缓冲区容量(字节)
-                void    *mAudioData;                 ///< 数据区
-                uint32_t mAudioDataByteSize;         ///< 有效字节数
-                void    *mUserData;                  ///< 用户数据
+                uint32_t mAudioDataBytesCapacity; ///< 缓冲区容量(字节)
+                void    *mAudioData;              ///< 数据区
+                uint32_t mAudioDataByteSize;      ///< 有效字节数
+                void    *mUserData;               ///< 用户数据
                 uint32_t mPacketDescriptionCapacity; ///< 描述符容量
                 void    *mPacketDescriptions;        ///< 描述符
                 uint32_t mPacketDescriptionCount;    ///< 描述符数量

@@ -64,7 +64,7 @@ namespace console {
             static constexpr double Gs0 = 25.9565;
             static constexpr double A0  = 27.5000;
             static constexpr double As0 = 29.1352;
-            static constexpr double B0  = 30.8677;
+            static constexpr double B0_ = 30.8677; // 沟槽的 termios.h！
 
             static constexpr double C1  = 32.7032;
             static constexpr double Cs1 = 34.6478;
@@ -172,6 +172,11 @@ namespace console {
         }
 
         /**
+         * @brief 圆周率。
+         */
+        static constexpr double k_pi = 3.14159265358979323846;
+
+        /**
          * @brief 写入小端 16 位整数。
          * @param out 输出缓冲区。
          * @param v 待写入的值。
@@ -272,6 +277,75 @@ namespace console {
         }
 
         /**
+         * @brief 校验波形生成参数。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param seconds 时长(秒)。
+         * @param amplitude_ 振幅。
+         * @throws ValueError 参数超出范围。
+         */
+        inline void check_wave(uint32_t sample_rate_,
+            uint32_t                    channels_,
+            double                      seconds,
+            double                      amplitude_) {
+            if (sample_rate_ == 0 || channels_ == 0)
+                throw ValueError("Invalid Channel Count or Sample Rate");
+            if (seconds < 0.0)
+                throw ValueError("Duration Must Not Be Negative");
+            if (amplitude_ < 0.0 || amplitude_ > 1.0)
+                throw ValueError("Amplitude Must Be Between 0.0 and 1.0");
+        }
+
+        /**
+         * @brief 计算淡入淡出包络。
+         * @param i 样本下标。
+         * @param count 总样本数。
+         * @param fade 淡变长度(样本数)。
+         * @return 包络值，取值 0.0 至 1.0。
+         */
+        inline double fade_env(size_t i, size_t count, size_t fade) {
+            if (fade == 0 || count <= 2 * fade) return 1.0;
+            if (i < fade) return static_cast<double>(i) / fade;
+            if (i >= count - fade) return static_cast<double>(count - i) / fade;
+            return 1.0;
+        }
+
+        /**
+         * @brief 将单个样本值写入所有声道。
+         * @param w 目标波形。
+         * @param i 样本下标。
+         * @param v 取值 -1.0 至 1.0 的样本值。
+         */
+        inline void put_sample(Wave &w, size_t i, double v) {
+            if (v > 1.0) v = 1.0;
+            if (v < -1.0) v = -1.0;
+            const short s = static_cast<short>(v * 32767.0);
+            for (uint32_t c = 0; c < w.channels; c++) {
+                w.pcm[(i * w.channels + c) * 2]
+                    = static_cast<unsigned char>(s & 0xFF);
+                w.pcm[(i * w.channels + c) * 2 + 1]
+                    = static_cast<unsigned char>(s >> 8 & 0xFF);
+            }
+        }
+
+        /**
+         * @brief 创建空波形。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @return 已分配未填充的波形数据。
+         */
+        inline Wave
+        alloc_wave(double seconds, uint32_t sample_rate_, uint32_t channels_) {
+            Wave w;
+            w.sample_rate = sample_rate_;
+            w.channels    = channels_;
+            w.pcm.resize(
+                static_cast<size_t>(sample_rate_ * seconds) * channels_ * 2);
+            return w;
+        }
+
+        /**
          * @brief 生成正弦波。
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
@@ -286,37 +360,302 @@ namespace console {
             uint32_t            sample_rate_ = sample_rate(),
             uint32_t            channels_    = channels(),
             double              amplitude_   = amplitude()) {
-            if (sample_rate_ == 0 || channels_ == 0)
-                throw ValueError("Invalid Channel Count or Sample Rate");
-            if (freq < 0.0 || seconds < 0.0)
-                throw ValueError("Frequency and Duration Must Not Be Negative");
-            if (amplitude_ < 0.0 || amplitude_ > 1.0)
-                throw ValueError("Amplitude Must Be Between 0.0 and 1.0");
-            const size_t count = static_cast<size_t>(sample_rate_ * seconds);
-            Wave         w;
-            w.sample_rate = sample_rate_;
-            w.channels    = channels_;
-            w.pcm.resize(count * channels_ * 2);
-            const size_t fade = sample_rate_ / 50;
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
             for (size_t i = 0; i < count; i++) {
-                double env = 1.0;
-                if (fade > 0 && count > 2 * fade) {
-                    if (i < fade)
-                        env = static_cast<double>(i) / fade;
-                    else if (i >= count - fade)
-                        env = static_cast<double>(count - i) / fade;
-                }
                 const double t = static_cast<double>(i) / sample_rate_;
-                const double v
-                    = std::sin(2.0 * 3.14159265358979323846 * freq * t)
-                      * amplitude_ * env;
-                const short s = static_cast<short>(v * 32767.0);
-                for (size_t c = 0; c < channels_; c++) {
-                    w.pcm[(i * channels_ + c) * 2]
-                        = static_cast<unsigned char>(s & 0xFF);
-                    w.pcm[(i * channels_ + c) * 2 + 1]
-                        = static_cast<unsigned char>(s >> 8 & 0xFF);
-                }
+                put_sample(w,
+                    i,
+                    std::sin(2.0 * k_pi * freq * t) * amplitude_
+                        * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成方波。
+         * @param freq 频率(Hz)。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         * @note 谐波丰富，振幅过大易削波，建议不超过 0.5。
+         */
+        inline Wave square(double freq,
+            double                seconds,
+            uint32_t              sample_rate_ = sample_rate(),
+            uint32_t              channels_    = channels(),
+            double                amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t  = static_cast<double>(i) / sample_rate_;
+                const double ph = std::fmod(freq * t, 1.0);
+                put_sample(w,
+                    i,
+                    (ph < 0.5 ? 1.0 : -1.0) * amplitude_
+                        * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成锯齿波。
+         * @param freq 频率(Hz)。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         */
+        inline Wave sawtooth(double freq,
+            double                  seconds,
+            uint32_t                sample_rate_ = sample_rate(),
+            uint32_t                channels_    = channels(),
+            double                  amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t  = static_cast<double>(i) / sample_rate_;
+                const double ph = std::fmod(freq * t, 1.0);
+                put_sample(w,
+                    i,
+                    (2.0 * ph - 1.0) * amplitude_ * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成三角波。
+         * @param freq 频率(Hz)。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         */
+        inline Wave triangle(double freq,
+            double                  seconds,
+            uint32_t                sample_rate_ = sample_rate(),
+            uint32_t                channels_    = channels(),
+            double                  amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t  = static_cast<double>(i) / sample_rate_;
+                const double ph = std::fmod(freq * t, 1.0);
+                const double v  = ph < 0.5 ? 4.0 * ph - 1.0 : 3.0 - 4.0 * ph;
+                put_sample(w, i, v * amplitude_ * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成脉冲波。
+         * @param freq 频率(Hz)。
+         * @param duty 占空比，取值 0.0 至 1.0。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         */
+        inline Wave pulse(double freq,
+            double               duty,
+            double               seconds,
+            uint32_t             sample_rate_ = sample_rate(),
+            uint32_t             channels_    = channels(),
+            double               amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            if (duty <= 0.0 || duty >= 1.0)
+                throw ValueError("Duty Must Be Between 0.0 and 1.0");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t  = static_cast<double>(i) / sample_rate_;
+                const double ph = std::fmod(freq * t, 1.0);
+                put_sample(w,
+                    i,
+                    (ph < duty ? 1.0 : -1.0) * amplitude_
+                        * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成扫频信号。
+         * @param start 起始频率(Hz)。
+         * @param end 终止频率(Hz)。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         * @note 频率按指数变化，各时刻倍频程增量相同。
+         */
+        inline Wave chirp(double start,
+            double               end,
+            double               seconds,
+            uint32_t             sample_rate_ = sample_rate(),
+            uint32_t             channels_    = channels(),
+            double               amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (start <= 0.0 || end <= 0.0)
+                throw ValueError("Frequency Must Be Positive");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            const double ratio = end / start;
+            double       phase = 0.0;
+            for (size_t i = 0; i < count; i++) {
+                const double u = count > 1
+                                     ? static_cast<double>(i)
+                                           / static_cast<double>(count - 1)
+                                     : 0.0;
+                const double f = start * std::pow(ratio, u);
+                put_sample(w,
+                    i,
+                    std::sin(phase) * amplitude_ * fade_env(i, count, fade));
+                phase += 2.0 * k_pi * f / sample_rate_;
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成调幅信号。
+         * @param freq 载波频率(Hz)。
+         * @param mod_freq 调制频率(Hz)。
+         * @param depth 调制深度，取值 0.0 至 1.0。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         */
+        inline Wave am(double freq,
+            double            mod_freq,
+            double            depth,
+            double            seconds,
+            uint32_t          sample_rate_ = sample_rate(),
+            uint32_t          channels_    = channels(),
+            double            amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0 || mod_freq < 0.0)
+                throw ValueError("Frequency Must Not Be Negative");
+            if (depth < 0.0 || depth > 1.0)
+                throw ValueError("Depth Must Be Between 0.0 and 1.0");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t = static_cast<double>(i) / sample_rate_;
+                const double env
+                    = 1.0 - depth
+                      + depth * 0.5
+                            * (1.0 + std::sin(2.0 * k_pi * mod_freq * t));
+                put_sample(w,
+                    i,
+                    std::sin(2.0 * k_pi * freq * t) * amplitude_ * env
+                        * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成调频信号。
+         * @param carrier 载波频率(Hz)。
+         * @param mod_freq 调制频率(Hz)。
+         * @param index 调制指数，即最大频偏与调制频率之比。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围。
+         */
+        inline Wave fm(double carrier,
+            double            mod_freq,
+            double            index,
+            double            seconds,
+            uint32_t          sample_rate_ = sample_rate(),
+            uint32_t          channels_    = channels(),
+            double            amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (carrier < 0.0 || mod_freq < 0.0)
+                throw ValueError("Frequency Must Not Be Negative");
+            if (index < 0.0) throw ValueError("Index Must Not Be Negative");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t  = static_cast<double>(i) / sample_rate_;
+                const double ph = 2.0 * k_pi * carrier * t
+                                  + index * std::sin(2.0 * k_pi * mod_freq * t);
+                put_sample(
+                    w, i, std::sin(ph) * amplitude_ * fade_env(i, count, fade));
+            }
+            return w;
+        }
+
+        /**
+         * @brief 生成谐波叠加信号。
+         * @param freq 基频(Hz)。
+         * @param harmonics 各次谐波的相对幅度，下标 0 为基频。
+         * @param seconds 时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param channels_ 声道数。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @return 波形数据。
+         * @throws ValueError 参数超出范围，或谐波列表为空。
+         * @note 各谐波按幅度之和归一化，因此不会削波。
+         */
+        inline Wave harmonics(double   freq,
+            const std::vector<double> &harmonics,
+            double                     seconds,
+            uint32_t                   sample_rate_ = sample_rate(),
+            uint32_t                   channels_    = channels(),
+            double                     amplitude_   = amplitude()) {
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
+            if (harmonics.empty())
+                throw ValueError("Harmonics Must Not Be Empty");
+            double total = 0.0;
+            for (size_t h = 0; h < harmonics.size(); h++)
+                total += std::fabs(harmonics[h]);
+            if (total == 0.0)
+                throw ValueError("Harmonics Must Not Be All Zero");
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            const size_t fade  = sample_rate_ / 50;
+            for (size_t i = 0; i < count; i++) {
+                const double t = static_cast<double>(i) / sample_rate_;
+                double       v = 0.0;
+                for (size_t h = 0; h < harmonics.size(); h++)
+                    v += harmonics[h]
+                         * std::sin(2.0 * k_pi * freq * (h + 1) * t);
+                put_sample(
+                    w, i, v / total * amplitude_ * fade_env(i, count, fade));
             }
             return w;
         }
