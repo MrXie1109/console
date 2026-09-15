@@ -45,5 +45,5 @@ SOFTWARE.
  */
 namespace console {
     /// @brief 本库的元数据，用于标识库的版本和作者 (顺便充当二进制水印)。
-    static constexpr char meta[] = "CONSOLE-LIB-2026-09-12-MRXIE1109";
+    static constexpr char meta[] = "CONSOLE-LIB-2026-09-15-MRXIE1109";
 }

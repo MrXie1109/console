@@ -6,8 +6,8 @@
  * @author MrXie1109
  * @date 2026
  * @copyright MIT License
- * @warning 由于我的电脑限制，Windows 与 macOS 后端均未实测，
- *          仅通过语法检查。Linux 后端已实测。
+ * @warning 由于我的电脑限制，macOS 后端未实测，仅通过语法检查。
+ *          Windows 与 Linux 后端均已实测。
  */
 
 /*
@@ -40,6 +40,7 @@ SOFTWARE.
 
 #include "../core/csexc.h"
 #include "../io/file.h"
+#include "./base.h"
 
 /** @cond INTERNAL */
 #if defined(_WIN32)
@@ -62,27 +63,6 @@ namespace console {
      * @brief WAV 播放相关接口。
      */
     namespace wav {
-        /**
-         * @struct Wave
-         * @brief 解析后的 WAV 数据。
-         */
-        struct Wave {
-            std::vector<unsigned char> pcm; ///< 交错的 16-bit 小端样本
-            uint32_t                   sample_rate = 0; ///< 采样率(Hz)
-            uint32_t                   channels    = 0; ///< 声道数
-
-            /**
-             * @brief 计算时长。
-             * @return 时长(秒)。
-             */
-            double seconds() const {
-                if (channels == 0 || sample_rate == 0) return 0.0;
-                return static_cast<double>(pcm.size())
-                       / static_cast<double>(channels * 2)
-                       / static_cast<double>(sample_rate);
-            }
-        };
-
         /**
          * @brief 读取小端 16 位无符号整数。
          * @param p 缓冲区。
@@ -114,21 +94,16 @@ namespace console {
              */
 #pragma pack(push, 1)
             struct WaveHeader {
-                char       *lpData;          ///< 数据指针
-                uint32_t    dwBufferLength;  ///< 数据长度
-                uint32_t    dwBytesRecorded; ///< 已录制字节数
-                uint32_t    dwUser;          ///< 用户数据
-                uint32_t    dwFlags;         ///< 标志位
-                uint32_t    dwLoops;         ///< 循环次数
-                WaveHeader *lpNext;          ///< 下一个头
-                uint32_t    reserved;        ///< 保留
+                LPSTR               lpData;
+                DWORD               dwBufferLength;
+                DWORD               dwBytesRecorded;
+                DWORD_PTR           dwUser;
+                DWORD               dwFlags;
+                DWORD               dwLoops;
+                struct wavehdr_tag *lpNext;
+                DWORD_PTR           reserved;
             };
 #pragma pack(pop)
-            // Win64 下 WAVEHDR 以 1 字节对齐，为 40 字节。
-            // 不指定对齐会得到 48 字节，与 Windows ABI 不符。
-            static_assert(sizeof(WaveHeader) == 40,
-                "WAVEHDR layout does not match the expected size, "
-                "please verify against the Windows SDK");
 
             /**
              * @struct Winmm
@@ -165,7 +140,7 @@ namespace console {
                     if (!h) throw WavError("Cannot Load winmm.dll");
 #define WAVPLAY_WSYM(field, name)                                              \
     w.field = reinterpret_cast<decltype(w.field)>(                             \
-        GetProcAddress(static_cast<void *>(h), name));                         \
+        GetProcAddress(static_cast<HMODULE>(h), name));                        \
     if (!w.field) throw WavError("winmm.dll Is Missing Symbol " name)
                     WAVPLAY_WSYM(waveOutOpen, "waveOutOpen");
                     WAVPLAY_WSYM(waveOutPrepareHeader, "waveOutPrepareHeader");
@@ -187,7 +162,8 @@ namespace console {
              * @return 设备编号，未找到时返回 WAVE_MAPPER。
              */
             inline uint32_t find_device(const std::string &device) {
-                if (device.empty() || device == "default") return WAVE_MAPPER;
+                if (device.empty() || device == "default")
+                    return static_cast<UINT>(-1);
                 Winmm         &w        = winmm();
                 const uint32_t n        = w.waveOutGetNumDevs();
                 char           caps[64] = {0};
@@ -362,10 +338,10 @@ namespace console {
 
             /// AudioQueueBuffer 的公开布局。
             struct QueueBuffer {
-                uint32_t mAudioDataBytesCapacity; ///< 缓冲区容量(字节)
-                void    *mAudioData;              ///< 数据区
-                uint32_t mAudioDataByteSize;      ///< 有效字节数
-                void    *mUserData;               ///< 用户数据
+                uint32_t mAudioDataBytesCapacity;    ///< 缓冲区容量(字节)
+                void    *mAudioData;                 ///< 数据区
+                uint32_t mAudioDataByteSize;         ///< 有效字节数
+                void    *mUserData;                  ///< 用户数据
                 uint32_t mPacketDescriptionCapacity; ///< 描述符容量
                 void    *mPacketDescriptions;        ///< 描述符
                 uint32_t mPacketDescriptionCount;    ///< 描述符数量
@@ -632,70 +608,15 @@ namespace console {
 #endif
 
         /**
-         * @brief 默认音频设备名。
-         * @return 默认设备名的引用。
-         * @details 返回引用，因此可通过赋值修改默认值：
-         *          `console::wav::device() = "hw:0,0";`
-         */
-        inline std::string &device() {
-            static std::string instance = "default";
-            return instance;
-        }
-
-        /**
-         * @brief 默认音量倍率。
-         * @return 默认音量倍率的引用。
-         * @details 返回引用，因此可通过赋值修改默认值：
-         *          `console::wav::volume() = 0.5;`
-         */
-        inline double &volume() {
-            static double instance = 1.0;
-            return instance;
-        }
-
-        /**
-         * @brief 默认采样率(Hz)。
-         * @return 默认采样率的引用。
-         * @details 返回引用，因此可通过赋值修改默认值：
-         *          `console::wav::sample_rate() = 48000;`
-         */
-        inline uint32_t &sample_rate() {
-            static uint32_t instance = 44100;
-            return instance;
-        }
-
-        /**
-         * @brief 默认声道数。
-         * @return 默认声道数的引用。
-         * @details 返回引用，因此可通过赋值修改默认值：
-         *          `console::wav::channels() = 2;`
-         */
-        inline uint32_t &channels() {
-            static uint32_t instance = 1;
-            return instance;
-        }
-
-        /**
-         * @brief 默认振幅。
-         * @return 默认振幅的引用。
-         * @details 返回引用，因此可通过赋值修改默认值：
-         *          `console::wav::amplitude() = 0.8;`
-         */
-        inline double &amplitude() {
-            static double instance = 0.5;
-            return instance;
-        }
-
-        /**
          * @brief 播放一段波形数据。
          * @param w 波形数据。
-         * @param device_ 设备名，默认取 `device()`。
          * @param volume_ 线性音量倍率，默认取 `volume()`。
+         * @param device_ 设备名，默认取 `device()`。
          * @throws WavError 音频设备不可用。
          */
         inline void play(const Wave &w,
-            const std::string       &device_ = device(),
-            double                   volume_ = volume()) {
+            double                   volume_ = volume(),
+            const std::string       &device_ = device()) {
 #if defined(WAVPLAY_PLATFORM_LINUX)
             detail::Alsa                    &a = detail::alsa();
             detail::Pcm                      pcm(device_);
@@ -784,16 +705,16 @@ namespace console {
         /**
          * @brief 播放一个 WAV 文件。
          * @param path 文件路径。
-         * @param device_  设备名，默认为 "default"。
          * @param volume_  线性音量倍率，默认为 1.0。
+         * @param device_  设备名，默认为 "default"。
          * @throws FileError 文件无法读取。
          * @throws ValueError 文件不是合法的 16-bit PCM WAV。
          * @throws WavError 音频设备不可用。
          */
         inline void play(const Path &path,
-            const std::string       &device_ = device(),
-            double                   volume_ = volume()) {
-            play(load(path), device_, volume_);
+            double                   volume_ = volume(),
+            const std::string       &device_ = device()) {
+            play(load(path), volume_, device_);
         }
     }
 }

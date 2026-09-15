@@ -30,7 +30,9 @@ SOFTWARE.
 */
 
 #pragma once
+#include "./wav/base.h"
 #include "./wav/maker.h"
+#include "./wav/mixdown.h"
 #include "./wav/player.h"
 
 namespace console {}

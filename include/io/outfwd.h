@@ -52,24 +52,25 @@ namespace console {
      */
 
     /// @brief std::vector 输出声明。
-    template <class CharT, class Traits, class T>
-    std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::vector<T> &);
+    template <class CharT, class Traits, class T, class Alloc>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::vector<T, Alloc> &);
 
     /// @brief std::deque 输出声明。
-    template <class CharT, class Traits, class T>
-    std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::deque<T> &);
+    template <class CharT, class Traits, class T, class Alloc>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::deque<T, Alloc> &);
 
     /// @brief std::list 输出声明。
-    template <class CharT, class Traits, class T>
-    std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::list<T> &);
+    template <class CharT, class Traits, class T, class Alloc>
+    std::basic_ostream<CharT, Traits> &operator<<(
+        std::basic_ostream<CharT, Traits> &, const std::list<T, Alloc> &);
 
     /// @brief std::forward_list 输出声明。
-    template <class CharT, class Traits, class T>
-    std::basic_ostream<CharT, Traits> &operator<<(
-        std::basic_ostream<CharT, Traits> &, const std::forward_list<T> &);
+    template <class CharT, class Traits, class T, class Alloc>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::forward_list<T, Alloc> &);
 
     /// @brief std::array 输出声明。
     template <class CharT, class Traits, class T, size_t n>
@@ -77,46 +78,84 @@ namespace console {
     operator<<(std::basic_ostream<CharT, Traits> &, const std::array<T, n> &);
 
     /// @brief std::set 输出声明。
-    template <class CharT, class Traits, class T>
+    template <class CharT, class Traits, class T, class Compare, class Alloc>
     std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::set<T> &);
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::set<T, Compare, Alloc> &);
 
     /// @brief std::map 输出声明。
-    template <class CharT, class Traits, class K, class V>
+    template <class CharT,
+        class Traits,
+        class K,
+        class V,
+        class Compare,
+        class Alloc>
     std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::map<K, V> &);
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::map<K, V, Compare, Alloc> &);
 
     /// @brief std::multiset 输出声明。
-    template <class CharT, class Traits, class T>
+    template <class CharT, class Traits, class T, class Compare, class Alloc>
     std::basic_ostream<CharT, Traits> &
-    operator<<(std::basic_ostream<CharT, Traits> &, const std::multiset<T> &);
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::multiset<T, Compare, Alloc> &);
 
     /// @brief std::multimap 输出声明。
-    template <class CharT, class Traits, class K, class V>
-    std::basic_ostream<CharT, Traits> &operator<<(
-        std::basic_ostream<CharT, Traits> &, const std::multimap<K, V> &);
+    template <class CharT,
+        class Traits,
+        class K,
+        class V,
+        class Compare,
+        class Alloc>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::multimap<K, V, Compare, Alloc> &);
 
     /// @brief std::unordered_set 输出声明。
-    template <class CharT, class Traits, class T>
-    std::basic_ostream<CharT, Traits> &operator<<(
-        std::basic_ostream<CharT, Traits> &, const std::unordered_set<T> &);
+    template <class CharT,
+        class Traits,
+        class T,
+        class Hash,
+        class KeyEqual,
+        class Alloc>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::unordered_set<T, Hash, KeyEqual, Alloc> &);
 
     /// @brief std::unordered_map 输出声明。
-    template <class CharT, class Traits, class K, class V>
-    std::basic_ostream<CharT, Traits> &operator<<(
-        std::basic_ostream<CharT, Traits> &, const std::unordered_map<K, V> &);
+    template <class CharT,
+        class Traits,
+        class K,
+        class V,
+        class Hash,
+        class KeyEqual,
+        class Alloc>
+    std::basic_ostream<CharT, Traits> &
+    operator<<(std::basic_ostream<CharT, Traits> &,
+        const std::unordered_map<K, V, Hash, KeyEqual, Alloc> &);
 
     /// @brief std::unordered_multiset 输出声明。
-    template <class CharT, class Traits, class T>
+    template <class CharT,
+        class Traits,
+        class T,
+        class Hash,
+        class KeyEqual,
+        class Alloc>
     std::basic_ostream<CharT, Traits> &
     operator<<(std::basic_ostream<CharT, Traits> &,
-        const std::unordered_multiset<T> &);
+        const std::unordered_multiset<T, Hash, KeyEqual, Alloc> &);
 
     /// @brief std::unordered_multimap 输出声明。
-    template <class CharT, class Traits, class K, class V>
+    template <class CharT,
+        class Traits,
+        class K,
+        class V,
+        class Hash,
+        class KeyEqual,
+        class Alloc>
     std::basic_ostream<CharT, Traits> &
     operator<<(std::basic_ostream<CharT, Traits> &,
-        const std::unordered_multimap<K, V> &);
+        const std::unordered_multimap<K, V, Hash, KeyEqual, Alloc> &);
 
     /// @brief std::pair 输出声明。
     template <class CharT, class Traits, class T, class U>
