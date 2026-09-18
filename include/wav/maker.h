@@ -377,31 +377,143 @@ namespace console {
         }
 
         /**
+         * @brief 将 ADSR 各时间阶段压入总时长 T 内。
+         * @param T 音符总时长(秒)。
+         * @param a attack 时间。
+         * @param d decay 时间。
+         * @param r release 时间。
+         * @param out_a 实际 attack。
+         * @param out_d 实际 decay。
+         * @param out_r 实际 release。
+         * @param out_s 实际 sustain 持续时长。
+         * @note 保证 out_a + out_d + out_s + out_r == T，各段非负。
+         *       若 a + d + r > T，按 scale = T / (a + d + r) 等比缩放
+         *       A、D、R，S = 0。若 a + d + r <= T，S = T - (a + d + r)。
+         */
+        inline void fit_adsr(double T,
+            double                  a,
+            double                  d,
+            double                  r,
+            double                 &out_a,
+            double                 &out_d,
+            double                 &out_r,
+            double                 &out_s) {
+            if (T <= 0.0) {
+                out_a = out_d = out_r = out_s = 0.0;
+                return;
+            }
+            a                = a > 0.0 ? a : 0.0;
+            d                = d > 0.0 ? d : 0.0;
+            r                = r > 0.0 ? r : 0.0;
+            const double sum = a + d + r;
+            if (sum <= T) {
+                out_a = a;
+                out_d = d;
+                out_r = r;
+                out_s = T - sum;
+            } else {
+                const double scale = T / sum;
+                out_a              = a * scale;
+                out_d              = d * scale;
+                out_r              = r * scale;
+                out_s              = 0.0;
+            }
+        }
+
+        /**
+         * @brief 按样本下标计算 ADSR 包络值。
+         * @param i 样本下标。
+         * @param nA attack 样本数。
+         * @param nD decay 样本数。
+         * @param nS sustain 样本数。
+         * @param nR release 样本数。
+         * @param sustain sustain 电平(0.0–1.0)。
+         * @return 包络值，取值 0.0 至 1.0。
+         * @note nA + nD + nS + nR 必须等于总样本数。
+         */
+        inline double adsr_env(size_t i,
+            size_t                    nA,
+            size_t                    nD,
+            size_t                    nS,
+            size_t                    nR,
+            double                    sustain) {
+            if (i < nA) return nA ? static_cast<double>(i) / nA : 1.0;
+            i -= nA;
+            if (i < nD)
+                return nD ? 1.0 + (sustain - 1.0) * static_cast<double>(i) / nD
+                          : 1.0;
+            i -= nD;
+            if (i < nS) return sustain;
+            i -= nS;
+            if (nR) return sustain * (1.0 - static_cast<double>(i) / nR);
+            return 0.0;
+        }
+
+        /**
+         * @brief 将 ADSR 参数展开为各阶段样本数。
+         * @param seconds 音符总时长(秒)。
+         * @param sample_rate_ 采样率(Hz)。
+         * @param adsr_ ADSR 参数。
+         * @param count 总样本数。
+         * @param nA 输出 attack 样本数。
+         * @param nD 输出 decay 样本数。
+         * @param nS 输出 sustain 样本数。
+         * @param nR 输出 release 样本数。
+         * @param sus 输出裁剪后的 sustain 电平。
+         * @note 保证 nA + nD + nS + nR == count。
+         */
+        inline void split_adsr(double seconds,
+            uint32_t                  sample_rate_,
+            const ADSR               &adsr_,
+            size_t                    count,
+            size_t                   &nA,
+            size_t                   &nD,
+            size_t                   &nS,
+            size_t                   &nR,
+            double                   &sus) {
+            double A, D, R, S;
+            fit_adsr(
+                seconds, adsr_.attack, adsr_.decay, adsr_.release, A, D, R, S);
+            nA  = static_cast<size_t>(A * sample_rate_);
+            nD  = static_cast<size_t>(D * sample_rate_);
+            nS  = static_cast<size_t>(S * sample_rate_);
+            nR  = count - nA - nD - nS;
+            sus = adsr_.sustain < 0.0
+                      ? 0.0
+                      : (adsr_.sustain > 1.0 ? 1.0 : adsr_.sustain);
+        }
+
+        /**
          * @brief 生成正弦波。
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave tone(double freq,
             double              seconds,
-            double              amplitude_   = amplitude(),
-            uint32_t            sample_rate_ = sample_rate(),
-            uint32_t            channels_    = channels()) {
+            double              amplitude_ = amplitude(),
+            ADSR                adsr_      = adsr(),
+            Meta                meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t = static_cast<double>(i) / sample_rate_;
                 put_sample(w,
                     i,
                     std::sin(2.0 * k_pi * freq * t) * amplitude_
-                        * fade_env(i, count, fade));
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -411,29 +523,34 @@ namespace console {
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          * @note 谐波丰富，振幅过大易削波，建议不超过 0.5。
          */
         inline Wave square(double freq,
             double                seconds,
-            double                amplitude_   = amplitude(),
-            uint32_t              sample_rate_ = sample_rate(),
-            uint32_t              channels_    = channels()) {
+            double                amplitude_ = amplitude(),
+            ADSR                  adsr_      = adsr(),
+            Meta                  meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t  = static_cast<double>(i) / sample_rate_;
                 const double ph = std::fmod(freq * t, 1.0);
                 put_sample(w,
                     i,
                     (ph < 0.5 ? 1.0 : -1.0) * amplitude_
-                        * fade_env(i, count, fade));
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -443,27 +560,33 @@ namespace console {
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave sawtooth(double freq,
             double                  seconds,
-            double                  amplitude_   = amplitude(),
-            uint32_t                sample_rate_ = sample_rate(),
-            uint32_t                channels_    = channels()) {
+            double                  amplitude_ = amplitude(),
+            ADSR                    adsr_      = adsr(),
+            Meta                    meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t  = static_cast<double>(i) / sample_rate_;
                 const double ph = std::fmod(freq * t, 1.0);
                 put_sample(w,
                     i,
-                    (2.0 * ph - 1.0) * amplitude_ * fade_env(i, count, fade));
+                    (2.0 * ph - 1.0) * amplitude_
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -473,26 +596,32 @@ namespace console {
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave triangle(double freq,
             double                  seconds,
-            double                  amplitude_   = amplitude(),
-            uint32_t                sample_rate_ = sample_rate(),
-            uint32_t                channels_    = channels()) {
+            double                  amplitude_ = amplitude(),
+            ADSR                    adsr_      = adsr(),
+            Meta                    meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t  = static_cast<double>(i) / sample_rate_;
                 const double ph = std::fmod(freq * t, 1.0);
                 const double v  = ph < 0.5 ? 4.0 * ph - 1.0 : 3.0 - 4.0 * ph;
-                put_sample(w, i, v * amplitude_ * fade_env(i, count, fade));
+                put_sample(
+                    w, i, v * amplitude_ * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -503,31 +632,36 @@ namespace console {
          * @param duty 占空比，取值 0.0 至 1.0。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave pulse(double freq,
             double               duty,
             double               seconds,
-            double               amplitude_   = amplitude(),
-            uint32_t             sample_rate_ = sample_rate(),
-            uint32_t             channels_    = channels()) {
+            double               amplitude_ = amplitude(),
+            ADSR                 adsr_      = adsr(),
+            Meta                 meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             if (duty <= 0.0 || duty >= 1.0)
                 throw ValueError("Duty Must Be Between 0.0 and 1.0");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t  = static_cast<double>(i) / sample_rate_;
                 const double ph = std::fmod(freq * t, 1.0);
                 put_sample(w,
                     i,
                     (ph < duty ? 1.0 : -1.0) * amplitude_
-                        * fade_env(i, count, fade));
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -538,24 +672,29 @@ namespace console {
          * @param end 终止频率(Hz)。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          * @note 频率按指数变化，各时刻倍频程增量相同。
          */
         inline Wave chirp(double start,
             double               end,
             double               seconds,
-            double               amplitude_   = amplitude(),
-            uint32_t             sample_rate_ = sample_rate(),
-            uint32_t             channels_    = channels()) {
+            double               amplitude_ = amplitude(),
+            ADSR                 adsr_      = adsr(),
+            Meta                 meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (start <= 0.0 || end <= 0.0)
                 throw ValueError("Frequency Must Be Positive");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             const double ratio = end / start;
             double       phase = 0.0;
             for (size_t i = 0; i < count; i++) {
@@ -566,7 +705,8 @@ namespace console {
                 const double f = start * std::pow(ratio, u);
                 put_sample(w,
                     i,
-                    std::sin(phase) * amplitude_ * fade_env(i, count, fade));
+                    std::sin(phase) * amplitude_
+                        * adsr_env(i, nA, nD, nS, nR, sus));
                 phase += 2.0 * k_pi * f / sample_rate_;
             }
             return w;
@@ -579,18 +719,20 @@ namespace console {
          * @param depth 调制深度，取值 0.0 至 1.0。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave am(double freq,
             double            mod_freq,
             double            depth,
             double            seconds,
-            double            amplitude_   = amplitude(),
-            uint32_t          sample_rate_ = sample_rate(),
-            uint32_t          channels_    = channels()) {
+            double            amplitude_ = amplitude(),
+            ADSR              adsr_      = adsr(),
+            Meta              meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0 || mod_freq < 0.0)
                 throw ValueError("Frequency Must Not Be Negative");
@@ -598,7 +740,10 @@ namespace console {
                 throw ValueError("Depth Must Be Between 0.0 and 1.0");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t = static_cast<double>(i) / sample_rate_;
                 const double env
@@ -608,7 +753,7 @@ namespace console {
                 put_sample(w,
                     i,
                     std::sin(2.0 * k_pi * freq * t) * amplitude_ * env
-                        * fade_env(i, count, fade));
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -620,31 +765,38 @@ namespace console {
          * @param index 调制指数，即最大频偏与调制频率之比。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围。
          */
         inline Wave fm(double carrier,
             double            mod_freq,
             double            index,
             double            seconds,
-            double            amplitude_   = amplitude(),
-            uint32_t          sample_rate_ = sample_rate(),
-            uint32_t          channels_    = channels()) {
+            double            amplitude_ = amplitude(),
+            ADSR              adsr_      = adsr(),
+            Meta              meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (carrier < 0.0 || mod_freq < 0.0)
                 throw ValueError("Frequency Must Not Be Negative");
             if (index < 0.0) throw ValueError("Index Must Not Be Negative");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t  = static_cast<double>(i) / sample_rate_;
                 const double ph = 2.0 * k_pi * carrier * t
                                   + index * std::sin(2.0 * k_pi * mod_freq * t);
-                put_sample(
-                    w, i, std::sin(ph) * amplitude_ * fade_env(i, count, fade));
+                put_sample(w,
+                    i,
+                    std::sin(ph) * amplitude_
+                        * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }
@@ -655,18 +807,20 @@ namespace console {
          * @param harmonics 各次谐波的相对幅度，下标 0 为基频。
          * @param seconds 时长(秒)。
          * @param amplitude_ 振幅，取值 0.0 至 1.0。
-         * @param sample_rate_ 采样率(Hz)。
-         * @param channels_ 声道数。
-         * @return 波形数据。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
          * @throws ValueError 参数超出范围，或谐波列表为空。
          * @note 各谐波按幅度之和归一化，因此不会削波。
          */
         inline Wave harmonics(double   freq,
             const std::vector<double> &harmonics,
             double                     seconds,
-            double                     amplitude_   = amplitude(),
-            uint32_t                   sample_rate_ = sample_rate(),
-            uint32_t                   channels_    = channels()) {
+            double                     amplitude_ = amplitude(),
+            ADSR                       adsr_      = adsr(),
+            Meta                       meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
             check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             if (harmonics.empty())
@@ -678,15 +832,19 @@ namespace console {
                 throw ValueError("Harmonics Must Not Be All Zero");
             Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
             const size_t count = w.pcm.size() / (channels_ * 2);
-            const size_t fade  = sample_rate_ / 50;
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
             for (size_t i = 0; i < count; i++) {
                 const double t = static_cast<double>(i) / sample_rate_;
                 double       v = 0.0;
                 for (size_t h = 0; h < harmonics.size(); h++)
                     v += harmonics[h]
                          * std::sin(2.0 * k_pi * freq * (h + 1) * t);
-                put_sample(
-                    w, i, v / total * amplitude_ * fade_env(i, count, fade));
+                put_sample(w,
+                    i,
+                    v / total * amplitude_ * adsr_env(i, nA, nD, nS, nR, sus));
             }
             return w;
         }

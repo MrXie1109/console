@@ -59,14 +59,81 @@ namespace console {
         };
 
         /**
+         * @struct Meta
+         * @brief 音频元数据。
+         */
+        struct Meta {
+            uint32_t    sample_rate = 44100;     ///< 采样率(Hz)
+            uint32_t    channels    = 1;         ///< 声道数
+            std::string device      = "default"; ///< 设备名
+            double      volume      = 1.0;       ///< 音量
+        };
+
+        /**
+         * @struct ADSR
+         * @brief 音频 ADSR 效果参数。
+         */
+        struct ADSR {
+            double attack;  ///< 攻击时间(秒)
+            double decay;   ///< 衰减时间(秒)
+            double sustain; ///< sustain 音量（0.0–1.0 的比例，非时间）
+            double release; ///< 释放时间(秒)
+
+            /// @brief 无效果的 ADSR 参数。
+            static ADSR none() { return {0.0, 0.0, 1.0, 0.0}; }
+
+            /// @brief 拨弦类。
+            static ADSR pluck() { return {0.01, 0.15, 0.1, 0.1}; }
+
+            /// @brief 贝斯类。
+            static ADSR bass() { return {0.005, 0.25, 0.6, 0.1}; }
+
+            /// @brief 主音类。
+            static ADSR lead() { return {0.02, 0.3, 0.8, 0.3}; }
+
+            /// @brief 铺底类。
+            static ADSR pad() { return {1.0, 1.5, 0.9, 3.0}; }
+
+            /// @brief 环境氛围类。
+            static ADSR ambient() { return {3.0, 2.0, 0.85, 5.0}; }
+
+            /// @brief 打击乐类。
+            static ADSR percussion() { return {0.001, 0.1, 0.0, 0.05}; }
+
+            /// @brief 管风琴类。
+            static ADSR organ() { return {0.005, 0.0, 1.0, 0.05}; }
+        };
+
+        /*
+         * @brief 默认音频元数据。
+         * @return 默认音频元数据的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::meta() = { 48000, 2, "hw:0,0", 0.5 };`
+         */
+        inline Meta &meta() {
+            static Meta instance;
+            return instance;
+        }
+
+        /**
+         * @brief 默认音频 ADSR 包络参数。
+         * @return 默认 ADSR 参数的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::adsr() = console::wav::ADSR::pad();`
+         */
+        inline ADSR &adsr() {
+            static ADSR instance = {0.02, 0.0, 1.0, 0.02};
+            return instance;
+        }
+
+        /**
          * @brief 默认音频设备名。
          * @return 默认设备名的引用。
          * @details 返回引用，因此可通过赋值修改默认值：
          *          `console::wav::device() = "hw:0,0";`
          */
         inline std::string &device() {
-            static std::string instance = "default";
-            return instance;
+            return meta().device;
         }
 
         /**
@@ -76,8 +143,7 @@ namespace console {
          *          `console::wav::volume() = 0.5;`
          */
         inline double &volume() {
-            static double instance = 1.0;
-            return instance;
+            return meta().volume;
         }
 
         /**
@@ -87,8 +153,7 @@ namespace console {
          *          `console::wav::sample_rate() = 48000;`
          */
         inline uint32_t &sample_rate() {
-            static uint32_t instance = 44100;
-            return instance;
+            return meta().sample_rate;
         }
 
         /**
@@ -98,8 +163,7 @@ namespace console {
          *          `console::wav::channels() = 2;`
          */
         inline uint32_t &channels() {
-            static uint32_t instance = 1;
-            return instance;
+            return meta().channels;
         }
 
         /**
@@ -111,6 +175,46 @@ namespace console {
         inline double &amplitude() {
             static double instance = 0.5;
             return instance;
+        }
+
+        /**
+         * @brief 默认 attack。
+         * @return 默认 attack 的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::attack() = 0.02;`
+         */
+        inline double &attack() {
+            return adsr().attack;
+        }
+
+        /**
+         * @brief 默认 decay。
+         * @return 默认 decay 的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::decay() = 1;`
+         */
+        inline double &decay() {
+            return adsr().decay;
+        }
+
+        /**
+         * @brief 默认 sustain。
+         * @return 默认 sustain 的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::sustain() = 0.8;`
+         */
+        inline double &sustain() {
+            return adsr().sustain;
+        }
+
+        /**
+         * @brief 默认 release。
+         * @return 默认 release 的引用。
+         * @details 返回引用，因此可通过赋值修改默认值：
+         *          `console::wav::release() = 0.5;`
+         */
+        inline double &release() {
+            return adsr().release;
         }
     }
 }

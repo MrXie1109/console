@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 8.2.0 (2026-09-15) -- "RING x RING")";
+            R"(console version 8.3.0 (2026-09-15) -- "Attack-Decay-Sustain-Release")";
     }
 
     /**
