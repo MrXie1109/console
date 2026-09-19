@@ -484,6 +484,40 @@ namespace console {
         }
 
         /**
+         * @brief 通用波形生成器。
+         * @tparam F 形状函数类型，签名等价于 double(size_t i)。
+         * @param shape 形状函数，接收样本下标，返回 -1.0 至 1.0 的瞬时波形值。
+         * @param seconds 时长(秒)。
+         * @param amplitude_ 振幅，取值 0.0 至 1.0。
+         * @param adsr_ ADSR 包络参数。
+         * @param meta_ 音频元数据。
+         * @return 波形数据，长度严格等于 seconds。
+         * @throws ValueError 参数超出范围。
+         */
+        template <class F>
+        inline Wave wave(F &&shape,
+            double           seconds,
+            double           amplitude_ = amplitude(),
+            ADSR             adsr_      = adsr(),
+            Meta             meta_      = meta()) {
+            const uint32_t sample_rate_ = meta_.sample_rate;
+            const uint32_t channels_    = meta_.channels;
+            check_wave(sample_rate_, channels_, seconds, amplitude_);
+            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
+            const size_t count = w.pcm.size() / (channels_ * 2);
+            size_t       nA, nD, nS, nR;
+            double       sus;
+            split_adsr(
+                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
+            for (size_t i = 0; i < count; i++) {
+                put_sample(w,
+                    i,
+                    shape(i) * amplitude_ * adsr_env(i, nA, nD, nS, nR, sus));
+            }
+            return w;
+        }
+
+        /**
          * @brief 生成正弦波。
          * @param freq 频率(Hz)。
          * @param seconds 时长(秒)。
@@ -498,24 +532,17 @@ namespace console {
             double              amplitude_ = amplitude(),
             ADSR                adsr_      = adsr(),
             Meta                meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t = static_cast<double>(i) / sample_rate_;
-                put_sample(w,
-                    i,
-                    std::sin(2.0 * k_pi * freq * t) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, sr](size_t i) {
+                    return std::sin(
+                        2.0 * k_pi * freq * static_cast<double>(i) / sr);
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -534,25 +561,18 @@ namespace console {
             double                amplitude_ = amplitude(),
             ADSR                  adsr_      = adsr(),
             Meta                  meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t  = static_cast<double>(i) / sample_rate_;
-                const double ph = std::fmod(freq * t, 1.0);
-                put_sample(w,
-                    i,
-                    (ph < 0.5 ? 1.0 : -1.0) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, sr](size_t i) {
+                    const double ph
+                        = std::fmod(freq * static_cast<double>(i) / sr, 1.0);
+                    return ph < 0.5 ? 1.0 : -1.0;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -570,25 +590,18 @@ namespace console {
             double                  amplitude_ = amplitude(),
             ADSR                    adsr_      = adsr(),
             Meta                    meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t  = static_cast<double>(i) / sample_rate_;
-                const double ph = std::fmod(freq * t, 1.0);
-                put_sample(w,
-                    i,
-                    (2.0 * ph - 1.0) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, sr](size_t i) {
+                    const double ph
+                        = std::fmod(freq * static_cast<double>(i) / sr, 1.0);
+                    return 2.0 * ph - 1.0;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -606,24 +619,18 @@ namespace console {
             double                  amplitude_ = amplitude(),
             ADSR                    adsr_      = adsr(),
             Meta                    meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t  = static_cast<double>(i) / sample_rate_;
-                const double ph = std::fmod(freq * t, 1.0);
-                const double v  = ph < 0.5 ? 4.0 * ph - 1.0 : 3.0 - 4.0 * ph;
-                put_sample(
-                    w, i, v * amplitude_ * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, sr](size_t i) {
+                    const double ph
+                        = std::fmod(freq * static_cast<double>(i) / sr, 1.0);
+                    return ph < 0.5 ? 4.0 * ph - 1.0 : 3.0 - 4.0 * ph;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -643,27 +650,20 @@ namespace console {
             double               amplitude_ = amplitude(),
             ADSR                 adsr_      = adsr(),
             Meta                 meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             if (duty <= 0.0 || duty >= 1.0)
                 throw ValueError("Duty Must Be Between 0.0 and 1.0");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t  = static_cast<double>(i) / sample_rate_;
-                const double ph = std::fmod(freq * t, 1.0);
-                put_sample(w,
-                    i,
-                    (ph < duty ? 1.0 : -1.0) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, duty, sr](size_t i) {
+                    const double ph
+                        = std::fmod(freq * static_cast<double>(i) / sr, 1.0);
+                    return ph < duty ? 1.0 : -1.0;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -684,32 +684,23 @@ namespace console {
             double               amplitude_ = amplitude(),
             ADSR                 adsr_      = adsr(),
             Meta                 meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (start <= 0.0 || end <= 0.0)
                 throw ValueError("Frequency Must Be Positive");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            const double ratio = end / start;
-            double       phase = 0.0;
-            for (size_t i = 0; i < count; i++) {
-                const double u = count > 1
-                                     ? static_cast<double>(i)
-                                           / static_cast<double>(count - 1)
-                                     : 0.0;
-                const double f = start * std::pow(ratio, u);
-                put_sample(w,
-                    i,
-                    std::sin(phase) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-                phase += 2.0 * k_pi * f / sample_rate_;
-            }
-            return w;
+            const double env = std::log(end / start);
+            const size_t n   = static_cast<size_t>(meta_.sample_rate * seconds);
+            return wave(
+                [=](size_t i) {
+                    const double t = n > 1 ? static_cast<double>(i)
+                                                 / static_cast<double>(n - 1)
+                                           : 0.0;
+                    return t > 0.0 ? std::sin(2.0 * k_pi * start / env
+                                              * (std::exp(env * t) - 1.0))
+                                   : 0.0;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -731,31 +722,24 @@ namespace console {
             double            amplitude_ = amplitude(),
             ADSR              adsr_      = adsr(),
             Meta              meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0 || mod_freq < 0.0)
                 throw ValueError("Frequency Must Not Be Negative");
             if (depth < 0.0 || depth > 1.0)
                 throw ValueError("Depth Must Be Between 0.0 and 1.0");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t = static_cast<double>(i) / sample_rate_;
-                const double env
-                    = 1.0 - depth
-                      + depth * 0.5
-                            * (1.0 + std::sin(2.0 * k_pi * mod_freq * t));
-                put_sample(w,
-                    i,
-                    std::sin(2.0 * k_pi * freq * t) * amplitude_ * env
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, mod_freq, depth, sr](size_t i) {
+                    const double t = static_cast<double>(i) / sr;
+                    const double e
+                        = 1.0 - depth
+                          + depth * 0.5
+                                * (1.0 + std::sin(2.0 * k_pi * mod_freq * t));
+                    return std::sin(2.0 * k_pi * freq * t) * e;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -777,28 +761,21 @@ namespace console {
             double            amplitude_ = amplitude(),
             ADSR              adsr_      = adsr(),
             Meta              meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (carrier < 0.0 || mod_freq < 0.0)
                 throw ValueError("Frequency Must Not Be Negative");
             if (index < 0.0) throw ValueError("Index Must Not Be Negative");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t  = static_cast<double>(i) / sample_rate_;
-                const double ph = 2.0 * k_pi * carrier * t
-                                  + index * std::sin(2.0 * k_pi * mod_freq * t);
-                put_sample(w,
-                    i,
-                    std::sin(ph) * amplitude_
-                        * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [carrier, mod_freq, index, sr](size_t i) {
+                    const double t = static_cast<double>(i) / sr;
+                    return std::sin(
+                        2.0 * k_pi * carrier * t
+                        + index * std::sin(2.0 * k_pi * mod_freq * t));
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
@@ -819,9 +796,6 @@ namespace console {
             double                     amplitude_ = amplitude(),
             ADSR                       adsr_      = adsr(),
             Meta                       meta_      = meta()) {
-            const uint32_t sample_rate_ = meta_.sample_rate;
-            const uint32_t channels_    = meta_.channels;
-            check_wave(sample_rate_, channels_, seconds, amplitude_);
             if (freq < 0.0) throw ValueError("Frequency Must Not Be Negative");
             if (harmonics.empty())
                 throw ValueError("Harmonics Must Not Be Empty");
@@ -830,23 +804,20 @@ namespace console {
                 total += std::fabs(harmonics[h]);
             if (total == 0.0)
                 throw ValueError("Harmonics Must Not Be All Zero");
-            Wave         w     = alloc_wave(seconds, sample_rate_, channels_);
-            const size_t count = w.pcm.size() / (channels_ * 2);
-            size_t       nA, nD, nS, nR;
-            double       sus;
-            split_adsr(
-                seconds, sample_rate_, adsr_, count, nA, nD, nS, nR, sus);
-            for (size_t i = 0; i < count; i++) {
-                const double t = static_cast<double>(i) / sample_rate_;
-                double       v = 0.0;
-                for (size_t h = 0; h < harmonics.size(); h++)
-                    v += harmonics[h]
-                         * std::sin(2.0 * k_pi * freq * (h + 1) * t);
-                put_sample(w,
-                    i,
-                    v / total * amplitude_ * adsr_env(i, nA, nD, nS, nR, sus));
-            }
-            return w;
+            const double sr = meta_.sample_rate;
+            return wave(
+                [freq, &harmonics, total, sr](size_t i) {
+                    const double t = static_cast<double>(i) / sr;
+                    double       v = 0.0;
+                    for (size_t h = 0; h < harmonics.size(); h++)
+                        v += harmonics[h]
+                             * std::sin(2.0 * k_pi * freq * (h + 1) * t);
+                    return v / total;
+                },
+                seconds,
+                amplitude_,
+                adsr_,
+                meta_);
         }
 
         /**
