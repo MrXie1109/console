@@ -29,34 +29,43 @@ SOFTWARE.
 */
 
 #pragma once
-#include <array>
+#include <cassert>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace console {
     /**
      * @class Screen
      * @brief 用于表示虚拟屏幕的类。
      * @details 使用八点位位盲文，每像素占用一比特位存储空间。
-     * @tparam COLS 列数，必须是 2 的倍数。
-     * @tparam ROWS 行数，必须是 4 的倍数。
      */
-    template <unsigned COLS, unsigned ROWS>
     class Screen {
-        /// 列数必须是 2 的倍数。
-        static_assert(COLS % 2 == 0, "COLS must be a multiple of 2!");
-        /// 行数必须是 4 的倍数。
-        static_assert(ROWS % 4 == 0, "ROWS must be a multiple of 4!");
-
-        std::array<std::array<unsigned char, COLS / 2>, ROWS / 4>
-            masks; ///< 存储数据的二维数组
+        unsigned                                cols;  ///< 列数
+        unsigned                                rows;  ///< 行数
+        std::vector<std::vector<unsigned char>> masks; ///< 存储数据的二维数组
 
     public:
-        /// @brief 默认构造函数，构造一个空白的 Screen
-        Screen() : masks() {}
+        /**
+         * @brief 构造函数，构造一个空白的 Screen。
+         * @param cols 列数。
+         * @param rows 行数。
+         */
+        Screen(unsigned cols, unsigned rows) :
+            cols(cols), rows(rows),
+            masks(
+                (rows + 3) / 4, std::vector<unsigned char>((cols + 1) / 2, 0)) {
+            assert(cols && rows && cols % 2 == 0 && rows % 4 == 0);
+        }
+
+        /// @brief 获取列数。
+        unsigned width() const { return cols; }
+
+        /// @brief 获取行数。
+        unsigned height() const { return rows; }
 
         /**
          * @brief 在屏幕上绘制一个点。
@@ -65,7 +74,7 @@ namespace console {
          * @param on 绘制 or 擦除？
          */
         void point(unsigned x, unsigned y, bool on = true) {
-            if (x >= COLS || y >= ROWS) return; ///< 静默忽略，就当画在外边了
+            if (x >= cols || y >= rows) return; ///< 静默忽略，就当画在外边了
             unsigned                   braille_col = x / 2;
             unsigned                   braille_row = y / 4;
             unsigned                   sub_x       = x % 2;
@@ -216,9 +225,10 @@ namespace console {
                 os << "\033[2J";
             }
             std::string out;
-            out.reserve((ROWS / 4) * (COLS / 2 * 3 + 1));
-            for (unsigned row = 0; row < ROWS / 4; ++row) {
-                for (unsigned col = 0; col < COLS / 2; ++col) {
+            out.reserve(
+                masks.size() * (masks.empty() ? 0 : masks[0].size() * 3 + 1));
+            for (unsigned row = 0; row < masks.size(); ++row) {
+                for (unsigned col = 0; col < masks[row].size(); ++col) {
                     unsigned int code = 0x2800 + masks[row][col];
                     out += static_cast<char>(0xE0 | (code >> 12));
                     out += static_cast<char>(0x80 | ((code >> 6) & 0x3F));

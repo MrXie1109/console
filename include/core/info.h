@@ -100,7 +100,7 @@ SOFTWARE.)";
      */
     inline std::string version() {
         return //
-            R"(console version 8.3.1 (2026-09-19) -- "Don't Repeat Yourself")";
+            R"(console version 8.4.0 (2026-09-26) -- "Let Me Write the JSON.")";
     }
 
     /**

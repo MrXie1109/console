@@ -38,6 +38,7 @@ SOFTWARE.
 #include "./util/gen.h"
 #include "./util/gextra.h"
 #include "./util/iter.h"
+#include "./util/json.h"
 #include "./util/logging.h"
 #include "./util/params.h"
 #include "./util/syscmd.h"
